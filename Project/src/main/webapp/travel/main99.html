@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="menu.css">
+<link href='https://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+<meta charset="UTF-8">
+
+    <title>CSS3 Property Basic</title>
+    
+    <script type="text/javascript">
+	function popupOpen(){
+	  var popUrl = "4-59-9.html"; //팝업창에 출력될 페이지 URL
+	  var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //팝업창 옵션(optoin)
+	    window.open(popUrl,"",popOption);
+	  }
+	</script>
+    <style>
+    div{
+    	/* border: 1px solid black; */
+    	margin: 0px;
+    	padding: 10px;
+    }
+    
+    #header{
+    	position :relative;
+    	background-color: #109ebf;
+    	color: white;
+    	padding:0;
+    	font-weight: bold;
+    	height: 350px;
+    }
+    
+    #aside {
+    border: 1px solid black;
+    	background-color: yellow;
+    	width: 150px;
+    	height:600px;
+    	margin: 0;
+    	
+    }
+    
+    #content {
+    	/* background-color: gray; <!--조상중에 absolute,relative --> */
+    	width: 900px;
+    	position: absolute;
+    	top: 470px;
+    	left:179px;
+    	
+    }
+    
+    #footer {
+    	height : 800px;
+    	color : black;
+    	background-color: #CEF279;
+    	
+    	text-align: center; 
+    }
+    #logo{
+    position: relative; 
+    
+    left: 600px;
+    top:20px;
+    z-index: 2;
+    }
+    #photo{
+    border: 1px solid black;
+    position: absolute;
+    left: 230px;
+    top: 30px;
+    }
+    
+    #btn{
+    	 float: right; 
+    }
+    #cc{
+    	padding: 0;
+    	margin: 0;
+    	vertical-align: middle;
+    }
+     #select{
+     	margin-top:0px;
+    	height: 24px;
+    }
+    </style>
+</head>
+<body>
+<div id="header"><a href="4-59-8.html"><img id="logo" src="logo.png"></a>
+
+ <label for="menu-button" class="menu-button--label">▤</label>
+       
+   <!--  <input type="checkbox" id="menu-button">
+
+       
+
+    <div class="menu-wrap">
+        <div class="side-menu">
+            <ul class="side-menu--list">
+                <li>
+                    <a class="subset">Company</a>
+                    <a href=""> Mission</a>
+                    <a href="">People</a>
+                    <a href="">Social Responsibility</a>
+                </li>
+                <li>
+                    <a class="subset" href="">Products</a>
+                    <a href="">Solar panels</a>
+                    <a href="">Electronics</a>
+                    <a href="">Utilizers</a>
+                </li>
+                <li>
+                    <a class="subset" href="">Contacts</a>
+                    <a href="">Staff</a>
+                    <a href="">Contact</a>
+                    <a href="">Media</a>
+                </li>
+
+            </ul>
+
+        </div> -->
+ 
+
+
+
+<input type="button" id = "btn" value="Join">
+<a href ="javascript:popupOpen();" ><input type="button" id = "btn" value="login"></a>
+
+
+ 
+ 
+    
+    
+</div>
+
+<div id="content">
+	
+<img id="photo" src="map.png">
+<!-- <p>
+본 과정은 WEB과 APP을 융합하는 과정으로서 JAVA기반의 WEB과 ANDROID기반의 APP기술을 익히고, WEB & APP 융합 프로젝트에 시간을 할당하여, 취업의 근간이 되는 프로젝트 산출에 가장 많은 노력을 기울입니다.
+</p>
+<h1>01. 과정목표</h1>
+<p>
+- 자바 기반 웹 프로그래밍과 모바일프로그래밍에 대한 융합개발
+</p>
+<h1>02. 교육대상</h1>
+
+<p>
+- 프로그래밍에 대한 기초과정을 습득한자
+- 프로그래밍 진입을 희망하는 교육의지가 있는 입문자
+- SW 프로그래밍 기술을 개발 업무에 이용하려고 하는 프로그래머
+- 향후 프로그래머로써 SW 프로그래밍 및 모바일 프로그램을 개발하려고 하는 자
+</p>
+
+<h1>03. 교육안내</h1>
+<p>
+- 교육기간
+   88기: 2016.08.29 ~ 2017.02.20.
+   89기: 2016.09.26 ~ 2017.03.15.
+- 교육시간 : (이론,실습) 09:00 ~ 18:00 / (그룹스터디) 19:00 ~ 21:00
+- 교육장소 : 비트캠프 강남
+- 모집정원 : 기수별 30명 모집
+</p>
+<h1>04. 교육비용</h1>
+<p>
+- 전액 국비지원(무료)
+- 훈련수당 매월 최대 416,000원 6개월간 지급
+- 지원대상에 따라 훈련수당은 변동가능합니다.
+</p> -->
+</div>
+<div id="footer">
+<div id="cc">
+<select id="select" >
+                                 <option>국가/도시를 검색하세요</option>
+                                 <option>서울</option>
+                                 <option>런던</option>
+                                 <option>부산</option>
+                            
+</select>
+<input type="date" value="dd"> 
+<input type="date" value="dd">컨텐츠 
+</div>
+</div>
+<!-- <img id="photo" src="3333.jpg"> -->
+</body>
+</html>
