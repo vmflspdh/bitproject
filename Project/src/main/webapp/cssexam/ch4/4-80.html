@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="UTF-8">
+	<title>援ш�留� API �쒖슜�섍린</title>
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script>
+		function initialize() {
+
+			/*
+				http://openapi.map.naver.com/api/geocode.php?key=f32441ebcd3cc9de474f8081df1e54e3&encoding=euc-kr&coord=LatLng&query=�쒖슱�밸퀎�� 媛뺣궓援� 媛뺣궓��濡� 456
+                �꾩�媛숈씠 留곹겕�먯꽌 �ㅼ뿉 二쇱냼瑜� �곸쑝硫� x,y 媛믪쓣 援ы븷�� �덉뒿�덈떎.
+			*/
+			var Y_point			= 35.87110100714382;		// Y 醫뚰몴
+			var X_point			= 128.60169690333006;		// X 醫뚰몴
+
+			var zoomLevel		= 16;						// 吏��꾩쓽 �뺣� �덈꺼 : �レ옄媛� �댁닔濡� �뺣��뺣룄媛� ��
+
+			var markerTitle		= "�꾩쫰�뚰봽��";				// �꾩옱 �꾩튂 留덉빱�� 留덉슦�ㅻ� �ㅻ쾭�꾨븣 �섑��섎뒗 �뺣낫
+			var markerMaxWidth	= 300;						// 留덉빱瑜� �대┃�덉쓣�� �섑��섎뒗 留먰뭾�좎쓽 理쒕� �ш린
+
+			// 留먰뭾�� �댁슜
+			var contentString	= '<div>' +
+			'<h2>�꾩쫰�뚰봽��</h2>'+
+			'<p>�꾩쫰�뚰봽�몃뒗 WEB Agency & SI 遺꾩빞�먯꽌 10�� �댁긽�� �띾��� 寃쏀뿕�� 蹂댁쑀��<br />' +
+            '�꾨Ц �몃젰�쇰줈 援ъ꽦�� E-Business �꾨Ц 湲곗뾽�낅땲��.</p>' +
+			//'<a href="http://www.daegu.go.kr" target="_blank">http://www.daegu.go.kr</a>'+ //留곹겕�� �ｌ쓣 �� �덉쓬
+			'</div>';
+
+			var myLatlng = new google.maps.LatLng(Y_point, X_point);
+			var mapOptions = {
+								zoom: zoomLevel,
+								center: myLatlng,
+								mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+			var marker = new google.maps.Marker({
+													position: myLatlng,
+													map: map,
+													title: markerTitle
+			});
+
+			var infowindow = new google.maps.InfoWindow(
+														{
+															content: contentString,
+															maxWidth: markerMaxWidth
+														}
+			);
+
+			google.maps.event.addListener(marker, 'click', function() {
+				infowindow.open(map, marker);
+			});
+		}
+	</script>
+</head>
+
+<body onload="initialize()">
+	<div id="map_view" style="width:500px; height:300px;"></div>
+</body>
+</html>

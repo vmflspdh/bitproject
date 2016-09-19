@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test03</title>
+</head>
+<body>
+	<h1>표의 셀 병합: colspan, rowspan</h1>
+	<table border="1">
+		<thead>
+			<tr>
+				<!-- table row -->
+				<th rowspan="2">반</th>
+				<th rowspan="2">이름</th>
+				<th colspan="5">점수</th>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<th>국어</th>
+				<th>영어</th>
+				<th>수학</th>
+				<th>총점</th>
+				<th>반평균</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<!-- table row -->
+				<td rowspan="3">702</td>
+				<td>임꺽정</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>270</td>
+				<td rowspan="3">0</td>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<td>이순신</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>270</td>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<td>유관순</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>270</td>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<td rowspan="3">703</td>
+				<td>안중근</td>
+				<td>90</td>
+				<td>90</td>
+				<td>90</td>
+				<td>270</td>
+				<td rowspan="3">0</td>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<td>신채호</td>
+				<td>90</td>
+				<td colspan="2" rowspan="2">90</td>
+				<td>270</td>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<td>윤봉길</td>
+				<td>90</td>
+				<td>270</td>
+			</tr>
+			<tr>
+				<!-- table row -->
+				<th colspan="6">전체평균</th><!-- column값들을 합친다. 세로로된 값을 합친다. -->
+				<td>0</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+

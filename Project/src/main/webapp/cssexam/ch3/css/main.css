@@ -1,0 +1,365 @@
+@charset "utf-8";
+
+/*header*/
+header{
+	overflow:hidden;
+	padding:20px;
+}
+.logo{
+	width:60px;
+	height:82px;
+	background:url(../images/logo.jpg) no-repeat;
+	float:left;
+}
+.logo span{
+	font-size:56.67%;
+	margin-left:15px
+}
+h1 a{
+	display:block;
+	font-size:166.67%;
+	line-height:30px;
+	margin-left:80px;
+	margin-top:10px
+}
+
+/*메뉴*/
+header {
+	width:600px;
+	float:right;
+	margin-top:30px
+}
+
+>ul{
+	width:100%;
+	float:left;
+}
+
+nav>ul>li{
+	width:18%;
+	float:left;
+}
+
+nav>ul>li>a{
+	display:block;
+	width:100%;
+	font-size:160%;
+	line-height:38px;
+	text-align:center;
+}
+
+nav>ul>li>a:hover{
+	color:#e41957;
+	border-bottom:3px solid #e41957
+}
+
+.logIn a{
+	border:1px solid #ddd;
+	border-radius:5px;
+}
+
+/*sub메뉴*/
+.sub_bg{
+	background:url(../images/sub_bg.png) no-repeat left;
+	width:520px;
+	height:142px;
+	margin-left:-480px;
+	margin-top:30px;
+
+}
+.sub{
+	height:120px
+}
+.sub li a{
+	display:block;
+	width:100px;
+	font-size:16px;
+	line-height:25px;
+	padding:5px 10px;
+	margin-top:15px
+}
+.sub li a:hover{
+	background-color:#eee;
+	color:#e41957
+}
+
+
+/* 배너 */
+
+.banner{
+	width:100%;
+	height:433px;
+	position:relative;/*btn, slideBtn위치*/
+}
+
+.bxslider ul li{
+	overflow:hidden;
+	margin:auto;
+}
+.v1{
+	background:url(../images/visual1.png) no-repeat center;
+	width:100%;
+	height:433px;
+	background-color:#d7e9ed
+}
+.v2{
+	background:url(../images/visual2.png) no-repeat center;
+	width:100%;
+	height:433px;
+	background-color:#f2e9ec
+}
+.v3{
+	background:url(../images/visual3.png) no-repeat center;
+	width:100%;
+	height:433px;
+	background-color:#f6f6f6
+}
+
+/* contents */
+
+.contents{
+	padding:30px 0;
+	overflow:hidden;
+}
+
+
+h2{
+	font-size:116.67%;
+	line-height:26px;
+}
+
+.service span{
+	display:inline-block;
+	border-bottom:1px solid #000;
+}
+.latest span, .work span{
+	display:inline-block;
+	border-bottom:1px solid #fff;
+}
+.contact span, .account span{
+	display:inline-block;
+	border-bottom:1px solid #000;
+}
+
+article{
+	padding:30px;
+	box-sizing:border-box;
+	border-radius:5px;
+	border:1px solid #ddd;
+}
+
+.left{
+	width:585px;
+	float:left;
+}
+
+.right{
+	width:585px;
+	float:right;
+}
+
+.right h2{
+	margin-bottom:20px;
+}
+
+.news{
+	width:100%;
+	border-color:#ddd;
+	margin-bottom:30px;
+	overflow:hidden;
+}
+
+.news h2{
+	width:20%;
+	float:left;
+}
+
+.news table{
+	width:80%;
+	float:right;
+	color:#555;
+	line-height:22px;
+}
+
+.news table a{
+	color:#555;
+}
+
+.news table a:hover{
+	text-decoration:underline;
+}
+
+.service{
+	width:277px;
+	float:left;
+	background-color:#f2f2f2;
+	border-color:#f2f2f2;
+}
+
+.work{
+	width:277px;
+	float:right;
+	background-color:#7f7f7f;
+	border-color:#7f7f7f;
+}
+.work h2 a{
+	color:#fff;
+	display:block;
+}
+
+.service h2 a{
+	color:#000;
+	display:block;
+}
+
+.service p a{
+	padding-top:20px;
+	line-height:20px;
+	color:#000;
+	display:block;
+}
+.work p a{
+	padding-top:20px;
+	line-height:20px;
+	color:#fff;
+	display:block;
+}
+.latest{
+	width:277px;
+	float:left;
+	background-color:#2d2d2d;
+	border-color:#2d2d2d;
+}
+
+.latest h2{
+	color:#fff;
+}
+
+.latest dl{
+	width:100%;
+	padding-top:186px;
+	position:relative;/*dd.img 위치*/
+}
+
+.latest dt{
+	width:100%;
+}
+
+.latest dt a{
+	display:block;
+	width:100%;
+	text-align:center;
+	font-size:133.34%;
+	color:#fff;
+}
+
+.latest dd{
+	width:100%;
+}
+
+.latest dd.img a{
+	position:absolute;
+	top:0px;
+	width:100%;
+	height:166px;
+	background:url(../images/ottogi.png) no-repeat;
+	text-indent:-9999px
+}
+
+.latest dd.txt a{
+	display:block;
+	width:100%;
+	color:#fff;
+	text-align:center;
+}
+
+.contact{
+	width:277px;
+	float:right;
+	border-color:#ddd;
+	margin-bottom:30px;
+}
+
+.contact address{
+	font-size:133.34%;
+	line-height:28px;
+}
+
+.account{
+	width:277px;
+	float:right;
+	border-color:#ddd;
+}
+
+.account p{
+	line-height:20px;
+}
+
+/*footer*/
+footer{
+	width:100%;
+	box-sizing:border-box;
+	padding:20px 0;
+	background:url(../images/footer_bg.jpg) no-repeat center;
+}
+
+.footerLogo{
+	font-size:166.67%;
+	color:#fff;
+	margin-bottom:20px;
+	text-align:center;
+}
+
+footer p:not(.footerLogo),footer a{
+	font-size:16px;
+	color:#d0cbcd;
+	line-height:25px;
+}
+
+footer p:not(.footerLogo){
+	text-align:center;
+}
+
+footer {
+	width:300px;
+	margin:auto;
+	overflow:hidden;
+}
+
+footer  p{
+	float:left;
+}
+
+footer a{
+	display:block;
+	padding:0 10px;
+	text-decoration:underline;
+}
+#backtotop {
+ 	cursor:pointer;
+ 	width:40px;
+	height:40px;
+	background:url(../images/mtop.png) no-repeat;
+	display:block;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+}
+
+#backtotop:hover
+{
+ filter : alpha(opacity=90);
+ -khtml-opacity : 0.9;
+ -moz-opacity : 0.9;
+ opacity : 0.9;
+}
+
+@media all and (max-width:1200px){
+	.banner{
+		width:1200px;
+	}
+
+	footer{
+		width:1200px;
+	}
+}
