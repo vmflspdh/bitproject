@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script type="text/javascript">
+	function popupOpen(){
+	  var popUrl = "login.html"; //팝업창에 출력될 페이지 URL
+	  var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //팝업창 옵션(optoin)
+	    window.open(popUrl,"",popOption);
+	  }
+</script>
+
 <style>
  #container {
 
@@ -40,10 +49,11 @@ div {
 	clear : both;
 	display: inline-block;
 	float: right;
-	height: 890px;
+	height: 600px;
 	width: 400px;
 	background-color: red;
 	text-align: center;
+	z-index: 5;
 }
 
 </style>
@@ -52,12 +62,27 @@ div {
 <div id="container">
 	<div id="header">
 	bbb.html
-	<input type="button" id = "login" value="login">
+	<a href ="javascript:popupOpen();" ><input type="button" id = "login" value="login"></a>
 	<input type="button" id = "Join" value="Join">
-	<a href="bbb.html">menu</a><br/>
+	<a href="aaa.html">menu</a><br/>
 	<div id="menu">
-	menu
-	
+	menu<br/>
+	<br/>
+	<br/>
+	<br/>
+	유저사진
+	<br/>
+	<br/>
+	사진 이름
+	<br/>
+	<br/>
+	<div>메세지</div>
+	<br/>
+	<div>My Travel</div>
+	<br/>
+	<div>Mate</div>
+	<br/>
+	<div>BookMark</div>
 	</div>
 	
 	<div id="logo">

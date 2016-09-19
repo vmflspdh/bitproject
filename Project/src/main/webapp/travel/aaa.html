@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script type="text/javascript">
+	function popupOpen(){
+	  var popUrl = "login.html"; //팝업창에 출력될 페이지 URL
+	  var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //팝업창 옵션(optoin)
+	    window.open(popUrl,"",popOption);
+	  }
+</script>
+
 <style>
  #container {
 
@@ -43,9 +52,8 @@ div {
 <body>
 <div id="container">
 	<div id="header">
-	aaaa
-	bbb
-	<input type="button" id = "login" value="login">
+	aaa.html
+	<a href ="javascript:popupOpen();" ><input type="button" id = "login" value="login"></a>
 	<input type="button" id = "Join" value="Join">
 	<a href="bbb.html">menu</a>
 	
