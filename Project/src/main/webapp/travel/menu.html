@@ -24,8 +24,13 @@
     	height: 330px;
     	text-align: right;
     	margin: 0 auto; 
+    	 word-spacing: 10px;
     	/* vertical-align: middle; */
 } 
+a[href] {
+    color: white;
+    text-decoration: none;
+  }
 #content {
 	text-align: center;
 	height : 580px;
@@ -62,9 +67,9 @@ div {
 <div id="container">
 	<div id="header">
 	menu.html
-	<a href ="javascript:popupOpen();" ><input type="button" id = "login" value="login"></a>
-	<a href="join.html"><input type="button" id = "Join" value="Join"></a>
-	<a href="main.html">menu</a><br/>
+	<a href ="javascript:popupOpen();" >LOGIN</a>
+  <a href="newjoin.html">JOIN</a>
+  <a href="menu.html">MENU&nbsp;&nbsp;</a>
 	<div id="menu">
 	menu<br/>
 	<br/>
@@ -78,7 +83,7 @@ div {
 	<br/>
 	<div>메세지</div>
 	<br/>
-	<div>My Travel</div>
+	<div><a href="reg.html">여행 등록</a></div>
 	<br/>
 	<div>Mate</div>
 	<br/>
