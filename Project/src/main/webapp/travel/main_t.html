@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+
+
+<style>
+body {
+        margin: 0;
+}
+ 
+.pushmenu {
+        background: #00b3b3;
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        width: 240px;
+        height: 100%;
+        top: 0;
+        z-index: 1000;
+}
+ 
+.pushmenu h3 {
+        color: #cbbfad;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 15px 20px;
+        margin: 0;
+        background: #282522;   
+        height: 16px;
+}
+ 
+.pushmenu a {
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        border-top: 1px solid #57544e;
+        border-bottom: 1px solid #312e2a;
+        padding: 14px;
+}
+ 
+.pushmenu a:hover {
+        background:258ecd;     
+}
+ 
+.pushmenu a:active {
+        background: #454f5c;
+        color: #fff;   
+}
+ 
+.pushmenu-left {
+        left: -240px;  
+}
+ 
+.pushmenu-left.pushmenu-open {
+        left: 0px;     
+}
+ 
+.pushmenu-push {
+        overflow-x: hidden;
+        position: relative;
+        left: 0;       
+}
+ 
+.pushmenu-push-toright {
+        left: 240px;   
+}
+ 
+/*Transition*/
+.pushmenu, .pushmenu-push {
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;     
+}
+ 
+#nav_list {
+        background: url(http://www.onlywebpro.com/demo/jquery/icon_nav.png) no-repeat left top;
+        cursor: pointer;
+        height: 27px;
+        width: 33px;
+        text-indent: -99999em; 
+}
+ 
+#nav_list.active {
+        background-position: -33px top;
+}
+ 
+.buttonset {
+        background: linear-gradient(center top , #6b85b3, #334d86);
+        background:-moz-linear-gradient(center top , #6b85b3, #334d86);
+    background: -webkit-gradient(linear, center top, center bottom, from(#6b85b3), to(#334d86));
+        height: 16px;
+        padding: 10px 20px 20px;
+}
+ 
+section.content {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px 20px;    
+}
+</style>
+
+</head>
+
+<body class="pushmenu-push">
+<nav class="pushmenu pushmenu-left">
+        <h3>Welcome Peter Yee</h3>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Games</a>
+    <a href="#">Message</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+</nav>
+ 
+<div class="container">
+        <div class="main">
+        <section class="buttonset">
+            <div id="nav_list">Show/Hide Left Push Menu</div>
+        </section>
+         
+        <section class="content">
+        <h1>Introducing Facebook Home</h1>
+        <p>Facebook Home is software for your phone designed to put your friends above everything else. You can download Facebook Home for free or purchase it pre-installed on a phone. Facebook Home works together with the Facebook for Android and Facebook Messenger apps to enable its main features:</p>
+        <ul>
+                <li><strong>Cover feed:</strong> Glance at your phone for photos and posts from your Facebook News Feed.</li>
+            <li><strong>Chat heads:</strong> Send and receive texts and Facebook messages in one place. Open, close and drag chat heads around your screen to keep chatting while you’re using other apps.</li>
+            <li><strong>Notifications:</strong> See news as it happens with bigger, bolder notifications on your home screen.</li>
+            <li><strong>App launcher:</strong> Get right to your favorite apps and post to Facebook from the same place.</li>
+        </ul>
+        </section><!-- END END content -->
+    </div><!-- END main -->
+</div><!-- END container -->
+
+<script type="text/javascript">
+  function popupOpen(){
+    var popUrl = "login.html"; //팝업창에 출력될 페이지 URL
+    var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //팝업창 옵션(optoin)
+      window.open(popUrl,"",popOption);
+    }
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script>
+        $(document).ready(function() {
+                $menuLeft = $('.pushmenu-left');
+                $nav_list = $('#nav_list');
+                 
+                $nav_list.click(function() {
+                        $(this).toggleClass('active');
+                        $('.pushmenu-push').toggleClass('pushmenu-push-toright');
+                        $menuLeft.toggleClass('pushmenu-open');
+                });
+        });
+</script>
+
+
+</body>
+</html>
