@@ -2,165 +2,202 @@
 <html>
 <head>
 <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <title>JOIN</title>
+    <meta name="description" content="Blueprint: Slide and Push Menus" />
+    <meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="SlidePushMenus/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="SlidePushMenus/css/component.css" />
+    <script src="SlidePushMenus/js/modernizr.custom.js"></script>
 
 <script type="text/javascript">
-  function popupOpen(){
-    var popUrl = "login.html"; //팝업창에 출력될 페이지 URL
-    var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //팝업창 옵션(optoin)
-      window.open(popUrl,"",popOption);
-    }
+	function popupOpen() {
+		var popUrl = "login.html"; //팝업창에 출력될 페이지 URL
+		var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;"; //팝업창 옵션(optoin)
+		window.open(popUrl, "", popOption);
+	}
 </script>
 
 <style>
- #container {
-
-}
 #header {
-    background-color: #109ebf;
-      color: black;
-      padding:0;
-      font-weight: bold;
-      height: 330px;
-      text-align: right;
-      margin: 0 auto; 
-      word-spacing: 10px;
-      /* vertical-align: middle; */
-} 
+	background-color: #109ebf;
+	color: black;
+	font-weight: bold;
+	height: 330px;
+	text-align: right;
+	margin: 0 auto;
+	word-spacing: 10px;
+	/* vertical-align: middle; */
+}
 
 a[href] {
-    color: white;
-    text-decoration: none;
-  }
-  
+	color: white;
+	text-decoration: none;
+}
+
 #content {
-  height : 580px;
-    color : black;
-    background-color: white;
-} 
+	height: 580px;
+	color: black;
+	background-color: white;
+}
+
 div {
-  border: 1px solid black;
+	border: 1px solid black;
 }
-#logo{
-  text-align: center;
+
+#logo {
+	text-align: center;
 }
-#map{
-  padding-top:50px;
-  height: 500px;
+
+#map {
+	padding-top: 50px;
+	height: 500px;
 }
+
 #select {
-  height: 30px;
+	height: 30px;
 }
 
-  td {
-    height: 35px;
-    padding-left: 10px;
-   }
-  
-  #joinform {
-    font-size: 13px;
-    font-family: 맑은고딕;
-    border: 1px solid black;
-    padding-left: 200px;
-    
-  }
+td {
+	height: 35px;
+	padding-left: 10px;
+}
 
+#joinform {
+	font-size: 13px;
+	font-family: 맑은고딕;
+	border: 1px solid black;
+}
+
+#showRightPush {
+    background: url(http://www.onlywebpro.com/demo/jquery/icon_nav.png) no-repeat left top;
+    height: 30px;
+    width: 35px;
+    text-indent: -99999em;
+}
 
 </style>
 </head>
-<body>
+<body class="cbp-spmenu-push">
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"
+		id="cbp-spmenu-s2">
+		<h3>MENU</h3>
+		<a href="#">여행을 등록하세요</a> <a href="#">MESSAGE</a> <a href="#">MATE</a>
+		<a href="#">BOOKMARK</a>
+	</nav>
 
 
-<div id="container">
-  <div id="header">
-  <a href ="javascript:popupOpen();" >LOGIN</a>
-  <a href="newjoin.html">JOIN</a>
-  <a href="menu.html">MENU&nbsp;&nbsp;</a>
-  
-  <div id="logo">
-    <a href="main.html"><img  src="logo.png"></a>
-  </div>
-  
-  </div>
-  <div id="content">
-  <br/>
-  <div id="joinform">
-  <h1>회원가입</h1>
-<hr />
+	<div id="container" align="right">
 
-<form method="post" action="formtest.php">
-  <input type="hidden" name="subject" value="회원가입양식">
-<table width="600" border="1" cellspacing="0">
-    <tr>
-      <td>아이디</td>
-<td> 
-     <input type="text" name="id" size="20" maxlength="8">
-     <!--  <a href="#none" ><img src="btn_overlap_id.gif" alt="아이디 중복확인"/></a>  -->(영문소문자/숫자, 4~16자)
-</td>
-    </tr>
-<tr>
-      <td>비밀번호</td>
-<td> 
-     <input type="password" name="pw" size="20" maxlength="8">
-     (영문 대소문자/숫자 4자~16자)
-</td>
-    </tr>
-<tr>
-      <td height="35">비밀번호 확인</td>
-<td> 
-     <input type="password" name="pw_certain" size="20" maxlength="8">
-</td>
-    </tr>
-<tr>
-      <td>이름</td>
-<td> 
-     <input type="text" name="Name" size="20">
-</td>
-    </tr>
-<tr>
-      <td>성별</td>
-<td> 
-     <input type="radio" name="sex" value="male" checked>
-     남 &nbsp;&nbsp;&nbsp; 
-     <input type="radio" name="sex" value="female">여
-</td>
-    </tr>
-<tr>
-      <td>직업</td>
-<td>
-     <select name="select">
-          <option>학생</option>
-          <option>회사원</option>
-          <option>백수</option>
-     </select>
-</td>
-    </tr>
-<tr>
-      <td>관심지역</td>
-<td>
-     <input type="checkbox" name="hobby" value="us">미국      &nbsp;&nbsp;&nbsp; 
-     <input type="checkbox" name="hobby" value="eu">유럽
-      &nbsp;&nbsp;&nbsp; 
-     <input type="checkbox" name="hobby" value="asia">아시아&nbsp;&nbsp;&nbsp; 
-     <input type="checkbox" name="hobby" value="s-e-asia">동남아
-</td>
-    </tr>
-<tr>
-      <td>자기소개</td>
-<td>
-     <textarea name="comment" cols="50" rows="5"></textarea>
-</td>
-    </tr>
-<tr align="center">
-      <td colspan="2">
-     <input type=button name="Submit" value="회원가입" onclick="location.href='mainpage.html'";>
-     &nbsp;&nbsp;&nbsp;
-     <input type="reset" name="Submit2" value="취소">
-</td>
-    </tr>
-  </table>
-</form>
-  </div>
-</div>
+		<!--<div class="main" style="margin-right: 0px">
+
+		</div>!-->
+
+		<div id="header">
+			<a href="javascript:popupOpen();">LOGIN</a> <a href="newjoin.html">JOIN</a>
+			<a href="menu.html">MENU</a>
+      <span class="buttonset">
+        <button id="showRightPush">*</button>
+
+      </span>
+
+			<div id="logo">
+				<a href="main.html"><img src="logo.png"></a>
+			</div>
+
+		</div>
+		
+		<div id="content">
+			<br />
+			
+			<div id="joinform" align="center">
+				<h1>회원가입</h1>
+				<hr />
+
+				<form method="post" action="formtest.php">
+					<input type="hidden" name="subject" value="회원가입양식">
+					<table width="600" border="1" cellspacing="0">
+						<tr>
+							<td>아이디</td>
+							<td><input type="text" name="id" size="20" maxlength="8">
+								<!--  <a href="#none" ><img src="btn_overlap_id.gif" alt="아이디 중복확인"/></a>  -->(영문소문자/숫자,
+								4~16자)</td>
+						</tr>
+						<tr>
+							<td>비밀번호</td>
+							<td><input type="password" name="pw" size="20" maxlength="8">
+								(영문 대소문자/숫자 4자~16자)</td>
+						</tr>
+						<tr>
+							<td height="35">비밀번호 확인</td>
+							<td><input type="password" name="pw_certain" size="20"
+								maxlength="8"></td>
+						</tr>
+						<tr>
+							<td>이름</td>
+							<td><input type="text" name="Name" size="20"></td>
+						</tr>
+						<tr>
+							<td>성별</td>
+							<td><input type="radio" name="sex" value="male" checked>
+								남 &nbsp;&nbsp;&nbsp; <input type="radio" name="sex"
+								value="female">여</td>
+						</tr>
+						<tr>
+							<td>직업</td>
+							<td><select name="select">
+									<option>학생</option>
+									<option>회사원</option>
+									<option>백수</option>
+							</select></td>
+						</tr>
+						<tr>
+							<td>관심지역</td>
+							<td><input type="checkbox" name="hobby" value="us">미국
+								&nbsp;&nbsp;&nbsp; <input type="checkbox" name="hobby"
+								value="eu">유럽 &nbsp;&nbsp;&nbsp; <input type="checkbox"
+								name="hobby" value="asia">아시아&nbsp;&nbsp;&nbsp; <input
+								type="checkbox" name="hobby" value="s-e-asia">동남아</td>
+						</tr>
+						<tr>
+							<td>자기소개</td>
+							<td><textarea name="comment" cols="50" rows="5"></textarea>
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="2"><input type=button name="Submit"
+								value="회원가입" onclick="location.href='mainpage.html'";>
+								&nbsp;&nbsp;&nbsp; <input type="reset" name="Submit2" value="취소">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+	   <script src="SlidePushMenus/js/classie.js"></script>
+    <script>
+      var
+        menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+        showRightPush = document.getElementById( 'showRightPush' ),
+        body = document.body;
+
+      showRightPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toleft' );
+        classie.toggle( menuRight, 'cbp-spmenu-open' );
+        disableOther( 'showRightPush' );
+      };
+
+      function disableOther( button ) {
+        if( button !== 'showRightPush' ) {
+          classie.toggle( showRightPush, 'disabled' );
+        }
+      }
+    </script>
 </body>
 </html>
