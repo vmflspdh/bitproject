@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<style>
+ #container {
+
+}
+#header {
+    background-color: #109ebf;
+      color: black;
+      padding:0;
+      font-weight: bold;
+      height: 330px;
+      text-align: right;
+      margin: 0 auto; 
+      word-spacing: 10px;
+      /* vertical-align: middle; */
+} 
+a[href] {
+    color: white;
+    text-decoration: none;
+  }
+#content {
+  text-align: center;
+  height : 580px;
+    color : black;
+    background-color: white;
+} 
+div {
+  border: 0px solid black;
+}
+#logo{
+  text-align: center;
+}
+#map{
+  padding-top:50px;
+  height: 500px;
+}
+#map>img{
+  border: 0px solid black;
+
+}
+#select {
+  height: 30px;
+}
+span{
+  
+}
+
+</style>
+</head>
+<body>
+
+
+<div id="container">
+  <div id="header">
+  main.html
+  <a href="#" data-toggle="modal" data-target="#myModal1" >LOGIN</a>
+  <a href="#" data-toggle="modal" data-target="#myModal" >JOIN</a>
+  <a href="menu.html">MENU&nbsp;&nbsp;</a>
+  
+  <div id="logo">
+    <a href="main.html"><img  src="logo.png"></a>
+  </div>
+  
+  </div>
+  <div id="content">
+  <br/>
+  <select id="select" >
+      <option>국가/도시를 검색하세요</option>
+      <option>서울</option>
+      <option>런던</option>
+      <option>부산</option>                     
+  </select>
+  <input type="date" value="dd"> 
+  <input type="date" value="dd"> sadsa
+  
+  <div id="map">
+  
+  <img  src="map.png">content
+  </div>
+    
+  </div>
+</div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+        </div>
+        <div class="modal-body">
+            <div class="wrapper">
+    <form class="form-signin">       
+      <input type="text" class="form-control" name="username" placeholder="이메일" required="" autofocus="" /><br/>
+      <input type="text" class="form-control" name="name" placeholder="이름" required=""/> <br/>
+      <input type="password" class="form-control" name="password" placeholder="비밀번호" required=""/><br/>
+      <input type="password" class="form-control" name="checkpassword" placeholder="비밀번호 확인" required=""/>     
+      <label class="checkbox">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 약관동의
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">회원 가입</button>   
+    </form>
+  </div>
+        </div>
+        <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h2 class="modal-title" id="myModalLabel">로그인</h2>
+        </div>
+        <div class="modal-body">
+         <div class="wrapper">
+    <form class="form-signin">       
+      <input type="text" class="form-control" name="username" placeholder="이메일" required="" autofocus="" /></br>
+      <input type="password" class="form-control" name="password" placeholder="비밀번호" required=""/>      
+      <label class="checkbox">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 이메일저장
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>   
+    </form>
+  </div>
+        </div>
+        <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script>
+</body>
+</html>
