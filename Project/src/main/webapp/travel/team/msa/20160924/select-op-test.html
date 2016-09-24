@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+     
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // 옵션추가 버튼 클릭시
+            $("#addrootBtn").click(function(){
+                // root 의 최대번호 구하기
+                var lastrootNo = $("#root-select tr:last").attr("class").replace("root", "");
+                var newroot = $("#root-select tr:eq(1)").clone();
+                newroot.removeClass();
+                newroot.find("td:eq(0)").attr("rowspan", "1");
+                newroot.addClass("root"+(parseInt(lastrootNo)+1));
+ 
+                $("#root-select").append(newroot);
+            });
+ 
+ 
+            // 항목추가 버튼 클릭시
+            $(".addBtn").live("click", function(){
+                var clickedRow = $(this).parent().parent();
+                var cls = clickedRow.attr("class");
+ 
+                // tr 복사해서 마지막에 추가
+                var newrow = clickedRow.clone();
+                newrow.find("td:eq(0)").remove();
+                newrow.insertAfter($("#root-select ."+cls+":last"));
+ 
+                // rowspan 조정
+                resizeRowspan(cls);
+            });
+             
+             
+            // 삭제버튼 클릭시
+            $(".delBtn").live("click", function(){
+                var clickedRow = $(this).parent().parent();
+                var cls = clickedRow.attr("class");
+                 
+                // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
+                if( clickedRow.find("td:eq(0)").attr("rowspan") ){
+                    if( clickedRow.next().hasClass(cls) ){
+                        clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
+                    }
+                }
+ 
+                clickedRow.remove();
+ 
+                // rowspan 조정
+                resizeRowspan(cls);
+            });
+ 
+            // cls : rowspan 을 조정할 class ex) root1, root2, ...
+            function resizeRowspan(cls){
+                var rowspan = $("."+cls).length;
+                $("."+cls+":first td:eq(0)").attr("rowspan", rowspan);
+            }
+        });
+    </script>
+</head>
+<body>
+
+<table id="root-select" border="1px">
+        <tr class="root1">
+            <td> 
+             <select class="city" name="city">
+            <option selected value="">국가/도시를 선택하세요</option>
+            <option>오사카, 일본</option>
+            <option>런던, 영국</option>
+            <option>서울, 대한민국</option>
+            <option>제주도, 대한민국</option>
+            <option>후쿠오카, 일본</option>
+            <option>타이베이, 대만</option>
+        </select> 
+        </td>
+        
+        
+        <td>
+        <input type="date" name="startDate">
+        <input type="date"name="endDdate">
+        </td>
+        
+            <td>
+            <button id="addrootBtn">+</button>
+           <button class="delBtn">-</button>
+           </td>
+           
+           
+        </tr>
+        
+        
+        <tr class="root2">
+            <td> 
+             <select class="city" name="city">
+            <option selected value="">국가/도시를 선택하세요</option>
+            <option>오사카, 일본</option>
+            <option>런던, 영국</option>
+            <option>서울, 대한민국</option>
+            <option>제주도, 대한민국</option>
+            <option>후쿠오카, 일본</option>
+            <option>타이베이, 대만</option>
+        </select> 
+        </td>
+        
+        
+        <td>
+        <input type="date" name="startDate">
+        <input type="date"name="endDdate">
+        </td>
+        
+            <td>
+            <button id="addrootBtn">+</button>
+           <button class="delBtn">-</button>
+           </td>
+           
+           
+        </tr>
+   
+</table>
+</body>
+</html>
