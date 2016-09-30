@@ -1,12 +1,14 @@
-package servlet;
-/*여러개의 필터 꼭기
- *  요청한 URL과에 대해 실행할 필터가 여러개 있을 경우,
- *  각 필터는 모두 실행된다.
- *  필터의 적용 순서에 영향을 받는 프로그램으로 개발하지 말라!
- *  유지보수에 좋지 않ㄷ나.
+/* 주제: POST 요청으로 데이터를 보낼 때 한글 깨짐 문제
+ * => GET 요청인 경우 톰캣 서버의 설정으로 클라이언트가 보내는 데이터의 문자표를 지정했다.
+ * => POST 요청으로 데이터를 보내는 경우, 톰캣 서버의 설정으로 처리할 수 없다.
+ *    데이터를 꺼내기 전에 어떤 문자표를 사용할 것인지 지정해야 한다.
+ *    request.setcharactorEncoding
+ * 
  */
+
+package servlet;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
@@ -15,41 +17,16 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/servlet18")
-public class Servlet18 extends GenericServlet {
+public class Servlet18 extends GenericServlet{
 
   @Override
   public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
-   System.out.println("Servlet18.service()....");
+    long startMllis = System.currentTimeMillis();
+    System.out.println("Servlet18.service()...");
+    long endMllis = System.currentTimeMillis();
     
-    
+    System.out.println(endMllis - startMllis);
     
   }
+
 }
-
-/* HTTP 요청(Web Browser--> Web Server)
- * 
- * 
- * 
- * 
- * 
- * 
- * HTTP 응답
- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

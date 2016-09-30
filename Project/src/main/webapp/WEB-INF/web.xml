@@ -1,90 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-  version="3.1"
-  metadata-complete="false">
+	version="3.1"
+	metadata-complete="false">
+	
+	<!-- 리스너 등록 -->
+	<listener>
+	<listener-class> listener.Listener01</listener-class>
+	</listener>
 
-    <listener>
-    	<listener-class>listener.Listener01</listener-class>
-    </listener>
+	<!-- 서블릿 클래스 정보 등록 -->
+	<servlet>
+		<servlet-name>servlet01</servlet-name>
+		<servlet-class>servlet.Servlet01</servlet-class>
+		</servlet>
+		
+
+	
+	 <servlet>
+    <servlet-name>servlet02</servlet-name>
+    <servlet-class>servlet.Servlet02</servlet-class>
+    </servlet>
+ 
     
-<!-- 서블릿 클래스 정보 등록 -->
-<servlet>
-	<servlet-name>servlet01</servlet-name>
-	<servlet-class>servlet.Servlet01</servlet-class>
-</servlet>
+    <servlet>
+    <servlet-name>servlet03</servlet-name>
+    <servlet-class>servlet.Servlet03</servlet-class>
+       
+		<!-- 서블릿이 사용할 데이터를 여기에 기술할 수 있다. -->
+		<init-param>
+			<param-name>driver</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+		</init-param>
 
-<servlet>
-	<servlet-name>servlet02</servlet-name>
-	<servlet-class>servlet.Servlet02</servlet-class>
-	
-	<!-- 서블릿 사용할 데이터를 여기에 기술할 수있다. -->
-	<init-param>
-		<param-name>driver</param-name>
-		<param-value>com.mysql.jdbc.Driver</param-value>
-	</init-param>
-	
-	<init-param>
-		<param-name>jdbcUrl</param-name>
-		<param-value>jdbc:mysql://localhost:3306/java85db</param-value>
-	</init-param>
-	
-	<init-param>
-		<param-name>username</param-name>
-		<param-value>java85</param-value>
-	</init-param>
-	
-	<init-param>
-		<param-name>password</param-name>
-		<param-value>1111</param-value>
-	</init-param>
-</servlet>
 
-<servlet>
-	<servlet-name>servlet03</servlet-name>
-	<servlet-class>servlet.Servlet03</servlet-class>
-	
-	<!-- 서블릿 사용할 데이터를 여기에 기술할 수있다. -->
-	<init-param>
-		<param-name>driver</param-name>
-		<param-value>com.mysql.jdbc.Driver</param-value>
-	</init-param>
-	
-	<init-param>
-		<param-name>jdbcUrl</param-name>
-		<param-value>jdbc:mysql://localhost:3306/java85db</param-value>
-	</init-param>
-	
-	<init-param>
-		<param-name>username</param-name>
-		<param-value>java85</param-value>
-	</init-param>
-	
-	<init-param>
-		<param-name>password</param-name>
-		<param-value>1111</param-value>
-	</init-param>
-	<!-- 다음 태그를 추가하면, Servlet03 객체는 서블릿 컨테이너가 실행될때 생성된다. -->
-	<load-on-startup>1</load-on-startup>
-</servlet>
+		<init-param>
+			<param-name>jdbcUrl</param-name>
+			<param-value>jdbc:mysql://localhost:3306/java85db</param-value>
+		</init-param>
 
-<!-- 서블릿에 URL을 부여 -->
-<servlet-mapping>
-	<servlet-name>servlet01</servlet-name>
-	<url-pattern>/servlet01</url-pattern>
-</servlet-mapping> 
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>java85</param-value>
+		</init-param>
+		
+		<init-param>
+      <param-name>password</param-name>
+      <param-value>1111</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+    
+		</servlet>
 
-<servlet-mapping>
-	<servlet-name>servlet02</servlet-name>
-	<url-pattern>/servlet02</url-pattern>
-</servlet-mapping>
-
-<servlet-mapping>
-	<servlet-name>servlet03</servlet-name>
-	<url-pattern>/servlet03</url-pattern>
-</servlet-mapping>  
-
+	
+		<!-- 서블릿에 URL을 부여 -->
+	
+	 <servlet-mapping>
+    <servlet-name>servlet01</servlet-name>
+    <url-pattern>/servlet01</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>servlet02</servlet-name>
+    <url-pattern>/servlet02</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>servlet03</servlet-name>
+    <url-pattern>/servlet03</url-pattern>
+  </servlet-mapping>
 </web-app>
+
+<!-- http://localhost:포트번호(8080)/web01/test/hi -->

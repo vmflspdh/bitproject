@@ -1,34 +1,45 @@
 package servlet;
 
+import java.io.IOException;
+
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
-//서블릿 클래스를 쉽게 마들수 잇도록 Servlet 인터페이스의 다섯 개 메서드 중에서 
-//init(), dstory(), getServletInfo(), getServletConfig(), service()
-public abstract class AbstarctServlet implements Servlet{
+public class AbstractServlet implements Servlet {
   
   ServletConfig config;
   
   @Override
-  public void destroy() {
-  }
-  
-  @Override
   public void init(ServletConfig config) throws ServletException {
-    // TODO Auto-generated method stub
     this.config = config;
+
   }
-  
+
+
+  @Override
+  public void destroy() {
+
+  }
+
   @Override
   public ServletConfig getServletConfig() {
-    // TODO Auto-generated method stub
-    return config;
+    return this.config;
   }
 
   @Override
   public String getServletInfo() {
-    // TODO Auto-generated method stub
+
     return this.getClass().getName();
   }
+
+
+  @Override
+  public void service(ServletRequest arg0, ServletResponse arg1) throws ServletException, IOException {
+    // TODO Auto-generated method stub
+    
+  }
+
 }

@@ -1,106 +1,62 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>Insert title here</title>
-
-<script type="text/javascript">
-	function popupOpen(){
-	  var popUrl = "login.html"; //íŒì—…ì°½ì— ì¶œë ¥ë  í˜ì´ì§€ URL
-	  var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //íŒì—…ì°½ ì˜µì…˜(optoin)
-	    window.open(popUrl,"",popOption);
-	  }
-</script>
-
 <style>
- #container {
-
-}
-#header {
-		background-color: #109ebf;
-    	color: black;
-    	padding:0;
-    	font-weight: bold;
-    	height: 330px;
-    	text-align: right;
-    	margin: 0 auto; 
-    	/* vertical-align: middle; */
-} 
-#content {
-	text-align: center;
-	height : 580px;
-    color : black;
-    background-color: #CEF279;
-} 
-div {
-	border: 1px solid black;
-}
-#logo{
-	text-align: center;
-}
 #map{
-	padding-top:50px;
-	height: 500px;
+ width:500px;
+ height:500px;
+ border:1px solid black;
 }
-#select {
-	height: 30px;
-}
-#menu {
-	clear : both;
-	display: inline-block;
-	float: right;
-	height: 600px;
-	width: 400px;
-	background-color: red;
-	text-align: center;
-	z-index: 5;
-}
-ul>li{
-	list-style-image:url("");
-	border-bottom: 1px solid black;
-	
-}
-ul {
-	
-	text-align: center;
-}
-
-li{
-	height: 50px;
-	margin: 0px auto;
-	width: 700px;
-	text-align: left;
-}
-
-
 </style>
+<script src="http://code.jquery.com/jquery-1.7.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script>
+ $(document).ready(function(){
+  var center = new google.maps.LatLng(37.549286, 127.075156);
+  var park = new google.maps.LatLng(37.548527, 127.080783);
+  var mapArea = document.querySelector('#map'); //google mapÀº jQuery»ç¿ë¾ÈµÊ.
+  var map = new google.maps.Map(mapArea, {
+   mapTypeId:google.maps.MapTypeId.ROADMAP,
+   zoom:17,
+   center:center
+  }); //(¾îµğ¿¡ Áöµµ¸¦ »Ñ¸± °ÍÀÎÁö, ¿É¼Ç)
+  
+  var marker = new google.maps.Marker({
+      position: center,
+      title:"Hello World!"
+  });
+  var marker3 = new google.maps.Marker({
+      position: park,
+      title:"Childrens Grand Park"
+  });
+  
+  var goldStar = {
+      path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+      fillColor: "yellow",
+      fillOpacity: 0.8,
+      scale: 1,
+      strokeColor: "gold",
+      strokeWeight: 14
+    };
+  
+  var marker2 = new google.maps.Marker({
+     position: new google.maps.LatLng(37.548527, 127.080783),
+     icon: goldStar,
+     map: map
+   });
+  
+  marker3.setMap(map);
+  marker2.setMap(map);
+  // To add the marker to the map, call setMap();
+  marker.setMap(map);
+  
+ });
+</script>
 </head>
 <body>
-<div id="container">
-	<div id="header">
-	join.html
-	<a href ="javascript:popupOpen();" ><input type="button" id = "login" value="login"></a>
-	<input type="button" id = "Join" value="Join">
-	<a href="menu.html">menu</a><br/>
-	
-	
-	<div id="logo">
-		<a href="main.html"><img  src="logo.png">eeee</a>
-	</div>
-	
-	</div>
-	<div id="content">
-	<br/>
-	<div id="join">
-	<ul>
-		<li>í”„ë¡œí•„<br/>ì‚¬ì§„  </li>
-		<li>ë‚˜ì˜ ì—¬í–‰<br/>ìŠ¤íƒ€ì¼</li>
-		<li>ê°€ê³ ì‹¶ì€<br/>ì—¬í–‰ì§€</li>
-		<li>ìê¸°ì†Œê°œ</li>
-		
-	</ul>
-	</div>
-	</div>
-</div>
+<div id="map"></div>
 </body>
 </html>
