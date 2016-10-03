@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function popupOpen(){
+	  var popUrl = "login.html"; //팝업창에 출력될 페이지 URL
+	  var popOption = "width=470, height=170, resizable=no, scrollbars=no, left=525,top=350,status=no;";    //팝업창 옵션(optoin)
+	    window.open(popUrl,"",popOption);
+	  }
+</script>
+
+<style>
+ #container {
+
+}
+#header {
+		background-color: #109ebf;
+    	color: black;
+    	padding:0;
+    	font-weight: bold;
+    	height: 330px;
+    	text-align: right;
+    	margin: 0 auto; 
+    	word-spacing: 10px;
+    	/* vertical-align: middle; */
+} 
+a[href] {
+    color: white;
+    text-decoration: none;
+  }
+#content {
+	text-align: center;
+	height : 580px;
+    color : black;
+    background-color: white;
+} 
+div {
+	border: 1px solid black;
+}
+#logo{
+	text-align: center;
+}
+#map{
+	padding-top:50px;
+	height: 500px;
+}
+#map>img{
+	border: 1px solid black;
+
+}
+#select {
+	height: 30px;
+}
+span{
+	
+}
+
+</style>
+</head>
+<body>
+
+
+<div id="container">
+	<div id="header">
+	main.html
+	<a href ="javascript:popupOpen();" >LOGIN</a>
+  <a href="newjoin.html">JOIN</a>
+  <a href="menu.html">MENU&nbsp;&nbsp;</a>
+	
+	<div id="logo">
+		<a href="main.html"><img  src="logo.png"></a>
+	</div>
+	
+	</div>
+	<div id="content">
+	<br/>
+	<select id="select" >
+    	<option>국가/도시를 검색하세요</option>
+    	<option>서울</option>
+   		<option>런던</option>
+    	<option>부산</option>                     
+	</select>
+	<input type="date" value="dd"> 
+	<input type="date" value="dd"> sadsa
+	
+	<div id="map">
+	
+	<img  src="map.png">content
+	</div>
+		
+	</div>
+</div>
+</body>
+</html>
