@@ -44,7 +44,7 @@ public class RegistFormController {
 		return new Gson().toJson(result);
 	}
 	
-	@RequestMapping(path="detail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(path="formDetail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
 	public String detail(int no) throws Exception {
     HashMap<String,Object> result = new HashMap<>();
