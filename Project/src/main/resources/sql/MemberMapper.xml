@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test.dao.MemberDao">
+
+	<resultMap type="member" id="memberMap">
+
+		<id column="mno" property="no" />
+
+		<result column="mnm" property="name" />
+		<result column="email" property="email" />
+		<result column="pwd" property="password" />
+		<result column="bir_dt" property="birthday" />
+		<result column="gend" property="gender" />
+		<result column="reg_dt" property="registedDate" />
+		<result column="mpho" property="memberPhoto" />
+
+	</resultMap>
+
+	<insert id="insert"  parameterType="member">
+		insert into tvl_membs(mnm,
+		email, pwd, bir_dt, gend, reg_dt, mpho)
+		values (#{mnm}, #{email},
+		password(#{password}),
+		#{bir_dt}, #{gend}, now(), #{mpho})
+	</insert>
+
+	<select id="selectList" resultMap="memberMap" parameterType="map">
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from tvl_membs
+
+		order by mno desc
+
+		limit #{startIndex}, #{length}
+	</select>
+
+
+	<select id="selectOne" resultMap="memberMap" parameterType="int">
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from tvl_membs
+		where
+		mno = #{value}
+	</select>
+
+	<select id="selectOneByPassword" resultMap="memberMap" parameterType="map">
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from
+		tvl_membs
+		where mno=#{no} and pwd=password(#{password})
+	</select>
+	
+	  <select id="selectOneByEmailAndPassword" resultMap="memberMap" parameterType="map">
+    select mno, mnm, email,
+    bir_dt, gend, reg_dt, mpho
+    from
+    tvl_membs
+    where EMAIL=#{email} and PWD=password(#{password})
+  </select>
+
+
+
+	<update id="update" parameterType="member">
+		update tvl_membs set
+		email=#{email},
+		bir_dt=#{birthday},
+		gend=#{gender}
+
+		where mno=#{no}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete from tvl_membs
+		where
+		mno=#{value}
+	</delete>
+
+</mapper>
