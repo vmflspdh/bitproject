@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
-import travel.dao.RegistFormDao;
-import travel.vo.RegistForm;
+import test.dao.RegistFormDao;
+import test.vo.RegistForm;
 
 @Controller
 @RequestMapping("/travel/")
