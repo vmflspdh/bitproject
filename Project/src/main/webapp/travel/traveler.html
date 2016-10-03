@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's go together!</title>
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+<meta name="keywords"
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="js/modernizr.custom.js"></script>
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+	$(function() {
+		var availableTags = [ "대한민국, 서울", "대한민국, 부산", "영국, 런던", "미국, 뉴욕",
+				"프랑스, 파리" ];
+		$("#tags").autocomplete({
+			source : availableTags
+		});
+	});
+</script>
+
+
+
+<style>
+#content {
+	text-align: center;
+	color: black;
+	background-color: white;
+}
+
+#bar {
+	width: 680px;
+	padding-bottom: 80px;
+	margin: 0 auto;
+}
+
+#map {
+	height: 400px;
+	margin: 0 auto;
+}
+</style>
+
+
+</head>
+<body>
+	<div class="container">
+		<div class="upper">
+			<div class='zeta-menu-bar'>
+				<ul class="zeta-menu">
+					<li><a href="#2"><img src='iconmonstr-user-20-240.png' width="45" height="45"></a>
+						<ul>
+							<li>
+							<a href="#2A"><img src='iconmonstr-email-2-240.png' width="25" height="25"></a>
+							<a href="#2A"><img src='iconmonstr-note-19-240.png'width="25" height="25"></a>
+							</li>
+							<li><a href="#2B">2-B 메뉴</a>
+								<ul>
+									<li><a href="#2B1">2-B-1 메뉴</a></li>
+									<li><a href="#2B2">2-B-2 메뉴</a></li>
+								</ul></li>
+							<li><a href="#2C">2-C 메뉴</a></li>
+							<li><a href="#2D">2-D 메뉴</a>
+								<ul>
+									<li><a href="#2D1">2-D-1 메뉴</a></li>
+									<li><a href="#2D2">2-D-2 메뉴</a></li>
+									<li><a href="#2D3">2-D-3 메뉴</a></li>
+								</ul></li>
+						</ul></li>
+				</ul>
+			</div>
+			<span id="userName" class="my-login"> 님 동행을 찾아보세요!</span>
+			<span>
+			 <a id='logoutBtn' href='#' class="btn btn-info btn-sm my-login">로그아웃</a>
+			</span>
+		</div>
+		<div class="cbp-af-header">
+			<div class="cbp-af-inner">
+				<h1>together!</h1>
+				<nav>
+					<a href="#">Traveler</a> <a href="#">Story</a> <a href="#">Pears</a>
+					<a href="#">Oranges</a>
+				</nav>
+			</div>
+		</div>
+		<div id="content">
+			<div id="bar">
+				<form class="navbar-form navbar-left" role="search">
+					<div class="form-group">
+						<label for="tags"></label> <input id="tags" type="text"
+							class="form-control" placeholder="국가/도시를 입력하세요."
+							style="width: 250px;"> <input style="height: 33px;"
+							type="date" value="dd"> <input style="height: 33px;"
+							type="date" value="dd">
+					</div>
+					<button type="submit" class="btn btn-default">SEARCH</button>
+				</form>
+			</div>
+			<div id="map"></div>
+		</div>
+		
+<table id="boardTable" class="table table-hover" style="width:800px; margin:0 auto; border:0px solid black">
+<thead>
+<tr>
+  <th><h2>추천 리스트</h2></th>
+  <th></th>
+</tr>
+</thead>
+
+<tbody>
+
+</tbody>
+</table>
+</div>
+
+<p></p></br>
+<p></p></br>
+<p></p></br>
+<p></p></br>   
+
+	</div>
+	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+	<script src="js/map.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+  async defer></script>
+	<script src="js/menu.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	    <!-- 회원정보 관련 -->
+  <script type="text/javascript" src="js/bit.js"></script>
+  <script type="text/javascript" src="traveler.js"></script>
+  <script>
+  ajaxRegistFormList()
+ // ajaxLoginUser() // 로그인 유저 정보 가져오기
+  </script>
+</body>
+</html>
