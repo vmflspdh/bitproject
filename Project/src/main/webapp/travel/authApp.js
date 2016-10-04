@@ -72,7 +72,7 @@ function ajaxLoginUser() {
 
 function init() {
 	
-	$('.my-login').css("display", "none")
+	//$('.my-login').css("display", "none")
 	var cookieMap = bit.cookieToObject()
 
 	console.log(cookieMap)
