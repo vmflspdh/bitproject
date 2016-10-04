@@ -1,11 +1,3 @@
-$('#loginBtn').click(function(event) {
-	window.location.reload(true)
-})
-
-$("#logoutBtn").click(function(event) {
-	ajaxLogout()
-});
-
 
 
 function ajaxMemberList() {
@@ -37,23 +29,6 @@ function ajaxMemberList() {
 			window.location.href = "memb_reg_form.html?no=" + $(this).attr("data-no");
 		})
 	})
-}
-
-function ajaxLoginUser() {
-
-	$.getJSON("loginUser.json", function(result) {
-
-		if (result.state != "success") {
-			console.log(result.data)
-			$('.my-login').css("display", "none")
-			return
-		}
-
-		$('.my-logout').css("display", "none")
-
-		$("#userName").text(result.data.name)
-	})
-
 }
 
 

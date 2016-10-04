@@ -9,6 +9,7 @@ var member = {
 		gender: $("#gender").val()
 		
 }
+ajaxLogout()
 console.log(member)
 ajaxAddMember(member)
 });
