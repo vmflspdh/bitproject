@@ -58,6 +58,7 @@ function ajaxLoginUser() {
 		if (result.state != "success") {
 			console.log(result.data)
 			$('.my-login').css("display", "none")
+			$('.zeta-menu-bar').css("display", "none")
 			return
 		}
 

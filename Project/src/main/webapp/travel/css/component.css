@@ -1,13 +1,12 @@
 /* 메뉴 스타일 */
 
 .zeta-menu-bar {
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .zeta-menu li {
-  float: left;
+  float: right;
   list-style: none;
-  position: relative;
 }
 
 
@@ -19,6 +18,7 @@
 
 
 .zeta-menu li .expand {
+	position: right;
   background: white;
 }
 
@@ -32,7 +32,7 @@
   color: grey;
   display: block;
   padding: 10px 20px;
-  text-decoration: none;
+
 }
 
 .zeta-menu ul {
@@ -42,10 +42,11 @@
   display: none;
   padding: 0;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 100%;
   width: 120px;
 }
+
 
 .zeta-menu ul li {
 z-index: 500000;
@@ -70,7 +71,7 @@ z-index: 500000;
 .zeta-menu ul ul {
 z-index: 500000;
 margin: 0 auto;
-  left: 100%;
+  right: 100%;
   top: 0;
 }
 
