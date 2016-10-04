@@ -7,12 +7,12 @@
 <title>Let's go together!</title>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet"
-  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <meta name="description" content="Blueprint: On-Scroll Animated Header" />
 <meta name="keywords"
-  content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -21,15 +21,30 @@
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+  $(function() {
+    var availableTags = [
+      "대한민국, 서울",
+      "대한민국, 부산",
+      "영국, 런던",
+      "미국, 뉴욕",
+      "프랑스, 파리"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 
 
 <style>
@@ -43,7 +58,7 @@
 }
 
 #bar {
-  width: 700px;
+  width: 680px;
   padding-bottom: 80px;
   margin: 0 auto;
 }
@@ -55,75 +70,81 @@
   margin: 0 auto;
 }
 
-.main{
-  width: 800px;
-  text-align: center;
-
-}
-
 </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="cbp-af-header">
-      <div class="upper">
-        <span> 
-            <a href="#" style="padding-top: 10px;" data-toggle="modal" data-target="#myModal1" >Login</a>
+	<div class="container">
+		<div class="cbp-af-header">
+			<div class="upper">
+				<span> 
+						<a href="#" style="padding-top: 10px;" data-toggle="modal" data-target="#myModal1" >Login</a>
 
-            <a href="#" style="padding-top: 10px;" data-toggle="modal" data-target="#myModal" >Sign In</a>
-        </span>
-      </div>
-      <div class="cbp-af-inner">
-        <h1>together!</h1>
-        <nav>
-          <a href="#">Traveler</a> <a href="#">Story</a> <a href="#">Pears</a>
-          <a href="#">Oranges</a>
-        </nav>
-      </div>
-    </div>
-    <div id="content">
+						<a href="#" style="padding-top: 10px;" data-toggle="modal" data-target="#myModal" >Sign In</a>
+				</span>
+			</div>
+			<div class="cbp-af-inner">
+				<h1>together!</h1>
+				<nav>
+					<a href="#">Traveler</a> <a href="#">Story</a> <a href="#">Pears</a>
+					<a href="#">Oranges</a>
+				</nav>
+			</div>
+		</div>
+		<div id="content">
+      <div id="bar">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <label for="tags"></label> <input id="tags" type="text"
+              class="form-control" placeholder="국가/도시를 입력하세요."
+              style="width: 250px;"> <input style="height: 33px;"
+              type="date" value="dd"> <input style="height: 33px;"
+              type="date" value="dd">
+          </div>
 
-    </div>
-    
-    <div class="main">
-    
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+			</div>
+			<div id="map"></div>
+		</div>
+		
+		<div class="main">
+			<section>
+				<div>
+					<p>Dreamcatcher american apparel typewriter polaroid, Pinterest
+						hoodie tousled vegan pickled gastropub iPhone VHS sartorial. Fanny
+						pack vinyl fingerstache whatever, raw denim Carles literally next
+						level fashion axe photo booth pour-over Echo Park.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Raw denim selvage typewriter, thundercats viral craft beer
+						beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art
+						single-origin coffee. Semiotics art party tote bag, wayfarers banh
+						mi messenger bag Odd Future seitan photo booth. Twee vinyl
+						fingerstache, freegan narwhal semiotics irony sustainable vegan 3
+						wolf moon ethnic selfies fixie kale chips. Odd Future chillwave
+						twee Tonx kale chips, quinoa disrupt selfies art party
+						Williamsburg Vice. Asymmetrical narwhal Godard, artisan
+						single-origin coffee Bushwick hashtag semiotics literally disrupt
+						pork belly trust fund fashion axe typewriter +1. Master cleanse
+						raw denim trust fund bitters, gluten-free farm-to-table tousled
+						plaid biodiesel actually pork belly roof party polaroid.</p>
+				</div>
+			</section>
+		
+		</div>
+		</div>
+		
+	
+	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	
+	<!-- 회원가입 폼 -->
 
-        <h3>회원 목록 조회</h3>
-    <p>
-      <a><button type="button" class="btn btn-info btn-sm"
-          onclick="location.href='memb_reg_form.html'">신규</button> </a>
-    </p>
-
-    <table id="boardTable" class="table table-hover">
-      <thead>
-        <tr>
-          <td>번호</td>
-          <td>이름</td>
-          <td>이메일</td>
-          <td>생일</td>
-          <td>성별</td>
-          <td>등록일</td>
-          <td>사진</td>
-          
-        </tr>
-
-      </thead>
-      <tbody>
-
-
-      </tbody>
-
-    </table>
-      </div>
-    </div>
-    
-  
-
-  
-  <!-- 회원가입 폼 -->
-
-  <div class="modal fade" style="z-index :200000;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" style="z-index :200000;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" style=" z-index :300000;">
       <div class="modal-content">
         <div class="modal-header">
@@ -140,7 +161,7 @@
       <label class="checkbox">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 약관동의
       </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">회원 가입</button>   
+      <button id="signInBtn" class="btn btn-lg btn-primary btn-block" type="submit">회원 가입</button>   
     </form>
   </div>
         </div>
@@ -151,6 +172,7 @@
     </div>
   </div>
 
+<!-- 로그인 폼 -->
 
     <div class="modal fade" style="z-index :200000;" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm" style="z-index :300000;" >
@@ -161,7 +183,7 @@
         </div>
         <div class="modal-body">
          <div class="wrapper">
-    <form class="form-signin">       
+  <form class="form-signin">       
       <input type="text" class="form-control" id="email" placeholder="이메일" required="" autofocus="" /></br>
       <input type="password" id="password" class="form-control"  placeholder="비밀번호" required=""/>      
       <label class="checkbox">
@@ -177,21 +199,23 @@
       </div>
     </div>
   </div>
-  
-  
-    <!-- 애니메이션 메뉴 관련 -->
+
+
+<!-- 스크립트 라이브러리 -->
+  <script src="js/map.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+  async defer></script>
+  <script src="js/menu.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/cbpAnimatedHeader.min.js"></script>
-    <!-- 회원정보 관련 -->
+      <!-- 회원정보 관련 -->
   <script type="text/javascript" src="js/bit.js"></script>
   <script type="text/javascript" src="memberApp.js"></script>
+  <script type="text/javascript" src="authApp.js"></script>
   <script>
-  ajaxLoginUser() // 로그인 유저 정보 가져오기
-  ajaxMemberList() // 게시물 목록 가져오기
+  //init() // 화면을 준비시킨다
+//ajaxLogout() // 로그아웃을 무조건 실행
   </script>
-  <!-- 로그인정보 관련 -->
-  <script type="text/javascript" src="js/bit.js"></script>
-<script type="text/javascript" src="authApp.js"></script>
-
+  
 </body>
 </html>

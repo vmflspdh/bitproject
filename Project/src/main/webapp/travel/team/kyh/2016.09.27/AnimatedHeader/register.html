@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's go together!</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+<meta name="keywords"
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+<meta name="author" content="Codrops" />
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="js/modernizr.custom.js"></script>
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+function initMap() {
+    var uluru = {lat: 37.49, lng: 127.02};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: uluru
+    });
+
+    var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">비트컴퓨터</h1>'+
+        '<div id="bodyContent">'+
+        '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
+        'sandstone rock formation in the southern part of the '+
+        'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
+        'south west of the nearest large town, Alice Springs; 450&#160;km '+
+        '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
+        'features of the Uluru - Kata Tjuta National Park. Uluru is '+
+        'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
+        'Aboriginal people of the area. It has many springs, waterholes, '+
+        'rock caves and ancient paintings. Uluru is listed as a World '+
+        'Heritage Site.</p>'+
+        '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+        'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+        '(last visited June 22, 2009).</p>'+
+        '</div>'+
+        '</div>';
+
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+    </script>
+<script>
+  $(function() {
+    var availableTags = [
+      "대한민국, 서울",
+      "영국, 런던",
+      "미국, 뉴욕",
+      "프랑스, 파리"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+	async defer></script>
+
+<style>
+
+
+
+#content {
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+#bar {
+  width: 700px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+}
+
+#map {
+  height: 400px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="cbp-af-header">
+			<div class="upper">
+				<span> 
+						<a href="#" style="padding-top: 10px;" data-toggle="modal" data-target="#myModal1" >Login</a>
+						
+						
+						
+						
+						<a href="#" style="padding-top: 10px;" data-toggle="modal" data-target="#myModal" >Sign In</a>
+				</span>
+			</div>
+			<div class="cbp-af-inner">
+				<h1>together!</h1>
+				<nav>
+					<a href="#">Traveler</a> <a href="#">Story</a> <a href="#">Pears</a>
+					<a href="#">Oranges</a>
+				</nav>
+			</div>
+		</div>
+		<div id="content">
+		<div id ="bar">
+			<form class="navbar-form navbar-left" role="search">
+				<div class="form-group">
+					<label for="tags"></label> <input id="tags" type="text"
+						class="form-control" placeholder="국가/도시를 입력하세요."style= "width: 250px;"><input
+						type="date" value="dd" style="height: 33px;"> <input 
+						type="date" value="dd" style="height: 33px;">
+				</div>
+
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+			</div>
+			<div id="map"></div>
+		</div>
+		
+		<div class="main">
+			<section>
+				<div>
+					<p>Dreamcatcher american apparel typewriter polaroid, Pinterest
+						hoodie tousled vegan pickled gastropub iPhone VHS sartorial. Fanny
+						pack vinyl fingerstache whatever, raw denim Carles literally next
+						level fashion axe photo booth pour-over Echo Park.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Raw denim selvage typewriter, thundercats viral craft beer
+						beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art
+						single-origin coffee. Semiotics art party tote bag, wayfarers banh
+						mi messenger bag Odd Future seitan photo booth. Twee vinyl
+						fingerstache, freegan narwhal semiotics irony sustainable vegan 3
+						wolf moon ethnic selfies fixie kale chips. Odd Future chillwave
+						twee Tonx kale chips, quinoa disrupt selfies art party
+						Williamsburg Vice. Asymmetrical narwhal Godard, artisan
+						single-origin coffee Bushwick hashtag semiotics literally disrupt
+						pork belly trust fund fashion axe typewriter +1. Master cleanse
+						raw denim trust fund bitters, gluten-free farm-to-table tousled
+						plaid biodiesel actually pork belly roof party polaroid.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Cardigan gluten-free photo booth pug, occupy ethnic bicycle
+						rights disrupt ennui jean shorts art party raw denim Carles Tonx
+						artisan. Freegan aesthetic skateboard, forage iPhone ugh umami
+						tumblr McSweeney's chillwave biodiesel vinyl pitchfork gentrify
+						asymmetrical. Sartorial synth wayfarers, freegan pork belly
+						post-ironic ennui salvia direct trade shoreditch Wes Anderson
+						pitchfork. Mumblecore Truffaut american apparel, Austin
+						single-origin coffee post-ironic tofu retro Vice fanny pack
+						narwhal Neutra skateboard 90's. Kogi sartorial post-ironic
+						gentrify helvetica McSweeney's Schlitz, mustache 8-bit polaroid
+						hella flexitarian viral kale chips tote bag. Banh mi PBR
+						typewriter Banksy. Beard messenger bag deep v, keffiyeh lo-fi
+						umami four loko vinyl lomo hoodie wolf banh mi.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Artisan thundercats blog, VHS asymmetrical Schlitz whatever
+						High Life chambray semiotics synth. Mustache flannel McSweeney's
+						Carles gastropub put a bird on it. Occupy Pinterest try-hard PBR
+						Schlitz, biodiesel disrupt forage. +1 pop-up Tonx, Echo Park
+						thundercats authentic try-hard. Mlkshk pork belly artisan
+						messenger bag raw denim cardigan Austin Portland, bicycle rights
+						tumblr blog you probably haven't heard of them. Single-origin
+						coffee seitan blog Williamsburg mlkshk, leggings cred meggings
+						selvage synth next level McSweeney's pug 90's. Intelligentsia
+						skateboard wolf, pour-over cred gastropub bespoke kogi DIY synth
+						8-bit hella dreamcatcher blog.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Farm-to-table four loko narwhal tattooed salvia Etsy. Odd
+						Future craft beer pop-up, sustainable synth wayfarers helvetica
+						lomo forage freegan Banksy. Typewriter Williamsburg direct trade,
+						forage banh mi asymmetrical thundercats street art you probably
+						haven't heard of them actually freegan cred chillwave mustache.
+						Actually Pinterest gluten-free, roof party gastropub you probably
+						haven't heard of them blog. Pinterest Odd Future post-ironic, Echo
+						Park selfies narwhal bespoke dreamcatcher american apparel iPhone
+						raw denim. Selvage hella mixtape, Neutra Etsy before they sold out
+						YOLO art party leggings Wes Anderson bespoke. Austin letterpress
+						plaid kale chips biodiesel Pinterest gastropub banjo ugh.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Put a bird on it Schlitz tousled, pitchfork Odd Future tote
+						bag shabby chic vegan dreamcatcher Cosby sweater forage cliche.
+						IPhone locavore 8-bit photo booth wayfarers direct trade blue
+						bottle typewriter street art, trust fund pour-over cred biodiesel
+						tote bag. Banjo artisan lo-fi, photo booth disrupt pitchfork banh
+						mi hella wayfarers skateboard. Cardigan irony Williamsburg
+						pitchfork small batch put a bird on it Terry Richardson Schlitz.
+						Helvetica flannel banh mi hella, food truck Pinterest freegan tofu
+						post-ironic. Banksy Vice four loko stumptown pour-over 8-bit
+						biodiesel farm-to-table scenester, keytar ethical tofu seitan
+						craft beer trust fund. Skateboard ennui cliche YOLO, art party
+						Banksy 90's.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Single-origin coffee vegan stumptown, cardigan selvage plaid
+						locavore fashion axe Neutra Echo Park. 90's thundercats swag Odd
+						Future ethical. Gastropub Wes Anderson next level ugh, hella
+						Schlitz Austin mixtape PBR pop-up master cleanse bicycle rights
+						tattooed kale chips Bushwick. Dreamcatcher pork belly literally
+						banh mi, blog vinyl food truck tattooed cornhole +1 pop-up. DIY
+						hashtag fingerstache, thundercats master cleanse Portland squid
+						dreamcatcher keytar vinyl narwhal lomo cred Neutra. Wolf 3 wolf
+						moon plaid, craft beer YOLO Tonx literally mlkshk selvage tumblr
+						trust fund Godard seitan Carles chambray. Tofu leggings
+						intelligentsia tumblr, single-origin coffee squid typewriter pork
+						belly wayfarers hoodie Bushwick shabby chic meh.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>90's banh mi small batch helvetica authentic, vegan
+						wayfarers vinyl meh hashtag. Pickled Tonx keffiyeh flannel
+						gastropub, locavore salvia art party literally try-hard blog. High
+						Life seitan banh mi Neutra, leggings swag you probably haven't
+						heard of them pug bicycle rights pour-over retro fixie wayfarers
+						Echo Park. Tofu vinyl pork belly, seitan kale chips bitters
+						fingerstache put a bird on it butcher church-key occupy aesthetic
+						DIY yr. Banjo dreamcatcher tumblr, actually Carles typewriter roof
+						party. Pug thundercats DIY, 90's chambray gastropub actually
+						intelligentsia Williamsburg Carles disrupt shabby chic. Butcher
+						Schlitz fanny pack 8-bit, fingerstache occupy hoodie pug
+						intelligentsia Carles letterpress umami organic irony.</p>
+				</div>
+			</section>
+			<section>
+				<div>
+					<p>Food truck fap next level Odd Future sartorial craft beer
+						selvage 90's. Asymmetrical Schlitz hoodie street art jean shorts
+						squid. Locavore street art retro skateboard banjo, post-ironic
+						small batch keffiyeh yr +1. Selfies cardigan sriracha Terry
+						Richardson. Godard brunch kale chips, bespoke photo booth retro
+						Bushwick deep v farm-to-table polaroid Williamsburg. Kogi
+						biodiesel vinyl next level intelligentsia. Skateboard Carles
+						viral, Godard helvetica PBR butcher.</p>
+				</div>
+			</section>
+		</div>
+		</div>
+		
+	
+	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	
+	<!-- 회원가입 폼 -->
+	<div class="login-signin">
+	<div class="modal fade" style="z-index :200000;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style=" z-index :300000;">
+      <div class="modal-content">
+        <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+        </div>
+        <div class="modal-body">
+            <div class="wrapper">
+    <form class="form-signin">       
+      <input type="text" class="form-control" name="username" placeholder="이메일" required="" autofocus="" /><br/>
+      <input type="text" class="form-control" name="name" placeholder="이름" required=""/> <br/>
+      <input type="password" class="form-control" name="password" placeholder="비밀번호" required=""/><br/>
+      <input type="password" class="form-control" name="checkpassword" placeholder="비밀번호 확인" required=""/>     
+      <label class="checkbox">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 약관동의
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">회원 가입</button>   
+    </form>
+  </div>
+        </div>
+        <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="modal fade" style="z-index :200000;" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="z-index :300000;" >
+      <div class="modal-content">
+        <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+    <h2 class="modal-title" id="myModalLabel">로그인</h2>
+        </div>
+        <div class="modal-body">
+         <div class="wrapper">
+    <form class="form-signin">       
+      <input type="text" class="form-control" name="username" placeholder="이메일" required="" autofocus="" /></br>
+      <input type="password" class="form-control" name="password" placeholder="비밀번호" required=""/>      
+      <label class="checkbox">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> 이메일저장
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>   
+    </form>
+  </div>
+        </div>
+        <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+</body>
+</html>

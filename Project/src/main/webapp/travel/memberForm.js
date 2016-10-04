@@ -1,6 +1,6 @@
 
 $("#signInBtn").click(function(event) {
-
+	
 var member = {
 		name: $("#name").val(),
 		email: $("#email").val(),
@@ -12,20 +12,6 @@ var member = {
 console.log(member)
 ajaxAddMember(member)
 });
-
-
-function ajaxAddMember(member) {
-	console.log(member)
-	$.post("add.json", member, function(result) {
-		if (result.state != "success") {
-	    	  console.log(result.data)
-	    	  alert("등록 실패입니다.")
-	    	  return
-	      }
-		window.location.reload(true)
-	}, "json")
-  }
-  
 
 $("#updateBtn").click(function(event) {
 
@@ -48,7 +34,18 @@ $("#deleteBtn").click(function(event) {
 		$("#password").val())
 	  });
 
-
+function ajaxAddMember(member) {
+	
+	$.post("add.json", member, function(result) {
+		if (result.state != "success") {
+	    	  console.log(result.data)
+	    	  alert("등록 실패입니다.")
+	    	  return
+	      }
+		/*window.location.reload(true)*/
+	}, "json")
+  }
+  
 function ajaxLoadMember(no) {
 
 	$.getJSON("detail.json?no="+ no, function(result) {

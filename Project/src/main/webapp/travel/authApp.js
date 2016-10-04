@@ -7,11 +7,17 @@
 		    saveEmail: $("#saveEmail").is(":checked")
 
 		}
-		//sconsole.log(user)
+		console.log(user)
 		ajaxLogin(user)
 		
 		});
 	
+	$("#logoutBtn").click(function(event) {
+		ajaxLogout()
+	});
+
+
+
 	
 	function ajaxLogin(user) {
 
@@ -23,11 +29,11 @@
 			data: user,
 			success: function(result) {
 				if (result.state != "success") {
-//			        console.log(result.data)
+			        console.log(result.data)
 			        alert("로그인 실패입니다.\n이메일 또는 암호를 확인하세요")
 			        return
 			      }
-			      window.location.href = "travel.html"
+			      window.location.reload(true) /*href = "travel.html"*/
 			},
 			error: function(msg) {
 				alert(msg)
@@ -36,14 +42,32 @@
 		}
 	
 	 
-	   function ajaxLogout(user) {
+	   function ajaxLogout() {
 		   
 		   $.getJSON("logout.json", function(result) {
-					if (result.state != "success") 
+					if (result.state != "success")
 				        console.log("로그아웃 실패입니다.")
-					})
-	      }
+				    window.location.reload(true)
+		   })
+	   }
 	   
+	   function ajaxLoginUser() {
+
+			$.getJSON("loginUser.json", function(result) {
+
+				if (result.state != "success") {
+					console.log(result.data)
+					$('.my-login').css("display", "none")
+					return
+				}
+
+				$('.my-logout').css("display", "none")
+
+				$("#userName").text(result.data.name)
+			})
+
+		}
+
 
 
 	   function init() {
