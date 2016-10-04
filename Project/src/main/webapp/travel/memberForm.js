@@ -3,13 +3,12 @@ $("#signInBtn").click(function(event) {
 	
 var member = {
 		name: $("#name").val(),
-		email: $("#email").val(),
-		password: $("#password").val(),
+		email: $(".col-sm-10 > #email").val(),
+		password: $(".col-sm-10 > #password").val(),
 		birthday: $("#birthday").val(),
 		gender: $("#gender").val()
 		
 }
-ajaxLogout()
 console.log(member)
 ajaxAddMember(member)
 });
