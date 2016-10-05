@@ -32,7 +32,7 @@ $("#deleteBtn").click(function(event){
 
 function ajaxAddBoard(review){
 	
-	$.post("add.json",review,function(result){
+	$.post("rvadd.json",review,function(result){
 		console.log(review)
 		if(result.state !="success"){
 			alert("등록실패입니다.")
@@ -47,7 +47,7 @@ function ajaxAddBoard(review){
 
 function ajaxLoadBoard(no){
 	
-	$.getJSON("detail.json?no="+no,function(result){
+	$.getJSON("rvdetail.json?no="+no,function(result){
 		if(result.state !="success"){
 			alert("조회 실패입니다.")
 			return;
@@ -67,7 +67,7 @@ function ajaxLoadBoard(no){
 
 
 function ajaxUpdateBoard(review){
-	$.post("update.json",review,function(result){
+	$.post("rvupdate.json",review,function(result){
 		if(result.state !="success"){
 			alert("변경실패입니다.")
 			return;
@@ -80,7 +80,7 @@ function ajaxUpdateBoard(review){
 
 
 function ajaxDeleteBoard(no,password){
-	$.getJSON("delete.json",{no:no,password:password},function(result){
+	$.getJSON("rvdelete.json",{no:no,password:password},function(result){
 		if(result.state !="success"){
 			console.log(result.data)
 			alert("삭제실패입니다.")
