@@ -67,7 +67,7 @@
 <body>
 	<div class="container">
 		<div class="upper">
-			<div class='zeta-menu-bar'>
+			<div class='zeta-menu-bar my-login'>
 				<ul class="zeta-menu">
 					<li><a href="#2"><img src='iconmonstr-user-20-240.png'
 							width="45" height="45"></a>
@@ -82,7 +82,7 @@
 									<li><a href="#2B2">2-B-2 메뉴</a></li>
 								</ul></li>
 							<li><a href="#2C">2-C 메뉴</a></li>
-							<li><a href="#2D">2-D 메뉴</a>
+							<li><a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
 								<ul>
 									<li><a href="#2D1">2-D-1 메뉴</a></li>
 									<li><a href="#2D2">2-D-2 메뉴</a></li>
@@ -91,8 +91,7 @@
 						</ul></li>
 				</ul>
 			</div>
-			<span id="userName" class="my-login"
-				style="font-weight: bold; font-size: 30px;"></span>님 동행을 찾아보세요!
+			<span id="userName"	style="font-weight: bold; font-size: 30px;"></span>님 동행을 찾아보세요!
 			<div style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
 				<a href='#' class="btn btn-default btn-sm my-logout"
 					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
@@ -100,9 +99,9 @@
 					data-target="#myModal">SIGN IN</a> 
 			</div>
 			
-					 <div style='position: absolute; top: 10px; right: 80px; font-size: 15px;'>
+					<!--  <div style='position: absolute; top: 10px; right: 80px; font-size: 15px;'>
 					<a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
-					</div>
+					</div>  -->
 
 		</div>
 		<div class="cbp-af-header">
