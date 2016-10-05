@@ -43,6 +43,11 @@
 
 
 <style>
+.form-horizontal {
+	padding-right :40px;
+	margin-top: -40px;
+	width: 90%;
+}
 #content {
 	text-align: center;
 	color: black;
@@ -112,84 +117,88 @@
 			<div class="cbp-af-inner">
 				<h1>together!</h1>
 				<nav>
-					<a href="traveler.html">Traveler</a> <a href="travelreviewApp.html">Story</a> <a
+					<a href="traveler.html">Traveler</a> <a href="#">Story</a> <a
 						href="#">Pears</a> <a href="#">Oranges</a>
 				</nav>
 			</div>
 		</div>
 		<div id="content">
-			<div id="bar">
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<label for="tags"></label> <input id="tags" type="text"
-							class="form-control" placeholder="국가/도시를 입력하세요."
-							style="width: 250px;"> <input style="height: 33px;"
-							type="date" value="dd"> <input style="height: 33px;"
-							type="date" value="dd">
-					</div>
-					<button type="submit" class="btn btn-default">SEARCH</button>
-				</form>
-			</div>
-			<div id="map"></div>
+			<form  class="form-horizontal ">
+<div id="group">
+<div class="form-group my-view">
+    <label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="rbno" readonly>
+    </div>
+  </div>
+
+ <div class="form-group ">
+    <label for="tmno" class="col-sm-2 control-label">여행번호</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="tmno" placeholder="필수사항입니다!">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="mno" class="col-sm-2 control-label">회원번호</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="mno" placeholder="필수사항입니다!" >
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="title" class="col-sm-2 control-label">제목</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="title" placeholder="제목을입력하세요.">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="contents" class="col-sm-2 control-label">내용</label>
+    <div class="col-sm-10">
+    	<textarea class="form-control" rows="10" cols="50" id="contents" placeholder="내용을입력하세요."></textarea>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="createdDate" class="col-sm-2 control-label">등록일</label>
+    <div class="col-sm-10">
+    	<input class="form-control" rows="10" cols="50" id="createdDate" readonly="readonly"></input>
+    </div>
+  </div>
+  
+<!--   <div class="form-group">
+    <label for="password" class="col-sm-2 control-label">암호</label>
+    <div class="col-sm-10">
+      <input type="password"  class="form-control" id="password" placeholder="암호입력">
+    </div>
+  </div> -->
+  
+ 
+  
+  <div class="form-group my-view">
+    <label class="col-sm-2 control-label">조회수</label>
+    <div class="col-sm-10">
+      <p id="viewCount" class="form-control-static"></p>
+    </div>
+  </div>
+  
+  </div> <!-- group div -->
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+      <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
+      <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
+      <button id="cancelBtn" type="button" class="btn btn-default"
+      			onclick="location.href='travelreviewApp.html'">취소</button>
+    </div>
+  </div>
+<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
+</form>
 		</div>
 
 		<div class="main">
-			<section>
-				<div>
-					<p>Dreamcatcher american apparel typewriter polaroid, Pinterest
-						hoodie tousled vegan pickled gastropub iPhone VHS sartorial. Fanny
-						pack vinyl fingerstache whatever, raw denim Carles literally next
-						level fashion axe photo booth pour-over Echo Park.</p>
-				</div>
-			</section>
-			<section>
-				<div>
-					<p>Raw denim selvage typewriter, thundercats viral craft beer
-						beard keffiyeh meh. 3 wolf moon american apparel mlkshk street art
-						single-origin coffee. Semiotics art party tote bag, wayfarers banh
-						mi messenger bag Odd Future seitan photo booth. Twee vinyl
-						fingerstache, freegan narwhal semiotics irony sustainable vegan 3
-						wolf moon ethnic selfies fixie kale chips. Odd Future chillwave
-						twee Tonx kale chips, quinoa disrupt selfies art party
-						Williamsburg Vice. Asymmetrical narwhal Godard, artisan
-						single-origin coffee Bushwick hashtag semiotics literally disrupt
-						pork belly trust fund fashion axe typewriter +1. Master cleanse
-						raw denim trust fund bitters, gluten-free farm-to-table tousled
-						plaid biodiesel actually pork belly roof party polaroid.</p>
-				</div>
-			</section>
-			<section>
-				<div>
-					<p>Cardigan gluten-free photo booth pug, occupy ethnic bicycle
-						rights disrupt ennui jean shorts art party raw denim Carles Tonx
-						artisan. Freegan aesthetic skateboard, forage iPhone ugh umami
-						tumblr McSweeney's chillwave biodiesel vinyl pitchfork gentrify
-						asymmetrical. Sartorial synth wayfarers, freegan pork belly
-						post-ironic ennui salvia direct trade shoreditch Wes Anderson
-						pitchfork. Mumblecore Truffaut american apparel, Austin
-						single-origin coffee post-ironic tofu retro Vice fanny pack
-						narwhal Neutra skateboard 90's. Kogi sartorial post-ironic
-						gentrify helvetica McSweeney's Schlitz, mustache 8-bit polaroid
-						hella flexitarian viral kale chips tote bag. Banh mi PBR
-						typewriter Banksy. Beard messenger bag deep v, keffiyeh lo-fi
-						umami four loko vinyl lomo hoodie wolf banh mi.</p>
-				</div>
-			</section>
-			<section>
-				<div>
-					<p>Artisan thundercats blog, VHS asymmetrical Schlitz whatever
-						High Life chambray semiotics synth. Mustache flannel McSweeney's
-						Carles gastropub put a bird on it. Occupy Pinterest try-hard PBR
-						Schlitz, biodiesel disrupt forage. +1 pop-up Tonx, Echo Park
-						thundercats authentic try-hard. Mlkshk pork belly artisan
-						messenger bag raw denim cardigan Austin Portland, bicycle rights
-						tumblr blog you probably haven't heard of them. Single-origin
-						coffee seitan blog Williamsburg mlkshk, leggings cred meggings
-						selvage synth next level McSweeney's pug 90's. Intelligentsia
-						skateboard wolf, pour-over cred gastropub bespoke kogi DIY synth
-						8-bit hella dreamcatcher blog.</p>
-				</div>
-			</section>
+			
 		</div>
 	</div>
 
@@ -311,10 +320,21 @@
 	<!-- 회원정보 관련 -->
 	<script type="text/javascript" src="js/bit.js"></script>
 	<script type="text/javascript" src="authApp.js"></script>
-	<script type="text/javascript" src="memberForm.js"></script>
+	<script type="text/javascript" src="travelreviewForm.js"></script>
 	<script>
-		init() // 화면을 준비시킨다
-		ajaxLoginUser() // 로그인 유저 정보 가져오기
+	if(window.location.search.startsWith("?")){
+		var no = location.search.split("=")[1];
+		
+		ajaxLoadBoard(no)
+		$(".my-new").css("display","none");
+			
+		
+		
+	}else {
+		$(".my-view").css("display","none");
+	}
+	init();
+	ajaxLoginUser()
 	</script>
 </body>
 </html>
