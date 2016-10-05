@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.QnaDao">
+  <resultMap type="qna" id="qnaMap">
+  
+    <id column="QBNO" property="qno"/> 
+    <result column="MNO" property="no"/>
+    <result column="TITL" property="title"/>
+     <result column="CONT" property="contents"/>
+    <result column="CRE_DT" property="createDate"/>
+    <result column="VW_CNT" property="viewCount"/>
+  </resultMap>
+  
+
+  
+  
+  
+    <select id="selectList" resultMap="qnaMap" parameterType="map">
+  select QBNO, MNO, TITl, CONT, CRE_DT, VW_CNT
+    from tvl_QnA_BODS
+    <where>
+      <if test="title != null">title like concat('%', #{title}, '%')</if>
+      <if test="writer != null">and writer like concat('%', #{writer}, '%')</if>
+    </where>
+    order by 
+    <choose>
+      <when test="titleOrder == 'asc'">title asc</when>
+      <when test="titleOrder == 'desc'">title desc</when>
+      <when test="writerOrder == 'asc'">writer asc</when>
+      <when test="writerOrder == 'desc'">writer desc</when>
+      <when test="viewCountOrder == 'asc'">vw_cnt asc</when>
+      <when test="viewCountOrder == 'desc'">vw_cnt desc</when>
+      <when test="qnoOrder == 'asc'">QBNO asc</when>
+      <otherwise>QBNO desc</otherwise>
+    </choose>
+    limit #{startIndex}, #{length}
+  </select>
+    <select id="selectOne" resultMap="qnaMap" parameterType="int">
+   select QBNO, MNO, TITl, CONT, CRE_DT, VW_CNT
+    from tvl_QnA_BODS
+    where QBNO = #{value}
+  </select>
+
+  
+  <insert id="insert" parameterType="qna">
+    insert into tvl_QnA_bods(MNO, TITl, CONT, cre_dt)
+    values(#{no}, #{title}, #{contents}, now())
+  </insert>
+  
+  <update id="update" parameterType="qna">
+    update tvl_QnA_bods set 
+      TITl=#{title}, 
+      CONT=#{contents} 
+    where QBNO=#{qno}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from tvl_QnA_bods
+    where QBNO=#{value}
+  </delete>
+ 
+  
+
+</mapper>
