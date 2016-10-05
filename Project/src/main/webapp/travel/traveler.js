@@ -1,6 +1,3 @@
-$("#logoutBtn").click(function(event) {
-	location.href = "../auth/authApp.html"
-});
 
 function ajaxRegistFormList() {
 	$.getJSON("formList.json", function(result) {

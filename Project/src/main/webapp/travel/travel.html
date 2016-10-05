@@ -69,29 +69,33 @@
 		<div class="upper">
 			<div class='zeta-menu-bar '>
 				<ul class="zeta-menu">
-					<li><a href="#2"><img src='iconmonstr-user-20-240.png'
-							width="45" height="45"></a>
+					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png' id="mainImg"></a>
 						<ul>
-							<li><a href="#2A"><img src='iconmonstr-email-2-240.png'
-									width="25" height="25"></a> <a href="#2A"><img
-									src='iconmonstr-note-19-240.png' width="25" height="25"></a>
-							</li>
-							<li><a href="#2B">2-B 메뉴</a>
+							<li>
+							<a href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY INFO</a>
 								<ul>
 									<li><a href="#2B1">2-B-1 메뉴</a></li>
 									<li><a href="#2B2">2-B-2 메뉴</a></li>
 								</ul></li>
-							<li><a href="#2C">2-C 메뉴</a></li>
-							<li><a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
-								<ul>
-									<li><a href="#2D1">2-D-1 메뉴</a></li>
-									<li><a href="#2D2">2-D-2 메뉴</a></li>
-									<li><a href="#2D3">2-D-3 메뉴</a></li>
-								</ul></li>
+							<li><a href="#"><img src='img/iconmonstr-email-2-240.png'
+									id="subImg"><br>MESSAGE</a>
+							</li>
+							<li><a href="#"><img src='img/iconmonstr-user-21-240.png'
+                  id="subImg"><br>ACCOMPANY</a></li>
+							<li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png'
+                  id="subImg"><br>LOGOUT</a>
+							</li>
 						</ul></li>
 				</ul>
 			</div>
-			<span id="userName"	style="font-weight: bold; font-size: 30px;"></span>님 동행을 찾아보세요!
+			
+			<div class="my-login">
+			<span>
+			<a id="userName"	style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+			<a>님 동행을 찾아보세요!</a>
+			</span>
+			</div>
+			
 			<div style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
 				<a href='#' class="btn btn-default btn-sm my-logout"
 					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
@@ -278,16 +282,6 @@
 										placeholder="성별"><br/>
 								</div>
 							</div>
-
-							<!-- 	<input type="text" class="form-control" name="username"
-								placeholder="이메일" required="" autofocus="" /><br /> <input
-								type="text" class="form-control" name="name" placeholder="이름"
-								required="" /> <br /> <input type="password"
-								class="form-control" name="password" placeholder="비밀번호"
-								required="" /><br /> <input type="password"
-								class="form-control" name="checkpassword" placeholder="비밀번호 확인"
-								required="" /> -->
-
 
 							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
 								type="checkbox" value="remember-me" id="rememberMe"

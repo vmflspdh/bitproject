@@ -1,25 +1,33 @@
 /* 메뉴 스타일 */
-
 .zeta-menu-bar {
-  /* display: inline-block; */
+	/* display: inline-block; */
+	
 }
 
 .zeta-menu li {
-  float: right;
-  list-style: none;
+	float: right;
+	list-style: none;
 }
 
+.zeta-menu #mainImg {
+	margin-right: 30px;
+	width: 45px;
+	height: 45px;
+}
+
+.zeta-menu #subImg {
+	width: 30px;
+	height: 30px;
+}
 
 /* 
 .zeta-menu li:hover {
   background: pink;
 }
 */
-
-
 .zeta-menu li .expand {
 	position: right;
-  background: white;
+	background: white;
 }
 
 /* 
@@ -27,56 +35,51 @@
   color: hotpink;
 }
  */
- 
-.zeta-menu a {
-  color: grey;
-  display: block;
-  padding: 10px 20px;
-
+.zeta-menu ul a {
+	color: grey;
+	display: block;
+	padding: 10px 20px 10px 20px;
 }
 
 .zeta-menu ul {
-  z-index: 500000;
-  background: #eee;
-  border: 1px solid silver;
-  display: none;
-  padding: 0;
-  position: absolute;
-  right: 0;
-  top: 100%;
-  width: 120px;
+	z-index: 500000;
+	background: #eee;
+	border: 1px solid silver;
+	display: none;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	width: 130px;
 }
 
-
 .zeta-menu ul li {
-z-index: 500000;
-  float: none;
+	z-index: 500000;
+	float: none;
 }
 
 .zeta-menu ul li.expand {
-z-index: 500000;
-  background: #ddd;
+	z-index: 500000;
+	background: #ddd;
 }
 
 .zeta-menu ul li.expand a {
-z-index: 500000;
-  color: black;
+	z-index: 500000;
+	color: black;
 }
 
 .zeta-menu ul a {
-z-index: 500000;
-  color: black;
+	z-index: 500000;
+	color: black;
 }
 
 .zeta-menu ul ul {
-z-index: 500000;
-margin: 0 auto;
-  right: 100%;
-  top: 0;
+	z-index: 500000;
+	margin: 0 auto;
+	top: 0;
 }
 
 /* 본문 */
-
 .cbp-af-header {
 	position: fixed;
 	top: 65px;
@@ -94,23 +97,19 @@ margin: 0 auto;
 .upper {
 	position: fixed;
 	top: 0;
-  left: 0;
-  height: 65px;
+	left: 0;
+	height: 65px;
 	background: #f6f6f6;
 	z-index: 20000;
-  width: 100%;
+	width: 100%;
 }
 
 .upper span a {
-	
-  color: #aaa;
-  float: right;
-  margin: 0 auto;
-  padding: 10px 13px 0px 0px; 
+	color: grey;
+	float: right;
+	margin: 0 auto;
+	padding: 0px 13px 0px 0px;
 }
-
-
-
 
 .cbp-af-header .cbp-af-inner {
 	width: 90%;
@@ -119,15 +118,13 @@ margin: 0 auto;
 	padding: 0 1.875em;
 }
 
-.cbp-af-header h1,
-.cbp-af-header nav {
+.cbp-af-header h1, .cbp-af-header nav {
 	display: inline-block;
 	position: relative;
 }
 
- /* We just have one-lined elements, so we'll center the elements with the line-height set to the height of the header */
-.cbp-af-header h1,
-.cbp-af-header nav a {
+/* We just have one-lined elements, so we'll center the elements with the line-height set to the height of the header */
+.cbp-af-header h1, .cbp-af-header nav a {
 	line-height: 50px;
 }
 
@@ -156,8 +153,7 @@ margin: 0 auto;
 }
 
 /* Transitions and class for reduced height */
-.cbp-af-header h1,
-.cbp-af-header nav a {
+.cbp-af-header h1, .cbp-af-header nav a {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -167,8 +163,8 @@ margin: 0 auto;
 	height: 60px;
 }
 
-.cbp-af-header.cbp-af-header-shrink h1,
-.cbp-af-header.cbp-af-header-shrink nav a {
+.cbp-af-header.cbp-af-header-shrink h1, .cbp-af-header.cbp-af-header-shrink nav a
+	{
 	line-height: 80px;
 }
 
@@ -178,37 +174,28 @@ margin: 0 auto;
 
 /* Example Media Queries */
 @media screen and (max-width: 55em) {
-	
 	.cbp-af-header .cbp-af-inner {
 		width: 100%;
 	}
-
-	.cbp-af-header h1,
-	.cbp-af-header nav {
+	.cbp-af-header h1, .cbp-af-header nav {
 		display: block;
 		margin: 0 auto;
 		text-align: center;
 		float: none;
 	}
-
-	.cbp-af-header h1,
-	.cbp-af-header nav a {
+	.cbp-af-header h1, .cbp-af-header nav a {
 		line-height: 115px;
 	}
-
 	.cbp-af-header nav a {
 		margin: 0 10px;
 	}
-
-	.cbp-af-header.cbp-af-header-shrink h1,
-	.cbp-af-header.cbp-af-header-shrink nav a {
+	.cbp-af-header.cbp-af-header-shrink h1, .cbp-af-header.cbp-af-header-shrink nav a
+		{
 		line-height: 45px;
 	}
-
 	.cbp-af-header.cbp-af-header-shrink h1 {
 		font-size: 2em;
 	}
-
 	.cbp-af-header.cbp-af-header-shrink nav a {
 		font-size: 1em;
 	}
@@ -221,8 +208,7 @@ margin: 0 auto;
 }
 
 @media screen and (max-width: 24em) {
-	.cbp-af-header nav a,
-	.cbp-af-header.cbp-af-header-shrink nav a {
+	.cbp-af-header nav a, .cbp-af-header.cbp-af-header-shrink nav a {
 		line-height: 1;
 	}
 }
