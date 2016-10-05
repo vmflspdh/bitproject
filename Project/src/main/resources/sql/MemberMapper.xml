@@ -22,9 +22,9 @@
 	<insert id="insert"  parameterType="member">
 		insert into tvl_membs(mnm,
 		email, pwd, bir_dt, gend, reg_dt, mpho)
-		values (#{mnm}, #{email},
+		values (#{name}, #{email},
 		password(#{password}),
-		#{bir_dt}, #{gend}, now(), #{mpho})
+		#{birthday}, #{gender}, now(), #{memberPhoto})
 	</insert>
 
 	<select id="selectList" resultMap="memberMap" parameterType="map">
@@ -65,12 +65,12 @@
 
 
 	<update id="update" parameterType="member">
-		update tvl_membs set
-		email=#{email},
-		bir_dt=#{birthday},
-		gend=#{gender}
-
-		where mno=#{no}
+			update tvl_membs set
+			email=#{email},
+			bir_dt=#{birthday},
+			gend=#{gender}
+	
+			where mno=#{no}
 	</update>
 
 	<delete id="delete" parameterType="int">

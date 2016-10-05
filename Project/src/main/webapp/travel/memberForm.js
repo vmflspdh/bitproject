@@ -1,10 +1,10 @@
 
-$("#addBtn").click(function(event) {
-
+$("#signInBtn").click(function(event) {
+	
 var member = {
 		name: $("#name").val(),
-		email: $("#email").val(),
-		password: $("#password").val(),
+		email: $(".col-sm-10 > #email").val(),
+		password: $(".col-sm-10 > #password").val(),
 		birthday: $("#birthday").val(),
 		gender: $("#gender").val()
 		
@@ -42,7 +42,7 @@ function ajaxAddMember(member) {
 	    	  alert("등록 실패입니다.")
 	    	  return
 	      }
-	      window.location.href = "memberApp.html"
+		/*window.location.reload(true)*/
 	}, "json")
   }
   

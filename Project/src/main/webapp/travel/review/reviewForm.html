@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시물 입력폼</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<style type="text/css">
+.container{
+	/* text-align:center; */
+	width: 100%;
+	}
+.form-horizontal {
+	padding-right :40px;
+	padding-top: 20px;
+	width: 70%;
+}
+/* #group {
+	width: 70%;
+} */
+</style>
+
+</head>
+<body>
+
+<div class="container">
+<!-- <div style='background-color:navy;color:white;font-size:150%;position:relative;'>
+자바 85기.
+    
+      <div style='position:absolute;right:0px;top:0px;font-size:15px;'><a href='/web02/auth/form.do'  class="btn btn-success btn-xs">로그인(2)</a></div>
+    
+    
+    </div>
+    
+    
+jsp로 하는것이 아니라 ajax로 보낼거기때문에 메소드랑 엑션을지운다.
+<h1>게시물 입력폼</h1> -->
+<form  class="form-horizontal ">
+<div id="group">
+<div class="form-group my-view">
+    <label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="rbno" readonly>
+    </div>
+  </div>
+
+ <div class="form-group ">
+    <label for="tmno" class="col-sm-2 control-label">여행번호</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="tmno" placeholder="필수사항입니다!">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="mno" class="col-sm-2 control-label">회원번호</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="mno" placeholder="필수사항입니다!" >
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="title" class="col-sm-2 control-label">제목</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="title" placeholder="제목을입력하세요.">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="contents" class="col-sm-2 control-label">내용</label>
+    <div class="col-sm-10">
+    	<textarea class="form-control" rows="10" cols="50" id="contents" placeholder="내용을입력하세요."></textarea>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="createdDate" class="col-sm-2 control-label">등록일</label>
+    <div class="col-sm-10">
+    	<input class="form-control" rows="10" cols="50" id="createdDate" readonly="readonly"></input>
+    </div>
+  </div>
+  
+<!--   <div class="form-group">
+    <label for="password" class="col-sm-2 control-label">암호</label>
+    <div class="col-sm-10">
+      <input type="password"  class="form-control" id="password" placeholder="암호입력">
+    </div>
+  </div> -->
+  
+ 
+  
+  <div class="form-group my-view">
+    <label class="col-sm-2 control-label">조회수</label>
+    <div class="col-sm-10">
+      <p id="viewCount" class="form-control-static"></p>
+    </div>
+  </div>
+  
+  </div> <!-- group div -->
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+      <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
+      <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
+      <button id="cancelBtn" type="button" class="btn btn-default"
+      			onclick="location.href='reviewApp.html'">취소</button>
+    </div>
+  </div>
+<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
+</form>
+
+<!-- <p style='background-color:yellow;text-align:center'>이 예제는 자바85기에서 사용한 것입니다.(2)</p> -->
+</div> <!-- div.container -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../js/bit.js"></script>
+<script type="text/javascript" src="reviewForm.js"></script>
+
+<script type="text/javascript">
+//url에 no파라미터 값이 넘어 오면 조회모드로 동작해야한다.
+//alert(window.location.search)
+if(window.location.search.startsWith("?")){
+	var no = location.search.split("=")[1];
+	
+	ajaxLoadBoard(no)
+	$(".my-new").css("display","none");
+		
+	
+	
+}else {
+	$(".my-view").css("display","none");
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

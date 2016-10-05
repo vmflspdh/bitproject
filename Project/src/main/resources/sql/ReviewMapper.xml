@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.ReviewDao">
+  <resultMap type="review" id="reviewMap">
+    <id column="rbno" property="reviewboardno"/> 
+    <result column="tmno" property="travelno"/>
+    <result column="mno" property="memberno"/>
+    <result column="title" property="title"/>
+    <result column="cont" property="content"/>
+    <result column="cre_dt" property="createdDate"/>
+    <result column="vw_cnt" property="viewcount"/>
+  </resultMap>
+  
+  <!-- <resultMap type="member" id="memberMap">
+
+		<id column="mno" property="no" />
+
+		<result column="mnm" property="name" />
+		<result column="email" property="email" />
+		<result column="pwd" property="password" />
+		<result column="bir_dt" property="birthday" />
+		<result column="gend" property="gender" />
+		<result column="reg_dt" property="registedDate" />
+		<result column="mpho" property="memberPhoto" />
+
+	</resultMap> -->
+    <!-- <resultMap type="member" id="memberMap">
+    <id column="rbno" property="reviewboardno"/> 
+    <result column="mnm" property=""/>
+    <result column="mno" property="memberno"/>
+    <result column="title" property="title"/>
+    <result column="cont" property="content"/>
+    <result column="cre_dt" property="createdDate"/>
+    <result column="vw_cnt" property="viewcount"/>
+  </resultMap> -->
+  
+  <select id="selectList" resultMap="reviewMap" parameterType="map">
+    select  rbno,tmno, mno,title,cont,cre_dt,vw_cnt 
+    from tvl_review_bods 
+ 	 order by mno asc  
+  </select>
+  
+  <select id="selectOne" resultMap="reviewMap" parameterType="int">
+    select  rbno,tmno, mno,title,cont,cre_dt,vw_cnt 
+    from tvl_review_bods
+    where rbno = #{value}
+  </select>
+  
+  <select id="selectOneByMember" resultMap="reviewMap" parameterType="int">
+    select  rbno,tmno,mno,title
+    from tvl_review_bods
+    where mno = #{value}
+  </select>
+  
+  <!-- <select id="selectOneByPassword" resultMap="reviewMap" parameterType="map">
+    select no,title,conts,cre_dt,vw_cnt 
+    from boards 
+    where no=#{no} and password=password(#{password})
+  </select> -->
+  
+  <insert id="insert" parameterType="review">
+    insert into tvl_review_bods(tmno,mno,title, cont, cre_dt)
+    values(#{travelno},#{memberno},#{title}, #{content},  now())
+  </insert>
+  
+  <update id="update" parameterType="review">
+    update tvl_review_bods set 
+      title=#{title}, 
+      cont=#{content} 
+    where rbno=#{reviewboardno}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from tvl_review_bods 
+    where rbno=#{value}
+  </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

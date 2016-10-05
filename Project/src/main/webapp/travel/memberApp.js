@@ -1,10 +1,3 @@
-$('#loginBtn').click(function(event) {
-	location.href = "travel.html"
-})
-
-$('#logoutBtn').click(function(event) {
-	location.href = "../auth/authApp.html"
-})
 
 
 function ajaxMemberList() {
@@ -20,14 +13,14 @@ function ajaxMemberList() {
 
 		for ( var i in arr) {
 			contents += "<tr>" +
-	          "<td>" + arr[i].no + "</td>" +
-	          "<td><a class='titleLink' href='#' data-no='" + arr[i].no +"'>" + arr[i].name + "</a></td>" +
-	          "<td>" + arr[i].email + "</td>" +
-	          "<td>" + arr[i].birthday + "</td>" +
-	          "<td>" + (arr[i].gender == "1" ? "여" : "남") + "</td>" +
-	          "<td>" + arr[i].registedDate + "</td>" +
-	          "<td>" + arr[i].memberPhoto + "</td>" +
-	        "</tr>";
+			"<td>" + arr[i].no + "</td>" +
+			"<td><a class='titleLink' href='#' data-no='" + arr[i].no +"'>" + arr[i].name + "</a></td>" +
+			"<td>" + arr[i].email + "</td>" +
+			"<td>" + arr[i].birthday + "</td>" +
+			"<td>" + (arr[i].gender == "1" ? "여" : "남") + "</td>" +
+			"<td>" + arr[i].registedDate + "</td>" +
+			"<td>" + arr[i].memberPhoto + "</td>" +
+			"</tr>";
 		}
 
 		$("#boardTable tbody").html(contents);
@@ -36,23 +29,6 @@ function ajaxMemberList() {
 			window.location.href = "memb_reg_form.html?no=" + $(this).attr("data-no");
 		})
 	})
-}
-
-function ajaxLoginUser() {
-
-	$.getJSON("loginUser.json", function(result) {
-
-		if (result.state != "success") {
-			console.log(result.data)
-			$('.my-login').css("display", "none")
-			return
-		}
-
-		$('.my-logout').css("display", "none")
-
-		$("#userName").text(result.data.name)
-	})
-
 }
 
 
