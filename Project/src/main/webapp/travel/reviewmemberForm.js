@@ -1,17 +1,17 @@
 $("#loginBtn").click(function(event){
 	location.href="../auth/authApp.html"
-});1
+});
 $("#logoutBtn").click( function(event){
 	location.href="../auth/authApp.html"
 	//ajaxLogout()
 });
 
 
-function ajaxBoardList() {
+function ajaxBoardList(no) {
 	
-	$.getJSON("list.json", function(result) {
+	$.getJSON("rvdetail2.json?no="+no, function(result) {
 		if(result.state!="success"){
-			 
+			
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
@@ -21,13 +21,11 @@ function ajaxBoardList() {
 		for ( var i in arr) {
 
 			contents += "<tr>"+
-				"<td>"+arr[i].reviewboardno+"</td>"+
+				"<td>"+arr[i].title+"</td>"+
 				"<td>"+arr[i].travelno+"</td>"+
-				"<td><a class='titleLink2' href='#' data-no2='"+arr[i].memberno+"'>"+arr[i].memberno+"</a></td>"+
 				"<td><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title+"</a></td>"+
 				"<td>"+arr[i].content+"</td>"+
 				"<td>"+arr[i].createdDate+"</td>"+
-				"<td>"+arr[i].viewcount+"</td>"+
 			"</tr>";
 
 		}
@@ -40,7 +38,7 @@ function ajaxBoardList() {
 				window.location.href = "reviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
 			});
 		$(".titleLink2").click(function(event) {
-			window.location.href = "reviewmemberForm.html?no="+$(this).attr("data-no2");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
+			window.location.href = "reviewmemberForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
 		});
 		});
 		
@@ -52,7 +50,7 @@ function ajaxBoardList() {
 	
 }
 
-/*function ajaxLoginUser(){
+function ajaxLoginUser(){
 	
 	$.getJSON("../auth/loginUser.json", function(result) {
 		
@@ -74,4 +72,4 @@ function ajaxBoardList() {
 	
 	
 	
-}*/
+}
