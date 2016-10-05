@@ -11,6 +11,7 @@ var member = {
 }
 console.log(member)
 ajaxAddMember(member)
+window.location.reload(true)
 });
 
 $("#updateBtn").click(function(event) {
