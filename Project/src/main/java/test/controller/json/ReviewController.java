@@ -21,12 +21,12 @@ import test.vo.Review;
 
 //@Component
 @Controller // 페이지 컨트롤러에 붙이는 애노테이션
-@RequestMapping("/travel/review/") // 이 페이지 컨트롤러의 기본 URL을 지정한다.
+@RequestMapping("/travel/") // 이 페이지 컨트롤러의 기본 URL을 지정한다.
 public class ReviewController {
   @Autowired
   ReviewDao reviewDao;
 
-  @RequestMapping(path="list", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String list(
       @RequestParam(name = "pageNo", defaultValue = "0") int pageNo,
@@ -53,7 +53,7 @@ public class ReviewController {
   
   
   
-  @RequestMapping("list2")
+  /*@RequestMapping("list2")
   public ResponseEntity<String> list2(
       @RequestParam(name = "pageNo", defaultValue = "1") int pageNo,
       @RequestParam(name = "length", defaultValue = "5") int length) throws Exception {
@@ -72,10 +72,10 @@ public class ReviewController {
         headers,
         HttpStatus.OK);
   }
-  
+  */
   
 
-  @RequestMapping(path="add", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String add(Review review) throws Exception {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
@@ -91,7 +91,7 @@ public class ReviewController {
     return new Gson().toJson(result);
   }
 
-  @RequestMapping(path="detail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvdetail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String detail(int no) throws Exception {
    
@@ -114,7 +114,7 @@ public class ReviewController {
     return new Gson().toJson(result);
   }
   
-  @RequestMapping(path="detail2", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvdetail2", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String detail2(int no) throws Exception {
    
@@ -137,7 +137,7 @@ public class ReviewController {
     return new Gson().toJson(result);
   }
 
-  @RequestMapping(path="update", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String update(Review review) throws Exception {
 
@@ -153,7 +153,7 @@ public class ReviewController {
     return new Gson().toJson(result);
   }
   
-  @RequestMapping(path="delete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String delete(int no) throws Exception {
     

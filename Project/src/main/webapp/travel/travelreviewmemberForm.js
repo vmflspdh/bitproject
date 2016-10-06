@@ -9,7 +9,7 @@ $("#logoutBtn").click( function(event){
 
 function ajaxBoardList(no) {
 	
-	$.getJSON("detail2.json?no="+no, function(result) {
+	$.getJSON("rvdetail2.json?no="+no, function(result) {
 		if(result.state!="success"){
 			
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
