@@ -49,7 +49,7 @@
   </select>
   
   <select id="selectOneByMember" resultMap="reviewMap" parameterType="int">
-    select  rbno,tmno,mno,title
+    select  rbno,tmno,mno,title,cont,cre_dt
     from tvl_review_bods
     where mno = #{value}
   </select>

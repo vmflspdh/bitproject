@@ -1,10 +1,3 @@
-$("#loginBtn").click(function(event){
-	location.href="../auth/authApp.html"
-});
-$("#logoutBtn").click( function(event){
-	location.href="../auth/authApp.html"
-	//ajaxLogout()
-});
 
 
 function ajaxBoardList(no) {
@@ -21,7 +14,7 @@ function ajaxBoardList(no) {
 		for ( var i in arr) {
 
 			contents += "<tr>"+
-				"<td>"+arr[i].title+"</td>"+
+				"<td>"+arr[i].reviewboardno+"</td>"+
 				"<td>"+arr[i].travelno+"</td>"+
 				"<td><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title+"</a></td>"+
 				"<td>"+arr[i].content+"</td>"+
@@ -44,30 +37,6 @@ function ajaxBoardList(no) {
 		
 	
 		
-	
-	
-	
-	
-}
-
-function ajaxLoginUser(){
-	
-	$.getJSON("../auth/loginUser.json", function(result) {
-		
-		
-		if(result.state !="success"){
-			$('.my-login').css("display","none")
-			return;
-		}
-		
-		$('.my-logout').css("display","none")
-		
-			
-			
-			//document.querySelector("#userName").textContent = result.data.name;
-			$("#userName").text(result.data.name);
-		
-	})
 	
 	
 	
