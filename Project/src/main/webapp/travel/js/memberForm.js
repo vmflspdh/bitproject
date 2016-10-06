@@ -24,7 +24,6 @@ $("#signInBtn").click(function(event) {
 		window.location.reload(true)
 	} else {
 	alert("등록 실패입니다.")
-	window.location.reload(true)
 	}
 });
 
