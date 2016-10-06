@@ -15,6 +15,7 @@ public class RegistForm implements Serializable {
   protected String selfIntroduce;
   protected Date startDate;
   protected Date endDate;
+  protected String myPhoto;
   
   
 	public int getNo() {
@@ -70,6 +71,12 @@ public class RegistForm implements Serializable {
 	}
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+	public String getMyPhoto() {
+		return myPhoto;
+	}
+	public void setMyPhoto(String myPhoto) {
+		this.myPhoto = myPhoto;
 	}
   
   

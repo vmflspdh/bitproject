@@ -10,7 +10,7 @@ function ajaxRegistFormList() {
 	    var arr = result.data
 	    for (var i in arr) {
 	    	contents += '<tr>' +
-	    	'<td><img src="img/yang/london.jpg" width="350" ></td>' +
+	    	'<td><img src="' + arr[i].myPhoto + '" width="350" ></td>' +
 	    	"<td><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + "<h3>" + arr[i].selfIntroduce + "</h3></a></br>" +
 	    	 arr[i].writer + '</br>' +
 	    	'<img src="img/yang/11101_s.gif">' + arr[i].city + ',' + arr[i].nation + ',' + arr[i].continent + '</br>' +
@@ -21,7 +21,7 @@ function ajaxRegistFormList() {
 	      }
 	    $("#boardTable tbody").html(contents)
 	    $(".titleLink").click(function(event) {
-	    	  window.location.href = "registFormDetail.html?no=" + $(this).attr("data-no")
+	    	  window.location.href = "travelerdetail.html?no=" + $(this).attr("data-no")
 	    })
     })
 }
