@@ -105,14 +105,14 @@ public class MemberController {
     HashMap<String, Object> result = new HashMap<>();
     System.out.println("hi i received!!");
     try {
-      HashMap<String,Object> paramMap = new HashMap<>();
+      /*HashMap<String,Object> paramMap = new HashMap<>();
 
       paramMap.put("no", member.getNo());
       paramMap.put("password", member.getPassword());
 
     if (memberDao.selectOneByPassword(paramMap) == null) {
         throw new Exception("해당 게시물이 없거나 암호가 일치하지 않습니다.");
-      }
+      }*/
       memberDao.update(member);
       result.put("state", "success");
 

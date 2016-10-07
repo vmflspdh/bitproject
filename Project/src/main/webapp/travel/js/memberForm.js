@@ -40,7 +40,6 @@ $("#updateBtn").click(function(event) {
 			registedDate: $("#registedDate").val(),
 			no: $("#no").val()
 	}
-	console.log(member)
 	ajaxUpdateMember(member)
 });
 
@@ -82,7 +81,7 @@ function ajaxLoadMember(no) {
 }
 
 function ajaxUpdateMember(member) {
-
+	console.log(member)
 	$.post("update.json", member, function(result) {
 		if (result.state != "success") {
 			console.log(result.data)
