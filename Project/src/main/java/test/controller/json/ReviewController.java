@@ -150,6 +150,22 @@ public class ReviewController {
     return new Gson().toJson(result);
   }
   
+  @RequestMapping(path="rvupdate2", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String update2(Review review) throws Exception {
+
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      
+      reviewDao.update(review);
+      result.put("state", "success");
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+  }
+  
   @RequestMapping(path="rvdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String delete(int no) throws Exception {

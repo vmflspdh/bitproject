@@ -40,7 +40,6 @@ $("#updateBtn").click(function(event) {
 			registedDate: $("#registedDate").val(),
 			no: $("#no").val()
 	}
-	console.log(member)
 	ajaxUpdateMember(member)
 });
 
@@ -83,7 +82,10 @@ function ajaxLoadMember(no) {
 
 function ajaxUpdateMember(member) {
 	console.log(member)
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 	$.post("update.json", member, function(result) {
 		console.log(member)
 		if (result.state != "success") {

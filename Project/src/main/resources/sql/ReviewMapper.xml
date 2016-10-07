@@ -39,7 +39,7 @@
   <select id="selectList" resultMap="reviewMap" parameterType="map">
     select  rbno,tmno, mno,title,cont,cre_dt,vw_cnt 
     from tvl_review_bods 
- 	 order by mno asc  
+ 	 order by rbno asc  
   </select>
   
   <select id="selectOne" resultMap="reviewMap" parameterType="int">
@@ -68,7 +68,13 @@
   <update id="update" parameterType="review">
     update tvl_review_bods set 
       title=#{title}, 
-      cont=#{content} 
+      cont=#{content}
+    where rbno=#{reviewboardno}
+  </update>
+  
+  <update id="update2" parameterType="review">
+    update tvl_review_bods set 
+      vw_cnt=#{viewcount}
     where rbno=#{reviewboardno}
   </update>
   

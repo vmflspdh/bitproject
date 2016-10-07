@@ -18,6 +18,7 @@ $("#updateBtn").click(function(event){
 			title : $("#title").val(),
 			content : $("#contents").val(),
 			reviewboardno : $("#rbno").val()
+			
 	}
 	
 	
@@ -67,6 +68,7 @@ function ajaxLoadBoard(no){
 
 
 function ajaxUpdateBoard(review){
+	console.log(review)
 	$.post("rvupdate.json",review,function(result){
 		if(result.state !="success"){
 			alert("변경실패입니다.")
@@ -77,6 +79,8 @@ function ajaxUpdateBoard(review){
 	},"json")
 	
 }
+
+
 
 
 function ajaxDeleteBoard(no,password){
