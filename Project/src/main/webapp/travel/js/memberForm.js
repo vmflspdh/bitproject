@@ -82,8 +82,10 @@ function ajaxLoadMember(no) {
 }
 
 function ajaxUpdateMember(member) {
+	console.log(member)
 
 	$.post("update.json", member, function(result) {
+		console.log(member)
 		if (result.state != "success") {
 			console.log(result.data)
 			alert("변경 실패입니다.")

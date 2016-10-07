@@ -117,6 +117,7 @@ public class MemberController {
       result.put("state", "success");
 
     } catch (Exception e) {
+      e.printStackTrace();
       result.put("state", "fail");
       result.put("data", e.getMessage());
     }
