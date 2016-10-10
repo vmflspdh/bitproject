@@ -142,6 +142,12 @@ public class ReviewController {
     try{
 
       reviewDao.update(review);
+     /* reviewDao.update2(review);*/
+/*      reviewDao.update2(review);
+      reviewDao.update2(review);*/
+      
+      System.out.println(reviewDao.update(review));
+      //System.out.println(reviewDao.update2(review));
       result.put("state", "success");
     } catch(Exception e) {
       result.put("state", "fail");
@@ -157,7 +163,8 @@ public class ReviewController {
     HashMap<String, Object> result = new HashMap<>();
     try{
       
-      reviewDao.update(review);
+      reviewDao.update2(review);
+      System.out.println(reviewDao.update2(review));
       result.put("state", "success");
     } catch(Exception e) {
       result.put("state", "fail");

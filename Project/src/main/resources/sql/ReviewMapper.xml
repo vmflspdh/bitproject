@@ -6,7 +6,8 @@
   <resultMap type="review" id="reviewMap">
     <id column="rbno" property="reviewboardno"/> 
     <result column="tmno" property="travelno"/>
-    <result column="mno" property="memberno"/>
+    <result column="mno" property="memberno"/> 
+    <result column="mnm" property="membername"/>
     <result column="title" property="title"/>
     <result column="cont" property="content"/>
     <result column="cre_dt" property="createdDate"/>
@@ -37,28 +38,35 @@
   </resultMap> -->
   
   <select id="selectList" resultMap="reviewMap" parameterType="map">
-    select  rbno,tmno, mno,title,cont,cre_dt,vw_cnt 
-    from tvl_review_bods 
- 	 order by rbno asc  
+    select rbno,tmno,r.mno,mnm,title,cont,cre_dt,vw_cnt  
+    from tvl_review_bods r
+	inner join tvl_membs m 
+	on r.mno=m.mno
+ 	order by r.mno asc  
   </select>
   
   <select id="selectOne" resultMap="reviewMap" parameterType="int">
-    select  rbno,tmno, mno,title,cont,cre_dt,vw_cnt 
-    from tvl_review_bods
+    select  rbno,tmno,r.mno,mnm,title,cont,cre_dt,vw_cnt
+    from tvl_review_bods r
+	inner join tvl_membs m 
+	on r.mno=m.mno
     where rbno = #{value}
   </select>
   
   <select id="selectOneByMember" resultMap="reviewMap" parameterType="int">
-    select  rbno,tmno,mno,title,cont,cre_dt
-    from tvl_review_bods
-    where mno = #{value}
+    select  rbno,tmno,r.mno,mnm,title,cont,cre_dt
+    from tvl_review_bods r 
+    inner join tvl_membs m
+    on r.mno=m.mno
+    where r.mno = #{value}
+    order by rbno desc
   </select>
   
-  <!-- <select id="selectOneByPassword" resultMap="reviewMap" parameterType="map">
+  <select id="selectOneByPassword" resultMap="reviewMap" parameterType="map">
     select no,title,conts,cre_dt,vw_cnt 
     from boards 
     where no=#{no} and password=password(#{password})
-  </select> -->
+  </select>
   
   <insert id="insert" parameterType="review">
     insert into tvl_review_bods(tmno,mno,title, cont, cre_dt)
@@ -68,13 +76,7 @@
   <update id="update" parameterType="review">
     update tvl_review_bods set 
       title=#{title}, 
-      cont=#{content}
-    where rbno=#{reviewboardno}
-  </update>
-  
-  <update id="update2" parameterType="review">
-    update tvl_review_bods set 
-      vw_cnt=#{viewcount}
+      cont=#{content} 
     where rbno=#{reviewboardno}
   </update>
   
