@@ -1,6 +1,6 @@
 $("#addBtn").click(function(event) {
 	var travelMain = {
-			memberNo: $("#no").val(),
+			memberNo: $("#userNo").val(),
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
 			startDate: $("#startDate").val(),
