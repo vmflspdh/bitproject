@@ -14,11 +14,12 @@ function ajaxBoardList(no) {
 		for ( var i in arr) {
 
 			contents += "<tr>"+
-				"<td>"+arr[i].reviewboardno+"</td>"+
-				"<td>"+arr[i].travelno+"</td>"+
-				"<td><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title+"</a></td>"+
-				"<td>"+arr[i].content+"</td>"+
-				"<td>"+arr[i].createdDate+"</td>"+
+			"<td>"+arr[i].reviewboardno+"</td>"+
+			"<td>"+arr[i].travelno+"</td>"+
+			"<td>"+arr[i].membername+"</td>"+
+			"<td>"+arr[i].title+"</td>"+
+			"<td>"+arr[i].content+"</td>"+
+			"<td>"+arr[i].createdDate+"</td>"+
 			"</tr>";
 
 		}

@@ -55,7 +55,7 @@ function ajaxLoadBoard(no){
 		}
 		$("#rbno").val(result.data.reviewboardno);
 		$("#tmno").val(result.data.travelno);
-		$("#mno").val(result.data.memberno);
+		$("#mno").val(result.data.membername);
 		$("#title").val(result.data.title);
 		$("#contents").val(result.data.content);
 		$("#createdDate").val(result.data.createdDate);
