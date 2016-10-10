@@ -66,10 +66,13 @@
 
 	<update id="update" parameterType="member">
 			update tvl_membs set
-			email = #{email},
-			bir_dt = #{birthday},
-			gend = #{gender}
-	
+
+			name=#{name},
+			email=#{email},
+			bir_dt=#{birthday},
+			gend=#{gender},
+			reg_dt=#{registedDate}
+
 			where mno=#{no}
 	</update>
 

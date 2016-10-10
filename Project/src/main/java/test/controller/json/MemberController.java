@@ -1,18 +1,14 @@
 package test.controller.json;
 
 import java.util.HashMap;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.google.gson.Gson;
 
 import test.dao.MemberDao;
+import test.vo.JsonResult;
 import test.vo.Member;
 
 @Controller
@@ -22,131 +18,95 @@ public class MemberController {
   @Autowired
   MemberDao memberDao;
 
-  @RequestMapping(path="list", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String list(
+  @RequestMapping(path="list")
+  public Object list(
       @RequestParam (defaultValue="1") int pageNo,
       @RequestParam (defaultValue="5") int length) throws Exception{
-
-
-    HashMap<String, Object> result = new HashMap<>();
 
     try {
       HashMap<String, Object> map = new HashMap<>();
       map.put("startIndex", (pageNo - 1) * length);
       map.put("length", length);
 
-      List<Member> list = memberDao.selectList(map);
-      result.put("state", "success");
-      result.put("data", list);
-
+      return JsonResult.success(memberDao.selectList(map));
 
     } catch (Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
     }
 
-    return new Gson().toJson(result);
-
-
   }
-  
-  
 
-  @RequestMapping(path="add" , produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String add(Member member) throws Exception{
-    // 성공하든 실패하든 클라이언트에게 데이터를 보내야 한다.
-    HashMap<String, Object> result = new HashMap<>();
+
+
+  @RequestMapping(path="add")
+  public Object add(Member member) throws Exception{
 
     try {
       memberDao.insert(member);
-      result.put("state", "success");
+      return JsonResult.success();
 
     } catch (Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
     }
-
-    return new Gson().toJson(result);
 
   }
 
-  @RequestMapping(path="detail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String detail(int no) throws Exception {
-
-
-    HashMap<String, Object> result = new HashMap<>();
+  @RequestMapping(path="detail")
+  public Object detail(int no) throws Exception {
 
     try {
       Member member = memberDao.selectOne(no);
 
       if (member == null)
         throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
-      result.put("state", "success");
-      result.put("data", member);
+      return JsonResult.success(member);
 
     } catch (Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
     }
-
-    return new Gson().toJson(result);
-
   }
 
 
-  @RequestMapping(path="update", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String update(Member member) throws Exception {
+  @RequestMapping(path="update")
+  public Object update(Member member) throws Exception {
 
-
-    HashMap<String, Object> result = new HashMap<>();
     System.out.println("hi i received!!");
     try {
-      /*HashMap<String,Object> paramMap = new HashMap<>();
+      HashMap<String,Object> paramMap = new HashMap<>();
 
       paramMap.put("no", member.getNo());
       paramMap.put("password", member.getPassword());
 
-    if (memberDao.selectOneByPassword(paramMap) == null) {
+      if (memberDao.selectOneByPassword(paramMap) == null) {
         throw new Exception("해당 게시물이 없거나 암호가 일치하지 않습니다.");
-      }*/
+      }
       memberDao.update(member);
-      result.put("state", "success");
+      return JsonResult.success();
 
     } catch (Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
+      return JsonResult.fail(e.getMessage());
     }
-
-    return new Gson().toJson(result);
-
   }
 
-  @RequestMapping(path="delete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-    public String delete(int no, String password) throws Exception {
-      HashMap<String,Object> result = new HashMap<>();
-      try {
-        HashMap<String,Object> paramMap = new HashMap<>();
-        paramMap.put("no", no);
-        paramMap.put("password", password);
-        
-        if (memberDao.selectOneByPassword(paramMap) == null) {
-          throw new Exception("해당 게시물이 없거나 암호가 일치하지 않습니다!");
-        }
-        memberDao.delete(no);
-        result.put("state", "success");
-      } catch (Exception e) {
-        result.put("state", "fail");
-        result.put("data", e.getMessage());
+
+
+  @RequestMapping(path="delete")
+  public Object delete(int no, String password) throws Exception {
+
+    try {
+      HashMap<String,Object> paramMap = new HashMap<>();
+      paramMap.put("no", no);
+      paramMap.put("password", password);
+
+      if (memberDao.selectOneByPassword(paramMap) == null) {
+        throw new Exception("해당 게시물이 없거나 암호가 일치하지 않습니다!");
       }
-
-    return new Gson().toJson(result);
-
-
+      memberDao.delete(no);
+      return JsonResult.success();
+      
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
   }
 
 }

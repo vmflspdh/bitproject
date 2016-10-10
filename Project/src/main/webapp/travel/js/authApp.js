@@ -28,7 +28,8 @@ function ajaxLogin(user) {
 		method: "POST",
 		dataType: "json",
 		data: user,
-		success: function(result) {
+		success: function(obj) {
+			var result = obj.jsonResult
 			if (result.state != "success") {
 				console.log(result.data)
 				alert("로그인 실패입니다.\n이메일 또는 암호를 확인하세요")
@@ -45,7 +46,8 @@ function ajaxLogin(user) {
 
 function ajaxLogout() {
 
-	$.getJSON("logout.json", function(result) {
+	$.getJSON("logout.json", function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success")
 			console.log("로그아웃 실패입니다.")
 	})
@@ -53,8 +55,8 @@ function ajaxLogout() {
 
 function ajaxLoginUser() {
 
-	$.getJSON("loginUser.json", function(result) {
-
+	$.getJSON("loginUser.json", function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 			console.log(result.data)
 			$('.my-login').css("display", "none")
@@ -65,6 +67,9 @@ function ajaxLoginUser() {
 		$('.my-logout').css("display", "none")
 
 		$("#userName").text(result.data.name)
+		
+		$("#userNo").val(result.data.no)
+		$("#userName").val(result.data.name)
 	})
 
 }

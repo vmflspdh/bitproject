@@ -2,7 +2,8 @@
 
 function ajaxMemberList() {
 
-	$.getJSON("list.json", function(result) {
+	$.getJSON("list.json", function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("서버에서 데이터를 가져오는 데 실패했습니다.")
 			return

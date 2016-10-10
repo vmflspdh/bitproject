@@ -1,10 +1,10 @@
-$("#loginBtn").click(function(event){
+/*$("#loginBtn").click(function(event){
 	location.href="../auth/authApp.html"
 });
 $("#logoutBtn").click( function(event){
 	location.href="../auth/authApp.html"
 	//ajaxLogout()
-});
+});*/
 
 
 function ajaxBoardList() {
