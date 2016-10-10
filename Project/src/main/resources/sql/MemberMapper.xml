@@ -66,18 +66,13 @@
 
 	<update id="update" parameterType="member">
 			update tvl_membs set
-<<<<<<< HEAD
+
 			name=#{name},
 			email=#{email},
 			bir_dt=#{birthday},
 			gend=#{gender},
 			reg_dt=#{registedDate}
-=======
-			email = #{email},
-			bir_dt = #{birthday},
-			gend = #{gender}
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
-	
+
 			where mno=#{no}
 	</update>
 
