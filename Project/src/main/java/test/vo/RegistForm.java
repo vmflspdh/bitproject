@@ -8,6 +8,7 @@ public class RegistForm implements Serializable {
 	
 	protected int no;
   protected String writer;
+  protected String title;
   protected String styleName;
   protected String continent;
   protected String nation;
@@ -18,6 +19,12 @@ public class RegistForm implements Serializable {
   protected String myPhoto;
   
   
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	public int getNo() {
 		return no;
 	}

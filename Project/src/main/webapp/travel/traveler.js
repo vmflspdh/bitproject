@@ -1,6 +1,7 @@
 
 function ajaxRegistFormList() {
-	$.getJSON("formList.json", function(result) {
+	$.getJSON(serverAddr + "/travel/formList.json", function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
 		       return
@@ -11,7 +12,7 @@ function ajaxRegistFormList() {
 	    for (var i in arr) {
 	    	contents += '<tr>' +
 	    	'<td><img src="' + arr[i].myPhoto + '" width="350" ></td>' +
-	    	"<td><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + "<h3>" + arr[i].selfIntroduce + "</h3></a></br>" +
+	    	"<td><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + "<h3>" + arr[i].title + "</h3></a></br>" +
 	    	 arr[i].writer + '</br>' +
 	    	'<img src="img/yang/11101_s.gif">' + arr[i].city + ',' + arr[i].nation + ',' + arr[i].continent + '</br>' +
 	    	'<img src="img/yang/2.jpg" width=14px;><a href="#"> 99</a>' +
