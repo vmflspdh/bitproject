@@ -1,4 +1,3 @@
-
 function ajaxRegistFormList() {
 	$.getJSON(serverAddr + "/travel/formList.json", function(obj) {
 		var result = obj.jsonResult
@@ -22,7 +21,7 @@ function ajaxRegistFormList() {
 	      }
 	    $("#boardTable tbody").html(contents)
 	    $(".titleLink").click(function(event) {
-	    	  window.location.href = "travelerdetail.html?no=" + $(this).attr("data-no")
+	    	  window.location.href = "travelerform.html?no=" + $(this).attr("data-no")
 	    })
     })
 }

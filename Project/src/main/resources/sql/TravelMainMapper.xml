@@ -17,9 +17,14 @@
   <update id="update" parameterType="travelMain">
    update tvl_tvlmain set 
      title=#{title}, 
-     conts=#{contents} 
-   where no=#{no}
+     sf_inf=#{selfIntroduce} 
+   where tmno=#{travelMainNo}
  </update>
+ 
+ <delete id="delete" parameterType="int">
+  delete from tvl_tvlmain 
+  where tmno=#{travelMainNo}
+ </delete>
 </mapper>
 
 

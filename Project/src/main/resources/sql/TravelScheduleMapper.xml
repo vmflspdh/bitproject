@@ -8,6 +8,20 @@
     insert into tvl_sch(tmno,locno,st_dt,ed_dt)
     values(#{travelMainNo},#{locationNo}, #{startDate},#{endDate});
   </insert>
+  
+  <update id="update" parameterType="travelMain">
+  update tvl_sch set 
+    tmno=#{travelMainNo},
+    locno=#{locationNo},
+    st_dt=#{startDate},
+    ed_dt=#{endDate}
+  where schno=#{scheduleNo}
+</update>
+
+ <delete id="delete" parameterType="int">
+  delete from tvl_sch 
+  where schno=#{scheduleNo}
+ </delete>
 </mapper>
 
 

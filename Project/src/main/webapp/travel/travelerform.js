@@ -14,23 +14,36 @@ $("#addBtn").click(function(event) {
 });
 
 $("#updateBtn").click(function(event) {
-  var board = {
-      title: $("#title").val(),
-      contents: $("#contents").val(),
-      password: $("#password").val(),
-      no: $("#no").val()
+	var travelMain = {
+			memberNo: $("#userNo").val(),
+			scheduleNo: $("#no").val(),
+			travelMainNo: $("#travelNo").val(),
+			locationNo: $("#locationNo").val(),
+			title: $("#title").val(),
+			selfIntroduce: $("#selfIntroduce").val(),
+			startDate: $("#startDate").val(),
+			endDate: $("#endDate").val(),
+			continent: $("#continent option:selected").val(),
+			nation: $("#nation option:selected").val(),
+			city: $("#city option:selected").val(),
+			styleNo: $("#styleName option:selected").val()
+			
   }
-  ajaxUpdateBoard(board)
+  ajaxUpdateTravelMain(travelMain)
 });
 
 $("#deleteBtn").click(function(event) {
-  ajaxDeleteBoard(
-		  $("#no").val(),
-		  $("#password").val())
+	var travelMain = {
+			memberNo: $("#userNo").val(),
+			scheduleNo: $("#no").val(),
+			travelMainNo: $("#travelNo").val(),
+			locationNo: $("#locationNo").val(),
+  }
+  ajaxDeleteTravelMain(travelMain)
 });
 
 function ajaxAddTravelMain(travelMain) {
-	$.post(serverAddr + "/travel/formAdd.json", travelMain, function(obj){
+	$.post(serverAddr + "/travel/travelMainAdd.json", travelMain, function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
 	       console.log(result.data)
@@ -42,45 +55,52 @@ function ajaxAddTravelMain(travelMain) {
 	}, "json")
 }
 
-function ajaxLoadRegistForm(no) {
-	$.getJSON("formDetail.json?no=" + no, function(result) {
+function ajaxLoadTravelMain(no) {
+	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 	    	console.log(result.data)
 	    	alert("조회 실패 입니다.")
 	    	return
 	    }
-	    $("#selfIntroduce").text(result.data.selfIntroduce);
-	    $("#styleName").text(result.data.styleName);
-	    $("#city").text(result.data.city);
-	    $("#nation").text(result.data.nation);
-	    $("#startDate").text(result.data.startDate);
-	    $("#endDate").text(result.data.endDate);
+	    $("#memberNo").val(result.data.memberNo);
+	    $("#no").val(result.data.no);
+	    $("#travelNo").val(result.data.travelMainNo);
+	    $("#locationNo").val(result.data.locationNo);
+	    $("#styleNo").val(result.data.styleNo);
+	    $("#title").val(result.data.title);
+	    $("#selfIntroduce").val(result.data.selfIntroduce);
+	    $("#startDate").val(result.data.startDate);
+	    $("#endDate").val(result.data.endDate);
+	    $("#continent").val(result.data.continent);
+	    $("#nation").val(result.data.nation);
+	    $("#city").val(result.data.city);
+	    $("#styleName").val(result.data.styleNo);
 	})
 }
 
-function ajaxUpdateBoard(board) {
-	$.post("formUpdate.json", board, function(result) {
+function ajaxUpdateTravelMain(travelMain) {
+	$.post(serverAddr + "/travel/travelMainUpdate.json", travelMain, function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("변경 실패입니다.")
 		       return
 		      }
 		      
-		      window.location.href = "boardApp.html"
+		      window.location.href = "traveler.html"
 	}, "json")
 }
 	
 	
-function ajaxDeleteBoard(no, password) {
-	$.getJSON("formDelete.json", {
-		no: no,
-		password: password 
-	 }, function(result) {
+function ajaxDeleteTravelMain(travelMain) {
+	$.getJSON(serverAddr + "/travel/travelMainDelete.json", travelMain, function(obj) {
+		var result = obj.jsonResult
 		if (result.state != "success") {
 	        console.log(result.state)
 	        alert("삭제 실패 입니다.")
 	        return
 	      }
 	      
-	      location.href = "boardApp.html"
+	      location.href = "traveler.html"
 	})
 }

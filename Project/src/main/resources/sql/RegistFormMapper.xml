@@ -5,7 +5,12 @@
 <mapper namespace="test.dao.RegistFormDao">
   <resultMap type="RegistForm" id="registFormMap">
     <id column="SCHNO" property="no"/> 
+    <result column="MNO" property="memberNo"/>
+    <result column="TMNO" property="travelMainNo"/>
+    <result column="LOCNO" property="locationNo"/>
+    <result column="STYNO" property="styleNo"/>
     <result column="MNM" property="writer"/>
+    <result column="TITLE" property="title"/>
     <result column="STYNM" property="styleName"/>
     <result column="CONT" property="continent"/>
     <result column="NATN" property="nation"/>
@@ -31,7 +36,7 @@ on tvl_sty.styno = tvl_mysty.styno;
 </select>
 
 <select id="selectOne" resultMap="registFormMap" parameterType="int">
-select schno,mnm,stynm,cont,natn,city,sf_inf,st_dt,ed_dt,mpho from tvl_tvlmain
+select tvl_membs.mno, tvl_tvlmain.tmno, title, schno, mnm, tvl_sty.styno, stynm, tvl_loc.locno, cont, natn, city, sf_inf, st_dt, ed_dt, mpho from tvl_tvlmain
 inner join tvl_membs
 on tvl_membs.mno = tvl_tvlmain.mno
 inner join tvl_sch
@@ -44,8 +49,6 @@ inner join tvl_sty
 on tvl_sty.styno = tvl_mysty.styno
 where SCHNO = #{value};
 </select>
-  
-  
 </mapper>
 
 

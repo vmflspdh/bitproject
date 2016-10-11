@@ -130,117 +130,133 @@
         </nav>
 			</div>
 		</div>
-		<div class="registbackground"
-			style="background-image: url(img/yang/plain.png); border-radius: 15px 15px 15px 15px;">
-			<div class="registFormDetail">
-				<form class="form-horizontal">
+<div class="registbackground" style="background-image: url(img/yang/plain.png); border-radius: 15px 15px 15px 15px;">
+<div class="registFormDetail">
+<form class="form-horizontal" >
+<div class="form-group" >
+  <label for="no" class="col-sm-2 control-label">회원번호</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="userNo" style="width:50px; background-color: white;">
+  </div>
+</div>
 
-					<div class="form-group" style="display: none;">
-						<label for="userNo" class="col-sm-2 control-label">번호</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="userNo"
-								style="width: 50px; background-color: white;">
-						</div>
-					</div>
+<div class="form-group" style="display: none;">
+  <label for="no" class="col-sm-2 control-label">스케쥴번호</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="no" style="width:50px; background-color: white;">
+  </div>
+</div>
 
-					<div class="form-group">
-						<label for="title" class="col-sm-2 control-label">제목</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="title">
-						</div>
-					</div>
+<div class="form-group">
+  <label for="no" class="col-sm-2 control-label">여행번호</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="travelNo" style="width:50px; background-color: white;">
+  </div>
+</div>
+
+<div class="form-group" style="display: none;">
+  <label for="no" class="col-sm-2 control-label">지역번호</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="locationNo" style="width:50px; background-color: white;">
+  </div>
+</div>
+
+<div class="form-group" style="display: none;">
+  <label for="no" class="col-sm-2 control-label">스타일번호</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="styleNo" style="width:50px; background-color: white;">
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="title" class="col-sm-2 control-label">제목</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="title" >
+  </div>
+</div>
 
 
-					<div class="form-group">
-						<label for="contents" class="col-sm-2 control-label">자기소개</label>
-						<div class="col-sm-10">
-							<textarea id="selfIntroduce" class="form-control" cols="50"
-								rows="10" placeholder="내용을 입력하세요"></textarea>
-						</div>
-					</div>
+<div class="form-group">
+  <label for="contents" class="col-sm-2 control-label">자기소개</label>
+  <div class="col-sm-10">
+  <textarea  id="selfIntroduce" class="form-control" cols="50" rows="10" placeholder="내용을 입력하세요"></textarea>
+  </div>
+</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">스타일</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="styleName" style="width: 200px;">
-								<option value="1">식도락</option>
-								<option value="2">전시/공연</option>
-								<option value="3">액티비티 레포트</option>
-							</select>
-						</div>
-					</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label">스타일</label>
+  <div class="col-sm-10">
+  <select class="form-control" id="styleName" style="width:200px;">
+    <option value="1">식도락</option>
+    <option value="2">전시/공연</option>
+    <option value="3">액티비티 레포트</option>
+  </select>
+  </div>
+</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">대륙</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="continent" style="width: 150px;">
-								<option value="아시아">아시아</option>
-								<option value="유럽">유럽</option>
-								<option value="북아메리카">북아메리카</option>
-							</select>
-						</div>
-					</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label">대륙</label>
+  <div class="col-sm-10">
+  <select class="form-control" id="continent" style="width:150px;">
+    <option value="아시아">아시아</option>
+    <option value="유럽">유럽</option>
+    <option value="북아메리카">북아메리카</option>
+  </select>
+  </div>
+</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">국가</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="nation" style="width: 150px;">
-								<option value="대한민국">대한민국</option>
-								<option value="일본">일본</option>
-								<option value="영국">영국</option>
-							</select>
-						</div>
-					</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label">국가</label>
+  <div class="col-sm-10">
+  <select class="form-control" id="nation" style="width:150px;">
+    <option value="대한민국">대한민국</option>
+    <option value="일본">일본</option>
+    <option value="영국">영국</option>
+  </select>
+  </div>
+</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">도시</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="city" style="width: 150px;">
-								<option value="서울">서울</option>
-								<option value="부산">부산</option>
-								<option value="도쿄">도쿄</option>
-							</select>
-						</div>
-					</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label">도시</label>
+  <div class="col-sm-10">
+  <select class="form-control" id="city" style="width:150px;">
+    <option value="서울">서울</option>
+    <option value="부산">부산</option>
+    <option value="도쿄">도쿄</option>
+  </select>
+  </div>
+</div>
 
-					<div class="form-group">
-						<label for="no" class="col-sm-2 control-label">시작일</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="startDate"
-								style="width: 150px;">
-						</div>
-					</div>
+<div class="form-group">
+  <label for="no" class="col-sm-2 control-label">시작일</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="startDate" style="width:150px;">
+  </div>
+</div>
 
-					<div class="form-group">
-						<label for="no" class="col-sm-2 control-label">종료일</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="endDate"
-								style="width: 150px;">
-						</div>
-					</div>
+<div class="form-group">
+  <label for="no" class="col-sm-2 control-label">종료일</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="endDate" style="width:150px;">
+  </div>
+</div>
 
-				</form>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
-						<button id="updateBtn" type="button"
-							class="btn btn-default my-view">변경</button>
-						<button id="deleteBtn" type="button"
-							class="btn btn-default my-view">삭제</button>
-						<button id="cancelBtn" type="button" class="btn btn-default"
-							onclick="location.href='boardApp.html'">취소</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<p></p>
-		</br>
-		<p></p>
-		</br>
-		<p></p>
-		</br>
-		<p></p>
-		</br>
+</form>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+      <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
+      <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
+      <button id="cancelBtn" type="button" class="btn btn-default"
+      onclick="location.href='boardApp.html'">취소</button>
+    </div>
+  </div>
+</div>
+</div>
+<p></p></br>
+<p></p></br>
+<p></p></br>
+<p></p></br>   
 	</div>
 	
 	 <!-- 로그인 폼 -->
@@ -364,7 +380,7 @@
 	    ajaxLoginUser() // 로그인 유저 정보 가져오기
 		if (location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
-			ajaxLoadRegistForm(no)
+			ajaxLoadTravelMain(no)
 		}
 		/*
 		// 클래스에 .my-new가 붙으면 상세보기 들어갔을때 안보이게함
