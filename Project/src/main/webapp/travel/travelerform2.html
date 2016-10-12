@@ -43,28 +43,16 @@
 
 
 <style>
-.form-horizontal {
-	padding-right: 40px;
-	margin-top: -40px;
-	width: 90%;
-}
-
-#content {
-	text-align: center;
-	color: black;
-	background-color: white;
-}
-
-#bar {
-	width: 60%;
-	padding-bottom: 80px;
+.registFormDetail {
+	width: 1000px;
+	background: rgba(255, 255, 255, 0.7);
 	margin: 0 auto;
-}
-
-#map {
-	width: 100%;
-	height: 400px;
-	margin: 0 auto;
+	border: 0px solid black;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	padding-left: 150px;
+	padding-right: 150px;
+	border-radius: 15px 15px 15px 15px;
 }
 </style>
 
@@ -100,7 +88,7 @@
 			<div class="my-login">
 				<span> <a id="userName"
 					style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-					<a>님 동행을 찾아보세요!</a>
+					<a href="travelerform.html">님 동행을 찾아보세요!</a>
 				</span>
 			</div>
 
@@ -113,89 +101,155 @@
 			</div>
 
 			<!--  <div style='position: absolute; top: 10px; right: 80px; font-size: 15px;'>
-					<a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
-					</div>  -->
+          <a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
+          </div>  -->
 
 		</div>
+
+
 		<div class="cbp-af-header">
 			<div class="cbp-af-inner">
-				<h1>
-					<a href="travel.html">together!</a>
-				</h1>
+				<h1>together!</h1>
 				<nav>
 					<a href="traveler.html">Traveler</a> <a href="travelreviewApp.html">Review</a>
 					<a href="qnaApp.html">Q&A</a> <a href="#">.</a>
 				</nav>
 			</div>
 		</div>
-		<div id="content">
-			<form class="form-horizontal ">
-				<div id="group">
-					<div class="form-group my-view">
-						<label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="rbno" readonly>
-						</div>
-					</div>
+		<div class="registbackground"
+			style="background-image: url(img/yang/plain.png); border-radius: 15px 15px 15px 15px;">
 
-					<div class="form-group ">
-						<label for="tmno" class="col-sm-2 control-label">여행번호</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="tmno"
-								placeholder="필수사항입니다!">
-						</div>
-					</div>
+			<div class="registFormDetail">
 
-					<div class="form-group">
-						<label for="mno" class="col-sm-2 control-label">회원번호</label>
+				<form class="form-horizontal">
+					<div class="form-group" style="display: none;">
+						<label for="userNo" class="col-sm-2 control-label">번호</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="mno"
-								placeholder="필수사항입니다!">
+							<input type="text" class="form-control" id="userNo"
+								style="width: 50px; background-color: white;">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<label for="title" class="col-sm-2 control-label">제목</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="title"
-								placeholder="제목을입력하세요.">
+							<input type="text" class="form-control" id="title">
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="contents" class="col-sm-2 control-label">자기소개</label>
+						<div class="col-sm-10">
+							<textarea id="selfIntroduce" class="form-control" cols="50"
+								rows="10" placeholder="내용을 입력하세요"></textarea>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="contents" class="col-sm-2 control-label">내용</label>
+						<label class="col-sm-2 control-label">스타일</label>
 						<div class="col-sm-10">
-							<textarea class="form-control" rows="10" cols="50" id="contents"
-								placeholder="내용을입력하세요."></textarea>
+							<select class="form-control" id="styleName" style="width: 150px;">
+								<option value="1">식도락</option>
+								<option value="2">전시/공연</option>
+								<option value="3">액티비티 레포트</option>
+							</select>
+						</div>
+					</div>
+
+
+					<!-- 국가 선택 테이블 -->
+					<div class="form-group">
+						<label class="col-sm-2 control-label">일정</label>
+						<div class="col-sm-10">
+
+							<table id="root-select">
+								<tr class="root1">
+									<td><select class="form-control" id="continent">
+											<option selected value="">대륙</option>
+											<option value="아시아">아시아</option>
+											<option value="유럽">유럽</option>
+											<option value="북아메리카">북아메리카</option>
+									</select></td>
+									<td><select class="form-control" id="continent">
+											<option selected value="">국가</option>
+											<option value="아시아">아시아</option>
+											<option value="유럽">유럽</option>
+											<option value="북아메리카">북아메리카</option>
+									</select></td>
+									<td><select class="form-control" id="continent">
+											<option selected value="">도시</option>
+											<option value="아시아">아시아</option>
+											<option value="유럽">유럽</option>
+											<option value="북아메리카">북아메리카</option>
+									</select></td>
+
+									<td><input type="text" class="form-control" id="startDate"
+										placeholder="시작일"></td>
+									<td><input type="text" class="form-control" id="startDate"
+										placeholder="종료일"></td>
+									<td>
+										<button class="selectAddBtn">+</button>
+										<button class="selectDelBtn">-</button>
+									</td>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<!-- 국가 선택 끝 -->
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">대륙</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="continent" style="width: 150px;">
+								<option value="아시아">아시아</option>
+								<option value="유럽">유럽</option>
+								<option value="북아메리카">북아메리카</option>
+							</select>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="createdDate" class="col-sm-2 control-label">등록일</label>
+						<label class="col-sm-2 control-label">국가</label>
 						<div class="col-sm-10">
-							<input class="form-control" rows="10" cols="50" id="createdDate"
-								readonly="readonly"></input>
+							<select class="form-control" id="nation" style="width: 150px;">
+								<option value="대한민국">대한민국</option>
+								<option value="일본">일본</option>
+								<option value="영국">영국</option>
+							</select>
 						</div>
 					</div>
 
-					<!--   <div class="form-group">
-    <label for="password" class="col-sm-2 control-label">암호</label>
-    <div class="col-sm-10">
-      <input type="password"  class="form-control" id="password" placeholder="암호입력">
-    </div>
-  </div> -->
-
-
-
-					<div class="form-group my-view">
-						<label class="col-sm-2 control-label">조회수</label>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">도시</label>
 						<div class="col-sm-10">
-							<p id="viewCount" class="form-control-static"></p>
+							<select class="form-control" id="city" style="width: 150px;">
+								<option value="서울">서울</option>
+								<option value="부산">부산</option>
+								<option value="도쿄">도쿄</option>
+							</select>
 						</div>
 					</div>
 
-				</div>
-				<!-- group div -->
+					<div class="form-group">
+						<label for="no" class="col-sm-2 control-label">시작일</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="startDate"
+								style="width: 150px;">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="no" class="col-sm-2 control-label">종료일</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="endDate"
+								style="width: 150px;">
+						</div>
+					</div>
+				</form>
+
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
@@ -204,16 +258,20 @@
 						<button id="deleteBtn" type="button"
 							class="btn btn-default my-view">삭제</button>
 						<button id="cancelBtn" type="button" class="btn btn-default"
-							onclick="location.href='travelreviewApp.html'">취소</button>
+							onclick="location.href='boardApp.html'">취소</button>
 					</div>
 				</div>
-				<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
-			</form>
+			</div>
 		</div>
-
-		<div class="main"></div>
+		<p></p>
+		</br>
+		<p></p>
+		</br>
+		<p></p>
+		</br>
+		<p></p>
+		</br>
 	</div>
-
 
 	<!-- 로그인 폼 -->
 	<div class="modal fade" style="z-index: 200000;" id="myModal1"
@@ -248,6 +306,7 @@
 			</div>
 		</div>
 	</div>
+
 
 	<!-- 회원가입 폼 -->
 	<div class="modal fade" style="z-index: 200000;" id="myModal"
@@ -298,18 +357,18 @@
 
 
 							<label for="gender" class="col-sm-2 control-label">성별</label>
-                <div class="col-sm-10">
-                <select class="form-control" id="gender">
-                <option value="1">여자</option>
-                <option value="0">남자</option>
-              </select>
-              <br>
-              </div>
+							<div class="col-sm-10">
+								<select class="form-control" id="gender">
+									<option value="1">여자</option>
+									<option value="0">남자</option>
+								</select> <br>
+							</div>
+
 
 							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-								type="checkbox" value="remember-me" id="rememberMe"
-								name="rememberMe"> 약관동의
-							</label> -->
+                type="checkbox" value="remember-me" id="rememberMe"
+                name="rememberMe"> 약관동의
+              </label> -->
 							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
 								type="button">회원가입</button>
 						</form>
@@ -321,30 +380,87 @@
 			</div>
 		</div>
 	</div>
-
-
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
-	<script src="js/map.js"></script>
-
 	<script src="js/menu.js"></script>
 	<script src="js/classie.js"></script>
 	<script src="js/cbpAnimatedHeader.min.js"></script>
 	<!-- 회원정보 관련 -->
 	<script type="text/javascript" src="js/bit.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/authApp.js"></script>
-	<script type="text/javascript" src="travelreviewForm.js"></script>
+	<script type="text/javascript" src="js/memberForm.js"></script>
+	<script type="text/javascript" src="travelerform.js"></script>
 	<script>
-		if (window.location.search.startsWith("?")) {
+		init() // 화면을 준비시킨다
+		ajaxLoginUser() // 로그인 유저 정보 가져오기
+		if (location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
-
-			ajaxLoadBoard(no)
-			$(".my-new").css("display", "none");
-
-		} else {
-			$(".my-view").css("display", "none");
+			ajaxLoadRegistForm(no)
 		}
-		init();
-		ajaxLoginUser()
+		/*
+		// 클래스에 .my-new가 붙으면 상세보기 들어갔을때 안보이게함
+		$(".my-new").css("display", "none")
+		} else {
+		// 클래스에 .my-view가 붙으면 새글 들어갔을때 안보이게함
+		$(".my-view").css("display", "none")
+		}
+		 */
+		// ajaxLoginUser() // 로그인 유저 정보 가져오기
+
 	</script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+            // 옵션추가 버튼 클릭시
+ /*            $("#addrootBtn").click(function(){
+                // root 의 최대번호 구하기
+                var lastrootNo = $("#root-select tr:last").attr("class").replace("root", "");
+                var newroot = $("#root-select tr:eq(0)").clone();
+                newroot.removeClass();
+                newroot.find("td:eq(0)").attr("rowspan", "1");
+                newroot.addClass("root"+(parseInt(lastrootNo)+1));
+ 
+                $("#root-select").append(newroot);
+            });
+  */
+ 
+            // 항목추가 버튼 클릭시
+            $(".selectAddBtn").on("click", function(){
+               var lastrootNo = $("#root-select tr:last").attr("class").replace("root", "");
+                 var newroot = $("#root-select tr:eq(0)").clone();
+                 newroot.removeClass();
+                 newroot.find("td:eq(0)").attr("rowspan", "1");
+                 newroot.addClass("root"+(parseInt(lastrootNo)+1));
+  
+                 $("#root-select").append(newroot);
+            });
+             
+             
+            // 삭제버튼 클릭시
+            $(".selectDelBtn").on("click", function(){
+                var clickedRow = $(this).parent().parent();
+                var cls = clickedRow.attr("class");
+                 
+                // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
+                if( clickedRow.find("td:eq(0)").attr("rowspan") ){
+                    if( clickedRow.next().hasClass(cls) ){
+                        clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
+                    }
+                }
+ 
+                clickedRow.remove();
+ 
+                // rowspan 조정
+                resizeRowspan(cls);
+            });
+ 
+            // cls : rowspan 을 조정할 class ex) root1, root2, ...
+            function resizeRowspan(cls){
+                var rowspan = $("."+cls).length;
+                $("."+cls+":first td:eq(0)").attr("rowspan", rowspan);
+            }
+        });
+    </script>
+
+
 </body>
 </html>
