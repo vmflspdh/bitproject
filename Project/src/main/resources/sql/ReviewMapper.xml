@@ -42,7 +42,7 @@
     from tvl_review_bods r
 	inner join tvl_membs m 
 	on r.mno=m.mno
- 	order by r.mno asc  
+ 	order by rbno desc  
   </select>
   
   <select id="selectOne" resultMap="reviewMap" parameterType="int">

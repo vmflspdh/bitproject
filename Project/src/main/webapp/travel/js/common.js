@@ -1,1 +1,1 @@
-var serverAddr = "http://localhost:8080/Project"
+var serverAddr = "http://192.168.0.220:8080/Project"
