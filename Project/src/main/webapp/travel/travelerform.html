@@ -17,6 +17,19 @@
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <script src="js/modernizr.custom.js"></script>
+<!-- 데이트 피커 자바스크립트 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<script>
+    $(function() {
+        $("#startDate, #endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>
+<!-- 데이트 피커 자바스크립트 -->
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
