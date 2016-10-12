@@ -241,9 +241,9 @@
 </form>
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
-      <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
-      <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
+      <button id="addTMBtn" type="button" class="btn btn-default my-new">등록</button>
+      <button id="updateTMBtn" type="button" class="btn btn-default my-view">변경</button>
+      <button id="deleteTMBtn" type="button" class="btn btn-default my-view">삭제</button>
       <button id="cancelBtn" type="button" class="btn btn-default"
       onclick="location.href='boardApp.html'">취소</button>
     </div>
@@ -379,6 +379,10 @@
     if (location.search.startsWith("?")) {
       var no = location.search.split("=")[1];
       ajaxLoadTravelMain(no)
+      $(".my-new").css("display", "none")
+    } else {
+      // 클래스에 .my-view가 붙으면 새글 들어갔을때 안보이게함
+      $(".my-view").css("display", "none")
     }
     /*
     // 클래스에 .my-new가 붙으면 상세보기 들어갔을때 안보이게함
