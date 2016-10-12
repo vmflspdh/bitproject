@@ -19,12 +19,12 @@
 
 	</resultMap>
 
-	<insert id="insert"  parameterType="member">
+	<insert id="insert" parameterType="member" useGeneratedKeys="true" keyProperty="no" keyColumn="mno">
 		insert into tvl_membs(mnm,
-		email, pwd, bir_dt, gend, reg_dt, mpho)
+		email, pwd, bir_dt, gend, reg_dt)
 		values (#{name}, #{email},
 		password(#{password}),
-		#{birthday}, #{gender}, now(), #{memberPhoto})
+		#{birthday}, #{gender}, now())
 	</insert>
 
 	<select id="selectList" resultMap="memberMap" parameterType="map">
@@ -65,15 +65,12 @@
 
 
 	<update id="update" parameterType="member">
-			update tvl_membs set
+		update tvl_membs set
+		email=#{email},
+		bir_dt=#{birthday},
+		gend=#{gender}
 
-			name=#{name},
-			email=#{email},
-			bir_dt=#{birthday},
-			gend=#{gender},
-			reg_dt=#{registedDate}
-
-			where mno=#{no}
+		where mno=#{no}
 	</update>
 
 	<delete id="delete" parameterType="int">
