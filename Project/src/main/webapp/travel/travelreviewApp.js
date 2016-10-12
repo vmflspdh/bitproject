@@ -1,10 +1,3 @@
-/*$("#loginBtn").click(function(event){
-	location.href="../auth/authApp.html"
-});
-$("#logoutBtn").click( function(event){
-	location.href="../auth/authApp.html"
-	//ajaxLogout()
-});*/
 
 
 function ajaxBoardList() {
@@ -52,44 +45,3 @@ function ajaxBoardList() {
 	
 }
 
-function ajaxLoginUser() {
-
-	$.getJSON("loginUser.json", function(result) {
-
-		if (result.state != "success") {
-			console.log(result.data)
-			$('.my-login').css("display", "none")
-			/*$('.zeta-menu-bar').css("display", "none")*/
-			return
-		}
-
-		$('.my-logout').css("display", "none")
-
-		$("#userName").text(result.data.name)
-	})
-
-}
-
-/*function ajaxLoginUser(){
-	
-	$.getJSON("../auth/loginUser.json", function(obj) {
-		
-		
-		if(result.state !="success"){
-			$('.my-login').css("display","none")
-			return;
-		}
-		
-		$('.my-logout').css("display","none")
-		
-			
-			
-			//document.querySelector("#userName").textContent = result.data.name;
-			$("#userName").text(result.data.name);
-		
-	})
-	
-	
-	
-	
-}*/
