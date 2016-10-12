@@ -7,6 +7,10 @@ public class RegistForm implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	protected int no;
+	protected int memberNo;
+	protected int travelMainNo;
+	protected int locationNo;
+	protected int styleNo;
   protected String writer;
   protected String title;
   protected String styleName;
@@ -19,6 +23,31 @@ public class RegistForm implements Serializable {
   protected String myPhoto;
   
   
+  
+	public int getStyleNo() {
+		return styleNo;
+	}
+	public void setStyleNo(int styleNo) {
+		this.styleNo = styleNo;
+	}
+	public int getLocationNo() {
+		return locationNo;
+	}
+	public void setLocationNo(int locationNo) {
+		this.locationNo = locationNo;
+	}
+	public int getTravelMainNo() {
+		return travelMainNo;
+	}
+	public void setTravelMainNo(int travelMainNo) {
+		this.travelMainNo = travelMainNo;
+	}
+	public int getMemberNo() {
+		return memberNo;
+	}
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
 	public String getTitle() {
 		return title;
 	}

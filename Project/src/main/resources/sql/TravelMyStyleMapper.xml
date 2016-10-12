@@ -8,6 +8,18 @@
     insert into tvl_mysty(tmno,styno)
     values(#{travelMainNo},#{styleNo});
   </insert>
+  
+<update id="update" parameterType="travelMain">
+  update tvl_mysty set 
+    tmno=#{travelMainNo},
+    styno=#{styleNo}
+  where tmno=#{travelMainNo}
+</update>
+
+ <delete id="delete" parameterType="int">
+  delete from tvl_mysty 
+  where tmno=#{travelMainNo}
+ </delete>
 </mapper>
 
 

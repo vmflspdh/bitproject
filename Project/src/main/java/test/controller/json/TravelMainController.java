@@ -19,14 +19,12 @@ import test.vo.TravelMain;
 @Controller
 @RequestMapping("/travel/")
 public class TravelMainController {
-	@Autowired MemberDao memberDao;
 	@Autowired TravelMainDao travelMainDao;
 	@Autowired TravelLocationDao travelLocationDao;
 	@Autowired TravelMyStyleDao travelMystyleDao;
 	@Autowired TravelScheduleDao travelScheduleDao;
-	@Autowired TravelStyleDao travelStyleDao;
 
-	@RequestMapping(path="formAdd")
+	@RequestMapping(path="travelMainAdd")
 	public Object add(TravelMain travelMain) throws Exception {
 		
 		try {
@@ -41,11 +39,11 @@ public class TravelMainController {
 	}
 	
 	
-	@RequestMapping(path="formUpdate")
+	@RequestMapping(path="travelMainUpdate")
 	public Object update(TravelMain travelMain) throws Exception {
 		try {
-			HashMap<String,Object> paramMap = new HashMap<>();
-			paramMap.put("no", travelMain.getScheduleNo());
+			//HashMap<String,Object> paramMap = new HashMap<>();
+			//paramMap.put("no", travelMain.getScheduleNo());
 			travelMainDao.update(travelMain);
 			travelMystyleDao.update(travelMain);
 			travelLocationDao.update(travelMain);
@@ -55,24 +53,19 @@ public class TravelMainController {
 			return JsonResult.fail(e.getMessage());
 		}
 	}
-	/*
-	@RequestMapping(path="delete")
-	public Object delete(int no, String password) throws Exception {
+	
+	@RequestMapping(path="travelMainDelete")
+	public Object delete(TravelMain travelMain) throws Exception {
 		
 		try {
-			HashMap<String,Object> paramMap = new HashMap<>();
-			paramMap.put("no", no);
-			paramMap.put("password", password);
-
-			if (boardDao.selectOneByPassword(paramMap) == null) {
-				throw new Exception("해당 게시물이 없거나 암호가 일치하지 않습니다!");
-			} 
-			boardDao.delete(no);
+			travelMystyleDao.delete(travelMain);
+			travelScheduleDao.delete(travelMain);
+			travelLocationDao.delete(travelMain);
+			travelMainDao.delete(travelMain);
 		  return JsonResult.success();
 		} catch (Exception e) {
 			return JsonResult.fail(e.getMessage());
 		}
 	}
-	*/
 		
 }

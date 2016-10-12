@@ -6,8 +6,6 @@ import java.util.Map;
 import test.vo.RegistForm;
 
 public interface RegistFormDao {
-  List<RegistForm> selectList(Map<String,Object> paramMap) throws Exception;
+	List<RegistForm> selectList(Map<String,Object> paramMap) throws Exception;
   RegistForm selectOne(int no) throws Exception;
-  int insert(RegistForm registForm) throws Exception;
-  int delete(int no) throws Exception;
 }

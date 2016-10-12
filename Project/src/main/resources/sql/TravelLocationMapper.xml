@@ -8,6 +8,19 @@
 insert into tvl_loc(cont,natn,city)
 values(#{continent},#{nation}, #{city});
 </insert>
+
+ <update id="update" parameterType="travelMain" useGeneratedKeys="true" keyProperty="locationNo" keyColumn="locno">
+  update tvl_loc set 
+    cont=#{continent}, 
+    natn=#{nation},
+    city=#{city}
+  where locno=#{locationNo}
+</update>
+
+ <delete id="delete" parameterType="int">
+  delete from tvl_loc 
+  where locno=#{locationNo}
+ </delete>
 </mapper>
 
 
