@@ -1,4 +1,4 @@
-$("#addBtn").click(function(event) {
+$("#addTMBtn").click(function(event) {
 	var travelMain = {
 			memberNo: $("#userNo").val(),
 			title: $("#title").val(),
@@ -13,7 +13,7 @@ $("#addBtn").click(function(event) {
 	ajaxAddTravelMain(travelMain)
 });
 
-$("#updateBtn").click(function(event) {
+$("#updateTMBtn").click(function(event) {
 	var travelMain = {
 			memberNo: $("#userNo").val(),
 			scheduleNo: $("#no").val(),
@@ -32,12 +32,12 @@ $("#updateBtn").click(function(event) {
   ajaxUpdateTravelMain(travelMain)
 });
 
-$("#deleteBtn").click(function(event) {
+$("#deleteTMBtn").click(function(event) {
 	var travelMain = {
 			memberNo: $("#userNo").val(),
 			scheduleNo: $("#no").val(),
 			travelMainNo: $("#travelNo").val(),
-			locationNo: $("#locationNo").val(),
+			locationNo: $("#locationNo").val()
   }
   ajaxDeleteTravelMain(travelMain)
 });
