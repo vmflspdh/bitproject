@@ -118,141 +118,138 @@
 		</div>
 		<div class="registbackground"
 			style="background-image: url(img/yang/plain.png); border-radius: 15px 15px 15px 15px;">
-
 			<div class="registFormDetail">
 
-				<form class="form-horizontal">
-					<div class="form-group" style="display: none;">
-						<label for="userNo" class="col-sm-2 control-label">번호</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="userNo"
-								style="width: 50px; background-color: white;">
-						</div>
+				<!-- <div class="form-group" style="display: none;">
+					<label for="userNo" class="col-sm-2 control-label">번호</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="userNo"
+							style="width: 50px; background-color: white;">
 					</div>
+				</div> -->
 
-					<div class="form-group">
-						<label for="title" class="col-sm-2 control-label">제목</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="title">
-						</div>
+				<div class="form-group">
+					<label for="title" class="col-sm-2 control-label">제목</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="title">
 					</div>
+				</div>
 
-
-					<div class="form-group">
-						<label for="contents" class="col-sm-2 control-label">자기소개</label>
-						<div class="col-sm-10">
-							<textarea id="selfIntroduce" class="form-control" cols="50"
-								rows="10" placeholder="내용을 입력하세요"></textarea>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">스타일</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="styleName" style="width: 150px;">
+							<option value="1">식도락</option>
+							<option value="2">전시/공연</option>
+							<option value="3">액티비티 레포트</option>
+						</select>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">스타일</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="styleName" style="width: 150px;">
-								<option value="1">식도락</option>
-								<option value="2">전시/공연</option>
-								<option value="3">액티비티 레포트</option>
-							</select>
-						</div>
+
+				<!-- 국가 선택 테이블 -->
+				<div class="form-group">
+					<label class="col-sm-2 control-label">일정</label>
+					<div class="col-sm-10">
+
+						<table id="root-select">
+							<tr class="root-schedule">
+								<td><select class="form-control bit-continent">
+										<option selected value="">대륙</option>
+										<option value="아시아">아시아</option>
+										<option value="유럽">유럽</option>
+										<option value="북아메리카">북아메리카</option>
+								</select></td>
+								<td><select class="form-control bit-nation">
+										<option selected value="">국가</option>
+										<option value="대한민국">대한민국</option>
+										<option value="일본">일본</option>
+										<option value="영국">영국</option>
+								</select></td>
+								<td><select class="form-control bit-city">
+										<option selected value="">도시</option>
+										<option value="서울">서울</option>
+										<option value="부산">부산</option>
+										<option value="도쿄">도쿄</option>
+								</select></td>
+
+								<td><input type="text" class="form-control bit-startDate"
+									placeholder="시작일"></td>
+								<td><input type="text" class="form-control bit-endDate"
+									placeholder="종료일"></td>
+								<td style="width: 50px;">
+									<button class="selectAddBtn">+</button>
+									<button class="selectDelBtn">-</button>
+								</td>
+							</tr>
+
+						</table>
 					</div>
+				</div>
 
+				<!-- 국가 선택 끝 -->
 
-					<!-- 국가 선택 테이블 -->
-					<div class="form-group">
-						<label class="col-sm-2 control-label">일정</label>
-						<div class="col-sm-10">
-
-							<table id="root-select">
-								<tr class="root1">
-									<td><select class="form-control" id="continent">
-											<option selected value="">대륙</option>
-											<option value="아시아">아시아</option>
-											<option value="유럽">유럽</option>
-											<option value="북아메리카">북아메리카</option>
-									</select></td>
-									<td><select class="form-control" id="continent">
-											<option selected value="">국가</option>
-											<option value="아시아">아시아</option>
-											<option value="유럽">유럽</option>
-											<option value="북아메리카">북아메리카</option>
-									</select></td>
-									<td><select class="form-control" id="continent">
-											<option selected value="">도시</option>
-											<option value="아시아">아시아</option>
-											<option value="유럽">유럽</option>
-											<option value="북아메리카">북아메리카</option>
-									</select></td>
-
-									<td><input type="text" class="form-control" id="startDate"
-										placeholder="시작일"></td>
-									<td><input type="text" class="form-control" id="startDate"
-										placeholder="종료일"></td>
-									<td>
-										<button class="selectAddBtn">+</button>
-										<button class="selectDelBtn">-</button>
-									</td>
-								</tr>
-
-							</table>
-						</div>
+				<div class="form-group">
+					<label for="contents" class="col-sm-2 control-label">자기소개</label>
+					<div class="col-sm-10">
+						<textarea id="selfIntroduce" class="form-control" cols="50"
+							rows="10" placeholder="내용을 입력하세요"></textarea>
 					</div>
+				</div>
 
-					<!-- 국가 선택 끝 -->
-
-					<div class="form-group">
-						<label class="col-sm-2 control-label">대륙</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="continent" style="width: 150px;">
-								<option value="아시아">아시아</option>
-								<option value="유럽">유럽</option>
-								<option value="북아메리카">북아메리카</option>
-							</select>
-						</div>
+<!-- 				<div class="form-group">
+					<label class="col-sm-2 control-label">대륙</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="continent" style="width: 150px;">
+							<option value="아시아">아시아</option>
+							<option value="유럽">유럽</option>
+							<option value="북아메리카">북아메리카</option>
+						</select>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">국가</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="nation" style="width: 150px;">
-								<option value="대한민국">대한민국</option>
-								<option value="일본">일본</option>
-								<option value="영국">영국</option>
-							</select>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">국가</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="nation" style="width: 150px;">
+							<option value="대한민국">대한민국</option>
+							<option value="일본">일본</option>
+							<option value="영국">영국</option>
+						</select>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label class="col-sm-2 control-label">도시</label>
-						<div class="col-sm-10">
-							<select class="form-control" id="city" style="width: 150px;">
-								<option value="서울">서울</option>
-								<option value="부산">부산</option>
-								<option value="도쿄">도쿄</option>
-							</select>
-						</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">도시</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="city" style="width: 150px;">
+							<option value="서울">서울</option>
+							<option value="부산">부산</option>
+							<option value="도쿄">도쿄</option>
+						</select>
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label for="no" class="col-sm-2 control-label">시작일</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="startDate"
-								style="width: 150px;">
-						</div>
+				<div class="form-group">
+					<label for="no" class="col-sm-2 control-label">시작일</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="startDate"
+							style="width: 150px;">
 					</div>
+				</div>
 
-					<div class="form-group">
-						<label for="no" class="col-sm-2 control-label">종료일</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" id="endDate"
-								style="width: 150px;">
-						</div>
+				<div class="form-group">
+					<label for="no" class="col-sm-2 control-label">종료일</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="endDate"
+							style="width: 150px;">
 					</div>
-				</form>
+				</div> -->
+
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+						<button id="addTMBtn2" type="button" class="btn btn-default my-new">등록</button>
 						<button id="updateBtn" type="button"
 							class="btn btn-default my-view">변경</button>
 						<button id="deleteBtn" type="button"
@@ -407,59 +404,23 @@
 		 */
 		// ajaxLoginUser() // 로그인 유저 정보 가져오기
 
-	</script>
-	<script type="text/javascript">
-        $(document).ready(function(){
-            // 옵션추가 버튼 클릭시
- /*            $("#addrootBtn").click(function(){
-                // root 의 최대번호 구하기
-                var lastrootNo = $("#root-select tr:last").attr("class").replace("root", "");
-                var newroot = $("#root-select tr:eq(0)").clone();
-                newroot.removeClass();
-                newroot.find("td:eq(0)").attr("rowspan", "1");
-                newroot.addClass("root"+(parseInt(lastrootNo)+1));
- 
-                $("#root-select").append(newroot);
-            });
-  */
- 
-            // 항목추가 버튼 클릭시
-            $(".selectAddBtn").on("click", function(){
-               var lastrootNo = $("#root-select tr:last").attr("class").replace("root", "");
-                 var newroot = $("#root-select tr:eq(0)").clone();
-                 newroot.removeClass();
-                 newroot.find("td:eq(0)").attr("rowspan", "1");
-                 newroot.addClass("root"+(parseInt(lastrootNo)+1));
-  
-                 $("#root-select").append(newroot);
-            });
-             
-             
-            // 삭제버튼 클릭시
-            $(".selectDelBtn").on("click", function(){
-                var clickedRow = $(this).parent().parent();
-                var cls = clickedRow.attr("class");
-                 
-                // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
-                if( clickedRow.find("td:eq(0)").attr("rowspan") ){
-                    if( clickedRow.next().hasClass(cls) ){
-                        clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
-                    }
-                }
- 
-                clickedRow.remove();
- 
-                // rowspan 조정
-                resizeRowspan(cls);
-            });
- 
-            // cls : rowspan 을 조정할 class ex) root1, root2, ...
-            function resizeRowspan(cls){
-                var rowspan = $("."+cls).length;
-                $("."+cls+":first td:eq(0)").attr("rowspan", rowspan);
-            }
-        });
-    </script>
+
+	$(document.body).on('click', '.selectAddBtn', function(event) {
+		
+	 var lastrootschedule = $("#root-select tr:eq(0)").clone();
+		$("#root-select").append(lastrootschedule);
+	});
+
+	$(document.body).on('click', '.selectDelBtn', function(event) {
+		var clickedRow = $(this).parent().parent();
+
+		clickedRow.remove();
+
+	});
+	
+
+
+</script>
 
 
 </body>

@@ -1,17 +1,51 @@
+	$(document.body).on('click', '.selectAddBtn', function(event) {
+		
+	 var lastrootschedule = $("#root-select tr:eq(0)").clone();
+		$("#root-select").append(lastrootschedule);
+	});
+
+	$(document.body).on('click', '.selectDelBtn', function(event) {
+		var clickedRow = $(this).parent().parent();
+
+		clickedRow.remove();
+
+	});
+
 $("#addTMBtn").click(function(event) {
+	
 	var travelMain = {
-			memberNo: $("#userNo").val(),
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			startDate: $("#startDate").val(),
-			endDate: $("#endDate").val(),
-			continent: $("#continent option:selected").val(),
-			nation: $("#nation option:selected").val(),
-			city: $("#city option:selected").val(),
 			styleNo: $("#styleName option:selected").val()
 	}
+	
+
+	
+	var scheduleArray = [];
+	$('.root-schedule').each(function(index, element) {
+	
+		var tag = $(element)
+		
+		scheduleArray[index] = {
+			  
+			  continent : tag.find('.bit-continent').val(),
+				nation : tag.find('.bit-nation').val(),
+				city : tag.find('.bit-city').val(),
+				startDate1 : tag.find('.bit-startDate').val(),
+				endDate1 : tag.find('.bit-endDate').val()
+			};
+		})
+		
+	//console.log(scheduleArray)
+	var schedule = JSON.stringify(scheduleArray)
+	console.log(schedule)
+	travelMain.schedule = schedule;
 	ajaxAddTravelMain(travelMain)
+	
+
 });
+
+
 
 $("#updateTMBtn").click(function(event) {
 	var travelMain = {
@@ -70,11 +104,11 @@ function ajaxLoadTravelMain(no) {
 	    $("#styleNo").val(result.data.styleNo);
 	    $("#title").val(result.data.title);
 	    $("#selfIntroduce").val(result.data.selfIntroduce);
-	    $("#startDate").val(result.data.startDate);
-	    $("#endDate").val(result.data.endDate);
-	    $("#continent").val(result.data.continent);
-	    $("#nation").val(result.data.nation);
-	    $("#city").val(result.data.city);
+	    $(".bit-startDate").val(result.data.startDate);
+	    $(".bit-endDate").val(result.data.endDate);
+	    $(".bit-continent").val(result.data.continent);
+	    $(".bit-nation").val(result.data.nation);
+	    $(".bit-city").val(result.data.city);
 	    $("#styleName").val(result.data.styleNo);
 	})
 }

@@ -25,13 +25,9 @@ public class Member implements Serializable{
   }
 
 
-
-
   public void setNo(int no) {
     this.no = no;
   }
-
-
 
 
   public String getName() {
@@ -39,13 +35,9 @@ public class Member implements Serializable{
   }
 
 
-
-
   public void setName(String name) {
     this.name = name;
   }
-
-
 
 
   public String getEmail() {
@@ -53,13 +45,9 @@ public class Member implements Serializable{
   }
 
 
-
-
   public void setEmail(String email) {
     this.email = email;
   }
-
-
 
 
   public String getPassword() {
@@ -67,13 +55,9 @@ public class Member implements Serializable{
   }
 
 
-
-
   public void setPassword(String password) {
     this.password = password;
   }
-
-
 
 
   public Date getBirthday() {
@@ -82,19 +66,14 @@ public class Member implements Serializable{
 
 
 
-
   public void setBirthday(Date birthday) {
     this.birthday = birthday;
   }
 
 
-
-
   public int getGender() {
     return gender;
   }
-
-
 
 
   public void setGender(int gender) {

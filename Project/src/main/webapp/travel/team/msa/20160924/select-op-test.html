@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<table id="root-select" border="1px">
+	<table id="root-select">
 		<tr class="root1">
 			<td><select class="form-control" id="continent">
 					<option selected value="">대륙</option>
@@ -31,8 +42,8 @@
 				id="startDate" placeholder="종료일"></td>
 
 			<td>
-				<button class="addBtn">+</button>
-				<button class="delBtn">-</button>
+				<button class="selectAddBtn">+</button>
+				<button class="selectDelBtn">-</button>
 			</td>
 
 		</tr>

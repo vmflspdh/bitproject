@@ -17,20 +17,6 @@
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <script src="js/modernizr.custom.js"></script>
-<!-- 데이트 피커 자바스크립트 -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-
-<script>
-    $(function() {
-        $("#startDate, #endDate").datepicker({
-            dateFormat: 'yy-mm-dd'
-        });
-    });
-</script>
-<!-- 데이트 피커 자바스크립트 -->
-
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -42,6 +28,21 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<!-- 데이트 피커 자바스크립트 -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+<script>
+    $(function() {
+        $(".bit-startDate, .bit-endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>
+<!-- 데이트 피커 자바스크립트 -->
+
 
 <script>
   $(function() {
@@ -71,14 +72,12 @@
   margin: 0 auto;
 }
 .registFormDetail {
-  width: 1150px;
+  width: 700px;
   background: rgba(255, 0, 0, 0.05);
   margin: 0 auto;
   border: 0px solid black;
   padding-top: 10px;
   padding-bottom:3px;
-  padding-left: 300px;
-  padding-right: 300px;
   border-radius: 15px 15px 15px 15px;
 }
 </style>
@@ -142,13 +141,15 @@
     </div>
 <div class="registbackground">
 <div class="registFormDetail">
-<form class="form-horizontal" >
+
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">회원번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="userNo" style="width:50px; background-color: white;">
   </div>
 </div>
+
+<br>
 
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">스케쥴번호</label>
@@ -157,42 +158,36 @@
   </div>
 </div>
 
+<br>
+
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">여행번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="travelNo" style="width:50px; background-color: white;">
   </div>
 </div>
-
+<br>
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">지역번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="locationNo" style="width:50px; background-color: white;">
   </div>
 </div>
-
+<br>
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">스타일번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="styleNo" style="width:50px; background-color: white;">
   </div>
 </div>
-
+<br>
 <div class="form-group">
   <label for="title" class="col-sm-2 control-label">제목</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="title" >
   </div>
 </div>
-
-
-<div class="form-group">
-  <label for="contents" class="col-sm-2 control-label">자기소개</label>
-  <div class="col-sm-10">
-  <textarea  id="selfIntroduce" class="form-control" cols="50" rows="10" placeholder="내용을 입력하세요"></textarea>
-  </div>
-</div>
-
+<br>
 <div class="form-group">
   <label class="col-sm-2 control-label">스타일</label>
   <div class="col-sm-10">
@@ -203,55 +198,56 @@
   </select>
   </div>
 </div>
+<br>
+      <div class="form-group">
+          <label class="col-sm-2 control-label">일정</label>
+          <div class="col-sm-10">
+
+            <table id="root-select">
+              <tr class="root-schedule">
+                <td><select class="form-control bit-continent">
+                    <option selected value="">대륙</option>
+                    <option value="아시아">아시아</option>
+                    <option value="유럽">유럽</option>
+                    <option value="북아메리카">북아메리카</option>
+                </select></td>
+                <td><select class="form-control bit-nation">
+                    <option selected value="">국가</option>
+                    <option value="대한민국">대한민국</option>
+                    <option value="일본">일본</option>
+                    <option value="영국">영국</option>
+                </select></td>
+                <td><select class="form-control bit-city">
+                    <option selected value="">도시</option>
+                    <option value="서울">서울</option>
+                    <option value="부산">부산</option>
+                    <option value="도쿄">도쿄</option>
+                </select></td>
+
+                <td><input type="text" class="form-control bit-startDate"
+                  placeholder="시작일"></td>
+                <td><input type="text" class="form-control bit-endDate"
+                  placeholder="종료일"></td>
+                <td style="width: 50px;">
+                  <button class="selectAddBtn">+</button>
+                  <button class="selectDelBtn">-</button>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
 
 <div class="form-group">
-  <label class="col-sm-2 control-label">대륙</label>
+  <label for="contents" class="col-sm-2 control-label">자기소개</label>
   <div class="col-sm-10">
-  <select class="form-control" id="continent" style="width:150px;">
-    <option value="아시아">아시아</option>
-    <option value="유럽">유럽</option>
-    <option value="북아메리카">북아메리카</option>
-  </select>
+  <textarea  id="selfIntroduce" class="form-control" cols="50" rows="10" placeholder="내용을 입력하세요"></textarea>
   </div>
 </div>
 
-<div class="form-group">
-  <label class="col-sm-2 control-label">국가</label>
-  <div class="col-sm-10">
-  <select class="form-control" id="nation" style="width:150px;">
-    <option value="대한민국">대한민국</option>
-    <option value="일본">일본</option>
-    <option value="영국">영국</option>
-  </select>
-  </div>
-</div>
 
-<div class="form-group">
-  <label class="col-sm-2 control-label">도시</label>
-  <div class="col-sm-10">
-  <select class="form-control" id="city" style="width:150px;">
-    <option value="서울">서울</option>
-    <option value="부산">부산</option>
-    <option value="도쿄">도쿄</option>
-  </select>
-  </div>
-</div>
 
-<div class="form-group">
-  <label for="no" class="col-sm-2 control-label">시작일</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="startDate" style="width:150px;">
-  </div>
-</div>
 
-<div class="form-group">
-  <label for="no" class="col-sm-2 control-label">종료일</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="endDate" style="width:150px;">
-  </div>
-</div>
-
-</form>
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <button id="addTMBtn" type="button" class="btn btn-default my-new">등록</button>
@@ -263,9 +259,9 @@
   </div>
 </div>
 </div>
-<p></p></br>
-<p></p></br>
-<p></p></br>
+<p></p><br>
+<p></p><br>
+<p></p><br>
 <p></p></br>   
   </div>
   
@@ -367,7 +363,7 @@
               </label> -->
               <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
                 type="button">회원가입</button>
-            </form>
+</form>
           </div>
         </div>
         <div class="modal-footer">
