@@ -1,5 +1,5 @@
 function ajaxLoadRegistForm(no) {
-	$.getJSON("formDetail.json?no=" + no, function(obj) {
+	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 	    	console.log(result.data)

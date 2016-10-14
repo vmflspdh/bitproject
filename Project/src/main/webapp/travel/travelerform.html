@@ -72,11 +72,11 @@
 }
 .registFormDetail {
   width: 1150px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 0, 0, 0.05);
   margin: 0 auto;
   border: 0px solid black;
   padding-top: 10px;
-  padding-bottom: 0px;
+  padding-bottom:3px;
   padding-left: 300px;
   padding-right: 300px;
   border-radius: 15px 15px 15px 15px;
@@ -140,10 +140,10 @@
         </nav>
       </div>
     </div>
-<div class="registbackground" style="background-image: url(img/yang/plain.png); border-radius: 15px 15px 15px 15px;">
+<div class="registbackground">
 <div class="registFormDetail">
 <form class="form-horizontal" >
-<div class="form-group" >
+<div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">회원번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="userNo" style="width:50px; background-color: white;">
@@ -157,7 +157,7 @@
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">여행번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="travelNo" style="width:50px; background-color: white;">
