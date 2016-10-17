@@ -1,23 +1,23 @@
-	$(document.body).on('click', '.selectAddBtn', function(event) {
-		
-	 var lastrootschedule = $("#root-select tr:eq(0)").clone();
-		$("#root-select").append(lastrootschedule);
-	});
+$(document.body).on('click', '.selectAddBtn', function(event) {
+	
+  var lastrootschedule = $("#root-select form:eq(0)").clone();
+  $("#root-select").append(lastrootschedule);
+});
 
-	$(document.body).on('click', '.selectDelBtn', function(event) {
-		var clickedRow = $(this).parent().parent();
+$(document.body).on('click', '.selectDelBtn', function(event) {
+	var clickedRow = $(this).parent().parent();
+	clickedRow.remove();
 
-		clickedRow.remove();
-
-	});
+});
 
 $("#addTMBtn").click(function(event) {
 	
 	var travelMain = {
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			styleNo: $("#styleName option:selected").val()
+			styleNo: $("input[name='chk_info']:checked").val()
 	}
+	console.log(travelMain.styleNo)
 	
 
 	
@@ -138,3 +138,6 @@ function ajaxDeleteTravelMain(travelMain) {
 	      location.href = "traveler.html"
 	})
 }
+
+
+

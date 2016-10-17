@@ -32,7 +32,12 @@ on tvl_mysty.tmno = tvl_tvlmain.tmno
 inner join tvl_loc
 on tvl_loc.locno = tvl_sch.locno
 inner join tvl_sty
-on tvl_sty.styno = tvl_mysty.styno;
+on tvl_sty.styno = tvl_mysty.styno
+order by
+<choose>
+<when test="schnoOrder == 'asc'">schno asc</when>
+<otherwise>schno desc</otherwise>
+</choose>
 </select>
 
 <select id="selectOne" resultMap="registFormMap" parameterType="int">
@@ -50,16 +55,4 @@ on tvl_sty.styno = tvl_mysty.styno
 where SCHNO = #{value};
 </select>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
 

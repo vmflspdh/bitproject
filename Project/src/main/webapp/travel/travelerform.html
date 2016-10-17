@@ -68,7 +68,8 @@
   margin: 0 auto;
 }
 #map {
-  height: 400px;
+  width: 70%;
+  height: 200px;
   margin: 0 auto;
 }
 .registFormDetail {
@@ -76,10 +77,19 @@
   background: rgba(255, 255, 255, 0.05);
   margin: 0 auto;
   border: 0px solid black;
-  padding-top: 10px;
   padding-bottom:3px;
   border-radius: 15px 15px 15px 15px;
 }
+  table {
+    border: 0px solid black;
+    width: 740px;
+    margin: 0 auto;
+  }
+  td {
+    border-bottom: 1px solid green;
+    /* border: 1px solid green; */
+    padding-top: 50px; padding-bottom: 50px;
+  }
 </style>
 
 
@@ -149,7 +159,6 @@
   </div>
 </div>
 
-<br>
 
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">스케쥴번호</label>
@@ -158,7 +167,6 @@
   </div>
 </div>
 
-<br>
 
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">여행번호</label>
@@ -166,90 +174,100 @@
     <input type="text" class="form-control" id="travelNo" style="width:50px; background-color: white;">
   </div>
 </div>
-<br>
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">지역번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="locationNo" style="width:50px; background-color: white;">
   </div>
 </div>
-<br>
 <div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">스타일번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="styleNo" style="width:50px; background-color: white;">
   </div>
 </div>
-<br>
-<div class="form-group">
-  <label for="title" class="col-sm-2 control-label">제목</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="title" >
-  </div>
-</div>
-<br>
-<div class="form-group">
-  <label class="col-sm-2 control-label">스타일</label>
-  <div class="col-sm-10">
-  <select class="form-control" id="styleName" style="width:200px;">
-    <option value="1">식도락</option>
-    <option value="2">전시/공연</option>
-    <option value="3">액티비티 레포트</option>
-  </select>
-  </div>
-</div>
-<br>
-      <div class="form-group">
-          <label class="col-sm-2 control-label">일정</label>
-          <div class="col-sm-10">
-
-            <table id="root-select">
-              <tr class="root-schedule">
-                <td><select class="form-control bit-continent">
-                    <option selected value="">대륙</option>
-                    <option value="아시아">아시아</option>
-                    <option value="유럽">유럽</option>
-                    <option value="북아메리카">북아메리카</option>
-                </select></td>
-                <td><select class="form-control bit-nation">
-                    <option selected value="">국가</option>
-                    <option value="대한민국">대한민국</option>
-                    <option value="일본">일본</option>
-                    <option value="영국">영국</option>
-                </select></td>
-                <td><select class="form-control bit-city">
-                    <option selected value="">도시</option>
-                    <option value="서울">서울</option>
-                    <option value="부산">부산</option>
-                    <option value="도쿄">도쿄</option>
-                </select></td>
-
-                <td><input type="text" class="form-control bit-startDate"
-                  placeholder="시작일"></td>
-                <td><input type="text" class="form-control bit-endDate"
-                  placeholder="종료일"></td>
-                <td style="width: 50px;">
-                  <button class="selectAddBtn">+</button>
-                  <button class="selectDelBtn">-</button>
-                </td>
-              </tr>
-
-            </table>
-          </div>
-        </div>
-
-<div class="form-group">
-  <label for="contents" class="col-sm-2 control-label">자기소개</label>
-  <div class="col-sm-10">
-  <textarea  id="selfIntroduce" class="form-control" cols="50" rows="10" placeholder="내용을 입력하세요"></textarea>
-  </div>
-</div>
-
-
-
-
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+<table>
+  <tr>
+    <td style="width: 140px; color: green; font-weight: bold; font-size: large;">
+    <div>프로필</div>
+     <div>사진</div>
+    </td>
+    <td style="font-size: small; font-weight: bold; padding-left: 20px;">
+      <img src="img/profileDemo.png" style="width:150px;">
+      &nbsp;&nbsp;&nbsp;자신을 표현할
+      프로필 및 여행사진을 업로드 하세요!
+    </td>
+  <tr>
+    <td style="color: green; font-weight: bold; font-size: large;">
+     <div>나의여행</div>
+     <div>스타일</div>
+    </td>
+    <td style="font-weight:bold; padding-left: 30px;">
+    <label class="checkbox-inline">
+      <input type="checkbox" name="chk_info" value="1">식도락
+      </label>
+      <label class="checkbox-inline">
+      <input type="checkbox" name="chk_info" value="2">전시/공연
+      </label>
+      <label class="checkbox-inline">
+      <input type="checkbox" name="chk_info" value="3">액티비티/레포츠
+      </label>
+    </td>
+  </tr>
+  <tr>
+    <td style="color: green; font-weight: bold; font-size: large;">
+     <div>가고싶은</div>
+     <div>여행지</div>
+    </td>
+    <td id="root-select">
+    <form class="form-inline root-schedule" onsubmit="return false">
+    <select style="width:100px;" class="form-control bit-continent">
+       <option selected value="">대륙</option>
+       <option value="아시아">아시아</option>
+       <option value="유럽">유럽</option>
+       <option value="북아메리카">북아메리카</option>
+   </select>
+   <select style="width:100px;" class="form-control bit-nation">
+       <option selected value="">국가</option>
+       <option value="대한민국">대한민국</option>
+       <option value="일본">일본</option>
+       <option value="영국">영국</option>
+   </select>
+   <select style="width:100px;" class="form-control bit-city">
+       <option selected value="">도시</option>
+       <option value="서울">서울</option>
+       <option value="부산">부산</option>
+       <option value="도쿄">도쿄</option>
+   </select>
+   <input type="text" placeholder="시작일" style="width:100px;" class="form-control bit-startDate">
+   <input type="text" placeholder="종료일" style="width:100px;" class="form-control bit-endDate">
+     <button class="btn btn-default selectAddBtn">+</button>
+     <button class="btn btn-default selectDelBtn">-</button>
+   </form>
+   </td>
+  </tr>
+  <!-- 이거 맵 -->
+  <tr>
+    <td colspan="2">
+      <div id="map"></div>
+    </td>
+  </tr>
+  <!-- 여기까지맵임 -->
+  <tr>
+    <td style="width: 100px; color: green; font-weight: bold; border: 0; padding-bottom: 0; font-size: large;">
+    제목
+    </td>
+    <td style="border:0; padding-bottom: 0;">
+      <input type="text" class="form-control" id="title" style="width:500px;" placeholder="제목을 입력하세요">
+    </td>
+  </tr>
+  <tr>
+    <td style="padding-top: 20px; padding-bottom: 20px; color: green; font-weight: bold; font-size: large;">자기소개</td>
+    <td><textarea  id="selfIntroduce" class="form-control" cols="50" rows="10" style="width:500px;" placeholder="내용을 입력하세요"></textarea></td>
+  </tr>
+</table>
+<div class="form-group" style="width: 740px; margin:0 auto; border: 0px solid black; padding-top: 20px; padding-bottom: 20px;">
+    <div class="col-sm-offset-2 col-sm-10" style="padding-left: 400px;">
       <button id="addTMBtn" type="button" class="btn btn-default my-new">등록</button>
       <button id="updateTMBtn" type="button" class="btn btn-default my-view">변경</button>
       <button id="deleteTMBtn" type="button" class="btn btn-default my-view">삭제</button>
@@ -373,6 +391,10 @@
     </div>
   </div>
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+  <script src="js/map.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+    async defer></script>
   <script src="js/menu.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/cbpAnimatedHeader.min.js"></script>
