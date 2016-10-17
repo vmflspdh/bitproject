@@ -3,6 +3,8 @@ package test.controller.json;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -65,12 +67,12 @@ public class QnaController {
    
    @RequestMapping(path="qnadetail", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
-   public String detail(int qno) throws Exception {
+   public String detail(int qno, HttpSession session) throws Exception {
      HashMap<String,Object> result = new HashMap<>();
      
      try {
        Qna qna = qnaDao.selectOne(qno);
-       
+       session.setAttribute("qnabodsno", qna);
        if (qna == null) 
          throw new Exception("해당 번호의 게시물이 존재하지 않습니다.");
        

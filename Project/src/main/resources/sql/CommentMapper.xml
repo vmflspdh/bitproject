@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.CommentDao">
+  <resultMap type="comment" id="commentMap">
+    <id column="rcno" property="reviewcommentNo"/>
+ 		<result column="rbno" property="reviewboardNo"/>
+	    <result column="mno" property="memberNo"/>
+	    <result column="mnm" property="memberName"/> 
+	    <result column="cont" property="content"/>
+	    <result column="cre_dt" property="createdDate2"/>  
+     
+  </resultMap>
+  
+  <select id="selectList2" resultMap="commentMap" parameterType="int">
+  select rcno,rbno,c.mno,mnm,cont,cre_dt 
+  from tvl_review_comt c
+  inner join tvl_membs m 
+  on m.mno=c.mno
+  where rbno =#{value}
+  	
+  </select> 
+  
+  
+  
+  <insert id="insert" parameterType="comment" >
+    insert into tvl_review_comt(rbno,mno,cont,cre_dt)
+    values(#{reviewboardNo},#{memberNo}, #{content},now())
+  </insert>
+</mapper>
+

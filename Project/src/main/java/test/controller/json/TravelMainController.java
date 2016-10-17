@@ -1,5 +1,6 @@
 package test.controller.json;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -29,6 +30,22 @@ public class TravelMainController {
   @Autowired TravelLocationDao travelLocationDao;
   @Autowired TravelMyStyleDao travelMystyleDao;
   @Autowired TravelScheduleDao travelScheduleDao;
+  TravelMain travelMain = new TravelMain();
+  
+  @RequestMapping(path="scheduleList")
+  public Object list(HttpSession session) throws Exception {
+
+    try {
+      HashMap<String,Object> map = new HashMap<>();
+      travelMain = (TravelMain)session.getAttribute("travelPostNo");
+      map.put("travelPostNo", travelMain.getTravelMainNo());
+      
+      return JsonResult.success(travelScheduleDao.selectMySchdule(map));
+    
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
 
   @RequestMapping(path="travelMainAdd")
   public Object add(TravelMain travelMain, String schedule, HttpSession session) throws Exception {

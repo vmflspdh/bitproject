@@ -12,7 +12,7 @@ function checkToNo(no) {
 }
 
 function ajaxRegistFormList() {
-	$.getJSON(serverAddr + "/travel/formList.json", function(obj) {
+	$.getJSON(serverAddr + "/travel/scheduleList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
@@ -33,9 +33,6 @@ function ajaxRegistFormList() {
 	      }
 	    $("#boardTable tbody").html(contents)
 	    $(".titleLink").click(function(event) {
-	    	var no = $(this).attr("data-no")
-	    	console.log(no)
-	    	checkToNo(no)
 	    })
     })
 }

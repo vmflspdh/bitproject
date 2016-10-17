@@ -5,22 +5,26 @@
 <mapper namespace="test.dao.QnaDao">
   <resultMap type="qna" id="qnaMap">
   
-    <id column="QBNO" property="qno"/> 
+       <id column="QBNO" property="qno"/> 
     <result column="MNO" property="no"/>
-    <result column="TITL" property="title"/>
+    <result column="MNO" property="comMemberNo"/>
+    <result column="TQCNO" property="qcno"/>
+    <result column="TITLE" property="title"/>
      <result column="CONT" property="contents"/>
+     <result column="CONT" property="commentContents"/>
     <result column="CRE_DT" property="createDate"/>
+    <result column="CRE_DT" property="cmtCreateDate"/>
     <result column="VW_CNT" property="viewCount"/>
   </resultMap>
   
 
   
   
-  
     <select id="selectList" resultMap="qnaMap" parameterType="map">
-  select QBNO, MNO, TITl, CONT, CRE_DT, VW_CNT
+  select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, TVL_QNA_BODS.TITlE, TVL_QNA_BODS.CONT, 
+  TVL_QNA_BODS.CRE_DT, TVL_QNA_BODS.VW_CNT
     from tvl_QnA_BODS
-    <where>
+     <where>
       <if test="title != null">title like concat('%', #{title}, '%')</if>
       <if test="writer != null">and writer like concat('%', #{writer}, '%')</if>
     </where>
@@ -37,21 +41,25 @@
     </choose>
     limit #{startIndex}, #{length}
   </select>
-    <select id="selectOne" resultMap="qnaMap" parameterType="int">
-   select QBNO, MNO, TITl, CONT, CRE_DT, VW_CNT
+  
+   <select id="selectOne" resultMap="qnaMap" parameterType="int">
+   select QBNO, MNO, TITlE, CONT, CRE_DT, VW_CNT
     from tvl_QnA_BODS
     where QBNO = #{value}
   </select>
+  
 
   
-  <insert id="insert" parameterType="qna">
-    insert into tvl_QnA_bods(MNO, TITl, CONT, cre_dt)
+  <insert id="insert" parameterType="qna"  useGeneratedKeys="true" keyProperty="qno">
+    insert into tvl_QnA_bods(MNO, TITlE, CONT, cre_dt)
     values(#{no}, #{title}, #{contents}, now())
+    
+ 
   </insert>
   
   <update id="update" parameterType="qna">
     update tvl_QnA_bods set 
-      TITl=#{title}, 
+      TITlE=#{title}, 
       CONT=#{contents} 
     where QBNO=#{qno}
   </update>

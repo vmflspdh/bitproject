@@ -1,28 +1,34 @@
 package test.vo;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.List;
 
 public class RegistForm implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+  private static final long serialVersionUID = 1L;
 	
-	protected int no;
 	protected int memberNo;
 	protected int travelMainNo;
-	protected int locationNo;
 	protected int styleNo;
   protected String writer;
   protected String title;
   protected String styleName;
-  protected String continent;
+/* protected String continent;
   protected String nation;
-  protected String city;
+  protected String city;*/
   protected String selfIntroduce;
-  protected Date startDate;
-  protected Date endDate;
   protected String myPhoto;
+  protected List<Schedule> schedule;
   
   
+  
+  
+  public List<Schedule> getSchedule() {
+    return schedule;
+  }
+  public void setSchedule(List<Schedule> schedule) {
+    this.schedule = schedule;
+  }
   
 	public int getStyleNo() {
 		return styleNo;
@@ -30,12 +36,12 @@ public class RegistForm implements Serializable {
 	public void setStyleNo(int styleNo) {
 		this.styleNo = styleNo;
 	}
-	public int getLocationNo() {
+/*	public int getLocationNo() {
 		return locationNo;
 	}
 	public void setLocationNo(int locationNo) {
 		this.locationNo = locationNo;
-	}
+	}*/
 	public int getTravelMainNo() {
 		return travelMainNo;
 	}
@@ -54,12 +60,12 @@ public class RegistForm implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public int getNo() {
+/*	public int getNo() {
 		return no;
 	}
 	public void setNo(int no) {
 		this.no = no;
-	}
+	}*/
 	public String getWriter() {
 		return writer;
 	}
@@ -72,7 +78,7 @@ public class RegistForm implements Serializable {
 	public void setStyleName(String styleName) {
 		this.styleName = styleName;
 	}
-	public String getContinent() {
+/*	public String getContinent() {
 		return continent;
 	}
 	public void setContinent(String continent) {
@@ -89,25 +95,14 @@ public class RegistForm implements Serializable {
 	}
 	public void setCity(String city) {
 		this.city = city;
-	}
+	}*/
 	public String getSelfIntroduce() {
 		return selfIntroduce;
 	}
 	public void setSelfIntroduce(String selfIntroduce) {
 		this.selfIntroduce = selfIntroduce;
 	}
-	public Date getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+
 	public String getMyPhoto() {
 		return myPhoto;
 	}
