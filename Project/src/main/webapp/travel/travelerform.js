@@ -55,12 +55,12 @@ $("#updateTMBtn").click(function(event) {
 			locationNo: $("#locationNo").val(),
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			startDate: $("#startDate").val(),
-			endDate: $("#endDate").val(),
-			continent: $("#continent option:selected").val(),
-			nation: $("#nation option:selected").val(),
-			city: $("#city option:selected").val(),
-			styleNo: $("#styleName option:selected").val()
+			startDate: $(".bit-startDate").val(),
+			endDate: $(".bit-endDate").val(),
+			continent: $(".bit-continent option:selected").val(),
+			nation: $(".bit-nation option:selected").val(),
+			city: $(".bit-city option:selected").val(),
+			styleNo: $("input[name='chk_info']:checked").val()
 			
   }
   ajaxUpdateTravelMain(travelMain)
