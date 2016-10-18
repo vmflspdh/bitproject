@@ -1,4 +1,3 @@
-
 function checkToNo(no) {
 	$.getJSON(serverAddr + "/travel/formMyList.json", {no: no}, function(obj) {
 		var result = obj.jsonResult
@@ -38,6 +37,9 @@ function ajaxRegistFormList() {
 	      }
 	    $("#boardTable tbody").html(contents)
 	    $(".titleLink").click(function(event) {
+	    	var no = $(this).attr("data-no")
+	    	console.log(no)
+	    	checkToNo(no)
 	    })
     })
 }
@@ -53,7 +55,6 @@ arr[i].writer + '</br>' +
 '<img src="img/yang/20.jpg"width=14px;><a href="#"> 0 </a>' +
 '<img src="img/yang/24.jpg"width=14px;><a href="#"> 0 </a></td>' +
 '</tr>'
-
 <tr>
 <td><img src="img/yang/london.jpg" width="350" ></td>
 <td><h2>안녕하세요 권태임 입니다.</h2></br>
@@ -63,7 +64,6 @@ arr[i].writer + '</br>' +
 <img src="img/yang/20.jpg"width=14px;><a href="#"> 0 </a>
 <img src="img/yang/24.jpg"width=14px;><a href="#"> 0 </a></td>
 </tr>
-
 contents += "<tr>" +
 "<td>" + arr[i].no + "</td>" + 
 "<td><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + arr[i].selfIntroduce + "</a></td>" +

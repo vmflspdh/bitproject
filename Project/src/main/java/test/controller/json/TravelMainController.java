@@ -31,14 +31,16 @@ public class TravelMainController {
   @Autowired TravelMyStyleDao travelMystyleDao;
   @Autowired TravelScheduleDao travelScheduleDao;
   TravelMain travelMain = new TravelMain();
+
   
   @RequestMapping(path="scheduleList")
   public Object list(HttpSession session) throws Exception {
 
     try {
       HashMap<String,Object> map = new HashMap<>();
-      travelMain = (TravelMain)session.getAttribute("travelPostNo");
+      travelMain.setTravelMainNo((Integer)session.getAttribute("travelPostNo"));
       map.put("travelPostNo", travelMain.getTravelMainNo());
+      System.out.println(travelMain.getTravelMainNo());
       
       return JsonResult.success(travelScheduleDao.selectMySchedule(map));
     
@@ -46,7 +48,7 @@ public class TravelMainController {
       return JsonResult.fail(e.getMessage());
     }
   }
-
+  
   @RequestMapping(path="travelMainAdd")
   public Object add(TravelMain travelMain, String schedule, HttpSession session) throws Exception {
     

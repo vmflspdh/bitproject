@@ -26,23 +26,3 @@
   where tmno=#{travelMainNo}
  </delete>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
