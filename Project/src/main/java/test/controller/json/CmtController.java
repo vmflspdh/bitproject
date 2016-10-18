@@ -31,7 +31,7 @@ public class CmtController {
    @ResponseBody
    public String list(
          @RequestParam(defaultValue="1") int pageNo,
-         @RequestParam(defaultValue="5") int length,
+         @RequestParam(defaultValue="10") int length,
          HttpSession session) throws Exception {
 
       HashMap<String,Object> result = new HashMap<>();
@@ -120,7 +120,7 @@ public class CmtController {
    
    @RequestMapping(path="cmtdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
-   public String delete(int qcno) throws Exception {
+   public String delete(int qcno,  HttpSession session) throws Exception {
      HashMap<String,Object> result = new HashMap<>();
      try {
        HashMap<String,Object> paramMap = new HashMap<>();

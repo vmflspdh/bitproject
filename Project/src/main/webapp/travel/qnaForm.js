@@ -95,6 +95,7 @@ function ajaxCmtList() {
           	"<td>" + arr[i].comMemberNo + "</td>" + 
             "<td>" + arr[i].commentContents + "</td>" +
             "<td>" + arr[i].cmtCreateDate + "</td>" + 
+            "<td>" + "<button>취소</button>" + "<button>변경</button>" + "<button>삭제</button>" + "</td>" + 
             "</tr>"
     }
     
@@ -102,6 +103,19 @@ function ajaxCmtList() {
 	   
     })
 }
+
+/*function ajaxDeleteCmt(qcno) {
+	$.getJSON("cmtdelete.json", {
+		qcno: qcno
+	}, function(result) {
+		if (result.state != "success") {
+			alert("삭제 실패입니다.")
+			return
+		}
+		location.href = "qnaApp.html"
+		location.href = "qnaForm.html?qno=" + qno
+	})
+	*/
 /*
 function ajaxLoadCmt(cmt) {
 	$.getJSON("cmtdetail.json?qcno=" + qcno, function(result) {
