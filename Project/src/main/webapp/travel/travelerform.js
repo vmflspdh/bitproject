@@ -35,12 +35,12 @@ $("#addTMBtn").click(function(event) {
 			selfIntroduce: $("#selfIntroduce").val(),
 			styleNo: $("input[name='chk_info']:checked").val()
 	}
-	console.log(travelMain.styleNo)
+	console.log(travelMain)
 
 
 
 	var scheduleArray = [];
-	$('.root-select').each(function(index, element) {
+	$('.root-schedule').each(function(index, element) {
 
 		var tag = $(element)
 
@@ -58,6 +58,7 @@ $("#addTMBtn").click(function(event) {
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
 	travelMain.schedule = schedule;
+	
 	ajaxAddTravelMain(travelMain)
 
 
@@ -117,7 +118,7 @@ function ajaxAddTravelMain(travelMain) {
 			return
 		}
 
-		window.location.href = "traveler.html"
+	window.location.href = "traveler.html"
 	}, "json")
 }
 

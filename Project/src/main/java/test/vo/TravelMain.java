@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 public class TravelMain implements Serializable {
 
 
+
   private static final long serialVersionUID = 1L;
 	
   static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -183,12 +184,15 @@ public String getContinent() {
 	
 
 
+
+
   @Override
   public String toString() {
     return "TravelMain [travelMainNo=" + travelMainNo + ", memberNo=" + memberNo + ", title=" + title
         + ", selfIntroduce=" + selfIntroduce + ", scheduleNo=" + scheduleNo + ", locationNo=" + locationNo
-        + ", startDate1=" + startDate1 + ","+ "continent=" + continent + ", nation=" + nation + ", city=" + city + ", styleNo=" + styleNo + ", styleName="
-        + styleName + "]";
+        + ", startDate=" + startDate + ", endDate=" + endDate + ", continent=" + continent + ", nation=" + nation
+        + ", city=" + city + ", styleNo=" + styleNo + ", styleName=" + styleName + ", startDate1=" + startDate1
+        + ", endDate1=" + endDate1 + "]";
   }
 
 
