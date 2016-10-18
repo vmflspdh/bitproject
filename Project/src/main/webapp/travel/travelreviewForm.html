@@ -43,6 +43,17 @@
 
 
 <style>
+#firstcolum{
+	width:0;
+	height:0;
+	display:none;
+	/* visibility: hidden; */
+}
+.updateContentInput{
+	text-align:center;
+	width: 350px;
+	height: 50px;
+}
 .form-horizontal {
 	padding-right: 40px;
 	margin-top: -40px;
@@ -146,10 +157,10 @@
 						</div>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group ">
 						<label for="mno" class="col-sm-2 control-label">회원번호</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="mno"
+							<input type="text" class="form-control" id="userName2"
 								placeholder="필수사항입니다!">
 						</div>
 					</div>
@@ -207,6 +218,49 @@
 							onclick="location.href='travelreviewApp.html'">취소</button>
 					</div>
 				</div>
+				
+				
+				<table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
+	<thead id="tablehead">
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		
+	</tr>
+	
+	</thead>
+	<tbody>
+	<!-- <tr>
+	<td>sdffffffffffffffff</td>
+	<td>sdffffffffffffffff</td>
+	</tr> -->
+	
+	</tbody>
+  </table>
+  
+  <div class="my-view" style="border-top:3px solid gray; padding-top: 10px;">
+  <div class="form-group" >
+    <div class="col-sm-10">
+    <!-- <input class="form-control"  id="crbno" ></input> -->
+    	
+    	 <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
+      	<textarea  class="form-control" style="width: 88%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
+      
+    </div>
+    	
+	<button id="comtaddBtn" type="button" class="btn btn-default " style="margin-top: 60px;">등록</button>
+  </div>
+ </div>
+				
+				
+				
+				
+				
+				
 				<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
 			</form>
 		</div>
@@ -332,12 +386,15 @@
 	<!-- 회원정보 관련 -->
 	<script type="text/javascript" src="js/bit.js"></script>
 	<script type="text/javascript" src="js/authApp.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="travelreviewForm.js"></script>
+	<script type="text/javascript" src="commentApp.js"></script>
 	<script>
 		if (window.location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
 
 			ajaxLoadBoard(no)
+			ajaxCommentList(no);
 			$(".my-new").css("display", "none");
 
 		} else {

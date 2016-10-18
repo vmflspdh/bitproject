@@ -14,17 +14,18 @@ public class TravelMain implements Serializable {
   protected int memberNo;
   protected String title;
   protected String selfIntroduce;
-  protected int scheduleNo;
-  protected int locationNo;
-  protected Date startDate;
+ protected int scheduleNo;
+ protected int locationNo;
+ protected Date startDate;
   protected Date endDate;
-  protected String continent;
+ protected String continent;
   protected String nation;
   protected String city;
   protected int styleNo;
   protected String styleName;
   
-  protected String startDate1;
+
+    protected String startDate1;
   protected String endDate1;
   
 
@@ -70,7 +71,6 @@ public class TravelMain implements Serializable {
   }
 
 
-
   public int getLocationNo() {
     return locationNo;
   }
@@ -78,8 +78,6 @@ public class TravelMain implements Serializable {
   public void setLocationNo(int locationNo) {
     this.locationNo = locationNo;
   }
-
-
 
   public String getStartDate1() {
     return startDate1;
@@ -126,9 +124,8 @@ public class TravelMain implements Serializable {
 
 
 
-  
 
-  public String getContinent() {
+public String getContinent() {
     return continent;
   }
 
@@ -190,8 +187,7 @@ public class TravelMain implements Serializable {
   public String toString() {
     return "TravelMain [travelMainNo=" + travelMainNo + ", memberNo=" + memberNo + ", title=" + title
         + ", selfIntroduce=" + selfIntroduce + ", scheduleNo=" + scheduleNo + ", locationNo=" + locationNo
-        + ", startDate1=" + startDate1 + ", endDate1=" + endDate1 + ", startDate=" + startDate + ", endDate=" + endDate
-        + ", continent=" + continent + ", nation=" + nation + ", city=" + city + ", styleNo=" + styleNo + ", styleName="
+        + ", startDate1=" + startDate1 + ","+ "continent=" + continent + ", nation=" + nation + ", city=" + city + ", styleNo=" + styleNo + ", styleName="
         + styleName + "]";
   }
 

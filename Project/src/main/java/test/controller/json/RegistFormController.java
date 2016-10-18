@@ -39,12 +39,13 @@ public class RegistFormController {
 	}
 	
 	@RequestMapping(path="formDetail")
-	public Object detail(int no) throws Exception {
+	public Object detail(int no, HttpSession session) throws Exception {
 		
 		try {
 			RegistForm registForm = registFormDao.selectOne(no);
 			if (registForm == null)
 				throw new  Exception("해당 번호의 게시물이 존재하지 않습니다.");
+			session.setAttribute("travelPostNo", registForm.getTravelMainNo());
 			
 			return JsonResult.success(registForm);
 		} catch (Exception e) {

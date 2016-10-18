@@ -1,23 +1,41 @@
-	$(document.body).on('click', '.selectAddBtn', function(event) {
-		
-	 var lastrootschedule = $("#root-select tr:eq(0)").clone();
-		$("#root-select").append(lastrootschedule);
-	});
+$(document.body).on('click', '.selectAddBtn', function(event) {
+	
+	var lastrootschedule = $(".root-select form:last")
 
-	$(document.body).on('click', '.selectDelBtn', function(event) {
-		var clickedRow = $(this).parent().parent();
+	lastrootschedule.after(
+			lastrootschedule.clone()
+			.find(".select").attr("selected value", "").end()
+			.find(".bit-startDate").val("").end()
+			.find(".bit-endDate").val("").end()
+	);
 
-		clickedRow.remove();
+	var clickedRow = $(this).parent().index();
+	console.log(clickedRow)
+	
+	$(".root-select form:last").append(lastrootschedule);
+	/*console.log($("#root-select").eq(clickedRow));
+	$("#root-select").eq(clickedRow).append(lastrootschedule);*/
+	
 
-	});
+	var tags = $(".bit-startDate",".bit-endDate")
+	.removeClass('hasDatepicker')
+	.datepicker({dateFormat: 'yyyy-mm-dd'});
+});
+
+$(document.body).on('click', '.selectDelBtn', function(event) {
+	var clickedRow = $(this).parent().index();
+
+	clickedRow.remove();
+});
 
 $("#addTMBtn").click(function(event) {
 	
 	var travelMain = {
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			styleNo: $("#styleName option:selected").val()
+			styleNo: $("input[name='chk_info']:checked").val()
 	}
+	console.log(travelMain.styleNo)
 	
 
 	
@@ -55,12 +73,12 @@ $("#updateTMBtn").click(function(event) {
 			locationNo: $("#locationNo").val(),
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			startDate: $("#startDate").val(),
-			endDate: $("#endDate").val(),
-			continent: $("#continent option:selected").val(),
-			nation: $("#nation option:selected").val(),
-			city: $("#city option:selected").val(),
-			styleNo: $("#styleName option:selected").val()
+			startDate: $(".bit-startDate").val(),
+			endDate: $(".bit-endDate").val(),
+			continent: $(".bit-continent option:selected").val(),
+			nation: $(".bit-nation option:selected").val(),
+			city: $(".bit-city option:selected").val(),
+			styleNo: $("input[name='chk_info']:checked").val()
 			
   }
   ajaxUpdateTravelMain(travelMain)
@@ -97,19 +115,13 @@ function ajaxLoadTravelMain(no) {
 	    	alert("조회 실패 입니다.")
 	    	return
 	    }
-	    $("#memberNo").val(result.data.memberNo);
 	    $("#no").val(result.data.no);
-	    $("#travelNo").val(result.data.travelMainNo);
-	    $("#locationNo").val(result.data.locationNo);
-	    $("#styleNo").val(result.data.styleNo);
-	    $("#title").val(result.data.title);
-	    $("#selfIntroduce").val(result.data.selfIntroduce);
-	    $(".bit-startDate").val(result.data.startDate);
-	    $(".bit-endDate").val(result.data.endDate);
-	    $(".bit-continent").val(result.data.continent);
-	    $(".bit-nation").val(result.data.nation);
-	    $(".bit-city").val(result.data.city);
-	    $("#styleName").val(result.data.styleNo);
+	    $("#memberNo").val(result.data.memberNo);
+		$("#travelNo").val(result.data.travelMainNo);
+		$("#styleNo").val(result.data.styleNo);
+		$("#selfIntroduce").val(result.data.selfIntroduce);
+		$("#styleName").val(result.data.styleNo);
+		scheduleList()
 	})
 }
 
@@ -137,4 +149,53 @@ function ajaxDeleteTravelMain(travelMain) {
 	      
 	      location.href = "traveler.html"
 	})
+}
+
+
+function scheduleList() {
+	$.getJSON(serverAddr + "/travel/scheduleList.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+		       return
+		}
+		var contents = "";
+	    var arr = result.data
+	    for (var i in arr) {
+	    
+	    contents += '<td style="color: green; font-weight: bold; font-size: large;">' +
+	     '<div>가고싶은</div>' + 
+	     '<div>여행지</div>' +
+	    '</td>' +
+	    '<td id="root-select">' +
+	    '<form class="form-inline root-schedule" onsubmit="return false">' +
+	    '<select style="width:100px;" class="form-control bit-continent">' +
+	       '<option selected value="'+ arr[i].continent +'">대륙</option>' +
+	       '<option value="아시아">아시아</option>' +
+	      '<option value="유럽">유럽</option>' +
+	       '<option value="북아메리카">북아메리카</option>' +
+	   '</select>' +
+	   '<select style="width:100px;" class="form-control bit-nation">' +
+	   '<option selected value="'+ arr[i].nation +'">국가</option>' +
+	       '<option value="대한민국">대한민국</option>' +
+	       '<option value="일본">일본</option>' +
+	      ' <option value="영국">영국</option>' +
+	  '</select>' +
+	  '<select style="width:100px;" class="form-control bit-city">' +
+	       '<option selected value="'+ arr[i].city +'">도시</option>' +
+	       '<option value="서울">서울</option>' +
+	       '<option value="부산">부산</option>' +
+	       '<option value="도쿄">도쿄</option>' +
+	   '</select>' +
+	   '<input type="text" placeholder="시작일" style="width:100px;" value"'+ arr[i].startDate +'" class="form-control bit-startDate">' +
+	   '<input type="text" placeholder="종료일" style="width:100px;" value"'+ arr[i].endDate +'" class="form-control bit-endDate">' +
+	    '<button class="btn btn-default selectAddBtn">+</button>' +
+	     '<button class="btn btn-default selectDelBtn">-</button>' +
+	   '</form>' +
+	   '</td>'
+	}
+	   
+	    $("#selectTable tbody").html(contents)
+
+    })
 }

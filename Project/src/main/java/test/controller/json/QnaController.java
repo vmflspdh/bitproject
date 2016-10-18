@@ -27,9 +27,11 @@ public class QnaController {
    @ResponseBody
    public String list(
          @RequestParam(defaultValue="1") int pageNo,
-         @RequestParam(defaultValue="5") int length) throws Exception {
+         @RequestParam(defaultValue="10") int length) throws Exception {
 
       HashMap<String,Object> result = new HashMap<>();
+      System.out.println(pageNo);
+      System.out.println(length);
       try {
          HashMap<String,Object> map = new HashMap<>();
          map.put("startIndex", (pageNo - 1) * length);
