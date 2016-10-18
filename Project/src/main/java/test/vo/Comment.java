@@ -70,11 +70,15 @@ public class Comment implements Serializable {
     this.createdDate = Date.valueOf(str);
     this.createdDate2 = str;
   }
+  
+  
   @Override
   public String toString() {
-    return "Comment [reviewNo=" + reviewcommentNo + ", reviewboardNo=" + reviewboardNo + ", memberNo=" + memberNo
-        + ", content=" + content + ", createdDate=" + createdDate + "]";
+    return "Comment [reviewcommentNo=" + reviewcommentNo + ", reviewboardNo=" + reviewboardNo + ", memberNo=" + memberNo
+        + ", memberName=" + memberName + ", content=" + content + ", createdDate=" + createdDate + ", createdDate2="
+        + createdDate2 + "]";
   }
+  
   
   
   
