@@ -79,7 +79,7 @@ $("#updateTMBtn").click(function(event) {
 	}
 
 	var scheduleArray = [];
-	$('.root-select').each(function(index, element) {
+	$('.root-schedule').each(function(index, element) {
 
 		var tag = $(element)
 
