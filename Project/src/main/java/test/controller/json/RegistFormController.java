@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import test.dao.RegistFormDao2;
+import test.dao.RegistFormDao;
 import test.vo.JsonResult;
 import test.vo.Member;
 import test.vo.RegistForm;
@@ -18,7 +18,7 @@ import test.vo.RegistForm;
 @Controller
 @RequestMapping("/travel/")
 public class RegistFormController {
-	@Autowired RegistFormDao2 registFormDao;
+	@Autowired RegistFormDao registFormDao;
   Member member = new Member();
 	
 	@RequestMapping(path="formList")
@@ -43,9 +43,9 @@ public class RegistFormController {
 		
 		try {
 			RegistForm registForm = registFormDao.selectOne(no);
-			session.setAttribute("travelPostNo", registForm.getTravelMainNo());
 			if (registForm == null)
 				throw new  Exception("해당 번호의 게시물이 존재하지 않습니다.");
+			session.setAttribute("travelPostNo", registForm.getTravelMainNo());
 			
 			return JsonResult.success(registForm);
 		} catch (Exception e) {

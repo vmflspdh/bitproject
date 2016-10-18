@@ -40,7 +40,7 @@ public class TravelMainController {
       travelMain = (TravelMain)session.getAttribute("travelPostNo");
       map.put("travelPostNo", travelMain.getTravelMainNo());
       
-      return JsonResult.success(travelScheduleDao.selectMySchdule(map));
+      return JsonResult.success(travelScheduleDao.selectMySchedule(map));
     
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
