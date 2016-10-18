@@ -1,23 +1,41 @@
-	$(document.body).on('click', '.selectAddBtn', function(event) {
-		
-	 var lastrootschedule = $("#root-select tr:eq(0)").clone();
-		$("#root-select").append(lastrootschedule);
-	});
+$(document.body).on('click', '.selectAddBtn', function(event) {
+	
+	var lastrootschedule = $(".root-select form:last")
 
-	$(document.body).on('click', '.selectDelBtn', function(event) {
-		var clickedRow = $(this).parent().parent();
+	lastrootschedule.after(
+			lastrootschedule.clone()
+			.find(".select").attr("selected value", "").end()
+			.find(".bit-startDate").val("").end()
+			.find(".bit-endDate").val("").end()
+	);
 
-		clickedRow.remove();
+	var clickedRow = $(this).parent().index();
+	console.log(clickedRow)
+	
+	$(".root-select form:last").append(lastrootschedule);
+	/*console.log($("#root-select").eq(clickedRow));
+	$("#root-select").eq(clickedRow).append(lastrootschedule);*/
+	
 
-	});
+	var tags = $(".bit-startDate",".bit-endDate")
+	.removeClass('hasDatepicker')
+	.datepicker({dateFormat: 'yyyy-mm-dd'});
+});
+
+$(document.body).on('click', '.selectDelBtn', function(event) {
+	var clickedRow = $(this).parent().index();
+
+	clickedRow.remove();
+});
 
 $("#addTMBtn").click(function(event) {
 	
 	var travelMain = {
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			styleNo: $("#styleName option:selected").val()
+			styleNo: $("input[name='chk_info']:checked").val()
 	}
+	console.log(travelMain.styleNo)
 	
 
 	
@@ -55,12 +73,12 @@ $("#updateTMBtn").click(function(event) {
 			locationNo: $("#locationNo").val(),
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
-			startDate: $("#startDate").val(),
-			endDate: $("#endDate").val(),
-			continent: $("#continent option:selected").val(),
-			nation: $("#nation option:selected").val(),
-			city: $("#city option:selected").val(),
-			styleNo: $("#styleName option:selected").val()
+			startDate: $(".bit-startDate").val(),
+			endDate: $(".bit-endDate").val(),
+			continent: $(".bit-continent option:selected").val(),
+			nation: $(".bit-nation option:selected").val(),
+			city: $(".bit-city option:selected").val(),
+			styleNo: $("input[name='chk_info']:checked").val()
 			
   }
   ajaxUpdateTravelMain(travelMain)
@@ -138,3 +156,6 @@ function ajaxDeleteTravelMain(travelMain) {
 	      location.href = "traveler.html"
 	})
 }
+
+
+

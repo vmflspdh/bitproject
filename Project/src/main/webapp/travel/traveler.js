@@ -12,7 +12,7 @@ function checkToNo(no) {
 }
 
 function ajaxRegistFormList() {
-	$.getJSON(serverAddr + "/travel/formList.json", function(obj) {
+	$.getJSON(serverAddr + "/travel/scheduleList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
@@ -21,21 +21,23 @@ function ajaxRegistFormList() {
 		var contents = "";
 	    var arr = result.data
 	    for (var i in arr) {
-	    	contents += '<tr>' +
-	    	'<td><img src="' + arr[i].myPhoto + '" width="350" ></td>' +
-	    	"<td><a class='titleLink' href='#' data-memno='" + arr[i].memberNo + "' data-no='" + arr[i].no + "'>" + "<h3>" + arr[i].title + "</h3></a></br>" +
-	    	 arr[i].writer + '</br>' +
-	    	'<img src="img/yang/11101_s.gif">' + arr[i].city + ',' + arr[i].nation + ',' + arr[i].continent + '</br>' +
-	    	'<img src="img/yang/2.jpg" width=14px;><a href="#"> 99</a>' +
-	    	'<img src="img/yang/20.jpg"width=14px;><a href="#"> 0 </a>' +
-	    	'<img src="img/yang/24.jpg"width=14px;><a href="#"> 0 </a></td>' +
-	    	'</tr>'
+	    	if (i == 0 || i / 3 == 1) {
+	    		contents += '<tr>'
+	    	}
+	    	contents += 
+	    	'<td>' +
+	    	'<div class="hover11 column"><a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '"><img src="' + arr[i].myPhoto + '" width="200px" height="120px"></a></div>' +
+	    	'<div>' + arr[i].writer + '</div>' +
+	    	'<div><img src="img/yang/11101_s.gif">' + arr[i].continent + ',' + arr[i].nation + ',' + arr[i].city + '</div>' +
+	    	'<div>' + arr[i].startDate + '&nbsp;~&nbsp;' + arr[i].endDate + '</div>' +
+	    	'</td>' +
+	    	'<td>'
+	    	if (i % 3 == 2)  {
+	    		contents += '</tr>'
+	    	}
 	      }
 	    $("#boardTable tbody").html(contents)
 	    $(".titleLink").click(function(event) {
-	    	var no = $(this).attr("data-no")
-	    	console.log(no)
-	    	checkToNo(no)
 	    })
     })
 }

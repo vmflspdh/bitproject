@@ -106,5 +106,26 @@
             }
         });
     </script>
-</body>
+    
+       <!--     var lastrootNo = $("#root-select tr:last").attr("class").replace(" root", "");
+         var newroot = $("#root-select tr:eq()").clone();
+         newroot.removeClass();
+         newroot.addClass((parseInt(lastrootNo)+1) + " root");
+         var className = newroot.attr("class");
+         console.log(className)
+         var indexNo = $(className).index(".selectAddBtn");
+         console.log(indexNo)
+         $("#root-select").append(newroot);
+         
+
+      /*var lastrootschedule = $("#root-select tr:eq(0)").clone();
+      
+
+      $("#root-select").append(lastrootschedule);
+*/console.log($(className).children("input").attr("class"))
+
+      var tags = $(".bit-startDate",".bit-endDate")
+      .removeClass('hasDatepicker')
+      .datepicker({dateFormat: 'yyyy-mm-dd'});
+</body> -->
 </html>
