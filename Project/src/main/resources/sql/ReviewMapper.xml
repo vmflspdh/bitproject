@@ -69,8 +69,8 @@
   </select>
   
   <insert id="insert" parameterType="review">
-    insert into tvl_review_bods(tmno,mno,title, cont, cre_dt)
-    values(#{travelno},#{memberno},#{title}, #{content},  now())
+    insert into tvl_review_bods(tmno,mno,title, cont, cre_dt,vw_cnt)
+    values(#{travelno},#{memberno},#{title}, #{content},  now(),0)
   </insert>
   
   <update id="update" parameterType="review">
@@ -78,6 +78,12 @@
       title=#{title}, 
       cont=#{content} 
     where rbno=#{reviewboardno}
+  </update>
+  
+  <update id="viewCountUpdate" parameterType="int">
+    update tvl_review_bods set 
+      vw_cnt=vw_cnt+1
+    	where rbno=#{reviewboardno}
   </update>
   
   <delete id="delete" parameterType="int">

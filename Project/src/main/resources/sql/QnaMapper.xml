@@ -24,21 +24,12 @@
   select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, TVL_QNA_BODS.TITlE, TVL_QNA_BODS.CONT, 
   TVL_QNA_BODS.CRE_DT, TVL_QNA_BODS.VW_CNT
     from tvl_QnA_BODS
-     <where>
+     <!-- <where>
       <if test="title != null">title like concat('%', #{title}, '%')</if>
       <if test="writer != null">and writer like concat('%', #{writer}, '%')</if>
-    </where>
-    order by 
-    <choose>
-      <when test="titleOrder == 'asc'">title asc</when>
-      <when test="titleOrder == 'desc'">title desc</when>
-      <when test="writerOrder == 'asc'">writer asc</when>
-      <when test="writerOrder == 'desc'">writer desc</when>
-      <when test="viewCountOrder == 'asc'">vw_cnt asc</when>
-      <when test="viewCountOrder == 'desc'">vw_cnt desc</when>
-      <when test="qnoOrder == 'asc'">QBNO asc</when>
-      <otherwise>QBNO desc</otherwise>
-    </choose>
+    </where> -->
+    
+    
     limit #{startIndex}, #{length}
   </select>
   

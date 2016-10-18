@@ -60,15 +60,17 @@ function ajaxLoginUser() {
 		if (result.state != "success") {
 			console.log(result.data)
 			$('.my-login').css("display", "none")
-			/*$('.zeta-menu-bar').css("display", "none")*/
 			return
 		}
 
 		$('.my-logout').css("display", "none")
+		$('.aaa').css("display", "none")
 
 		$("#userName").text(result.data.name)
 		$("#userNo").val(result.data.no)
 		$("#userName").val(result.data.name)
+		$("#userName2").val(result.data.name)
+		$("#userName3").val(result.data.name)
 	})
 
 }
