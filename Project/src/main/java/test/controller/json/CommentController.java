@@ -20,11 +20,13 @@ public class CommentController {
   CommentDao commentDao;
 
   @RequestMapping(path="cmlist")
-  public Object list(int no ) throws Exception {
+  public Object list(int no,HttpSession session ) throws Exception {
     System.out.println(no);
+    /*Member member=(Member)session.getAttribute("member");
+    
+    System.out.println(member.getNo());*/
     try{
-      
-      
+
       return JsonResult.success(commentDao.selectList2(no));
     } catch(Exception e) {
       
