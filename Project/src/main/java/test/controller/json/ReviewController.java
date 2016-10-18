@@ -3,6 +3,8 @@ package test.controller.json;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 
 import test.dao.ReviewDao;
+import test.vo.Member;
 import test.vo.Review;
 
 
@@ -28,7 +31,7 @@ public class ReviewController {
   public String list(
       @RequestParam(name = "pageNo", defaultValue = "0") int pageNo,
       @RequestParam(name = "length", defaultValue = "2") int length) throws Exception {
-
+    
     HashMap<String, Object> result = new HashMap<>();
     try{
       HashMap<String, Object> map = new HashMap<>();
@@ -74,9 +77,12 @@ public class ReviewController {
 
   @RequestMapping(path="rvadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String add(Review review) throws Exception {
+  public String add(Review review, HttpSession session) throws Exception {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
+    Member member = (Member)session.getAttribute("member");
+    review.setMemberno(member.getNo());
+    
     HashMap<String, Object> result = new HashMap<>();
     try{
       reviewDao.insert(review);
@@ -156,15 +162,15 @@ public class ReviewController {
     return new Gson().toJson(result);
   }
   
-  @RequestMapping(path="rvupdate2", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @RequestMapping(path="rvviewupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String update2(Review review) throws Exception {
+  public String viewupdate(int no) throws Exception {
 
     HashMap<String, Object> result = new HashMap<>();
     try{
       
-      reviewDao.update2(review);
-      System.out.println(reviewDao.update2(review));
+      reviewDao.viewCountUpdate(no);
+      //System.out.println(reviewDao.viewCountUpdate(no));
       result.put("state", "success");
     } catch(Exception e) {
       result.put("state", "fail");

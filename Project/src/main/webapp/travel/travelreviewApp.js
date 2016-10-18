@@ -30,7 +30,8 @@ function ajaxBoardList() {
 		
 		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
 		$(".titleLink").click(function(event) {
-				window.location.href = "travelreviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
+			ajaxUpdateViewCount($(this).attr("data-no"))
+				 window.location.href = "travelreviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
 			});
 		$(".titleLink2").click(function(event) {
 			window.location.href = "travelreviewmemberForm.html?no="+$(this).attr("data-no2");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
@@ -42,6 +43,19 @@ function ajaxBoardList() {
 	
 	
 	
+	
+}
+
+function ajaxUpdateViewCount(no){
+	console.log(no)
+	$.post("rvviewupdate.json?no="+no,function(result){
+		if(result.state !="success"){
+			alert("변경실패입니다.")
+			return;
+		}
+		//console.log(review)
+		
+	},"json")
 	
 }
 

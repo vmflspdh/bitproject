@@ -28,5 +28,17 @@
     insert into tvl_review_comt(rbno,mno,cont,cre_dt)
     values(#{reviewboardNo},#{memberNo}, #{content},now())
   </insert>
+  
+  
+  <update id="update" parameterType="comment">
+    update tvl_review_comt set 
+      cont=#{content} 
+    where rcno=#{reviewcommentNo}
+  </update>
+  
+  <delete id="delete" parameterType="int">
+    delete from tvl_review_comt 
+    where rcno=#{value}
+  </delete>
 </mapper>
 

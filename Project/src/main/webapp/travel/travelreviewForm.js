@@ -1,8 +1,8 @@
 $("#addBtn").click (function(event){
-	
+
 	var review = { 
 			travelno : $("#tmno").val(),
-			memberno : $("#mno").val(),
+			/*memberno : $("#mno").val(),*/
 			title : $("#title").val(),
 			content : $("#contents").val()
 	}
@@ -39,6 +39,7 @@ function ajaxAddBoard(review){
 			alert("등록실패입니다.")
 			return;
 		}
+		
 		window.location.href="travelreviewApp.html"
 	},"json")
 	
@@ -55,7 +56,9 @@ function ajaxLoadBoard(no){
 		}
 		$("#rbno").val(result.data.reviewboardno);
 		$("#tmno").val(result.data.travelno);
-		$("#mno").val(result.data.membername);
+//		$("#userName3").val('');
+		$("#userName2").val(result.data.membername);
+		/*$("#userNo").val(result.data.no)*/
 		$("#title").val(result.data.title);
 		$("#contents").val(result.data.content);
 		$("#createdDate").val(result.data.createdDate);

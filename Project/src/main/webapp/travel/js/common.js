@@ -1,1 +1,1 @@
-var serverAddr = "http://t1.java85.com:8080/Project"
+var serverAddr = "http://192.168.0.220:8080/Project"

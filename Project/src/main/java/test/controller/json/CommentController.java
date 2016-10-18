@@ -1,5 +1,7 @@
 package test.controller.json;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import test.dao.CommentDao;
 import test.vo.Comment;
 import test.vo.JsonResult;
+import test.vo.Member;
 
 
 //@Component
@@ -32,15 +35,45 @@ public class CommentController {
   }
   
   @RequestMapping(path="cmadd")
-  public Object add(Comment comment) throws Exception {
+  public Object add(Comment comment,HttpSession session) throws Exception {
+    Member member = (Member)session.getAttribute("member");
     try{
+    comment.setMemberNo(member.getNo());
+    
       System.out.println(comment.toString());      
       //System.out.println(no);
       //comment.setReviewboardNo(no);
-      System.out.println(comment.getReviewcommentNo());
+      //System.out.println(comment.getReviewcommentNo());
       commentDao.insert(comment);
       return JsonResult.success();
     } catch(Exception e) {
+      //JOptionPane.showConfirmDialog(null, "기본 확인창입니다.");
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
+  @RequestMapping(path="cmupdate")
+  public Object update(Comment comment) throws Exception {
+
+    try {
+      System.out.println(comment.toString());
+      System.out.println(commentDao.update(comment));
+      return JsonResult.success();
+
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  @RequestMapping(path="cmdelete")
+  public Object delete(int no) throws Exception {
+
+    try {
+      System.out.println(commentDao.delete(no));
+      return JsonResult.success();
+
+    } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
     }
   }
