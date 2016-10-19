@@ -70,13 +70,15 @@ $("#updateTMBtn").click(function(event) {
 
 	var travelMain = {
 			memberNo: $("#userNo").val(),
-			scheduleNo: $("#no").val(),
+			/*scheduleNo: $("#no").val(),*/
 			travelMainNo: $("#travelNo").val(),
-			locationNo: $("#locationNo").val(),
+		/*	locationNo: $("#locationNo").val(),*/
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
 			styleNo: $("input[name='chk_info']:checked").val()
 	}
+	
+	console.log(travelMain)
 
 	var scheduleArray = [];
 	$('.root-schedule').each(function(index, element) {
@@ -84,18 +86,22 @@ $("#updateTMBtn").click(function(event) {
 		var tag = $(element)
 
 		scheduleArray[index] = {
-	
-			continent: $(".bit-continent option:selected").val(),
-			nation: $(".bit-nation option:selected").val(),
-			city: $(".bit-city option:selected").val(),
-			startDate1: $(".bit-startDate").val(),
-			endDate1: $(".bit-endDate").val()
+			
+			travelMainNo: $("#travelNo").val(),
+			locationNo : tag.find(".bit-locationNo").val(),
+			continent: tag.find(".bit-continent option:selected").val(),
+			nation: tag.find(".bit-nation option:selected").val(),
+			city: tag.find(".bit-city option:selected").val(),
+			scheduleNo : tag.find(".bit-scheduleNo").val(),
+			startDate1: tag.find(".bit-startDate").val(),
+			endDate1: tag.find(".bit-endDate").val()
 
 		};
 	})
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
 	travelMain.schedule = schedule;
+	
 	ajaxUpdateTravelMain(travelMain)
 });
 
@@ -186,24 +192,26 @@ function scheduleList() {
 	    '</td>' +*/
 				/* '<td id="root-select">' +*/
 				'<form class="form-inline root-schedule" onsubmit="return false">' +
+				'<input type="text" class="form-control bit-locationNo" style="display: none;" value="' + arr[i].locationNo + '">' +
 				'<select style="width:100px;" class="form-control bit-continent">' +
-				'<option selected value="">'+ arr[i].continent + '</option>' +
+				'<option selected value="'+ arr[i].continent + '">'+ arr[i].continent + '</option>' +
 				'<option value="아시아">아시아</option>' +
 				'<option value="유럽">유럽</option>' +
 				'<option value="북아메리카">북아메리카</option>' +
 				'</select>' +
 				'<select style="width:100px;" class="form-control bit-nation">' +
-				'<option selected value="">'+ arr[i].nation + '</option>' +
+				'<option selected value="'+ arr[i].nation + '">'+ arr[i].nation + '</option>' +
 				'<option value="대한민국">대한민국</option>' +
 				'<option value="일본">일본</option>' +
 				' <option value="영국">영국</option>' +
 				'</select>' +
 				'<select style="width:100px;" class="form-control bit-city">' +
-				'<option selected value="">'+ arr[i].city + '</option>' +
+				'<option selected value="'+ arr[i].city + '">'+ arr[i].city + '</option>' +
 				'<option value="서울">서울</option>' +
 				'<option value="부산">부산</option>' +
 				'<option value="도쿄">도쿄</option>' +
 				'</select>' +
+				'<input type="text" class="form-control bit-scheduleNo" style="display: none;" value="' + arr[i].scheduleNo + '">' +
 				'<input type="text" placeholder="시작일" style="width:100px;" value="'+ arr[i].startDate +'" class="form-control bit-startDate">' +
 				'<input type="text" placeholder="종료일" style="width:100px;" value="'+ arr[i].endDate +'" class="form-control bit-endDate">' +
 				'<button class="btn btn-default selectAddBtn">+</button>' +
