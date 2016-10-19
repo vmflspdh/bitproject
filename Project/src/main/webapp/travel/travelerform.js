@@ -58,7 +58,7 @@ $("#addTMBtn").click(function(event) {
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
 	travelMain.schedule = schedule;
-	
+
 	ajaxAddTravelMain(travelMain)
 
 
@@ -72,12 +72,12 @@ $("#updateTMBtn").click(function(event) {
 			memberNo: $("#userNo").val(),
 			/*scheduleNo: $("#no").val(),*/
 			travelMainNo: $("#travelNo").val(),
-		/*	locationNo: $("#locationNo").val(),*/
+			/*	locationNo: $("#locationNo").val(),*/
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),
 			styleNo: $("input[name='chk_info']:checked").val()
 	}
-	
+
 	console.log(travelMain)
 
 	var scheduleArray = [];
@@ -86,7 +86,7 @@ $("#updateTMBtn").click(function(event) {
 		var tag = $(element)
 
 		scheduleArray[index] = {
-			
+
 			travelMainNo: $("#travelNo").val(),
 			locationNo : tag.find(".bit-locationNo").val(),
 			continent: tag.find(".bit-continent option:selected").val(),
@@ -101,7 +101,7 @@ $("#updateTMBtn").click(function(event) {
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
 	travelMain.schedule = schedule;
-	
+
 	ajaxUpdateTravelMain(travelMain)
 });
 
@@ -124,7 +124,7 @@ function ajaxAddTravelMain(travelMain) {
 			return
 		}
 
-	window.location.href = "traveler.html"
+		window.location.href = "traveler.html"
 	}, "json")
 }
 
@@ -143,7 +143,8 @@ function ajaxLoadTravelMain(no) {
 		$("#styleNo").val(result.data.styleNo);
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
-	
+
+		favorChecked(result)
 		scheduleList()
 	})
 }
@@ -221,7 +222,25 @@ function scheduleList() {
 		}
 
 		$("#selectTable .root-select").html(contents)
-		
-		
+
+
 	})
+}
+
+function favorChecked(result) { 
+	$('input:checkbox[name="chk_info"]').each(function() {
+
+		if(result.data.styleNo == "1"){ //값 비교
+			$(".check-food").attr("checked", true)
+		} 
+
+		if (result.data.styleNo == "2"){ //값 비교
+			$(".check-culture").attr("checked", true)
+		} 
+
+		if (result.data.styleNo == "3"){ //값 비교
+			$(".check-sports").attr("checked", true)
+		}
+
+	});
 }
