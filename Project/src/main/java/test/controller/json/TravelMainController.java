@@ -49,6 +49,7 @@ public class TravelMainController {
     }
   }
   
+  
   @RequestMapping(path="travelMainAdd")
   public Object add(TravelMain travelMain, String schedule, HttpSession session) throws Exception {
     
@@ -58,6 +59,9 @@ public class TravelMainController {
     System.out.println(travelMain);
 
     List<TravelMain> list = new Gson().fromJson(schedule, new TypeToken<List<TravelMain>>(){}.getType());
+    
+    int index = list.size();
+    System.out.println(index);
 
     
     try {
@@ -73,10 +77,14 @@ public class TravelMainController {
         travelMain.setNation(list.get(i).getNation());
         travelMain.setCity(list.get(i).getCity());
         
+        System.out.println(travelMain);
+        
         travelLocationDao.insert(travelMain);
         
         travelMain.setStartDate(list.get(i).getStartDate1());
         travelMain.setEndDate(list.get(i).getEndDate1());
+        
+        System.out.println(travelMain);
         
         travelScheduleDao.insert(travelMain);
       }
@@ -90,15 +98,40 @@ public class TravelMainController {
 
 
   @RequestMapping(path="travelMainUpdate")
-  public Object update(TravelMain travelMain) throws Exception {
+  public Object update(TravelMain travelMain, String schedule) throws Exception {
+    
+    List<TravelMain> list = new Gson().fromJson(schedule, new TypeToken<List<TravelMain>>(){}.getType());
+    int index = list.size();
+    System.out.println(index);
+    System.out.println(list);
+    
     try {
-      //HashMap<String,Object> paramMap = new HashMap<>();
-      //paramMap.put("no", travelMain.getScheduleNo());
+      
       travelMainDao.update(travelMain);
+      System.out.println(travelMain);
+      
       travelMystyleDao.update(travelMain);
+      System.out.println(travelMain);
+      
+      for (int i = 0; i < list.size(); i++) {
+        
+      travelMain.setLocationNo(list.get(i).getLocationNo());
+      travelMain.setContinent(list.get(i).getContinent());
+      travelMain.setNation(list.get(i).getNation());
+      travelMain.setCity(list.get(i).getCity());
+      System.out.println(travelMain);
       travelLocationDao.update(travelMain);
+      
+      travelMain.setScheduleNo(list.get(i).getScheduleNo());
+      travelMain.setTravelMainNo(list.get(i).getTravelMainNo());
+      travelMain.setLocationNo(list.get(i).getLocationNo());
+      travelMain.setStartDate(list.get(i).getStartDate1());
+      travelMain.setEndDate(list.get(i).getEndDate1());
+      System.out.println(travelMain);
       travelScheduleDao.update(travelMain);
+      }
       return JsonResult.success();
+      
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
     }
