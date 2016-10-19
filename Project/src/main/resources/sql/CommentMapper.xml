@@ -19,6 +19,7 @@
   inner join tvl_membs m 
   on m.mno=c.mno
   where rbno =#{value}
+  order by rcno desc
   	
   </select> 
   
