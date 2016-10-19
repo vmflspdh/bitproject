@@ -21,8 +21,8 @@ public class CommentController {
 
   @RequestMapping(path="cmlist")
   public Object list(int no,HttpSession session ) throws Exception {
-    System.out.println(no);
-    /*Member member=(Member)session.getAttribute("member");
+    /*System.out.println(no);
+    Member member=(Member)session.getAttribute("member");
     
     System.out.println(member.getNo());*/
     try{

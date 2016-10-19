@@ -47,18 +47,27 @@ function ajaxCommentList(no) {
 		
 		var contents="";
 		var arr = result.data
+		
 		for ( var i in arr) {
 
-			contents += "<tr>"+
+			contents += 
+				"<tr>"+
 				"<td id='firstcolum'>"+arr[i].reviewcommentNo+"<input id='aaa'  ></input></td>"+
+				"<td></td>"+
 				"<td>"+arr[i].memberName+"</td>"+
 				"<td>"+arr[i].content+"</td>"+
 				"<td>"+arr[i].createdDate2+"</td>"+
 				"<td><a class='updateLink' href='#'  data-no3='"+arr[i].content+"' data-no2='"+i+"' data-no='"+arr[i].reviewcommentNo+"'>수정</a></td>"+
 				"<td><a class='deleteLink' href='#'  data-no3='"+arr[i].content+"' data-no2='"+i+"' data-no='"+arr[i].reviewcommentNo+"'>삭제</a></td>"+
-			"</tr>";
-
+				"</tr>";
+				
 		}
+		/*console.log($(this).attr("data-no2"))
+		console.log(arr[i].memberNo)*/
+		console.log($("#bbb").val())
+		console.log($("#ccc").val())
+		abc()
+		
 		console.log(contents)
 		
 		$("#commentTable tbody").html(contents);
@@ -120,6 +129,16 @@ function ajaxCommentList(no) {
 		
 	
 }
+
+function abc(){
+	aaaa={
+	b:$("#bbb").val(),
+	c:$("#ccc").val()
+	}
+	console.log(aaaa)
+}
+
+
 
 function ajaxCommentDelete(no){
 	$.getJSON("cmdelete.json?=no"+no,{no:no},function(obj){
