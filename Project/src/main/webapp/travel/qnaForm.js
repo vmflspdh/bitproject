@@ -1,3 +1,41 @@
+$("#comtaddBtn").click(function(event){
+	
+	var cmt = { 
+			//reviewboardNo :$("#crbno").val(),
+			comMemberNo:$("#userName3").val(),
+			qcno : qno,
+			/*memberNo :$("#cmno").val(),*/
+			commentContents : $("#cmcontent").val()
+//			cc.val(result.data.name)
+			
+	}
+
+	console.log(cmt)
+	ajaxAddBoard2(cmt);	
+});
+
+
+function ajaxAddBoard2(cmt){
+	console.log(cmt)
+	console.log(no);
+	
+	$.post("cmtadd.json",cmt,function(result){
+		//var result = obj.jsonResult
+		console.log(cmt)
+		if(result.state !="success"){
+			alert("로그인하고 댓글써.")
+			return;
+		}
+		location.reload();
+		console.log(cmt)
+		//window.location.href="reviewApp.html"
+	},"json")
+	
+	
+}
+
+
+
 $("#addBtn").click(function(event) {
 	var qna = {
 	no: $("#no").val(),

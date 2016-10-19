@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.CmtDao">
+  <resultMap type="qna" id="cmtMap">
+  
+    <id column="QCNO" property="qcno"/> 
+    <result column="MNO" property="comMemberNo"/>
+    <result column="QBNO" property="qcno"/>
+     <result column="CONT" property="commentContents"/>
+    <result column="CRE_DT" property="cmtCreateDate"/>
+  </resultMap>
+  
+
+  
+  
+ 
+    <select id="selectList" resultMap="cmtMap" parameterType="map">
+ select tvl_qna_comt.qcno,tvl_qna_comt.mno,tvl_qna_comt.cont,tvl_qna_comt.cre_dt from tvl_qna_bods inner join tvl_qna_comt 
+ on tvl_qna_bods.qbno = tvl_qna_comt.qbno
+ where tvl_qna_bods.qbno = #{qnabodsno}
+
+    <where>
+      <if test="writer != null">and writer like concat('%', #{writer}, '%')</if>
+    </where>
+    order by 
+    <choose>
+      <when test="writerOrder == 'asc'">writer asc</when>
+      <when test="writerOrder == 'desc'">writer desc</when>
+      <when test="qcnoOrder == 'asc'">QCNO asc</when>
+      <otherwise>QCNO desc</otherwise>
+    </choose>
+    limit #{startIndex}, #{length}
+  </select>
+  
+
+  
+  <insert id="insert" parameterType="qna">
+    insert into tvl_QnA_COMT(mno,qbno, cont, cre_dt)
+    values( #{comMemberNo}, #{qcno}, #{commentContents}, now())
+  </insert>
+  
+  
+  
+
+</mapper>

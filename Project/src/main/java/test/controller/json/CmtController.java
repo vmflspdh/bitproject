@@ -83,12 +83,14 @@ public class CmtController {
 
    @RequestMapping(path="cmtadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
-   public String add(Qna cmt) throws Exception {
+   public String add(Qna qna) throws Exception {
      // 성공하든 실패하든 클라이언트에게 데이터를 보내야 한다.
+     
      HashMap<String,Object> result = new HashMap<>();
      
      try {
-       cmtDao.insert(cmt);
+       System.out.println(qna.toString());
+       System.out.println(cmtDao.insert(qna));
        result.put("state", "success");
        
      } catch (Exception e) {
@@ -99,40 +101,6 @@ public class CmtController {
      return new Gson().toJson(result);
    }
    
-   @RequestMapping(path="cmtupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-   @ResponseBody
-   public String update(Qna cmt) throws Exception {
-     HashMap<String,Object> result = new HashMap<>();
-     try {
-       HashMap<String,Object> paramMap = new HashMap<>();
-       paramMap.put("qcno", cmt.getNo());
- 
-       cmtDao.update(cmt);
-       result.put("state", "success");
-       
-     } catch (Exception e) {
-       result.put("state", "fail");
-       result.put("data", e.getMessage());
-     }
-     
-     return new Gson().toJson(result);
-   }
    
-   @RequestMapping(path="cmtdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-   @ResponseBody
-   public String delete(int qcno,  HttpSession session) throws Exception {
-     HashMap<String,Object> result = new HashMap<>();
-     try {
-       HashMap<String,Object> paramMap = new HashMap<>();
-       paramMap.put("qcno", qcno);
-       
-       cmtDao.delete(qcno);
-       result.put("state", "success");
-     } catch (Exception e) {
-       result.put("state", "fail");
-       result.put("data", e.getMessage());
-     }
-     return new Gson().toJson(result);
-   }
  
 }
