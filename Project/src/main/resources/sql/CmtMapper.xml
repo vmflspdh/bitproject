@@ -7,7 +7,7 @@
   
     <id column="QCNO" property="qcno"/> 
     <result column="MNO" property="comMemberNo"/>
-    <result column="QBNO" property="qcno"/>
+    <result column="QBNO" property="qno"/>
      <result column="CONT" property="commentContents"/>
     <result column="CRE_DT" property="cmtCreateDate"/>
   </resultMap>
@@ -38,7 +38,7 @@
   
   <insert id="insert" parameterType="qna">
     insert into tvl_QnA_COMT(mno,qbno, cont, cre_dt)
-    values( #{comMemberNo}, #{qcno}, #{commentContents}, now())
+    values( #{comMemberNo}, #{qno}, #{commentContents}, now())
   </insert>
   
   
