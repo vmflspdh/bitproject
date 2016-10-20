@@ -1,97 +1,132 @@
-<SCRIPT LANGUAGE="JavaScript"> 
-    var fNum = 1; 
-    //인덱스로 찾지 않아도 되므로 소스가 복잡하지 않음. 
-    function getObj() 
-    { 
-        var obj = event.srcElement 
-        while (obj.tagName !='TD') //TD가 나올때까지의 Object추출 
-        { 
-            obj = obj.parentElement 
-        } 
-        return obj 
-    } 
-  
-    //맨 아래쪽에 테이블 추가하기 ("최초에 추가"글씨를 눌렀을때 맨아래 추가하기 위한 함수) 
-    function inRowLast() 
-    { 
-        if(fNum > 5000) { return false; } //5000개 까지만 추가를 허용하겠다는 설정입니다. 
-        else { 
-            //웹브라우져에 따른 설정. 
-            //익스플로어일때, 
-            if(document.getElementById){ 
-                var Tbl = document.getElementById('tb1'); 
-            } 
-            //그외 브라우져일때.. 
-            else 
-            { 
-                var Tbl = document.all['tb1']; 
-            } 
-  
-            var tRow = Tbl.insertRow();  //그냥 맨 아래에 추가하므로, 별다른 변수없습니다. 
-            var uploadOBJ = "<table border=1 width=\"700\"><tr><td width=\"3\">"; 
-            uploadOBJ += fNum; 
-            uploadOBJ +="</td><td width=\"100\">들여쓰기</td><td><input type=radio value=0 name='index"+fNum+"'>맨앞"; 
-            uploadOBJ +="<input name='index"+fNum+"' type=radio value=1>1칸"; 
-            uploadOBJ +="<input name='index"+fNum+"' type=radio value=1>2칸"; 
-            uploadOBJ +="<input name='index"+fNum+"' type=radio value=1>3칸"; 
-            uploadOBJ += "</tr><tr><td></td><td>목차내용</td><td><textarea rows=3 cols=80 name='toc"+fNum+"'></textarea></td>"; 
-            uploadOBJ += "<tr><td></td><td>페이지</td><td><input type=text name='page"+fNum+"' size=11></td><td>"; 
-            uploadOBJ += "</td></tr></table>"; 
-            uploadOBJ += "<center><a href=#; onclick='inRow();'><input type=button value=' + '></a>"; 
-            uploadOBJ += "<a href=#; onclick='tb1.deleteRow(this.parentNode.parentNode.rowIndex)'><input type=button value=' - '></a>"; 
-            tRow.insertCell(0).innerHTML = uploadOBJ; 
-            fNum++; 
-        } 
-    }//End of function 
-  
-  
-    //클릭된 셀의 아래쪽에 로우를 추가. 
-    function inRow() 
-    { 
-        if(fNum > 5000) { return false; } 
-        else { 
-            /* 
-            if(document.getElementById){ 
-                var Tbl = document.getElementById('tb1'); 
-            } 
-            else 
-            { 
-                var Tbl = document.all['tb1']; 
-            } 
-            */ 
-            var idx = getObj().parentElement.rowIndex + 1; //위의 getObj()함수에서 object를 
-                                                                              //가져온후, .rowIndex로 인덱스를 
-                                                                              //따옵니다. +1하면 클릭한 위치. 
-            alert(idx); //클릭한 위치를 창으로 한번 확인해봤습니다. 
-            var tRow = tb1.insertRow(idx); //해당 인덱스 위치에 추가합니다. 
-                                                      //tb1은 맨아래 html에서 보이듯이 처음 table의 id입니다. 
-  
-            for (var i = 0; i < tb1.rows(0).cells.length; i++) 
-            { 
-                var c = tb1.rows(idx).insertCell(i) 
 
-                if (i == 0){ 
-                    var uploadOBJ = "<table border=1 width=\"700\"><tr><td width=\"3\">"; 
-                    uploadOBJ += fNum; 
-                    uploadOBJ +="</td><td width=\"100\">들여쓰기</td><td><input type=radio value=0 name='index"+fNum+"'>맨앞"; 
-                    uploadOBJ +="<input name='index"+fNum+"' type=radio value=1>1칸"; 
-                    uploadOBJ +="<input name='index"+fNum+"' type=radio value=1>2칸"; 
-                    uploadOBJ +="<input name='index"+fNum+"' type=radio value=1>3칸"; 
-                    uploadOBJ += "</td></tr><tr><td></td><td>목차내용</td><td><textarea rows=3 cols=80 name='toc"+fNum+"'></textarea></td>"; 
-                    uploadOBJ += "<tr><td></td><td>페이지</td><td><input type=text name='page"+fNum+"' size=11></td><td>"; 
-                    uploadOBJ += "</td></tr></table>"; 
-                    uploadOBJ += "<center><a href=#; onclick='inRow();'><input type=button value=' + '></a>"; 
-                    uploadOBJ += "<a href=#; onclick='tb1.deleteRow(this.parentNode.parentNode.rowIndex)'><input type=button value=' - '></a>"; 
-                    //tRow.insertCell(0).innerHTML = uploadOBJ; 
-                    c.innerHTML = uploadOBJ; 
-                    fNum++; 
-                }//End of if 
-            }//Enf of for 
-        }//End of if(fNum >5000) 
-    }//End of function 
-  
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">  
+<head>    
+<title>���� �浵 ã��</title>
+<meta http-equiv="content-type" content="text/html; charset=euc-kr"/>
+<meta name="description" content="�ּҷ� ���� �浵 ã�� " />
+<meta name="keywords" content="����, �浵, ���۸�API, �ּҰ˻�"/>
+<meta name="author" content="webmaster@iegate.net">
+<meta http-equiv="Cache-Control" content="no-cache">
 
-</script> 
-<a href='#;' onclick='inRowLast();'>추가</A> 
-<table id="tb1"> 
-</table>
+<style>
+body { font-family:Tahoma,����; font-size:9pt; color:#222222; }
+form { margin:0px; }
+</style>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&libraries=places&callback=initMap"></script>   
+    <script type="text/javascript">
+
+    var map;
+    var geocoder;
+    var address;
+
+/* window.onload=load;
+/* window.onunload=GUnload; */
+
+  function initMap()
+//  function initialize()
+  {
+	  
+	  var uluru = {
+              lat : 37.49,
+              lng : 127.02
+            };
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom : 13,
+        center : uluru,
+        mapTypeControl : false,
+        panControl : false,
+        zoomControl : true,
+        streetViewControl : false
+      });
+      
+      var geocoder = new google.maps.Geocoder;
+      
+      var latlng = {lat: parseFloat(position.coords.latitude), lng: parseFloat(position.coords.longitude)};
+      geocoder.geocode({'location': latlng}, function(results, status) {
+          console.log(results)
+      });
+
+/*       geocoder = new google.maps.Geocoder(); */
+  /*     map.disableDoubleClickZoom();
+   map.addControl(new GNavLabelControl());     
+    map.addControl(new GSmallMapControl()); */
+    google.maps.event.addListener(map, "click", getAddress);
+    }
+
+
+/* // ������
+    function addAddressToMap(response) {
+      map.clearOverlays();
+      if (!response || response.Status.code != 200) {
+        alert("Sorry, �ּҸ� Ȯ���� �ּ���!!");
+      } else {
+        place = response.Placemark[0];
+        point = new new google.maps.LatLng(place.Point.coordinates[1],
+                            place.Point.coordinates[0]);
+        marker = new google.maps.Marker(point);
+        map.addOverlay(marker);
+        marker.openInfoWindowHtml(
+        '<b>����,�浵:</b>' + place.Point.coordinates[1] + "," + place.Point.coordinates[0] + '<br>' +
+        '<b>�ּ�:</b>' + place.address + '<br>' +
+        '<b>Country code:</b> ' + place.AddressDetails.Country.CountryNameCode);      }
+    }
+
+    function showLocation() {
+      var address = document.forms[0].q.value;
+      geocoder.geocode(address, addAddressToMap);
+    }
+
+    function findLocation(address) {
+      document.forms[0].q.value = address;
+      showLocation();
+    }
+   
+    function getAddress(overlay, latlng) {
+      if (latlng != null) {
+        address = latlng;
+        geocoder.geocode(latlng, showAddress);
+      }
+    }
+
+    function showAddress(response) {
+      map.clearOverlays();
+      if (!response || response.Status.code != 200) {
+        alert("Status Code:" + response.Status.code);
+      } else {
+        place = response.Placemark[0];
+        point = new google.maps.LatLng(place.Point.coordinates[1],
+                            place.Point.coordinates[0]);
+        marker = new google.maps.Marker(point);
+        map.addOverlay(marker);
+        marker.openInfoWindowHtml(
+        '<b>orig latlng:</b>' + response.name + '<br/>' + 
+        '<b>latlng:</b>' + place.Point.coordinates[1] + "," + place.Point.coordinates[0] + '<br>' +
+        '<b>Address:</b>' + place.address + '<br>' +
+        '<b>Country code:</b> ' + place.AddressDetails.Country.CountryNameCode);
+      }
+    } */
+    </script>
+</head>
+  </head>
+
+<body>
+<form action="#" onsubmit="showLocation(); return false;">
+      <p>
+        <b>������ / �ּ��Է�:</b>
+        <input type="text" name="q" value="" class="address_input" size="40"  method=post />
+        <input type="submit" name="find" value="Search" />
+      </p>
+</form>
+
+    <div id="map" style="width: 500px; height: 400px">
+ <!--[if lt IE 7]>  
+<div style='border: 1px solid #F7941D; background: #FEEFDA; text-align: center; clear: both; height: 50px; position: relative;'>  
+<div style='font-size: 12px; font-weight: bold; margin-top: 12px;'>�ֽ� �������� ���� ���׷��̵� ���ּ���.<br/> IE6 ���� ���������� �������� �ʴ� ����� �ֽ��ϴ�.
+</div>  
+</div>  
+<![endif]-->  
+  </div>
+</body>
+</html>

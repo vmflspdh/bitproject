@@ -72,6 +72,38 @@
   .hover11 :hover img {
   opacity: .5;
   }
+  
+  .cb-module-header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 700;
+    }
+    
+    .cb-module-header .cb-module-title {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 5px;
+    padding: 0 30px 0 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    }
+    
+    .cb-module-header .cb-module-title:after {
+    content: "";
+    display: block;
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    width: 1920px;
+    left: 100%;
+    background: #161616;
+}
+    
+    
 </style>
 
 
@@ -146,14 +178,9 @@
       <div id="map"></div>
     </div>
     <div>
+    <br/>
+    <div class="cb-module-header"><h2 class="cb-module-title">TRAVELER</h2></div>
     <table id="boardTable" style="width: 650px; margin: 0 auto; border: 0px solid black">
-      <thead>
-        <tr>
-          <th><h2>추천 리스트</h2></th>
-          <th></th>
-        </tr>
-      </thead>
-
       <tbody>
 
       </tbody>
