@@ -164,18 +164,30 @@
     </div>
     <div id="content">
       <div id="bar">
-        <form class="navbar-form navbar-left" role="search">
+ <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <label for="tags"></label> <input id="tags" type="text"
-              class="form-control" placeholder="국가/도시를 입력하세요."
-              style="width: 250px;"> <input style="height: 33px;"
-              type="date" value="dd"> <input style="height: 33px;"
-              type="date" value="dd">
+            <input id="pac-input" type="text" class="controls form-control"
+              placeholder="국가/도시를 입력하세요." style="width: 250px;">
+              <input id="pac-input" type="text" class="form-control bit-startDate"
+              placeholder="시작일" style="width: 150px;">
+              <input id="pac-input" type="text" class="form-control bit-endDate"
+              placeholder="종료일" style="width: 150px;">
           </div>
           <button type="submit" class="btn btn-default">SEARCH</button>
         </form>
       </div>
+      <div id="type-selector" class="controls" style="display: none;">
+        <input type="radio" name="type" id="changetype-all"
+          checked="checked"> <label for="changetype-all">All</label>
+        <input type="radio" name="type" id="changetype-establishment">
+        <label for="changetype-establishment">Establishments</label> <input
+          type="radio" name="type" id="changetype-address"> <label
+          for="changetype-address">Addresses</label> <input type="radio"
+          name="type" id="changetype-geocode"> <label
+          for="changetype-geocode">Geocodes</label>
+      </div>
       <div id="map"></div>
+
     </div>
     <div>
     <br/>
@@ -310,7 +322,7 @@
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
   <script src="js/map.js"></script>
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
     async defer></script>
   <script src="js/menu.js"></script>
   <script src="js/classie.js"></script>
@@ -325,6 +337,11 @@
     init() // 화면을 준비시킨다
     ajaxLoginUser() // 로그인 유저 정보 가져오기
     ajaxRegistFormList()
+    $(function() {
+        $(".bit-startDate, .bit-endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
   </script>
 </body>
 </html>

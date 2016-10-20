@@ -53,8 +53,8 @@ function initMap() {
 
   var types = document.getElementById('type-selector');
   
- map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+/* map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);*/
 
   var autocomplete = new google.maps.places.Autocomplete(input, {
       types: ['(cities)']});
