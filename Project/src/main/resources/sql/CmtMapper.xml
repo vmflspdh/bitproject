@@ -7,6 +7,7 @@
   
     <id column="QCNO" property="qcno"/> 
     <result column="MNO" property="comMemberNo"/>
+    <result column="QBNO" property="qno"/>
      <result column="CONT" property="commentContents"/>
     <result column="CRE_DT" property="cmtCreateDate"/>
   </resultMap>
@@ -33,29 +34,14 @@
     limit #{startIndex}, #{length}
   </select>
   
-     <select id="selectOne" resultMap="cmtMap" parameterType="int">
-   select QBNO, MNO, CONT, CRE_DT
-    from tvl_QnA_COMT
-    where QBNO = #{value}
-  </select>
 
   
   <insert id="insert" parameterType="qna">
-    insert into tvl_QnA_COMT(MNO,qcno, CONT, cre_dts)
-    values( #{no}, #{qcno}, #{contents}, now())
+    insert into tvl_QnA_COMT(mno,qbno, cont, cre_dt)
+    values( #{comMemberNo}, #{qno}, #{commentContents}, now())
   </insert>
   
-  <update id="update" parameterType="qna">
-    update tvl_QnA_COMT set 
-      CONT=#{contents} 
-    where QCNO=#{qcno}
-  </update>
   
-  <delete id="delete" parameterType="int">
-    delete from tvl_QnA_COMT
-    where QCNO=#{value}
-  </delete>
- 
   
 
 </mapper>

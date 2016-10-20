@@ -68,6 +68,7 @@ function ajaxLoginUser() {
 
 		$("#userName").text(result.data.name)
 		$("#userNo").val(result.data.no)
+		$("#bbb").val(result.data.no)
 		$("#userName").val(result.data.name)
 		$("#userName2").val(result.data.name)
 		$("#userName3").val(result.data.name)

@@ -43,7 +43,8 @@
 
 
 <style>
-#firstcolum{
+
+#firstcolum,#bbb{
 	width:0;
 	height:0;
 	display:none;
@@ -219,7 +220,7 @@
 					</div>
 				</div>
 				
-				
+				<input id="bbb"></input>
 				<table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
 	<thead id="tablehead">
 	<tr>
@@ -247,7 +248,7 @@
     <div class="col-sm-10">
     <!-- <input class="form-control"  id="crbno" ></input> -->
     	
-    	 <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
+    	 <input type="text"  style="width: 90px; float: left"  class="form-control"  id="userName3" ></input>
       	<textarea  class="form-control" style="width: 88%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
       
     </div>
@@ -390,6 +391,7 @@
 	<script type="text/javascript" src="travelreviewForm.js"></script>
 	<script type="text/javascript" src="commentApp.js"></script>
 	<script>
+	
 		if (window.location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
 
@@ -400,8 +402,8 @@
 		} else {
 			$(".my-view").css("display", "none");
 		}
-		init();
 		ajaxLoginUser()
+		init();
 	</script>
 </body>
 </html>

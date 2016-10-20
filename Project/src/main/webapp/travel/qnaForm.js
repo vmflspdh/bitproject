@@ -1,16 +1,54 @@
+$("#comtaddBtn").click(function(event){
+   
+   var cmt = { 
+         //reviewboardNo :$("#crbno").val(),
+         comMemberNo: $("#userNo").val(),
+         qno : qno,
+         /*memberNo :$("#cmno").val(),*/
+         commentContents : $("#cmcontent").val()
+//         cc.val(result.data.name)
+         
+   }
+
+   console.log(cmt)
+   ajaxAddBoard2(cmt);   
+});
+
+
+function ajaxAddBoard2(cmt){
+   console.log(cmt)
+   console.log(no);
+   
+   $.post("cmtadd.json",cmt,function(result){
+      //var result = obj.jsonResult
+      console.log(cmt)
+      if(result.state !="success"){
+         alert("로그인하고 댓글써.")
+         return;
+      }
+      location.reload();
+      console.log(cmt)
+      //window.location.href="reviewApp.html"
+   },"json")
+   
+   
+}
+
+//-----------------------------------------------
+
 $("#addBtn").click(function(event) {
-	var qna = {
-	no: $("#no").val(),
-	title: $("#title").val(),
-	  contents: $("#contents").val()
-	}
-	ajaxAddQna(qna)
+   var qna = {
+   no: $("#no").val(),
+   title: $("#title").val(),
+     contents: $("#contents").val()
+   }
+   ajaxAddQna(qna)
 });
 
 $("#updateBtn").click(function(event) {
   var qna = {
-	title: $("#title").val(),
-	 contents: $("#contents").val(),
+   title: $("#title").val(),
+    contents: $("#contents").val(),
     qno: $("#qno").val()
   }
   ajaxUpdateQna(qna)
@@ -20,30 +58,30 @@ $("#updateBtn").click(function(event) {
 
 $("#deleteBtn").click(function(event) {
   ajaxDeleteQna(
-		 $("#qno").val())
+       $("#qno").val())
 });
 
 
 
 function ajaxAddQna(qna) {
-	console.log(qna)
-	$.post("qnaadd.json", qna, function(result) {
-		if (result.state != "success") {
-			console.log(result.data)
-	    	 alert("등록 실패입니다.")
-	    	 return
-	    }
-	    window.location.href = "qnaApp.html"
-	}, "json")
+   console.log(qna)
+   $.post("qnaadd.json", qna, function(result) {
+      if (result.state != "success") {
+         console.log(result.data)
+           alert("등록 실패입니다.")
+           return
+       }
+       window.location.href = "qnaApp.html"
+   }, "json")
 }
 
 function ajaxLoadQna(qno) {
-	$.getJSON("qnadetail.json?qno=" + qno, function(result) {
-		if (result.state != "success") {
-			alert("조회 실패입니다.")
-			return
-		}
-	$("#qno").val(result.data.qno);
+   $.getJSON("qnadetail.json?qno=" + qno, function(result) {
+      if (result.state != "success") {
+         alert("조회 실패입니다.")
+         return
+      }
+   $("#qno").val(result.data.qno);
       $("#no").val(result.data.no);
       $("#title").val(result.data.title);
       $("#contents").val(result.data.contents);
@@ -54,25 +92,25 @@ function ajaxLoadQna(qno) {
 }
    
 function ajaxUpdateQna(qna) {
-	$.post("qnaupdate.json", qna, function(result) {
-		if (result.state != "success") {
-			alert("변경 실패입니다.")
-			return
-		}
-		window.location.href = "qnaApp.html"
-	}, "json")
+   $.post("qnaupdate.json", qna, function(result) {
+      if (result.state != "success") {
+         alert("변경 실패입니다.")
+         return
+      }
+      window.location.href = "qnaApp.html"
+   }, "json")
 }
 
 function ajaxDeleteQna(qno) {
-	$.getJSON("qnadelete.json", {
-		qno: qno
-	}, function(result) {
-		if (result.state != "success") {
-			alert("삭제 실패입니다.")
-			return
-		}
-		location.href = "qnaApp.html"
-	})
+   $.getJSON("qnadelete.json", {
+      qno: qno
+   }, function(result) {
+      if (result.state != "success") {
+         alert("삭제 실패입니다.")
+         return
+      }
+      location.href = "qnaApp.html"
+   })
 }
 
 //_______________________________________________[댓글]기능_____________________________________________________//
@@ -81,49 +119,49 @@ function ajaxDeleteQna(qno) {
 
 
 function ajaxCmtList() {
-	$.getJSON("cmtlist.json", function(result) {
-		if (result.state != "success") {
-	    	 alert("서버에서 데이터를 가져오는데 실패했습니다.")
-	    	 return
-	    }
-		
-		var contents = ""
-	    var arr = result.data
+   $.getJSON("cmtlist.json", function(result) {
+      if (result.state != "success") {
+           alert("서버에서 데이터를 가져오는데 실패했습니다.")
+           return
+       }
+      
+      var contents = ""
+       var arr = result.data
         for (var i in arr) {
           contents += "<tr>" +
-          	"<td>" + arr[i].qcno + "</td>" + 
-          	"<td>" + arr[i].comMemberNo + "</td>" + 
+             "<td>" + arr[i].qcno + "</td>" + 
+             "<td>" + arr[i].comMemberNo + "</td>" + 
             "<td>" + arr[i].commentContents + "</td>" +
             "<td>" + arr[i].cmtCreateDate + "</td>" + 
             "<td>" + "<button>취소</button>" + "<button>변경</button>" + "<button>삭제</button>" + "</td>" + 
             "</tr>"
     }
     
-	    $("#cmtTable tbody").html(contents)
-	   
+       $("#cmtTable tbody").html(contents)
+      
     })
 }
 
 /*function ajaxDeleteCmt(qcno) {
-	$.getJSON("cmtdelete.json", {
-		qcno: qcno
-	}, function(result) {
-		if (result.state != "success") {
-			alert("삭제 실패입니다.")
-			return
-		}
-		location.href = "qnaApp.html"
-		location.href = "qnaForm.html?qno=" + qno
-	})
-	*/
+   $.getJSON("cmtdelete.json", {
+      qcno: qcno
+   }, function(result) {
+      if (result.state != "success") {
+         alert("삭제 실패입니다.")
+         return
+      }
+      location.href = "qnaApp.html"
+      location.href = "qnaForm.html?qno=" + qno
+   })
+   */
 /*
 function ajaxLoadCmt(cmt) {
-	$.getJSON("cmtdetail.json?qcno=" + qcno, function(result) {
-		if (result.state != "success") {
-			alert("조회 실패입니다.")
-			return
-		}
-	$("#qcno").val(result.data.qcno);
+   $.getJSON("cmtdetail.json?qcno=" + qcno, function(result) {
+      if (result.state != "success") {
+         alert("조회 실패입니다.")
+         return
+      }
+   $("#qcno").val(result.data.qcno);
       $("#no").val(result.data.no);
       $("#contents").val(result.data.contents);
       $("#createDate").val(result.data.createDate);
@@ -137,7 +175,7 @@ function ajaxLoadCmt(cmt) {
 
 //---------------------------댓글 js ------------------------------------------//
 
-$(function(){
+/*$(function(){
        
     //제일 하단에 있는 depth1의 댓글을 다는 이벤트
     $("#commentParentSubmit").click(function( event ) {
@@ -252,7 +290,7 @@ $(function(){
             if (confirm("정말 삭제하시겠습니까??") == true){    //확인
                 $(this).parent().parent().remove();
             }else{   //취소
-            	
+               
                 return;
             }
         }else{
@@ -288,4 +326,4 @@ $(function(){
        
  
 });
-
+*/

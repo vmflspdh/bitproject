@@ -87,6 +87,12 @@ public class Qna implements Serializable {
    public void setViewCount(int viewCount) {
      this.viewCount = viewCount;
    }
+  @Override
+  public String toString() {
+    return "Qna [no=" + no + ", comMemberNo=" + comMemberNo + ", qno=" + qno + ", qcno=" + qcno + ", title=" + title
+        + ", writer=" + writer + ", contents=" + contents + ", commentContents=" + commentContents + ", createDate="
+        + createDate + ", cmtCreateDate=" + cmtCreateDate + ", viewCount=" + viewCount + "]";
+  }
    
    
    
