@@ -1,8 +1,23 @@
+$("#prevBtn").click(function(event) {
+	pageNo--;
+	ajaxBoardList();
+});
 
+$("#nextBtn").click(function(event) {
+	pageNo++;
+	console.log(pageNo)
+	ajaxBoardList();
+});
+
+var pageNo = 1, /* window.pageNo */
+pageLength = 10; /* window.pageLength */
 
 function ajaxBoardList() {
-	
-	$.getJSON("rvlist.json", function(result) {
+	console.log(pageNo)
+	$.getJSON("rvlist.json", {
+		"pageNo": pageNo,
+		"length": pageLength},function(result) {
+		
 		if(result.state!="success"){
 			
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
@@ -36,6 +51,25 @@ function ajaxBoardList() {
 		$(".titleLink2").click(function(event) {
 			window.location.href = "travelreviewmemberForm.html?no="+$(this).attr("data-no2");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
 		});
+		
+		pageNo = result.pageNo;
+	    totalPage = result.totalPage;
+	    console.log(pageNo)
+	    console.log(totalPage)
+	    $('#pageNo').text(pageNo);
+	    // 페이지 번호가 1이면 [이전] 버튼을 비활성화시킨다.
+	    if (pageNo <= 1) {
+	    	$('#prevBtn').attr('disabled', true);
+	    } else {
+	    	$('#prevBtn').removeAttr('disabled');
+	    } 
+	    
+	    // 페이지 번호가 마지막 페이지라면 [다음] 버튼을 비활성화시킨다.
+	    if (pageNo >= totalPage) {
+	    	$('#nextBtn').attr('disabled', true);
+	    } else {
+	    	$('#nextBtn').removeAttr('disabled');
+	    }
 		});
 		
 	

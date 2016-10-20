@@ -1,4 +1,16 @@
 $("#comtaddBtn").click(function(event){
+<<<<<<< HEAD
+	
+	var cmt = { 
+			//reviewboardNo :$("#crbno").val(),
+			comMemberNo:$("#userName3").val(),
+			qno : qno,
+			/*memberNo :$("#cmno").val(),*/
+			commentContents : $("#cmcontent").val()
+//			cc.val(result.data.name)
+			
+	}
+=======
    
    var cmt = { 
          //reviewboardNo :$("#crbno").val(),
@@ -9,6 +21,7 @@ $("#comtaddBtn").click(function(event){
 //         cc.val(result.data.name)
          
    }
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 
    console.log(cmt)
    ajaxAddBoard2(cmt);   
