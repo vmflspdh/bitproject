@@ -15,4 +15,5 @@ public interface ReviewDao {
   int update(Review review) throws Exception;
   int viewCountUpdate(int no) throws Exception;
   int delete(int no) throws Exception;
+  int countAll() throws Exception;
 }

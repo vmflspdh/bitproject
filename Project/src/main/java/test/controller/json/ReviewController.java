@@ -29,8 +29,8 @@ public class ReviewController {
   @RequestMapping(path="rvlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String list(
-      @RequestParam(name = "pageNo", defaultValue = "0") int pageNo,
-      @RequestParam(name = "length", defaultValue = "2") int length) throws Exception {
+      @RequestParam(name = "pageNo", defaultValue = "1") int pageNo,
+      @RequestParam(name = "length", defaultValue = "10") int length) throws Exception {
     
     HashMap<String, Object> result = new HashMap<>();
     try{
@@ -39,9 +39,20 @@ public class ReviewController {
       map.put("length", length);
       
       List<Review> list = reviewDao.selectList(map);
+//      result.put("totalPage", totalPage);
       
-    result.put("state", "success");
-    result.put("data", list);
+      int countAll = reviewDao.countAll();
+      
+      int totalPage = countAll/ length;
+      if((countAll%length>0)){
+        totalPage++;
+      }
+      System.out.println(totalPage);
+      result.put("totalPage", totalPage);
+      result.put("length", length);
+      result.put("pageNo", pageNo);
+      result.put("state", "success");
+      result.put("data", list);
     } catch(Exception e) {
       result.put("state", "fail");
       result.put("data", e.getMessage());

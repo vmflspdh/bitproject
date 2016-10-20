@@ -3,7 +3,7 @@ $("#comtaddBtn").click(function(event){
 	var cmt = { 
 			//reviewboardNo :$("#crbno").val(),
 			comMemberNo:$("#userName3").val(),
-			qcno : qno,
+			qno : qno,
 			/*memberNo :$("#cmno").val(),*/
 			commentContents : $("#cmcontent").val()
 //			cc.val(result.data.name)
