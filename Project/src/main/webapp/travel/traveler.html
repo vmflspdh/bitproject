@@ -168,9 +168,9 @@
           <div class="form-group">
             <input id="pac-input" type="text" class="controls form-control"
               placeholder="국가/도시를 입력하세요." style="width: 250px;">
-              <input id="pac-input" type="text" class="form-control bit-startDate"
+              <input type="text" class="form-control bit-startDate"
               placeholder="시작일" style="width: 150px;">
-              <input id="pac-input" type="text" class="form-control bit-endDate"
+              <input type="text" class="form-control bit-endDate"
               placeholder="종료일" style="width: 150px;">
           </div>
           <button type="submit" class="btn btn-default">SEARCH</button>
@@ -339,7 +339,7 @@
     ajaxRegistFormList()
     $(function() {
         $(".bit-startDate, .bit-endDate").datepicker({
-            dateFormat: 'yy-mm-dd'
+            dateFormat: 'yyyy-mm-dd'
         });
     });
   </script>

@@ -44,8 +44,8 @@
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -33.8688, lng: 151.2195},
-    zoom: 13,
+    center: {lat: 37.49, lng: 127.02},
+    zoom: 2,
     mapTypeControl: false
   });
   var input = /** @type {!HTMLInputElement} */(
@@ -80,7 +80,7 @@ function initMap() {
       map.fitBounds(place.geometry.viewport);
     } else {
       map.setCenter(place.geometry.location);
-      map.setZoom(17);  // Why 17? Because it looks good.
+      map.setZoom(5);  // Why 17? Because it looks good.
     }
     marker.setIcon(/** @type {google.maps.Icon} */({
       url: place.icon,
@@ -99,6 +99,16 @@ function initMap() {
         (place.address_components[1] && place.address_components[1].short_name || ''),
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
+      
+/*위도 경도 추출*/
+      var a = $("#map").find('a').attr('href')
+      var b = a.split("=")[1];
+      var c = b.split("&")[0];
+      var llet = c.split(",")[0];
+      var lot = c.split(",")[1];
+
+      console.log(llet)
+      console.log(lot)
     }
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
