@@ -1,6 +1,6 @@
-$(document.body).on('click', '.selectAddBtn', function(event) {
+/*$(document.body).on('click', '.selectAddBtn', function(event) {
 
-	var lastrootschedule = $(".root-select form:last")
+	var lastrootschedule = $(".root-addSelect form:last")
 
 	lastrootschedule.after(
 			lastrootschedule.clone()
@@ -13,13 +13,30 @@ $(document.body).on('click', '.selectAddBtn', function(event) {
 	console.log(clickedRow)
 
 	$(".root-select").append(lastrootschedule);
-	/*console.log($("#root-select").eq(clickedRow));
-	$("#root-select").eq(clickedRow).append(lastrootschedule);*/
+	console.log($("#root-select").eq(clickedRow));
+	$("#root-select").eq(clickedRow).append(lastrootschedule);
 
 
 	var tags = $(".bit-startDate",".bit-endDate")
 	.removeClass('hasDatepicker')
-	.datepicker({dateFormat: 'yyyy-mm-dd'});
+	.datepicker({dateFormat: 'yy-mm-dd'});
+
+});*/
+
+$(".selectAddBtn").click(function(event) {
+
+	var selectSchedule = {
+			city: $(".bit-city1").val(),
+			startDate: $(".bit-startDate1").val(),
+			endDate: $(".bit-endDate1").val(),
+			latitude: $(".bit-latitude1").val(),
+			longitude: $(".bit-longitude1").val()
+	}
+	console.log(selectSchedule)
+	
+	var template = Handlebars.compile($('#trTemplateText').html())
+	$("#selectTable .root-select").append($(template(selectSchedule)))
+
 });
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
@@ -50,7 +67,9 @@ $("#addTMBtn").click(function(event) {
 			nation : tag.find('.bit-nation').val(),
 			city : tag.find('.bit-city').val(),
 			startDate1 : tag.find('.bit-startDate').val(),
-			endDate1 : tag.find('.bit-endDate').val()
+			endDate1 : tag.find('.bit-endDate').val(),
+			latitude: tag.find('.bit-latitude').val(),
+			longitude: tag.find('.bit-longitude').val()
 		};
 	})
 
@@ -59,7 +78,7 @@ $("#addTMBtn").click(function(event) {
 	console.log(schedule)
 	travelMain.schedule = schedule;
 
-	ajaxAddTravelMain(travelMain)
+/*	ajaxAddTravelMain(travelMain)*/
 
 
 });
@@ -79,11 +98,4 @@ function ajaxAddTravelMain(travelMain) {
 	}, "json")
 }
 
-/*var a = $("#map").find('a').attr('href')
-var b = a.split("=")[1];
-var c = b.split("&")[0];
-var llet = c.split(",")[0];
-var lot = c.split(",")[1];
 
-console.log(llet)
-console.log(lot)*/

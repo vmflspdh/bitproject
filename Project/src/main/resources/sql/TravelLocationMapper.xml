@@ -5,15 +5,17 @@
 <mapper namespace="test.dao.TravelLocationDao">
   
 <insert id="insert" parameterType="travelMain" useGeneratedKeys="true" keyColumn="locno" keyProperty="locationNo">
-insert into tvl_loc(cont,natn,city)
-values(#{continent},#{nation}, #{city});
+insert into tvl_loc(cont,natn,city,lat,lng)
+values(#{continent},#{nation}, #{city}, #{latitude}, #{longitude});
 </insert>
 
  <update id="update" parameterType="travelMain" useGeneratedKeys="true" keyProperty="locationNo" keyColumn="locno">
   update tvl_loc set 
     cont=#{continent}, 
     natn=#{nation},
-    city=#{city}
+    city=#{city},
+    lat=#{latitude},
+    lng=#{longitude}
   where locno=#{locationNo}
 </update>
 

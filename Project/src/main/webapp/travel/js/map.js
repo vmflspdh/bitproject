@@ -107,8 +107,10 @@ function initMap() {
       var llet = c.split(",")[0];
       var lot = c.split(",")[1];
 
-      console.log(llet)
-      console.log(lot)
+      
+      $(".bit-city1").val(place.address_components[0].short_name)
+      $(".bit-latitude1").val(llet)
+      $(".bit-longitude1").val(lot)
     }
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);

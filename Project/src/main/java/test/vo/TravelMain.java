@@ -8,6 +8,7 @@ public class TravelMain implements Serializable {
 
 
 
+
   private static final long serialVersionUID = 1L;
 
   static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -22,8 +23,8 @@ public class TravelMain implements Serializable {
   protected String continent;
   protected String nation;
   protected String city;
-  protected int latitude;
-  protected int longitude;
+  protected float latitude;
+  protected float longitude;
   protected int styleNo;
   protected String styleName;
 
@@ -184,6 +185,24 @@ public class TravelMain implements Serializable {
   }
 
 
+  public float getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(float latitude) {
+    this.latitude = latitude;
+  }
+
+  public float getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(float longitude) {
+    this.longitude = longitude;
+  }
+
+
+
 
 
 
@@ -193,9 +212,11 @@ public class TravelMain implements Serializable {
     return "TravelMain [travelMainNo=" + travelMainNo + ", memberNo=" + memberNo + ", title=" + title
         + ", selfIntroduce=" + selfIntroduce + ", scheduleNo=" + scheduleNo + ", locationNo=" + locationNo
         + ", startDate=" + startDate + ", endDate=" + endDate + ", continent=" + continent + ", nation=" + nation
-        + ", city=" + city + ", styleNo=" + styleNo + ", styleName=" + styleName + ", startDate1=" + startDate1
-        + ", endDate1=" + endDate1 + "]";
+        + ", city=" + city + ", latitude=" + latitude + ", longitude=" + longitude + ", styleNo=" + styleNo
+        + ", styleName=" + styleName + ", startDate1=" + startDate1 + ", endDate1=" + endDate1 + "]";
   }
+
+
 
 
 
