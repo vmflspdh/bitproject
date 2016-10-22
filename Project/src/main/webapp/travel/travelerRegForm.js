@@ -78,7 +78,7 @@ $("#addTMBtn").click(function(event) {
 	console.log(schedule)
 	travelMain.schedule = schedule;
 
-/*	ajaxAddTravelMain(travelMain)*/
+	ajaxAddTravelMain(travelMain)
 
 
 });

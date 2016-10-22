@@ -1,14 +1,15 @@
-$("#prevBtn").click(function(event) {
-	pageNo--;
-	ajaxBoardList();
-});
-
-$("#nextBtn").click(function(event) {
-	alert('sdfsdf')
-	/*pageNo++;
-	console.log(pageNo)
-	ajaxBoardList();*/
-});
+function ajaxCommentCount(){
+	console.log(no)
+	$.post("rvviewupdate.json?no="+no,function(result){
+		if(result.state !="success"){
+			alert("변경실패입니다.")
+			return;
+		}
+		//console.log(review)
+		
+	},"json")
+	
+}
 
 var pageNo = 1, /* window.pageNo */
 pageLength = 10; /* window.pageLength */
@@ -16,7 +17,8 @@ function ajaxBoardList() {
 	console.log(pageNo)
 	$.getJSON("rvlist.json", {
 		"pageNo": pageNo,
-		"length": pageLength},function(result) {
+		"length": pageLength
+		},function(result) {
 		
 		if(result.state!="success"){
 			

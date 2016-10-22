@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import test.dao.CommentDao;
 import test.dao.ReviewDao;
 import test.vo.Member;
 import test.vo.Review;
@@ -25,6 +26,8 @@ import test.vo.Review;
 public class ReviewController {
   @Autowired
   ReviewDao reviewDao;
+  @Autowired
+  CommentDao commentDao;
 
   @RequestMapping(path="rvlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
@@ -47,6 +50,9 @@ public class ReviewController {
       if((countAll%length>0)){
         totalPage++;
       }
+      
+      //int reviewCount= commentDao.countAll(no);
+      
       System.out.println(totalPage);
       result.put("totalPage", totalPage);
       result.put("length", length);
