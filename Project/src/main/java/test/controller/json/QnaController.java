@@ -89,7 +89,7 @@ public class QnaController {
      return new Gson().toJson(result);
    }
    
-   @RequestMapping(path="qnaupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+/*   @RequestMapping(path="qnaupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
    public String update(Qna qna) throws Exception {
      HashMap<String,Object> result = new HashMap<>();
@@ -106,7 +106,7 @@ public class QnaController {
      }
      
      return new Gson().toJson(result);
-   }
+   }*/
    
    @RequestMapping(path="qnadelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
