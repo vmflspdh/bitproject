@@ -14,8 +14,8 @@ values(#{continent},#{nation}, #{city}, #{latitude}, #{longitude});
     cont=#{continent}, 
     natn=#{nation},
     city=#{city},
-    lat=#{latitude},
-    lng=#{longitude}
+    lat=#{lat},
+    lng=#{lng}
   where locno=#{locationNo}
 </update>
 

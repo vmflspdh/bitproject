@@ -12,8 +12,8 @@
     <result column="CONT" property="continent" />
     <result column="NATN" property="nation" />
     <result column="CITY" property="city" />
-    <result column="LAT" property="latitude" />
-    <result column="LNG" property="longitude" />
+    <result column="LAT" property="lat" />
+    <result column="LNG" property="lng" />
     </resultMap>
 
   <select id="selectMySchedule" resultMap="travelMainMap" parameterType="map">

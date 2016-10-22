@@ -14,3 +14,4 @@ function ajaxLoadRegistForm(no) {
 	    $("#endDate").text(result.data.endDate);
 	})
 }
+

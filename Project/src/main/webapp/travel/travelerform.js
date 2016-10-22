@@ -94,7 +94,9 @@ $("#updateTMBtn").click(function(event) {
 			city: tag.find(".bit-city option:selected").val(),
 			scheduleNo : tag.find(".bit-scheduleNo").val(),
 			startDate1: tag.find(".bit-startDate").val(),
-			endDate1: tag.find(".bit-endDate").val()
+			endDate1: tag.find(".bit-endDate").val(),
+			lat : tag.find(".bit-latitude").val(),
+	  		lng : tag.find(".bit-longitude").val()
 
 		};
 	})
@@ -102,7 +104,7 @@ $("#updateTMBtn").click(function(event) {
 	console.log(schedule)
 	travelMain.schedule = schedule;
 
-	ajaxUpdateTravelMain(travelMain)
+	/*ajaxUpdateTravelMain(travelMain)*/
 });
 
 $("#deleteTMBtn").click(function(event) {
@@ -146,6 +148,7 @@ function ajaxLoadTravelMain(no) {
 
 		favorChecked(result)
 		scheduleList()
+		
 	})
 }
 
@@ -225,7 +228,7 @@ function scheduleList() {
 		var template = Handlebars.compile($('#trTemplateText').html())
 	    $("#selectTable .root-select").html(template(result))
 	    
-
+	    
 
 	})
 }
