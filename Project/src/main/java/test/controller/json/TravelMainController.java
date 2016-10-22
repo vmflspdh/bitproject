@@ -76,8 +76,8 @@ public class TravelMainController {
         travelMain.setContinent(list.get(i).getContinent());
         travelMain.setNation(list.get(i).getNation());
         travelMain.setCity(list.get(i).getCity());
-        travelMain.setLatitude((float)list.get(i).getLatitude());
-        travelMain.setLongitude((float)list.get(i).getLongitude());
+        travelMain.setLat((double)list.get(i).getLat());
+        travelMain.setLng((double)list.get(i).getLng());
         
         System.out.println(travelMain);
         

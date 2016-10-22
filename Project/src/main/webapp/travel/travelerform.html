@@ -384,10 +384,11 @@
     </div>
   </div>
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
-  <script src="js/map.js"></script>
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&callback=initMap"
     async defer></script>
+     <script type="text/javascript" src="travelerform.js"></script>
+  <script src="js/mapRoute.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/classie.js"></script>
   <script src="js/cbpAnimatedHeader.min.js"></script>
@@ -396,7 +397,7 @@
   <script type="text/javascript" src="js/common.js"></script>
    <script type="text/javascript" src="js/authApp.js"></script>
   <script type="text/javascript" src="js/memberForm.js"></script>
-  <script type="text/javascript" src="travelerform.js"></script>
+ 
   <script>
      init() // 화면을 준비시킨다
       ajaxLoginUser() // 로그인 유저 정보 가져오기
@@ -411,7 +412,7 @@
 
   </script>
   <script id="trTemplateText" type="text/x-handlebars-template">
-{{#each result}}
+{{#each data}}
 <div class="form-inline root-schedule">
 <input type="text" placeholder="대륙" value="대륙" style="width: 100px;"
 class="form-control bit-continent"> 
@@ -424,9 +425,9 @@ type="text" class="form-control bit-startDate"
 placeholder="시작일" value="{{startDate}}" style="width: 150px;"> <input
 type="text" class="form-control bit-endDate"
 placeholder="종료일" value="{{endDate}}" style="width: 150px;"> <input
-type="text" placeholder="위도" value="{{latitude}}" style="width: 100px;"
+type="text" placeholder="위도" value="{{lat}}" style="width: 100px;"
 class="form-control bit-latitude"> <input type="text"
-placeholder="경도"value="{{longitude}}" style="width: 100px;"
+placeholder="경도"value="{{lng}}" style="width: 100px;"
 class="form-control bit-longitude">
 <button type="button" class="btn btn-default selectDelBtn">-</button>
 </div>
@@ -434,5 +435,6 @@ class="form-control bit-longitude">
 </script>
   <script
   src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+
 </body>
 </html>

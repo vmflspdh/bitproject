@@ -29,8 +29,8 @@ $(".selectAddBtn").click(function(event) {
 			city: $(".bit-city1").val(),
 			startDate: $(".bit-startDate1").val(),
 			endDate: $(".bit-endDate1").val(),
-			latitude: $(".bit-latitude1").val(),
-			longitude: $(".bit-longitude1").val()
+			lat: $(".bit-latitude1").val(),
+			lng: $(".bit-longitude1").val()
 	}
 	console.log(selectSchedule)
 	
@@ -68,8 +68,8 @@ $("#addTMBtn").click(function(event) {
 			city : tag.find('.bit-city').val(),
 			startDate1 : tag.find('.bit-startDate').val(),
 			endDate1 : tag.find('.bit-endDate').val(),
-			latitude: tag.find('.bit-latitude').val(),
-			longitude: tag.find('.bit-longitude').val()
+			lat: tag.find('.bit-latitude').val(),
+			lng: tag.find('.bit-longitude').val()
 		};
 	})
 
