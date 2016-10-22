@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en-US" prefix="og: http://ogp.me/ns#"> 
 <head>
 	<meta charset="UTF-8" />
@@ -44,6 +44,9 @@
 			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://www.notimeforlove.com/workspace/js/leaflet.js"></script>
+    <link rel="stylesheet" href="http://www.notimeforlove.com/workspace/css/leaflet.css">
+    <script type="text/javascript" src="http://www.notimeforlove.com/workspace/js/stamen.js"></script>
 		<script>
 			$(function() {
 				var availableTags = [ "대한민국, 서울", "대한민국, 부산", "영국, 런던", "미국, 뉴욕",
@@ -59,7 +62,19 @@
 
 
 
-<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css">
+.recentcomments a{
+		display:inline !important;
+		padding:0 !important;
+		margin:0 !important;
+}
+ .map {
+     width:100%;
+     height: 400px;
+     margin: 0 0 1em 0;
+ }
+</style>
+
 </head>
 <body>		
 <div class="header has-hero" data-show="on-load">
@@ -135,7 +150,9 @@
 	</div>
 </div>
 	
-
+<div class="eightcol last">
+<div id="toner" class="map" style="border: 4px solid #eceff1;"></div>
+</div>
  
 		
 		<!-- 컨테이너 시작 -->
@@ -242,23 +259,27 @@
 	
 		
 		
-		<script src="js/map.js"></script>
-		<script src="js/menu.js"></script>
-		<script src="js/classie.js"></script>
-		<script src="js/cbpAnimatedHeader.min.js"></script>
-		<!-- 회원정보 관련 -->
-		<script type="text/javascript" src="js/bit.js"></script>
-		<script type="text/javascript" src="js/authApp.js"></script>
-		<script type="text/javascript" src="js/memberForm.js"></script>
-		<script>
-			init() // 화면을 준비시킨다
-			ajaxLoginUser() // 로그인 유저 정보 가져오기
-	    $(function() {
-	        $(".bit-startDate, .bit-endDate").datepicker({
-	            dateFormat: 'yyyy-mm-dd'
-	        });
-	    });
-	   </script>	
+<script src="js/menu.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.min.js"></script>
+<!-- 회원정보 관련 -->
+<script type="text/javascript" src="js/bit.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/authApp.js"></script>
+<script type="text/javascript" src="js/memberForm.js"></script>
+<script type="text/javascript" src="js/backgroundmap.js"></script>
+<script>
+	//init() // 화면을 준비시킨다
+	//ajaxLoginUser() // 로그인 유저 정보 가져오기
+	mapinitialize()
+   
+	
+	/* $(function() {
+       $(".bit-startDate, .bit-endDate").datepicker({
+           dateFormat: 'yyyy-mm-dd'
+       });
+   }); */
+  </script>	
 	
 	
 	
