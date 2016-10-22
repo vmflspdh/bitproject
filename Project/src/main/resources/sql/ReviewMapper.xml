@@ -43,6 +43,8 @@
 	inner join tvl_membs m 
 	on r.mno=m.mno
  	order by rbno desc  
+ 	
+ 	limit #{startIndex}, #{length}
   </select>
   
   <select id="selectOne" resultMap="reviewMap" parameterType="int">
@@ -90,6 +92,11 @@
     delete from tvl_review_bods 
     where rbno=#{value}
   </delete>
+  
+  <select id="countAll" resultType="int">
+    select  count(*)
+    from tvl_review_bods 
+  </select>
 </mapper>
 
 

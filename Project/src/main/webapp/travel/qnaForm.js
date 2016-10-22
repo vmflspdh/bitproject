@@ -1,4 +1,7 @@
 $("#comtaddBtn").click(function(event){
+
+	
+
    
    var cmt = { 
          //reviewboardNo :$("#crbno").val(),

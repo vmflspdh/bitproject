@@ -183,15 +183,15 @@ function scheduleList() {
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-		var contents = "";
+/*		var contents = "";
 		var arr = result.data
 		for (var i in arr) {
 
-			contents += /*'<td style="color: green; font-weight: bold; font-size: large;">' +
+			contents += '<td style="color: green; font-weight: bold; font-size: large;">' +
 	     '<div>가고싶은</div>' + 
 	     '<div>여행지</div>' +
-	    '</td>' +*/
-				/* '<td id="root-select">' +*/
+	    '</td>' +
+				 '<td id="root-select">' +
 				'<form class="form-inline root-schedule" onsubmit="return false">' +
 				'<input type="text" class="form-control bit-locationNo" style="display: none;" value="' + arr[i].locationNo + '">' +
 				'<select style="width:100px;" class="form-control bit-continent">' +
@@ -217,11 +217,14 @@ function scheduleList() {
 				'<input type="text" placeholder="종료일" style="width:100px;" value="'+ arr[i].endDate +'" class="form-control bit-endDate">' +
 				'<button class="btn btn-default selectAddBtn">+</button>' +
 				'<button class="btn btn-default selectDelBtn">-</button>' +
-				'</form>'/* +
-   '</td>'*/
+				'</form>' +
+   '</td>'
 		}
 
-		$("#selectTable .root-select").html(contents)
+		$("#selectTable .root-select").html(contents)*/
+		var template = Handlebars.compile($('#trTemplateText').html())
+	    $("#selectTable .root-select").html(template(result))
+	    
 
 
 	})

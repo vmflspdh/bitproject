@@ -8,27 +8,30 @@ public class TravelMain implements Serializable {
 
 
 
+
   private static final long serialVersionUID = 1L;
-	
+
   static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-	protected int travelMainNo;
+  protected int travelMainNo;
   protected int memberNo;
   protected String title;
   protected String selfIntroduce;
- protected int scheduleNo;
- protected int locationNo;
- protected Date startDate;
+  protected int scheduleNo;
+  protected int locationNo;
+  protected Date startDate;
   protected Date endDate;
- protected String continent;
+  protected String continent;
   protected String nation;
   protected String city;
+  protected float latitude;
+  protected float longitude;
   protected int styleNo;
   protected String styleName;
-  
 
-    protected String startDate1;
+
+  protected String startDate1;
   protected String endDate1;
-  
+
 
   public int getTravelMainNo() {
     return travelMainNo;
@@ -47,7 +50,7 @@ public class TravelMain implements Serializable {
   }
 
 
- public String getTitle() {
+  public String getTitle() {
     return title;
   }
 
@@ -89,13 +92,13 @@ public class TravelMain implements Serializable {
     return startDate;
   }
 
-  
-  
+
+
   public void setStartDate(Date startDate) {
     this.startDate = startDate;
     this.startDate1 = format.format(startDate);
   }
-  
+
   public void setStartDate(String str) {
     this.startDate = Date.valueOf(str);
     this.startDate1 = str;
@@ -126,7 +129,7 @@ public class TravelMain implements Serializable {
 
 
 
-public String getContinent() {
+  public String getContinent() {
     return continent;
   }
 
@@ -181,7 +184,25 @@ public String getContinent() {
     this.styleName = styleName;
   }
 
-	
+
+  public float getLatitude() {
+    return latitude;
+  }
+
+  public void setLatitude(float latitude) {
+    this.latitude = latitude;
+  }
+
+  public float getLongitude() {
+    return longitude;
+  }
+
+  public void setLongitude(float longitude) {
+    this.longitude = longitude;
+  }
+
+
+
 
 
 
@@ -191,12 +212,14 @@ public String getContinent() {
     return "TravelMain [travelMainNo=" + travelMainNo + ", memberNo=" + memberNo + ", title=" + title
         + ", selfIntroduce=" + selfIntroduce + ", scheduleNo=" + scheduleNo + ", locationNo=" + locationNo
         + ", startDate=" + startDate + ", endDate=" + endDate + ", continent=" + continent + ", nation=" + nation
-        + ", city=" + city + ", styleNo=" + styleNo + ", styleName=" + styleName + ", startDate1=" + startDate1
-        + ", endDate1=" + endDate1 + "]";
+        + ", city=" + city + ", latitude=" + latitude + ", longitude=" + longitude + ", styleNo=" + styleNo
+        + ", styleName=" + styleName + ", startDate1=" + startDate1 + ", endDate1=" + endDate1 + "]";
   }
 
 
 
-  
-  
+
+
+
+
 }

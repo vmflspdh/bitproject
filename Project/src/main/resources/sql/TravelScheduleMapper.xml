@@ -12,10 +12,12 @@
     <result column="CONT" property="continent" />
     <result column="NATN" property="nation" />
     <result column="CITY" property="city" />
+    <result column="LAT" property="latitude" />
+    <result column="LNG" property="longitude" />
     </resultMap>
 
   <select id="selectMySchedule" resultMap="travelMainMap" parameterType="map">
-    select tvl_sch.schno, tvl_sch.tmno, tvl_sch.locno, st_dt, ed_dt, cont, natn, city from tvl_sch
+    select tvl_sch.schno, tvl_sch.tmno, tvl_sch.locno, st_dt, ed_dt, cont, natn, city, lat, lng from tvl_sch
     inner join tvl_loc
     on tvl_sch.locno = tvl_loc.locno
     where tmno = #{travelPostNo}

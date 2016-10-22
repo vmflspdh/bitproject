@@ -34,13 +34,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
-<script>
-    $(function() {
-        $(".bit-startDate, .bit-endDate").datepicker({
-            dateFormat: 'yy-mm-dd'
-        });
-    });
-</script>
+
 <!-- 데이트 피커 자바스크립트 -->
 
 
@@ -414,15 +408,31 @@
       // 클래스에 .my-view가 붙으면 새글 들어갔을때 안보이게함
       $(".my-view").css("display", "none")
     }
-    /*
-    // 클래스에 .my-new가 붙으면 상세보기 들어갔을때 안보이게함
-    $(".my-new").css("display", "none")
-    } else {
-    // 클래스에 .my-view가 붙으면 새글 들어갔을때 안보이게함
-    $(".my-view").css("display", "none")
-    }
-     */
-    // ajaxLoginUser() // 로그인 유저 정보 가져오기
+
   </script>
+  <script id="trTemplateText" type="text/x-handlebars-template">
+{{#each result}}
+<div class="form-inline root-schedule">
+<input type="text" placeholder="대륙" value="대륙" style="width: 100px;"
+class="form-control bit-continent"> 
+<input type="text" placeholder="국가" value="국가" style="width: 100px;"
+class="form-control bit-nation">
+<input type="text" placeholder="도시명" value="{{city}}"style="width: 100px;"
+class="form-control bit-city">
+<input
+type="text" class="form-control bit-startDate"
+placeholder="시작일" value="{{startDate}}" style="width: 150px;"> <input
+type="text" class="form-control bit-endDate"
+placeholder="종료일" value="{{endDate}}" style="width: 150px;"> <input
+type="text" placeholder="위도" value="{{latitude}}" style="width: 100px;"
+class="form-control bit-latitude"> <input type="text"
+placeholder="경도"value="{{longitude}}" style="width: 100px;"
+class="form-control bit-longitude">
+<button type="button" class="btn btn-default selectDelBtn">-</button>
+</div>
+{{/each}}
+</script>
+  <script
+  src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 </body>
 </html>

@@ -30,18 +30,6 @@
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<script>
-  $(function() {
-    var availableTags = [ "대한민국, 서울", "대한민국, 부산", "영국, 런던", "미국, 뉴욕",
-        "프랑스, 파리" ];
-    $("#tags").autocomplete({
-      source : availableTags
-    });
-  });
-</script>
-
-
-
 <style>
 #content {
   text-align: center;
@@ -72,6 +60,38 @@
   .hover11 :hover img {
   opacity: .5;
   }
+  
+  .cb-module-header {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 700;
+    }
+    
+    .cb-module-header .cb-module-title {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 5px;
+    padding: 0 30px 0 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    }
+    
+    .cb-module-header .cb-module-title:after {
+    content: "";
+    display: block;
+    height: 6px;
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    width: 1920px;
+    left: 100%;
+    background: #161616;
+}
+    
+    
 </style>
 
 
@@ -132,28 +152,35 @@
     </div>
     <div id="content">
       <div id="bar">
-        <form class="navbar-form navbar-left" role="search">
+ <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <label for="tags"></label> <input id="tags" type="text"
-              class="form-control" placeholder="국가/도시를 입력하세요."
-              style="width: 250px;"> <input style="height: 33px;"
-              type="date" value="dd"> <input style="height: 33px;"
-              type="date" value="dd">
+            <input id="pac-input" type="text" class="controls form-control"
+              placeholder="국가/도시를 입력하세요." style="width: 250px;">
+              <input type="text" class="form-control bit-startDate"
+              placeholder="시작일" style="width: 150px;">
+              <input type="text" class="form-control bit-endDate"
+              placeholder="종료일" style="width: 150px;">
           </div>
           <button type="submit" class="btn btn-default">SEARCH</button>
         </form>
       </div>
+      <div id="type-selector" class="controls" style="display: none;">
+        <input type="radio" name="type" id="changetype-all"
+          checked="checked"> <label for="changetype-all">All</label>
+        <input type="radio" name="type" id="changetype-establishment">
+        <label for="changetype-establishment">Establishments</label> <input
+          type="radio" name="type" id="changetype-address"> <label
+          for="changetype-address">Addresses</label> <input type="radio"
+          name="type" id="changetype-geocode"> <label
+          for="changetype-geocode">Geocodes</label>
+      </div>
       <div id="map"></div>
+
     </div>
     <div>
+    <br/>
+    <div class="cb-module-header"><h2 class="cb-module-title">TRAVELER</h2></div>
     <table id="boardTable" style="width: 650px; margin: 0 auto; border: 0px solid black">
-      <thead>
-        <tr>
-          <th><h2>추천 리스트</h2></th>
-          <th></th>
-        </tr>
-      </thead>
-
       <tbody>
 
       </tbody>
@@ -283,7 +310,7 @@
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
   <script src="js/map.js"></script>
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
     async defer></script>
   <script src="js/menu.js"></script>
   <script src="js/classie.js"></script>
@@ -298,6 +325,11 @@
     init() // 화면을 준비시킨다
     ajaxLoginUser() // 로그인 유저 정보 가져오기
     ajaxRegistFormList()
+    $(function() {
+        $(".bit-startDate, .bit-endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
   </script>
 </body>
 </html>
