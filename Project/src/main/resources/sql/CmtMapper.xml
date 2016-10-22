@@ -41,6 +41,22 @@
     values( #{comMemberNo}, #{qno}, #{commentContents}, now())
   </insert>
   
+<!--   
+  
+   <update id="update" parameterType="qna">
+    update tvl_qna_comt set 
+      cont=#{content} 
+    where qcno=#{qcno}
+  </update>
+  
+  
+   -->
+  <delete id="delete" parameterType="int">
+    delete from tvl_qna_comt 
+    where qcno=#{value}
+  </delete>
+  
+  
   
   
 

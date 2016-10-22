@@ -101,6 +101,42 @@ public class CmtController {
      return new Gson().toJson(result);
    }
    
-   
+   //----------------[  test  ]-------------------------------------
+/*   @RequestMapping(path="cmtupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+   @ResponseBody
+   public String update(Qna qna) throws Exception {
+     HashMap<String,Object> result = new HashMap<>();
+     try {
+       HashMap<String,Object> paramMap = new HashMap<>();
+       paramMap.put("qcno", qna.getQcno());
  
+       cmtDao.update(qna);
+       result.put("state", "success");
+       
+     } catch (Exception e) {
+       result.put("state", "fail");
+       result.put("data", e.getMessage());
+     }
+     
+     return new Gson().toJson(result);
+   }*/
+   
+   @RequestMapping(path="cmtdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+   @ResponseBody
+   public String delete(int qno) throws Exception {
+     HashMap<String,Object> result = new HashMap<>();
+     try {
+       HashMap<String,Object> paramMap = new HashMap<>();
+       paramMap.put("qno", qno);
+       
+       cmtDao.delete(qno);
+       result.put("state", "success");
+     } catch (Exception e) {
+       result.put("state", "fail");
+       result.put("data", e.getMessage());
+     }
+     return new Gson().toJson(result);
+   }
+   
+   
 }

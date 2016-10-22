@@ -43,6 +43,14 @@
 
 
 <style>
+
+#firstcolum,#bbb{
+  width:0;
+  height:0;
+  display:none;
+  /* visibility: hidden; */
+}
+
 #content {
    text-align: center;
    color: black;
@@ -166,11 +174,12 @@
             onclick="location.href='qnaApp.html'">취소</button>
   </div>
 </div>
+
 <!--------------------- 댓글 ----------------------------------->
 
-
-   <table id="cmtTable" class="table table-hover" style="border : 1px solid red;">
-<thead>
+  <input id="bbb"></input>
+   <table id="cmtTable" class="table table-hover" style="border-top : 4px solid black;">
+<thead id="tablehead">
 <tr>
   <th>댓글번호</th>
   <th>회원번호</th>
@@ -183,10 +192,10 @@
 </table>
 
 
-</form>
+<!-- </form>
       </div>
 
-   </div>
+   </div> -->
 <!-- ------------------------------------------------------------------------------------- -->
 
 <div class="my-view" style="border-top:3px solid gray; padding-top: 10px;">
@@ -203,6 +212,14 @@
   </div>
  </div>
 
+
+  
+        <!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
+      </form>
+    </div>
+
+    <div class="main"></div>
+  </div>
 <!-- ------------------------------------------------------------------------------------- -->
 
    <!-- 로그인 폼 -->

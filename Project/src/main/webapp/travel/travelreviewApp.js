@@ -4,14 +4,14 @@ $("#prevBtn").click(function(event) {
 });
 
 $("#nextBtn").click(function(event) {
-	pageNo++;
+	alert('sdfsdf')
+	/*pageNo++;
 	console.log(pageNo)
-	ajaxBoardList();
+	ajaxBoardList();*/
 });
 
 var pageNo = 1, /* window.pageNo */
 pageLength = 10; /* window.pageLength */
-
 function ajaxBoardList() {
 	console.log(pageNo)
 	$.getJSON("rvlist.json", {
@@ -56,7 +56,44 @@ function ajaxBoardList() {
 	    totalPage = result.totalPage;
 	    console.log(pageNo)
 	    console.log(totalPage)
-	    $('#pageNo').text(pageNo);
+	    var cont="<li><a id='prevBtn' href='#'><span class='glyphicon glyphicon-chevron-left'></span></a></li>"
+	    for(var i=1; i<=totalPage;i++){
+	    	var a=console.log(i)
+	    	//$('ul>li:first').after.html(a);
+	    	//$('ul>li:first').append("<li><a href='#'> "+i+"</a></li>");
+//	    	$('#asd').append("<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>");
+	    	 cont+="<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>"
+	    	
+	    	
+//	    	$('#asd').html("<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>");
+	    	
+	    }
+	    cont +="<li><a id='nextBtn' href='#'><span class='glyphicon glyphicon-chevron-right'></span></a></li>"
+	    $('#asd').html(cont);
+	    
+	    $(document).on("click","#abc",function(event) {
+	    	console.log($(this).attr("data-no"))
+	    	console.log($(this))
+//	    	$("li").addClass("active")
+	    	pageNo=$(this).attr("data-no")
+	    	ajaxBoardList();
+			});
+	    
+	    
+	    
+	    	
+	    	
+	    $("#prevBtn").click(function(event) {
+	    	pageNo--;
+	    	ajaxBoardList();
+	    });
+	    
+	    $("#nextBtn").click(function(event) {
+	    	pageNo++;
+	    	console.log(pageNo)
+	    	ajaxBoardList();
+	    });
+//	    $('#pageNo').text(pageNo);
 	    // 페이지 번호가 1이면 [이전] 버튼을 비활성화시킨다.
 	    if (pageNo <= 1) {
 	    	$('#prevBtn').attr('disabled', true);
