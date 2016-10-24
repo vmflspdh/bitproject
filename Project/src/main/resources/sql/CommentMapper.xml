@@ -41,5 +41,11 @@
     delete from tvl_review_comt 
     where rcno=#{value}
   </delete>
+  
+  <select id="countAll" parameterType="int" resultType="int">
+    select  count(*)
+    from tvl_review_comt
+    where rbno={value} 
+  </select>
 </mapper>
 
