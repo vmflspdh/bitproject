@@ -20,6 +20,16 @@ public class Review implements Serializable {
   protected String content;
   protected Date createdDate;
   protected int viewcount;
+  protected int commentCount;
+  
+  
+  
+  public int getCommentCount() {
+    return commentCount;
+  }
+  public void setCommentCount(int commentCount) {
+    this.commentCount = commentCount;
+  }
   public int getReviewboardno() {
     return reviewboardno;
   }
@@ -71,10 +81,11 @@ public class Review implements Serializable {
   }
   @Override
   public String toString() {
-    return "Review [reviewboardno=" + reviewboardno + ", travelno=" + travelno + ", memberno=" + memberno + ", title="
-        + title + ", content=" + content + ", createdDate=" + createdDate + ", viewcount=" + viewcount + "]";
+    return "Review [reviewboardno=" + reviewboardno + ", travelno=" + travelno + ", memberno=" + memberno
+        + ", membername=" + membername + ", title=" + title + ", content=" + content + ", createdDate=" + createdDate
+        + ", viewcount=" + viewcount + ", commentCount=" + commentCount + "]";
   }
-  
+ 
   
   
   
