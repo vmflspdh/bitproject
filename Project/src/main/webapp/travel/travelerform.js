@@ -312,12 +312,17 @@ function initMap() {
 	
 	function setMarkers(map) {
 		
-		var image = 'img/iconmonstr-location-13-240.png'
-
+		
+	
 		for (var i = 0; i < flightPlanCoordinates.length; i++) {
 			var marker = new google.maps.Marker({
 				position: {lat: flightPlanCoordinates[i]['lat'], lng: flightPlanCoordinates[i]['lng']},
-				map: map
+				icon : {
+					url : 'http://chart.apis.google.com/chart?chst=d_map_spin&chld=1|0|FF6C6C|20|b|' + (i+1),
+				    scaledSize: new google.maps.Size(25, 40)
+				},
+				map: map,
+				animation: google.maps.Animation.DROP
 			});
 		}
 	}
