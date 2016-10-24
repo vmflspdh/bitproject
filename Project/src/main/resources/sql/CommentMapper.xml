@@ -43,7 +43,7 @@
   </delete>
   
   <select id="countAll" parameterType="int" resultType="int">
-    select  count(*)
+    select  count(rbno)
     from tvl_review_comt
     where rbno={value} 
   </select>
