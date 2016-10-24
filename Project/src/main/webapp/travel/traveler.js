@@ -20,7 +20,7 @@ function ajaxRegistFormList() {
 		var contents = "";
 	    var arr = result.data
 	    for (var i in arr) {
-	    	if (i == 0 || i / 3 == 1) {
+	    	if (i == 0 || i / 4 == 1) {
 	    		contents += '<tr>'
 	    	}
 	    	contents += 
@@ -31,7 +31,7 @@ function ajaxRegistFormList() {
 	    	'<div>' + arr[i].startDate + '&nbsp;~&nbsp;' + arr[i].endDate + '</div>' +
 	    	'</td>' +
 	    	'<td>'
-	    	if (i % 3 == 2)  {
+	    	if (i % 4 == 3)  {
 	    		contents += '</tr>'
 	    	}
 	      }
