@@ -96,7 +96,7 @@ $("#updateTMBtn").click(function(event) {
 			startDate1: tag.find(".bit-startDate").val(),
 			endDate1: tag.find(".bit-endDate").val(),
 			lat : tag.find(".bit-latitude").val(),
-	  		lng : tag.find(".bit-longitude").val()
+			lng : tag.find(".bit-longitude").val()
 
 		};
 	})
@@ -148,7 +148,8 @@ function ajaxLoadTravelMain(no) {
 
 		favorChecked(result)
 		scheduleList()
-		
+
+
 	})
 }
 
@@ -186,7 +187,7 @@ function scheduleList() {
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-/*		var contents = "";
+		/*		var contents = "";
 		var arr = result.data
 		for (var i in arr) {
 
@@ -225,11 +226,14 @@ function scheduleList() {
 		}
 
 		$("#selectTable .root-select").html(contents)*/
-		var template = Handlebars.compile($('#trTemplateText').html())
-	    $("#selectTable .root-select").html(template(result))
-	    
-	    
 
+
+
+
+		var template = Handlebars.compile($('#trTemplateText').html())
+		$("#selectTable .root-select").html(template(result))
+
+		initMap(result);
 	})
 }
 
@@ -250,3 +254,61 @@ function favorChecked(result) {
 
 	});
 }
+
+function initMap(result) {
+	var map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 37.49, lng: 127.02},
+		zoom: 2
+	});
+
+
+	
+	var flightPlanCoordinates = [];
+	$('.root-schedule').each(function(index, element){
+		var tag = $(element)
+		
+		flightPlanCoordinates[index] = {
+		lat: parseFloat(tag.find('.bit-latitude').val()),
+		lng:  parseFloat(tag.find('.bit-longitude').val())
+		}
+	});
+	
+	console.log(flightPlanCoordinates)
+	/*
+	$.each(flightPlanCoordinates, function(key, value){
+		console.log('key:' + key + ' / ' + 'value:' + value);
+		$.each(value, function(key, value) {
+			console.log('key:' + key + ' / ' + 'value:' + value);
+		});
+	});
+	 */
+
+	/*	$.each(flightPlanCoordinates, function(key, value){
+		console.log('key:' + key + ' / ' + 'value:' + value);
+		$.each(value, function(key, value) {
+				console.log('key:' + key + ' / ' + 'value:' + value);
+			});
+		});
+	 */
+
+
+	/*var flightPlanCoordinates = [
+	                             {lat: 37.772, lng: -122.214},
+	                             {lat: 21.291, lng: -157.821},
+	                             {lat: -18.142, lng: 178.431},
+	                             {lat: -27.467, lng: 153.027}
+	                             ];*/
+
+
+	var flightPath = new google.maps.Polyline({
+		path: flightPlanCoordinates,
+		geodesic: false,
+		strokeColor: '#FF0000',
+		strokeOpacity: 1.0,
+		strokeWeight: 2
+	});
+
+	flightPath.setMap(map);
+}
+
+
