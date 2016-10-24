@@ -315,10 +315,8 @@ function initMap() {
 		var image = 'img/iconmonstr-location-13-240.png'
 
 		for (var i = 0; i < flightPlanCoordinates.length; i++) {
-			var flightPlan = flightPlanCoordinates[i]
-			console.log(flightPlan)
 			var marker = new google.maps.Marker({
-				position: {lat: parseFloat(flightPlan['lat']), lng: parseFloat(flightPlan['lng'])},
+				position: {lat: flightPlanCoordinates[i]['lat'], lng: flightPlanCoordinates[i]['lng']},
 				map: map
 			});
 		}
