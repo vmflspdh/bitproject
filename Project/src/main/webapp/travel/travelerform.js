@@ -255,24 +255,24 @@ function favorChecked(result) {
 	});
 }
 
-function initMap(result) {
+function initMap() {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 37.49, lng: 127.02},
 		zoom: 2
 	});
 
 
-	
+
 	var flightPlanCoordinates = [];
 	$('.root-schedule').each(function(index, element){
 		var tag = $(element)
-		
+
 		flightPlanCoordinates[index] = {
-		lat: parseFloat(tag.find('.bit-latitude').val()),
-		lng:  parseFloat(tag.find('.bit-longitude').val())
+			lat: parseFloat(tag.find('.bit-latitude').val()),
+			lng: parseFloat(tag.find('.bit-longitude').val())
 		}
 	});
-	
+
 	console.log(flightPlanCoordinates)
 	/*
 	$.each(flightPlanCoordinates, function(key, value){
@@ -309,6 +309,23 @@ function initMap(result) {
 	});
 
 	flightPath.setMap(map);
+	
+	function setMarkers(map) {
+		
+		var image = 'img/iconmonstr-location-13-240.png'
+
+		for (var i = 0; i < flightPlanCoordinates.length; i++) {
+			var flightPlan = flightPlanCoordinates[i]
+			console.log(flightPlan)
+			var marker = new google.maps.Marker({
+				position: {lat: parseFloat(flightPlan['lat']), lng: parseFloat(flightPlan['lng'])},
+				map: map
+			});
+		}
+	}
+	setMarkers(map);
 }
+
+
 
 
