@@ -238,6 +238,7 @@
      <button class="btn btn-default selectDelBtn">-</button>
    </form> -->
    </td>
+
   </tr>
   <!-- 이거 맵 -->
   <tr>
@@ -274,7 +275,7 @@
 <p></p><br>
 <p></p><br>
 <p></p><br>
-<p></p></br>   
+<p></p><br>   
   </div>
   
    <!-- 로그인 폼 -->
@@ -386,7 +387,7 @@
   </div>
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&callback=initMap"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
     async defer></script>
      <script type="text/javascript" src="travelerform.js"></script>
 <!--   <script src="js/mapRoute.js"></script> -->
@@ -411,26 +412,27 @@
       $(".my-view").css("display", "none")
     }
 
-
   </script>
   <script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
 <div class="form-inline root-schedule">
+<input type="text" class="form-control bit-locationNo" style="width: 50px;"value="{{locationNo}}" readonly>
 <input type="text" placeholder="대륙" value="대륙" style="width: 100px;"
-class="form-control bit-continent"> 
+class="form-control bit-continent" readOnly = true> 
 <input type="text" placeholder="국가" value="국가" style="width: 100px;"
-class="form-control bit-nation">
-<input type="text" placeholder="도시명" value="{{city}}"style="width: 100px;"
-class="form-control bit-city">
-<input
-type="text" class="form-control bit-startDate"
-placeholder="시작일" value="{{startDate}}" style="width: 150px;"> <input
+class="form-control bit-nation" readOnly = true>
+<input type="text" id="rename" placeholder="도시명" value="{{city}}"style="width: 100px;"
+class="form-control bit-city" readOnly = true>
+<input type="text" class="form-control bit-scheduleNo" style="width: 50px;" value="{{scheduleNo}}" readOnly = true>
+<input type="text" class="form-control bit-startDate"
+placeholder="시작일" value="{{startDate}}" style="width: 150px;" readOnly = true> <input
 type="text" class="form-control bit-endDate"
-placeholder="종료일" value="{{endDate}}" style="width: 150px;"> <input
+placeholder="종료일" value="{{endDate}}" style="width: 150px;" readonly> <input
 type="text" placeholder="위도" value="{{lat}}" style="width: 100px;"
-class="form-control bit-latitude"> <input type="text"
+class="form-control bit-latitude" readOnly = true> <input type="text"
 placeholder="경도"value="{{lng}}" style="width: 100px;"
-class="form-control bit-longitude">
+class="form-control bit-longitude" readOnly = true>
+<button type="button" class="btn btn-default selectModBtn">*</button>
 <button type="button" class="btn btn-default selectDelBtn">-</button>
 </div>
 {{/each}}

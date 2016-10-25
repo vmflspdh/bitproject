@@ -28,6 +28,33 @@ $(document.body).on('click', '.selectDelBtn', function(event) {
 	clickedRow.remove();
 });
 
+/*일정수정*/
+
+
+$(document.body).on('click', '.selectModBtn', function(event) {
+
+	$('.root-schedule').each(function(index, element) {
+		$(element).find($('[type="text"]')).attr("readOnly", true);
+		$(element).find($('[class="form-control bit-city"]')).attr('id', 'rename');
+		$(element).find($('[class="form-control bit-latitude"]')).attr('class', 'form-control bit-latitude');
+		$(element).find($('[class="form-control bit-longitude"]')).attr('class', 'form-control bit-longitude');
+
+	});
+
+	$(this).parent().each(function(index, element) {
+
+		$(element).find($('[type="text"]')).attr("readOnly", false);
+		/*$(element).before('<input type="text" id="pac-input" class="form-control search" style="width: 200px;" placeholder="변경할 도시를 검색하세요.">');*/
+		$(element).find($('[class="form-control bit-city"]')).attr('id', 'pac-input');
+		$(element).find($('[class="form-control bit-latitude"]')).attr('class', 'form-control bit-latitude1');
+		$(element).find($('[class="form-control bit-longitude"]')).attr('class', 'form-control bit-longitude1');
+
+	});
+
+});
+
+
+
 $("#addTMBtn").click(function(event) {
 
 	var travelMain = {
@@ -255,13 +282,12 @@ function favorChecked(result) {
 	});
 }
 
-function initMap() {
+function initMap(result) {
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 37.49, lng: 127.02},
-		zoom: 2
+		zoom: 2,
+		mapTypeControl: false
 	});
-
-
 
 	var flightPlanCoordinates = [];
 	$('.root-schedule').each(function(index, element){
@@ -309,17 +335,15 @@ function initMap() {
 	});
 
 	flightPath.setMap(map);
-	
+
 	function setMarkers(map) {
-		
-		
-	
+
 		for (var i = 0; i < flightPlanCoordinates.length; i++) {
 			var marker = new google.maps.Marker({
 				position: {lat: flightPlanCoordinates[i]['lat'], lng: flightPlanCoordinates[i]['lng']},
 				icon : {
 					url : 'http://chart.apis.google.com/chart?chst=d_map_spin&chld=1|0|FF6C6C|20|b|' + (i+1),
-				    scaledSize: new google.maps.Size(25, 40)
+					scaledSize: new google.maps.Size(25, 40)
 				},
 				map: map,
 				animation: google.maps.Animation.DROP
@@ -327,6 +351,83 @@ function initMap() {
 		}
 	}
 	setMarkers(map);
+
+
+	$(document.body).on('click', '.selectModBtn', function(event) {
+
+		var input = /** @type {!HTMLInputElement} */(
+				document.getElementById('pac-input'));
+
+		var autocomplete = new google.maps.places.Autocomplete(input, {
+			types: ['(cities)']});
+
+
+		autocomplete.bindTo('bounds', map);
+
+		/*var infowindow = new google.maps.InfoWindow();
+	  var marker = new google.maps.Marker({
+	    map: map,
+	    anchorPoint: new google.maps.Point(0, -29)
+	  });
+		 */
+		autocomplete.addListener('place_changed', function() {
+			/*	infowindow.close();
+			marker.setVisible(false);*/
+			var place = autocomplete.getPlace();
+			if (!place.geometry) {
+				window.alert("Autocomplete's returned place contains no geometry");
+				return;
+			}
+
+			// If the place has a geometry, then present it on a map.
+			if (place.geometry.viewport) {
+				map.fitBounds(place.geometry.viewport);
+			} else {
+				map.setCenter(place.geometry.location);
+				map.setZoom(5);  // Why 17? Because it looks good.
+			}
+
+			/*marker.setIcon(*//** @type {google.maps.Icon} *//*({
+	      url: place.icon,
+	      size: new google.maps.Size(71, 71),
+	      origin: new google.maps.Point(0, 0),
+	      anchor: new google.maps.Point(17, 34),
+	      scaledSize: new google.maps.Size(35, 35)
+	    }));
+	    marker.setPosition(place.geometry.location);
+	    marker.setVisible(true);*/
+
+			var address = '';
+			if (place.address_components) {
+				address = [
+				           (place.address_components[0] && place.address_components[0].short_name || ''),
+				           (place.address_components[1] && place.address_components[1].short_name || ''),
+				           (place.address_components[2] && place.address_components[2].short_name || '')
+				           ].join(' ');
+
+				/*위도 경도 추출*/
+				var a = $("#map").find('a').attr('href')
+				var b = a.split("=")[1];
+				var c = b.split("&")[0];
+				var llet = c.split(",")[0];
+				var lot = c.split(",")[1];
+
+
+				/*$(".bit-city").val(place.address_components[0].short_name)*/
+				$(".bit-latitude1").val(llet)
+				$(".bit-longitude1").val(lot)
+
+				console.log(llet)
+				console.log(lot)
+			}
+
+			/*	    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+	    infowindow.open(map, marker);*/
+
+			setMarkers(map);
+		});
+	});
+
 }
 
 

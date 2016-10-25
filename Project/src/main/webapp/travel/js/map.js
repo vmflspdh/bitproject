@@ -51,13 +51,15 @@ function initMap() {
   var input = /** @type {!HTMLInputElement} */(
       document.getElementById('pac-input'));
 
-  var types = document.getElementById('type-selector');
+  /*var types = document.getElementById('type-selector');*/
   
 /* map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);*/
 
   var autocomplete = new google.maps.places.Autocomplete(input, {
       types: ['(cities)']});
+  
+  
   autocomplete.bindTo('bounds', map);
 
   var infowindow = new google.maps.InfoWindow();
