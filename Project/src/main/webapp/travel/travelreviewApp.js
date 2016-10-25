@@ -19,22 +19,22 @@ function ajaxBoardList() {
 		"pageNo": pageNo,
 		"length": pageLength
 		},function(result) {
-		
+			
 		if(result.state!="success"){
 			
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-		
 		var contents="";
 		var arr = result.data
 		for ( var i in arr) {
-
+			var b = arr[i].reviewboardno
+			console.log(b)
 			contents += "<tr>"+
 				"<td>"+arr[i].reviewboardno+"</td>"+
 				"<td>"+arr[i].travelno+"</td>"+
 				"<td><a class='titleLink2' href='#' data-no2='"+arr[i].memberno+"'>"+arr[i].membername+"</a></td>"+
-				"<td><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title+"</a></td>"+
+				"<td><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")")+"</a></td>"+
 				"<td>"+arr[i].content+"</td>"+
 				"<td>"+arr[i].createdDate+"</td>"+
 				"<td>"+arr[i].viewcount+"</td>"+

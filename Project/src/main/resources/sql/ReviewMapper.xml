@@ -12,6 +12,7 @@
     <result column="cont" property="content"/>
     <result column="cre_dt" property="createdDate"/>
     <result column="vw_cnt" property="viewcount"/>
+    <result column="count(c.rbno)" property="commentCount"/>
   </resultMap>
   
   <!-- <resultMap type="member" id="memberMap">
@@ -38,10 +39,13 @@
   </resultMap> -->
   
   <select id="selectList" resultMap="reviewMap" parameterType="map">
-    select rbno,tmno,r.mno,mnm,title,cont,cre_dt,vw_cnt  
+    select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,r.cre_dt,r.vw_cnt , count(c.rbno)
     from tvl_review_bods r
 	inner join tvl_membs m 
 	on r.mno=m.mno
+	left join tvl_review_comt c
+	on r.rbno=c.rbno
+	group by r.rbno
  	order by rbno desc  
  	
  	limit #{startIndex}, #{length}

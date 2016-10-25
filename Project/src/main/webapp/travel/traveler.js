@@ -20,22 +20,17 @@ function ajaxRegistFormList() {
 		var contents = "";
 	    var arr = result.data
 	    for (var i in arr) {
-	    	if (i == 0 || i / 3 == 1) {
-	    		contents += '<tr>'
-	    	}
 	    	contents += 
-	    	'<td>' +
-	    	'<div class="hover11 column"><a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '"><img src="' + arr[i].myPhoto + '" width="200px" height="120px"></a></div>' +
-	    	'<div>' + arr[i].writer + '</div>' +
-	    	'<div><img src="img/yang/11101_s.gif">' + arr[i].continent + ',' + arr[i].nation + ',' + arr[i].city + '</div>' +
-	    	'<div>' + arr[i].startDate + '&nbsp;~&nbsp;' + arr[i].endDate + '</div>' +
-	    	'</td>' +
-	    	'<td>'
-	    	if (i % 3 == 2)  {
-	    		contents += '</tr>'
-	    	}
+	    		'<ul>' +
+	    		'<li><a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '">' +
+	    		'<img src="' + arr[i].myPhoto + '"></a>' +
+	    		'<div class="cycle-overlay">' +
+	    		arr[i].writer + '<br>' +
+	    		arr[i].continent + ',' + arr[i].nation + ',' + arr[i].city + '<br>' +
+	    		arr[i].startDate + '~' + arr[i].endDate + '</div></li>' +
+	    		'</ul>'
 	      }
-	    $("#boardTable tbody").html(contents)
+	    $(".changallery").html(contents)
 	    $(".titleLink").click(function(event) {
 	    	var no = $(this).attr("data-no")
 	    	console.log(no)
