@@ -5,6 +5,7 @@
 				$('.zeta-menu ul').hide();
 			}
 		});
+		
 	$(".zeta-menu>li:has(ul)>a").each(function() {
 			$(this).html($(this).html() /*+ ' &or;'*/);
 		});

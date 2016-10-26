@@ -36,8 +36,8 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 	$('.root-schedule').each(function(index, element) {
 		$(element).find($('[type="text"]')).attr("readOnly", true);
 		$(element).find($('[class="form-control bit-city"]')).attr('id', 'rename');
-		$(element).find($('[class="form-control bit-latitude"]')).attr('class', 'form-control bit-latitude');
-		$(element).find($('[class="form-control bit-longitude"]')).attr('class', 'form-control bit-longitude');
+		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude');
+		$(element).find($('[id="bit-longitude"]')).attr('class', 'form-control bit-longitude');
 
 	});
 
@@ -46,8 +46,8 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 		$(element).find($('[type="text"]')).attr("readOnly", false);
 		/*$(element).before('<input type="text" id="pac-input" class="form-control search" style="width: 200px;" placeholder="변경할 도시를 검색하세요.">');*/
 		$(element).find($('[class="form-control bit-city"]')).attr('id', 'pac-input');
-		$(element).find($('[class="form-control bit-latitude"]')).attr('class', 'form-control bit-latitude1');
-		$(element).find($('[class="form-control bit-longitude"]')).attr('class', 'form-control bit-longitude1');
+		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude1');
+		$(element).find($('[id="bit-longitude"]')).attr('class', 'form-control bit-longitude1');
 
 	});
 
@@ -380,11 +380,11 @@ function initMap(result) {
 			}
 
 			// If the place has a geometry, then present it on a map.
-			if (place.geometry.viewport) {
+		if (place.geometry.viewport) {
 				map.fitBounds(place.geometry.viewport);
 			} else {
-				map.setCenter(place.geometry.location);
-				map.setZoom(5);  // Why 17? Because it looks good.
+/*			map.setCenter(place.geometry.location);
+				map.setZoom(5);  */
 			}
 
 			/*marker.setIcon(*//** @type {google.maps.Icon} *//*({
