@@ -30,6 +30,22 @@ $(document.body).on('click', '.selectDelBtn', function(event) {
 
 /*일정수정*/
 
+$(".modStartBtn").click(function(event){
+	$('.root-schedule').each(function(index, element) {
+		$(element).find('.btn').removeAttr('style');
+	})
+	
+	$(element).find('.btn').removeAttr('style');
+	
+	$('.root-schedule').each(function(index, element) {
+		$(element).find($('[type="text"]')).attr("readOnly", true);
+		$(element).find($('[class="form-control bit-city"]')).attr('id', 'rename');
+		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude');
+		$(element).find($('[id="bit-longitude"]')).attr('class', 'form-control bit-longitude');
+
+	});
+});
+
 
 $(document.body).on('click', '.selectModBtn', function(event) {
 
@@ -260,6 +276,13 @@ function scheduleList() {
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
 
+		$('.root-schedule').each(function(index, element) {
+
+			var tag = $(element).find($('[id="sch_cirNum"]'));
+			tag.html(index+1);
+		});
+
+
 		initMap(result);
 	})
 }
@@ -299,7 +322,6 @@ function initMap(result) {
 		}
 	});
 
-	console.log(flightPlanCoordinates)
 	/*
 	$.each(flightPlanCoordinates, function(key, value){
 		console.log('key:' + key + ' / ' + 'value:' + value);
@@ -380,10 +402,10 @@ function initMap(result) {
 			}
 
 			// If the place has a geometry, then present it on a map.
-		if (place.geometry.viewport) {
+			if (place.geometry.viewport) {
 				map.fitBounds(place.geometry.viewport);
 			} else {
-/*			map.setCenter(place.geometry.location);
+				/*			map.setCenter(place.geometry.location);
 				map.setZoom(5);  */
 			}
 
