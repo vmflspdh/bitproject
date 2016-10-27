@@ -184,9 +184,11 @@ function ajaxLoadTravelMain(no) {
 		$("#no").val(result.data.no);
 		$("#memberNo").val(result.data.memberNo);
 		$("#title").val(result.data.title);
+		$("#title").text(result.data.title);
 		$("#travelNo").val(result.data.travelMainNo);
 		$("#styleNo").val(result.data.styleNo);
 		$("#selfIntroduce").val(result.data.selfIntroduce);
+		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
 
 		favorChecked(result)

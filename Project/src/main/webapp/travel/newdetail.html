@@ -39,23 +39,13 @@
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-
+<!-- 달력 관련 -->
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
 <script src='lib/jquery.min.js'></script>
 <script src='lib/moment.min.js'></script>
 <script src='fullcalendar/fullcalendar.js'></script>
-
+<!-- 달력 관련 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script>
-$(function() {
-  var availableTags = [ "대한민국, 서울", "대한민국, 부산", "영국, 런던", "미국, 뉴욕",
-      "프랑스, 파리" ];
-  $("#tags").autocomplete({
-    source : availableTags
-  });
-});
-</script>
-<!--  travel 에서 가저온-->
 
 <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
 
@@ -63,12 +53,25 @@ $(function() {
       display:inline;             
       font:bold 13px Dotum;       
       padding:0 10px;     
-      }
+ }
  .hrs {
    height: 10px;
    border: 0;
    box-shadow: 0 10px 10px -10px #8c8b8b inset;
  }
+ #sch_cirNum {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background: #13919A;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  float:left;
+}
 </style>
 </head>
 <body>    
@@ -139,55 +142,49 @@ $(function() {
 <div class="main"></div>
 <!-- End of container2 -->
 
-<div style="background-color: #F5F2F5; width: 900px; height:1000px; margin: 0 auto; margin-top: 89px; color:#736378;">
+<div style="background-color: #F5F2F5; width: 900px; margin: 0 auto; margin-top: 89px; color:#736378;">
   <div style="background-color: #F5F2F5; width: 880px; height:500px; margin: 0 auto; padding:20px;">
-    <img src="img/profileDemo.png" width="50px" height="50px" style="border-radius: 25px 25px 25px 25px;"><h3 style="float: right;">양찬님의 동행 찾기</h3>
+    <img src="img/profileDemo.png" width="50px" height="50px" style="border-radius: 25px 25px 25px 25px;"><h3 id="title" style="float: right;"></h3>
     <hr class="hrs">
     <img src="img/yang/travelphoto1.jpg" style="width: 500px; height: 332px;">
     <div id='calendar' style="background-color: white; width:300px; height: 332px; padding-left: 15px; float: right; border:1px solid black;"><br>
-    <div style="float: right;">양찬님의 스케쥴</div>
     </div>
   <br>
   <hr class="hrs">
   </div>
-  <div style="background-color: #F5F2F5; width: 880px; height:500px; margin: 0 auto; padding:20px; clear: both;">
-    <div style="border:1px solid #F5F2F5; width: 370px; height: 380px; background-color: white; border-radius: 15px 15px 15px 15px">
-      <hr style="border:1px dotted red;">
-      <div style="padding: 10px;">
-        <div style="margin: 0 auto;">안녕하세요</div>
-        <div>반갑습니다.</div>
+  <div style="background-color: #F5F2F5; width: 880px; height:310px; margin: 0 auto; padding:20px; clear: both;">
+      <div id="selectTable" style="padding: 10px;">
+        <div class="root-select">
+        </div>
+      </div>
+    <div id="map" style="width:440px; height: 300px; position: absolute; left:48%; top: 600px;"></div>
+  </div>
+  <div style="background-color: #F5F2F5; width: 880px; margin: 0 auto; padding:20px;">
+    <hr class="hrs">
+    <div style=" border-radius: 10px 15px 15px 15px; background-color: white; width: 310px; height:310px; padding: 20px">
+      <div><h3>양찬님의 여행 스타일!</h3></div><br>
+      <div style="padding-left: 20px;">
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-food" name="chk_info" value="1">식도락</label><br>
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연</label><br>
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-sports" name="chk_info" value="3">액티비티/레포츠</label><br>
       </div>
     </div>
-    <div id="map" style="width:440px; height: 400px; position: absolute; left:48%; top: 600px;"></div>
-  <div class="form-group" >
-    <div class="col-sm-offset-2 col-sm-10" style="border:0px solid black;">
-      <button id="addBtn" type="button" class="btn btn-primary">친구추가</button>
+    <div id="selfIntroduce" 
+    style="position: absolute; left:48%; top: 970px; width: 440px; height:310px; padding: 20px; border-radius: 10px 15px 15px 15px; background-color: white;">
+    </div>
+  </div>
+  <br>
+    <div class="col-sm-offset-2 col-sm-10" style="border:0px solid black; padding-left: 220px;">
+      <button id="addBtn" type="button" class="btn btn-primary">동행추가</button>
       <button id="cancelBtn" type="button" class="btn btn-default"
-      onclick="location.href='traveler.html'">취소</button>
+      onclick="location.href='mainhtml.html'">취소</button>
    </div>
 </div>
-  </div>
-</div>
+<br><br><br><br><br><br>
   
-  <!-- <table style="border:1px solid black; width:840px;">
-  <tr style="border:1px solid black;">
-  <td style="border:1px solid black;"><img src="img/yang/travelphoto1.jpg" width="500px" height="500px"></td>
-  <td style="border:1px solid black;">
-  <div id='calendar' style="background-color: white; width:300px; height: 300px; padding-left: 15px;" ></div>
-  </td>
-  </tr>
-  </table>
-  <table style="border:1px solid black; width:840px;">
-  <tr style="border:1px solid black;">
-  <td style="border:1px solid black; width: 400px;">
-  <div><h4>제목: 안녕하세요 양찬입니다.</h4></div>
-  <div>자기소개: 가나다라마바사 아자차카타파하</div>
-  </td>
-  <td style="border:1px solid black; padding: 10px;">
-  <div id="map" style="width:500px; height: 400px; padding-left: 15px;"></div>
-  </td>
-  </tr>
-  </table> -->
 
 
 <!-- Start of Login form -->
@@ -298,8 +295,10 @@ $(function() {
 </div>    
 <!-- End of Registration Form-->  
       
-    
-<script src="js/map.js"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
+    async defer></script>
+<script type="text/javascript" src="travelerform.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/classie.js"></script>
 <script src="js/cbpAnimatedHeader.min.js"></script>
@@ -309,19 +308,14 @@ $(function() {
 <script type="text/javascript" src="js/authApp.js"></script>
 <script type="text/javascript" src="js/memberForm.js"></script>
 <script type="text/javascript" src="traveler.js"></script>
-<script type="text/javascript" src="js/backgroundmap.js"></script>
-<script type="text/javascript" src="js/leaflet.js"></script>
-<script type="text/javascript" src="js/stamen.js"></script>
+<script type="text/javascript" src="travelerform.js"></script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기
-ajaxRegistFormList()
-$(function() {
-    $(".bit-startDate, .bit-endDate").datepicker({
-        dateFormat: 'yyyy-mm-dd'
-    });
-});
-
+if (location.search.startsWith("?")) {
+    var no = location.search.split("=")[1];
+    ajaxLoadTravelMain(no)
+}
 $(document).ready(function() {
 
     // page is now ready, initialize the calendar...
@@ -331,16 +325,34 @@ $(document).ready(function() {
     })
 
 });
+
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&callback=initMap" async defer></script>
+<script id="trTemplateText" type="text/x-handlebars-template">
+{{#each data}}
+<div class="form-inline root-schedule">
+<div id="sch_cirNum"></div>
+<input type="text" class="form-control bit-locationNo" style="width: 50px; display:none;"value="{{locationNo}}" readonly>
+<input type="text" placeholder="대륙" value="대륙" class="form-control bit-continent" style="width: 100px; display:none;" readOnly = true> 
+<input type="text" placeholder="국가" value="국가" style="width: 100px; display:none;"
+class="form-control bit-nation" readOnly = true>
+<input type="text" id="rename" placeholder="도시명" value="{{city}}"style="width: 100px; background-color: white;"
+class="form-control bit-city" readOnly = true>
+<input type="text" class="form-control bit-scheduleNo" style="width: 50px; display:none;" value="{{scheduleNo}}" readOnly = true>
+<input type="text" id="bit-startDate" class="form-control bit-startDate"
+placeholder="시작일" value="{{startDate}}" style="width: 100px; background-color: white;" readOnly = true> <input
+type="text" id="bit-endDate" class="form-control bit-endDate"
+placeholder="종료일" value="{{endDate}}" style="width: 100px; background-color: white;" readonly> <input
+type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
+class="form-control bit-latitude" readOnly = true> <input type="text"
+placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px; display:none;"
+class="form-control bit-longitude" readOnly = true>
+</div><br>
+{{/each}}
+</script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
-<script type='text/javascript'>
-/* <![CDATA[ null 에 [ ]로 값입력해서 넘길려면 나중에 추가,국가 선택,*/
-var nycSearch = {"apartmentTypes": null,"neighborhoods":["Aisa","South America","North America","Europe","Africa","Oceania"]};
-/* ]]> */
-</script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
 </body>
