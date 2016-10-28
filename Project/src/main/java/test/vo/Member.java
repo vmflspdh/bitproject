@@ -17,7 +17,20 @@ public class Member implements Serializable{
   protected int gender;
   protected Timestamp registedDate;
   protected String memberPhoto;
+  protected int memberRequest;
   
+
+
+  
+
+  public int getMemberRequest() {
+    return memberRequest;
+  }
+
+
+  public void setMemberRequest(int memberRequest) {
+    this.memberRequest = memberRequest;
+  }
 
 
   public int getNo() {

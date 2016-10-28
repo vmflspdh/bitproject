@@ -114,6 +114,16 @@ public class RegistForm implements Serializable {
 	public void setMyPhoto(String myPhoto) {
 		this.myPhoto = myPhoto;
 	}
+  @Override
+  public String toString() {
+    return "RegistForm [no=" + no + ", memberNo=" + memberNo + ", travelMainNo=" + travelMainNo + ", locationNo="
+        + locationNo + ", styleNo=" + styleNo + ", writer=" + writer + ", title=" + title + ", styleName=" + styleName
+        + ", continent=" + continent + ", nation=" + nation + ", city=" + city + ", selfIntroduce=" + selfIntroduce
+        + ", startDate=" + startDate + ", endDate=" + endDate + ", myPhoto=" + myPhoto + "]";
+  }
+ 
+	
+	
   
   
   

@@ -52,7 +52,41 @@
 		</script>
 <!--  travel 에서 가저온-->
 
-<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+<style type="text/css">
+#inviteCount {
+	z-index:-1;
+	position: absolute; 
+	right: 12px; 
+	top: -1px; 
+	text-decoration:none;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	color: white;
+	background: #F361A6;
+	margin: 0 10px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 32px;
+	text-align: center;
+	float:left;
+	
+}
+
+#fadeandscale {
+	    -webkit-transform: scale(0.8);
+	       -moz-transform: scale(0.8);
+	        -ms-transform: scale(0.8);
+	            transform: scale(0.8);
+	}
+.popup_visible #fadeandscale {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+	
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
 
 #yang ul li{
 			display:inline; 			      
@@ -220,7 +254,7 @@ div.changallery ul li img:hover {
 									<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
 											id="mainImg"></a>
 										<ul>
-											<li><a href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYNFO</a>
+											<li><a  href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYINFO</a>
 												<ul>
 													<li><a href="#2B1">2-B-1 메뉴</a></li>
 													<li><a href="#2B2">2-B-2 메뉴</a></li>
@@ -228,16 +262,33 @@ div.changallery ul li img:hover {
 											</li>
 											<li><a href="#"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
 											</li>
-											<li><a href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+											<li><a class=" fadeandscale_open" id="accompany" href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+											
 											<li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
 											</li>
 										</ul>
 									</li>
 								</ul>
 							</div>
-			
+						<div id="fadeandscale" class="well">
+						    <h4>동행요청</h4>
+						    <h5></h5>
+						<!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+						<button value="vcxc">수락</button><button value="sdfds">거절</button>
+						</pre>
+						<pre class="prettyprint">
+						<code>zxcxzcxzxz</code>
+						</pre>
+						<pre class="prettyprint">
+						<code>zxcxzcxzxz</code>
+						</pre> -->
+						    <button style="float: right;"class="fadeandscale_close btn btn-default">Close</button>
+						</div>
+						
+						
 				 		<div class="my-login" style=" position: relative; z-index: 96">
 								<span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
+								<a id="inviteCount" ></a>
 					    </div>
 <!--Start of container-->
 <div class="header has-hero" data-show="on-load">
@@ -340,6 +391,7 @@ div.changallery ul li img:hover {
         data-show-priority="1">
         <a href="http://furnishednycapartments.com?s=&apt_type=Studio">
           <span>From</span>
+          
           <h3>$2800</h3> <span class="lower">Studio</span>
         </a>
       </div>
@@ -552,17 +604,30 @@ div.changallery ul li img:hover {
 <script type="text/javascript" src="js/backgroundmap.js"></script>
 <script type="text/javascript" src="js/leaflet.js"></script>
 <script type="text/javascript" src="js/stamen.js"></script>
+<script src="jquery.popupoverlay.js"></script>
+<script>
+$(document).ready(function () {
+
+    $('#fadeandscale').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+}); 
+</script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기
 ajaxRegistFormList()
+ajaxInviteList()
   $(function() {
       $(".bit-startDate, .bit-endDate").datepicker({
           dateFormat: 'yyyy-mm-dd'
       });
   });
 mapinitialize()
- </script>	
+
+</script>	
 	
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>

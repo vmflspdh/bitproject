@@ -15,3 +15,28 @@ function ajaxLoadRegistForm(no) {
 	})
 }
 
+$("#addBtn").click(function(event) {
+	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+	    	console.log(result.data)
+	    	alert("조회 실패 입니다.")
+	    	return
+	    }
+	  var requestMember=result.data
+	   a(requestMember)
+	   alert("친구추가되었습니다.")
+	})
+});
+function a(requestMember){
+	$.post(serverAddr + "/travel/invadd.json" , requestMember,function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+	    	console.log(result.data)
+	    	return
+	    }
+	 
+	})
+	console.log(requestMember)
+	
+}

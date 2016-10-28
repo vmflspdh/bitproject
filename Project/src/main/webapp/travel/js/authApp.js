@@ -72,6 +72,8 @@ function ajaxLoginUser() {
 		$("#userName").val(result.data.name)
 		$("#userName2").val(result.data.name)
 		$("#userName3").val(result.data.name)
+		$("#inviteCount").text(result.data.memberRequest)
+		console.log(result.data.memberRequest)
 	})
 
 }

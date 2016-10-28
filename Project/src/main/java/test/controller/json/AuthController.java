@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import test.dao.InviteDao;
 import test.dao.MemberDao;
 import test.vo.JsonResult;
 import test.vo.Member;
@@ -23,6 +24,7 @@ import test.vo.Member;
 public class AuthController {
 
   @Autowired MemberDao memberDao;
+  @Autowired InviteDao inviteDao;
 
   @RequestMapping(path="login")
   public Object login(
@@ -81,12 +83,20 @@ public class AuthController {
 
   @RequestMapping(path="loginUser")
   public Object loginUser(HttpSession session) throws Exception {
-
+    
+    
+    
     try {
       Member member = (Member)session.getAttribute("member");
       if (member == null) {
         throw new Exception("로그인이 되지 않았습니다.");
       }
+      //System.out.println(member.setInviteCount(inviteDao.inviteCount(member.getNo())));
+//      System.out.println();
+      
+      member.setMemberRequest(inviteDao.inviteCount(member.getNo()));
+      //inviteDao.inviteCount(member.getNo());
+      System.out.println(member);
       return JsonResult.success(member);
     } catch (Exception e) {
       return JsonResult.error(e.getMessage());
