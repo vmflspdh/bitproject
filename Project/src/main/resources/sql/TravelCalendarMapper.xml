@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.CalendarDao">
+<resultMap type="Calendar" id="calendarMap">
+  <id column="TMNO" property="travelMainNo" />
+    <result column="ST_DT" property="start" />
+    <result column="ED_DT" property="end" />
+    <result column="CITY" property="title" />
+    </resultMap>
+
+  <select id="selectMyCalendar" resultMap="calendarMap" parameterType="map">
+    select st_dt, ed_dt, city from tvl_sch
+    inner join tvl_loc
+    on tvl_sch.locno = tvl_loc.locno
+    where tmno = #{travelPostNo}
+  </select>
+  
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

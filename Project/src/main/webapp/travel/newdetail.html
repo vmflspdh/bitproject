@@ -316,16 +316,6 @@ if (location.search.startsWith("?")) {
     var no = location.search.split("=")[1];
     ajaxLoadTravelMain(no)
 }
-$(document).ready(function() {
-
-    // page is now ready, initialize the calendar...
-
-    $('#calendar').fullCalendar({
-        // put your options and callbacks here
-    })
-
-});
-
 </script>
 <script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
