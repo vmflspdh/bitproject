@@ -5,7 +5,7 @@ function checkToNo(no) {
 		if (result.state == "success") {
 			window.location.href = "travelerform.html?no=" + no
 		} else {
-			window.location.href = "travelerdetail.html?no=" + no
+			window.location.href = "newdetail.html?no=" + no
 		}
     })                  
 }

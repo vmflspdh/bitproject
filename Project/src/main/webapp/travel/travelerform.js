@@ -1,3 +1,5 @@
+var calendarDetailList = [];
+
 $(document.body).on('click', '.selectAddBtn', function(event) {
 
 	var lastrootschedule = $(".root-select form:last")
@@ -184,13 +186,16 @@ function ajaxLoadTravelMain(no) {
 		$("#no").val(result.data.no);
 		$("#memberNo").val(result.data.memberNo);
 		$("#title").val(result.data.title);
+		$("#title").text(result.data.title);
 		$("#travelNo").val(result.data.travelMainNo);
 		$("#styleNo").val(result.data.styleNo);
 		$("#selfIntroduce").val(result.data.selfIntroduce);
+		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
 
 		favorChecked(result)
 		scheduleList()
+		calendarList();
 
 
 	})
@@ -452,6 +457,50 @@ function initMap(result) {
 
 }
 
+function calendarList() {
+	$.getJSON(serverAddr + "/travel/calendarList.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			return
+		}
+		var arr = result.data
+		for (var i in arr) {
+			calendarDetailList.push(arr[i])
+		}
+		console.log(calendarDetailList)
+		showCalendar();
+	})
+}
 
+
+function showCalendar() {
+	
+		$(document).ready(function() {
+				console.log(calendarDetailList)
+			$("#calendar").fullCalendar({
+				  navLinks: false,
+				  selectable: false,
+				  selectHelper: false,
+				  disableDragging : false,
+				  select: function(start, end, allDay) {
+					  var title = prompt('일정을 입력하세요');
+					  if (title) {
+						  calendar.fullCalendar('renderEvent',
+							  {
+							    title: title,
+							    start: start,
+							    end: end
+							  },
+							  true
+						  );
+					  }
+					  calendar.fullCalendar('unselect');
+				  },
+				  editable: false,
+				  events: calendarDetailList
+		  })
+	})
+}
 
 

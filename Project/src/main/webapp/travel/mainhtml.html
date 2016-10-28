@@ -21,6 +21,12 @@
 <link rel='shortlink' href='http://furnishednycapartments.com/' />
 <link rel="alternate" type="application/json+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F&#038;format=xml" />
+		
+<link href="blue-login-html/login-box.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="demo/styles.css" />
+		
+		
+		
 		<!--  travel 에서 가저온 시-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -249,6 +255,35 @@ div.changallery ul li img:hover {
 									<!-- Start of container2 -->
 					<div id="yang" class="container ">
 					<div class="upper" style="background : #000000; background : rgba(192,192,192,0.2) ;height:70px;"> 
+							
+							<div class='zeta-menu-bar  my-login' style=" position: relative; z-index: 96">
+								<ul id="navigationMenu" class="zeta-menu">
+								    <li>
+									    <a class="contact" href="#">
+								            <span>Contact</span>
+								        </a>
+								    </li>
+								    
+								    <li>
+								    	<a class="about" href="#">
+								            <span>About</span>
+								        </a>
+								    </li>
+								    
+								    <li>
+								    	<a class="portfolio" href="#">
+								            <span>Portfolio</span>
+								        </a>
+								    </li>
+								    
+								    <li>
+								    	<a class="home my-login" id="logoutBtn" href="#">
+								            <span>Logout</span>
+								        </a>
+								    </li>
+								</ul>
+						  </div>
+						<!-- 
 							<div class='zeta-menu-bar my-login' style=" position: relative; z-index: 96">
 								<ul class="zeta-menu">
 									<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
@@ -270,6 +305,7 @@ div.changallery ul li img:hover {
 									</li>
 								</ul>
 							</div>
+<<<<<<< HEAD
 						<div id="fadeandscale" class="well">
 						    <h4>동행요청</h4>
 						    <h5></h5>
@@ -286,6 +322,9 @@ div.changallery ul li img:hover {
 						</div>
 						
 						
+=======
+		구버전	 -->
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 				 		<div class="my-login" style=" position: relative; z-index: 96">
 								<span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
 								<a id="inviteCount" ></a>
@@ -482,7 +521,58 @@ div.changallery ul li img:hover {
     </div>
   </div>		
 					
-				<!-- Start of Login form -->
+ <div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
+					tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					aria-hidden="true" >
+					<div class="modal-dialog modal-sm" style="z-index: 300000;">
+						<div id="login-box" class="modal-content" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">
+									<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+								</button>
+								<h2 class="modal-title" id="myModalLabel">로그인</h2>
+							</div>
+							<div class="modal-body" style=background-size: contenteditable="true" >
+								<div class="wrappera">
+
+									<form class="form-signin">
+										<input type="text" class="form-control" id="email"
+											placeholder="이메일" required="" autofocus="" /></br> <input
+											type="password" id="password" class="form-control"
+											placeholder="비밀번호" required="" /> <label class="checkbox">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+											id="saveEmail"> 이메일저장
+										</label>
+										<button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+											type="button">로그인</button>
+									</form>
+
+								</div>
+							</div>
+					</div>
+				</div>
+ </div>
+ 
+ 
+ 
+ <!--  
+ 
+ 									<form class="form-signin">
+										<input type="text" class="form-control" id="email"
+											placeholder="이메일" required="" autofocus="" /></br> <input
+											type="password" id="password" class="form-control"
+											placeholder="비밀번호" required="" /> <label class="checkbox">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+											id="saveEmail"> 이메일저장
+										</label>
+										<button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+											type="button">로그인</button>
+									</form>
+ 
+ 
+ -->
+					
+				<!-- Start of Login form 
 				<div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
 					tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 					aria-hidden="true" >
@@ -515,7 +605,7 @@ div.changallery ul li img:hover {
 						</div>
 					</div>
 				</div>
-				<!-- End of Login form -->
+			End of Login form -->
 					
 				<!-- Start of Registration Form-->
 				<div class="modal fade" style="z-index: 200000;" id="myModal"
