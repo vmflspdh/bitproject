@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import test.dao.CalendarDao;
 import test.dao.MemberDao;
 import test.dao.TravelLocationDao;
 import test.dao.TravelMainDao;
@@ -30,6 +31,7 @@ public class TravelMainController {
   @Autowired TravelLocationDao travelLocationDao;
   @Autowired TravelMyStyleDao travelMystyleDao;
   @Autowired TravelScheduleDao travelScheduleDao;
+  @Autowired CalendarDao calendarDao;
   TravelMain travelMain = new TravelMain();
 
   
@@ -43,6 +45,22 @@ public class TravelMainController {
       System.out.println(travelMain.getTravelMainNo());
       
       return JsonResult.success(travelScheduleDao.selectMySchedule(map));
+    
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  @RequestMapping(path="calendarList")
+  public Object calendarlist(HttpSession session) throws Exception {
+
+    try {
+      HashMap<String,Object> map = new HashMap<>();
+      travelMain.setTravelMainNo((Integer)session.getAttribute("travelPostNo"));
+      map.put("travelPostNo", travelMain.getTravelMainNo());
+      System.out.println(travelMain.getTravelMainNo());
+      
+      return JsonResult.success(calendarDao.selectMyCalendar(map));
     
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());

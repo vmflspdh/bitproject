@@ -32,7 +32,7 @@ public class RegistFormController {
 			map.put("length", length);
 			
 			return JsonResult.success(registFormDao.selectList(map));
-		
+			
 		} catch (Exception e) {
 			return JsonResult.fail(e.getMessage());
 		}

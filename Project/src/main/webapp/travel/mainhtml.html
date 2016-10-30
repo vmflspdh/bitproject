@@ -21,6 +21,12 @@
 <link rel='shortlink' href='http://furnishednycapartments.com/' />
 <link rel="alternate" type="application/json+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F" />
 <link rel="alternate" type="text/xml+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F&#038;format=xml" />
+		
+<link href="blue-login-html/login-box.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="demo/styles.css" />
+		
+		
+		
 		<!--  travel 에서 가저온 시-->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -52,7 +58,41 @@
 		</script>
 <!--  travel 에서 가저온-->
 
-<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+<style type="text/css">
+#inviteCount {
+	z-index:-1;
+	position: absolute; 
+	right: 12px; 
+	top: -1px; 
+	text-decoration:none;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	color: white;
+	background: #F361A6;
+	margin: 0 10px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 32px;
+	text-align: center;
+	float:left;
+	
+}
+
+#fadeandscale {
+	    -webkit-transform: scale(0.8);
+	       -moz-transform: scale(0.8);
+	        -ms-transform: scale(0.8);
+	            transform: scale(0.8);
+	}
+.popup_visible #fadeandscale {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+	
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
 
 #yang ul li{
 			display:inline; 			      
@@ -215,12 +255,41 @@ div.changallery ul li img:hover {
 									<!-- Start of container2 -->
 					<div id="yang" class="container ">
 					<div class="upper" style="background : #000000; background : rgba(192,192,192,0.2) ;height:70px;"> 
+							
+							<div class='zeta-menu-bar  my-login' style=" position: relative; z-index: 96">
+								<ul id="navigationMenu" class="zeta-menu">
+								    <li>
+									    <a class="contact" href="#">
+								            <span>Contact</span>
+								        </a>
+								    </li>
+								    
+								    <li>
+								    	<a class="about" href="#">
+								            <span>About</span>
+								        </a>
+								    </li>
+								    
+								    <li>
+								    	<a class="portfolio" href="#">
+								            <span>Portfolio</span>
+								        </a>
+								    </li>
+								    
+								    <li>
+								    	<a class="home my-login" id="logoutBtn" href="#">
+								            <span>Logout</span>
+								        </a>
+								    </li>
+								</ul>
+						  </div>
+						<!-- 
 							<div class='zeta-menu-bar my-login' style=" position: relative; z-index: 96">
 								<ul class="zeta-menu">
 									<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
 											id="mainImg"></a>
 										<ul>
-											<li><a href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYNFO</a>
+											<li><a  href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYINFO</a>
 												<ul>
 													<li><a href="#2B1">2-B-1 메뉴</a></li>
 													<li><a href="#2B2">2-B-2 메뉴</a></li>
@@ -228,16 +297,37 @@ div.changallery ul li img:hover {
 											</li>
 											<li><a href="#"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
 											</li>
-											<li><a href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+											<li><a class=" fadeandscale_open" id="accompany" href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+											
 											<li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
 											</li>
 										</ul>
 									</li>
 								</ul>
 							</div>
-			
+<<<<<<< HEAD
+						<div id="fadeandscale" class="well">
+						    <h4>동행요청</h4>
+						    <h5></h5>
+						<!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+						<button value="vcxc">수락</button><button value="sdfds">거절</button>
+						</pre>
+						<pre class="prettyprint">
+						<code>zxcxzcxzxz</code>
+						</pre>
+						<pre class="prettyprint">
+						<code>zxcxzcxzxz</code>
+						</pre> -->
+						    <button style="float: right;"class="fadeandscale_close btn btn-default">Close</button>
+						</div>
+						
+						
+=======
+		구버전	 -->
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 				 		<div class="my-login" style=" position: relative; z-index: 96">
 								<span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
+								<a id="inviteCount" ></a>
 					    </div>
 <!--Start of container-->
 <div class="header has-hero" data-show="on-load">
@@ -340,6 +430,7 @@ div.changallery ul li img:hover {
         data-show-priority="1">
         <a href="http://furnishednycapartments.com?s=&apt_type=Studio">
           <span>From</span>
+          
           <h3>$2800</h3> <span class="lower">Studio</span>
         </a>
       </div>
@@ -430,7 +521,58 @@ div.changallery ul li img:hover {
     </div>
   </div>		
 					
-				<!-- Start of Login form -->
+ <div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
+					tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					aria-hidden="true" >
+					<div class="modal-dialog modal-sm" style="z-index: 300000;">
+						<div id="login-box" class="modal-content" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">
+									<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+								</button>
+								<h2 class="modal-title" id="myModalLabel">로그인</h2>
+							</div>
+							<div class="modal-body" style=background-size: contenteditable="true" >
+								<div class="wrappera">
+
+									<form class="form-signin">
+										<input type="text" class="form-control" id="email"
+											placeholder="이메일" required="" autofocus="" /></br> <input
+											type="password" id="password" class="form-control"
+											placeholder="비밀번호" required="" /> <label class="checkbox">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+											id="saveEmail"> 이메일저장
+										</label>
+										<button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+											type="button">로그인</button>
+									</form>
+
+								</div>
+							</div>
+					</div>
+				</div>
+ </div>
+ 
+ 
+ 
+ <!--  
+ 
+ 									<form class="form-signin">
+										<input type="text" class="form-control" id="email"
+											placeholder="이메일" required="" autofocus="" /></br> <input
+											type="password" id="password" class="form-control"
+											placeholder="비밀번호" required="" /> <label class="checkbox">
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+											id="saveEmail"> 이메일저장
+										</label>
+										<button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+											type="button">로그인</button>
+									</form>
+ 
+ 
+ -->
+					
+				<!-- Start of Login form 
 				<div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
 					tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 					aria-hidden="true" >
@@ -463,7 +605,7 @@ div.changallery ul li img:hover {
 						</div>
 					</div>
 				</div>
-				<!-- End of Login form -->
+			End of Login form -->
 					
 				<!-- Start of Registration Form-->
 				<div class="modal fade" style="z-index: 200000;" id="myModal"
@@ -552,17 +694,30 @@ div.changallery ul li img:hover {
 <script type="text/javascript" src="js/backgroundmap.js"></script>
 <script type="text/javascript" src="js/leaflet.js"></script>
 <script type="text/javascript" src="js/stamen.js"></script>
+<script src="jquery.popupoverlay.js"></script>
+<script>
+$(document).ready(function () {
+
+    $('#fadeandscale').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+
+}); 
+</script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기
 ajaxRegistFormList()
+ajaxInviteList()
   $(function() {
       $(".bit-startDate, .bit-endDate").datepicker({
           dateFormat: 'yyyy-mm-dd'
       });
   });
 mapinitialize()
- </script>	
+
+</script>	
 	
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>

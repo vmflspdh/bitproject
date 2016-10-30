@@ -16,10 +16,19 @@
 		<result column="gend" property="gender" />
 		<result column="reg_dt" property="registedDate" />
 		<result column="mpho" property="memberPhoto" />
+		<result column="mreq" property="memberRequest" />
 
 	</resultMap>
 
 	<insert id="insert" parameterType="member" useGeneratedKeys="true" keyProperty="no" keyColumn="mno">
+		insert into tvl_membs(mnm,
+		email, pwd, bir_dt, gend, reg_dt,mreq)
+		values (#{name}, #{email},
+		password(#{password}),
+		#{birthday}, #{gender}, now(),0)
+	</insert>
+	
+	<insert id="memberRequestAdd">
 		insert into tvl_membs(mnm,
 		email, pwd, bir_dt, gend, reg_dt)
 		values (#{name}, #{email},

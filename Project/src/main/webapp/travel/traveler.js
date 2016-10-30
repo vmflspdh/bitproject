@@ -5,7 +5,7 @@ function checkToNo(no) {
 		if (result.state == "success") {
 			window.location.href = "travelerform.html?no=" + no
 		} else {
-			window.location.href = "travelerdetail.html?no=" + no
+			window.location.href = "newdetail.html?no=" + no
 		}
     })                  
 }
@@ -38,6 +38,50 @@ function ajaxRegistFormList() {
 	    })
     })
 }
+
+
+function ajaxInviteList() {
+	$.getJSON(serverAddr + "/travel/invlist.json", function(result) {
+		if (result.state != "success") {
+//		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+		       return
+		}
+		console.log(result)
+		var contents = "<h4>동행요청</h4>";
+	    var arr = result.data
+	    for (var i in arr) {
+	    	contents +=
+	    		'<pre class="prettyprint">'+'<img src="'+arr[i].invitePhoto+'"style="width:50px; height:40">'+"&nbsp&nbsp;"+
+	    		arr[i].inviteName+" 님이 동행요청을 하셨습니다. &nbsp;"+
+				'<button class="btn btn-default btn-sm" value="vcxc">수락</button><button class="btn btn-default btn-sm"value="sdfds">거절</button>'
+				+'</pre>'	    		
+	    		
+	    		/*'<ul>' +
+	    		'<li><a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '">' +
+	    		'<img src="' + arr[i].myPhoto + '"></a>' +
+	    		'<div class="cycle-overlay">' +
+	    		arr[i].writer + '<br>' +
+	    		arr[i].continent + ',' + arr[i].nation + ',' + arr[i].city + '<br>' +
+	    		arr[i].startDate + '~' + arr[i].endDate + '</div></li>' +
+	    		'</ul>'*/
+	      }
+	    $("#fadeandscale>h4").html(contents)
+	   
+    })
+}
+
+
+
+
+
+/*$("#accompany").click (function(event){
+
+	alert('aaa');
+	
+	
+//	ajaxAddBoard(review);	
+});
+*/
 
 //"<td><h3><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + arr[i].selfIntroduce + "</h3></a></br>" +
 /*
