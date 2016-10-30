@@ -24,17 +24,19 @@ $("#addBtn").click(function(event) {
 	    	return
 	    }
 	  var requestMember=result.data
-	   a(requestMember)
-	   alert("친구추가되었습니다.")
+	  inviteAdd(requestMember)
+	   alert("동행추가되었습니다.")
 	})
 });
-function a(requestMember){
+function inviteAdd(requestMember){
 	$.post(serverAddr + "/travel/invadd.json" , requestMember,function(obj) {
 		var result = obj.jsonResult
+		console.log(requestMember)
 		if (result.state != "success") {
 	    	console.log(result.data)
-	    	return
+	    return
 	    }
+		//if()
 	 
 	})
 	console.log(requestMember)

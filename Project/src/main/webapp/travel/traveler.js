@@ -53,7 +53,7 @@ function ajaxInviteList() {
 	    	contents +=
 	    		'<pre class="prettyprint">'+'<img src="'+arr[i].invitePhoto+'"style="width:50px; height:40">'+"&nbsp&nbsp;"+
 	    		arr[i].inviteName+" 님이 동행요청을 하셨습니다. &nbsp;"+
-				'<button class="btn btn-default btn-sm" value="vcxc">수락</button><button class="btn btn-default btn-sm"value="sdfds">거절</button>'
+				'<button type="button" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteadd">수락</button><button data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'
 				+'</pre>'	    		
 	    		
 	    		/*'<ul>' +
@@ -65,12 +65,91 @@ function ajaxInviteList() {
 	    		arr[i].startDate + '~' + arr[i].endDate + '</div></li>' +
 	    		'</ul>'*/
 	      }
+	    
 	    $("#fadeandscale>h4").html(contents)
-	   
+	    
+	    $(document).on("click","#inviteadd",function(event) {
+			var no=$(this).attr('data-no')
+			console.log(no)
+			$.post(serverAddr + "/travel/invagree.json?no="+no, {no:no}, function(obj) {
+				var result = obj.jsonResult
+				console.log(no)
+				//location.reload(true)
+				history.go(0)
+		    })  
+		    
+			});
+	    
+	    $(document).on("click","#inviterefuse",function(event) {
+	    	alert('aa')
+			var no=$(this).attr('data-no')
+			console.log(no)
+			$.post(serverAddr + "/travel/invrefuse.json?no="+no, {no:no}, function(obj) {
+				var result = obj.jsonResult
+				console.log(no)
+				//location.reload(true)
+				history.go(0)
+		    })  
+		    
+			});
     })
 }
 
 
+function ajaxAgreeInviteList() {
+	$.getJSON(serverAddr + "/travel/invagreelist.json", function(result) {
+		if (result.state != "success") {
+//		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+		       return
+		}
+		console.log(result)
+		var contents = "<h4>수락한동행</h4>";
+	    var arr = result.data
+	    for (var i in arr) {
+	    	contents +=
+	    		'<pre class="prettyprint">'+'<img src="'+arr[i].invitePhoto+'"style="width:50px; height:40">'+"&nbsp&nbsp;"+
+	    		arr[i].inviteName+" 님이 동행요청을 하셨습니다. &nbsp;"+
+				'<button type="button" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteadd">수락</button><button data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'
+				+'</pre>'	    		
+	    		
+	    		/*'<ul>' +
+	    		'<li><a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '">' +
+	    		'<img src="' + arr[i].myPhoto + '"></a>' +
+	    		'<div class="cycle-overlay">' +
+	    		arr[i].writer + '<br>' +
+	    		arr[i].continent + ',' + arr[i].nation + ',' + arr[i].city + '<br>' +
+	    		arr[i].startDate + '~' + arr[i].endDate + '</div></li>' +
+	    		'</ul>'*/
+	      }
+	    
+	    $("#fadeandscale>h5").html(contents)
+	    
+	    $(document).on("click","#inviteadd",function(event) {
+			var no=$(this).attr('data-no')
+			console.log(no)
+			$.post(serverAddr + "/travel/invagree.json?no="+no, {no:no}, function(obj) {
+				var result = obj.jsonResult
+				console.log(no)
+				//location.reload(true)
+				history.go(0)
+		    })  
+		    
+			});
+	    
+	    $(document).on("click","#inviterefuse",function(event) {
+	    	alert('aa')
+			var no=$(this).attr('data-no')
+			console.log(no)
+			$.post(serverAddr + "/travel/invrefuse.json?no="+no, {no:no}, function(obj) {
+				var result = obj.jsonResult
+				console.log(no)
+				//location.reload(true)
+				history.go(0)
+		    })  
+		    
+			});
+    })
+}
 
 
 

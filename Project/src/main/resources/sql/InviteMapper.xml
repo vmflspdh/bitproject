@@ -30,5 +30,22 @@
     	where mno2=#{value} and stat=0    
   </select>
   
+  
+  <update id="inviteAgree" parameterType="int">
+    update tvl_invit set 
+      stat=1
+    where ivno=#{inviteNo}
+  </update>
+  
+  <update id="inviteRefuse" parameterType="int">
+    update tvl_invit set 
+      stat=3
+    where ivno=#{inviteNo}
+  </update>
+  
+  <select id="inviteAgreeList" resultMap="inviteMap" parameterType="int">
+    select  * from tvl_invit 
+    	where mno2=#{value} and stat=1    
+  </select>
 </mapper>
 
