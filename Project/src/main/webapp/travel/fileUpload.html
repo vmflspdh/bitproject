@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>sample</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script
+	src="../node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+</head>
+<body>
+	<h1>게시물 입력폼</h1>
+	<form method="post" enctype="multipart/form-data">
+		게시물번호: <input type="text" id="travelMainNo" name="travelMainNo"><br>
+		파일1:<input type="file" id="file" name="file"><br>
+		<button id="addBtn" type="button">등록</button>
+	</form>
+
+	<script>
+		$("#addBtn").click(function() {
+
+			var formData = new FormData();
+			formData.append("travelMainNo", $("#travelMainNo").val());
+			formData.append("file", $("input[name=file]")[0].files[0]);
+
+			console.log($("#travelMainNo").val())
+			console.log($("input[name=file]")[0].files[0])
+
+			console.log(formData[file])
+
+			$.ajax({
+				url : "fileUpload.json",
+				processData : false,
+				contentType : false,
+				data : formData,
+				method : "POST",
+				success : function(result) {
+				}
+			});
+
+			/* ajaxAddTravelMain(formData)
+			 */
+		});
+
+		/* 	function ajaxAddTravelMain(formData) {
+		
+		 $.ajax({
+		 url:"upload.json",
+		 processData: false,
+		 contentType: false,
+		 data: formData,
+		 type: "POST",
+		 success: function(result){
+		 }
+		 }); 
+		 }
+		 */
+		/*   $(document).ready(function() {
+		 $('#upFile').fileupload({
+		 url : 'fileUpload.json',
+		 dataType : 'json',
+		 //replaceFileInput: false
+		 add : function(e, data) {
+		 var uploadFile = data.files[0];
+		 var isValid = true;
+		 if (!(/png|jpe?g|gif/i).test(uploadFile.name)) {
+		 alert('png, jpg, gif 만 가능합니다');
+		 isValid = false;
+		 } else if (uploadFile.size > 5000000) { // 5mb
+		 alert('파일 용량은 5메가를 초과할 수 없습니다.');
+		 isValid = false;
+		 }
+		 if (isValid) {
+		 data.submit();
+		 }
+		 },
+		 done : function(e, data) {
+		 var code = data.result.code;
+		 var msg = data.result.msg;
+		 if (code == '1') {
+		 alert(msg);
+		 } else {
+		 alert(code + ' : ' + msg);
+		 }
+		 },
+		 fail : function(e, data) {
+		 // data.errorThrown
+		 // data.textStatus;
+		 // data.jqXHR;
+		 alert('서버와 통신 중 문제가 발생했습니다');
+		 foo = data;
+		 }
+		 });
+		 }); */
+
+		/*   function ajaxAddGroupPhoto() {
+		 var formData = new FormData();
+		 formData.append("memberNumber" , $("#userName").attr('data-value'));
+		 formData.append("name" , $("#userName").text());
+		 formData.append("groupName", $("input[name=groupName]").val());
+		 formData.append("file1", $("input[name=file1]")[0].files[0]);
+		 $.ajax({
+		 url: serverAddr + '/group/add.json',
+		 processData: false,
+		 contentType: false,
+		 data: formData,
+		 type: 'POST',
+		 success: function(result){
+		 }
+		 }); 
+
+		 };*/
+	</script>
+</body>
+</html>
