@@ -92,13 +92,12 @@ td {
 	padding-bottom: 50px;
 }
 
-td div{
-color: #13919A;
+td div {
+	color: #13919A;
 }
 
-
-.root-schedule{
-margin: 0 0 10px;
+.root-schedule {
+	margin: 0 0 10px;
 }
 
 #sch_cirNum {
@@ -112,10 +111,8 @@ margin: 0 0 10px;
 	font-weight: bold;
 	line-height: 32px;
 	text-align: center;
-	float:left;
-	
+	float: left;
 }
-
 </style>
 
 
@@ -220,8 +217,7 @@ margin: 0 0 10px;
 				</div>
 				<table id="selectTable">
 					<tr>
-						<td
-							style="width: 140px; font-weight: bold; font-size: large;">
+						<td style="width: 140px; font-weight: bold; font-size: large;">
 							<div>프로필</div>
 							<div>사진</div>
 						</td>
@@ -249,7 +245,7 @@ margin: 0 0 10px;
 							<div>가고싶은</div>
 							<div>여행지</div>
 							<button class="btn btn-default modStartBtn">수정</button>
-							
+
 						</td>
 						<td class="root-select">
 							<!--     <form class="form-inline root-schedule" onsubmit="return false">
@@ -278,15 +274,13 @@ margin: 0 0 10px;
    </form> -->
 
 						</td>
-					<!-- 이거 맵 -->
+						<!-- 이거 맵 -->
 					<tr>
+						<td></td>
 						<td>
-
+							<div id="map"></div>
+							<div id="result"></div>
 						</td>
-						<td>
-              <div id="map"></div>
-              <div id="result"></div>
-            </td>
 					</tr>
 					<!-- 여기까지맵임 -->
 					<tr>
@@ -439,7 +433,6 @@ margin: 0 0 10px;
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
 		async defer></script>
-	<script type="text/javascript" src="travelerform.js"></script>
 	<!--   <script src="js/mapRoute.js"></script> -->
 	<script src="js/menu.js"></script>
 	<script src="js/classie.js"></script>
@@ -449,6 +442,7 @@ margin: 0 0 10px;
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/authApp.js"></script>
 	<script type="text/javascript" src="js/memberForm.js"></script>
+	<script type="text/javascript" src="travelerform.js"></script>
 
 	<script>
 		init() // 화면을 준비시킨다

@@ -1,25 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-
-	<!-- 특정 자바 패키지를 뒤져서 @Component가 붙은 클래스를 찾아, 그 클래스의 인스턴스를 생성한다. -->
-
-	<context:component-scan base-package="test.controller">
-	<context:exclude-filter type="regex" expression="test.controller.json.*"/>
-	</context:component-scan>
-	
-	<!-- 스프링 WebMVC 관련 애노테이션을 처리해주는 객체를 등록한다. -->
-	<mvc:annotation-driven/>
-
-	<!-- Database 커넥션 관리 객체를 준비한다. Spring 문서에서 Data -->
-
-	
+    
+    <!-- 프론트 컨트롤러에서는 오직 페이지 컨트롤러와 웹 관련 객체만 관리한다. -->
+    <context:component-scan base-package="test.controller">
+      <context:exclude-filter type="regex" 
+                              expression="test.controller.json.*"/>
+    </context:component-scan>
+    
+    <mvc:annotation-driven/>
+     
+    <!-- 기존의 ViewResolver를 교체한다. 
+         이 뷰리졸버는 JSP를 찾을 때 WEB-INF/view 아래에서 찾는다.
+         즉 페이지 컨트롤러가 리턴한 값에 대해
+         /WEB-INF/view/ + 리턴한값 + .jsp = JSP 경로
+    -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    
+    <!-- 멀티파트 요청 데이터를 처리할 객체를 등록한다. -->
+    <bean id="multipartResolver"
+        class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+        <!-- 업로드할 수 있는 파일의 최대 크기 설정(바이트) -->
+    </bean>
 </beans>
+
+
+
+
+
+
+
+
