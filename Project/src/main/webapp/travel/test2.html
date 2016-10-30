@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#"> 
+<head>
+  <meta charset="UTF-8" />
+      <script src="//use.typekit.net/omt5qnk.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <title>서내와 귀요미들</title>
+<meta name="description" content="MyTravel"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="">  
+<script type='application/ld+json'>
+{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/furnishednycapartments.com\/",
+"name":"Furnished NYC Apartments - Rentals in New York",
+"potentialAction":{"@type":"SearchAction",
+"target":"http:\/\/furnishednycapartments.com\/?s={search_term_string}",
+"query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='nyc-css'  href='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/css/layout.css?ver=0.1.1' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='http://furnishednycapartments.com/wp-json/' />
+<link rel='shortlink' href='http://furnishednycapartments.com/' />
+<link rel="alternate" type="application/json+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F&#038;format=xml" />
+    <!--  travel 에서 가저온 시-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Blueprint: On-Scroll Animated Header" />
+    <meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+    <meta name="author" content="Codrops" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
+      <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <link rel="stylesheet" href="css/leaflet.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+      $(function() {
+        var availableTags = [ "대한민국, 서울", "대한민국, 부산", "영국, 런던", "미국, 뉴욕",
+            "프랑스, 파리" ];
+        $("#tags").autocomplete({
+          source : availableTags
+        });
+      });
+    </script>
+<!--  travel 에서 가저온-->
+
+<style type="text/css">
+#inviteCount {
+  z-index:-1;
+  position: absolute; 
+  right: 12px; 
+  top: -1px; 
+  text-decoration:none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background: #F361A6;
+  margin: 0 10px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  float:left;
+  
+}
+#fadeandscale {
+      -webkit-transform: scale(0.8);
+         -moz-transform: scale(0.8);
+          -ms-transform: scale(0.8);
+              transform: scale(0.8);
+  }
+.popup_visible #fadeandscale {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+  
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+#yang ul li{
+      display:inline;             
+      font:bold 13px Dotum;       
+      padding:0 10px;     
+    }
+    
+ .map {
+     width:100%;
+     height: 400px;
+     margin: 0 0 1em 0;
+ }    
+ol, ul, li{
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.chanwrapper {
+  width: 85%;
+  margin: 40px auto;
+}
+div.changallery {
+  margin-top: 30px;
+}
+div.changallery ul {
+  list-style-type: none;
+  margin-left: 75px;
+}
+/* animation */
+div.changallery ul li, div.changallery li img {
+  -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+div.changallery ul li {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 0;
+}
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.changallery ul li:hover {
+  z-index: 5;
+  width: 250px;
+}
+/* Image is position nicely under li */
+div.changallery ul li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #dddddd;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  background: #f0f0f0;
+}
+div.changallery ul li img:hover {
+  width: 250px;
+  height: 250px;
+  margin-top: -155px;
+  margin-left: -175px;
+  top: 65%;
+  left: 65%;
+}
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+  .chanwrapper {
+    width: 1000px;
+  }
+}
+@media only screen and (max-width: 498px) {
+  .chanwrapper {
+    width: 400px;
+  }
+  div.changallery ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.cycle-overlay {
+  background: black; 
+  color: white; 
+  padding: 15px; 
+  opacity: 0.5;
+  position: absolute; 
+  bottom: 5px; 
+  width: 80%;
+  font-family: tahoma, arial;
+  font-weight: bold;
+  font-size: x-small;
+}
+.hero:not(.red-bg):before {
+  
+  background: rgba(0, 0, 0, 0.2); }
+  
+</style>
+</head>
+<body>    
+<!-- center  -->
+<div class="hero frontpage" data-show="on-load">
+  <img width="1500" height="750"  data-image-src-large="green.jpg"  alt=""class="desktop wp-post-image" />
+  <div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
+          <h1>나의 추억에 동행할 인연을 위한 공간</h1>
+          <p class="hidden-xs">여행에 동행할 소중한 인연을 시간을 들이지 않고 당신에게 맞춰 드립니다.</p>
+          <div id="bar" class="frontpage-search">
+            <form action="#" method="get" class="search" role="search" id="searchform" >
+              <input name="s" type="hidden">
+              <input name="where" type="text" class="location add-typeahead wide" placeholder="Place">
+              <input name="startDt" type="text" class="checkin add-datepicker narrow hidden-xs" placeholder="From">
+              <input name="endDt" type="text" class="checkout add-datepicker narrow hidden-xs" placeholder="To">
+              <input type="submit" class="button filled red extra-narrow" value="Search">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 hidden-sm">
+          <div class="content">
+            <h5>Asia South America North America Europe Africa Oceania</h5>
+              <span>Anywhere you want, just go and enjoy your life </span>
+                        <a href="#">More Information</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  test test -->
+<!-- center  ---->
+                  <!-- Start of container2 -->
+          <div id="yang" class="container ">
+          <div class="upper" style="background : #000000; background : rgba(192,192,192,0.2) ;height:70px;"> 
+              <div class='zeta-menu-bar my-login' style=" position: relative; z-index: 96">
+                <ul class="zeta-menu">
+                  <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+                      id="mainImg"></a>
+                    <ul>
+                      <li><a  href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYINFO</a>
+                        <ul>
+                          <li><a href="#2B1">2-B-1 메뉴</a></li>
+                          <li><a href="#2B2">2-B-2 메뉴</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+                      </li>
+                      <li><a class=" fadeandscale_open" id="accompany" href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+                      
+                      <li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            <div id="fadeandscale" class="well">
+                <h4>동행요청</h4>
+                <h5></h5>
+            <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+            <button value="vcxc">수락</button><button value="sdfds">거절</button>
+            </pre>
+            <pre class="prettyprint">
+            <code>zxcxzcxzxz</code>
+            </pre>
+            <pre class="prettyprint">
+            <code>zxcxzcxzxz</code>
+            </pre> -->
+                <button style="float: right;"class="fadeandscale_close btn btn-default">Close</button>
+            </div>
+            
+            
+            <div class="my-login" style=" position: relative; z-index: 96">
+                <span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
+                <a id="inviteCount" ></a>
+              </div>
+<!--Start of container-->
+<div class="header has-hero" data-show="on-load">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-5 col-sm-3 col-md-2">
+        <div class="logo-container">
+         <div style= "color: black; font-size: 18px;"> <em> Logo</em></div> 
+        </div>
+      </div>
+      <div class="col-xs-7 col-sm-9 col-md-10">
+        <div class="visible-md visible-lg">
+            <div class="icon-nav">
+      </div>
+            </div>
+<nav class="main-nav">
+<div class="menu-main-menu-container">
+<ul id="menu-main-menu" class="main-nav">
+<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a href="traveler.html" >Traveler</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="traveler.html" >Review</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="qnaApp.html" >Qna</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146 my-login"><a id="userName"></a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="travelerRegForm.html" class="my-login"><em> 당신의 동행을 등록해 보세요</em></a></li>
+<li id="menu-item-24" class="button menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="#" class="my-logout" data-toggle="modal" data-target="#myModal1">Login</a></li>
+<li id="menu-item-24" class="button menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="#" class="my-logout" data-toggle="modal" data-target="#myModal">Sign In</a></li>
+</ul>
+</div>
+</nav>
+      </div>
+       <!-- <br><br><HR> -->
+        <div class="visible-xs visible-sm nav-toggle-container text-right">
+        </div>
+      </div>
+    </div>
+  </div>
+<!--End of container-->        
+       </div>
+        </div> 
+            <div class="main"></div>
+        
+        
+        <!-- End of container2 -->
+        
+        <!-------------------------------------------------------------------------------------- background gray 적용 부분 top ------------------------------------------------------------------------------------ -->
+
+<div class="key-numbers hidden-xs" data-show="on-load">
+  <div class="container">
+    <div class="row">
+    
+    <!---------------------------------------------------------------------------  customer 적용 부분 top --------------------------------------------------------------------------->
+      <div class="visible-md visible-lg col-md-1" data-show="on-load"
+        data-show-priority="1">
+        <a href="http://furnishednycapartments.com?s=&apt_type=Studio">
+        
+        <div id="camera" class="svg-icon">
+          <img src="camera.png">
+      
+          <!--  <svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              preserveAspectRatio="xMidYMid" viewBox="0 0 101 88">
+  <path
+                d="M99.549,88.000 L1.451,88.000 C0.650,88.000 -0.000,87.358 -0.000,86.564 L-0.000,1.435 C-0.000,0.643 0.650,-0.000 1.451,-0.000 L89.491,-0.000 C90.292,-0.000 90.942,0.643 90.942,1.435 L90.942,43.877 L99.549,43.877 C100.350,43.877 101.000,44.520 101.000,45.312 L101.000,86.564 C101.000,87.358 100.350,88.000 99.549,88.000 ZM26.000,86.000 L99.000,86.000 L99.000,46.000 L69.000,46.000 C66.732,46.000 67.000,44.793 67.000,44.000 L67.000,42.000 L63.000,42.000 C62.198,42.000 62.000,41.793 62.000,41.000 C62.000,40.207 62.198,40.000 63.000,40.000 L67.000,40.000 L67.000,31.000 C67.000,30.207 67.198,29.999 68.000,29.999 C68.802,29.999 69.000,30.207 69.000,31.000 L69.000,44.000 L78.000,44.000 L78.000,2.000 L69.000,2.000 L69.000,13.000 C69.000,13.793 68.802,14.000 68.000,14.000 C67.198,14.000 67.000,13.793 67.000,13.000 L67.000,9.000 L45.000,9.000 C42.898,9.000 43.000,7.793 43.000,7.000 L43.000,2.000 L36.000,2.000 L36.000,10.000 C36.000,10.793 35.802,11.000 35.000,11.000 C34.198,11.000 34.000,10.793 34.000,10.000 L34.000,2.000 L32.000,2.000 L32.000,6.000 C32.000,6.793 31.953,8.007 31.152,8.007 L30.699,8.007 C30.959,8.593 31.103,9.241 31.103,9.920 L31.103,13.653 C31.103,16.290 28.667,19.000 26.000,19.000 C23.333,19.000 21.000,16.638 21.000,14.000 L21.000,10.000 C21.000,9.320 21.574,8.593 21.833,8.007 L21.381,8.007 C20.580,8.007 20.000,6.793 20.000,6.000 L20.000,2.000 L14.000,2.000 L14.000,21.000 C14.000,23.072 12.802,23.000 12.000,23.000 L11.000,23.000 L11.000,31.000 L34.000,31.000 L34.000,25.000 C34.000,24.207 34.198,24.000 35.000,24.000 C35.802,24.000 36.000,24.207 36.000,25.000 L36.000,40.000 L41.000,40.000 C41.802,40.000 42.109,40.321 42.109,41.114 C42.109,41.906 41.802,42.000 41.000,42.000 L36.000,42.000 L36.000,50.000 C36.000,50.793 35.802,51.000 35.000,51.000 C34.198,51.000 34.000,50.793 34.000,50.000 L34.000,33.000 L13.000,33.000 L13.000,76.000 L24.000,76.000 C24.802,76.000 26.000,77.207 26.000,78.000 L26.000,86.000 ZM2.000,86.000 L24.000,86.000 L24.000,78.000 L13.000,78.000 C11.000,78.000 11.000,76.793 11.000,76.000 L11.000,51.000 L2.000,51.000 L2.000,86.000 ZM2.000,48.999 L11.000,48.999 L11.000,33.000 L2.000,33.000 L2.000,48.999 ZM85.000,44.000 L89.000,44.000 L89.000,2.000 L85.000,2.000 L85.000,44.000 ZM80.000,44.000 L83.000,44.000 L83.000,2.000 L80.000,2.000 L80.000,44.000 ZM2.000,31.000 L9.000,31.000 L9.000,23.000 L2.000,23.000 L2.000,31.000 ZM10.000,21.000 L12.000,21.000 L12.000,2.000 L2.000,2.000 L2.000,21.000 L10.000,21.000 ZM26.000,7.000 C23.364,7.000 23.000,8.945 23.000,10.000 L23.000,14.000 C23.000,15.055 23.200,17.000 26.000,17.000 C28.120,17.000 29.000,15.055 29.000,14.000 L29.000,10.000 C29.000,8.945 28.904,7.000 26.000,7.000 ZM45.000,7.000 L67.000,7.000 L67.000,2.000 L45.000,2.000 L45.000,7.000 ZM30.000,5.000 L30.000,2.000 L22.000,2.000 L22.000,5.000 L30.000,5.000 ZM57.000,80.000 L47.000,80.000 C44.938,80.000 45.000,78.793 45.000,78.000 L45.000,54.000 C45.000,53.207 44.895,52.000 47.000,52.000 L57.000,52.000 C59.102,52.000 59.000,53.207 59.000,54.000 L59.000,78.000 C59.000,78.793 58.981,80.000 57.000,80.000 ZM47.000,78.000 L57.000,78.000 L57.000,76.000 L52.000,76.000 C51.198,76.000 50.000,74.793 50.000,74.000 L50.000,58.000 C50.000,57.207 51.198,56.000 52.000,56.000 L57.000,56.000 L57.000,54.000 L47.000,54.000 L47.000,78.000 ZM52.000,74.000 L57.000,74.000 L57.000,58.000 L52.000,58.000 L52.000,74.000 ZM89.000,80.000 C88.198,80.000 88.000,79.792 88.000,79.000 L88.039,53.887 C88.039,53.095 88.198,53.000 89.000,53.000 C89.802,53.000 90.000,53.207 90.000,54.000 L90.000,58.000 C90.755,58.050 92.000,58.228 92.000,60.000 L92.000,72.000 C92.000,73.896 90.755,73.949 90.000,74.000 L90.000,79.000 C90.000,79.792 89.802,80.000 89.000,80.000 ZM75.000,78.000 C70.385,78.000 67.000,73.278 67.000,66.999 C67.000,60.722 70.385,56.000 75.000,56.000 C79.615,56.000 83.000,60.722 83.000,66.999 C83.000,73.278 79.615,78.000 75.000,78.000 ZM75.000,58.000 C72.112,58.000 69.000,62.488 69.000,66.999 C69.000,71.513 72.112,76.000 75.000,76.000 C77.888,76.000 80.829,71.604 80.829,67.091 C80.829,62.579 77.888,58.000 75.000,58.000 Z"
+                class="cls-1" />
+</svg> -->
+
+
+          </div>
+        </a>
+      </div>
+      
+
+      <!-------------------------------------------------------------------------------------------  earth 부분 top ------------------------------------------------------------------------------------------------>
+  <!--    <div class="col-xs-10 col-sm-3 col-md-2" data-show="on-load"
+        data-show-priority="1">
+        <a href="http://furnishednycapartments.com?s=&apt_type=Studio">
+          <span class="upper">From</span>
+          <h3>$2800</h3> <span class="lower">Studio</span>
+        </a>
+      </div>
+      <div class="visible-md visible-lg col-md-1" data-show="on-load"
+        data-show-priority="2">
+        <a href="http://furnishednycapartments.com?s=&apt_type=1+bedroom">
+          <div id="earth" class="svg-icon">
+          <img src="earth.jpg">
+            <svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              preserveAspectRatio="xMidYMid" viewBox="0 0 108 67">
+  <path
+                d="M106.000,67.000 L100.000,67.000 C98.062,67.000 98.000,65.780 98.000,65.000 L98.000,55.001 L11.000,55.001 L11.000,65.000 C11.000,65.780 11.006,67.000 9.000,67.000 L2.000,67.000 C-0.000,67.000 -0.000,65.780 -0.000,65.000 L-0.000,1.999 C-0.000,1.220 -0.000,0.000 2.000,0.000 L9.000,0.000 C10.713,0.000 11.000,1.220 11.000,1.999 L11.000,22.000 C11.883,20.723 13.633,19.999 15.000,19.999 L32.000,19.999 C35.595,19.999 38.000,22.418 38.000,26.000 L38.000,28.000 C38.000,29.362 37.432,30.470 37.000,31.000 L98.000,31.000 L98.000,19.000 C98.000,18.219 98.123,17.000 100.000,17.000 L106.000,17.000 C107.981,17.000 108.000,18.219 108.000,19.000 L108.000,65.000 C108.001,65.779 107.815,67.000 106.000,67.000 ZM100.000,65.000 L106.000,65.000 L106.000,19.000 L100.000,19.000 L100.000,65.000 ZM2.000,65.000 L9.000,65.000 L9.000,1.999 L2.000,1.999 L2.000,65.000 ZM11.000,53.000 L98.000,53.000 L98.000,48.000 L11.000,48.000 L11.000,53.000 ZM11.000,46.000 L98.000,46.000 L98.000,33.000 L11.000,33.000 L11.000,46.000 ZM14.911,31.195 L32.485,31.195 C34.517,31.195 36.171,29.548 36.171,27.523 L36.171,25.638 C36.171,23.614 34.517,21.967 32.485,21.967 L14.911,21.967 C12.879,21.967 11.000,23.975 11.000,26.000 L11.000,28.000 C11.000,30.025 12.879,31.195 14.911,31.195 Z"
+                class="cls-1" />
+</svg>
+          </div>
+        </a>
+      </div>
+ -->
+      
+
+      <!-------------------------------------------------------------------------------------------  air 부분 top ------------------------------------------------------------------------------------------------>
+      <div class="col-xs-10 col-sm-3 col-md-2" data-show="on-load"
+        data-show-priority="1">
+        <a href="http://furnishednycapartments.com?s=&apt_type=Studio">
+          <span>From</span>
+          
+          <h3>$2800</h3> <span class="lower">Studio</span>
+        </a>
+      </div>
+      <div class="visible-md visible-lg col-md-1" data-show="on-load"
+        data-show-priority="2">
+        <a href="http://furnishednycapartments.com?s=&apt_type=1+bedroom">
+          <div id="air" class="svg-icon">
+            <img src="air.png">
+            <!--  <svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              preserveAspectRatio="xMidYMid" viewBox="0 0 108 67">
+  <path
+                d="M106.000,67.000 L100.000,67.000 C98.062,67.000 98.000,65.780 98.000,65.000 L98.000,55.001 L11.000,55.001 L11.000,65.000 C11.000,65.780 11.006,67.000 9.000,67.000 L2.000,67.000 C-0.000,67.000 -0.000,65.780 -0.000,65.000 L-0.000,1.999 C-0.000,1.220 -0.000,0.000 2.000,0.000 L9.000,0.000 C10.713,0.000 11.000,1.220 11.000,1.999 L11.000,22.000 C11.883,20.723 13.633,19.999 15.000,19.999 L32.000,19.999 C35.595,19.999 38.000,22.418 38.000,26.000 L38.000,28.000 C38.000,29.362 37.432,30.470 37.000,31.000 L98.000,31.000 L98.000,19.000 C98.000,18.219 98.123,17.000 100.000,17.000 L106.000,17.000 C107.981,17.000 108.000,18.219 108.000,19.000 L108.000,65.000 C108.001,65.779 107.815,67.000 106.000,67.000 ZM100.000,65.000 L106.000,65.000 L106.000,19.000 L100.000,19.000 L100.000,65.000 ZM2.000,65.000 L9.000,65.000 L9.000,1.999 L2.000,1.999 L2.000,65.000 ZM11.000,53.000 L98.000,53.000 L98.000,48.000 L11.000,48.000 L11.000,53.000 ZM11.000,46.000 L98.000,46.000 L98.000,33.000 L11.000,33.000 L11.000,46.000 ZM14.911,31.195 L32.485,31.195 C34.517,31.195 36.171,29.548 36.171,27.523 L36.171,25.638 C36.171,23.614 34.517,21.967 32.485,21.967 L14.911,21.967 C12.879,21.967 11.000,23.975 11.000,26.000 L11.000,28.000 C11.000,30.025 12.879,31.195 14.911,31.195 Z"
+                class="cls-1" />
+</svg> -->
+          </div>
+        </a>
+      </div>
+
+    
+      <!-------------------------------------------------------------------------------------------  t t_bag 부분 top ------------------------------------------------------------------------------------------------>
+
+      <div class="col-xs-10 col-sm-3 col-md-2" data-show="on-load"
+        data-show-priority="2">
+        <a href="http://furnishednycapartments.com?s=&apt_type=1+bedroom">
+          <span>From</span>
+          <h3>$3000</h3> <span class="lower">1 bedroom</span>
+        </a>
+      </div>
+      <div class="visible-md visible-lg col-md-1" data-show="on-load"
+        data-show-priority="3">
+        <a href="http://furnishednycapartments.com?s=&apt_type=2+bedrooms">
+          <div id="t_bag" class="svg-icon">
+          <img src="t_bag.png">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              preserveAspectRatio="xMidYMid" viewBox="0 0 108 67">
+  <path
+                d="M106.000,67.000 L100.000,67.000 C98.062,67.000 98.000,65.780 98.000,65.000 L98.000,55.001 L11.000,55.001 L11.000,65.000 C11.000,65.780 11.006,67.000 9.000,67.000 L2.000,67.000 C-0.000,67.000 -0.000,65.780 -0.000,65.000 L-0.000,1.999 C-0.000,1.220 -0.000,0.000 2.000,0.000 L9.000,0.000 C10.713,0.000 11.000,1.220 11.000,1.999 L11.000,22.000 C11.883,20.723 13.633,19.999 15.000,19.999 L32.000,19.999 C35.595,19.999 38.000,22.418 38.000,26.000 L38.000,28.000 C38.000,29.362 37.432,30.470 37.000,31.000 L98.000,31.000 L98.000,19.000 C98.000,18.219 98.123,17.000 100.000,17.000 L106.000,17.000 C107.981,17.000 108.000,18.219 108.000,19.000 L108.000,65.000 C108.001,65.779 107.815,67.000 106.000,67.000 ZM100.000,65.000 L106.000,65.000 L106.000,19.000 L100.000,19.000 L100.000,65.000 ZM2.000,65.000 L9.000,65.000 L9.000,1.999 L2.000,1.999 L2.000,65.000 ZM11.000,53.000 L98.000,53.000 L98.000,48.000 L11.000,48.000 L11.000,53.000 ZM11.000,46.000 L98.000,46.000 L98.000,33.000 L11.000,33.000 L11.000,46.000 ZM14.911,31.195 L32.485,31.195 C34.517,31.195 36.171,29.548 36.171,27.523 L36.171,25.638 C36.171,23.614 34.517,21.967 32.485,21.967 L14.911,21.967 C12.879,21.967 11.000,23.975 11.000,26.000 L11.000,28.000 C11.000,30.025 12.879,31.195 14.911,31.195 Z"
+                class="cls-1" />
+</svg> -->
+          </div>
+        </a>
+      </div>
+      
+      <!-------------------------------------------------------------------------------------------  camera ~ 부분 top ------------------------------------------------------------------------------------------------>
+      <div class="col-xs-10 col-sm-3 col-md-2" data-show="on-load"
+        data-show-priority="3">
+        <a href="http://furnishednycapartments.com?s=&apt_type=2+bedrooms">
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;총</span>
+          <h3>2,500명</h3> <span class="lower">여행예정입니다</span>
+        </a>
+      </div>
+      <div class="visible-md visible-lg col-md-1" data-show="on-load"
+        data-show-priority="4">
+          <div id="customer" class="svg-icon">
+          <img src="customer.png">
+        
+        <!--  <svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            preserveAspectRatio="xMidYMid" viewBox="0 0 81 66">
+  <path
+              d="M59.500,41.333 L62.000,48.000 C70.077,48.493 81.000,54.771 81.000,63.000 C81.000,63.754 80.758,64.000 80.000,64.000 C79.242,64.000 79.000,63.754 79.000,63.000 C79.000,56.331 68.876,50.000 62.000,50.000 C61.410,50.000 60.186,49.558 60.000,49.000 L57.427,41.606 C56.041,41.751 54.587,41.849 53.002,41.849 C52.245,41.849 52.000,41.755 52.000,41.000 C52.000,40.246 52.242,40.000 53.000,40.000 C66.364,40.000 72.318,32.900 74.000,30.000 C72.774,27.918 69.633,21.672 69.000,19.000 C67.907,14.387 63.364,3.000 53.000,3.000 C52.242,3.000 52.000,2.755 52.000,1.999 C52.000,1.245 52.242,1.000 53.000,1.000 C61.677,1.000 68.164,7.222 70.792,18.310 C71.329,20.577 74.700,26.836 76.000,29.000 C76.240,29.400 76.209,30.583 76.000,31.000 C74.831,33.332 70.603,39.526 59.500,41.333 ZM45.748,30.822 C45.372,35.931 42.743,41.076 38.823,44.152 L43.000,50.000 L47.000,50.000 C55.733,50.000 60.000,54.020 60.000,62.000 L60.000,64.000 C60.000,64.756 59.758,65.000 59.000,65.000 C58.242,65.000 58.000,64.756 58.000,64.000 L58.000,62.000 C58.000,55.514 54.255,52.000 47.000,52.000 L43.000,52.000 C42.543,52.000 41.374,51.911 41.119,51.532 L36.977,45.379 C35.165,46.397 33.153,47.000 31.000,47.000 C28.743,47.000 26.639,46.343 24.751,45.251 L21.291,51.437 C21.050,51.870 20.497,52.000 20.000,52.000 L16.000,52.000 C9.510,52.000 2.000,54.950 2.000,62.000 L2.000,65.000 C2.000,65.755 1.758,66.000 1.000,66.000 C0.242,66.000 -0.000,65.755 -0.000,65.000 L-0.000,62.000 C-0.000,54.382 6.709,50.000 16.000,50.000 L20.000,50.000 L23.272,44.274 C19.194,41.211 16.433,36.011 16.000,31.000 C13.282,30.626 11.000,29.091 11.000,27.000 L11.000,21.000 C11.000,19.293 12.917,18.622 14.000,18.000 L13.911,13.157 C13.911,8.254 16.360,4.114 28.000,4.000 C31.925,1.201 34.491,0.000 37.000,0.000 C41.858,0.000 46.405,1.606 48.000,5.000 C49.189,7.529 48.952,9.451 47.000,12.000 L47.000,18.000 C47.075,18.093 50.000,18.813 50.000,21.000 L50.000,27.000 C50.000,28.729 48.532,30.385 45.748,30.822 ZM48.000,22.000 C48.000,20.217 45.044,20.023 45.000,19.999 C44.848,19.921 45.000,17.539 45.000,17.000 L45.000,13.000 C45.000,12.680 44.795,11.245 45.000,11.000 C46.524,9.180 46.785,7.670 46.000,6.000 C44.871,3.599 40.740,1.999 37.000,1.999 C34.830,1.999 32.453,3.419 29.000,6.000 C28.763,6.176 28.297,6.000 28.000,6.000 C17.031,6.000 16.000,9.957 16.000,13.000 L16.000,18.000 C16.000,18.539 15.495,19.781 15.000,19.999 C14.028,20.439 13.000,21.693 13.000,22.000 L13.000,27.000 C13.000,27.656 14.089,29.000 16.000,29.000 C16.758,29.000 18.000,30.247 18.000,31.000 C18.000,35.383 20.595,39.950 24.276,42.632 C24.426,42.552 24.560,42.756 25.000,43.000 C25.244,43.136 25.371,43.263 25.447,43.397 C27.161,44.396 29.050,45.000 31.000,45.000 C32.871,45.000 34.698,44.444 36.369,43.513 C36.524,43.338 36.740,43.174 37.000,43.000 C37.442,42.703 37.550,42.521 37.721,42.654 C41.387,40.008 44.000,35.489 44.000,31.000 C44.000,30.247 44.242,29.000 45.000,29.000 C47.394,29.000 48.000,27.373 48.000,27.000 L48.000,22.000 Z"
+              class="cls-1" />
+</svg> -->
+        </div>
+      </div>
+
+      <!-------------------------------------------------------------------------------------------  bottom  ------------------------------------------------------------------------------------------------>
+      <!-------------------------------------------------------------------------------------------  happy customers ~ 부분 top ------------------------------------------------------------------------------------------------>
+      <div class="col-xs-10 col-sm-3 col-md-2" data-show="on-load"
+        data-show-priority="4">
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;총</span>
+        <h3>1,084명</h3>
+        <span class="lower">여행중입니다</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-------------------------------------------------------------------------------------------  bottom  ------------------------------------------------------------------------------------------------>
+<div class="eightcol last">
+<div id="toner" class="map" style="border: 4px solid #eceff1;"></div>
+</div>
+
+
+<div class="chanwrapper">
+    <div class="changallery">
+    </div>
+  </div>    
+          
+        <!-- Start of Login form -->
+        <div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
+          tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true" >
+          <div class="modal-dialog modal-sm" style="z-index: 300000; ">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h2 class="modal-title" id="myModalLabel"><em>로그인</em></h2>
+              </div>
+              <div class="modal-body">
+                <div class="wrapper">
+                  <form class="form-signin">
+                    <input type="text" class="form-control" id="email"
+                      placeholder="이메일" required="" autofocus="" /></br> <input
+                      type="password" id="password" class="form-control"
+                      placeholder="비밀번호" required="" /> <label class="checkbox">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+                      id="saveEmail"> 이메일저장
+                    </label>
+                    <button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+                      type="button">로그인</button>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Login form -->
+          
+        <!-- Start of Registration Form-->
+        <div class="modal fade" style="z-index: 200000;" id="myModal"
+          tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-sm"
+            style="width: 500px; z-index: 300000;">
+            <div class="modal-content ">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                </button>
+                <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+              </div>
+              <div class="modal-body">
+                <div class="wrapper">
+                  <form class="form-signin">
+      
+      
+                    <label for="name" class="col-sm-2 control-label">이름</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="name"
+                        placeholder="이름"><br />
+                    </div>
+      
+      
+                    <label for="email" class="col-sm-2 control-label">이메일</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="email"
+                        placeholder="이메일"><br />
+                    </div>
+      
+      
+      
+                    <label for="password" class="col-sm-2 control-label">암호</label>
+                    <div class="col-sm-10">
+                      <input type="password" id="password" class="form-control"
+                        placeholder="암호입력"><br />
+                    </div>
+      
+      
+      
+                    <label for="birthday" class="col-sm-2 control-label">생일</label>
+                    <div class="col-sm-10">
+                      <input type="text" id="birthday" class="form-control"
+                        placeholder="생일"><br />
+                    </div>
+      
+      
+                    <label for="gender" class="col-sm-2 control-label">성별</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" id="gender">
+                        <option value="1">여자</option>
+                        <option value="0">남자</option>
+                      </select> <br>
+                    </div>
+      
+                    <!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                      type="checkbox" value="remember-me" id="rememberMe"
+                      name="rememberMe"> 약관동의
+                    </label> -->
+                    <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+                      type="button">회원가입</button>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>    
+        <!-- End of Registration Form-->  
+      
+    
+<script src="js/map.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.min.js"></script>
+<!-- 회원정보 관련 -->
+<script type="text/javascript" src="js/bit.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/authApp.js"></script>
+<script type="text/javascript" src="js/memberForm.js"></script>
+<script type="text/javascript" src="traveler.js"></script>
+<script type="text/javascript" src="js/backgroundmap.js"></script>
+<script type="text/javascript" src="js/leaflet.js"></script>
+<script type="text/javascript" src="js/stamen.js"></script>
+<script src="js/jquery.popupoverlay.js"></script>
+<script>
+$(document).ready(function () {
+    $('#fadeandscale').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+}); 
+</script>
+<script>
+init() // 화면을 준비시킨다
+ajaxLoginUser() // 로그인 유저 정보 가져오기
+ajaxRegistFormList()
+ajaxInviteList()
+ajaxAgreeInviteList()
+  $(function() {
+      $(".bit-startDate, .bit-endDate").datepicker({
+          dateFormat: 'yyyy-mm-dd'
+      });
+  });
+mapinitialize()
+</script> 
+  
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ null 에 [ ]로 값입력해서 넘길려면 나중에 추가,국가 선택,*/
+var nycSearch = {"apartmentTypes": null,"neighborhoods":["Aisa","South America","North America","Europe","Africa","Oceania"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+</body>
+</html>
