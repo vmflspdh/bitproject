@@ -11,8 +11,9 @@
 
 .zeta-menu #mainImg {
 	margin-right: 30px;
-	width: 45px;
-	height: 45px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 }
 
 .zeta-menu #subImg {

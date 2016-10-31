@@ -11,35 +11,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import test.dao.BoardFileDao;
+import test.dao.TravelMainFileDao;
 import test.util.FileUploadUtil;
-import test.vo.BoardFile;
 import test.vo.JsonResult;
+import test.vo.TravelMainFile;
 
 @Controller
 @RequestMapping("/travel/")
 public class FileController {
 
   @Autowired ServletContext sc;
-  @Autowired BoardFileDao boardFiledao;
+  @Autowired TravelMainFileDao travelMainFileDao;
 
   @RequestMapping(value="upload", method = RequestMethod.POST)
-  public Object upload(BoardFile boardFile, MultipartFile file) throws IOException {
+  public Object upload(TravelMainFile boardFile, MultipartFile[] files) throws IOException {
 
     System.out.println(boardFile);
-    System.out.println(file);
+    for (int i = 0; i < files.length; i++) {
+      System.out.println(files[i]);
+      
+    }
+
+    
     try {
       String newFilename = null;
-      if (!file.isEmpty()) {
-        newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
-        file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+      for (int i = 0; i < files.length; i++) {
+      if (!files[i].isEmpty()) {
+        newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+        files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
         System.out.println(newFilename);
         boardFile.setFileName(newFilename);
         System.out.println(boardFile);
-        boardFiledao.insert(boardFile);
+        travelMainFileDao.insert(boardFile);
+      }
       }
       return JsonResult.success();
-    } catch (IOException e){
+    } catch (Exception e){
       return JsonResult.fail(e.getMessage());
 
     }

@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import test.dao.BoardFileDao;
+import test.dao.TravelMainFileDao;
 import test.util.FileUploadUtil;
-import test.vo.BoardFile;
+import test.vo.TravelMainFile;
 
 
 @Controller
 @RequestMapping("/travel/")
 public class tempUploadSample {
   @Autowired ServletContext sc;
-  @Autowired BoardFileDao boardFiledao;
+  @Autowired TravelMainFileDao boardFiledao;
   
 
   @RequestMapping(value="fileUpload", method = RequestMethod.POST, produces="application/json")
@@ -43,7 +43,7 @@ public class tempUploadSample {
     if (mpf != null && ! mpf.isEmpty()) {
       newFilename = FileUploadUtil.getNewFilename(originFileName);
       mpf.transferTo(new File(uploadDir + newFilename));
-      BoardFile boardFile = new BoardFile();
+      TravelMainFile boardFile = new TravelMainFile();
       boardFile.setTravelMainNo(54);
       boardFile.setFileName(newFilename);
       boardFiledao.insert(boardFile);

@@ -27,7 +27,7 @@ function ajaxMemberList() {
 		$("#boardTable tbody").html(contents);
 		// tr 태그를 추가한 후에 제목에 대해 click 리스너를 추가하지 않는다.
 		$(".titleLink").click(function(event) {
-			window.location.href = "memb_reg_form.html?no=" + $(this).attr("data-no");
+			window.location.href = "memb_regForm.html?no=" + $(this).attr("data-no");
 		})
 	})
 }

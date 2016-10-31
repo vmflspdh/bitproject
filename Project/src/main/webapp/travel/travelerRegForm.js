@@ -33,10 +33,9 @@ $(".selectAddBtn").click(function(event) {
 			lng: $(".bit-longitude1").val()
 	}
 	console.log(selectSchedule)
-	
+
 	var template = Handlebars.compile($('#trTemplateText').html())
 	$("#selectTable .root-select").append($(template(selectSchedule)))
-
 });
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
@@ -47,12 +46,6 @@ $(document.body).on('click', '.selectDelBtn', function(event) {
 
 $("#addTMBtn").click(function(event) {
 
-	var travelMain = {
-			title: $("#title").val(),
-			selfIntroduce: $("#selfIntroduce").val(),
-			styleNo: $("input[name='chk_info']:checked").val()
-	}
-	console.log(travelMain)
 
 
 
@@ -76,26 +69,59 @@ $("#addTMBtn").click(function(event) {
 	//console.log(scheduleArray)
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
-	travelMain.schedule = schedule;
 
-	ajaxAddTravelMain(travelMain)
+	/*ajaxAddTravelMain(travelMain)*/
+
+	/*여행글 사진업로드 파일 부분*/
+
+	var formData = new FormData();
+
+	formData.append("title", $("#title").val())
+	formData.append("selfIntroduce", $("#selfIntroduce").val())
+	formData.append("styleNo", $("input[name='chk_info']:checked").val())
+	formData.append("schedule", schedule)
+	$($("#multiFile")[0].files).each(function(index, file) {
+		formData.append("file", file); });
+	
+
+	ajaxAddTravelMain(formData)
+
 
 
 });
 
 
 
-function ajaxAddTravelMain(travelMain) {
-	$.post(serverAddr + "/travel/travelMainAdd.json", travelMain, function(obj){
+function ajaxAddTravelMain(formData) {
+	
+	console.log(formData)
+	
+	$.ajax({
+		url : "travelMainAdd.json",
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(obj) {
+			var result = obj.jsonResult
+			if (result.state != "success") {
+				console.log(result.data)
+				alert("등록 실패입니다.")
+				return
+		}
+			window.location.reload(true)
+		}
+	});
+	
+	
+	/*$.post(serverAddr + "/travel/travelMainAdd.json", 
+			travelMain, function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			console.log(result.data)
 			alert("등록 실패입니다.")
 			return
-		}
-
-		window.location.href = "traveler.html"
-	}, "json")
+		}*/
 }
 
 

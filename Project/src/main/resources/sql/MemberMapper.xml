@@ -75,9 +75,11 @@
 
 	<update id="update" parameterType="member">
 		update tvl_membs set
+		mnm=#{name},
 		email=#{email},
 		bir_dt=#{birthday},
-		gend=#{gender}
+		gend=#{gender},
+		mpho=#{memberPhoto}
 
 		where mno=#{no}
 	</update>

@@ -2,12 +2,13 @@ package test.vo;
 
 import java.io.Serializable;
 
-public class BoardFile implements Serializable{
+public class TravelMainFile implements Serializable{
   
+
 
   private static final long serialVersionUID = 1L;
   
-  protected int boardPhotoNo;
+  protected int travelMainPNo;
   protected int travelMainNo;
   protected String fileName;
   
@@ -26,18 +27,18 @@ public class BoardFile implements Serializable{
     this.fileName = fileName;
   }
 
-  public int getBoardPhotoNo() {
-    return boardPhotoNo;
+  public int getTravelMainPNo() {
+    return travelMainPNo;
   }
-  public void setBoardPhotoNo(int boardPhotoNo) {
-    this.boardPhotoNo = boardPhotoNo;
+  public void setTravelMainPNo(int travelMainPNo) {
+    this.travelMainPNo = travelMainPNo;
   }
   
+
   @Override
   public String toString() {
-    return "BoardFile [boardPhotoNo=" + boardPhotoNo + ", travelMainNo=" + travelMainNo + ", fileName=" + fileName
-        + "]";
+    return "TravelMainFile [travelMainPNo=" + travelMainPNo + ", travelMainNo=" + travelMainNo + ", fileName="
+        + fileName + "]";
   }
-
 }
 

@@ -15,7 +15,7 @@
     </div> -->
 	<form action="" method="post" enctype="multipart/form-data">
 		게시물번호 : <input type="text" id="travelMainNo"><br>
-		파일1:<input type="file" name="file" id="file"><br>
+		파일1:<input name="multi_file[]" id="multiFile" type="file" multiple><br>
 		<button id="addBtn" type="button">등록</button>
 	</form>
 
@@ -67,8 +67,9 @@
 
 			var formData = new FormData();
 			formData.append("travelMainNo", $("#travelMainNo").val());
-			formData.append("file", $("input[name=file]")[0].files[0]);
-
+			  $($("#multiFile")[0].files).each(function(index, file) {
+				    formData.append("files", file);});
+			  
 			ajaxAddTravelMain(formData)
 
 		});

@@ -2,14 +2,14 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="test.dao.BoardFileDao">
-  <resultMap type="boardFile" id="boardFileMap">
-    <id column="ipno" property="boardPhotoNo"/> 
+<mapper namespace="test.dao.TravelMainFileDao">
+  <resultMap type="travelMainFile" id="travelMainFileMap">
+    <id column="ipno" property="travelMainPNo"/> 
     <result column="tmno" property="travelMainNo"/>
     <result column="ipnm" property="fileName"/>
   </resultMap>
   
-  <insert id="insert" parameterType="boardFile">
+  <insert id="insert" parameterType="travelMainFile">
     insert into tvl_intro_pho(tmno, ipnm)
     values(#{travelMainNo}, #{fileName})
   </insert>

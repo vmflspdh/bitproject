@@ -1,13 +1,18 @@
 package test.controller.json;
 
+import java.io.File;
 import java.util.HashMap;
+
+import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import test.dao.MemberDao;
+import test.util.FileUploadUtil;
 import test.vo.JsonResult;
 import test.vo.Member;
 
@@ -15,8 +20,8 @@ import test.vo.Member;
 @RequestMapping("/travel/")// 이 페이지 컨트롤러의 기본 URL을 지정한다.
 public class MemberController {
 
-  @Autowired
-  MemberDao memberDao;
+  @Autowired MemberDao memberDao;
+  @Autowired ServletContext sc;
 
   @RequestMapping(path="list")
   public Object list(
@@ -68,8 +73,12 @@ public class MemberController {
 
 
   @RequestMapping(path="update")
-  public Object update(Member member) throws Exception {
+  public Object update(Member member, MultipartFile file) throws Exception {
 
+    
+    System.out.println(member);
+    System.out.println(file);
+    
     System.out.println("hi i received!!");
     try {
       HashMap<String,Object> paramMap = new HashMap<>();
@@ -79,6 +88,15 @@ public class MemberController {
 
       if (memberDao.selectOneByPassword(paramMap) == null) {
         throw new Exception("해당 게시물이 없거나 암호가 일치하지 않습니다.");
+      }
+
+      String newFilename = null;
+      if (!file.isEmpty()) {
+        newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
+        file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+        System.out.println(newFilename);
+        member.setMemberPhoto(newFilename);
+        System.out.println(member);
       }
       memberDao.update(member);
       return JsonResult.success();
@@ -103,7 +121,7 @@ public class MemberController {
       }
       memberDao.delete(no);
       return JsonResult.success();
-      
+
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());
     }

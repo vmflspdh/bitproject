@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Let's go together!</title>
 <link rel="stylesheet"
-  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <meta name="description" content="Blueprint: On-Scroll Animated Header" />
 <meta name="keywords"
-  content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -19,18 +19,19 @@
 <script src="js/modernizr.custom.js"></script>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <!-- 데이트 피커 자바스크립트 -->
-<link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 
@@ -50,7 +51,7 @@
 }
 
 #map {
-	width: 70%;
+	width: 95%;
 	height: 200px;
 	margin: 0 auto;
 }
@@ -191,6 +192,9 @@ td {
 							style="font-size: small; font-weight: bold; padding-left: 20px;">
 							<img src="img/profileDemo.png" style="width: 150px;">
 							&nbsp;&nbsp;&nbsp;자신을 표현할 프로필 및 여행사진을 업로드 하세요!
+							<br/>
+							<div>파일 여러개 선택 가능</div>
+							<input name="multi_file[]" id="multiFile" type="file" multiple><br/>
 						</td>
 					<tr>
 						<td style="color: green; font-weight: bold; font-size: large;">
@@ -206,63 +210,33 @@ td {
 								name="chk_info" value="3">액티비티/레포츠
 						</label></td>
 					</tr>
-					<tr>
-						<td style="color: green; font-weight: bold; font-size: large;">
-							<div>가고싶은</div>
-							<div>여행지</div>
-						</td>
-						<td class="root-select">
-							&nbsp;&nbsp;&nbsp;여행 일정을 추가하세요!<br/>
-<!-- 							<form class="form-inline root-schedule" onsubmit="return false">
-								<select style="width: 100px;" class="form-control bit-continent">
-									<option selected value="">대륙</option>
-									<option value="아시아">아시아</option>
-									<option value="유럽">유럽</option>
-									<option value="북아메리카">북아메리카</option>
-								</select> <select style="width: 100px;" class="form-control bit-nation">
-									<option selected value="">국가</option>
-									<option value="대한민국">대한민국</option>
-									<option value="일본">일본</option>
-									<option value="영국">영국</option>
-								</select> <select style="width: 100px;" class="form-control bit-city">
-									<option selected value="">도시</option>
-									<option value="서울">서울</option>
-									<option value="부산">부산</option>
-									<option value="도쿄">도쿄</option>
-								</select> <input type="text" placeholder="시작일" style="width: 100px;"
-									class="form-control bit-startDate"> <input type="text"
-									placeholder="종료일" style="width: 100px;"
-									class="form-control bit-endDate"> <input type="text"
-									placeholder="위도" style="width: 100px;"
-									class="form-control bit-latitude"> <input type="text"
-									placeholder="경도" style="width: 100px;"
-									class="form-control bit-longitude">
-								<button class="btn btn-default selectAddBtn">+</button>
-								<button class="btn btn-default selectDelBtn">-</button> 
-							</form> -->
-						</td>
-					</tr>
+
 					<!-- 이거 맵 !!!!!!!!!!!-->
 					<tr>
-						<td class="root-addSelect" colspan="2">
-									<input id="pac-input" type="text" class="controls form-control"
-										placeholder="국가/도시를 입력하세요." style="width: 250px;">
+					 <td style="color: green; font-weight: bold; font-size: large;" rowspan="2">
+              <div>가고싶은</div>
+              <div>여행지</div>
+            </td>
+						<td class="root-addSelect" style="border: 0;">
+						<input id="pac-input"
+							type="text" class="controls form-control"
+							placeholder="국가/도시를 입력하세요." style="width: 250px;">
+							             <br/>
 							<form class="form-inline" onsubmit="return false">
-										<input type="text" placeholder="대륙" value="대륙" style="width: 100px;"
-                  class="form-control bit-continent"> 
-                <input type="text" placeholder="국가" value="국가" style="width: 100px;"
-                  class="form-control bit-nation">
-										<input type="text" placeholder="도시명" style="width: 100px;"
-                  class="form-control bit-city1">
-										<input
-										type="text" class="form-control bit-startDate1"
-										placeholder="시작일" style="width: 150px;"> <input
-										type="text" class="form-control bit-endDate1"
-										placeholder="종료일" style="width: 150px;"> <input
-										type="text" placeholder="위도" style="width: 100px;"
-										class="form-control bit-latitude1"> <input type="text"
-										placeholder="경도" style="width: 100px;"
-										class="form-control bit-longitude1">
+								<input type="text" placeholder="대륙" value="대륙"
+									style="width: 100px; display:none;" class="form-control bit-continent">
+								<input type="text" placeholder="국가" value="국가"
+									style="width: 100px;" class="form-control bit-nation">
+								<input type="text" placeholder="도시명" style="width: 100px;"
+									class="form-control bit-city1"> <input type="text"
+									class="form-control bit-startDate1" placeholder="시작일"
+									style="width: 150px;"> <input type="text"
+									class="form-control bit-endDate1" placeholder="종료일"
+									style="width: 150px;"> <input type="text"
+									placeholder="위도" style="width: 100px; display:none;"
+									class="form-control bit-latitude1"> <input type="text"
+									placeholder="경도" style="width: 100px; display:none;"
+									class="form-control bit-longitude1">
 								<button class="btn btn-default selectAddBtn">추가</button>
 							</form>
 							<div id="type-selector" class="controls" style="display: none;">
@@ -275,10 +249,17 @@ td {
 									name="type" id="changetype-geocode"> <label
 									for="changetype-geocode">Geocodes</label>
 							</div>
-							<div id="map"></div>
-						</td>
+							<br/>
+							<div id="map"></div></td>
 					</tr>
 					<!-- 여기까지맵임 -->
+
+					<tr>
+					
+						<td class="root-select">&nbsp;&nbsp;&nbsp;여행 일정을 추가하세요!<br/>
+						<!-- 핸들바스 적용되는 곳 -->
+						</td>
+					</tr>
 					<tr>
 						<td
 							style="width: 100px; color: green; font-weight: bold; border: 0; padding-bottom: 0; font-size: large;">
@@ -316,7 +297,7 @@ td {
 		<p></p>
 		<br>
 		<p></p>
-		</br>
+		<br/>
 	</div>
 
 	<!-- 로그인 폼 -->
@@ -410,10 +391,6 @@ td {
 								</select> <br>
 							</div>
 
-							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                type="checkbox" value="remember-me" id="rememberMe"
-                name="rememberMe"> 약관동의
-              </label> -->
 							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
 								type="button">회원가입</button>
 						</form>
@@ -442,11 +419,16 @@ td {
 	<script>
 		init() // 화면을 준비시킨다
 		ajaxLoginUser() // 로그인 유저 정보 가져오기
-
+		$(function() {
+		    $(".bit-startDate1").datepicker({dateFormat: 'yy-mm-dd'
+		    });
+		    $(".bit-endDate1" ).datepicker({dateFormat: 'yy-mm-dd'
+	        });
+		});
 	</script>
-<script id="trTemplateText" type="text/x-handlebars-template">
+	<script id="trTemplateText" type="text/x-handlebars-template">
 <div class="form-inline root-schedule">
-<input type="text" placeholder="대륙" value="대륙" style="width: 100px;"
+<input type="text" placeholder="대륙" value="대륙" style="width: 100px; display:none;"
 class="form-control bit-continent"> 
 <input type="text" placeholder="국가" value="국가" style="width: 100px;"
 class="form-control bit-nation">
@@ -457,14 +439,13 @@ type="text" class="form-control bit-startDate"
 placeholder="시작일" value="{{startDate}}" style="width: 150px;"> <input
 type="text" class="form-control bit-endDate"
 placeholder="종료일" value="{{endDate}}" style="width: 150px;"> <input
-type="text" placeholder="위도" value="{{lat}}" style="width: 100px;"
+type="text" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
 class="form-control bit-latitude"> <input type="text"
-placeholder="경도"value="{{lng}}" style="width: 100px;"
+placeholder="경도"value="{{lng}}" style="width: 100px; display:none;"
 class="form-control bit-longitude">
 <button type="button" class="btn btn-default selectDelBtn">-</button>
 </div>
 </script>
-  <script
-  src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 </body>
 </html>

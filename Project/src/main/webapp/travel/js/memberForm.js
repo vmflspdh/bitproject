@@ -30,7 +30,17 @@ $("#signInBtn").click(function(event) {
 
 $("#updateBtn").click(function(event) {
 
-	var member = {
+	var formData = new FormData();
+	formData.append("no", $("#no").val());
+	formData.append("name", $("#name").val());
+	formData.append("email", $("#email").val());
+	formData.append("password", $("#password").val());
+	formData.append("birthday", $("#birthday").val());
+	formData.append("gender", $("#gender").val());
+	formData.append("file", $("input[name=file]")[0].files[0]);
+	
+	
+/*	var member = {
 			name: $("#name").val(),
 			email: $("#email").val(),
 			password: $("#password").val(),
@@ -38,8 +48,8 @@ $("#updateBtn").click(function(event) {
 			gender: $("#gender").val(),
 			registedDate: $("#registedDate").val(),
 			no: $("#no").val()
-	}
-	ajaxUpdateMember(member)
+	}*/
+	ajaxUpdateMember(formData)
 });
 
 $("#deleteBtn").click(function(event) {
@@ -81,10 +91,27 @@ function ajaxLoadMember(no) {
 	})
 }
 
-function ajaxUpdateMember(member) {
-	console.log(member)
+function ajaxUpdateMember(formData) {
+	console.log(formData)
+	
+	$.ajax({
+		url : "update.json",
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(obj) {
+			var result = obj.jsonResult
+			if (result.state != "success") {
+				console.log(result.data)
+				alert("변경 실패입니다.")
+				return
+			}
+			window.location.reload(true)
+		}
+	});
 
-	$.post("update.json", member, function(obj) {
+/*	$.post("update.json", member, function(obj) {
 		var result = obj.jsonResult
 		console.log(member)
 		if (result.state != "success") {
@@ -92,8 +119,8 @@ function ajaxUpdateMember(member) {
 			alert("변경 실패입니다.")
 			return
 		}
-		window.location.href = "memberApp.html"
-	}, "json")
+		window.location.reload(true)
+	}, "json")*/
 }
 
 
