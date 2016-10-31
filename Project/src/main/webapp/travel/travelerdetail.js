@@ -25,17 +25,30 @@ $("#addBtn").click(function(event) {
 	    }
 	  var requestMember=result.data
 	  inviteAdd(requestMember)
-	   alert("동행추가되었습니다.")
+	   
 	})
 });
 function inviteAdd(requestMember){
-	$.post(serverAddr + "/travel/invadd.json" , requestMember,function(obj) {
-		var result = obj.jsonResult
+	$.post(serverAddr + "/travel/invadd.json" , requestMember,function(result) {
+		//var result = obj.jsonResult
 		console.log(requestMember)
-		if (result.state != "success") {
-	    	console.log(result.data)
+		if (result.state == "exist") {
+			swal(
+					  '이미 요청한 회원입니다.',
+					  'Something went wrong!',
+					  'error'
+					)
 	    return
 	    }
+		if (result.state == "success") {
+			swal(
+					  '동행 요청 성공!',
+					  'You clicked the button!',
+					  'success'
+					)
+	    return
+	    }
+		//alert("동행추가되었습니다.")
 		//if()
 	 
 	})

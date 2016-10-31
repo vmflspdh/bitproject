@@ -19,6 +19,14 @@ public class Invite implements Serializable {
   protected int inviteGender;
   protected int state;
   protected String invitePhoto;
+  protected int inviteBoardNo;
+  
+  public int getInviteBoardNo() {
+    return inviteBoardNo;
+  }
+  public void setInviteBoardNo(int inviteBoardNo) {
+    this.inviteBoardNo = inviteBoardNo;
+  }
   public int getInviteNo() {
     return inviteNo;
   }
@@ -72,9 +80,8 @@ public class Invite implements Serializable {
   public String toString() {
     return "Invite [inviteNo=" + inviteNo + ", memberNo=" + memberNo + ", memberNo2=" + memberNo2 + ", inviteName="
         + inviteName + ", inviteEmail=" + inviteEmail + ", inviteGender=" + inviteGender + ", state=" + state
-        + ", invitePhoto=" + invitePhoto + "]";
+        + ", invitePhoto=" + invitePhoto + ", inviteBoardNo=" + inviteBoardNo + "]";
   }
-  
   
   
   
