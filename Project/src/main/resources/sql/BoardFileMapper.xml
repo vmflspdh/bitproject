@@ -9,8 +9,8 @@
     <result column="ipnm" property="filename"/>
   </resultMap>
   
-  <insert id="insert" parameterType="boardFile">
-    insert into board_files(tmno, ipnm)
+  <insert id="insert" parameterType="boardFile"  >
+    insert into tvl_intro_pho(tmno, ipnm)
     values(#{travelMainNo}, #{fileName})
   </insert>
 </mapper>

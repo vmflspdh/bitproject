@@ -26,6 +26,7 @@ public class FileController {
   @RequestMapping(path="fileUpload")
   @ResponseBody
   public Object upload(BoardFile boardfile, MultipartFile file) throws IOException {
+    String uploadDir = sc.getRealPath("/upload") + "/";
 
     System.out.println(boardfile);
     System.out.println(file);
