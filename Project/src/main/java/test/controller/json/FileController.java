@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
 import test.dao.BoardFileDao;
@@ -22,18 +23,19 @@ public class FileController {
   @Autowired ServletContext sc;
   @Autowired BoardFileDao boardFiledao;
 
-  @RequestMapping(path="fileUpload")
-  public Object upload(BoardFile boardfile, MultipartFile file) throws IOException {
+  @RequestMapping(value="upload", method = RequestMethod.POST)
+  public Object upload(BoardFile boardFile, MultipartFile file) throws IOException {
 
-    System.out.println(boardfile);
+    System.out.println(boardFile);
     System.out.println(file);
     try {
       String newFilename = null;
       if (!file.isEmpty()) {
         newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
         file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
-        BoardFile boardFile = new BoardFile();
+        System.out.println(newFilename);
         boardFile.setFileName(newFilename);
+        System.out.println(boardFile);
         boardFiledao.insert(boardFile);
       }
       return JsonResult.success();

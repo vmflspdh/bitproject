@@ -83,4 +83,58 @@ public class InviteController {
   }
 
   
+  @RequestMapping(path="invagree", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String agree(int no,  HttpSession session) throws Exception {
+    // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      System.out.println(no);
+      inviteDao.inviteAgree(no);
+      result.put("state", "success");
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+  }
+  
+  @RequestMapping(path="invrefuse", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String refuse(int no,  HttpSession session) throws Exception {
+    // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      System.out.println(no);
+      inviteDao.inviteRefuse(no);
+      result.put("state", "success");
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+  }
+  
+  @RequestMapping(path="invagreelist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String agreelist(HttpSession session) throws Exception {
+    
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      Member member = (Member)session.getAttribute("member");
+      int no =  member.getNo();
+      List<Invite> list = inviteDao.inviteAgreeList(no);
+      
+      
+      result.put("state", "success");
+      result.put("data", list);
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+    
+    
+  }
+  
 }
