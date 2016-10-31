@@ -1,0 +1,523 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="ko"> <!--<![endif]-->
+<head>
+    <title>해태제과 </title>
+    
+    <meta charset="utf-8">
+    <meta http-equiv="Refresh" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="icon" href="/rs/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="/rs/css/normalize.css">
+    <link rel="stylesheet" href="/rs/css/common.css">  
+    <link rel="stylesheet" href="/rs/css/sub.css">
+    
+    <script type="text/javascript" src="/rs/js/lib/jquery-1.9.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/rs/js/lib/jquery-1.9.0.min.js"><\/script>')</script>
+    <script type="text/javascript" src="/rs/js/lib/TweenMax.min.js"></script>
+    <script type="text/javascript" src="/rs/js/lib/jquery.easing.js"></script> 
+    <script type="text/javascript" src="/rs/js/lib/swipe.js"></script> 
+    <script type="text/javascript" src="/rs/js/lib/jqueryCustomSelect.js"></script>     
+    <script type="text/javascript" src="/rs/js/common.js"></script>
+    <script type="text/javascript" src="/rs/js/common_dev.js"></script>
+    <!--[if lt IE 9]>
+            <script type="text/javascript">
+                var console = { log: function() {} };
+             
+            </script>
+            <script type="text/javascript"  src="js/lib/html5.js"></script>
+            <link rel="stylesheet" href="css/main-ie.css">   
+        <![endif]-->
+        <!--[if (gte IE 9)|!(IE)]>
+                
+        <![endif]-->
+        
+    
+<script type="text/javascript" src="/rs/js/lib/pageNavigator.js"></script>
+<script type="text/javascript" src="/rs/js/front/sweet/bbs.js"></script>
+
+<script>
+$(window).ready(function() {
+    var searchCtgr = '';
+    var selectTxt = "전체";
+    
+    if(searchCtgr == 'title') {
+        selectTxt = "제목";
+    } else if(searchCtgr == 'contents') {
+        selectTxt = "내용";
+    }
+    
+    //셀렉트박스 스타일링
+    $(".selectBox").text(selectTxt);
+    
+    setPagingNavigator(document.searchForm, "divPageNavigator", 1, 89, 5, true);
+});
+
+</script>
+<style>
+@charset "utf-8";
+@import url('reset.css');
+.chromeframe { margin: 0.2em 0; background: #ccc;color: #000;padding: 0.2em 0;}
+
+body, html {height: 100%;  margin: 0 auto;width:100%;min-height: 100%;background-color: #fff;}
+body {}
+.no-js {/* padding-top: 106px; */}
+h2 {margin-top: 0;}
+.loading {/* background: url('ico_loading.gif') no-repeat center center; */}
+.loaded section, .no-js section {opacity: 1;-webkit-transition: opacity 300ms ease-out; -moz-transition: opacity 300ms ease-out;transition: opacity 300ms ease-out;}
+
+a.disabled {
+   pointer-events: none;
+   cursor: default;
+}
+  
+
+ 
+
+
+
+
+/*! normalize.css v1.1.2 | MIT License | git.io/normalize */dl,h3,menu,ol,p,pre,ul{margin:1em 0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}button,html,input,select,textarea{font-family:sans-serif}body,figure,form{margin:0}a:focus{outline:dotted thin}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.67em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}blockquote{margin:1em 40px}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:after,q:before{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ol,nav ul{list-style:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+@charset "utf-8";@import url(font.css);*,html{-webkit-text-size-adjust:none}abbr,acronym,fieldset,form,img{border:0}.img,body,html{width:100%}.ellipsis,.i_select3{text-overflow:ellipsis}.i_textarea,html{overflow-x:hidden}.input_btn1,.input_btn2,.input_btn3{text-align:center}*{margin:0;padding:0}html{overflow-y:scroll;font-size:10px}body{letter-spacing:0}body,html{height:100%;min-height:100%}body,input,select,textarea{font:1em/100% 'Nanum Gothic','나눔고딕','Nanum GothicWeb','Nanum Gothic',Dotum,"돋움",gulim,"굴림",verdana,sans-serif;color:#333;border:0;line-height:1.2em}a,blockquote,body,dd,div,dl,dt,embed,fieldset,form,h1,h2,h3,h4,h5,h6,img,input,li,object,ol,p,pre,table,td,textarea,th,ul{padding:0;margin:0;-webkit-margin-before:0;-webkit-margin-after:0;line-height:1em;/*white-space:normal;*/word-break:break-all;-webkit-text-size-adjust:none}table{border-collapse:collapse;border-spacing:0;font:1.5em/2em 'Nanum Gothic'}input,select,table img,table tr td,table tr th{vertical-align:middle}input[type=text]:-ms-clear,input:-ms-clear {display: none;},input[type=image]{vertical-align:top}address,caption,cite,code,dfn,em,h1,h2,h3,h4,h5,h6,th,var{font-weight:400;font-style:normal}dir,li,menu,ol,ul{list-style:none;-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0;-webkit-padding-start:0!important}table td a{display:inline-block}table caption{display:none}.img,a{display:block}.bold,strong{font-family:'Nanum GothicB';font-weight:400}.rbold{font-family:'Nanum GothicB'!important;color:#4c4c4c}a{text-decoration:none;color:#969696;cursor:pointer;border:none}a:active{outline: none;}.middle{vertical-align:middle}input,textarea{outline-style:none}textarea{resize:none}.clearfix{zoom:1}.clearfix:after{content:"";display:block;clear:both}.fl{float:left}.fr{float:left}.clearfix li{float:left}#accessibility,.hidden,.skip,caption,hr,legend{position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;text-indent:-5000px}.i_text,.i_text2{color:#666;vertical-align:middle;border:1px solid #cbcbcb;height:13px;font:13px/100% 'Nanum Gothic'}.w8{width:8%}.w10{width:10%}.w15{width:15%}.w20{width:20%}.w25{width:25%}.w30{width:30%}.w35{width:35%}.w40{width:40%}.w45{width:45%}.w50{width:50%}.w55{width:55%}.w60{width:60%}.w65{width:65%}.w70{width:70%}.w75{width:75%}.w80{width:80%}.w85{width:85%}.w90{width:90%}.w95{width:95%}.w100{width:100%}.i_text{padding:5px 6px}.i_text2{padding:8px 6px 7px}.i_text3{ime-mode:disabled;font:4em/100% 'Nanum Gothic';color:#666;background:0 0;padding:4% 0 3% 21%;vertical-align:middle;width:48.5%}.i_text4{font:1em/100% 'Nanum Gothic';color:#666;background:url(/rs/images/main/btn/gnb7.png) no-repeat;background-size:contain;padding:3px 5px 3px 10px;vertical-align:middle;width:135px;height:24px}.i_select1,.i_select2,.i_select3{border:1px solid #cdcdcd;padding:2px}.i_select1{height:30px;width:118px;line-height:30px}.i_select2{height:25px;width:115px;line-height:27px}.i_select3{height:30px;width:75%;line-height:30px}.i_textarea{border:1px solid #cbcbcb;font:13px/160% 'Nanum Gothic';color:#666;padding:5px 6px;width:98%;min-height:250px}span.customSelect{font-size:11px;background-color:#f5f0de;color:#7c7c7c;padding:5px 7px;border:1px solid #e7dab0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.input_btn1,.input_btn2,.input_btn3,.input_btngray{width:45px;color:#fff;display:block;font-family:Nanum Gothic;height:15px;padding:5px;line-height:100%}span.customSelect.changed{background-color:#f0dea4}.customSelectInner{background:url(customSelect-arrow.gif) center right no-repeat}.input_btn1{background:#353535}.input_btn2{background:#ff3d79}.input_btn3{background:#9a3bcb}.input_btngray{background:#666;text-align:center}.btn1,.btn2,.btn3{text-align:center;width:72px;color:#fff;display:block;font-family:Nanum Gothic;padding-top:8px;height:22px;line-height:100%}.btn1{background:#353535}.btn2{background:#ff3d79}.btn3{background:#9a3bcb}.btn4,.btn4-s{background:#353535;color:#fff;display:inline-block;font-family:Nanum Gothic;line-height:100%}.btn4{padding:10px 20px}.btn4-s{padding:5px 15px}.btn5,.btn5-s{background:#ff3d79;color:#fff;display:inline-block;font-family:Nanum Gothic;line-height:100%}.btn5{padding:10px 20px}.btn5-s{padding:5px 15px}.btn6,.btn6-s{background:#9a3bcb;color:#fff;display:inline-block;font-family:Nanum Gothic;line-height:100%}.btn6{padding:10px 20px}.btn6-s{padding:5px 15px}.btn-deepgray,.btn-gray{display:inline-block;text-align:center;width:72px;color:#353535;font-family:Nanum Gothic;padding-top:8px;height:22px;line-height:100%}.btn-gray{background:#bfbfbf}.btn-deepgray{background:#595959}.pdl2,.pdl3,.pdl4,.pdl5{text-align:left}.white{color:#fff}.yel{color:#d9a336}.brown{color:#785c02}.red{color:#ec1d85!important}.greylight{color:#b2aea4}.bk{color:#333}.must{color:#d92b3a;display:inline-block;margin-right:5px}.purple{color:#9d2bd9}.grey{color:#73706a}.letter06{letter-spacing:-.06em}.letter08{letter-spacing:-.08em}.mgt1{margin-top:1px!important}.mgt5{margin-top:5px!important}.mgt2{margin-top:2px!important}.mgt4{margin-top:4px!important}.mgt6{margin-top:6px!important}.mgt10{margin-top:10px!important}.mgt16{margin-top:16px!important}.mgtnone{margin-top:0!important}.negamgt23{margin-top:0}.mgt38{margin-top:38px}.mgb2p5{margin-bottom:2.5%!important}.mgb4{margin-bottom:4%!important}.mgb5{margin-bottom:5px!important}.mg18{margin:11px 0}.mgl15{margin-left:15px}.mglNega10{margin-left:-10px!important}.mgl10{margin-left:10px!important}.mgl40{margin-left:40px!important}.mgl50{margin-left:50px!important}.mgr15{margin-right:15px}.nomargin{margin:0!important}.automargin{margin:0 auto!important}.pdb1{padding-bottom:1%!important}.pdl2{padding-left:2%!important}.pdl3{padding-left:3%!important}.pdl4{padding-left:4%!important}.pdl5{padding-left:5%!important}.pdt5{padding-top:5px!important}.pdt10{padding-top:10px!important}.nopadding{padding:0!important}.txtleft{text-align:left!important}.txtcenter{text-align:center!important}.txtright{text-align:right!important}.borderb-purple{border-bottom:.1em solid #aa40de}.nobg{background:0 0!important}.ellipsis{white-space:nowrap;overflow:hidden;word-break:break-all}.overflowvisible{overflow:visible!important}input::-ms-clear { display: none; }
+
+html{min-width:1100px;overflow-x:auto;}
+body#sub #wrap{overflow:hidden;}
+.clearfixed {zoom:1;}
+.clearfixed:after { content:""; display:block;  clear:both;}
+
+body#sub .main-header{position:relative;background:#f23492;width:100%;padding:0;}
+body#sub .main-header-wrap{width:1100px;margin:0 auto;}
+body#sub .mainNav li a{color:#fff;}
+body#sub .navright a{color:#ffb3d9;}
+body#sub .i_text4{background:url("/rs/images/sub/btn/gnb7.png") no-repeat 0 0;}
+body#sub .subNav li a{color:#80737c;}
+body#sub .subNav li a.on, body#sub .subNav li a:hover, body#sub .subNav li a:active{color:#ed1d85;}
+body#sub .main-footer{position:static;}
+body#sub .footer-wrap{width:1100px;margin:0 auto;}
+
+/* 占쎌쟿占쎌뵠占쎈툡占쎌뜍 */
+#container{width:100%;height:100%;position:relative;}
+#container .inner{width:1100px;margin:0 auto;background:url("/rs/images/product/ico-snb.png") repeat-y 0 0;min-width: 1100px;overflow: hidden;}
+.snb{width:219px;height:100%;}
+.contents{position:relative;padding-left:81px;height:100%;background:url("/rs/images/product/ico-snb.png") repeat-y 0 0;width:800px;}
+
+/* PRODUCT */
+
+.title_wrap{}
+.title_wrap .icon{position:relative;float:left;width:104px;height:150px;}
+.title_wrap .icon img{position:absolute;left:0;bottom:0;}
+.title_wrap h3{float:left;padding-top:58px;}
+.title_wrap h3 strong{color:#4c4c4c;font:normal 52px 'Nanum GothicB';letter-spacing:-2px; }
+.title_wrap h3 .text{display:block;margin-top:12px;color:#595959;font:15px/21px 'Nanum Gothic';letter-spacing:-1px; }
+.visual-wrap{margin-top:60px;}
+.visual-wrap .type1{margin-bottom:60px;}
+.visual-wrap .type2{background:url("/rs/images/product/bg_productList.png") no-repeat 0 100%;margin-bottom:54px;height:393px;}
+.visual-wrap .type2 .prod_list{width:618px;margin:0 auto;background:none;}
+.visual-wrap .type2 .prod_list dl{background:url("/rs/images/product/bg_frame.png") no-repeat 0 0;width:190px;height:230px;padding-top:10px;text-align:center;margin:0 8px;}
+.visual-wrap .type2 .prod_list dt{margin:0 auto;}
+.visual-wrap .type2 .prod_list dd{}
+.visual-wrap .type2 .prod_list dd.first{
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    line-height: 1.2em;
+    height: 1.2em;
+    width: 98%;
+}
+.visual-wrap .type3{background-color:#f2f1ed;height:70px;padding-top:30px;margin-bottom:51px;border:1px solid #e0e0e0;}
+
+/* select */
+.search_wrap{width:650px;margin:0 auto 0;}
+.search_wrap span.customText{float:left;margin-right:15px;height:35px;line-height:35px;}
+.search_wrap span.customText img{vertical-align:middle;}
+.search_wrap .input_wrap{width:208px;float:left;margin-right:10px; }  
+.search_wrap .input_prod{width:350px;border:1px solid #cccccc;}
+.tzSelect{position:relative;}
+.tzSelect .selectBox{position:absolute;font:13px/20px "Nanum Gothic";color:#808080; background:url(select_arrow.png') no-repeat 82px center;width:92px;height:18px;vertical-align:top;float:left;padding:9px 0 8px 10px;}
+.tzSelect .dropDown{position:absolute;top:-1px;left:-1px; width:102px;z-index:98; border:1px solid #ed1d85;background-color:#fff;padding-bottom:6px;}
+.tzSelect .dropDown li{ font:13px "Nanum Gothic";color:#808080; padding-top:5px;width:82px; margin:0 auto;  cursor:pointer;}
+.tzSelect .dropDown li:first-child{border-bottom:1px solid #e0e0e0;background:url('select_arrow.png') no-repeat 72px center;padding-top:10px;padding-bottom:10px;}
+.tzSelect .dropDown li:hover, .tzSelect .dropDown li.active{color:#ed1d85;}
+.search_wrap .input_wrap .ipt{float:left;width:240px;padding-left:110px;height:35px;line-height:35px;font:13px/20px "Nanum Gothic"; color:#808080;}
+.search_wrap a{display:inline-block;}
+.search_wrap a.btn_search{margin-right:5px;}
+
+.contents-wrap{padding-bottom:98px;width:800px}
+.tab_wrap{}
+.tab_wrap h4{}
+.tab_wrap a{display:inline-block;font:12px/20px 'Nanum Gothic';color:#999; }
+.tab_wrap a:first-child{background:url("/rs/images/product/ico-bul.png") no-repeat 100% center;padding-right:10px;margin-right:10px;}
+.tab_wrap a.on, .tab_wrap a:hover{color:#333;}
+
+.prod_wrap{background:url("/rs/images/product/ico-comb.png") repeat-x 0 0;margin-top:12px;padding-top:20px;}
+.prod_tab{text-align:center;width:100%;padding-bottom:23px;background:url("/rs/images/product/ico-line2.png") repeat-x 0 100%;margin-bottom:15px;margin-top:6px;}
+.prod_tab a{display:inline-block;background:url("/rs/images/product/ico-circle.png") no-repeat 0 9px;padding-left:35px;margin-left:26px;color:#666666;font:16px/21px 'Nanum GothicB'; }
+.prod_tab a:first-child{background:none;padding-left:0;margin-left:0px;}
+.prod_tab a.on, .prod_tab a:hover{color:#ed1d85;}
+.prod_list{background:url("/rs/images/product/ico-line2.png") repeat-x 0 100%;margin-bottom:15px;}
+.prod_list dl{cursor:pointer;float:left;width:160px;margin:0 20px;padding-bottom:28px;background:url("/rs/images/product/ico-comb.png") repeat-x 0 0;}
+.prod_list dt{width:160px;height:160px;overflow:hidden;margin-bottom:1px;}
+.prod_list dt img{width:100%;height:100%;}
+.prod_list dd{color:#595959;font:14px/21px 'Nanum Gothic';text-align:center;}
+.prod_list dd span{display:inline-block;margin-top:11px;width:40px;height:15px;}
+.prod_list dd span.new{margin-right:3px;background:url("/rs/images/product/ico-new.png") no-repeat 0 0;}
+.prod_list dd span.best{background:url("/rs/images/product/ico-best.png") no-repeat 0 0;}
+.btn_more{width:100%;text-align:center;margin-top:10px;}
+.btn_more a{display:inline-block;height:40px;overflow:hidden;margin-top:10px;}
+.btn_more a:hover img{margin-top:-40px;}
+
+/* 占쎈씨占쎌뱽占쎈르 */
+.no_prod_list_tab_wrap{font:15px/20px 'Nanum Gothic';color:#4c4c4c}
+.no_prod_wrap{background:url("/rs/images/product/bg_nolist.png") repeat-x 0 0;margin-top:12px;padding-top:20px;width:800px;height:296px;position: relative;}
+.no_prod_wrap div{margin-top:94px;margin-left:328px}
+.no_prod_wrap p.dot{background:url("/rs/images/service/ico_pink.png") no-repeat 0 11px; padding-left:10px; font:13px/24px 'Nanum Gothic';color:#4c4c4c}
+
+
+/* 甕곕슡占� 筌뤴뫁�� */
+.honeyworld{position:relative;background:url("/rs/images/product/bg_honeySeries.png") no-repeat 0 0;height:420px;overflow:hidden;}
+.bee{position:absolute;top:156px; left: 287px;width:83px;height:150px;overflow:hidden;}
+.honeybee{position: absolute; top:200px;left:629px;width:130px;height:148px;overflow:hidden;}
+.beegif img{position: absolute;top:0;left:0;width:100%;}
+.honeypot{position: absolute;top:281px;left:180px;} 
+.honeybeepot{ position: absolute;top:291px;left:570px;}
+  
+/* 占쎌젫占쎈�뱄옙湲쏙옙苑�癰귣떯由� */
+.prod_view{background:url("/rs/images/product/ico-line3.png") repeat-x 0 0;padding-top:10px;}
+.prod_view .img_wrap{width:335px;height:335px;overflow:hidden;margin-left:10px;margin-right:45px;}
+.prod_view .img_wrap img{width:100%;height:100%;}
+.prod_view .text_wrap{width:410px;padding-top:33px;}
+.prod_view .text_wrap .ico_wrap{margin-top:-10px;margin-bottom:13px;}
+.prod_view .text_wrap .ico_wrap span{display:inline-block;width:40px;height:15px;}
+.prod_view .text_wrap .ico_wrap span.new{margin-right:3px;background:url("/rs/images/product/ico-new.png") no-repeat 0 0;}
+.prod_view .text_wrap .ico_wrap span.best{background:url("/rs/images/product/ico-best.png") no-repeat 0 0;}
+.prod_view .text_wrap dl{}
+.prod_view .text_wrap dt{color:#595959;font:normal 30px/30px 'Nanum GothicB';letter-spacing:-1px; }
+.prod_view .text_wrap dd{margin-top:17px;color:#595959;font:15px/22px 'Nanum Gothic'; }
+.prod_view .text_wrap ul{margin-top:22px;background:url("/rs/images/product/ico-comb.png") repeat-x 0 0;padding-top:20px;}
+.prod_view .text_wrap li{margin-top:7px;color:#808080;font:14px/21px 'Nanum Gothic';}
+.prod_view .text_wrap li strong{color:#595959;background:url("/rs/images/product/ico-pink.png") no-repeat 0 center; padding-left:13px;display:inline-block;width:133px;font-weight:normal;}
+.cont_wrap{margin-top:80px;}
+.cont_wrap:first-child{margin-top:8px;padding-top:50px;background:url("/rs/images/product/ico-line3.png") repeat-x 0 0;}
+.cont_wrap .tit{color:#4c4c4c;font:normal 20px 'Nanum GothicB';background:url("/rs/images/product/ico_donut.png") no-repeat 0 3px;padding-left:22px;padding-bottom:5px;}
+.btn_list{text-align:right;padding-top:25px;}
+.btn_list>a{display:inline-block;background:url("/rs/images/product/bg_goList.png") no-repeat 0 0;width:144px;height:40px;color:#fff;font:16px/40px 'Nanum GothicB';text-align:center;}
+.cont_wrap .info_wrap span{color:#808080;font:13px 'Nanum Gothic';margin:10px 0;}
+.cont_wrap .tbl_wrap{}
+.cont_wrap .tbl_wrap .tbl{width:100%;border-top:1px solid #d9d9d9;}
+.cont_wrap .tbl_wrap .tbl th, .cont_wrap .tbl_wrap .tbl td{border-bottom:1px solid #e6e6e6;border-left:1px solid #e6e6e6;text-align:center;padding:18px 0;font:13px 'Nanum Gothic'; }
+.cont_wrap .tbl_wrap .tbl th{background-color:#f2f1ed;color:#595959;}
+.cont_wrap .tbl_wrap .tbl td{color:#808080;vertical-align:top;}
+.cont_wrap .tbl_wrap .tbl th:first-child{border-left:none;}
+.cont_wrap .tbl_wrap .tbl td:first-child{border-left:none;}
+.cont_wrap .text_wrap{margin-top:10px;color:#808080;font:13px/20px 'Nanum Gothic'; }
+.cont_wrap .text_wrap p{color:#808080;font:13px/20px 'Nanum Gothic';letter-spacing:0;}
+.cont_wrap .img_wrap{margin-top:30px;}
+
+
+
+
+
+
+/* 게시판 스타일 .notice_wrap */
+.notice_tab_wrap{width:768px;border:1px solid #e0e0e0; background: #f2f1ed;padding:15px;font-size:14px;line-height:30px;height:30px;margin-top:60px}
+.notice_tab_wrap .search_wrap{width:255px}
+.notice_tab_wrap .input_wrap{float:left;margin-right:10px;}
+.notice_tab_wrap .tzSelect{width:65px}
+.notice_tab_wrap .tzSelect .selectBox{  width:71px;background: url('/rs/images/sub/select_arrow.png') no-repeat 52px center;padding: 5px 0 5px 10px;}
+.notice_tab_wrap .tzSelect .dropDown{width:71px;}
+.notice_tab_wrap .tzSelect .dropDown li{width:60px; margin-left: 10px;padding-top: 8px;padding-bottom: 5px;}
+.notice_tab_wrap .tzSelect .dropDown li:first-child{background: url('select_arrow.png') no-repeat 42px center;}
+.notice_tab_wrap .search_wrap .input_wrap .ipt{border:1px solid #ccc;width: 126px;padding-left:82px;height:28px;line-height:28px; -webkit-border-radius:4px;-khtml-border-radius:3px; -moz-border-radius:3px;border-radius:3px;}
+.notice_tab_wrap .search_wrap .input_wrap input.ipt:hover, .notice_tab_wrap .search_wrap .input_wrap input.ipt:focus{border:1px solid #ed1d85;}
+.notice_tab_wrap span a{display:inline;}
+.notice_tab_wrap span a.on{color:#333333}
+.notice_tab_wrap .tab-border{display: inline;vertical-align: middle;}
+
+.notice_wrap{position: relative;width:770px;min-height:834px; padding: 35px 15px 20px 15px;margin-top:7px;background: #f2f1ed;}
+.notice_wrap dl{background: url('bg_noticeList.png') 0 0 no-repeat; width:710px;height:111px;padding:30px;cursor:pointer;}
+.notice_wrap dl:hover{background: url('bg_noticeList_over.png') 0 0 no-repeat;}
+.notice_wrap dt{position: relative}
+.notice_wrap dt span{width:40px;height:15px;display: block;top: 0; left: 0; position: absolute;}
+.notice_wrap dt span.new{margin-right:3px;background:url("/rs/images/product/ico-new.png") no-repeat 0 0;}
+.notice_wrap dd{width:725px;}
+.notice_top_wrap{position: absolute;top:12px;right:16px;font-size:12px;}
+.notice_wrap .info_notice{margin-top: 8px; line-height: 12px;}
+.notice_wrap .info_notice span{font-size:12px;color:#b2b2b2;padding-bottom:15px;}
+.notice_wrap .date_notice{float:left}
+.notice_wrap .hit_notice{float:right}
+.notice_wrap .tit_notice{font-size:20px;line-height: 22px;height: 22px;margin-bottom: 11px;color:#4c4c4c;}
+.notice_wrap .tit_notice .title_info{float:left;display:inline-block;max-width:540px;overflow: hidden; text-overflow: ellipsis;font-size:20px;line-height: 22px;height: 22px;color:#4c4c4c;display: -webkit-box; -webkit-line-clamp: 1; /* 占쎌뵬占쎌뵥占쎈땾 */-webkit-box-orient: vertical; word-wrap:break-word; }
+
+.notice_wrap .tit_notice:hover .title_info, .notice_wrap dl:hover .tit_notice .title_info{text-decoration: underline; color:#ed1d85}
+.notice_wrap .added_file{float:left;margin-left:5px}
+.notice_wrap .tit_notice span.category{font-family:'Nanum GothicB';}
+.notice_wrap .txt_notice{font-size:13px;color:#808080;width:100%;overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;word-wrap:break-word; line-height: 18px; height: 2.6em;}
+.notice_wrap dl:hover .txt_notice{color:#4c4c4c}
+.notice_wrap .listNum{letter-spacing:0}
+.notice_view{position: relative;width:800px;margin-top: 60px;padding-bottom: 100px;}
+.notice_view .notice_top{padding: 30px 15px 50px 25px;background: #f2f1ed url('/rs/images/sweet/bg_viewtop.png') 0 100% no-repeat;
+}
+.notice_view .notice_top table{width:100%}
+.notice_view .notice_top table th{font-size:20px;text-align: left;color: #404040;}
+.notice_view .notice_top table td{font-size:12px;text-align:right;color:#999999;padding-right: 10px;}
+.notice_view .notice_mid{padding: 10px 45px;background: url('/rs/images/sweet/bg_viewcont.png') 0 0 repeat-y}
+.notice_view .event_btm{padding: 12px 15px 15px 15px;background: url('/rs/images/sweet/bg_viewbtm.png') 0 -5px no-repeat;}
+.notice_view .event_btm table{border:none}
+.notice_view .event_btm tr:first-child{background: url("/rs/images/sub/list-border.png") repeat-x 0 100%;}
+.notice_view .notice_area{font-size:13px;line-height:1.5em;color:#808080;}
+.notice_view .notice_area img{max-width:100%;padding:10px 0;}
+.goView td a{overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; word-wrap:break-word; line-height: 14px;height: 1em;}
+.notice_addedfile{font-size:13px;color:#404040;background: url('/rs/images/sweet/bg_viewcont.png') 0 44px repeat-y;padding-bottom:5px;}
+.top_addedfile{background: url('/rs/images/sweet/bg_viewaddedfile.png') 0 0 no-repeat;height:43px;  }
+.tit_addedfile{padding-left:45px;line-height: 20px;width: 49px;color: #404040;}
+.cont_addedfile{padding-right:45px;width:661px}
+.cont_addedfile span{color:#808080;background: url('/rs/images/sub/btn/added_file.png') 0 0 no-repeat;margin-bottom:10px;padding-left: 25px;line-height: 20px;margin-left: 15px;height: 20px;display: block;}
+.cont_addedfile span:hover{text-decoration:underline;color:#ed1d85;}
+.notice_view .notice_area table{font-size:13px;line-height:1.2em;text-align:center; border: 1px solid #808080;}
+.notice_view .notice_area td{line-height:1.2em;text-align:center; border: 1px solid #808080;}
+.notice_view .notice_area a{display:inline}
+
+
+
+
+
+
+      
+
+
+
+/* btns */
+.btn_red{display:inline-block;background:url("/rs/images/common/btn_red_bg.png") no-repeat 0 0;width:144px;height:40px;color:#fff;font:16px/40px 'Nanum GothicB';text-align:center;}
+.btn_grey{display:inline-block;background:url("/rs/images/common/btn_grey_bg.png") no-repeat 0 0;width:144px;height:40px;color:#fff;font:16px/40px 'Nanum GothicB';text-align:center;}
+.btn_tabNavli{float: left;width: 145px;height: 35px; margin-right: 15px;   text-align: center;    background: url("/rs/images/company/introduce/tab_bg.png") no-repeat;    background-position: 0px -35px;}
+.btn_tabNavli a{font-family: "Nanum GothicB";font-size: 15px;line-height: 35px; color: white;margin-right:0;}
+.btn_tabNavli.on, .btn_tabNavli:hover{background-position: 0px 0px;}
+.btn_tabNavli.on a, .btn_tabNavli:hover a{ color: #ed1d85;}
+
+
+
+
+</style>
+
+</head>
+<body id="sub">
+
+     <form name="searchFrm" id="searchFrm" method="post">
+        <input type="hidden" name="searchTxt" id="totalSearchTxt" value=""/>
+        <lable for="totalSearchTxt" class="hidden">검색</lable>
+    </form>
+    
+    <form name="downLoadForm" id="downLoadForm" method="post" action="/common/downloadFile">
+        <input type="hidden" name="fileOriName" value=""/>
+        <input type="hidden" name="fileName" value=""/>
+        <input type="hidden" name="filePath" value=""/>
+    </form> 
+    
+<!-- #wrap -->
+ <div id="wrap"> 
+  
+    
+    <!-- .bg-subNav -->
+   <div class="bg-subNav" onclick="javascript: closeNav();"></div> 
+    <!-- // .bg-subNav e -->
+    
+    <!-- #container -->
+    <div id="container">
+        
+            
+            
+                <div class="inner clearfixed">
+                
+
+
+
+
+
+
+            
+    <div class="contents fl">
+       <!--  <div class="lnb-wrap">
+            <a href="/"><img src="/rs/images/product/ico-home.png" alt="HOME" /></a>
+            <a href="/sweet/cf/list">궁금</a>
+            <a href="/sweet/noticeList" class="last">공지사항</a>
+        </div> -->
+        <div class="title_wrap clearfixed">
+           <!--  <p class="icon"><img src="h3_icon.png" alt="아이콘" /></p> -->
+            <h3><strong>Q&A</strong><span class="text"> 부제목 타이틀인데 뭘 적어야 할지 고민이당</span></h3>
+        </div>
+        <div class="contents-wrap">
+            <div class="notice_tab_wrap clearfixed">
+                <span class="fl">
+                    <a href="javascript:;" class="searchSort on" data-type="" data-aciont="/sweet/noticeList">최신순</a><img src="tab-border.png" alt=" " class="tab-border"/><a href="javascript:;" class="searchSort " data-type="hit" data-aciont="/sweet/noticeList">조회순</a>
+                </span>
+                
+                <form name="searchForm" id="searchForm" method="post">
+                    <input type="hidden" name="pageNum" id="pageNum" value="1" />
+                    <input type="hidden" name="searchSorting" id="searchSorting" value="" />
+                    <input type="hidden" name="searchCtgr" id="searchCtgr" value="" />
+                    
+                    <div class="listSearch fr">
+                        <div class="search_wrap">                                   
+                            <div class="input_wrap clearfixed">
+                                <div class="tzSelect">
+                               <!--       <div class="selectBox">제목</div> -->
+                                    <!-- <ul class="dropDown" style="display:none;">
+                                        <li data-value=''>전체</li>
+                                        <li data-value='title'>제목</li>
+                                        <li data-value='contents'>내용</li>   
+                                    </ul> -->
+                                </div> 
+                               <!--  <label for="searchTxt" class="hidden">검색</label> 
+                                <input type="text" class="ipt" name="searchTxt" id="searchTxt" maxlength="20" value="" /> -->
+                            </div>
+                          <!--  <a href="javascript:;" class="btn_search" data-action="/sweet/noticeList"><img src="btn_search.png" alt="검색" /></a>       -->              
+                        </div>                  
+                    </div><!-- //.listSearch e -->
+                </form>
+            </div>
+            <div class="notice_wrap">
+                <div class="notice_top_wrap">
+                    <p class="listNum fr">Total&nbsp;<span class="purple">89</span></p>
+                </div>
+                
+                    <dl class="clearfix goView" data-seq="92628" data-action="/sweet/noticeView">
+                     
+                        <dd class="fr">
+                            <p class="info_notice clearfix">
+                                <span class="date_notice">등록일 : 2016-06-15</span><!-- // span.date_notice e 게시 날짜 -->
+                                <span class="hit_notice">조회수 : 3491</span><!-- // span.hit_notice e 게시글 조회수 -->
+                            </p>
+                            <p class="tit_notice clearfix">
+                              <span class="title_info">
+                                  
+                                      
+                                      제목
+                                  
+                                </span>
+                                
+                            </p><!-- // .tit_notice e 게시 제목 첨부파일 있을 시 .added_file.fr 추가 -->
+                            <p class="txt_notice"> 내용ㅇ내용내용</p><!-- //.txt_notice e 게시글 요약 2줄까지.. -->
+                        </dd>
+                    </dl>
+                
+                    <dl class="clearfix goView" data-seq="92627" data-action="/sweet/noticeView">
+                       
+                        <dd class="fr">
+                            <p class="info_notice clearfix">
+                                <span class="date_notice">등록일 : 2016-04-15</span><!-- // span.date_notice e 게시 날짜 -->
+                                <span class="hit_notice">조회수 : 3098</span><!-- // span.hit_notice e 게시글 조회수 -->
+                            </p>
+                            <p class="tit_notice clearfix">
+                              <span class="title_info">
+                                  
+                             제목
+                                  
+                                  
+                                </span>
+                    [ -7 ]            
+                            </p><!-- // .tit_notice e 게시 제목 첨부파일 있을 시 .added_file.fr 추가 -->
+                            <p class="txt_notice">
+
+내용ㅇ내용내용</p><!-- //.txt_notice e 게시글 요약 2줄까지.. -->
+                        </dd>
+                    </dl>
+                
+                    <dl class="clearfix goView" data-seq="92624" data-action="/sweet/noticeView">
+                       
+                        <dd class="fr">
+                            <p class="info_notice clearfix">
+                                <span class="date_notice">등록일 : 2016-01-13</span><!-- // span.date_notice e 게시 날짜 -->
+                                <span class="hit_notice">조회수 : 3750</span><!-- // span.hit_notice e 게시글 조회수 -->
+                            </p>
+                            <p class="tit_notice clearfix">
+                              <span class="title_info">
+                                  
+                                      
+                                     제목
+                                  
+                                  
+                                </span>
+                                
+                            </p><!-- // .tit_notice e 게시 제목 첨부파일 있을 시 .added_file.fr 추가 -->
+                            <p class="txt_notice">내용ㅇ내용내용 </p><!-- //.txt_notice e 게시글 요약 2줄까지.. -->
+                        </dd>
+                    </dl>
+                
+                    <dl class="clearfix goView" data-seq="92623" data-action="/sweet/noticeView">
+                       
+                        <dd class="fr">
+                            <p class="info_notice clearfix">
+                                <span class="date_notice">등록일 : 2015-12-28</span><!-- // span.date_notice e 게시 날짜 -->
+                                <span class="hit_notice">조회수 : 2465</span><!-- // span.hit_notice e 게시글 조회수 -->
+                            </p>
+                            <p class="tit_notice clearfix">
+                              <span class="title_info">
+                                  
+                                      
+                                      제목
+                                  
+                                  
+                                </span>
+                               
+                            </p><!-- // .tit_notice e 게시 제목 첨부파일 있을 시 .added_file.fr 추가 -->
+                            <p class="txt_notice">
+                           내용ㅇ내용내용
+                        </dd>
+                    </dl>
+                
+                    <dl class="clearfix goView" data-seq="5878" data-action="/sweet/noticeView">
+                       
+                        <dd class="fr">
+                            <p class="info_notice clearfix">
+                                <span class="date_notice">등록일 : 2014-11-24</span><!-- // span.date_notice e 게시 날짜 -->
+                                <span class="hit_notice">조회수 : 30411</span><!-- // span.hit_notice e 게시글 조회수 -->
+                            </p>
+                            <p class="tit_notice clearfix">
+                              <span class="title_info">
+                                  
+                                      
+                                      제목
+                                  
+                                  
+                                </span>
+                                
+                            </p><!-- // .tit_notice e 게시 제목 첨부파일 있을 시 .added_file.fr 추가 -->
+                            <p class="txt_notice">내용ㅇ내용내용</p><!-- //.txt_notice e 게시글 요약 2줄까지.. -->
+                        </dd>
+                    </dl>
+                
+            </div><!-- //.notice_wrap e -->
+            
+            
+            <div class="paginate" id="divPageNavigator"></div><!-- //.paginate e -->
+            
+            
+        </div>
+    </div>
+
+        </div>
+    </div>
+    <!-- // #container e-->
+    
+
+    
+</div>
+<!-- // #wrap e -->
+
+<script type="text/javascript" src="borderTest.js"></script>
+</body>
+</html>
