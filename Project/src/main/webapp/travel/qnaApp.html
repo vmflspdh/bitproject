@@ -13,10 +13,33 @@
 <meta name="keywords"
 	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
+<!-- 궁금 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-cache"/> 
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta name="robots" content="INDEX, FOLLOW"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+
+
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
+<!-- 궁금 -->
+<link rel="apple-touch-icon-precomposed" href="/images/common/shortcut.png" />  
+<link rel="shortcut Icon" href="/images/common/shortcut.ico">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Play:400,700">
+<link rel="stylesheet" type="text/css" href="/common/css/font.css" media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/common.css"  media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/content.css"  media="all">
+
+
 <script src="js/modernizr.custom.js"></script>
+<!-- 궁금 -->
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/jquery.easing.1.3.js"></script>
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
@@ -30,99 +53,142 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-<script>
-	$(function() {
-		var availableTags = [ "대한민국, 서울", "대한민국, 부산", "영국, 런던", "미국, 뉴욕",
-				"프랑스, 파리" ];
-		$("#tags").autocomplete({
-			source : availableTags
-		});
-	});
-</script>
-
 
 
 <style>
-#content {
-	text-align: center;
-	color: black;
-	background-color: white;
+
+
+#wrap{position:relative;left:0;width:100%;min-height:100%;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease}
+#header .header_wrap{position:relative;max-width:1920px;margin:0 auto;height:80px;background:rgba(26,21,21,0);-webkit-transition: background 0.4s ease;-moz-transition: background 0.4s ease;-o-transition: background 0.4s ease;transition: background 0.4s ease}
+#header.open .header_wrap{background:rgba(26,21,21,0.95)}
+#header.fix .header_wrap{background:rgba(26,21,21,0.95)}
+#header.open .gnb_wrap{display:block;max-width:1920px;margin:0 auto}
+#header .gnb_wrap.scroll{overflow-y:scroll}
+#header .gnb_wrap{position:relative;background:#000;background:rgba(0,0,0,0.95);display:none}
+.simple_list .date_wrap{position:absolute;top:0;right:10px;height:100%}
+/* common */
+
+.top_visual{position:fixed;top:0;left:0;width:100%;height:600px;z-index:0}
+.top_visual .obj{position:relative;max-width:1920px;height:600px;margin:0 auto;background-repeat:no-repeat;background-position:center top;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;}
+.top_visual.reservation .obj{background-image:url(reservation_visual.jpg)}
+.top_visual.qna_visual .obj{background-image:url(145.jpg)}
+
+.obj {}
+
+.page_title{position:absolute;top:385px;left:0;width:100%;text-align:center}
+.page_sub_title{font-size:18px;color:#847469;font-weight:400}
+
+
+
+/* ------------------------------------------------------------------------------------ */
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,input,select,textarea,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{ 
+  padding:0px;
+  margin:0px;
+  vertical-align:top
+}
+html {overflow-y:auto;font-family:'Play','Nanum Square';font-weight:300;text-align:center;color:#666;font-size:14px;line-height:1;letter-spacing:normal}
+html, body {width:100%;-webkit-text-size-adjust:none;}
+body{position:relative;min-width:320px;overflow:hidden}
+ul, ol {list-style-type:none}
+h1,h2,h3,h4,h5,h6,th{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+img,fieldset{border:0;outline:none}
+label {cursor:pointer}
+i, em, address {font-style:normal}
+caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:0px}
+
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
 }
 
-#bar {
-	width: 60%;
-	padding-bottom: 80px;
-	margin: 0 auto;
-}
+/* conteinar */
+#container2{position:relative;max-width:1920px;margin:0 auto;z-index:5}
+#container2.visual_content{padding-top:600px}
 
-#map {
-	width: 60%;
-	height: 400px;
-	margin: 0 auto;
-}
+#contents{margin:0 auto;padding:50px 0;background:#fff}
+
+
+ #container.visual_content{padding-top:300px}
+
+
+
+/* 
+#contents{margin:0 auto;padding:50px 0;background:#fff} */
+
+/* footer */
+#footer{position:relative;max-width:1920px;margin:0 auto;padding:100px 0;background:#fff;z-index:0}
+#footer h2{}
+#footer address{line-height:22px;color:#888;word-break:keep-all;padding:0 10px;padding-top:18px}
+#footer address span{display:inline-block;zoom:1;*display:inline}
+#footer .btn_sns{margin-top:18px}
+#footer .btn_sns a{margin:0 3px}
+
+#footer.main{background:#000}
+
+#contents.container{background:#fff}
+
 </style>
 
 
 </head>
 <body>
-	<div class="container">
-		<div class="upper">
-			<div class='zeta-menu-bar my-login'>
-				<ul class="zeta-menu">
-					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png' id="mainImg"></a>
-						<ul>
-							<li>
-							<a href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY INFO</a>
-								<ul>
-									<li><a href="#2B1">2-B-1 메뉴</a></li>
-									<li><a href="#2B2">2-B-2 메뉴</a></li>
-								</ul></li>
-							<li><a href="#"><img src='img/iconmonstr-email-2-240.png'
-									id="subImg"><br>MESSAGE</a>
-							</li>
-							<li><a href="#"><img src='img/iconmonstr-user-21-240.png'
-                  id="subImg"><br>ACCOMPANY</a></li>
-							<li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png'
-                  id="subImg"><br>LOGOUT</a>
-							</li>
-						</ul></li>
-				</ul>
-			</div>
-			
-			<div class="my-login">
-			<span>
-			<a id="userName"	style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-			<a href="travelerRegForm.html">님 동행을 찾아보세요!</a>
-			</span>
-			</div>
-			
-			<div style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
-				<a href='#' class="btn btn-default btn-sm my-logout"
-					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
-					class="btn btn-default btn-sm my-logout" data-toggle="modal"
-					data-target="#myModal">SIGN IN</a> 
-			</div>
-			
-					<!--  <div style='position: absolute; top: 10px; right: 80px; font-size: 15px;'>
-					<a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
-					</div>  -->
+  <!-- BODY -->
+  <!-- top_visual -->
+<div class="top_visual qna_visual">
+  <div class="obj"></div>
+</div>
+<!-- //top_visual -->
 
-		</div>
-		<div class="cbp-af-header">
-			<div class="cbp-af-inner">
-				<h1><a href="travel.html">together!</a></h1>
-				<nav>
-					<a href="traveler.html">Traveler</a> <a href="travelreviewApp.html">Review</a> <a
-						href="qnaApp.html">Q&A</a> <a href="#">.</a>
-				</nav>
-			</div>
-		</div>
-		<div id="content">
-			   <p style="font-size:30px; float: left; margin-top: -70px; padding-left: 20px;" >Q&A게시판</p>
+<!-- container2 -->
+<section id="container2" class="visual_content">
+<div>
+  <p class="page_title"><img src="qna_title.png" alt="궁금"/></p>
+</div>
+<!-- //container2 -->
+
+<script type="text/javascript" src="/common/js/common.js"></script>
+<script type="text/javascript" src="/common/js/TweenMax.min.js"></script> <!-- BODY -->
+  </div>
+  <!-- BOTTOM -->
+  
+
+     <div>
+  
+
+
+   </div> 
+
+  </div> 
+
+ <!-- footer -->
+<footer id="footer" class="">
+
+       <p style="font-size:30px; float: left; margin-top: -70px; padding-left: 20px;" >Q&A게시판</p>
     <p>
       <a><button type="button" style = "float: right; margin-bottom:15px; margin-right: 20px;" class="btn btn-default btn-xs"
           onclick="location.href='qnaForm.html'">글쓰기</button> </a>
-    </p>
+    </p> 
 
    <table id="qnaTable" class="table table-hover">
 <thead>
@@ -137,137 +203,40 @@
 </thead>
 <tbody></tbody>
 </table>
-		</div>
 
-		<div class="main">
-			
-		</div>
-	</div>
-
-
-	<!-- 로그인 폼 -->
-	<div class="modal fade" style="z-index: 200000;" id="myModal1"
-		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-sm" style="z-index: 300000;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
-					</button>
-					<h2 class="modal-title" id="myModalLabel">로그인</h2>
-				</div>
-				<div class="modal-body">
-					<div class="wrapper">
-						<form class="form-signin">
-							<input type="text" class="form-control" id="email"
-								placeholder="이메일" required="" autofocus="" /></br> <input
-								type="password" id="password" class="form-control"
-								placeholder="비밀번호" required="" /> <label class="checkbox">
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
-								id="saveEmail"> 이메일저장
-							</label>
-							<button id="loginBtn" class="btn btn-lg btn-primary btn-block"
-								type="button">로그인</button>
-						</form>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- 회원가입 폼 -->
-	<div class="modal fade" style="z-index: 200000;" id="myModal"
-		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-sm" style=" width:500px; z-index: 300000; ">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
-					</button>
-					<h2 class="modal-title" id="myModalLabel">회원 가입</h2>
-				</div>
-				<div class="modal-body">
-					<div class="wrapper">
-						<form class="form-signin">
-
-			
-								<label for="name" class="col-sm-2 control-label">이름</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="name"
-										placeholder="이름"><br/>
-								</div>
-
-						
-								<label for="email" class="col-sm-2 control-label">이메일</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="email"
-										placeholder="이메일"><br/>
-								</div>
-	
-
-				
-								<label for="password" class="col-sm-2 control-label">암호</label>
-								<div class="col-sm-10">
-									<input type="password" id="password" class="form-control"
-										placeholder="암호입력"><br/>
-								</div>
-	
-
-			
-								<label for="birthday" class="col-sm-2 control-label">생일</label>
-								<div class="col-sm-10">
-									<input type="text" id="birthday" class="form-control"
-										placeholder="생일"><br/>
-								</div>
-			
-
-							<div class="form-group">
-								<label for="gender" class="col-sm-2 control-label">성별</label>
-								<div class="col-sm-10">
-									<input type="text" id="gender" class="form-control"
-										placeholder="성별"><br/>
-								</div>
-							</div>
-
-							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-								type="checkbox" value="remember-me" id="rememberMe"
-								name="rememberMe"> 약관동의
-							</label> -->
-							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
-								type="button">회원가입</button>
-						</form>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
+  <h2><img src="logo.png" alt="로고파일자리" width="96"/></h2>
+  <address>
+<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
+<span>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
+<span>COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
+  </address>
+  <div class="btn_sns">
+    <a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기" target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기" width="36"/></a>
+   <!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+    <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
+  </div>
+</footer>
+<!-- //footer --> <!-- BOTTOM -->
+</section>
 
 
-	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
-	<script src="js/map.js"></script>
-	<!-- <script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
-		async defer></script> -->
-	<script src="js/menu.js"></script>
-	<script src="js/classie.js"></script>
-	<script src="js/cbpAnimatedHeader.min.js"></script>
-	<!-- 회원정보 관련 -->
-	<script type="text/javascript" src="js/bit.js"></script>
-	<script type="text/javascript" src="js/authApp.js"></script>
-	<script type="text/javascript" src="js/memberForm.js"></script>
-	<script type="text/javascript" src="qnaApp.js"></script>
-	<script>
-		init() // 화면을 준비시킨다
-		ajaxLoginUser() // 로그인 유저 정보 가져오기
-		ajaxQnaList()
-	</script>
+  <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+  <script src="js/map.js"></script>
+  <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+    async defer></script> -->
+  <script src="js/menu.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/cbpAnimatedHeader.min.js"></script>
+  <!-- 회원정보 관련 -->
+  <script type="text/javascript" src="js/bit.js"></script>
+  <script type="text/javascript" src="js/authApp.js"></script>
+  <script type="text/javascript" src="js/memberForm.js"></script>
+  <script type="text/javascript" src="qnaApp.js"></script>
+  <script>
+    init() // 화면을 준비시킨다
+    ajaxLoginUser() // 로그인 유저 정보 가져오기
+    ajaxQnaList()
+  </script>
 </body>
 </html>
