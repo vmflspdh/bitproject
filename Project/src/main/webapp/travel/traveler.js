@@ -53,8 +53,10 @@ function ajaxInviteList() {
 	    	contents +=
 	    		'<pre class="prettyprint">'+'<img src="'+arr[i].invitePhoto+'"style="width:50px; height:40">'+"&nbsp&nbsp;"+
 	    		arr[i].inviteName+" 님이 동행요청을 하셨습니다. &nbsp;"+
+	    		'<button type="button" data-no="'+arr[i].inviteBoardNo+'" class="btn btn-default btn-sm" id="invitedetail">상세페이지</button>'+
+//	    		'<a  onclick="detailPage("'+arr[i].inviteNo+'")" class="btn btn-default btn-sm fadeandscale_open"  >상세 페이지3</a>'+
 				'<button type="button" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteadd">수락</button><button data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'
-				+'</pre>'	    		
+				+'</pre>'
 	    		
 	    		/*'<ul>' +
 	    		'<li><a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '">' +
@@ -67,6 +69,16 @@ function ajaxInviteList() {
 	      }
 	    
 	    $("#fadeandscale>h4").html(contents)
+	    
+	    
+	     $(document).on("click","#invitedetail",function(event) {
+			var no=$(this).attr('data-no')
+			console.log(no)
+			window.location.href = "newdetail.html?no="+$(this).attr('data-no');
+		    
+			});
+	    
+	    
 	    
 	    $(document).on("click","#inviteadd",function(event) {
 			var no=$(this).attr('data-no')
@@ -81,7 +93,7 @@ function ajaxInviteList() {
 			});
 	    
 	    $(document).on("click","#inviterefuse",function(event) {
-	    	alert('aa')
+	    	
 			var no=$(this).attr('data-no')
 			console.log(no)
 			$.post(serverAddr + "/travel/invrefuse.json?no="+no, {no:no}, function(obj) {
@@ -95,7 +107,11 @@ function ajaxInviteList() {
     })
 }
 
-
+function detailPage(a){
+	console.log(a)
+	window.location.href = "newdetail.html?no="+$(this).attr('data-no');
+	
+}
 function ajaxAgreeInviteList() {
 	$.getJSON(serverAddr + "/travel/invagreelist.json", function(result) {
 		if (result.state != "success") {
@@ -108,7 +124,7 @@ function ajaxAgreeInviteList() {
 	    for (var i in arr) {
 	    	contents +=
 	    		'<pre class="prettyprint">'+'<img src="'+arr[i].invitePhoto+'"style="width:50px; height:40">'+"&nbsp&nbsp;"+
-	    		arr[i].inviteName+" 님이 동행요청을 하셨습니다. &nbsp;"+
+	    		arr[i].inviteName+" 님과 동행입니다. &nbsp;"+
 				'<button type="button" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteadd">수락</button><button data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'
 				+'</pre>'	    		
 	    		
@@ -137,7 +153,6 @@ function ajaxAgreeInviteList() {
 			});
 	    
 	    $(document).on("click","#inviterefuse",function(event) {
-	    	alert('aa')
 			var no=$(this).attr('data-no')
 			console.log(no)
 			$.post(serverAddr + "/travel/invrefuse.json?no="+no, {no:no}, function(obj) {

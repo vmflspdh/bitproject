@@ -54,6 +54,9 @@ public class InviteController {
   @RequestMapping(path="invadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String add(RegistForm registform,  HttpSession session) throws Exception {
+    //1. 초대를 요청하는테이블에서 이사용자가 등록되어있는지 확인
+    //2. 만약 등록되어있다면 
+    
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
     Invite invite = new Invite(); 
@@ -70,11 +73,18 @@ public class InviteController {
       invite.setInviteGender(member.getGender());
       invite.setState(0);
       invite.setInvitePhoto(member.getMemberPhoto());
+      invite.setInviteBoardNo(registform.getNo());
       System.out.println(invite);
       System.out.println(registform);
       //System.out.println(member.getNo());
-      inviteDao.insert(invite);
-    result.put("state", "success");
+      if(inviteDao.inviteCheck(invite)>0){
+        result.put("state", "exist");
+      } else {
+        
+        inviteDao.insert(invite);
+        result.put("state", "success");
+      }
+      
     } catch(Exception e) {
       result.put("state", "fail");
       result.put("data", e.getMessage());

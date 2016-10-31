@@ -53,6 +53,8 @@
 <!--  travel 에서 가저온-->
 
 <style type="text/css">
+
+
 #inviteCount {
 	z-index:-1;
 	position: absolute; 
@@ -230,9 +232,9 @@ div.changallery ul li img:hover {
 									<!-- Start of container2 -->
 					<div id="yang" class="container ">
 					<div class="upper" style="background : #000000; background : rgba(192,192,192,0.2) ;height:70px;"> 
-							<div class='zeta-menu-bar my-login' style=" position: relative; z-index: 96">
+							<div class='zeta-menu-bar my-login' style=" position: relative; z-index: 98">
 								<ul class="zeta-menu">
-									<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+									<li><a  href="#2"><img  src='img/iconmonstr-user-20-240.png'
 											id="mainImg"></a>
 										<ul>
 											<li><a  href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYINFO</a>
@@ -250,6 +252,10 @@ div.changallery ul li img:hover {
 										</ul>
 									</li>
 								</ul>
+								<div class="my-login" style=" position: relative; z-index: 96">
+								<span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
+								<a style="z-index: 97" id="inviteCount" ></a>
+					    </div>
 							</div>
 						<div id="fadeandscale" class="well">
 						    <h4>동행요청</h4>
@@ -267,10 +273,7 @@ div.changallery ul li img:hover {
 						</div>
 						
 						
-				 		<div class="my-login" style=" position: relative; z-index: 96">
-								<span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
-								<a id="inviteCount" ></a>
-					    </div>
+				 		
 <!--Start of container-->
 <div class="header has-hero" data-show="on-load">
 	<div class="container">
@@ -585,6 +588,8 @@ div.changallery ul li img:hover {
 <script type="text/javascript" src="js/backgroundmap.js"></script>
 <script type="text/javascript" src="js/leaflet.js"></script>
 <script type="text/javascript" src="js/stamen.js"></script>
+<script type="text/javascript" src="travelerdetail.js"></script>
+<script type="text/javascript" src="travelerform.js"></script>
 <script src="js/jquery.popupoverlay.js"></script>
 <script>
 $(document).ready(function () {
