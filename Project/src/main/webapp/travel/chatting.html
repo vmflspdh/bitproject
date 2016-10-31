@@ -39,12 +39,6 @@
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<!-- 달력 관련 -->
-<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-<script src='lib/jquery.min.js'></script>
-<script src='lib/moment.min.js'></script>
-<script src='fullcalendar/fullcalendar.js'></script>
-<!-- 달력 관련 -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
@@ -72,6 +66,20 @@
   text-align: center;
   float:left;
 }
+
+.chattingList {
+  border: 1px solid #A196A4;
+  width: 400px;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+}
+
+.chattingDetail {
+  border: 0px solid #A196A4;
+  width: 400px;
+  padding: 5px 10px 5px 10px;
+  display: inline-block;
+}
 </style>
 </head>
 <body>    
@@ -89,7 +97,7 @@
               <li><a href="#2B2">2-B-2 메뉴</a></li>
             </ul>
           </li>
-          <li><a href="chatting.html"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+          <li><a href="#"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
           </li>
           <li><a href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
           <li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
@@ -103,7 +111,7 @@
     <span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
   </div>
 <!--Start of container-->
-<div class="header has-hero" style="height: 100px;" data-show="on-load">
+<div class="header has-hero" data-show="on-load">
   <div class="container">
     <div class="row">
       <div class="col-xs-5 col-sm-3 col-md-2">
@@ -141,83 +149,43 @@
 </div> 
 <div class="main"></div>
 <!-- End of container2 -->
-
-<div style="background-color: #F5F2F5; width: 900px; margin: 0 auto; margin-top: 89px; color:#736378;">
-  <div style="background-color: #F5F2F5; width: 880px; height:500px; margin: 0 auto; padding:20px;">
+<!-- #F5F2F5 -->
+<div style="width:1100px; margin: 0 auto;">
+<!-- --------------------리스트 시작--------------------- -->
+<div class="chanchatting" style="display:inline-block; background-color: #F5F2F5; width: 420px; margin-left:8%; margin-top: 89px; color:#736378; padding: 10px;">
+</div>
+<!-- --------------------리스트 끝--------------------- -->
+<!-- --------------------채팅 시작--------------------- -->
+<div style="background-color: #F5F2F5; width: 420px; margin-right:8%; margin-top: 89px; color:#736378; padding: 10px; float: right; display:inline-block;">
+<div class="chanchattingList">
+<!--   <div class="chattingDetail">
     <div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
-    <img src="img/lees.jpg" ></div>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="#" class="message" data-toggle="modal" data-target="#myMessage"><img src="img/messageicon2.jpg" style="width:20px; height: 20px;"></a></span>
-    <h3 id="title" style="float: right;"></h3>
-    <br><br>
-    <hr class="hrs">
-    <img src="img/yang/ttt.jpg" style="width: 500px; height: 332px;">
-    <div id='calendar' style="background-color: white; width:300px; height: 332px; padding-left: 15px; float: right; border:1px solid black;"><br>
-    </div>
-  <br>
-  <hr class="hrs">
+      <img src="img/lees.jpg" ></div>
+    <div>안녕하세요 저는 누구입니다. 샤라랄라라라라라ㅏ랄라라</div>
+    <div style="font-size: x-small;">2016-11-11</div>
   </div>
-  <div style="background-color: #F5F2F5; width: 880px; height:310px; margin: 0 auto; padding:20px; clear: both;">
-      <div id="selectTable" style="padding: 10px;">
-        <div class="root-select">
-        </div>
-      </div>
-    <div id="map" style="width:440px; height: 300px; position: absolute; left:48%; top: 600px;"></div>
+  <div class="chattingDetail" style="background-color: white;">
+    <div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: right;">
+      <img src="img/ggg.jpg" ></div>
+    <div>안녕하세요 저는 누구입니다. 샤라랄라라라라라ㅏ랄라라</div>
+    <div style="font-size: x-small;">2016-11-11</div>
   </div>
-  <div style="background-color: #F5F2F5; width: 880px; margin: 0 auto; padding:20px;">
-    <hr class="hrs">
-    <div style=" border-radius: 10px 15px 15px 15px; background-color: white; width: 310px; height:310px; padding: 20px">
-      <div><h3>양찬님의 여행 스타일!</h3></div><br>
-      <div style="padding-left: 20px;">
-      <label class="checkbox"> 
-      <input type="checkbox" class="check-food" name="chk_info" value="1">식도락</label><br>
-      <label class="checkbox"> 
-      <input type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연</label><br>
-      <label class="checkbox"> 
-      <input type="checkbox" class="check-sports" name="chk_info" value="3">액티비티/레포츠</label><br>
-      </div>
-    </div>
-    <div id="selfIntroduce" 
-    style="position: absolute; left:48%; top: 970px; width: 440px; height:310px; padding: 20px; border-radius: 10px 15px 15px 15px; background-color: white;">
-    </div>
+  <div class="chattingDetail" style="background-color: white;">
+    <div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: right;">
+      <img src="img/ggg.jpg" ></div>
+    <div>안녕하세요 저는 누구입니다. 샤라랄라라라라라ㅏ랄라라</div>
+    <div style="font-size: x-small;">2016-11-11</div>
   </div>
-  <br>
-    <div class="col-sm-offset-2 col-sm-10" style="border:0px solid black; padding-left: 220px;">
-      <button id="addBtn" type="button" class="btn btn-primary">동행추가</button>
-      <button id="cancelBtn" type="button" class="btn btn-default"
-      onclick="location.href='mainhtml.html'">취소</button>
-   </div>
+  <textarea id="selfIntroduce" cols="50" rows="3" style="width: 400px;" placeholder="내용을 입력하세요"></textarea>
+  <button style="float:right;">입력</button> -->
+  </div>
+  <textarea id="detailpageContents" cols="50" rows="3" style="width: 400px;" placeholder="내용을 입력하세요"></textarea>
+  <button id="mainMessageBtn" style="float:right;">입력</button>
+</div>
+<!-- --------------------채팅 끝--------------------- -->
 </div>
 <br><br><br><br><br><br>
   
-<!-- Start of message form -->
-<div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myMessage"
-  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true" >
-  <div class="modal-dialog modal-sm" style="z-index: 300000; ">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
-          <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-        </button>
-        <h2 class="modal-title" id="myModalLabel"><em>메세지</em></h2>
-      </div>
-      <div class="modal-body">
-        <div class="wrapper">
-          <form class="form-signin">
-            <textarea class="form-control" id="messageContents" cols="50" rows="3" placeholder="내용을 입력하세요"></textarea><br>
-            <button id="messageBtn" class="btn btn-lg btn-primary btn-block "
-              type="button">확인</button>
-          </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- End of message form -->  
 
 <!-- Start of Login form -->
 <div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
@@ -327,10 +295,6 @@
 </div>    
 <!-- End of Registration Form-->  
       
-<script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
-    async defer></script>
-<script type="text/javascript" src="travelerform.js"></script>
 <script src="js/menu.js"></script>
 <script src="js/classie.js"></script>
 <script src="js/cbpAnimatedHeader.min.js"></script>
@@ -339,41 +303,12 @@
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/authApp.js"></script>
 <script type="text/javascript" src="js/memberForm.js"></script>
-<script type="text/javascript" src="traveler.js"></script>
-<script type="text/javascript" src="travelerdetail.js"></script>
-<script type="text/javascript" src="travelerform.js"></script>
 <script type="text/javascript" src="message.js"></script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기
-if (location.search.startsWith("?")) {
-    var no = location.search.split("=")[1];
-    ajaxLoadTravelMain(no)
-}
+chattingMemberList()
 </script>
-<script id="trTemplateText" type="text/x-handlebars-template">
-{{#each data}}
-<div class="form-inline root-schedule">
-<div id="sch_cirNum"></div>
-<input type="text" class="form-control bit-locationNo" style="width: 50px; display:none;"value="{{locationNo}}" readonly>
-<input type="text" placeholder="대륙" value="대륙" class="form-control bit-continent" style="width: 100px; display:none;" readOnly = true> 
-<input type="text" placeholder="국가" value="국가" style="width: 100px; display:none;"
-class="form-control bit-nation" readOnly = true>
-<input type="text" id="rename" placeholder="도시명" value="{{city}}"style="width: 100px; background-color: white;"
-class="form-control bit-city" readOnly = true>
-<input type="text" class="form-control bit-scheduleNo" style="width: 50px; display:none;" value="{{scheduleNo}}" readOnly = true>
-<input type="text" id="bit-startDate" class="form-control bit-startDate"
-placeholder="시작일" value="{{startDate}}" style="width: 100px; background-color: white;" readOnly = true> <input
-type="text" id="bit-endDate" class="form-control bit-endDate"
-placeholder="종료일" value="{{endDate}}" style="width: 100px; background-color: white;" readonly> <input
-type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
-class="form-control bit-latitude" readOnly = true> <input type="text"
-placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px; display:none;"
-class="form-control bit-longitude" readOnly = true>
-</div><br>
-{{/each}}
-</script>
-<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
 <script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
