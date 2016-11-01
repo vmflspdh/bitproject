@@ -23,7 +23,7 @@
   
   <insert id="inviteAgreeInsert" parameterType="invite" >
     insert into tvl_invit(mno,mno2,invnm,invemail,invgend,stat,invpho,ivbno) 
-    	values(#{memberNo},#{memberNo2},#{inviteName},#{inviteEmail},#{inviteGender},3,#{invitePhoto},#{inviteBoardNo})
+    	values(#{memberNo},#{memberNo2},#{inviteName},#{inviteEmail},#{inviteGender},1,#{invitePhoto},#{inviteBoardNo})
   </insert>
   
   <select id="inviteCheck" resultType="int" parameterType="int">
