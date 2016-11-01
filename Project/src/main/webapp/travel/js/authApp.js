@@ -75,7 +75,9 @@ function ajaxLoginUser() {
 		$("#inviteCount").text(result.data.memberRequest)
 		console.log(result.data.memberRequest)
 		
-		$("#mainImg").attr("src","../upload/" + result.data.memberPhoto);
+		if (result.data.memberPhoto != null) {
+			$("#mainImg").attr("src","../upload/" + result.data.memberPhoto);
+		}
 	})
 
 }
