@@ -59,11 +59,11 @@ public class InviteController {
     
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
-    Invite invite = new Invite(); 
+     Invite invite = new Invite(); 
     //System.out.println(registform);
     HashMap<String, Object> result = new HashMap<>();
     try{
-     
+      
       Member member = (Member)session.getAttribute("member");
       
       invite.setMemberNo(member.getNo());
@@ -80,7 +80,6 @@ public class InviteController {
       if(inviteDao.inviteCheck(invite)>0){
         result.put("state", "exist");
       } else {
-        
         inviteDao.insert(invite);
         result.put("state", "success");
       }
@@ -99,7 +98,8 @@ public class InviteController {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     HashMap<String, Object> result = new HashMap<>();
     try{
-      System.out.println(no);
+      RegistForm registform =(RegistForm)session.getAttribute("registform");
+      System.out.println(registform);
       inviteDao.inviteAgree(no);
       result.put("state", "success");
     } catch(Exception e) {

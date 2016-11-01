@@ -25,7 +25,6 @@ $("#addBtn").click(function(event) {
 	    }
 	  var requestMember=result.data
 	  inviteAdd(requestMember)
-	   
 	})
 });
 function inviteAdd(requestMember){

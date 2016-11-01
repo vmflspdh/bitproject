@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's go together!</title>
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+<meta name="keywords"
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+<meta name="author" content="Codrops" />
+<!-- 궁금 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-cache"/> 
+<meta http-equiv="Pragma" content="no-cache"/>
+<meta http-equiv="Expires" content="0"/>
+<meta name="robots" content="INDEX, FOLLOW"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no">
+
+
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<!-- 궁금 -->
+<link rel="apple-touch-icon-precomposed" href="/images/common/shortcut.png" />  
+<link rel="shortcut Icon" href="/images/common/shortcut.ico">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Play:400,700">
+<link rel="stylesheet" type="text/css" href="/common/css/font.css" media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/common.css"  media="all">
+<link rel="stylesheet" type="text/css" href="/common/css/content.css"  media="all">
+
+
+<script src="js/modernizr.custom.js"></script>
+<!-- 궁금 -->
+<script type="text/javascript" src="/common/js/jquery.js"></script>
+<script type="text/javascript" src="/common/js/jquery.easing.1.3.js"></script>
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+
+<style>
+
+
+#wrap{position:relative;left:0;width:100%;min-height:100%;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease}
+#header .header_wrap{position:relative;max-width:1920px;margin:0 auto;height:80px;background:rgba(26,21,21,0);-webkit-transition: background 0.4s ease;-moz-transition: background 0.4s ease;-o-transition: background 0.4s ease;transition: background 0.4s ease}
+#header.open .header_wrap{background:rgba(26,21,21,0.95)}
+#header.fix .header_wrap{background:rgba(26,21,21,0.95)}
+#header.open .gnb_wrap{display:block;max-width:1920px;margin:0 auto}
+#header .gnb_wrap.scroll{overflow-y:scroll}
+#header .gnb_wrap{position:relative;background:#000;background:rgba(0,0,0,0.95);display:none}
+.simple_list .date_wrap{position:absolute;top:0;right:10px;height:100%}
+/* common */
+
+.top_visual{position:fixed;top:0;left:0;width:100%;height:600px;z-index:0}
+.top_visual .obj{position:relative;max-width:1920px;height:600px;margin:0 auto;background-repeat:no-repeat;background-position:center top;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;}
+.top_visual.reservation .obj{background-image:url(reservation_visual.jpg)}
+.top_visual.qna_visual .obj{background-image:url(img/1920_1080_20110409110659532260.jpg)}
+
+.obj {}
+
+.page_title{position:absolute;top:385px;left:0;width:100%;text-align:center}
+.page_sub_title{font-size:18px;color:#847469;font-weight:400}
+
+
+
+/* ------------------------------------------------------------------------------------ */
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,input,select,textarea,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+/*table, caption, tbody, tfoot, thead, tr, th, td,*/
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video{ 
+  padding:0px;
+  margin:0px;
+  vertical-align:top
+}
+html {overflow-y:auto;font-family:'Play','Nanum Square';font-weight:300;text-align:center;color:#666;font-size:14px;line-height:1;letter-spacing:normal}
+html, body {width:100%;-webkit-text-size-adjust:none;}
+body{position:relative;min-width:320px;overflow:hidden}
+ul, ol {list-style-type:none}
+h1,h2,h3,h4,h5,h6,th{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+img,fieldset{border:0;outline:none}
+label {cursor:pointer}
+i, em, address {font-style:normal}
+caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:0px}
+
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+/* conteinar */
+#container2{position:relative;max-width:1920px;margin:0 auto;z-index:5}
+#container2.visual_content{padding-top:600px}
+
+#contents{margin:0 auto;padding:50px 0;background:#fff}
+
+
+ #container.visual_content{padding-top:300px}
+
+
+
+/* 
+#contents{margin:0 auto;padding:50px 0;background:#fff} */
+
+/* footer */
+#footer{position:relative;max-width:1920px;margin:0 auto;padding:100px 0;background:#fff;z-index:0}
+#footer h2{}
+#footer address{line-height:22px;color:#888;word-break:keep-all;padding:0 10px;padding-top:18px}
+#footer address span{display:inline-block;zoom:1;*display:inline}
+#footer .btn_sns{margin-top:18px}
+#footer .btn_sns a{margin:0 3px}
+
+#footer.main{background:#000}
+
+#contents.container{background:#fff}
+
+</style>
+
+
+</head>
+<body>
+  <!-- BODY -->
+  <!-- top_visual -->
+<div class="top_visual qna_visual">
+  <div class="obj"></div>
+</div>
+<!-- //top_visual -->
+
+<!-- container2 -->
+<section id="container2" class="visual_content">
+	
+	<footer id="footer" class="" style="padding-top: 0">
+		
+		
+		<form class="form-horizontal ">
+				<div id="group">
+					<div class="form-group my-view">
+						<label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="rbno" readonly>
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<label for="tmno" class="col-sm-2 control-label">여행번호</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="tmno"
+								placeholder="필수사항입니다!">
+						</div>
+					</div>
+
+					<div class="form-group ">
+						<label for="mno" class="col-sm-2 control-label">회원번호</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="userName2"
+								placeholder="필수사항입니다!">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="title" class="col-sm-2 control-label">제목</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="title"
+								placeholder="제목을입력하세요.">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="contents" class="col-sm-2 control-label">내용</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" rows="10" cols="50" id="contents"
+								placeholder="내용을입력하세요."></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="createdDate" class="col-sm-2 control-label">등록일</label>
+						<div class="col-sm-10">
+							<input class="form-control" rows="10" cols="50" id="createdDate"
+								readonly="readonly"></input>
+						</div>
+					</div>
+
+					<!--   <div class="form-group">
+    <label for="password" class="col-sm-2 control-label">암호</label>
+    <div class="col-sm-10">
+      <input type="password"  class="form-control" id="password" placeholder="암호입력">
+    </div>
+  </div> -->
+
+
+
+					<div class="form-group my-view">
+						<label class="col-sm-2 control-label">조회수</label>
+						<div class="col-sm-10">
+							<p id="viewCount" class="form-control-static"></p>
+						</div>
+					</div>
+
+				</div>
+				<!-- group div -->
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+						<button id="updateBtn" type="button"
+							class="btn btn-default my-view">변경</button>
+						<button id="deleteBtn" type="button"
+							class="btn btn-default my-view">삭제</button>
+						<button id="cancelBtn" type="button" class="btn btn-default"
+							onclick="location.href='travelreviewApp.html'">취소</button>
+					</div>
+				</div>
+				
+				<input id="bbb"></input>
+				<table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
+	<thead id="tablehead">
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		
+	</tr>
+	
+	</thead>
+	<tbody>
+	<!-- <tr>
+	<td>sdffffffffffffffff</td>
+	<td>sdffffffffffffffff</td>
+	</tr> -->
+	
+	</tbody>
+  </table>
+  
+  <div class="my-view" style="border-top:3px solid gray; padding-top: 10px;">
+  <div class="form-group" >
+    <div class="col-sm-10">
+    <!-- <input class="form-control"  id="crbno" ></input> -->
+    	
+    	 <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
+      	<textarea  class="form-control" style="width: 88%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
+      
+    </div>
+    	
+	<button id="comtaddBtn" type="button" class="btn btn-default " style="float:right; margin-top: 60px;">등록</button>
+  </div>
+ </div>
+				
+				
+				
+				
+				
+				
+				<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
+			</form>
+		
+		
+		
+		
+		
+		
+		
+  <h2><img src="logo.png" alt="로고파일자리" width="96"/></h2>
+  <address>
+<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
+<span>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
+<span>COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
+  </address>
+  <div class="btn_sns">
+    <a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기" target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기" width="36"/></a>
+   <!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+    <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
+  </div>
+</footer>
+
+<!-- //footer --> <!-- BOTTOM -->
+</section>
+
+
+  <!-- classie.js by @desandro: https://github.com/desandro/classie -->
+  <script src="js/map.js"></script>
+  <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
+    async defer></script> -->
+	<script src="js/menu.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	<!-- 회원정보 관련 -->
+	<script type="text/javascript" src="js/bit.js"></script>
+	<script type="text/javascript" src="js/authApp.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="travelreviewForm.js"></script>
+	<script type="text/javascript" src="commentApp.js"></script>
+	<script>
+	
+		if (window.location.search.startsWith("?")) {
+			var no = location.search.split("=")[1];
+
+			ajaxLoadBoard(no)
+			ajaxCommentList(no);
+			$(".my-new").css("display", "none");
+
+		} else {
+			$(".my-view").css("display", "none");
+		}
+		ajaxLoginUser()
+		init();
+	</script>
+</body>
+</html>
+
