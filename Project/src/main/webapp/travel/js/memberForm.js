@@ -20,7 +20,6 @@ $("#signInBtn").click(function(event) {
 	if (count == 5) {
 		ajaxAddMember(member)
 		alert("등록 성공입니다.")
-		window.location.reload(true)
 	} else {
 	alert("등록 실패입니다.")
 	}

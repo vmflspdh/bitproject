@@ -51,9 +51,8 @@
 }
 
 #map {
-	width: 95%;
-	height: 200px;
-	margin: 0 auto;
+	width: 92%;
+	height: 250px;
 }
 
 .registFormDetail {
@@ -66,16 +65,27 @@
 }
 
 table {
-	border: 0px solid black;
-	width: 740px;
+	border: 0px solid #04B4AE;
+	width: 760px;
 	margin: 0 auto;
 }
 
 td {
-	border-bottom: 1px solid green;
-	/* border: 1px solid green; */
-	padding-top: 50px;
-	padding-bottom: 50px;
+	border-bottom: 1px dotted #A4A4A4;
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+
+td div {
+  color: #13919A;
+}
+
+#detailBar {
+background: #13919A;
+width: 10px;
+height: 50px;
+float: left;
+margin-right: 12px;
 }
 </style>
 
@@ -89,13 +99,13 @@ td {
 					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
 							id="mainImg"></a>
 						<ul>
-							<li><a href="#"><img
+							<li><a href="#" id="myInfo"><img
 									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
 									INFO</a>
-								<ul>
+								<!-- <ul>
 									<li><a href="#2B1">2-B-1 메뉴</a></li>
 									<li><a href="#2B2">2-B-2 메뉴</a></li>
-								</ul></li>
+								</ul> --></li>
 							<li><a href="#"><img
 									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
 							</li>
@@ -182,22 +192,22 @@ td {
 					</div>
 				</div>
 				<table id="selectTable">
+
 					<tr>
 						<td
-							style="width: 140px; color: green; font-weight: bold; font-size: large;">
-							<div>프로필</div>
-							<div>사진</div>
-						</td>
-						<td
-							style="font-size: small; font-weight: bold; padding-left: 20px;">
-							<img src="img/profileDemo.png" style="width: 150px;">
-							&nbsp;&nbsp;&nbsp;자신을 표현할 프로필 및 여행사진을 업로드 하세요!
-							<br/>
-							<div>파일 여러개 선택 가능</div>
-							<input name="multi_file[]" id="multiFile" type="file" multiple><br/>
-						</td>
+							style="width: 100px; color: green; font-weight: bold; padding-bottom: 0; font-size: large;">
+							
+							<div id="detailBar"></div>
+							<div>제목</div>
+							</td>
+						<td><input type="text"
+							class="form-control" id="title" style="width: 500px;"
+							placeholder="제목을 입력하세요"></td>
+					</tr>
+
 					<tr>
 						<td style="color: green; font-weight: bold; font-size: large;">
+						<div id="detailBar"></div>
 							<div>나의여행</div>
 							<div>스타일</div>
 						</td>
@@ -213,29 +223,31 @@ td {
 
 					<!-- 이거 맵 !!!!!!!!!!!-->
 					<tr>
-					 <td style="color: green; font-weight: bold; font-size: large;" rowspan="2">
-              <div>가고싶은</div>
-              <div>여행지</div>
-            </td>
+						<td style="color: green; font-weight: bold; font-size: large;"
+							rowspan="2">
+							<div id="detailBar"></div>
+							<div>가고싶은</div>
+							<div>여행지</div>
+						</td>
 						<td class="root-addSelect" style="border: 0;">
-						<input id="pac-input"
-							type="text" class="controls form-control"
-							placeholder="국가/도시를 입력하세요." style="width: 250px;">
-							             <br/>
+							<div id="map"></div> <input id="pac-input" type="text"
+							class="controls form-control" placeholder="국가/도시를 검색하세요."
+							style="width: 250px;"> <br />
 							<form class="form-inline" onsubmit="return false">
 								<input type="text" placeholder="대륙" value="대륙"
-									style="width: 100px; display:none;" class="form-control bit-continent">
-								<input type="text" placeholder="국가" value="국가"
-									style="width: 100px;" class="form-control bit-nation">
-								<input type="text" placeholder="도시명" style="width: 100px;"
+									style="width: 100px; display: none;"
+									class="form-control bit-continent"> <input type="text"
+									placeholder="국가" value="국가" style="width: 100px;"
+									class="form-control bit-nation"> <input type="text"
+									placeholder="도시명" style="width: 100px;"
 									class="form-control bit-city1"> <input type="text"
 									class="form-control bit-startDate1" placeholder="시작일"
 									style="width: 150px;"> <input type="text"
 									class="form-control bit-endDate1" placeholder="종료일"
 									style="width: 150px;"> <input type="text"
-									placeholder="위도" style="width: 100px; display:none;"
+									placeholder="위도" style="width: 100px; display: none;"
 									class="form-control bit-latitude1"> <input type="text"
-									placeholder="경도" style="width: 100px; display:none;"
+									placeholder="경도" style="width: 100px; display: none;"
 									class="form-control bit-longitude1">
 								<button class="btn btn-default selectAddBtn">추가</button>
 							</form>
@@ -249,31 +261,40 @@ td {
 									name="type" id="changetype-geocode"> <label
 									for="changetype-geocode">Geocodes</label>
 							</div>
-							<br/>
-							<div id="map"></div></td>
+						</td>
 					</tr>
 					<!-- 여기까지맵임 -->
 
 					<tr>
-					
-						<td class="root-select">&nbsp;&nbsp;&nbsp;여행 일정을 추가하세요!<br/>
-						<!-- 핸들바스 적용되는 곳 -->
+						<td class="root-select" style="border-top: 1px dotted #A4A4A4;">&nbsp;&nbsp;&nbsp;여행 일정을 추가하세요!<br />
+							<!-- 핸들바스 적용되는 곳 -->
 						</td>
 					</tr>
+
 					<tr>
 						<td
-							style="width: 100px; color: green; font-weight: bold; border: 0; padding-bottom: 0; font-size: large;">
-							제목</td>
-						<td style="border: 0; padding-bottom: 0;"><input type="text"
-							class="form-control" id="title" style="width: 500px;"
-							placeholder="제목을 입력하세요"></td>
-					</tr>
-					<tr>
-						<td
-							style="padding-top: 20px; padding-bottom: 20px; color: green; font-weight: bold; font-size: large;">자기소개</td>
+							style="padding-top: 20px; padding-bottom: 20px; color: green; font-weight: bold; font-size: large;">
+							<div id="detailBar"></div>
+							<div>자기소개</div>
+							</td>
 						<td><textarea id="selfIntroduce" class="form-control"
 								cols="50" rows="10" style="width: 500px;"
 								placeholder="내용을 입력하세요"></textarea></td>
+					</tr>
+
+					<tr>
+						<td
+							style="width: 140px; color: green; font-weight: bold; font-size: large;">
+							<div id="detailBar"></div>
+							<div>사진</div>
+						</td>
+						<td
+							style="font-size: small; font-weight: bold; padding-left: 20px;">
+							<div>자신을 표현할 프로필 및 여행사진을 업로드 하세요!</div> <br/>
+							<div>파일 여러개 선택 가능</div>
+							<input name="multi_file[]" id="multiFile" type="file" multiple><br/>
+							<!-- <img src="img/profileDemo.png" style="width: 150px;"> -->
+						</td>
 					</tr>
 				</table>
 				<div class="form-group"
@@ -297,7 +318,7 @@ td {
 		<p></p>
 		<br>
 		<p></p>
-		<br/>
+		<br />
 	</div>
 
 	<!-- 로그인 폼 -->
@@ -420,10 +441,12 @@ td {
 		init() // 화면을 준비시킨다
 		ajaxLoginUser() // 로그인 유저 정보 가져오기
 		$(function() {
-		    $(".bit-startDate1").datepicker({dateFormat: 'yy-mm-dd'
-		    });
-		    $(".bit-endDate1" ).datepicker({dateFormat: 'yy-mm-dd'
-	        });
+			$(".bit-startDate1").datepicker({
+				dateFormat : 'yy-mm-dd'
+			});
+			$(".bit-endDate1").datepicker({
+				dateFormat : 'yy-mm-dd'
+			});
 		});
 	</script>
 	<script id="trTemplateText" type="text/x-handlebars-template">

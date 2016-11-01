@@ -1,4 +1,7 @@
 
+
+
+
 $("#loginBtn").click(function(event) {
 
 	var user = {
@@ -74,8 +77,16 @@ function ajaxLoginUser() {
 		$("#userName3").val(result.data.name)
 		$("#inviteCount").text(result.data.memberRequest)
 		console.log(result.data.memberRequest)
-		
+
+
 		$("#mainImg").attr("src","../upload/" + result.data.memberPhoto);
+
+		$("#myInfo").click(function(event) {
+			ajaxLoginUser()
+
+			window.location.href = "memb_regForm.html?no=" + result.data.no;
+		});
+
 	})
 
 }
@@ -83,7 +94,7 @@ function ajaxLoginUser() {
 
 
 function init() {
-	
+
 	//$('.my-login').css("display", "none")
 	var cookieMap = bit.cookieToObject()
 
@@ -95,3 +106,4 @@ function init() {
 		$("#saveEmail").attr("checked", true)
 	}
 }
+

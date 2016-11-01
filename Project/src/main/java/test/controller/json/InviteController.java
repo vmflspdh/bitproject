@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 
 import test.dao.InviteDao;
+import test.dao.MemberDao;
 import test.vo.Invite;
 import test.vo.Member;
 import test.vo.RegistForm;
-import test.vo.Review;
 
 
 //@Component
@@ -26,6 +26,8 @@ import test.vo.Review;
 public class InviteController {
   @Autowired
   InviteDao inviteDao;
+  @Autowired
+  MemberDao memberDao;
   
   
   @RequestMapping(path="invlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -98,8 +100,7 @@ public class InviteController {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     HashMap<String, Object> result = new HashMap<>();
     try{
-      RegistForm registform =(RegistForm)session.getAttribute("registform");
-      System.out.println(registform);
+     // memberDao.selectOne(no)
       inviteDao.inviteAgree(no);
       result.put("state", "success");
     } catch(Exception e) {

@@ -81,7 +81,7 @@ $("#addTMBtn").click(function(event) {
 	formData.append("styleNo", $("input[name='chk_info']:checked").val())
 	formData.append("schedule", schedule)
 	$($("#multiFile")[0].files).each(function(index, file) {
-		formData.append("file", file); });
+		formData.append("files", file); });
 	
 
 	ajaxAddTravelMain(formData)
