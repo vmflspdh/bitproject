@@ -93,7 +93,7 @@ function loadDetailMessageList(no) {
 }
 
 function ajaxAddMessage(message) {
-	$.post(serverAddr + "/travel/messageAdd.json", message, function(obj){
+	$.post(serverAddr + "/travel/messageAdd2.json", message, function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("등록 실패입니다.")
