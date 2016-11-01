@@ -38,6 +38,14 @@
 
 
 <style>
+
+
+#checkImg {
+  width: 45px;
+  height: 45px;
+}
+
+
 #content {
 	text-align: center;
 	color: black;
@@ -77,16 +85,18 @@ td {
 }
 
 td div {
-  color: #13919A;
+	color: #13919A;
 }
 
 #detailBar {
-background: #13919A;
-width: 10px;
-height: 50px;
-float: left;
-margin-right: 12px;
+	background: #13919A;
+	width: 10px;
+	height: 50px;
+	float: left;
+	margin-right: 12px;
 }
+
+
 </style>
 
 
@@ -101,8 +111,7 @@ margin-right: 12px;
 						<ul>
 							<li><a href="#" id="myInfo"><img
 									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-									INFO</a>
-								<!-- <ul>
+									INFO</a> <!-- <ul>
 									<li><a href="#2B1">2-B-1 메뉴</a></li>
 									<li><a href="#2B2">2-B-2 메뉴</a></li>
 								</ul> --></li>
@@ -196,28 +205,30 @@ margin-right: 12px;
 					<tr>
 						<td
 							style="width: 100px; color: green; font-weight: bold; padding-bottom: 0; font-size: large;">
-							
+
 							<div id="detailBar"></div>
 							<div>제목</div>
-							</td>
-						<td><input type="text"
-							class="form-control" id="title" style="width: 500px;"
-							placeholder="제목을 입력하세요"></td>
+						</td>
+						<td><input type="text" class="form-control" id="title"
+							style="width: 500px;" placeholder="제목을 입력하세요"></td>
 					</tr>
 
 					<tr>
 						<td style="color: green; font-weight: bold; font-size: large;">
-						<div id="detailBar"></div>
+							<div id="detailBar"></div>
 							<div>나의여행</div>
 							<div>스타일</div>
 						</td>
 						<td style="font-weight: bold; padding-left: 30px;"><label
-							class="checkbox-inline"> <input type="checkbox"
-								name="chk_info" value="1">식도락
-						</label> <label class="checkbox-inline"> <input type="checkbox"
-								name="chk_info" value="2">전시/공연
-						</label> <label class="checkbox-inline"> <input type="checkbox"
-								name="chk_info" value="3">액티비티/레포츠
+							class="checkbox-inline"> <img src='img/hamburger.png'
+								id="checkImg"> <input type="checkbox" name="chk_info"
+								value="1">식도락
+						</label><label class="checkbox-inline"> <img
+								src='img/painting.png' id="checkImg"> <input
+								type="checkbox" name="chk_info" value="2">전시/공연
+						</label><label class="checkbox-inline"> <img src='img/rowing.png'
+								id="checkImg"><input type="checkbox" name="chk_info"
+								value="3">액티비티/레포츠
 						</label></td>
 					</tr>
 
@@ -266,8 +277,10 @@ margin-right: 12px;
 					<!-- 여기까지맵임 -->
 
 					<tr>
-						<td class="root-select" style="border-top: 1px dotted #A4A4A4;">&nbsp;&nbsp;&nbsp;여행 일정을 추가하세요!<br />
-							<!-- 핸들바스 적용되는 곳 -->
+						<td class="root-select" style="border-top: 1px dotted #A4A4A4;">
+						
+					<div class="try"></div>
+						&nbsp;&nbsp;&nbsp;여행일정을 추가하세요!<br /> <!-- 핸들바스 적용되는 곳 -->
 						</td>
 					</tr>
 
@@ -276,7 +289,7 @@ margin-right: 12px;
 							style="padding-top: 20px; padding-bottom: 20px; color: green; font-weight: bold; font-size: large;">
 							<div id="detailBar"></div>
 							<div>자기소개</div>
-							</td>
+						</td>
 						<td><textarea id="selfIntroduce" class="form-control"
 								cols="50" rows="10" style="width: 500px;"
 								placeholder="내용을 입력하세요"></textarea></td>
@@ -290,10 +303,9 @@ margin-right: 12px;
 						</td>
 						<td
 							style="font-size: small; font-weight: bold; padding-left: 20px;">
-							<div>자신을 표현할 프로필 및 여행사진을 업로드 하세요!</div> <br/>
-							<div>파일 여러개 선택 가능</div>
-							<input name="multi_file[]" id="multiFile" type="file" multiple><br/>
-							<!-- <img src="img/profileDemo.png" style="width: 150px;"> -->
+							<div>자신을 표현할 프로필 및 여행사진을 업로드 하세요!</div>
+							<div>(파일 여러개 선택 가능)</div> <br /> <input name="multi_file[]"
+							id="multiFile" type="file" multiple> <!-- <img src="img/profileDemo.png" style="width: 150px;"> -->
 						</td>
 					</tr>
 				</table>

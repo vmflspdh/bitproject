@@ -46,9 +46,6 @@ $(document.body).on('click', '.selectDelBtn', function(event) {
 
 $("#addTMBtn").click(function(event) {
 
-
-
-
 	var scheduleArray = [];
 	$('.root-schedule').each(function(index, element) {
 
