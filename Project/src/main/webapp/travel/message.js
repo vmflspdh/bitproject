@@ -38,7 +38,7 @@ function chattingMemberList() {
 	    		'<a class="titleLink" href="#" data-sendMemberNo="' + arr[i].sendMemberNo + '">' +
 	    		'<div class="chattingList">' +
 	    		'<div style="width:45px; height:45px; overflow: hidden; display:inline-block; float: left;">' +
-	    		'<img src="' + arr[i].myPhoto + '">' +
+	    		'<img src="../upload/' + arr[i].myPhoto + '">' +
 	    		'</div>' +
 	    		'<div style="display:inline-block; float: left; font-weight: bold;">&nbsp;&nbsp;<span id="chattingName">' + arr[i].receiveUser + '</span></div>' +
 	    		'<div style="display:inline-block; color: gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="chattingMessage">' + arr[i].contents + '</span></div>' +
@@ -69,7 +69,7 @@ function loadDetailMessageList(no) {
 				contents +=
 					'<div class="chattingDetail">' +
 					'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">' +
-					'<img src="' + arr[i].myPhoto + '"></div>' +
+					'<img src="../upload/' + arr[i].myPhoto + '"></div>' +
 					'<div>' + arr[i].contents + '</div>' +
 					'<div style="font-size: x-small;">' + arr[i].sendDate + '</div>' +
 					'</div>'
@@ -77,7 +77,7 @@ function loadDetailMessageList(no) {
 				contents +=
 					'<div class="chattingDetail" style="background-color: white;">' +
 					'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: right;">' +
-					'<img src="' + arr[i].myPhoto + '"></div>' +
+					'<img src="../upload/' + arr[i].myPhoto + '"></div>' +
 					'<div>' + arr[i].contents + '</div>' +
 					'<div style="font-size: x-small;">' + arr[i].sendDate + '</div>' +
 					'</div>'
