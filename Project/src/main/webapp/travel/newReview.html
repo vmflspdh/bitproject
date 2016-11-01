@@ -55,8 +55,173 @@
 
 
 
-<style>
 
+
+
+
+    <script>try{Typekit.load();}catch(e){}</script>
+    <title>서내와 귀요미들</title>
+<meta name="description" content="MyTravel"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="">	
+<script type='application/ld+json'>
+{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/furnishednycapartments.com\/",
+"name":"Furnished NYC Apartments - Rentals in New York",
+"potentialAction":{"@type":"SearchAction",
+"target":"http:\/\/furnishednycapartments.com\/?s={search_term_string}",
+"query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='nyc-css'  href='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/css/layout.css?ver=0.1.1' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='http://furnishednycapartments.com/wp-json/' />
+<link rel='shortlink' href='http://furnishednycapartments.com/' />
+<link rel="alternate" type="application/json+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F&#038;format=xml" />
+		<!--  travel 에서 가저온 시-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+		<meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
+	    <link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+		<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<style>
+.dsyColor > dl{
+  color: green;
+}
+
+#inviteCount {
+	z-index:-1;
+	position: absolute; 
+	right: 12px; 
+	top: -1px; 
+	text-decoration:none;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	color: white;
+	background: #F361A6;
+	margin: 0 10px;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 32px;
+	text-align: center;
+	float:left;
+	
+}
+#fadeandscale {
+	    -webkit-transform: scale(0.8);
+	       -moz-transform: scale(0.8);
+	        -ms-transform: scale(0.8);
+	            transform: scale(0.8);
+	}
+.popup_visible #fadeandscale {
+    -webkit-transform: scale(1);
+       -moz-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+}
+	
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+		
+		
+ .map {
+     width:100%;
+     height: 400px;
+     margin: 0 0 1em 0;
+ }    
+ol, ul, li{
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+.chanwrapper {
+  width: 85%;
+  margin: 40px auto;
+}
+div.changallery {
+  margin-top: 30px;
+}
+div.changallery ul {
+  list-style-type: none;
+  margin-left: 75px;
+}
+/* animation */
+div.changallery ul li, div.changallery li img {
+  -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+div.changallery ul li {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 0;
+}
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.changallery ul li:hover {
+  z-index: 5;
+  width: 250px;
+}
+/* Image is position nicely under li */
+div.changallery ul li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #dddddd;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  background: #f0f0f0;
+}
+div.changallery ul li img:hover {
+  width: 250px;
+  height: 250px;
+  margin-top: -155px;
+  margin-left: -175px;
+  top: 65%;
+  left: 65%;
+}
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+  .chanwrapper {
+    width: 1000px;
+  }
+}
+@media only screen and (max-width: 498px) {
+  .chanwrapper {
+    width: 400px;
+  }
+  div.changallery ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.cycle-overlay {
+  background: black; 
+  color: white; 
+  padding: 15px; 
+  opacity: 0.5;
+  position: absolute; 
+  bottom: 5px; 
+  width: 80%;
+  font-family: tahoma, arial;
+  font-weight: bold;
+  font-size: x-small;
+}
+.hero:not(.red-bg):before {
+  
+  background: rgba(0, 0, 0, 0.2); }
 
 #wrap{position:relative;left:0;width:100%;min-height:100%;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease}
 #header .header_wrap{position:relative;max-width:1920px;margin:0 auto;height:80px;background:rgba(26,21,21,0);-webkit-transition: background 0.4s ease;-moz-transition: background 0.4s ease;-o-transition: background 0.4s ease;transition: background 0.4s ease}
@@ -148,11 +313,114 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
 
 #contents.container{background:#fff}
 
+
+#yang ul li{
+			display:inline; 			      
+			font:bold 13px Dotum; 			
+			padding:0 10px; 		
+		}
+#yang2 div dl dt{
+			display:inline; 
+			font:bold 13px Dotum; 			
+			padding:0 10px;
+		}
+ 
+tbody img {
+ width: 80px;
+ border: 1px solid pink;
+ 
+ 
+}
 </style>
 
 
 </head>
+
 <body>
+									<!-- Start of container2 -->
+					<div id="yang" class="container ">
+					<div class="upper" style="background : #000000; background : rgba(192,192,192,0.2) ;height:70px;"> 
+							<div class='zeta-menu-bar my-login' style=" position: relative; z-index: 96">
+								<ul class="zeta-menu">
+									<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+											id="mainImg"></a>
+										<ul>
+											<li><a  href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MYINFO</a>
+												<ul>
+													<li><a href="#2B1">2-B-1 메뉴</a></li>
+													<li><a href="#2B2">2-B-2 메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+											</li>
+											<li><a class=" fadeandscale_open" id="accompany" href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+											
+											<li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								
+								<div class="my-login" style=" position: relative; z-index: 96">
+								<span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
+								<a id="inviteCount" ></a>
+					    </div>
+								
+							</div>
+						<div id="fadeandscale" class="well">
+						    <h4>동행요청</h4>
+						    <h5></h5>
+						<!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+						<button value="vcxc">수락</button><button value="sdfds">거절</button>
+						</pre>
+						<pre class="prettyprint">
+						<code>zxcxzcxzxz</code>
+						</pre>
+						<pre class="prettyprint">
+						<code>zxcxzcxzxz</code>
+						</pre> -->
+						    <button style="float: right;"class="fadeandscale_close btn btn-default">Close</button>
+						</div>
+						
+				 		<!--Start of container-->
+<div class="header has-hero" data-show="on-load" >
+	<div class="containerv">
+		<div class="row">
+			<div class="col-xs-5 col-sm-3 col-md-2">
+				<div class="logo-container">
+				 <div style= "color: black; font-size: 18px;"> <em> Logo</em></div>	
+				</div>
+			</div>
+			<div class="col-xs-7 col-sm-9 col-md-10">
+				<div class="visible-md visible-lg">
+						<div class="icon-nav">
+	    </div>
+						</div>
+<nav class="main-nav">
+<div class="menu-main-menu-container">
+<ul id="menu-main-menu" class="main-nav">
+<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a href="traveler.html" >Traveler</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="traveler.html" >Review</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="qnaApp.html" >Qna</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146 my-login"><a id="userName"></a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="travelerRegForm.html" class="my-login"><em> 당신의 동행을 등록해 보세요</em></a></li>
+<li id="menu-item-24" class="button menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="#" class="my-logout" data-toggle="modal" data-target="#myModal1">Login</a></li>
+<li id="menu-item-24" class="button menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="#" class="my-logout" data-toggle="modal" data-target="#myModal">Sign In</a></li>
+</ul>
+</div>
+</nav>
+			</div>
+			 <!-- <br><br><HR> -->
+				<div class="visible-xs visible-sm nav-toggle-container text-right">
+				</div>
+			</div>
+		</div>
+	</div>
+<!--End of container-->				 
+			 </div>
+				</div> 
+				
+				
   <!-- BODY -->
   <!-- top_visual -->
 <div class="top_visual qna_visual">
@@ -175,7 +443,7 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
 			</p>
 			<table id="boardTable" class="table table-hover">
 				<thead id="tablehead">
-					<tr>
+				<!-- 	<tr class="dsyColor">
 						<td>게시판번호</td>
 						<td>여행번호</td>
 						<td>회원번호</td>
@@ -183,10 +451,10 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
 						<td>내용</td>
 						<td>등록일</td>
 						<td>조회수</td>
-					</tr>
-
+                     </tr>
+                   -->   
 				</thead>
-				<tbody>
+				<tbody id="yang2" style="border: 1px solid green; height: 100px; " >
 
 				</tbody>
 			</table>
@@ -222,11 +490,54 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
 	<script type="text/javascript" src="js/authApp.js"></script>
 	<script type="text/javascript" src="js/memberForm.js"></script>
 	<script type="text/javascript" src="newReview.js"></script>
-  <script>
-	init() // 화면을 준비시킨다
-	ajaxLoginUser() // 로그인 유저 정보 가져오기
-	ajaxBoardList()
-  </script>
+  
+  <script src="js/map.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.min.js"></script>
+<!-- 회원정보 관련 -->
+<script type="text/javascript" src="js/bit.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/authApp.js"></script>
+<script type="text/javascript" src="js/memberForm.js"></script>
+<script type="text/javascript" src="traveler.js"></script>
+<script type="text/javascript" src="js/backgroundmap.js"></script>
+<script type="text/javascript" src="js/leaflet.js"></script>
+<script type="text/javascript" src="js/stamen.js"></script>
+<script src="js/jquery.popupoverlay.js"></script>
+<script>
+$(document).ready(function () {
+    $('#fadeandscale').popup({
+        pagecontainer: '.container',
+        transition: 'all 0.3s'
+    });
+}); 
+</script>
+<script>
+init() // 화면을 준비시킨다
+ajaxLoginUser() // 로그인 유저 정보 가져오기
+ajaxBoardList()
+ajaxRegistFormList()
+ajaxInviteList()
+ajaxAgreeInviteList()
+  $(function() {
+      $(".bit-startDate, .bit-endDate").datepicker({
+          dateFormat: 'yyyy-mm-dd'
+      });
+  });
+mapinitialize()
+</script>	
+	
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ null 에 [ ]로 값입력해서 넘길려면 나중에 추가,국가 선택,*/
+var nycSearch = {"apartmentTypes": null,"neighborhoods":["Aisa","South America","North America","Europe","Africa","Oceania"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
 </body>
 </html>
 

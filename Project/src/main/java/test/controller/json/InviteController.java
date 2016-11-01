@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 
 import test.dao.InviteDao;
+import test.dao.MemberDao;
 import test.vo.Invite;
 import test.vo.Member;
 import test.vo.RegistForm;
-import test.vo.Review;
 
 
 //@Component
@@ -26,6 +26,8 @@ import test.vo.Review;
 public class InviteController {
   @Autowired
   InviteDao inviteDao;
+  @Autowired
+  MemberDao memberDao;
   
   
   @RequestMapping(path="invlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -59,13 +61,12 @@ public class InviteController {
     
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
-    Invite invite = new Invite(); 
+     Invite invite = new Invite(); 
     //System.out.println(registform);
     HashMap<String, Object> result = new HashMap<>();
     try{
-     
-      Member member = (Member)session.getAttribute("member");
       
+      Member member = (Member)session.getAttribute("member");
       invite.setMemberNo(member.getNo());
       invite.setMemberNo2(registform.getMemberNo());
       invite.setInviteName(member.getName());
@@ -80,7 +81,6 @@ public class InviteController {
       if(inviteDao.inviteCheck(invite)>0){
         result.put("state", "exist");
       } else {
-        
         inviteDao.insert(invite);
         result.put("state", "success");
       }
@@ -95,12 +95,26 @@ public class InviteController {
   
   @RequestMapping(path="invagree", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String agree(int no,  HttpSession session) throws Exception {
+  public String agree(int no, int no2, int no3 ,HttpSession session) throws Exception {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     HashMap<String, Object> result = new HashMap<>();
+    System.out.println(no2);
     try{
-      System.out.println(no);
+      Invite invite = new Invite();
+      Member member = memberDao.selectOne(no2);
+      invite.setMemberNo(member.getNo());
+      invite.setMemberNo2(no3);
+      invite.setInviteName(member.getName());
+      invite.setInviteEmail(member.getEmail());
+      invite.setInviteGender(member.getGender());
+      invite.setState(1);
+      invite.setInvitePhoto(member.getMemberPhoto());
+      invite.setInviteBoardNo(no);
+      
+      System.out.println(member);
+      inviteDao.inviteAgreeInsert(invite);
       inviteDao.inviteAgree(no);
+      
       result.put("state", "success");
     } catch(Exception e) {
       result.put("state", "fail");

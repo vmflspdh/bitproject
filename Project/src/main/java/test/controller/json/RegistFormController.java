@@ -43,6 +43,7 @@ public class RegistFormController {
 		
 		try {
 			RegistForm registForm = registFormDao.selectOne(no);
+			session.setAttribute("registform", registForm);
 			if (registForm == null)
 				throw new  Exception("해당 번호의 게시물이 존재하지 않습니다.");
 			session.setAttribute("travelPostNo", registForm.getTravelMainNo());

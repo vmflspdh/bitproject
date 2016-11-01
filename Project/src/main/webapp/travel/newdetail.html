@@ -29,6 +29,7 @@
 <meta name="author" content="Codrops" />
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
@@ -48,7 +49,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
-
 #yang ul li{
       display:inline;             
       font:bold 13px Dotum;       
@@ -78,7 +78,7 @@
       <!-- Start of container2 -->
 <div id="yang" class="container ">
 <div class="upper" style="background : #000000; background : rgba(0,0,0,0.5) ;height:89px;"> 
-  <div class='zeta-menu-bar my-login' style=" position: relative; z-index: 97">
+  <div class='zeta-menu-bar my-login' style=" position: relative; z-index: 96">
     <ul class="zeta-menu">
       <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
           id="mainImg"></a>
@@ -89,7 +89,7 @@
               <li><a href="#2B2">2-B-2 메뉴</a></li>
             </ul>
           </li>
-          <li><a href="chatting.html"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+          <li><a href="#"><img src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
           </li>
           <li><a href="#"><img src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
           <li><a id="logoutBtn" href='#' class="my-login"><img src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
@@ -145,7 +145,7 @@
 <div style="background-color: #F5F2F5; width: 900px; margin: 0 auto; margin-top: 89px; color:#736378;">
   <div style="background-color: #F5F2F5; width: 880px; height:500px; margin: 0 auto; padding:20px;">
     <div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
-    <img src="img/lees.jpg" ></div>
+    <img src="" id="detailUserImage"></div>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="#" class="message" data-toggle="modal" data-target="#myMessage"><img src="img/messageicon2.jpg" style="width:20px; height: 20px;"></a></span>
     <h3 id="title" style="float: right;"></h3>
@@ -167,15 +167,15 @@
   <div style="background-color: #F5F2F5; width: 880px; margin: 0 auto; padding:20px;">
     <hr class="hrs">
     <div style=" border-radius: 10px 15px 15px 15px; background-color: white; width: 310px; height:310px; padding: 20px">
-	    <div><h3>양찬님의 여행 스타일!</h3></div><br>
-	    <div style="padding-left: 20px;">
-	    <label class="checkbox"> 
-	    <input type="checkbox" class="check-food" name="chk_info" value="1">식도락</label><br>
-	    <label class="checkbox"> 
-	    <input type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연</label><br>
-	    <label class="checkbox"> 
-	    <input type="checkbox" class="check-sports" name="chk_info" value="3">액티비티/레포츠</label><br>
-	    </div>
+      <div><h3>양찬님의 여행 스타일!</h3></div><br>
+      <div style="padding-left: 20px;">
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-food" name="chk_info" value="1">식도락</label><br>
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연</label><br>
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-sports" name="chk_info" value="3">액티비티/레포츠</label><br>
+      </div>
     </div>
     <div id="selfIntroduce" 
     style="position: absolute; left:48%; top: 970px; width: 440px; height:310px; padding: 20px; border-radius: 10px 15px 15px 15px; background-color: white;">
@@ -189,8 +189,7 @@
    </div>
 </div>
 <br><br><br><br><br><br>
-
-
+  
 <!-- Start of message form -->
 <div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myMessage"
   tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -219,7 +218,6 @@
   </div>
 </div>
 <!-- End of message form -->  
-
 
 <!-- Start of Login form -->
 <div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
@@ -337,13 +335,16 @@
 <script src="js/classie.js"></script>
 <script src="js/cbpAnimatedHeader.min.js"></script>
 <!-- 회원정보 관련 -->
+<script type="text/javascript" src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
 <script type="text/javascript" src="js/bit.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/authApp.js"></script>
 <script type="text/javascript" src="js/memberForm.js"></script>
 <script type="text/javascript" src="traveler.js"></script>
+<script type="text/javascript" src="travelerdetail.js"></script>
 <script type="text/javascript" src="travelerform.js"></script>
-<script type="text/javascript" src="message.js"></script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기
@@ -351,7 +352,6 @@ if (location.search.startsWith("?")) {
     var no = location.search.split("=")[1];
     ajaxLoadTravelMain(no)
 }
-
 </script>
 <script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
