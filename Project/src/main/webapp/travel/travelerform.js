@@ -192,6 +192,7 @@ function ajaxLoadTravelMain(no) {
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
+		("#detailUserImage").attr("src","../upload/" + result.data.myPhoto);
 
 		favorChecked(result)
 		scheduleList()
