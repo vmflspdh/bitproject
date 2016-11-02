@@ -36,12 +36,25 @@ $(".selectAddBtn").click(function(event) {
 
 	var template = Handlebars.compile($('#trTemplateText').html())
 	$("#selectTable .root-select").append($(template(selectSchedule)))
+
+	$('.root-schedule').each(function(index, element) {
+
+		var tag = $(element).find($('[id="sch_cirNum"]'));
+		tag.html(index+1);
+	});
+
 });
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
 	var clickedRow = $(this).parent();
 
 	clickedRow.remove();
+	
+	$('.root-schedule').each(function(index, element) {
+
+		var tag = $(element).find($('[id="sch_cirNum"]'));
+		tag.html(index+1);
+	});
 });
 
 $("#addTMBtn").click(function(event) {
@@ -79,7 +92,7 @@ $("#addTMBtn").click(function(event) {
 	formData.append("schedule", schedule)
 	$($("#multiFile")[0].files).each(function(index, file) {
 		formData.append("files", file); });
-	
+
 
 	ajaxAddTravelMain(formData)
 
@@ -90,9 +103,9 @@ $("#addTMBtn").click(function(event) {
 
 
 function ajaxAddTravelMain(formData) {
-	
+
 	console.log(formData)
-	
+
 	$.ajax({
 		url : "travelMainAdd.json",
 		processData : false,
@@ -105,12 +118,12 @@ function ajaxAddTravelMain(formData) {
 				console.log(result.data)
 				alert("등록 실패입니다.")
 				return
-		}
+			}
 			window.location.reload(true)
 		}
 	});
-	
-	
+
+
 	/*$.post(serverAddr + "/travel/travelMainAdd.json", 
 			travelMain, function(obj){
 		var result = obj.jsonResult
