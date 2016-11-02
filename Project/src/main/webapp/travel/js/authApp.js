@@ -122,4 +122,10 @@ $("#qnaPage").click(function(event) {
 	window.location.href = "qnaApp.html";
 });
 
+$("#travelerRegForm").click(function(event) {
+
+	window.location.href = "travelerRegForm.html";
+});
+
+
 
