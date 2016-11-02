@@ -107,3 +107,19 @@ function init() {
 	}
 }
 
+$("#travelerPage").click(function(event) {
+
+	window.location.href = "mainhtml.html";
+});
+
+$("#reviewPage").click(function(event) {
+
+	window.location.href = "newReview.html";
+});
+
+$("#qnaPage").click(function(event) {
+
+	window.location.href = "qnaApp.html";
+});
+
+
