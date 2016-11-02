@@ -107,6 +107,9 @@ function init() {
 	}
 }
 
+
+/* 페이지링크 영역*/
+
 $("#travelerPage").click(function(event) {
 
 	window.location.href = "mainhtml.html";

@@ -50,7 +50,7 @@
 	padding: 0;
 	position: absolute;
 	right: 0;
-	top: 100%;
+	top: 90px;
 	width: 130px;
 }
 
@@ -106,7 +106,7 @@
 }
 
 .upper span a {
-	color: grey;
+	color: white;
 	float: right;
 	margin: 0 auto;
 	padding: 0px 13px 0px 0px;
