@@ -97,12 +97,10 @@ function initMap() {
 
 		var address = '';
 		if (place.address_components) {
-			address = [
-			          (place.address_components[0] && place.address_components[0].short_name || ''),
-			           (place.address_components[1] && place.address_components[1].short_name || ''),
-			           (place.address_components[2] && place.address_components[2].short_name || '')
-			           ].join(' ');
+			address = [place.address_components[0].short_name
+			           ].join('');
 
+			console.log(place.address_components)
 			console.log(place.address_components.length)
 			/*위도 경도 추출*/
 			var a = $("#map").find('a').attr('href')
@@ -111,12 +109,14 @@ function initMap() {
 			var llet = c.split(",")[0];
 			var lot = c.split(",")[1];
 
-			if (place.address_components.length != 2) {
-			$(".bit-nation1").val(place.address_components[3].long_name)
-			} else {
+			if (place.address_components.length == 4) {
+				$(".bit-nation1").val(place.address_components[3].long_name)
+			} else if (place.address_components.length == 3) {
+				$(".bit-nation1").val(place.address_components[2].long_name)
+			} else if (place.address_components.length == 2) {
 				$(".bit-nation1").val(place.address_components[1].long_name)
 			}
-			
+
 			$(".bit-city1").val(place.address_components[0].short_name)
 			$(".bit-latitude1").val(llet)
 			$(".bit-longitude1").val(lot)

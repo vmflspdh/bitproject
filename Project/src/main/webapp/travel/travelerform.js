@@ -385,6 +385,7 @@ function initMap(result) {
 
 		var input = /** @type {!HTMLInputElement} */(
 				document.getElementById('pac-input'));
+		
 
 		var autocomplete = new google.maps.places.Autocomplete(input, {
 			types: ['(cities)']});
@@ -428,9 +429,7 @@ function initMap(result) {
 			var address = '';
 			if (place.address_components) {
 				address = [
-				           (place.address_components[0] && place.address_components[0].short_name || ''),
-				           (place.address_components[1] && place.address_components[1].short_name || ''),
-				           (place.address_components[2] && place.address_components[2].short_name || '')
+				           (place.address_components[0].short_name)
 				           ].join(' ');
 
 				/*위도 경도 추출*/
@@ -441,7 +440,15 @@ function initMap(result) {
 				var lot = c.split(",")[1];
 
 
-				/*$(".bit-city").val(place.address_components[0].short_name)*/
+				if (place.address_components.length == 4) {
+					$(".bit-nation1").val(place.address_components[3].long_name)
+				} else if (place.address_components.length == 3) {
+					$(".bit-nation1").val(place.address_components[2].long_name)
+				} else if (place.address_components.length == 2) {
+					$(".bit-nation1").val(place.address_components[1].long_name)
+				}
+
+				$(".bit-city1").val(place.address_components[0].short_name)
 				$(".bit-latitude1").val(llet)
 				$(".bit-longitude1").val(lot)
 

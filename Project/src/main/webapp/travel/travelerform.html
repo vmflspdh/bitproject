@@ -40,6 +40,11 @@
 
 
 <style>
+#checkImg {
+	width: 45px;
+	height: 45px;
+}
+
 #content {
 	text-align: center;
 	color: black;
@@ -53,13 +58,12 @@
 }
 
 #map {
-	width: 80%;
+	width: 92%;
 	height: 250px;
-	margin: 0 auto;
 }
 
 .registFormDetail {
-	width: 900px;
+	width: 700px;
 	background: rgba(255, 255, 255, 0.05);
 	margin: 0 auto;
 	border: 0px solid black;
@@ -74,28 +78,65 @@ table {
 }
 
 td {
-	border-bottom: 1px solid #A4A4A4;
-	/* border: 1px solid green; */
+	border-bottom: 1px dotted #A4A4A4;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 }
 
 td div {
+	padding-top: 0px;
 	color: #13919A;
 }
 
-.root-schedule {
-	margin: 0 0 10px;
+#detailBar {
+	background: #13919A;
+	width: 10px;
+	height: 50px;
+	float: left;
+	margin-right: 12px;
+}
+
+.checkbox-inline, .radio-inline {
+	padding-left: 10px;
+}
+
+.cb-module-header {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.cb-module-header .cb-module-title {
+	margin: 0;
+	position: relative;
+	display: inline-block;
+	letter-spacing: -0.5px;
+	text-transform: uppercase;
+	font-size: 17px;
+	background: #A4A4A4;
+	color: white;
+}
+
+.cb-module-header .cb-module-title:after {
+	content: "";
+	display: block;
+	height: 1px;
+	position: absolute;
+	top: 15%;
+	margin-top: -3px;
+	width: 1920px;
+	left: 100%;
+	background: #A4A4A4;
 }
 
 #sch_cirNum {
-	width: 30px;
-	height: 30px;
+	width: 25px;
+	height: 25px;
 	border-radius: 50%;
 	color: white;
 	background: #13919A;
 	margin: 0 10px;
-	font-size: 18px;
+	font-size: 15px;
 	font-weight: bold;
 	line-height: 32px;
 	text-align: center;
@@ -113,13 +154,12 @@ td div {
 					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
 							id="mainImg"></a>
 						<ul>
-							<li><a href="#"><img
+							<li><a href="#" id="myInfo"><img
 									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-									INFO</a>
-								<ul>
-									<li><a href="#2B1">2-B-1 메뉴</a></li>
-									<li><a href="#2B2">2-B-2 메뉴</a></li>
-								</ul></li>
+									INFO</a> <!-- <ul>
+                  <li><a href="#2B1">2-B-1 메뉴</a></li>
+                  <li><a href="#2B2">2-B-2 메뉴</a></li>
+                </ul> --></li>
 							<li><a href="#"><img
 									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
 							</li>
@@ -174,14 +214,6 @@ td div {
 					</div>
 				</div>
 
-				<!-- <div class="form-group" style="display: none;">
-  <label for="no" class="col-sm-2 control-label">스케쥴번호</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="no" style="width:50px; background-color: white;">
-  </div>
-</div>
- -->
-
 				<div class="form-group" style="display: none;">
 					<label for="no" class="col-sm-2 control-label">여행번호</label>
 					<div class="col-sm-10">
@@ -204,93 +236,101 @@ td div {
 					</div>
 				</div>
 				<table id="selectTable">
+
 					<tr>
-						<td style="width: 140px; font-weight: bold; font-size: large;">
-							<div>프로필</div>
-							<div>사진</div>
-						</td>
 						<td
-							style="font-size: small; font-weight: bold; padding-left: 20px;">
-							<img src="img/profileDemo.png" style="width: 150px;">
-							&nbsp;&nbsp;&nbsp;자신을 표현할 프로필 및 여행사진을 업로드 하세요!
+							style="width: 100px; color: green; font-weight: bold; padding-bottom: 0; font-size: large;">
+
+							<div id="detailBar"></div>
+							<div>제목</div>
 						</td>
+						<td><input type="text" class="form-control" id="title"
+							style="width: 500px;" placeholder="제목을 입력하세요"></td>
+					</tr>
+
 					<tr>
-						<td style="font-weight: bold; font-size: large;">
+						<td style="color: green; font-weight: bold; font-size: large;">
+							<div id="detailBar"></div>
 							<div>나의여행</div>
 							<div>스타일</div>
 						</td>
 						<td style="font-weight: bold; padding-left: 30px;"><label
-							class="checkbox-inline"> <input type="checkbox"
-								class="check-food" name="chk_info" value="1">식도락
-						</label> <label class="checkbox-inline"> <input type="checkbox"
-								class="check-culture" name="chk_info" value="2">전시/공연
-						</label> <label class="checkbox-inline"> <input type="checkbox"
-								class="check-sports" name="chk_info" value="3">액티비티/레포츠
+							class="checkbox-inline"> <img src='img/restaurant.png'
+								id="checkImg" class="check-food"> <input type="checkbox" name="chk_info"
+								value="1">식도락
+						</label><label class="checkbox-inline"> <img
+								src='img/painting.png' id="checkImg"> <input
+								type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연
+						</label><label class="checkbox-inline"> <img src='img/rowing.png'
+								id="checkImg"><input type="checkbox" name="chk_info" class="check-sports"
+								value="3">액티비티/레포츠
 						</label></td>
 					</tr>
+
+					<!-- 이거 맵 !!!!!!!!!!!-->
 					<tr>
-						<td style="font-weight: bold; font-size: large;">
+						<td style="color: green; font-weight: bold; font-size: large;"
+							rowspan="2">
+							<div id="detailBar"></div>
 							<div>가고싶은</div>
 							<div>여행지</div>
 							<button class="btn btn-default modStartBtn">수정</button>
-
 						</td>
-						<td class="root-select">
-							<!--     <form class="form-inline root-schedule" onsubmit="return false">
-    <select style="width:100px;" class="form-control bit-continent">
-       <option selected value="">대륙</option>
-       <option value="아시아">아시아</option>
-       <option value="유럽">유럽</option>
-       <option value="북아메리카">북아메리카</option>
-   </select>
-   <select style="width:100px;" class="form-control bit-nation">
-       <option selected value="">국가</option>
-       <option value="대한민국">대한민국</option>
-       <option value="일본">일본</option>
-       <option value="영국">영국</option>
-   </select>
-   <select style="width:100px;" class="form-control bit-city">
-       <option selected value="">도시</option>
-       <option value="서울">서울</option>
-       <option value="부산">부산</option>
-       <option value="도쿄">도쿄</option>
-   </select>
-   <input type="text" placeholder="시작일" style="width:100px;" class="form-control bit-startDate">
-   <input type="text" placeholder="종료일" style="width:100px;" class="form-control bit-endDate">
-     <button class="btn btn-default selectAddBtn">+</button>
-     <button class="btn btn-default selectDelBtn">-</button>
-   </form> -->
-
-						</td>
-						<!-- 이거 맵 -->
-					<tr>
-						<td></td>
-						<td>
-							<div id="map"></div>
-							<div id="result"></div>
+						<td class="root-addSelect" style="border: 0;">
+							<div id="map"></div> <br />
+							<div id="type-selector" class="controls" style="display: none;">
+								<input type="radio" name="type" id="changetype-all"
+									checked="checked"> <label for="changetype-all">All</label>
+								<input type="radio" name="type" id="changetype-establishment">
+								<label for="changetype-establishment">Establishments</label> <input
+									type="radio" name="type" id="changetype-address"> <label
+									for="changetype-address">Addresses</label> <input type="radio"
+									name="type" id="changetype-geocode"> <label
+									for="changetype-geocode">Geocodes</label>
+							</div>
+							<div class="cb-module-header">
+								<h2 class="cb-module-title">schedule lists</h2>
+							</div>
 						</td>
 					</tr>
 					<!-- 여기까지맵임 -->
+
 					<tr>
-						<td
-							style="width: 100px; font-weight: bold; border: 0; padding-bottom: 0; font-size: large;">
-							제목</td>
-						<td style="border: 0; padding-bottom: 0;"><input type="text"
-							class="form-control" id="title" style="width: 500px;"
-							placeholder="제목을 입력하세요"></td>
+						<td class="root-select" style="padding-top: 0px;">
+							<div class="cb-module-header">
+								<h2 class="cb-module-title">schedule lists</h2>
+							</div> &nbsp;&nbsp;&nbsp;여행일정을 추가하세요!<br /> <!-- 핸들바스 적용되는 곳 -->
+						</td>
 					</tr>
+
 					<tr>
 						<td
-							style="padding-top: 20px; padding-bottom: 20px; font-weight: bold; font-size: large;">자기소개</td>
+							style="padding-top: 20px; padding-bottom: 20px; color: green; font-weight: bold; font-size: large;">
+							<div id="detailBar"></div>
+							<div>자기소개</div>
+						</td>
 						<td><textarea id="selfIntroduce" class="form-control"
 								cols="50" rows="10" style="width: 500px;"
 								placeholder="내용을 입력하세요"></textarea></td>
+					</tr>
+
+					<tr>
+						<td
+							style="width: 140px; color: green; font-weight: bold; font-size: large;">
+							<div id="detailBar"></div>
+							<div>사진</div>
+						</td>
+						<td
+							style="font-size: small; font-weight: bold; padding-left: 20px;">
+							<div>자신을 표현할 프로필 및 여행사진을 업로드 하세요!</div>
+							<div>(파일 여러개 선택 가능)</div> <br /> <input name="multi_file[]"
+							id="multiFile" type="file" multiple> <!-- <img src="img/profileDemo.png" style="width: 150px;"> -->
+						</td>
 					</tr>
 				</table>
 				<div class="form-group"
 					style="width: 740px; margin: 0 auto; border: 0px solid black; padding-top: 20px; padding-bottom: 20px;">
 					<div class="col-sm-offset-2 col-sm-10" style="padding-left: 400px;">
-						<button id="addTMBtn" type="button" class="btn btn-default my-new">등록</button>
 						<button id="updateTMBtn" type="button"
 							class="btn btn-default my-view">변경</button>
 						<button id="deleteTMBtn" type="button"
@@ -308,8 +348,9 @@ td div {
 		<p></p>
 		<br>
 		<p></p>
-		<br>
+		<br />
 	</div>
+
 
 	<!-- 로그인 폼 -->
 	<div class="modal fade" style="z-index: 200000;" id="myModal1"
@@ -402,10 +443,6 @@ td div {
 								</select> <br>
 							</div>
 
-							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                type="checkbox" value="remember-me" id="rememberMe"
-                name="rememberMe"> 약관동의
-              </label> -->
 							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
 								type="button">회원가입</button>
 						</form>
@@ -450,7 +487,7 @@ td div {
 <div id="sch_cirNum"></div>
 <input type="text" class="form-control bit-locationNo" style="width: 50px; display:none;"value="{{locationNo}}" readonly>
 <input type="text" placeholder="대륙" value="대륙" class="form-control bit-continent" style="width: 100px; display:none;" readOnly = true> 
-<input type="text" placeholder="국가" value="국가" style="width: 100px; display:none;"
+<input type="text" placeholder="국가" value="국가" style="width: 100px;"
 class="form-control bit-nation" readOnly = true>
 <input type="text" id="rename" placeholder="도시명" value="{{city}}"style="width: 100px;"
 class="form-control bit-city" readOnly = true>
@@ -459,10 +496,10 @@ class="form-control bit-city" readOnly = true>
 placeholder="시작일" value="{{startDate}}" style="width: 100px;" readOnly = true> <input
 type="text" id="bit-endDate" class="form-control bit-endDate"
 placeholder="종료일" value="{{endDate}}" style="width: 100px;" readonly> <input
-type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width: 100px;"
+type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
 class="form-control bit-latitude" readOnly = true> <input type="text"
-placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px;"
-class="form-control bit-longitude" readOnly = true>
+placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px; display:none;"
+class="form-control bit-longitude" readOnly = true >
 <button type="button" class="btn btn-default btn-xs selectModBtn" style="display:none;">M</button>
 <button type="button" class="btn btn-default btn-xs selectDelBtn" style="display:none;">X</button>
 </div>

@@ -213,16 +213,6 @@ td div {
 					</div>
 				</div>
 
-
-				<div class="form-group" style="display: none;">
-					<label for="no" class="col-sm-2 control-label">스케쥴번호</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="no"
-							style="width: 50px; background-color: white;">
-					</div>
-				</div>
-
-
 				<div class="form-group" style="display: none;">
 					<label for="no" class="col-sm-2 control-label">여행번호</label>
 					<div class="col-sm-10">
@@ -245,7 +235,6 @@ td div {
 					</div>
 				</div>
 				<table id="selectTable">
-
 					<tr>
 						<td
 							style="width: 100px; color: green; font-weight: bold; padding-bottom: 0; font-size: large;">
@@ -264,7 +253,7 @@ td div {
 							<div>스타일</div>
 						</td>
 						<td style="font-weight: bold; padding-left: 30px;"><label
-							class="checkbox-inline"> <img src='img/hamburger.png'
+							class="checkbox-inline"> <img src='img/restaurant.png'
 								id="checkImg"> <input type="checkbox" name="chk_info"
 								value="1">식도락
 						</label><label class="checkbox-inline"> <img
@@ -292,7 +281,7 @@ td div {
 								<input type="text" placeholder="대륙" value="대륙"
 									style="width: 100px; display: none;"
 									class="form-control bit-continent"> <input type="text"
-									placeholder="국가" value="국가" style="width: 100px;"
+									placeholder="국가명" style="width: 100px;"
 									class="form-control bit-nation1"> <input type="text"
 									placeholder="도시명" style="width: 100px;"
 									class="form-control bit-city1"> <input type="text"
@@ -325,7 +314,8 @@ td div {
 							<div class="cb-module-header">
 								<h2 class="cb-module-title">schedule lists</h2>
 							</div>
-							</div> &nbsp;&nbsp;&nbsp;여행일정을 추가하세요!<br /> <!-- 핸들바스 적용되는 곳 -->
+							&nbsp;&nbsp;&nbsp;여행일정을 추가하세요!<br/>
+							 <!-- 핸들바스 적용되는 곳 -->
 						</td>
 					</tr>
 
@@ -506,11 +496,15 @@ td div {
 			});
 		});
 	</script>
-	<script id="trTemplateText" type="text/x-handlebars-template">
+
+
+  <script id="trTemplateText" type="text/x-handlebars-template">
 <div class="form-inline root-schedule">
 <div id="sch_cirNum"></div>
 <input type="text" placeholder="대륙" value="대륙" style="width: 100px; display:none;"
 class="form-control bit-continent"> 
+<input type="text" placeholder="국가명" value="{{nation}}"style="width: 100px;"
+class="form-control bit-nation">
 <input type="text" placeholder="도시명" value="{{city}}"style="width: 100px;"
 class="form-control bit-city">
 <input

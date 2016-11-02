@@ -26,6 +26,7 @@
 $(".selectAddBtn").click(function(event) {
 
 	var selectSchedule = {
+			nation: $(".bit-nation1").val(),
 			city: $(".bit-city1").val(),
 			startDate: $(".bit-startDate1").val(),
 			endDate: $(".bit-endDate1").val(),
@@ -34,14 +35,25 @@ $(".selectAddBtn").click(function(event) {
 	}
 	console.log(selectSchedule)
 
-	var template = Handlebars.compile($('#trTemplateText').html())
-	$("#selectTable .root-select").append($(template(selectSchedule)))
 
-	$('.root-schedule').each(function(index, element) {
+	if (selectSchedule["nation"] == ""
+		|| selectSchedule["city"] == ""
+			|| selectSchedule["startDate"] == "" 
+				|| selectSchedule["startDate"] == "") {
+		alert("양식을 완성하세요!")
+		return;
+	}
 
-		var tag = $(element).find($('[id="sch_cirNum"]'));
-		tag.html(index+1);
-	});
+
+
+		var template = Handlebars.compile($('#trTemplateText').html())
+		$("#selectTable .root-select").append($(template(selectSchedule)))
+
+		$('.root-schedule').each(function(index, element) {
+
+			var tag = $(element).find($('[id="sch_cirNum"]'));
+			tag.html(index+1);
+		});
 
 });
 
@@ -49,7 +61,7 @@ $(document.body).on('click', '.selectDelBtn', function(event) {
 	var clickedRow = $(this).parent();
 
 	clickedRow.remove();
-	
+
 	$('.root-schedule').each(function(index, element) {
 
 		var tag = $(element).find($('[id="sch_cirNum"]'));
