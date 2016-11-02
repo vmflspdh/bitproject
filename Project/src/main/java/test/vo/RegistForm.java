@@ -21,9 +21,16 @@ public class RegistForm implements Serializable {
   protected Date startDate;
   protected Date endDate;
   protected String myPhoto;
+  protected String travelPhoto;
   
   
   
+	public String getTravelPhoto() {
+		return travelPhoto;
+	}
+	public void setTravelPhoto(String travelPhoto) {
+		this.travelPhoto = travelPhoto;
+	}
 	public int getStyleNo() {
 		return styleNo;
 	}
