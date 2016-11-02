@@ -30,12 +30,12 @@ function ajaxBoardList() {
 		for ( var i in arr) {
 			var b = arr[i].reviewboardno
 			console.log(b)
-			contents += "<hr>" + "<div>" + "<dl>"+ "<img src='team/yds/2016.09.24/img/yang/1.jpg' >" +
+			contents += "<hr>" + "<div>" + "<dl>"+ "<img src='team/yds/2016.09.24/img/yang/24.jpg' >" +
 				"<dt>"+arr[i].reviewboardno+"</dt>"+
 				"<dt>"+arr[i].travelno+"</dt>"+
 				"<dt><a class='titleLink2' href='#' data-no2='"+arr[i].memberno+"'>"+arr[i].membername+"</a></dt>"+
 				"<dt><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")")+"</a></dt>"+
-				"<br>" + "<dt>"+arr[i].content+"</dt>"+
+			    "<dt>"+arr[i].content+"</dt>"+
 				"<dt>"+arr[i].createdDate+"</dt>"+
 				"<dt>"+arr[i].viewcount+"</dt>"+
 				
