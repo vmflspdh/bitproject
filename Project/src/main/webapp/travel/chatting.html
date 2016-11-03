@@ -80,6 +80,12 @@
   padding: 5px 10px 5px 10px;
   display: inline-block;
 }
+/* body {
+  border: 0px solid black;
+  background-image: url("img/dfdf.jpg");
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.2);
+} */
 </style>
 </head>
 <body>    
@@ -111,7 +117,7 @@
     <span> <a id="userName" style="position: absolute; right: 25px; top: 60px; font-weight: bold; font-size: 18px;"></a></span>
   </div>
 <!--Start of container-->
-<div class="header has-hero" data-show="on-load">
+<div class="header has-hero" data-show="on-load" style="width:100px;">
   <div class="container">
     <div class="row">
       <div class="col-xs-5 col-sm-3 col-md-2">
@@ -152,12 +158,28 @@
 <!-- #F5F2F5 -->
 <div style="width:1100px; margin: 0 auto;">
 <!-- --------------------리스트 시작--------------------- -->
-<div class="chanchatting" style="display:inline-block; background-color: #F5F2F5; width: 420px; margin-left:8%; margin-top: 89px; color:#736378; padding: 10px;">
+<div style="display:inline-block; width: 420px; margin-left:8%; margin-top: 89px; color:#736378; padding: 10px;">
+<div class="chanchatting">
+</div>
+<br><br>
+<div class="chanProfile" style="border:1px solid #A196A4; width: 400px; height: 400px; padding-top: 60px; padding-left: 100px;">
+<!-- <div style="width:200px;">
+<div style="width:200px; height:200px; border-radius: 50% 50% 50% 50%; overflow: hidden;">
+<img src="img/ggg.jpg">
+</div><br>
+<div style="font-size: large; font-weight: bold;"><center>양찬</center></div><br>
+<div style="font-size: medium;"><center>안녕하세요!</center></div><br>
+<div style="font-size: medium;"><a href="#"><center>상세페이지로 이동</center></a></div>
+</div> -->
+</div>
 </div>
 <!-- --------------------리스트 끝--------------------- -->
 <!-- --------------------채팅 시작--------------------- -->
-<div style="background-color: #F5F2F5; width: 420px; margin-right:8%; margin-top: 89px; color:#736378; padding: 10px; float: right; display:inline-block;">
+<div style=" width: 420px; margin-right:8%; margin-top: 89px; color:#736378; padding: 10px; float: right; display:inline-block;">
+  <textarea id="detailpageContents" cols="50" rows="5" style="width: 400px; display: none;" placeholder="내용을 입력하세요"></textarea>
+  <button id="mainMessageBtn" style="float:right; display: none;">메세지 보내기</button><br><br><br><br>
 <div class="chanchattingList">
+<div><h2>메세지를 확인하세요</h2></div>
 <!--   <div class="chattingDetail">
     <div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
       <img src="img/lees.jpg" ></div>
@@ -179,8 +201,8 @@
   <textarea id="selfIntroduce" cols="50" rows="3" style="width: 400px;" placeholder="내용을 입력하세요"></textarea>
   <button style="float:right;">입력</button> -->
   </div>
-  <textarea id="detailpageContents" cols="50" rows="3" style="width: 400px;" placeholder="내용을 입력하세요"></textarea>
-  <button id="mainMessageBtn" style="float:right;">입력</button>
+  <!-- <textarea id="detailpageContents" cols="50" rows="3" style="width: 400px; display: none;" placeholder="내용을 입력하세요"></textarea>
+  <button id="mainMessageBtn" style="float:right; display: none;">입력</button> -->
 </div>
 <!-- --------------------채팅 끝--------------------- -->
 </div>
