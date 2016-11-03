@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.ReivewPhotoDao">
+  <resultMap type="ReviewPhoto" id="ReviewPhotoMap">
+    <id column="rpno" property="reviewPhotoNo"/> 
+    <result column="rbno" property="reviewBoardNo"/>
+    <result column="rpnm" property="reviewPhotoName"/>
+  </resultMap>
+  
+  <insert id="insert" parameterType="ReviewPhoto">
+    insert into tvl_intro_pho(rbno, rpnm)
+    values(#{reviewBoardNo}, #{reviewPhotoName})
+  </insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
