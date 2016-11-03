@@ -481,7 +481,18 @@ td div {
 			// 클래스에 .my-view가 붙으면 새글 들어갔을때 안보이게함
 			$(".my-view").css("display", "none")
 		}
-	</script>
+		
+		$(document.body).on('click', '.selectModBtn', function(event) {
+	        $(".bit-startDate1").removeClass('hasDatepicker').datepicker({
+	          dateFormat : 'yy-mm-dd'
+	        });
+	        $(".bit-endDate1").removeClass('hasDatepicker').datepicker({
+	          dateFormat : 'yy-mm-dd'
+	        });
+	        
+	        event.stopPropagation();
+	      });
+	    </script>
 	<script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
 <div class="form-inline root-schedule">

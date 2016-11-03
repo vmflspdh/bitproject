@@ -56,7 +56,9 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 		$(element).find($('[class="form-control bit-city"]')).attr('id', 'rename');
 		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude');
 		$(element).find($('[id="bit-longitude"]')).attr('class', 'form-control bit-longitude');
-
+		$(element).find($('[id="bit-startDate"]')).attr('class', 'form-control bit-startDate');
+		$(element).find($('[id="bit-endDate"]')).attr('class', 'form-control bit-endDate');
+		
 	});
 
 	$(this).parent().each(function(index, element) {
@@ -66,9 +68,11 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 		$(element).find($('[class="form-control bit-city"]')).attr('id', 'pac-input');
 		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude1');
 		$(element).find($('[id="bit-longitude"]')).attr('class', 'form-control bit-longitude1');
-
+		$(element).find($('[id="bit-startDate"]')).attr('class', 'form-control bit-startDate1');
+		$(element).find($('[id="bit-endDate"]')).attr('class', 'form-control bit-startDate1');
+		
 	});
-
+	event.stopPropagation();
 });
 
 
