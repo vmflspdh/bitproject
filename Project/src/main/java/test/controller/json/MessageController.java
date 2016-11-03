@@ -88,4 +88,18 @@ public class MessageController {
       return JsonResult.fail(e.getMessage());
     }
   }
+	
+	@RequestMapping(path="profiledetail")
+	public Object list2(int no, HttpSession session) throws Exception {
+		
+		try {
+			HashMap<String,Object> map = new HashMap<>();
+			System.out.println(no);
+			map.put("profileNo", no);
+		  return JsonResult.success(messageDao.selectUserProfile(map));
+		  
+		} catch (Exception e) {
+			return JsonResult.fail(e.getMessage());
+		}
+	}
 }

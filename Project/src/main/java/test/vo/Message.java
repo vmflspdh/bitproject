@@ -14,8 +14,22 @@ public class Message implements Serializable {
 	protected Date sendDate;
 	protected int state;
 	protected String myPhoto;
+	protected int travelMainNo;
+	protected int schduleNo;
 	
 	
+	public int getSchduleNo() {
+		return schduleNo;
+	}
+	public void setSchduleNo(int schduleNo) {
+		this.schduleNo = schduleNo;
+	}
+	public int getTravelMainNo() {
+		return travelMainNo;
+	}
+	public void setTravelMainNo(int travelMainNo) {
+		this.travelMainNo = travelMainNo;
+	}
 	public String getMyPhoto() {
 		return myPhoto;
 	}

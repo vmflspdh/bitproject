@@ -12,6 +12,8 @@
     <result column="SD_DT" property="sendDate"/>
     <result column="STAT" property="state"/>
     <result column="MPHO" property="myPhoto"/>
+    <result column="TMNO" property="travelMainNo"/>
+    <result column="SCHNO" property="schduleNo"/>
   </resultMap>
   
 <insert id="insert" parameterType="Message">
@@ -42,10 +44,20 @@ order by msgno desc -->
 select tvl_msg.mno, mnm, msgno, mno2, cont, sd_dt, mpho from tvl_msg
 inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno 
 where (mno2=#{sendNo} and tvl_msg.mno=#{receiveNo}) or (mno2=#{receiveNo} and tvl_msg.mno=#{sendNo})
-order by
-<choose>
-<when test="msgnoOrder == 'desc'">msgno desc</when>
-<otherwise>msgno asc</otherwise>
-</choose>
+order by msgno desc
+</select>
+
+<select id="selectUserProfile" resultMap="messageMap" parameterType="map">
+select tvl_msg.msgno,tvl_sch.schno, tvl_membs.mnm, tvl_msg.cont, tvl_membs.mpho, tvl_tvlmain.tmno from tvl_membs
+inner join tvl_tvlmain on tvl_tvlmain.mno = tvl_membs.mno
+inner join tvl_msg on mno2 = tvl_membs.mno
+inner join tvl_sch on tvl_tvlmain.tmno = tvl_sch.tmno
+where msgno in (
+select max(msgno)
+from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno
+where tvl_msg.mno2 = #{profileNo}
+)
+order by tmno desc
 </select>
 </mapper>
