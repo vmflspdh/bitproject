@@ -45,7 +45,8 @@ function ajaxRegistFormList() {
 	    		}
 	    		
 	    		if (i % 4 == 3) {
-		    		contents += '</tr>'
+		    		contents += '</tr>' +
+		    					'<tr><td style="height: 15px; border="1px solid black;"></td><td></td><td></td><td></td></tr>'
 		    	}
 	      }
 	    $(".changallery").html(contents)
