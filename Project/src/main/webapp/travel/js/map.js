@@ -115,6 +115,10 @@ function initMap() {
 				$(".bit-nation1").val(place.address_components[2].long_name)
 			} else if (place.address_components.length == 2) {
 				$(".bit-nation1").val(place.address_components[1].long_name)
+			} else if (place.address_components.length == 5) {
+				$(".bit-nation1").val(place.address_components[4].long_name)
+			} else if (place.address_components.length == 6) {
+				$(".bit-nation1").val(place.address_components[5].long_name)
 			}
 
 			$(".bit-city1").val(place.address_components[0].short_name)
