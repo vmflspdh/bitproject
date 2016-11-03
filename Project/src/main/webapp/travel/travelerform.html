@@ -288,9 +288,6 @@ td div {
 									name="type" id="changetype-geocode"> <label
 									for="changetype-geocode">Geocodes</label>
 							</div>
-							<div class="cb-module-header">
-								<h2 class="cb-module-title">schedule lists</h2>
-							</div>
 						</td>
 					</tr>
 					<!-- 여기까지맵임 -->
@@ -482,7 +479,7 @@ td div {
 			$(".my-view").css("display", "none")
 		}
 		
-		$(document.body).on('click', '.selectModBtn', function(event) {
+		$('.root-schedule').on('click', '.selectModBtn', function(event) {
 	        $(".bit-startDate1").removeClass('hasDatepicker').datepicker({
 	          dateFormat : 'yy-mm-dd'
 	        });
@@ -512,8 +509,8 @@ type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width:
 class="form-control bit-latitude" readOnly = true> <input type="text"
 placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px; display:none;"
 class="form-control bit-longitude" readOnly = true >
-<button type="button" class="btn btn-default btn-xs selectModBtn" style="display:none;">M</button>
-<button type="button" class="btn btn-default btn-xs selectDelBtn" style="display:none;">X</button>
+<button type="button" class="btn btn-default btn-xs selectModBtn">M</button>
+<button type="button" class="btn btn-default btn-xs selectDelBtn">X</button>
 </div>
 {{/each}}
 </script>
