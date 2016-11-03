@@ -130,5 +130,10 @@ $("#travelerRegForm").click(function(event) {
 	window.location.href = "travelerRegForm.html";
 });
 
+$("#travelerMessage").click(function(event) {
+
+	window.location.href = "chatting.html";
+});
+
 
 
