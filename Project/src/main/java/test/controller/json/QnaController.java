@@ -27,7 +27,7 @@ public class QnaController {
    @ResponseBody
    public String list(
          @RequestParam(defaultValue="1") int pageNo,
-         @RequestParam(defaultValue="10") int length) throws Exception {
+         @RequestParam(defaultValue="5") int length) throws Exception {
 
       HashMap<String,Object> result = new HashMap<>();
       System.out.println(pageNo);

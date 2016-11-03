@@ -137,7 +137,7 @@ function loadProfileInfo(no) {
 			'</div><br>' +
 			'<div style="font-size: large; font-weight: bold;"><center>' + arr[0].receiveUser + '</center></div><br>' +
 			'<div style="font-size: medium;"><center>' + arr[0].contents + '</center></div><br>' +
-			'<div style="font-size: medium;"><a class="travelMainLink" href="#" data-travelMainBoard=' + arr[0].schduleNo + '><center>상세페이지로 이동</center></a></div>' +
+			'<div style="font-size: medium;"><a class="travelMainLink" href="#" data-travelMainBoard=' + arr[0].travelMainNo + '><center>상세페이지로 이동</center></a></div>' +
 			'</div>'
 		  
 		$(".chanProfile").html(contents)

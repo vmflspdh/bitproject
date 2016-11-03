@@ -49,9 +49,9 @@ $(".modStartBtn").click(function(event){
 });
 
 
-$(document.body).on('click', '.selectModBtn', function(event) {
+$('.root-schedule').on('click', '.selectModBtn', function(event) {
 
-	$('.root-schedule').each(function(index, element) {
+/*	$('.root-schedule').each(function(index, element) {
 		$(element).find($('[type="text"]')).attr("readOnly", true);
 		$(element).find($('[class="form-control bit-city"]')).attr('id', 'rename');
 		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude');
@@ -64,15 +64,14 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 	$(this).parent().each(function(index, element) {
 
 		$(element).find($('[type="text"]')).attr("readOnly", false);
-		/*$(element).before('<input type="text" id="pac-input" class="form-control search" style="width: 200px;" placeholder="변경할 도시를 검색하세요.">');*/
+		$(element).before('<input type="text" id="pac-input" class="form-control search" style="width: 200px;" placeholder="변경할 도시를 검색하세요.">');
 		$(element).find($('[class="form-control bit-city"]')).attr('id', 'pac-input');
 		$(element).find($('[id="bit-latitude"]')).attr('class', 'form-control bit-latitude1');
 		$(element).find($('[id="bit-longitude"]')).attr('class', 'form-control bit-longitude1');
 		$(element).find($('[id="bit-startDate"]')).attr('class', 'form-control bit-startDate1');
 		$(element).find($('[id="bit-endDate"]')).attr('class', 'form-control bit-startDate1');
 		
-	});
-	event.stopPropagation();
+	});*/
 });
 
 
