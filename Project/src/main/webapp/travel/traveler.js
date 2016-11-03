@@ -29,7 +29,7 @@ function ajaxRegistFormList() {
 	    		'<img src="../upload/' + arr[i].travelPhoto + '" style="width:250px; height: 180px;">' +
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
-	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].no + '">' + arr[i].title + '</a></div>' +
+	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
 	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">' +
 	    		'<img src="../upload/' + arr[i].myPhoto + '"></div>' +
 	    		'<div style="padding:5px; font-weight: bold; color:black;">' + arr[i].writer + '</div>' +
