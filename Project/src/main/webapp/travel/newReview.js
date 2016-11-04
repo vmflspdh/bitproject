@@ -30,18 +30,32 @@ function ajaxBoardList() {
 		for ( var i in arr) {
 			var b = arr[i].reviewboardno
 			console.log(b)
-			contents += "<hr>" + "<div id=234; style='border:1px solid red;'>" + "<dl>"+ "<img src='team/yds/2016.09.24/img/yang/24.jpg' >" +
-				"<dt >"+arr[i].reviewboardno+"</dt>"+
-				"<dt>"+arr[i].travelno+"</dt>"+
-				"<dt><a class='titleLink2' href='#' data-no2='"+arr[i].memberno+"'>"+arr[i].membername+"</a></dt>"+
-				"<dt><a class='titleLink' href='#' data-no='"+arr[i].reviewboardno+"'>"+arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")")+"</a></dt>"+
-				"<div  style='text-align: right; border:1px solid red; width:400px;'>" + "<dt>"+arr[i].createdDate+"</dt>"+
-				"<dt>"+arr[i].viewcount+"</dt>"+ "</div>"+
-				
-			"</dl>" + "<br>" + 
-			"</div>";
-		}
-		$("#boardTable tbody").html(contents);
+			contents += 
+			'<tr>' +
+			'<td style="width:100px; height:100px;">' +
+			'<img src="img/yang/travelphoto2.jpg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
+			'</td>' +
+			'<td style="width:800px;">' +
+			'<div style="height:100px; padding: 10px;">' +
+			'<div style="height: 10px;"></div>' +
+			'<div style="font-size:large; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
+			'<div style="font-size:x-large; font-weight: bold; font-family: sans-serif;">' +
+			'<a class="titleLink" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
+			'</div></a>' +
+			'</div>' +
+			'</td>' +
+			'<td style="width:110px;color: #BBBABC;">' +
+			'<div style="font-size: medium; font-weight: normal;">' + arr[i].createdDate + '</div>' +
+			'<div style="font-size: medium; font-weight: normal;">' +
+			'<span style="float: right;">&nbsp; &nbsp;</span>' +
+			'<span style="float: right;">' + arr[i].viewcount + '</span>' +
+			'<span style="float: right;">조회수 :&nbsp;</span>' +
+			'</div>' +
+			'</td>' +
+			'</tr>' +
+			'<tr><td style="height: 30px;"></tr>'
+	}
+	$("#newReviewTable").html(contents);
 		
 		//console.log(contents)
 		

@@ -1,23 +1,31 @@
 package test.controller.json;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 
 import test.dao.CommentDao;
 import test.dao.ReviewDao;
+import test.dao.ReviewPhotoDao;
+import test.util.FileUploadUtil;
 import test.vo.Member;
 import test.vo.Review;
+import test.vo.ReviewPhoto;
+import test.vo.TravelMainFile;
 
 
 //@Component
@@ -28,6 +36,13 @@ public class ReviewController {
   ReviewDao reviewDao;
   @Autowired
   CommentDao commentDao;
+  @Autowired 
+  ServletContext sc;
+  @Autowired 
+  ReviewPhotoDao reviewPhotoDao;
+  
+  ReviewPhoto reviewPhoto = new ReviewPhoto();
+  
 
   @RequestMapping(path="rvlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
@@ -69,6 +84,26 @@ public class ReviewController {
   }
   
   
+  @RequestMapping(path="rvphotoList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String photolist(int no) throws Exception {
+    
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      
+      List<ReviewPhoto> list = reviewPhotoDao.photoList(no);
+      
+      result.put("state", "success");
+      result.put("data", list);
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+    
+    
+  }
+  
   
   /*@RequestMapping("list2")
   public ResponseEntity<String> list2(
@@ -94,17 +129,45 @@ public class ReviewController {
 
   @RequestMapping(path="rvadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String add(Review review, HttpSession session) throws Exception {
+  public String add(Review review, HttpSession session,MultipartFile[] files) throws Exception {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
     Member member = (Member)session.getAttribute("member");
     review.setMemberno(member.getNo());
     
+    for(int j = 0; j < files.length; j++){
+      System.out.println(files[j]);
+    }
+    
+    
     HashMap<String, Object> result = new HashMap<>();
     try{
       reviewDao.insert(review);
+      System.out.println(review);
+      
+      System.out.println(files);
+      String newFilename = null;
+      System.out.println(files.length);
+      for (int i = 0; i < files.length; i++) {
+        System.out.println(i);
+        if (!files[i].isEmpty()) {
+          System.out.println(i);
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          System.out.println(newFilename);
+          reviewPhoto.setReviewBoardNo(review.getReviewboardno());
+          System.out.println(review.getReviewboardno());
+          reviewPhoto.setReviewPhotoName(newFilename);
+          System.out.println(newFilename);
+          System.out.println(reviewPhoto);
+          reviewPhotoDao.insert(reviewPhoto);
+          
+          
+        }
+      }
     result.put("state", "success");
     } catch(Exception e) {
+      e.printStackTrace();
       result.put("state", "fail");
       result.put("data", e.getMessage());
     }

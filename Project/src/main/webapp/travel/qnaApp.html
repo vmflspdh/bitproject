@@ -2,11 +2,27 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8" />
+<script src="//use.typekit.net/omt5qnk.js"></script>
+<script>
+  try {
+    Typekit.load();
+  } catch (e) {
+  }
+</script>
+<title>서내와 귀요미들</title>
+<meta name="description" content="MyTravel" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Let's go together!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet"
   href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <link rel="shortcut icon" href="">
+<script type='application/ld+json'>
+{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/furnishednycapartments.com\/",
+"name":"Furnished NYC Apartments - Rentals in New York",
+"potentialAction":{"@type":"SearchAction",
+"target":"http:\/\/furnishednycapartments.com\/?s={search_term_string}",
+"query-input":"required name=search_term_string"}}</script>
 <!-- 시작 -->
 <link rel="stylesheet"href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <!-- 끝 -->
@@ -48,7 +64,32 @@
 <link rel="stylesheet" type="text/css" href="/common/css/base.css" media="all">
 <link rel="stylesheet" type="text/css" href="/common/css/common.css"  media="all">
 <link rel="stylesheet" type="text/css" href="/common/css/content.css"  media="all">
-
+<!-- / Yoast SEO plugin. -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='nyc-css'
+  href='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/css/layout.css?ver=0.1.1'
+  type='text/css' media='all' />
+<link rel='https://api.w.org/'
+  href='http://furnishednycapartments.com/wp-json/' />
+<link rel='shortlink' href='http://furnishednycapartments.com/' />
+<link rel="alternate" type="application/json+oembed"
+  href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F" />
+<link rel="alternate" type="text/xml+oembed"
+  href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F&#038;format=xml" />
+<!--  travel 에서 가저온 시-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+<meta name="keywords"
+  content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet"
+  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="shortcut icon" href="../favicon.ico">
+<!-- <link rel="stylesheet" type="text/css" href="css/default.css"/> -->
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
 <script src="js/modernizr.custom.js"></script>
 <!-- 궁금 -->
@@ -98,6 +139,166 @@
 }
 
 </style>
+<style type="text/css">
+#inviteCount {
+  z-index: -1;
+   position: absolute; 
+  right: 12px;
+  top: -1px;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background: #F361A6;
+  margin: 0 10px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  float: left;
+}
+
+#fadeandscale {
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+
+.popup_visible #fadeandscale {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#yang ul li {
+  display: inline;
+  font: bold 13px Dotum;
+  padding: 0 10px;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+  margin: 0 0 1em 0;
+}
+
+ol, ul, li {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.chanwrapper {
+  width: 85%;
+  margin: 40px auto;
+}
+
+div.changallery {
+  margin-top: 30px;
+}
+
+div.changallery ul {
+  list-style-type: none;
+  margin-left: 75px;
+}
+/* animation */
+div.changallery ul li, div.changallery li img {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+div.changallery ul li {
+  position: relative;
+  float: left;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 5px;
+  z-index: 0;
+}
+/* Make sure z-index is higher on hover */
+/* Ensure that hover image overlapped the others */
+div.changallery ul li:hover {
+  z-index: 5;
+  width: 250px;
+}
+/* Image is position nicely under li */
+div.changallery ul li img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 1px solid #dddddd;
+  padding: 5px;
+  width: 200px;
+  height: 200px;
+  background: #f0f0f0;
+}
+
+div.changallery ul li img:hover {
+  width: 250px;
+  height: 250px;
+  margin-top: -155px;
+  margin-left: -175px;
+  top: 65%;
+  left: 65%;
+}
+/* Responsive hack */
+@media only screen and (min-width: 499px) and (max-width: 1212px) {
+  .chanwrapper {
+    width: 1000px;
+    font-family: tahoma, arial;
+  }
+}
+
+@media only screen and (max-width: 498px) {
+  .chanwrapper {
+    width: 400px;
+  }
+  div.changallery ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.cycle-overlay {
+  background: black;
+  color: white;
+  padding: 15px;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 5px;
+  width: 80%;
+  font-family: tahoma, arial;
+  font-weight: bold;
+  font-size: x-small;
+}
+
+.hero:not (.red-bg ):before {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.cbp-af-header nav a {
+  font-family: Trebuchet;
+  color: white;
+  font-weight: 700;
+  margin: 0 0 0 20px;
+  font-size: 1.2em;
+position: inherit;
+    float: left;
+}
+</style>
 <!-- 끝 -->
 <!-- 시작 -->
 <style>
@@ -116,7 +317,7 @@ a.disabled {
 }
 
 <!-- 구분선 -->
-/*! normalize.css v1.1.2 | MIT License | git.io/normalize */dl,h3,menu,ol,p,pre,ul{margin:1em 0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}button,html,input,select,textarea{font-family:sans-serif}.test1,figure,form{margin:0}a:focus{outline:dotted thin}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.67em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}blockquote{margin:1em 40px}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:after,q:before{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}nav ol,nav ul{list-style:none}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+/*! normalize.css v1.1.2 | MIT License | git.io/normalize */dl,h3,menu,ol,p,pre,ul{margin:1em 0}article,aside,details,figcaption,figure,footer,header,hgroup,main,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}button,html,input,select,textarea{font-family:sans-serif}.test1,figure,form{margin:0}a:focus{outline:dotted thin}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}h2{font-size:1.5em;margin:.83em 0}h3{font-size:1.17em}h4{font-size:1em;margin:1.33em 0}h5{font-size:.83em;margin:1.67em 0}h6{font-size:.67em;margin:2.33em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}blockquote{margin:1em 40px}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:none}q:after,q:before{content:'';content:none}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}dd{margin:0 0 0 40px}menu,ol,ul{padding:0 0 0 40px}img{border:0;-ms-interpolation-mode:bicubic}svg:not(:root){overflow:hidden}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
 @charset "utf-8";@import url(font.css);*,html{-webkit-text-size-adjust:none}abbr,acronym,fieldset,form,img{border:0}.img,.test1,html{width:100%}.ellipsis,.i_select3{text-overflow:ellipsis}.i_textarea,html{overflow-x:hidden}.input_btn1,.input_btn2,.input_btn3{text-align:center}*{margin:0;padding:0}html{overflow-y:scroll;font-size:10px}.test1{letter-spacing:0}.test1,html{height:100%;min-height:100%}.test1,input,select,textarea{font:1em/100% 'Nanum Gothic','나눔고딕','Nanum GothicWeb','Nanum Gothic',Dotum,"돋움",gulim,"굴림",verdana,sans-serif;color:#333;border:0;line-height:1.2em}a,blockquote,.test1,dd,div,dl,dt,embed,fieldset,form,h1,h2,h3,h4,h5,h6,img,input,li,object,ol,p,pre,table,td,textarea,th,ul{padding:0;margin:0;-webkit-margin-before:0;-webkit-margin-after:0;line-height:1em;/*white-space:normal;*/word-break:break-all;-webkit-text-size-adjust:none}table{border-collapse:collapse;border-spacing:0;font:1.5em/2em 'Nanum Gothic'}input,select,table img,table tr td,table tr th{vertical-align:middle}input[type=text]:-ms-clear,input:-ms-clear {display: none;},input[type=image]{vertical-align:top}address,caption,cite,code,dfn,em,h1,h2,h3,h4,h5,h6,th,var{font-weight:400;font-style:normal}dir,li,menu,ol,ul{list-style:none;-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0;-webkit-padding-start:0!important}table td a{display:inline-block}table caption{display:none}.img,a{display:block}.bold,strong{font-family:'Nanum GothicB';font-weight:400}.rbold{font-family:'Nanum GothicB'!important;color:#4c4c4c}a{text-decoration:none;color:#969696;cursor:pointer;border:none}a:active{outline: none;}.middle{vertical-align:middle}input,textarea{outline-style:none}textarea{resize:none}.clearfix{zoom:1}.clearfix:after{content:"";display:block;clear:both}.fl{float:left}.fr{float:left}.clearfix li{float:left}#accessibility,.hidden,.skip,caption,hr,legend{position:absolute;width:0;height:0;font-size:0;line-height:0;overflow:hidden;visibility:hidden;text-indent:-5000px}.i_text,.i_text2{color:#666;vertical-align:middle;border:1px solid #cbcbcb;height:13px;font:13px/100% 'Nanum Gothic'}.w8{width:8%}.w10{width:10%}.w15{width:15%}.w20{width:20%}.w25{width:25%}.w30{width:30%}.w35{width:35%}.w40{width:40%}.w45{width:45%}.w50{width:50%}.w55{width:55%}.w60{width:60%}.w65{width:65%}.w70{width:70%}.w75{width:75%}.w80{width:80%}.w85{width:85%}.w90{width:90%}.w95{width:95%}.w100{width:100%}.i_text{padding:5px 6px}.i_text2{padding:8px 6px 7px}.i_text3{ime-mode:disabled;font:4em/100% 'Nanum Gothic';color:#666;background:0 0;padding:4% 0 3% 21%;vertical-align:middle;width:48.5%}.i_text4{font:1em/100% 'Nanum Gothic';color:#666;background:url(/rs/images/main/btn/gnb7.png) no-repeat;background-size:contain;padding:3px 5px 3px 10px;vertical-align:middle;width:135px;height:24px}.i_select1,.i_select2,.i_select3{border:1px solid #cdcdcd;padding:2px}.i_select1{height:30px;width:118px;line-height:30px}.i_select2{height:25px;width:115px;line-height:27px}.i_select3{height:30px;width:75%;line-height:30px}.i_textarea{border:1px solid #cbcbcb;font:13px/160% 'Nanum Gothic';color:#666;padding:5px 6px;width:98%;min-height:250px}span.customSelect{font-size:11px;background-color:#f5f0de;color:#7c7c7c;padding:5px 7px;border:1px solid #e7dab0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px}.input_btn1,.input_btn2,.input_btn3,.input_btngray{width:45px;color:#fff;display:block;font-family:Nanum Gothic;height:15px;padding:5px;line-height:100%}span.customSelect.changed{background-color:#f0dea4}.customSelectInner{background:url(customSelect-arrow.gif) center right no-repeat}.input_btn1{background:#353535}.input_btn2{background:#ff3d79}.input_btn3{background:#9a3bcb}.input_btngray{background:#666;text-align:center}.btn1,.btn2,.btn3{text-align:center;width:72px;color:#fff;display:block;font-family:Nanum Gothic;padding-top:8px;height:22px;line-height:100%}.btn1{background:#353535}.btn2{background:#ff3d79}.btn3{background:#9a3bcb}.btn4,.btn4-s{background:#353535;color:#fff;display:inline-block;font-family:Nanum Gothic;line-height:100%}.btn4{padding:10px 20px}.btn4-s{padding:5px 15px}.btn5,.btn5-s{background:#ff3d79;color:#fff;display:inline-block;font-family:Nanum Gothic;line-height:100%}.btn5{padding:10px 20px}.btn5-s{padding:5px 15px}.btn6,.btn6-s{background:#9a3bcb;color:#fff;display:inline-block;font-family:Nanum Gothic;line-height:100%}.btn6{padding:10px 20px}.btn6-s{padding:5px 15px}.btn-deepgray,.btn-gray{display:inline-block;text-align:center;width:72px;color:#353535;font-family:Nanum Gothic;padding-top:8px;height:22px;line-height:100%}.btn-gray{background:#bfbfbf}.btn-deepgray{background:#595959}.pdl2,.pdl3,.pdl4,.pdl5{text-align:left}.white{color:#fff}.yel{color:#d9a336}.brown{color:#785c02}.red{color:#ec1d85!important}.greylight{color:#b2aea4}.bk{color:#333}.must{color:#d92b3a;display:inline-block;margin-right:5px}.purple{color:#9d2bd9}.grey{color:#73706a}.letter06{letter-spacing:-.06em}.letter08{letter-spacing:-.08em}.mgt1{margin-top:1px!important}.mgt5{margin-top:5px!important}.mgt2{margin-top:2px!important}.mgt4{margin-top:4px!important}.mgt6{margin-top:6px!important}.mgt10{margin-top:10px!important}.mgt16{margin-top:16px!important}.mgtnone{margin-top:0!important}.negamgt23{margin-top:0}.mgt38{margin-top:38px}.mgb2p5{margin-bottom:2.5%!important}.mgb4{margin-bottom:4%!important}.mgb5{margin-bottom:5px!important}.mg18{margin:11px 0}.mgl15{margin-left:15px}.mglNega10{margin-left:-10px!important}.mgl10{margin-left:10px!important}.mgl40{margin-left:40px!important}.mgl50{margin-left:50px!important}.mgr15{margin-right:15px}.nomargin{margin:0!important}.automargin{margin:0 auto!important}.pdb1{padding-bottom:1%!important}.pdl2{padding-left:2%!important}.pdl3{padding-left:3%!important}.pdl4{padding-left:4%!important}.pdl5{padding-left:5%!important}.pdt5{padding-top:5px!important}.pdt10{padding-top:10px!important}.nopadding{padding:0!important}.txtleft{text-align:left!important}.txtcenter{text-align:center!important}.txtright{text-align:right!important}.borderb-purple{border-bottom:.1em solid #aa40de}.nobg{background:0 0!important}.ellipsis{white-space:nowrap;overflow:hidden;word-break:break-all}.overflowvisible{overflow:visible!important}input::-ms-clear { display: none; }
 
 html{min-width:1100px;overflow-x:auto;}
@@ -124,13 +325,9 @@ html{min-width:1100px;overflow-x:auto;}
 .clearfixed {zoom:1;}
 .clearfixed:after { content:""; display:block;  clear:both;}
 
-.test1#sub .main-header{position:relative;background:#f23492;width:100%;padding:0;}
-.test1#sub .main-header-wrap{width:1100px;margin:0 auto;}
-.test1#sub .mainNav li a{color:#fff;}
-.test1#sub .navright a{color:#ffb3d9;}
-.test1#sub .i_text4{background:url("/rs/images/sub/btn/gnb7.png") no-repeat 0 0;}
-.test1#sub .subNav li a{color:#80737c;}
-.test1#sub .subNav li a.on, .test1#sub .subNav li a:hover, .test1#sub .subNav li a:active{color:#ed1d85;}
+
+
+
 .test1#sub .main-footer{position:static;}
 .test1#sub .footer-wrap{width:1100px;margin:0 auto;}
 
@@ -349,14 +546,7 @@ border-radius : 10px 10px 10px 10px;
 <style>
 
 
-#wrap{position:relative;left:0;width:100%;min-height:100%;-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all 0.3s ease}
-#header .header_wrap{position:relative;max-width:1920px;margin:0 auto;height:80px;background:rgba(26,21,21,0);-webkit-transition: background 0.4s ease;-moz-transition: background 0.4s ease;-o-transition: background 0.4s ease;transition: background 0.4s ease}
-#header.open .header_wrap{background:rgba(26,21,21,0.95)}
-#header.fix .header_wrap{background:rgba(26,21,21,0.95)}
-#header.open .gnb_wrap{display:block;max-width:1920px;margin:0 auto}
-#header .gnb_wrap.scroll{overflow-y:scroll}
-#header .gnb_wrap{position:relative;background:#000;background:rgba(0,0,0,0.95);display:none}
-.simple_list .date_wrap{position:absolute;top:0;right:10px;height:100%}
+
 /* common */
 
 .top_visual{position:fixed;top:0;left:0;width:100%;height:600px;z-index:0}
@@ -385,8 +575,8 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 /*table, caption, tbody, tfoot, thead, tr, th, td,*/
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
+figure, figcaption, footer,hgroup,
+menu, output, ruby, section, summary,
 time, mark, audio, video{ 
   padding:0px;
   margin:0px;
@@ -444,6 +634,194 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
 
 </head>
 <body>
+ <!-- 상단메뉴시작 -->
+  <!-- Start of container2 -->
+  <div class="container">
+    <div class="upper">
+      <div class='zeta-menu-bar my-login'>
+        <ul class="zeta-menu">
+          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+              id="mainImg"></a>
+            <ul>
+              <li><a href="#" id="myInfo"><img
+                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+                  INFO</a> <!-- <ul>
+                  <li><a href="#2B1">2-B-1 메뉴</a></li>
+                  <li><a href="#2B2">2-B-2 메뉴</a></li>
+                </ul> --></li>
+              <li><a href="#" id="travelerMessage"><img
+                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+              </li>
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
+                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+              <li><a id="logoutBtn" href='#' class="my-login"><img
+                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+              </li>
+            </ul></li>
+        </ul>
+      </div>
+      
+      <div id="fadeandscale" class="well">
+                <h4>동행요청</h4>
+                <h5></h5>
+            <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+            <button value="vcxc">수락</button><button value="sdfds">거절</button>
+            </pre>
+            <pre class="prettyprint">
+            <code>zxcxzcxzxz</code>
+            </pre>
+            <pre class="prettyprint">
+            <code>zxcxzcxzxz</code>
+            </pre> -->
+                <button style="float: right;"class="fadeandscale_close btn btn-default">Close</button>
+            </div>
+
+      <div class="my-login">
+        <span> <a id="userName"
+          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+          <a href="#" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div>
+
+      <div
+        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+        <a href='#' class="btn btn-default btn-sm my-logout"
+          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+          class="btn btn-default btn-sm my-logout" data-toggle="modal"
+          data-target="#myModal">SIGN IN</a>
+      </div>
+    </div>
+  </div>
+     <div class="cbp-af-header">
+      <div class="cbp-af-inner">
+      <div>
+      <img src='img/passport.png' style="float:left; width: 55px; height:55px;">
+        <h1>WE TRIP</h1>
+        </div>
+        <nav id="menu_nav">
+          <a href="#" id="travelerPage" >Traveler</a> <a href="#" id="reviewPage">Review</a>
+          <a href="#" id="qnaPage">Q&A</a> <a href="#" >.</a>
+        </nav>
+      </div>
+    </div>
+ 
+  <!--  test test -->
+  <!-- center  ---->
+
+  <div class="main"></div>
+<!-- Start of Login form -->
+  <div class="modal fade"
+    style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
+    id="myModal1" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="z-index: 300000;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+          </button>
+          <h2 class="modal-title" id="myModalLabel">
+            <em>로그인</em>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <div class="wrapper">
+            <form class="form-signin">
+              <input type="text" class="form-control" id="email"
+                placeholder="이메일" required="" autofocus="" /></br> <input
+                type="password" id="password" class="form-control"
+                placeholder="비밀번호" required="" /> <label class="checkbox">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+                id="saveEmail"> 이메일저장
+              </label>
+              <button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+                type="button">로그인</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Login form -->
+
+  <!-- Start of Registration Form-->
+  <div class="modal fade" style="z-index: 200000;" id="myModal"
+    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm"
+      style="width: 500px; z-index: 300000;">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+          </button>
+          <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+        </div>
+        <div class="modal-body">
+          <div class="wrapper">
+            <form class="form-signin">
+
+
+              <label for="name" class="col-sm-2 control-label">이름</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="name"
+                  placeholder="이름"><br />
+              </div>
+
+
+              <label for="email" class="col-sm-2 control-label">이메일</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="email"
+                  placeholder="이메일"><br />
+              </div>
+
+
+
+              <label for="password" class="col-sm-2 control-label">암호</label>
+              <div class="col-sm-10">
+                <input type="password" id="password" class="form-control"
+                  placeholder="암호입력"><br />
+              </div>
+
+
+
+              <label for="birthday" class="col-sm-2 control-label">생일</label>
+              <div class="col-sm-10">
+                <input type="text" id="birthday" class="form-control"
+                  placeholder="생일"><br />
+              </div>
+
+
+              <label for="gender" class="col-sm-2 control-label">성별</label>
+              <div class="col-sm-10">
+                <select class="form-control" id="gender">
+                  <option value="1">여자</option>
+                  <option value="0">남자</option>
+                </select> <br>
+              </div>
+
+              <!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+                      type="checkbox" value="remember-me" id="rememberMe"
+                      name="rememberMe"> 약관동의
+                    </label> -->
+              <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+                type="button">회원가입</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Registration Form-->
+
+
+  <!-- End of container2 -->
   <!-- BODY -->
   <!-- top_visual -->
 <div class="top_visual qna_visual">
@@ -492,9 +870,7 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
  <div id="wrap"> 
   
     
-    <!-- .bg-subNav -->
-   <div class="bg-subNav" onclick="javascript: closeNav();"></div> 
-    <!-- // .bg-subNav e -->
+ 
     
     <!-- #container -->
     <div id="container">
@@ -512,6 +888,13 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
             
     <div class="contents fl">
        
+       <div class = "writer" style = "height : 50px; padding-left: 13px; padding-bottom : 15px;">
+             <p>
+      <a><button type="button" style = "float: right; margin-bottom:15px; margin-right: 20px; float : left" class="btn btn-default btn-xs"
+          onclick="location.href='qnaForm.html'" >글쓰기</button> </a>
+    </p> 
+        </div>
+        
         <div class="contents-wrap">
             <div class="notice_tab_wrap clearfixed" style="margin-bottom: 10px; padding : 20px 10px 5px 10px;
                  background-color: #f2f1ed;  border: 1px solid black; width : 1200px; border-radius : 10px 10px 10px 10px;
@@ -593,13 +976,57 @@ caption,legend{visibility:hidden;width:0px;height:0px;font-size:0px;line-height:
   <script src="js/cbpAnimatedHeader.min.js"></script>
   <!-- 회원정보 관련 -->
   <script type="text/javascript" src="js/bit.js"></script>
-  <script type="text/javascript" src="js/authApp1.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/authApp.js"></script>
   <script type="text/javascript" src="js/memberForm.js"></script>
   <script type="text/javascript" src="qnaApp.js"></script>
+  <script type="text/javascript" src="traveler.js"></script>
+  <script type="text/javascript" src="js/backgroundmap.js"></script>
+  <script type="text/javascript" src="js/leaflet.js"></script>
+  <script type="text/javascript" src="js/stamen.js"></script>
+  <script type="text/javascript" src="travelerdetail.js"></script>
+  <script type="text/javascript" src="travelerform.js"></script>
+  <script src="js/jquery.popupoverlay.js"></script>
+   <script>
+    $(document).ready(function() {
+      $('#fadeandscale').popup({
+        pagecontainer : '.container',
+        transition : 'all 0.3s'
+      });
+    });
+  </script>
   <script>
     init() // 화면을 준비시킨다
     ajaxLoginUser() // 로그인 유저 정보 가져오기
+    ajaxRegistFormList()
     ajaxQnaList()
+    ajaxInviteList()
+    ajaxAgreeInviteList()
+    $(function() {
+      $(".bit-startDate, .bit-endDate").datepicker({
+        dateFormat : 'yyyy-mm-dd'
+      });
+    });
+    mapinitialize()
   </script>
+<script type='text/javascript'
+    src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
+  <script type='text/javascript'
+    src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
+  <script type='text/javascript'
+    src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
+  <script type='text/javascript'>
+    /* <![CDATA[ null 에 [ ]로 값입력해서 넘길려면 나중에 추가,국가 선택,*/
+    var nycSearch = {
+      "apartmentTypes" : null,
+      "neighborhoods" : [ "Aisa", "South America", "North America",
+          "Europe", "Africa", "Oceania" ]
+    };
+    /* ]]> */
+  </script>
+  <script type='text/javascript'
+    src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
+  <script type='text/javascript'
+    src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 $("#addBtn").click (function(event){
-
+	console.log('aaa')
 	var review = { 
 			travelno : $("#tmno").val(),
 			/*memberno : $("#mno").val(),*/
@@ -7,9 +7,22 @@ $("#addBtn").click (function(event){
 			content : $("#contents").val()
 	}
 	
+	var formData = new FormData();
+	formData.append("travelno",$("#tmno").val())
+	formData.append("title",$("#title").val())
+	formData.append("content",$("#contents").val())
+	
+	console.log($("#multiFile")[0].files)
+	$($("#multiFile")[0].files).each(function(index, file) {
+		
+		console.log(file)
+	formData.append("files", file); 
+	});
+
+	console.log(formData)
 	
 	
-	ajaxAddBoard(review);	
+	ajaxAddBoard(formData);	
 });
 
 $("#updateBtn").click(function(event){
@@ -31,10 +44,58 @@ $("#deleteBtn").click(function(event){
 	ajaxDeleteBoard($("#rbno").val());
 });
 
-function ajaxAddBoard(review){
+function photoList(no){
+	$.getJSON("rvphotoList.json?=no"+no,{no:no},function(result){
+		console.log(no)
+		if(result.state !="success"){
+			console.log(result.data)
+			alert("사진조회실패.")
+			return;
+		}
+		
+		var contents="";
+		var arr = result.data
+		console.log(result.data)
+		
+		
+		for ( var i in arr) {
+
+			contents += 
+				"<img src='../upload/"+arr[i].reviewPhotoName+"' style='width:60px;height:60px;'>"
+				
+		}
+		
+		$("#commentTable tbody").html(contents);
+	})
+}
+
+function ajaxAddBoard(formData) {
+
+	console.log(formData)
+
+	$.ajax({
+		url : "rvadd.json",
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(result) {
+			if (result.state != "success") {
+				console.log(result.data)
+				console.log(result.state)
+				alert("등록 실패입니다.")
+				return
+			}
+			window.location.href = "travelreviewApp.html";
+		}
+	});
+
+}
 	
-	$.post("rvadd.json",review,function(result){
-		console.log(review)
+/*function ajaxAddBoard(formData){
+	console.log(formData)
+	$.post("rvadd.json",formData,function(result){
+		console.log(formData)
 		if(result.state !="success"){
 			alert("등록실패입니다.")
 			return;
@@ -44,7 +105,7 @@ function ajaxAddBoard(review){
 	},"json")
 	
 	
-}
+}*/
 
 
 function ajaxLoadBoard(no){
