@@ -2,10 +2,10 @@ $("#loginBtn").click(function(event) {
 	location.href = "../auth/authApp.html"
 });
 
-$("#logoutBtn").click(function(event) {
+/*$("#logoutBtn").click(function(event) {
 	location.href = "../auth/authApp.html"
 });
-
+*/
 
 function ajaxQnaList() {
 	$.getJSON("qnalist.json", function(result) {
