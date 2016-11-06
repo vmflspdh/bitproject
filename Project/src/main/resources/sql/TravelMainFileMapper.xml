@@ -21,6 +21,11 @@
   where tmno = #{travelPostNo}
   </select>
   
+  <delete id="delete" parameterType="int">
+    delete from tvl_intro_pho
+    where tmno=#{value}
+  </delete>
+  
 </mapper>
 
 

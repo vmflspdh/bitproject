@@ -18,4 +18,9 @@
     select * from tvl_review_pho
     where rbno=#{value}
   </select>
+  
+  <delete id="delete" parameterType="int">
+    delete from tvl_review_pho
+    where rbno=#{value}
+  </delete>
 </mapper>

@@ -122,8 +122,31 @@ $("#updateTMBtn").click(function(event) {
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
 	travelMain.schedule = schedule;
-
-	ajaxUpdateTravelMain(travelMain)
+	
+	
+	
+	var formData = new FormData();
+	formData.append("memberNo",$("#userNo").val())
+	formData.append("travelMainNo",$("#travelNo").val())
+	formData.append("title",$("#title").val())
+	formData.append("selfIntroduce",$("#selfIntroduce").val())
+	formData.append("styleNo",$("input[name='chk_info']:checked").val())
+	formData.append("schedule",schedule)
+	
+	
+	
+	
+	console.log($("#multiFile")[0].files)
+	$($("#multiFile")[0].files).each(function(index, file) {
+		
+		console.log(file)
+	formData.append("files", file); 
+	});
+	
+	
+	
+	
+	ajaxUpdateTravelMain(formData)
 });
 
 $("#deleteTMBtn").click(function(event) {
@@ -176,8 +199,28 @@ function ajaxLoadTravelMain(no) {
 	})
 }
 
-function ajaxUpdateTravelMain(travelMain) {
-	$.post(serverAddr + "/travel/travelMainUpdate.json", travelMain, function(obj) {
+function ajaxUpdateTravelMain(formData) {
+	
+	$.ajax({
+		url : "travelMainUpdate.json",
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(obj) {
+			var result = obj.jsonResult
+			if (result.state != "success") {
+				console.log(result.data)
+				alert("변경 실패입니다.")
+				return
+			}
+			window.location.href = "traveler.html";
+		}
+	});
+	
+	
+	
+	/*$.post(serverAddr + "/travel/travelMainUpdate.json", formData, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			alert("변경 실패입니다.")
@@ -185,7 +228,7 @@ function ajaxUpdateTravelMain(travelMain) {
 		}
 
 		window.location.href = "traveler.html"
-	}, "json")
+	}, "json")*/
 }
 
 

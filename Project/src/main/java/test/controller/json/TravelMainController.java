@@ -164,7 +164,7 @@ public class TravelMainController {
 
 
   @RequestMapping(path="travelMainUpdate")
-  public Object update(TravelMain travelMain, String schedule) throws Exception {
+  public Object update(TravelMain travelMain, String schedule, MultipartFile[] files) throws Exception {
     
     List<TravelMain> list = new Gson().fromJson(schedule, new TypeToken<List<TravelMain>>(){}.getType());
     int index = list.size();
@@ -196,6 +196,34 @@ public class TravelMainController {
       System.out.println(travelMain);
       travelScheduleDao.update(travelMain);
       }
+      
+      
+      for(int j = 0; j < files.length; j++){
+        System.out.println(files[j]);
+      }
+      for(int j = 0; j < files.length; j++){
+        travelMainFileDao.delete(travelMain.getTravelMainNo());
+      }
+      
+      String newFilename = null;
+      for (int i = 0; i < files.length; i++) {
+        if (!files[i].isEmpty()) {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
+          travelMainfile.setFileName(newFilename);
+          travelMainFileDao.insert(travelMainfile);
+        } else {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
+          travelMainfile.setFileName(newFilename);
+          travelMainFileDao.insert(travelMainfile);
+        }
+        
+      }
+      
+      
       return JsonResult.success();
       
     } catch (Exception e) {
