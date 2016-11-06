@@ -60,6 +60,24 @@ public class TravelMainController {
     }
   }
   
+  
+  @RequestMapping(path="travelMainFilelist")
+  public Object travelMainFilelist(HttpSession session) throws Exception {
+
+    try {
+      HashMap<String,Object> map = new HashMap<>();
+      travelMain.setTravelMainNo((Integer)session.getAttribute("travelPostNo"));
+      map.put("travelPostNo", travelMain.getTravelMainNo());
+      System.out.println(travelMain.getTravelMainNo());
+      
+      return JsonResult.success(travelMainFileDao.selectList(map));
+    
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
+  
   @RequestMapping(path="calendarList")
   public Object calendarlist(HttpSession session) throws Exception {
 

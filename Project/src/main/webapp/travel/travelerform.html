@@ -58,7 +58,6 @@
 }
 
 #map {
-	width: 92%;
 	height: 250px;
 }
 
@@ -142,7 +141,6 @@ td div {
 	text-align: center;
 	float: left;
 }
-
 </style>
 
 
@@ -279,7 +277,7 @@ td div {
 						<div>여행지</div>
 					</td>
 					<td class="root-addSelect" style="border: 0;">
-<!-- 						<div id="map"></div> <br /> -->
+						<!-- 						<div id="map"></div> <br /> -->
 
 						<div class="cb-module-header">
 							<h2 class="cb-module-title">schedule lists</h2>
@@ -310,10 +308,11 @@ td div {
 						<div id="detailBar"></div>
 						<div>사진</div>
 					</td>
-					<td
+					<td class="fileList"
 						style="font-size: small; font-weight: bold; padding-left: 20px;">
 						<div>자신을 표현할 프로필 및 여행사진을 업로드 하세요!</div>
-						<div>(파일 여러개 선택 가능)</div> <br /> <input name="multi_file[]"
+						<div>(파일 여러개 선택 가능)</div> <br />
+						<div class="innerFileList"></div> <input name="multi_file[]"
 						id="multiFile" type="file" multiple> <!-- <img src="img/profileDemo.png" style="width: 150px;"> -->
 					</td>
 				</tr>
@@ -344,8 +343,8 @@ td div {
 				</div>
 				<div class="modal-body">
 					<div class="wrapper">
-					<div id="map"></div>
-					<br/>
+						<div id="map"></div>
+						<br />
 						<div id="type-selector" class="controls" style="display: none;">
 							<input type="radio" name="type" id="changetype-all"
 								checked="checked"> <label for="changetype-all">All</label>
@@ -371,24 +370,24 @@ td div {
 								placeholder="위도" style="width: 100px; display: none;"
 								class="form-control bit-latitude1"> <input type="text"
 								placeholder="경도" style="width: 100px; display: none;"
-								class="form-control bit-longitude1">
-								<input type="text" style="display: none;"class="form-control bit-index1">
+								class="form-control bit-longitude1"> <input type="text"
+								style="display: none;" class="form-control bit-index1">
 							<button type="button" class="btn btn-default selectApplyBtn">적용</button>
 						</form>
-						<br />
-			
-							<input id="pac-input" type="text" class="controls form-control"
-								placeholder="변경할 국가/도시를 검색하세요."
-								style="width: 250px;">
+						<br /> <input id="pac-input" type="text"
+							class="controls form-control" placeholder="변경할 국가/도시를 검색하세요."
+							style="width: 250px;">
 
 					</div>
 				</div>
-<!-- 				<div class="modal-footer">
+				<!-- 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div> -->
 			</div>
 		</div>
 	</div>
+	<br />
+	<br />
 
 
 	<!-- 로그인 폼 -->
@@ -529,11 +528,7 @@ td div {
 				dateFormat : 'yy-mm-dd'
 			});
 		});
-		
-		$("#mySchedule").on("shown.bs.modal", function () {
-		    google.maps.event.trigger(map, "resize");
-		});
-		
+
 	</script>
 	<script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}

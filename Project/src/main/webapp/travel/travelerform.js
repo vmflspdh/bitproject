@@ -25,13 +25,9 @@ $(".selectApplyBtn").click(function(event){
 			$(element).find(".bit-endDate").val($('.bit-endDate1').val());
 			$(element).find(".bit-latitude").val($('.bit-latitude1').val());
 			$(element).find(".bit-longitude").val($('.bit-longitude1').val());
-
-
 		}
-
 	});
-
-	$('#mySchedule').hide();
+	$('.selectApplyBtn').attr("data-dismiss", "modal");
 
 });
 
@@ -112,9 +108,9 @@ $("#updateTMBtn").click(function(event) {
 
 			travelMainNo: $("#travelNo").val(),
 			locationNo : tag.find(".bit-locationNo").val(),
-			continent: tag.find(".bit-continent option:selected").val(),
-			nation: tag.find(".bit-nation option:selected").val(),
-			city: tag.find(".bit-city option:selected").val(),
+			continent: tag.find(".bit-continent").val(),
+			nation: tag.find(".bit-nation").val(),
+			city: tag.find(".bit-city").val(),
 			scheduleNo : tag.find(".bit-scheduleNo").val(),
 			startDate1: tag.find(".bit-startDate").val(),
 			endDate1: tag.find(".bit-endDate").val(),
@@ -127,7 +123,7 @@ $("#updateTMBtn").click(function(event) {
 	console.log(schedule)
 	travelMain.schedule = schedule;
 
-	/*ajaxUpdateTravelMain(travelMain)*/
+	ajaxUpdateTravelMain(travelMain)
 });
 
 $("#deleteTMBtn").click(function(event) {
@@ -174,10 +170,9 @@ function ajaxLoadTravelMain(no) {
 		$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
 
 		favorChecked(result)
-		scheduleList()
+		scheduleList();
 		calendarList();
-
-
+		travelMainFilelist();
 	})
 }
 
@@ -271,6 +266,27 @@ function scheduleList() {
 		initMap(result);
 	})
 }
+
+
+function travelMainFilelist() {
+	$.getJSON(serverAddr + "/travel/travelMainFilelist.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			return
+		}
+		
+		var contents = '<a>기존 업로드 파일</a><br/>';
+		var arr = result.data
+		for (var i in arr) {
+			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
+		}
+		
+		$("#selectTable .fileList .innerFileList").html(contents)
+		
+	});
+}
+
 
 function favorChecked(result) { 
 	$('input:checkbox[name="chk_info"]').each(function() {
@@ -445,8 +461,13 @@ function initMap(result) {
 
 		setMarkers(map);
 	});
+	
+	$("#mySchedule").on("shown", function() {
+		google.maps.event.trigger(map, "resize");
+	});
 
 }
+
 
 function calendarList() {
 	$.getJSON(serverAddr + "/travel/calendarList.json", function(obj) {
