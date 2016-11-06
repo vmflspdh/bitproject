@@ -61,14 +61,15 @@ function ajaxLoginUser() {
 	$.getJSON("loginUser.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-			console.log(result.data)
 			$('.my-login').css("display", "none")
+			console.log(result.data)
 			return
+		} else {
+			$('.my-logout').css("display", "none")
 		}
 
-		$('.my-logout').css("display", "none")
-		$('.aaa').css("display", "none")
 
+		$('.aaa').css("display", "none")
 		$("#userName").text(result.data.name)
 		$("#userNo").val(result.data.no)
 		$("#bbb").val(result.data.no)
@@ -79,7 +80,7 @@ function ajaxLoginUser() {
 		console.log(result.data.memberRequest)
 
 
-		$("#mainImg").attr("src","../upload/" + result.data.memberPhoto);
+		$(".mainImg").attr("src","../upload/" + result.data.memberPhoto);
 
 		$("#myInfo").click(function(event) {
 			ajaxLoginUser()
@@ -95,15 +96,17 @@ function ajaxLoginUser() {
 
 function init() {
 
-	//$('.my-login').css("display", "none")
-	var cookieMap = bit.cookieToObject()
+	if (cookieMap) {
 
-	console.log(cookieMap)
+		var cookieMap = bit.cookieToObject()
 
-	//if (cookieMap["email"]) { // cookieMap 객체에 email 이름으로 저장된 값이 있는가?
-	if ("email" in cookieMap) { // cookieMap 객체에 email 이라는 이름의 프로퍼티가 있는가?
-		$("#email").val(cookieMap["email"])
-		$("#saveEmail").attr("checked", true)
+		console.log(cookieMap)
+
+		//if (cookieMap["email"]) { // cookieMap 객체에 email 이름으로 저장된 값이 있는가?
+		if ("email" in cookieMap) { // cookieMap 객체에 email 이라는 이름의 프로퍼티가 있는가?
+			$("#email").val(cookieMap["email"])
+			$("#saveEmail").attr("checked", true)
+		}
 	}
 }
 
