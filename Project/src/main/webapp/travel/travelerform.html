@@ -16,7 +16,6 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<script src="js/modernizr.custom.js"></script>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -150,43 +149,43 @@ td div {
 	<!-- Start of container2 -->
 	<div class="container">
 		<div class="upper">
-			<div class='zeta-menu-bar my-login'>
-				<ul class="zeta-menu">
-					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-							id="mainImg"></a>
-						<ul>
-							<li><a href="#" id="myInfo"><img
-									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-									INFO</a> <!-- <ul>
+      <div class='zeta-menu-bar my-login'>
+        <ul class="zeta-menu">
+          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+              class="mainImg my-login"></a>
+            <ul>
+              <li><a href="#" id="myInfo"><img
+                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+                  INFO</a> <!-- <ul>
                   <li><a href="#2B1">2-B-1 메뉴</a></li>
                   <li><a href="#2B2">2-B-2 메뉴</a></li>
                 </ul> --></li>
-							<li><a href="#" id="travelerMessage"><img
-									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
-							</li>
-							<li><a href="#"><img
-									src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-							<li><a id="logoutBtn" href='#' class="my-login"><img
-									src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
-							</li>
-						</ul></li>
-				</ul>
-			</div>
+              <li><a href="#" id="travelerMessage"><img
+                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+              </li>
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
+                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+              <li><a id="logoutBtn" href='#' ><img
+                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+              </li>
+            </ul></li>
+        </ul>
+      </div>
 
-			<div class="my-login">
-				<span> <a id="userName"
-					style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-					<a href="#" id="travelerRegForm">님 동행을 찾아보세요!</a>
-				</span>
-			</div>
+	     <div class="my-login">
+        <span> <a id="userName"
+          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div>
 
-			<div
-				style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
-				<a href='#' class="btn btn-default btn-sm my-logout"
-					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
-					class="btn btn-default btn-sm my-logout" data-toggle="modal"
-					data-target="#myModal">SIGN IN</a>
-			</div>
+      <div
+        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+        <a href='#' class="btn btn-default btn-sm my-logout"
+          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+          class="btn btn-default btn-sm my-logout" data-toggle="modal"
+          data-target="#myModal">SIGN IN</a>
+      </div>
 		</div>
 	</div>
 	<div class="cbp-af-header">
@@ -258,13 +257,13 @@ td div {
 					<td style="font-weight: bold; padding-left: 30px;"><label
 						class="checkbox-inline"> <img src='img/restaurant.png'
 							id="checkImg" class="check-food"> <input type="checkbox"
-							name="chk_info" value="1">식도락
+							name="chk_info" id="1" value="1" >식도락
 					</label><label class="checkbox-inline"> <img src='img/painting.png'
 							id="checkImg"> <input type="checkbox" class="check-culture"
-							name="chk_info" value="2">전시/공연
+							name="chk_info" id="2" value="2">전시/공연
 					</label><label class="checkbox-inline"> <img src='img/rowing.png'
 							id="checkImg"><input type="checkbox" name="chk_info"
-							class="check-sports" value="3">액티비티/레포츠
+							class="check-sports" id="3" value="3">액티비티/레포츠
 					</label></td>
 				</tr>
 

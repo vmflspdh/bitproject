@@ -1,6 +1,8 @@
 var bit = {}
 
 bit.cookieToObject = function() {
+	
+	
 	var cookies = document.cookie.split(";")
 	var obj = {}
 

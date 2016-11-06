@@ -15,28 +15,6 @@
     <result column="count(c.rbno)" property="commentCount"/>
   </resultMap>
   
-  <!-- <resultMap type="member" id="memberMap">
-
-		<id column="mno" property="no" />
-
-		<result column="mnm" property="name" />
-		<result column="email" property="email" />
-		<result column="pwd" property="password" />
-		<result column="bir_dt" property="birthday" />
-		<result column="gend" property="gender" />
-		<result column="reg_dt" property="registedDate" />
-		<result column="mpho" property="memberPhoto" />
-
-	</resultMap> -->
-    <!-- <resultMap type="member" id="memberMap">
-    <id column="rbno" property="reviewboardno"/> 
-    <result column="mnm" property=""/>
-    <result column="mno" property="memberno"/>
-    <result column="title" property="title"/>
-    <result column="cont" property="content"/>
-    <result column="cre_dt" property="createdDate"/>
-    <result column="vw_cnt" property="viewcount"/>
-  </resultMap> -->
   
   <select id="selectList" resultMap="reviewMap" parameterType="map">
     select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,r.cre_dt,r.vw_cnt , count(c.rbno)
@@ -57,6 +35,19 @@
 	inner join tvl_membs m 
 	on r.mno=m.mno
     where rbno = #{value}
+  </select>
+  
+  <select id="detailReviewList" resultMap="reviewMap" parameterType="int">
+    select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,r.cre_dt,r.vw_cnt , count(c.rbno)
+    from tvl_review_bods r
+	inner join tvl_membs m 
+	on r.mno=m.mno
+	left join tvl_review_comt c
+	on r.rbno=c.rbno
+	where tmno=#{value}
+	group by r.rbno
+ 	order by rbno desc  
+ 	
   </select>
   
   <select id="selectOneByMember" resultMap="reviewMap" parameterType="int">

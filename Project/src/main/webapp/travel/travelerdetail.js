@@ -9,6 +9,7 @@ function ajaxLoadRegistForm(no) {
 	    $("#selfIntroduce").text(result.data.selfIntroduce);
 	    $("#styleName").text(result.data.styleName);
 	    $("#city").text(result.data.city);
+	    $("input[id="+result.data.styleNo+"]").attr("checked",true);
 	    $("#nation").text(result.data.nation);
 	    $("#startDate").text(result.data.startDate);
 	    $("#endDate").text(result.data.endDate);

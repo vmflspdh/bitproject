@@ -83,7 +83,7 @@
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
           <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-              id="mainImg"></a>
+              class="mainImg my-login"></a>
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
@@ -94,9 +94,9 @@
               <li><a href="#" id="travelerMessage"><img
                   src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
               </li>
-              <li><a href="#"><img
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
                   src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-              <li><a id="logoutBtn" href='#' class="my-login"><img
+              <li><a id="logoutBtn" href='#' ><img
                   src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
               </li>
             </ul></li>
@@ -106,7 +106,7 @@
       <div class="my-login">
         <span> <a id="userName"
           style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-          <a href="#" id="travelerRegForm">님 동행을 찾아보세요!</a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
         </span>
       </div>
 
@@ -163,11 +163,11 @@
       <div><h3>양찬님의 여행 스타일!</h3></div><br>
       <div style="padding-left: 20px;">
       <label class="checkbox"> 
-      <input type="checkbox" class="check-food" name="chk_info" value="1">식도락</label><br>
+      <input type="checkbox" class="check-food" name="chk_info" id="1" value="1">식도락</label><br>
       <label class="checkbox"> 
-      <input type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연</label><br>
+      <input type="checkbox" class="check-culture" name="chk_info" id="2" value="2">전시/공연</label><br>
       <label class="checkbox"> 
-      <input type="checkbox" class="check-sports" name="chk_info" value="3">액티비티/레포츠</label><br>
+      <input type="checkbox" class="check-sports" name="chk_info" id="3" value="3">액티비티/레포츠</label><br>
       </div>
     </div>
     <div id="selfIntroduce" 
@@ -175,12 +175,43 @@
     </div>
   </div>
   <br>
+  
+  
+  
+  
     <div class="col-sm-offset-2 col-sm-10" style="border:0px solid black; padding-left: 220px;">
       <button id="addBtn" type="button" class="btn btn-primary">동행추가</button>
       <button id="cancelBtn" type="button" class="btn btn-default"
       onclick="location.href='mainhtml.html'">취소</button>
    </div>
 </div>
+  <!-- <div class="my-login" style="margin-top: 40px;">
+        <span> <a id="userName5"
+          style="position: absolute; left:100px;  font-weight: bold; font-size: 18px;"></a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div> -->
+  <div style="text-align:center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px;  margin: 0 auto; margin-top: 89px; color:#736378;">
+  <table id="boardTable" class="table table-hover">
+					<thead id="tablehead">
+						<!-- 	<tr class="dsyColor">
+						<td>게시판번호</td>
+						<td>여행번호</td>
+						<td>회원번호</td>
+						<td>제목</td>
+						<td>내용</td>
+						<td>등록일</td>
+						<td>조회수</td>
+                     </tr>
+                   -->
+					</thead>
+					<tbody id="yang2">
+					</tbody>
+             </table>
+            <hr>
+             <table id="newReviewTable" style="margin: 0 auto;">
+				</table>
+  </div>
 <br><br><br><br><br><br>
   
 <!-- Start of message form -->
@@ -345,7 +376,12 @@ ajaxLoginUser() // 로그인 유저 정보 가져오기
 if (location.search.startsWith("?")) {
     var no = location.search.split("=")[1];
     ajaxLoadTravelMain(no)
+    ajaxBoardList(no)
 }
+ajaxRegistFormList()
+ajaxInviteList()
+ajaxAgreeInviteList()
+mapinitialize()
 </script>
 <script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}

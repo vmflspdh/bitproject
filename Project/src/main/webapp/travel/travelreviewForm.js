@@ -34,9 +34,23 @@ $("#updateBtn").click(function(event){
 			
 	}
 	
+	var formData = new FormData();
+	formData.append("title",$("#title").val())
+	formData.append("content",$("#contents").val())
+	formData.append("reviewboardno",$("#rbno").val())
+	formData.append("no",no);
 	
+	console.log($("#multiFile")[0].files)
+	console.log($("#multiFile")[0].files.length)
+	if($("#multiFile")[0].files.length!=0){
+	$($("#multiFile")[0].files).each(function(index, file) {
+		
+		console.log(file)
+	formData.append("files", file); 
+	});
+	} 
 	
-	ajaxUpdateBoard(review);	
+	ajaxUpdateBoard(formData);	
 });
 
 $("#deleteBtn").click(function(event){
@@ -65,7 +79,7 @@ function photoList(no){
 				
 		}
 		
-		$("#commentTable tbody").html(contents);
+		$(".carousel-inner > div> p ").html("<p>xcvxvxcv</p>");
 	})
 }
 
@@ -131,16 +145,32 @@ function ajaxLoadBoard(no){
 
 
 
-function ajaxUpdateBoard(review){
-	console.log(review)
-	$.post("rvupdate.json",review,function(result){
+function ajaxUpdateBoard(formData){
+	console.log(formData)
+	/*$.post("rvupdate.json",formData,function(result){
 		if(result.state !="success"){
 			alert("변경실패입니다.")
 			return;
 		}
-		console.log(review)
+		console.log(formData)
 		window.location.href="travelreviewApp.html"
-	},"json")
+	},"json")*/
+	$.ajax({
+		url : "rvupdate.json",
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(result) {
+			if (result.state != "success") {
+				console.log(result.data)
+				console.log(result.state)
+				alert("변경 실패입니다.")
+				return
+			}
+			window.location.href = "travelreviewApp.html";
+		}
+	});
 	
 }
 
