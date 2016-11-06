@@ -68,7 +68,7 @@ function ajaxLoginUser() {
 			$('.my-logout').css("display", "none")
 		}
 
-
+		$("#userName5").text(result.data.name)
 		$('.aaa').css("display", "none")
 		$("#userName").text(result.data.name)
 		$("#userNo").val(result.data.no)

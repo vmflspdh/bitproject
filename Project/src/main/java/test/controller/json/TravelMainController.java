@@ -17,6 +17,7 @@ import com.google.gson.reflect.TypeToken;
 
 import test.dao.CalendarDao;
 import test.dao.MemberDao;
+import test.dao.ReviewDao;
 import test.dao.TravelLocationDao;
 import test.dao.TravelMainDao;
 import test.dao.TravelMainFileDao;
@@ -25,6 +26,7 @@ import test.dao.TravelScheduleDao;
 import test.util.FileUploadUtil;
 import test.vo.JsonResult;
 import test.vo.Member;
+import test.vo.Review;
 import test.vo.TravelMain;
 import test.vo.TravelMainFile;
 
@@ -38,6 +40,7 @@ public class TravelMainController {
   @Autowired TravelMyStyleDao travelMystyleDao;
   @Autowired TravelScheduleDao travelScheduleDao;
   @Autowired CalendarDao calendarDao;
+  @Autowired ReviewDao reviewDao;
   @Autowired ServletContext sc;
   @Autowired TravelMainFileDao travelMainFileDao;
   TravelMain travelMain = new TravelMain();
@@ -59,6 +62,19 @@ public class TravelMainController {
       return JsonResult.fail(e.getMessage());
     }
   }
+  
+  @RequestMapping(path="tvlReviewList")
+  public Object tvlreviewlist(int no,HttpSession session) throws Exception {
+    System.out.println(no);
+    try {
+      List<Review> list = reviewDao.detailReviewList(no);
+      return JsonResult.success(list);
+    
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
   
   
   @RequestMapping(path="travelMainFilelist")
