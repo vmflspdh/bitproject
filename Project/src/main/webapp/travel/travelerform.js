@@ -332,7 +332,11 @@ function travelMainFilelist() {
 
 
 function favorChecked(result) { 
-	$('input:checkbox[name="chk_info"]').each(function() {
+	console.log(result.data.styleNo)
+	$("input[id="+result.data.styleNo+"]").attr("checked",true);
+	
+	
+	/*$('input:checkbox[name="chk_info"]').each(function() {
 
 		if(result.data.styleNo == "1"){ //값 비교
 			$(".check-food").attr("checked", true)
@@ -346,7 +350,7 @@ function favorChecked(result) {
 			$(".check-sports").attr("checked", true)
 		}
 
-	});
+	});*/
 }
 
 function initMap(result) {
