@@ -147,18 +147,12 @@ public class ReviewController {
       
       System.out.println(files);
       String newFilename = null;
-      System.out.println(files.length);
       for (int i = 0; i < files.length; i++) {
-        System.out.println(i);
         if (!files[i].isEmpty()) {
-          System.out.println(i);
           newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
           files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
-          System.out.println(newFilename);
           reviewPhoto.setReviewBoardNo(review.getReviewboardno());
-          System.out.println(review.getReviewboardno());
           reviewPhoto.setReviewPhotoName(newFilename);
-          System.out.println(newFilename);
           System.out.println(reviewPhoto);
           reviewPhotoDao.insert(reviewPhoto);
           
@@ -222,16 +216,44 @@ public class ReviewController {
 
   @RequestMapping(path="rvupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String update(Review review) throws Exception {
-
+  public String update(Review review,int no,MultipartFile[] files) throws Exception {
+    System.out.println(no);
     HashMap<String, Object> result = new HashMap<>();
+    
+    for(int j = 0; j < files.length; j++){
+      System.out.println(files[j]);
+    }
+    
     try{
+      System.out.println(files);
 
       reviewDao.update(review);
-     /* reviewDao.update2(review);*/
-/*      reviewDao.update2(review);
-      reviewDao.update2(review);*/
       
+      for (int i = 0; i < files.length; i++) {
+        if (!files[i].isEmpty()) {
+          reviewPhotoDao.delete(no);
+        }
+      }
+      
+      
+      String newFilename = null;
+      for (int i = 0; i < files.length; i++) {
+        if (!files[i].isEmpty()) {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          reviewPhoto.setReviewBoardNo(review.getReviewboardno());
+          reviewPhoto.setReviewPhotoName(newFilename);
+          
+          reviewPhotoDao.insert(reviewPhoto);
+        } else {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          reviewPhoto.setReviewBoardNo(review.getReviewboardno());
+          reviewPhoto.setReviewPhotoName(newFilename);
+          reviewPhotoDao.insert(reviewPhoto);
+        }
+        
+      }
       System.out.println(reviewDao.update(review));
       //System.out.println(reviewDao.update2(review));
       result.put("state", "success");

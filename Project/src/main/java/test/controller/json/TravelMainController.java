@@ -17,6 +17,7 @@ import com.google.gson.reflect.TypeToken;
 
 import test.dao.CalendarDao;
 import test.dao.MemberDao;
+import test.dao.ReviewDao;
 import test.dao.TravelLocationDao;
 import test.dao.TravelMainDao;
 import test.dao.TravelMainFileDao;
@@ -25,6 +26,7 @@ import test.dao.TravelScheduleDao;
 import test.util.FileUploadUtil;
 import test.vo.JsonResult;
 import test.vo.Member;
+import test.vo.Review;
 import test.vo.TravelMain;
 import test.vo.TravelMainFile;
 
@@ -38,6 +40,7 @@ public class TravelMainController {
   @Autowired TravelMyStyleDao travelMystyleDao;
   @Autowired TravelScheduleDao travelScheduleDao;
   @Autowired CalendarDao calendarDao;
+  @Autowired ReviewDao reviewDao;
   @Autowired ServletContext sc;
   @Autowired TravelMainFileDao travelMainFileDao;
   TravelMain travelMain = new TravelMain();
@@ -59,6 +62,19 @@ public class TravelMainController {
       return JsonResult.fail(e.getMessage());
     }
   }
+  
+  @RequestMapping(path="tvlReviewList")
+  public Object tvlreviewlist(int no,HttpSession session) throws Exception {
+    System.out.println(no);
+    try {
+      List<Review> list = reviewDao.detailReviewList(no);
+      return JsonResult.success(list);
+    
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+  
   
   
   @RequestMapping(path="travelMainFilelist")
@@ -164,7 +180,7 @@ public class TravelMainController {
 
 
   @RequestMapping(path="travelMainUpdate")
-  public Object update(TravelMain travelMain, String schedule) throws Exception {
+  public Object update(TravelMain travelMain, String schedule, MultipartFile[] files) throws Exception {
     
     List<TravelMain> list = new Gson().fromJson(schedule, new TypeToken<List<TravelMain>>(){}.getType());
     int index = list.size();
@@ -196,6 +212,34 @@ public class TravelMainController {
       System.out.println(travelMain);
       travelScheduleDao.update(travelMain);
       }
+      
+      
+      for(int j = 0; j < files.length; j++){
+        System.out.println(files[j]);
+      }
+      for(int j = 0; j < files.length; j++){
+        travelMainFileDao.delete(travelMain.getTravelMainNo());
+      }
+      
+      String newFilename = null;
+      for (int i = 0; i < files.length; i++) {
+        if (!files[i].isEmpty()) {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
+          travelMainfile.setFileName(newFilename);
+          travelMainFileDao.insert(travelMainfile);
+        } else {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
+          travelMainfile.setFileName(newFilename);
+          travelMainFileDao.insert(travelMainfile);
+        }
+        
+      }
+      
+      
       return JsonResult.success();
       
     } catch (Exception e) {

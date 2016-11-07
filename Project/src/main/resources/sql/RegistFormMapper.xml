@@ -20,6 +20,7 @@
     <result column="ED_DT" property="endDate"/>
     <result column="MPHO" property="myPhoto"/>
     <result column="IPNM" property="travelPhoto"/>
+    <result column="COUNT(TVL_BMK.TMNO)" property="bookmarkCount"/>
   </resultMap>
   
 <select id="selectList" resultMap="registFormMap" parameterType="map">

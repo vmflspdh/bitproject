@@ -22,9 +22,15 @@ public class RegistForm implements Serializable {
   protected Date endDate;
   protected String myPhoto;
   protected String travelPhoto;
+  protected int bookmarkCount;
   
   
-  
+	public int getBookmarkCount() {
+		return bookmarkCount;
+	}
+	public void setBookmarkCount(int bookmarkCount) {
+		this.bookmarkCount = bookmarkCount;
+	}
 	public String getTravelPhoto() {
 		return travelPhoto;
 	}

@@ -141,6 +141,8 @@
     <img src="" id="detailUserImage"></div>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="#" class="message" data-toggle="modal" data-target="#myMessage"><img src="img/messageicon2.jpg" style="width:20px; height: 20px;"></a></span>
+    <span><button type="button" id="bookmarkBtn">찜하기</button></span>
+    <span>좋아요 </span><span id="bookmarkcount"></span>
     <h3 id="title" style="float: right;"></h3>
     <br><br>
     <hr class="hrs">
@@ -163,11 +165,11 @@
       <div><h3>양찬님의 여행 스타일!</h3></div><br>
       <div style="padding-left: 20px;">
       <label class="checkbox"> 
-      <input type="checkbox" class="check-food" name="chk_info" value="1">식도락</label><br>
+      <input type="checkbox" class="check-food" name="chk_info" id="1" value="1">식도락</label><br>
       <label class="checkbox"> 
-      <input type="checkbox" class="check-culture" name="chk_info" value="2">전시/공연</label><br>
+      <input type="checkbox" class="check-culture" name="chk_info" id="2" value="2">전시/공연</label><br>
       <label class="checkbox"> 
-      <input type="checkbox" class="check-sports" name="chk_info" value="3">액티비티/레포츠</label><br>
+      <input type="checkbox" class="check-sports" name="chk_info" id="3" value="3">액티비티/레포츠</label><br>
       </div>
     </div>
     <div id="selfIntroduce" 
@@ -175,12 +177,43 @@
     </div>
   </div>
   <br>
+  
+  
+  
+  
     <div class="col-sm-offset-2 col-sm-10" style="border:0px solid black; padding-left: 220px;">
       <button id="addBtn" type="button" class="btn btn-primary">동행추가</button>
       <button id="cancelBtn" type="button" class="btn btn-default"
       onclick="location.href='mainhtml.html'">취소</button>
    </div>
 </div>
+  <!-- <div class="my-login" style="margin-top: 40px;">
+        <span> <a id="userName5"
+          style="position: absolute; left:100px;  font-weight: bold; font-size: 18px;"></a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div> -->
+  <div style="text-align:center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px;  margin: 0 auto; margin-top: 89px; color:#736378;">
+  <table id="boardTable" class="table table-hover">
+					<thead id="tablehead">
+						<!-- 	<tr class="dsyColor">
+						<td>게시판번호</td>
+						<td>여행번호</td>
+						<td>회원번호</td>
+						<td>제목</td>
+						<td>내용</td>
+						<td>등록일</td>
+						<td>조회수</td>
+                     </tr>
+                   -->
+					</thead>
+					<tbody id="yang2">
+					</tbody>
+             </table>
+            <hr>
+             <table id="newReviewTable" style="margin: 0 auto;">
+				</table>
+  </div>
 <br><br><br><br><br><br>
   
 <!-- Start of message form -->
@@ -339,13 +372,20 @@
 <script type="text/javascript" src="travelerdetail.js"></script>
 <script type="text/javascript" src="travelerform.js"></script>
 <script type="text/javascript" src="message.js"></script>
+<script type="text/javascript" src="bookmark.js"></script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기
 if (location.search.startsWith("?")) {
     var no = location.search.split("=")[1];
     ajaxLoadTravelMain(no)
+    ajaxBoardList(no)
 }
+ajaxRegistFormList()
+ajaxInviteList()
+ajaxAgreeInviteList()
+ajaxBookmarkCount()
+mapinitialize()
 </script>
 <script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
