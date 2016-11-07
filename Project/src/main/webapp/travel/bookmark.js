@@ -1,5 +1,5 @@
 
-$("#bookmarkBtn").click(function(event) {
+$("#bookmarkSummit").click(function(event) {
 
 	ajaxAddBookmark()
 })
