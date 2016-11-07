@@ -65,63 +65,79 @@
 
 </head>
 <body>
-	<div class="container">
-		<div class="upper">
-			<div class='zeta-menu-bar my-login'>
-				<ul class="zeta-menu">
-					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-							id="mainImg"></a>
-						<ul>
-							<li><a href="#"><img
-									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-									INFO</a>
-								<ul>
-									<li><a href="#2B1">2-B-1 메뉴</a></li>
-									<li><a href="#2B2">2-B-2 메뉴</a></li>
-								</ul></li>
-							<li><a href="#"><img
-									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
-							</li>
-							<li><a href="#"><img
-									src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-							<li><a id="logoutBtn" href='#' class="my-login"><img
-									src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
-							</li>
-						</ul></li>
-				</ul>
-			</div>
+  <div class="container">
+    <div class="upper">
+      <div class='zeta-menu-bar my-login'>
+        <ul class="zeta-menu">
+          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+              class="mainImg my-login"></a>
+            <ul>
+              <li><a href="#" id="myInfo"><img
+                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+                  INFO</a> <!-- <ul>
+                  <li><a href="#2B1">2-B-1 메뉴</a></li>
+                  <li><a href="#2B2">2-B-2 메뉴</a></li>
+                </ul> --></li>
+              <li><a href="#" id="travelerMessage"><img
+                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+              </li>
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
+                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+              <li><a id="logoutBtn" href='#' ><img
+                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+              </li>
+            </ul></li>
+        </ul>
+      </div>
 
-			<div class="my-login">
-				<span> <a id="userName"
-					style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-					<a href="travelerRegForm.html">님 동행을 찾아보세요!</a>
-				</span>
-			</div>
+      <div id="fadeandscale" class="well">
+        <h4>동행요청</h4>
+        <h5></h5>
+        <h6></h6>
+        <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+                  <button value="vcxc">수락</button><button value="sdfds">거절</button>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre> -->
+        <button style="float: right;"
+          class="fadeandscale_close btn btn-default">Close</button>
+      </div>
 
-			<div
-				style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
-				<a href='#' class="btn btn-default btn-sm my-logout"
-					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
-					class="btn btn-default btn-sm my-logout" data-toggle="modal"
-					data-target="#myModal">SIGN IN</a>
-			</div>
+      <div class="my-login">
+        <span> <a id="userName"
+          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div>
 
-			<!--  <div style='position: absolute; top: 10px; right: 80px; font-size: 15px;'>
-					<a id='logoutBtn' href='#' class="btn btn-default btn-sm my-login">LOGOUT</a>
-					</div>  -->
+      <div
+        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+        <a href='#' class="btn btn-default btn-sm my-logout"
+          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+          class="btn btn-default btn-sm my-logout" data-toggle="modal"
+          data-target="#myModal">SIGN IN</a>
+      </div>
+    </div>
+  </div>
 
-		</div>
-		<div class="cbp-af-header">
-			<div class="cbp-af-inner">
-				<h1>
-					<a href="travel.html">together!</a>
-				</h1>
-				<nav>
-					<a href="traveler.html">Traveler</a> <a href="travelreviewApp.html">Review</a>
-					<a href="qnaApp.html">Q&A</a> <a href="#">.</a>
-				</nav>
-			</div>
-		</div>
+		  <div class="cbp-af-header">
+    <div class="cbp-af-inner">
+      <div>
+        <img src='img/passport.png'
+          style="float: left; width: 55px; height: 55px;">
+        <h1>WE TRIP</h1>
+      </div>
+      <nav>
+        <a href="#" id="travelerPage">Traveler</a> <a href="#"
+          id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
+          href="#">.</a>
+      </nav>
+    </div>
+  </div>
 		<div id="content">
 			<p
 				style="font-size: 30px; float: left; margin-top: -70px; padding-left: 20px;">리뷰게시판</p>

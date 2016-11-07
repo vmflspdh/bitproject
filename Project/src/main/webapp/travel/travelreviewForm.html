@@ -78,12 +78,12 @@ tbody{
 
 </head>
 <body>
-	<div class="container">
+  <div class="container">
     <div class="upper">
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
           <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-              id="mainImg"></a>
+              class="mainImg my-login"></a>
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
@@ -91,22 +91,39 @@ tbody{
                   <li><a href="#2B1">2-B-1 메뉴</a></li>
                   <li><a href="#2B2">2-B-2 메뉴</a></li>
                 </ul> --></li>
-              <li><a href="#"><img
+              <li><a href="#" id="travelerMessage"><img
                   src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
               </li>
-              <li><a href="#"><img
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
                   src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-              <li><a id="logoutBtn" href='#' class="my-login"><img
+              <li><a id="logoutBtn" href='#' ><img
                   src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
               </li>
             </ul></li>
         </ul>
       </div>
 
+      <div id="fadeandscale" class="well">
+        <h4>동행요청</h4>
+        <h5></h5>
+        <h6></h6>
+        <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+                  <button value="vcxc">수락</button><button value="sdfds">거절</button>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre> -->
+        <button style="float: right;"
+          class="fadeandscale_close btn btn-default">Close</button>
+      </div>
+
       <div class="my-login">
         <span> <a id="userName"
           style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-          <a href="#" id="travelerRegForm">님 동행을 찾아보세요!</a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
         </span>
       </div>
 
@@ -118,6 +135,7 @@ tbody{
           data-target="#myModal">SIGN IN</a>
       </div>
     </div>
+  </div>
   <div class="cbp-af-header">
     <div class="cbp-af-inner">
       <div>
