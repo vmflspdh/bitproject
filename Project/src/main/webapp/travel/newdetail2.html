@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#"> 
+<head>
+<meta charset="UTF-8" />
+<script src="//use.typekit.net/omt5qnk.js"></script>
+<script>try{Typekit.load();}catch(e){}</script>
+<title>서내와 귀요미들</title>
+<meta name="description" content="MyTravel"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="">  
+<script type='application/ld+json'>
+{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/furnishednycapartments.com\/",
+"name":"Furnished NYC Apartments - Rentals in New York",
+"potentialAction":{"@type":"SearchAction",
+"target":"http:\/\/furnishednycapartments.com\/?s={search_term_string}",
+"query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='nyc-css'  href='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/css/layout.css?ver=0.1.1' type='text/css' media='all' />
+<link rel='https://api.w.org/' href='http://furnishednycapartments.com/wp-json/' />
+<link rel='shortlink' href='http://furnishednycapartments.com/' />
+<link rel="alternate" type="application/json+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://furnishednycapartments.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Ffurnishednycapartments.com%2F&#038;format=xml" />
+<!--  travel 에서 가저온 시-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+<meta name="keywords" content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+<meta name="author" content="Codrops" />
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<!-- 달력 관련 -->
+<link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+<script src='lib/jquery.min.js'></script>
+<script src='lib/moment.min.js'></script>
+<script src='fullcalendar/fullcalendar.js'></script>
+<!-- 달력 관련 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+#yang ul li{
+      display:inline;             
+      font:bold 13px Dotum;       
+      padding:0 10px;     
+ }
+ .hrs {
+   height: 10px;
+   border: 0;
+   box-shadow: 0 10px 10px -10px #8c8b8b inset;
+ }
+ #sch_cirNum {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background: #13919A;
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  float:left;
+}
+</style>
+</head>
+<body>    
+      <!-- Start of container2 -->
+   <!-- 상단메뉴시작 -->
+  <!-- Start of container2 -->
+  <div class="container">
+    <div class="upper">
+      <div class='zeta-menu-bar my-login'>
+        <ul class="zeta-menu">
+          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+              class="mainImg my-login"></a>
+            <ul>
+              <li><a href="#" id="myInfo"><img
+                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+                  INFO</a> <!-- <ul>
+                  <li><a href="#2B1">2-B-1 메뉴</a></li>
+                  <li><a href="#2B2">2-B-2 메뉴</a></li>
+                </ul> --></li>
+              <li><a href="#" id="travelerMessage"><img
+                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+              </li>
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
+                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+              <li><a id="logoutBtn" href='#' ><img
+                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+              </li>
+            </ul></li>
+        </ul>
+      </div>
+
+      <div class="my-login">
+        <span> <a id="userName"
+          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div>
+
+      <div
+        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+        <a href='#' class="btn btn-default btn-sm my-logout"
+          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+          class="btn btn-default btn-sm my-logout" data-toggle="modal"
+          data-target="#myModal">SIGN IN</a>
+      </div>
+    </div>
+  </div>
+     <div class="cbp-af-header">
+      <div class="cbp-af-inner">
+      <div>
+      <img src='img/passport.png' style="float:left; width: 55px; height:55px;">
+        <h1>WE TRIP</h1>
+        </div>
+        <nav>
+          <a href="#" id="travelerPage">Traveler</a> <a href="#" id="reviewPage">Review</a>
+          <a href="#" id="qnaPage">Q&A</a> <a href="#">.</a>
+        </nav>
+      </div>
+    </div>
+  <!-- center  -->
+<div class="main"></div>
+<!-- End of container2 -->
+
+<div style="background-color: #F5F2F5; width: 900px; margin: 0 auto; margin-top: 89px; color:#736378;">
+  <div style="background-color: #F5F2F5; width: 880px; height:500px; margin: 0 auto; padding:20px;">
+    <div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
+    <img src="" id="detailUserImage"></div>
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" class="message" data-toggle="modal" data-target="#myMessage"><img src="img/messageicon2.jpg" style="width:20px; height: 20px;"></a></span>
+    <span><button type="button" id="bookmarkBtn">찜하기</button></span>
+    <span>좋아요 </span><span id="bookmarkcount"></span>
+    <h3 id="title" style="float: right;"></h3>
+    <br><br>
+    <hr class="hrs">
+    <img src="" id="detailTravelImage" style="width: 500px; height: 332px;">
+    <div id='calendar' style="background-color: white; width:300px; height: 332px; padding-left: 15px; float: right; border:1px solid black;"><br>
+    </div>
+  <br>
+  <hr class="hrs">
+  </div>
+  <div style="background-color: #F5F2F5; width: 880px; height:310px; margin: 0 auto; padding:20px; clear: both;">
+      <div id="selectTable" style="padding: 10px;">
+        <div class="root-select">
+        </div>
+      </div>
+    <div id="map" style="width:440px; height: 300px; position: absolute; left:48%; top: 600px;"></div>
+  </div>
+  <div style="background-color: #F5F2F5; width: 880px; margin: 0 auto; padding:20px;">
+    <hr class="hrs">
+    <div style=" border-radius: 10px 15px 15px 15px; background-color: white; width: 310px; height:310px; padding: 20px">
+      <div><h3>양찬님의 여행 스타일!</h3></div><br>
+      <div style="padding-left: 20px;">
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-food" name="chk_info" id="1" value="1">식도락</label><br>
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-culture" name="chk_info" id="2" value="2">전시/공연</label><br>
+      <label class="checkbox"> 
+      <input type="checkbox" class="check-sports" name="chk_info" id="3" value="3">액티비티/레포츠</label><br>
+      </div>
+    </div>
+    <div id="selfIntroduce" 
+    style="position: absolute; left:48%; top: 970px; width: 440px; height:310px; padding: 20px; border-radius: 10px 15px 15px 15px; background-color: white;">
+    </div>
+  </div>
+  <br>
+  
+  
+  
+  
+    <div class="col-sm-offset-2 col-sm-10" style="border:0px solid black; padding-left: 220px;">
+      <button id="addBtn" type="button" class="btn btn-primary">동행추가</button>
+      <button id="cancelBtn" type="button" class="btn btn-default"
+      onclick="location.href='mainhtml.html'">취소</button>
+   </div>
+</div>
+  <!-- <div class="my-login" style="margin-top: 40px;">
+        <span> <a id="userName5"
+          style="position: absolute; left:100px;  font-weight: bold; font-size: 18px;"></a>
+          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+        </span>
+      </div> -->
+  <div style="text-align:center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px;  margin: 0 auto; margin-top: 89px; color:#736378;">
+  <table id="boardTable" class="table table-hover">
+					<thead id="tablehead">
+						<!-- 	<tr class="dsyColor">
+						<td>게시판번호</td>
+						<td>여행번호</td>
+						<td>회원번호</td>
+						<td>제목</td>
+						<td>내용</td>
+						<td>등록일</td>
+						<td>조회수</td>
+                     </tr>
+                   -->
+					</thead>
+					<tbody id="yang2">
+					</tbody>
+             </table>
+            <hr>
+             <table id="newReviewTable" style="margin: 0 auto;">
+				</table>
+  </div>
+<br><br><br><br><br><br>
+  
+<!-- Start of message form -->
+<div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myMessage"
+  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" >
+  <div class="modal-dialog modal-sm" style="z-index: 300000; ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        </button>
+        <h2 class="modal-title" id="myModalLabel"><em>메세지</em></h2>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper">
+          <form class="form-signin">
+            <textarea class="form-control" id="messageContents" cols="50" rows="3" placeholder="내용을 입력하세요"></textarea><br>
+            <button id="messageBtn" class="btn btn-lg btn-primary btn-block "
+              type="button">확인</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of message form -->  
+
+<!-- Start of Login form -->
+<div class="modal fade" style="z-index: 200000; background : rgba(19,192,192,0.2);" id="myModal1"
+  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" >
+  <div class="modal-dialog modal-sm" style="z-index: 300000; ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        </button>
+        <h2 class="modal-title" id="myModalLabel"><em>로그인</em></h2>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper">
+          <form class="form-signin">
+            <input type="text" class="form-control" id="email"
+              placeholder="이메일" required="" autofocus="" /></br> <input
+              type="password" id="password" class="form-control"
+              placeholder="비밀번호" required="" /> <label class="checkbox">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+              id="saveEmail"> 이메일저장
+            </label>
+            <button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+              type="button">로그인</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Login form -->
+          
+<!-- Start of Registration Form-->
+<div class="modal fade" style="z-index: 200000;" id="myModal"
+  tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm"
+    style="width: 500px; z-index: 300000;">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        </button>
+        <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+      </div>
+      <div class="modal-body">
+        <div class="wrapper">
+          <form class="form-signin">
+
+
+            <label for="name" class="col-sm-2 control-label">이름</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name"
+                placeholder="이름"><br />
+            </div>
+
+
+            <label for="email" class="col-sm-2 control-label">이메일</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="email"
+                placeholder="이메일"><br />
+            </div>
+
+
+
+            <label for="password" class="col-sm-2 control-label">암호</label>
+            <div class="col-sm-10">
+              <input type="password" id="password" class="form-control"
+                placeholder="암호입력"><br />
+            </div>
+
+
+
+            <label for="birthday" class="col-sm-2 control-label">생일</label>
+            <div class="col-sm-10">
+              <input type="text" id="birthday" class="form-control"
+                placeholder="생일"><br />
+            </div>
+
+
+            <label for="gender" class="col-sm-2 control-label">성별</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="gender">
+                <option value="1">여자</option>
+                <option value="0">남자</option>
+              </select> <br>
+            </div>
+
+            <!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+              type="checkbox" value="remember-me" id="rememberMe"
+              name="rememberMe"> 약관동의
+            </label> -->
+            <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+              type="button">회원가입</button>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>    
+<!-- End of Registration Form-->  
+      
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
+    async defer></script>
+<script type="text/javascript" src="travelerform.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.min.js"></script>
+<!-- 회원정보 관련 -->
+<script type="text/javascript" src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
+<script type="text/javascript" src="js/bit.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/authApp.js"></script>
+<script type="text/javascript" src="js/memberForm.js"></script>
+<script type="text/javascript" src="traveler.js"></script>
+<script type="text/javascript" src="travelerdetail.js"></script>
+<script type="text/javascript" src="travelerform.js"></script>
+<script type="text/javascript" src="message.js"></script>
+<script type="text/javascript" src="bookmark.js"></script>
+<script>
+init() // 화면을 준비시킨다
+ajaxLoginUser() // 로그인 유저 정보 가져오기
+if (location.search.startsWith("?")) {
+    var no = location.search.split("=")[1];
+    ajaxLoadTravelMain(no)
+    ajaxBoardList(no)
+}
+ajaxRegistFormList()
+ajaxInviteList()
+ajaxAgreeInviteList()
+ajaxBookmarkCount()
+mapinitialize()
+</script>
+<script id="trTemplateText" type="text/x-handlebars-template">
+{{#each data}}
+<div class="form-inline root-schedule">
+<div id="sch_cirNum"></div>
+<input type="text" class="form-control bit-locationNo" style="width: 50px; display:none;"value="{{locationNo}}" readonly>
+<input type="text" placeholder="대륙" value="대륙" class="form-control bit-continent" style="width: 100px; display:none;" readOnly = true> 
+<input type="text" placeholder="국가" value="국가" style="width: 100px; display:none;"
+class="form-control bit-nation" readOnly = true>
+<input type="text" id="rename" placeholder="도시명" value="{{city}}"style="width: 100px; background-color: white;"
+class="form-control bit-city" readOnly = true>
+<input type="text" class="form-control bit-scheduleNo" style="width: 50px; display:none;" value="{{scheduleNo}}" readOnly = true>
+<input type="text" id="bit-startDate" class="form-control bit-startDate"
+placeholder="시작일" value="{{startDate}}" style="width: 100px; background-color: white;" readOnly = true> <input
+type="text" id="bit-endDate" class="form-control bit-endDate"
+placeholder="종료일" value="{{endDate}}" style="width: 100px; background-color: white;" readonly> <input
+type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
+class="form-control bit-latitude" readOnly = true> <input type="text"
+placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px; display:none;"
+class="form-control bit-longitude" readOnly = true>
+</div><br>
+{{/each}}
+</script>
+<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
+<script type='text/javascript' src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+</body>
+</html>

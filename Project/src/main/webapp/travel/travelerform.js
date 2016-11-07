@@ -186,6 +186,7 @@ function ajaxLoadTravelMain(no) {
 		$("#title").text(result.data.title);
 		$("#travelNo").val(result.data.travelMainNo);
 		$("#styleNo").val(result.data.styleNo);
+		$("#detailMemberName").text(result.data.writer);
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
