@@ -190,7 +190,7 @@ a:hover {
 
 			<h3 class="w3-text-grey w3-padding-16">
 				<i
-					class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Traveler
+					class="fa fa-certificate fa-fw w3 w3-xxlarge w3-text-teal"></i>Traveler
 			</h3>
 			<div id="boardImg" style="width: 100%; height: 450px; background-image: url('img/yang/travelphoto3.jpg'); overflow: hidden; background-repeat: no-repeat;">
 			<div>
@@ -204,7 +204,7 @@ a:hover {
         style="width: 25%; height: 270px; margin: 2% 0 40px 40px; padding : 10px 0 0 10px; border-radius: 2%; background: rgba(238, 231, 231, 0.8); font-size: medium; float:left;">
          <p>
           <i
-            class="fa fa-certificate fa-fw w3-margin-right w3-large w3-text-teal"></i>Travel Style <br>
+            class="fa fa-certificate fa-fw w3 w3-large w3-text-teal"></i>Travel Style <br>
             <label
             class="checkbox-inline check-food" style="display: none;"> <img src='img/restaurant.png'
               id="checkImg" >식도락
@@ -242,7 +242,7 @@ a:hover {
 		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
 			style="width: 90%; height: 100%; margin: 0 auto;">
 			<h3 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-globe fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>My
+				<i class="fa fa-globe fa-fw w3 w3-xxlarge w3-text-teal"></i>My
 				Route
 			</h3>
 			<div id="map" style="width: 90%; height: 400px; margin: 0 auto;"></div>
@@ -253,7 +253,7 @@ a:hover {
 			style="width: 90%; height: 100%; margin: 0 auto;">
 			<h3 class="w3-text-grey w3-padding-16">
 				<i
-					class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>My
+					class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
 				Schedule
 			</h3>
 			<div id="selectTable"
@@ -266,8 +266,29 @@ a:hover {
 			</div>
 		</div>
 		<hr>
-
 	</div>
+	
+	<div style="text-align:center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px;  margin: 0 auto; color:#736378;">
+  <table id="boardTable" class="table table-hover">
+          <thead id="tablehead">
+            <!--  <tr class="dsyColor">
+            <td>게시판번호</td>
+            <td>여행번호</td>
+            <td>회원번호</td>
+            <td>제목</td>
+            <td>내용</td>
+            <td>등록일</td>
+            <td>조회수</td>
+                     </tr>
+                   -->
+          </thead>
+          <tbody id="yang2">
+          </tbody>
+             </table>
+            <hr>
+             <table id="newReviewTable" style="margin: 0 auto;">
+        </table>
+  </div>
 	<br>
 	<br>
 	<br>
@@ -460,10 +481,9 @@ a:hover {
 	
 	<script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
-
 <div class="root-schedule">
 <div id="sch_cirNum"></div><h5 class="w3-opacity"><b>{{city}} / {{nation}}</b></h4>
-<h5 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>{{startDate}} - {{endDate}}<!-- <span class="w3-tag w3-teal w3-round">2016-11-26</span> --></h5>
+<h5 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3"></i>{{startDate}}  -  {{endDate}}<!-- <span class="w3-tag w3-teal w3-round">2016-11-26</span> --></h5>
 <input
 type="text" id="bit-latitude" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
 class="form-control bit-latitude"> <input type="text"
@@ -471,19 +491,8 @@ placeholder="경도" id="bit-longitude" value="{{lng}}" style="width: 100px; dis
 class="form-control bit-longitude">
 <hr>
 </div>
-
 {{/each}}
 </script>
 	<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-	<script type='text/javascript'
-		src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
-	<script type='text/javascript'
-		src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
-	<script type='text/javascript'
-		src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
-	<script type='text/javascript'
-		src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
-	<script type='text/javascript'
-		src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
 </body>
 </html>
