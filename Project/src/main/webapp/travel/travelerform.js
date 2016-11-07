@@ -675,7 +675,7 @@ function showCalendar() {
 							{
 						title: title,
 						start: start,
-						end: end+1
+						end: end
 							},
 							true
 					);
