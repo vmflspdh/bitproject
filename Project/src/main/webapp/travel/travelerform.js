@@ -189,6 +189,7 @@ function ajaxLoadTravelMain(no) {
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
+		$("#bookmarkcount").text(result.data.bookmarkCount)
 		$("#detailUserImage").attr("src","../upload/" + result.data.myPhoto);
 		$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
 

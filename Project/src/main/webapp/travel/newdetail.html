@@ -141,6 +141,8 @@
     <img src="" id="detailUserImage"></div>
     <span>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="#" class="message" data-toggle="modal" data-target="#myMessage"><img src="img/messageicon2.jpg" style="width:20px; height: 20px;"></a></span>
+    <span><button type="button" id="bookmarkBtn">찜하기</button></span>
+    <span>좋아요 </span><span id="bookmarkcount"></span>
     <h3 id="title" style="float: right;"></h3>
     <br><br>
     <hr class="hrs">
@@ -370,6 +372,7 @@
 <script type="text/javascript" src="travelerdetail.js"></script>
 <script type="text/javascript" src="travelerform.js"></script>
 <script type="text/javascript" src="message.js"></script>
+<script type="text/javascript" src="bookmark.js"></script>
 <script>
 init() // 화면을 준비시킨다
 ajaxLoginUser() // 로그인 유저 정보 가져오기

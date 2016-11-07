@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.BookmarkDao">
+  <resultMap type="bookmark" id="bookmarkMap">
+  
+    <id column="TMNO" property="travelMainNo"/> 
+    <result column="MNO" property="memberNo"/>
+    <result column="MPHO" property="memberPhoto"/>
+    <result column="MNM" property="memberName"/>
+    <result column="COUNT(TMNO)" property="bookmarkCount"/>
+  </resultMap>
+  
+
+  
+  
+<select id="viewMyBookmarkList" resultMap="bookmarkMap" parameterType="map">
+select mnm, mpho, tvl_bmk.tmno, tvl_bmk.mno from tvl_bmk
+inner join tvl_tvlmain
+on tvl_tvlmain.tmno = tvl_bmk.tmno
+inner join tvl_membs 
+on tvl_membs.mno=tvl_tvlmain.mno
+where tvl_bmk.mno = #{bookmarkMemberNo}
+</select>
+
+
+  
+<insert id="insert" parameterType="bookmark" >
+  insert into tvl_bmk(tmno, mno)
+  values( #{travelMainNo}, #{memberNo})
+</insert>
+
+<delete id="delete" parameterType="int">
+  delete from tvl_bmk
+  where tmno=#{travelMainNo} and mno=#{memberNo}
+</delete>
+  
+
+</mapper>
