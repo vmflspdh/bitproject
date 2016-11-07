@@ -73,13 +73,18 @@ function photoList(no){
 		
 		
 		for ( var i in arr) {
-
+			if(i==1){
+				contents += 
+					'<div class="item active">'+
+			      "<img src='../upload/"+arr[i].reviewPhotoName+"' style='width:60px;height:60px;'>"+
+			    '</div>'
+			}else{
 			contents += 
 				"<img src='../upload/"+arr[i].reviewPhotoName+"' style='width:60px;height:60px;'>"
-				
+			}
 		}
 		
-		$(".carousel-inner > div> p ").html("<p>xcvxvxcv</p>");
+		$(".carousel-inner > div ").html(contents);
 	})
 }
 
