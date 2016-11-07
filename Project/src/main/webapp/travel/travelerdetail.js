@@ -6,12 +6,9 @@ function ajaxLoadRegistForm(no) {
 	    	alert("조회 실패 입니다.")
 	    	return
 	    }
+		$("#title").text(result.data.title);
 	    $("#selfIntroduce").text(result.data.selfIntroduce);
 	    $("#styleName").text(result.data.styleName);
-	    $("#city").text(result.data.city);
-	    $("#nation").text(result.data.nation);
-	    $("#startDate").text(result.data.startDate);
-	    $("#endDate").text(result.data.endDate);
 	})
 }
 

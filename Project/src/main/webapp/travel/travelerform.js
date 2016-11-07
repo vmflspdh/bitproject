@@ -136,7 +136,7 @@ $("#deleteTMBtn").click(function(event) {
 	ajaxDeleteTravelMain(travelMain)
 });
 
-function ajaxAddTravelMain(travelMain) {
+/*function ajaxAddTravelMain(travelMain) {
 	$.post(serverAddr + "/travel/travelMainAdd.json", travelMain, function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
@@ -147,7 +147,7 @@ function ajaxAddTravelMain(travelMain) {
 
 		window.location.href = "traveler.html"
 	}, "json")
-}
+}*/
 
 function ajaxLoadTravelMain(no) {
 	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
@@ -184,7 +184,7 @@ function ajaxUpdateTravelMain(travelMain) {
 			return
 		}
 
-		window.location.href = "traveler.html"
+		window.location.reload(true)
 	}, "json")
 }
 
@@ -198,7 +198,7 @@ function ajaxDeleteTravelMain(travelMain) {
 			return
 		}
 
-		location.href = "traveler.html"
+		location.href = "mainhtml.html"
 	})
 }
 
@@ -261,7 +261,7 @@ function scheduleList() {
 			var tag = $(element).find($('[id="sch_cirNum"]'));
 			tag.html(index+1);
 		});
-
+		
 
 		initMap(result);
 	})
@@ -289,39 +289,51 @@ function travelMainFilelist() {
 
 
 function favorChecked(result) { 
-	$('input:checkbox[name="chk_info"]').each(function() {
+	$('.checkbox-inline').each(function() {
 
 		if(result.data.styleNo == "1"){ //값 비교
-			$(".check-food").attr("checked", true)
+			$(".check-food").css("display", "")
 		} 
 
 		if (result.data.styleNo == "2"){ //값 비교
-			$(".check-culture").attr("checked", true)
+			$(".check-culture").css("display", "")
 		} 
 
 		if (result.data.styleNo == "3"){ //값 비교
-			$(".check-sports").attr("checked", true)
+			$(".check-sports").css("display", "")
 		}
 
 	});
 }
 
 function initMap(result) {
+	
+	
+	var flightPlanCoordinates = [];
+	$('.root-schedule').each(function(index, element){
+		var tag = $(element)
+		
+		flightPlanCoordinates[index] = {
+			lat: parseFloat(tag.find('.bit-latitude').val()),
+			lng: parseFloat(tag.find('.bit-longitude').val())
+		}
+	});
+	
+	
+	var mapOptions = {
+			streetViewControl: false,
+			mapTypeControl: false,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+			}
+	
+	
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 37.49, lng: 127.02},
 		zoom: 2,
 		mapTypeControl: false
 	});
 
-	var flightPlanCoordinates = [];
-	$('.root-schedule').each(function(index, element){
-		var tag = $(element)
 
-		flightPlanCoordinates[index] = {
-			lat: parseFloat(tag.find('.bit-latitude').val()),
-			lng: parseFloat(tag.find('.bit-longitude').val())
-		}
-	});
 
 	/*
 	$.each(flightPlanCoordinates, function(key, value){
@@ -502,7 +514,7 @@ function showCalendar() {
 							{
 						title: title,
 						start: start,
-						end: end
+						end: end+1
 							},
 							true
 					);
