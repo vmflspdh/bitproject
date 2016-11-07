@@ -24,7 +24,10 @@ on tvl_membs.mno=tvl_tvlmain.mno
 where tvl_bmk.mno = #{bookmarkMemberNo}
 </select>
 
-
+<select id="bookmarkCount" resultMap="bookmarkMap" parameterType="map">
+select count(tmno) from tvl_bmk
+where tmno = #{bookmarkCount}
+</select>
   
 <insert id="insert" parameterType="bookmark" >
   insert into tvl_bmk(tmno, mno)

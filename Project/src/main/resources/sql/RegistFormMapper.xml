@@ -74,7 +74,7 @@ order by tvl_tvlmain.tmno desc
 </select>
 
 <select id="selectOne" resultMap="registFormMap" parameterType="int">
-select max(ipno),count(tvl_bmk.tmno), tvl_membs.mno, tvl_tvlmain.tmno, title, schno, mnm, tvl_sty.styno, stynm, tvl_loc.locno, cont, natn, city, sf_inf, st_dt, ed_dt, mpho, ipnm from tvl_tvlmain
+select max(ipno), tvl_membs.mno, tvl_tvlmain.tmno, title, schno, mnm, tvl_sty.styno, stynm, tvl_loc.locno, cont, natn, city, sf_inf, st_dt, ed_dt, mpho, ipnm from tvl_tvlmain
 inner join tvl_membs
 on tvl_membs.mno = tvl_tvlmain.mno
 inner join tvl_sch
@@ -87,8 +87,6 @@ inner join tvl_sty
 on tvl_sty.styno = tvl_mysty.styno
 inner join tvl_intro_pho
 on tvl_tvlmain.tmno = tvl_intro_pho.tmno
-inner join tvl_bmk
-on tvl_tvlmain.tmno = tvl_bmk.tmno
 where tvl_tvlmain.tmno = #{value}
 </select>
 </mapper>

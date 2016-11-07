@@ -38,6 +38,20 @@ function ajaxBookmarkList() {
     })                  
 }
 
+function ajaxBookmarkCount() {
+	$.getJSON(serverAddr + "/travel/bookmarkCount.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			console.log(result.data)
+			alert("조회 실패 입니다.")
+			return
+		}
+		var arr = result.data
+		$("#bookmarkcount").text(arr[0].bookmarkCount)
+
+	})
+}
+
 function ajaxAddBookmark() {
 	$.post(serverAddr + "/travel/bookmarkAdd.json", function(obj){
 		var result = obj.jsonResult

@@ -34,6 +34,20 @@ public class BookmarkController {
 		}
 	}
 	
+	@RequestMapping(path="bookmarkCount")
+	public Object countList(HttpSession session) throws Exception {
+		
+		try {
+			HashMap<String,Object> map = new HashMap<>();
+			int travelMainNo = (int)session.getAttribute("travelPostNo");
+			map.put("bookmarkCount", travelMainNo);
+		  return JsonResult.success(bookmarkDao.bookmarkCount(map));
+		  
+		} catch (Exception e) {
+			return JsonResult.fail(e.getMessage());
+		}
+	}
+	
 	@RequestMapping(path="bookmarkAdd")
   public Object add(HttpSession session) throws Exception {
     
