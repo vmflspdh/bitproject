@@ -12,7 +12,7 @@ function ajaxLoadRegistForm(no) {
 	})
 }
 
-$("#addBtn").click(function(event) {
+$("#togetherRequest").click(function(event) {
 	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
