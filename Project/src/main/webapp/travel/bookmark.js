@@ -1,0 +1,81 @@
+
+$("#bookmarkBtn").click(function(event) {
+
+	ajaxAddBookmark()
+})
+
+
+function ajaxBookmarkList() {
+	$.getJSON(serverAddr + "/travel/bookmarkList.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			       //alert("서버에서 북마크데이터를 가져오는데 실패했습니다.")
+	       return
+		}
+		var contents = "<h4>북마크</h4>";
+		var arr = result.data
+		for (var i in arr) {
+			contents +=
+				'<pre class="prettyprint">'+'<img  class="img-circle" src="../upload/'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'+"&nbsp&nbsp;"+
+				arr[i].memberName+"님의 페이지가 추가되었습니다. &nbsp;"+
+				'<button type="button" data-no="'+arr[i].travelMainNo+'" data-no2="'+arr[i].memberNo+'" class="btn btn-default btn-sm" id="bookmarkdelete" style="float:right;">삭제</button>' +
+				'<button type="button" data-no="'+arr[i].travelMainNo+'"class="btn btn-default btn-sm" id="bookmarkdetail" style="float:right;">상세페이지</button>'
+				+'</pre>'		
+      }
+    
+    $("#fadeandscale>h6").html(contents)
+    $(document).on("click","#bookmarkdetail",function(event) {
+		var no=$(this).attr('data-no')
+		window.location.href = "newdetail.html?no="+$(this).attr('data-no');
+	    
+		});
+    
+    $(document).on("click","#bookmarkdelete",function(event) {
+		var no=$(this).attr('data-no')
+		ajaxDeleteBookmark(no)
+	    
+		});
+    })                  
+}
+
+function ajaxBookmarkCount() {
+	$.getJSON(serverAddr + "/travel/bookmarkCount.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			console.log(result.data)
+			alert("조회 실패 입니다.")
+			return
+		}
+		var arr = result.data
+		$("#bookmarkcount").text(arr[0].bookmarkCount)
+
+	})
+}
+
+function ajaxAddBookmark() {
+	$.post(serverAddr + "/travel/bookmarkAdd.json", function(obj){
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("등록 실패입니다.")
+			return
+		}
+		alert("추가되었습니다.")
+		window.location.reload(true)
+
+	}, "json")
+}
+
+
+function ajaxDeleteBookmark(no) {
+	$.post(serverAddr + "/travel/bookmarkDelete.json", {no: no},  function(obj){
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("등록 실패입니다.")
+			return
+		}
+		alert("삭제되었습니다.")
+		history.go(0)
+
+	}, "json")
+}
+

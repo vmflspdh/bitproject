@@ -49,13 +49,21 @@ public class TravelMainController {
   
   @RequestMapping(path="scheduleList")
   public Object list(HttpSession session) throws Exception {
-
+    
     try {
       HashMap<String,Object> map = new HashMap<>();
+      
       travelMain.setTravelMainNo((Integer)session.getAttribute("travelPostNo"));
       map.put("travelPostNo", travelMain.getTravelMainNo());
       System.out.println(travelMain.getTravelMainNo());
       
+      List<TravelMain> list = travelScheduleDao.selectMySchedule(map);
+      
+      for(int i=0;i<list.size();i++){
+        list.get(i).getScheduleNo();
+        
+      }
+      session.setAttribute("schNo", list);
       return JsonResult.success(travelScheduleDao.selectMySchedule(map));
     
     } catch (Exception e) {
@@ -66,6 +74,7 @@ public class TravelMainController {
   @RequestMapping(path="tvlReviewList")
   public Object tvlreviewlist(int no,HttpSession session) throws Exception {
     System.out.println(no);
+ 
     try {
       List<Review> list = reviewDao.detailReviewList(no);
       return JsonResult.success(list);

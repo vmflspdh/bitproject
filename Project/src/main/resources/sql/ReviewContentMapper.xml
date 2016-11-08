@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="test.dao.ReviewContentDao">
+  <resultMap type="reviewContent" id="reviewContentMap">
+    <id column="rbcno" property="reviewBoardContentNo"/> 
+    <result column="rbno" property="reviewBoardNo"/>
+    <result column="schno" property="scheduleNo"/> 
+    <result column="cont" property="content"/>
+    <result column="rbcpnm" property="reviewBoardContentPhotoName"/>
+    <result column="st_dt" property="startDate"/>
+    <result column="ed_dt" property="endDate"/>
+  </resultMap>
+  
+  
+  <select id="selectList" resultMap="reviewContentMap" parameterType="int">
+    select c.rbcno,c.rbno,c.schno,c.cont,c.rbcpnm,s.st_dt,s.ed_dt from tvl_review_conts c 
+    inner join tvl_sch s on s.schno=c.schno
+    where c.rbno=#{value}
+  </select>
+  
+  <insert id="insert" parameterType="map" useGeneratedKeys="true" keyProperty="reviewBoardContentNo" keyColumn="rbcno">
+    insert into tvl_review_conts(rbno,schno,cont,rbcpnm)
+    values(#{reviewBoardNo},#{scheduleNo},#{content}, #{reviewBoardContentPhotoName})
+  </insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
