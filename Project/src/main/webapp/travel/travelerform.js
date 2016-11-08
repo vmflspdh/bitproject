@@ -41,6 +41,8 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 	$('.bit-city1').val($(this).siblings('.bit-city').val())
 	$('.bit-startDate1').val($(this).siblings('.bit-startDate').val())
 	$('.bit-endDate1').val($(this).siblings('.bit-endDate').val())
+	$('.bit-latitude1').val($(this).siblings('.bit-latitude').val())
+	$('.bit-longitude1').val($(this).siblings('.bit-longitude').val())
 	$('.bit-index1').val($(this).siblings('#sch_cirNum').text())
 
 });
@@ -215,7 +217,7 @@ function ajaxUpdateTravelMain(formData) {
 				alert("변경 실패입니다.")
 				return
 			}
-			window.location.href = "traveler.html";
+/*			window.location.reload(true);*/
 		}
 	});
 
@@ -478,6 +480,8 @@ function initMap(result) {
 			lng: parseFloat(tag.find('.bit-longitude').val())
 		}
 	});
+	
+	console.log(flightPlanCoordinates)
 
 
 	var map = new google.maps.Map(document.getElementById('map'), {
