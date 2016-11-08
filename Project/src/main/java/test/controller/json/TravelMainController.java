@@ -210,16 +210,17 @@ public class TravelMainController {
       travelMain.setContinent(list.get(i).getContinent());
       travelMain.setNation(list.get(i).getNation());
       travelMain.setCity(list.get(i).getCity());
+      travelMain.setLat(list.get(i).getLat());
+      travelMain.setLng(list.get(i).getLng());
       System.out.println(travelMain);
       travelLocationDao.update(travelMain);
       
       travelMain.setScheduleNo(list.get(i).getScheduleNo());
-      travelMain.setTravelMainNo(list.get(i).getTravelMainNo());
-      travelMain.setLocationNo(list.get(i).getLocationNo());
       travelMain.setStartDate(list.get(i).getStartDate1());
       travelMain.setEndDate(list.get(i).getEndDate1());
       System.out.println(travelMain);
       travelScheduleDao.update(travelMain);
+
       }
       
       
