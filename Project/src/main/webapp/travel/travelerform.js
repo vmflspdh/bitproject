@@ -368,7 +368,7 @@ function ajaxBoardList(no) {
 			contents += 
 				'<tr>' +
 				'<td style="width:100px;">' +
-				'<img src="img/yang/travelphoto2.jpg" style="width:150px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
+				'<img src="img/yang/travelphoto2.jpg" style="width:150px; height: 15%; border-radius: 5px 5px 5px 5px;">' +
 				'</td>' +
 				'<td style="width:65%;">' +
 				'<div style="height:50px;">' +
@@ -378,7 +378,7 @@ function ajaxBoardList(no) {
 				'</div></a>' +
 				'</div>' +
 				'</td>' +
-				'<td style="width:110px;color: #BBBABC;">' +
+				'<td style="width:110px; color: #BBBABC;">' +
 				'<div style="font-size: medium; font-weight: normal;">' + arr[i].createdDate + '</div>' +
 				'<div style="font-size: medium; font-weight: normal;">' +
 				'<span style="float: right;">&nbsp; &nbsp;</span>' +
@@ -469,7 +469,6 @@ function ajaxBoardList(no) {
 
 function initMap(result) {
 
-
 	var flightPlanCoordinates = [];
 	$('.root-schedule').each(function(index, element){
 		var tag = $(element)
@@ -481,29 +480,20 @@ function initMap(result) {
 	});
 
 
-	var mapOptions = {
-			streetViewControl: false,
-			mapTypeControl: false,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-	}
-
-
 	var map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 37.49, lng: 127.02},
 		zoom: 2,
 		mapTypeControl: false
 	});
 
+	
+	bounds = new google.maps.LatLngBounds();
+	for (var i=0; i < flightPlanCoordinates.length; i++) {
+		bounds.extend(flightPlanCoordinates[i]);
+	}
+	map.fitBounds(bounds);
+	
 
-
-	/*
-	$.each(flightPlanCoordinates, function(key, value){
-		console.log('key:' + key + ' / ' + 'value:' + value);
-		$.each(value, function(key, value) {
-			console.log('key:' + key + ' / ' + 'value:' + value);
-		});
-	});
-	 */
 
 	/*	$.each(flightPlanCoordinates, function(key, value){
 		console.log('key:' + key + ' / ' + 'value:' + value);
@@ -512,15 +502,6 @@ function initMap(result) {
 			});
 		});
 	 */
-
-
-	/*var flightPlanCoordinates = [
-	                             {lat: 37.772, lng: -122.214},
-	                             {lat: 21.291, lng: -157.821},
-	                             {lat: -18.142, lng: 178.431},
-	                             {lat: -27.467, lng: 153.027}
-	                             ];*/
-
 
 	var flightPath = new google.maps.Polyline({
 		path: flightPlanCoordinates,
