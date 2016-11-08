@@ -240,6 +240,7 @@ div.changallery ul li img:hover {
 			<div id="fadeandscale" class="well">
 				<h4>동행요청</h4>
 				<h5></h5>
+				<h6></h6>
 				<!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
                   <button value="vcxc">수락</button><button value="sdfds">거절</button>
                   </pre>
@@ -614,6 +615,7 @@ div.changallery ul li img:hover {
 	<script type="text/javascript" src="js/stamen.js"></script>
 	<script type="text/javascript" src="travelerdetail.js"></script>
 	<script type="text/javascript" src="travelerform.js"></script>
+	<script type="text/javascript" src="bookmark.js"></script>
 	<script src="js/jquery.popupoverlay.js"></script>
 	<script>
 		$(document).ready(function() {
@@ -629,6 +631,7 @@ div.changallery ul li img:hover {
 		ajaxRegistFormList()
 		ajaxInviteList()
 		ajaxAgreeInviteList()
+		ajaxBookmarkList()
 		$(function() {
 			$(".bit-startDate, .bit-endDate").datepicker({
 				dateFormat : 'yyyy-mm-dd'

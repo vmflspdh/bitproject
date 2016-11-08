@@ -122,9 +122,9 @@ $("#updateTMBtn").click(function(event) {
 	var schedule = JSON.stringify(scheduleArray)
 	console.log(schedule)
 	travelMain.schedule = schedule;
-	
-	
-	
+
+
+
 	var formData = new FormData();
 	formData.append("memberNo",$("#userNo").val())
 	formData.append("travelMainNo",$("#travelNo").val())
@@ -132,20 +132,20 @@ $("#updateTMBtn").click(function(event) {
 	formData.append("selfIntroduce",$("#selfIntroduce").val())
 	formData.append("styleNo",$("input[name='chk_info']:checked").val())
 	formData.append("schedule",schedule)
-	
-	
-	
-	
+
+
+
+
 	console.log($("#multiFile")[0].files)
 	$($("#multiFile")[0].files).each(function(index, file) {
-		
+
 		console.log(file)
-	formData.append("files", file); 
+		formData.append("files", file); 
 	});
-	
-	
-	
-	
+
+
+
+
 	ajaxUpdateTravelMain(formData)
 });
 
@@ -159,7 +159,7 @@ $("#deleteTMBtn").click(function(event) {
 	ajaxDeleteTravelMain(travelMain)
 });
 
-function ajaxAddTravelMain(travelMain) {
+/*function ajaxAddTravelMain(travelMain) {
 	$.post(serverAddr + "/travel/travelMainAdd.json", travelMain, function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
@@ -170,7 +170,7 @@ function ajaxAddTravelMain(travelMain) {
 
 		window.location.href = "traveler.html"
 	}, "json")
-}
+}*/
 
 function ajaxLoadTravelMain(no) {
 	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
@@ -186,6 +186,7 @@ function ajaxLoadTravelMain(no) {
 		$("#title").text(result.data.title);
 		$("#travelNo").val(result.data.travelMainNo);
 		$("#styleNo").val(result.data.styleNo);
+		$("#detailMemberName").text(result.data.writer);
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
@@ -200,7 +201,7 @@ function ajaxLoadTravelMain(no) {
 }
 
 function ajaxUpdateTravelMain(formData) {
-	
+
 	$.ajax({
 		url : "travelMainUpdate.json",
 		processData : false,
@@ -217,18 +218,8 @@ function ajaxUpdateTravelMain(formData) {
 			window.location.href = "traveler.html";
 		}
 	});
-	
-	
-	
-	/*$.post(serverAddr + "/travel/travelMainUpdate.json", formData, function(obj) {
-		var result = obj.jsonResult
-		if (result.state != "success") {
-			alert("변경 실패입니다.")
-			return
-		}
 
-		window.location.href = "traveler.html"
-	}, "json")*/
+
 }
 
 
@@ -241,7 +232,7 @@ function ajaxDeleteTravelMain(travelMain) {
 			return
 		}
 
-		location.href = "traveler.html"
+		location.href = "mainhtml.html"
 	})
 }
 
@@ -318,39 +309,43 @@ function travelMainFilelist() {
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-		
+
 		var contents = '<a>기존 업로드 파일</a><br/>';
 		var arr = result.data
 		for (var i in arr) {
 			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
 		}
-		
+
 		$("#selectTable .fileList .innerFileList").html(contents)
-		
+
 	});
 }
 
 
 function favorChecked(result) { 
-	console.log(result.data.styleNo)
-	$("input[id="+result.data.styleNo+"]").attr("checked",true);
-	
-	
-	/*$('input:checkbox[name="chk_info"]').each(function() {
+
+
+	$('input:checkbox[name="chk_info"]').each(function() {
+		console.log(result.data.styleNo)
+		$("input[id="+result.data.styleNo+"]").attr("checked",true);
+	});
+
+
+	$('.checkbox-inline').each(function() {
 
 		if(result.data.styleNo == "1"){ //값 비교
-			$(".check-food").attr("checked", true)
+			$(".check-food").css("display", "")
 		} 
 
 		if (result.data.styleNo == "2"){ //값 비교
-			$(".check-culture").attr("checked", true)
+			$(".check-culture").css("display", "")
 		} 
 
 		if (result.data.styleNo == "3"){ //값 비교
-			$(".check-sports").attr("checked", true)
+			$(".check-sports").css("display", "")
 		}
 
-	});*/
+	});
 }
 
 
@@ -359,9 +354,9 @@ function ajaxBoardList(no) {
 	console.log(no)
 	$.getJSON("tvlReviewList.json",{no:no},function(obj) {
 		result = obj.jsonResult;
-			
+
 		if(result.state!="success"){
-			
+
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
@@ -371,114 +366,108 @@ function ajaxBoardList(no) {
 			var b = arr[i].reviewboardno
 			console.log(b)
 			contents += 
-			'<tr>' +
-			'<td style="width:100px; height:100px;">' +
-			'<img src="img/yang/travelphoto2.jpg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
-			'</td>' +
-			'<td style="width:800px;">' +
-			'<div style="height:100px; padding: 10px;">' +
-			'<div style="height: 10px;"></div>' +
-			'<div style="font-size:large; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
-			'<div style="font-size:x-large; font-weight: bold; font-family: sans-serif;">' +
-			'<a class="titleLink" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
-			'</div></a>' +
-			'</div>' +
-			'</td>' +
-			'<td style="width:110px;color: #BBBABC;">' +
-			'<div style="font-size: medium; font-weight: normal;">' + arr[i].createdDate + '</div>' +
-			'<div style="font-size: medium; font-weight: normal;">' +
-			'<span style="float: right;">&nbsp; &nbsp;</span>' +
-			'<span style="float: right;">' + arr[i].viewcount + '</span>' +
-			'<span style="float: right;">조회수 :&nbsp;</span>' +
-			'</div>' +
-			'</td>' +
-			'</tr>' +
-			'<tr><td style="height: 30px;"></tr>'
-	}
-	$("#newReviewTable").html(contents);
-		
+				'<tr>' +
+				'<td style="width:100px;">' +
+				'<img src="img/yang/travelphoto2.jpg" style="width:150px; height: 15%; border-radius: 5px 5px 5px 5px;">' +
+				'</td>' +
+				'<td style="width:65%;">' +
+				'<div style="height:50px;">' +
+				'<div style="font-size:large; font-weight: bold; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Travel Review</div>' +
+				'<div style="font-size:medium; font-weight: bold; font-family: sans-serif;">' +
+				'<a class="titleLink" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
+				'</div></a>' +
+				'</div>' +
+				'</td>' +
+				'<td style="width:110px; color: #BBBABC;">' +
+				'<div style="font-size: medium; font-weight: normal;">' + arr[i].createdDate + '</div>' +
+				'<div style="font-size: medium; font-weight: normal;">' +
+				'<span style="float: right;">&nbsp; &nbsp;</span>' +
+				'<span style="float: right;">' + arr[i].viewcount + '</span>' +
+				'<span style="float: right;">조회수 :&nbsp;</span>' +
+				'</div>' +
+				'</td>' +
+				'</tr>' +
+				'<tr><td style="height: 30px;"></tr>'
+		}
+		$("#newReviewTable").html(contents);
+
 		//console.log(contents)
-		
+
 		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
 		$(".titleLink").click(function(event) {
 			ajaxUpdateViewCount($(this).attr("data-no"))
-				 window.location.href = "travelreviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
-			});
+			window.location.href = "travelreviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
+		});
 		$(".titleLink2").click(function(event) {
 			window.location.href = "travelreviewmemberForm.html?no="+$(this).attr("data-no2");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
 		});
-		
+
 		pageNo = result.pageNo;
-	    totalPage = result.totalPage;
-	    console.log(pageNo)
-	    console.log(totalPage)
-	    var cont="<li><a id='prevBtn' href='#'><span class='glyphicon glyphicon-chevron-left'></span></a></li>"
-	    for(var i=1; i<=totalPage;i++){
-	    	var a=console.log(i)
-	    	//$('ul>li:first').after.html(a);
-	    	//$('ul>li:first').append("<li><a href='#'> "+i+"</a></li>");
-//	    	$('#asd').append("<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>");
-	    	 cont+="<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>"
-	    	
-	    	
-//	    	$('#asd').html("<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>");
-	    	
-	    }
-	    cont +="<li><a id='nextBtn' href='#'><span class='glyphicon glyphicon-chevron-right'></span></a></li>"
-	    $('#asd').html(cont);
-	    
-	    $(document).on("click","#abc",function(event) {
-	    	console.log($(this).attr("data-no"))
-	    	console.log($(this))
-//	    	$("li").addClass("active")
-	    	pageNo=$(this).attr("data-no")
-	    	ajaxBoardList();
-			});
-	    
-	    
-	    
-	    	
-	    	
-	    $("#prevBtn").click(function(event) {
-	    	pageNo--;
-	    	ajaxBoardList();
-	    });
-	    
-	    $("#nextBtn").click(function(event) {
-	    	pageNo++;
-	    	console.log(pageNo)
-	    	ajaxBoardList();
-	    });
-//	    $('#pageNo').text(pageNo);
-	    // 페이지 번호가 1이면 [이전] 버튼을 비활성화시킨다.
-	    if (pageNo <= 1) {
-	    	$('#prevBtn').attr('disabled', true);
-	    } else {
-	    	$('#prevBtn').removeAttr('disabled');
-	    } 
-	    
-	    // 페이지 번호가 마지막 페이지라면 [다음] 버튼을 비활성화시킨다.
-	    if (pageNo >= totalPage) {
-	    	$('#nextBtn').attr('disabled', true);
-	    } else {
-	    	$('#nextBtn').removeAttr('disabled');
-	    }
+		totalPage = result.totalPage;
+		console.log(pageNo)
+		console.log(totalPage)
+		var cont="<li><a id='prevBtn' href='#'><span class='glyphicon glyphicon-chevron-left'></span></a></li>"
+			for(var i=1; i<=totalPage;i++){
+				var a=console.log(i)
+				//$('ul>li:first').after.html(a);
+				//$('ul>li:first').append("<li><a href='#'> "+i+"</a></li>");
+//				$('#asd').append("<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>");
+				cont+="<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>"
+
+
+//				$('#asd').html("<li><a id='abc' data-no='"+i+"' href='#'>"+i+"</a></li>");
+
+			}
+		cont +="<li><a id='nextBtn' href='#'><span class='glyphicon glyphicon-chevron-right'></span></a></li>"
+			$('#asd').html(cont);
+
+		$(document).on("click","#abc",function(event) {
+			console.log($(this).attr("data-no"))
+			console.log($(this))
+//			$("li").addClass("active")
+			pageNo=$(this).attr("data-no")
+			ajaxBoardList();
 		});
-		
-	
-		
-	
-	
-	
-	
+
+
+
+
+
+		$("#prevBtn").click(function(event) {
+			pageNo--;
+			ajaxBoardList();
+		});
+
+		$("#nextBtn").click(function(event) {
+			pageNo++;
+			console.log(pageNo)
+			ajaxBoardList();
+		});
+//		$('#pageNo').text(pageNo);
+		// 페이지 번호가 1이면 [이전] 버튼을 비활성화시킨다.
+		if (pageNo <= 1) {
+			$('#prevBtn').attr('disabled', true);
+		} else {
+			$('#prevBtn').removeAttr('disabled');
+		} 
+
+		// 페이지 번호가 마지막 페이지라면 [다음] 버튼을 비활성화시킨다.
+		if (pageNo >= totalPage) {
+			$('#nextBtn').attr('disabled', true);
+		} else {
+			$('#nextBtn').removeAttr('disabled');
+		}
+	});
+
+
+
+
+
+
+
 }
 
 function initMap(result) {
-	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 37.49, lng: 127.02},
-		zoom: 2,
-		mapTypeControl: false
-	});
 
 	var flightPlanCoordinates = [];
 	$('.root-schedule').each(function(index, element){
@@ -490,14 +479,21 @@ function initMap(result) {
 		}
 	});
 
-	/*
-	$.each(flightPlanCoordinates, function(key, value){
-		console.log('key:' + key + ' / ' + 'value:' + value);
-		$.each(value, function(key, value) {
-			console.log('key:' + key + ' / ' + 'value:' + value);
-		});
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 37.49, lng: 127.02},
+		zoom: 2,
+		mapTypeControl: false
 	});
-	 */
+
+	
+	bounds = new google.maps.LatLngBounds();
+	for (var i=0; i < flightPlanCoordinates.length; i++) {
+		bounds.extend(flightPlanCoordinates[i]);
+	}
+	map.fitBounds(bounds);
+	
+
 
 	/*	$.each(flightPlanCoordinates, function(key, value){
 		console.log('key:' + key + ' / ' + 'value:' + value);
@@ -506,15 +502,6 @@ function initMap(result) {
 			});
 		});
 	 */
-
-
-	/*var flightPlanCoordinates = [
-	                             {lat: 37.772, lng: -122.214},
-	                             {lat: 21.291, lng: -157.821},
-	                             {lat: -18.142, lng: 178.431},
-	                             {lat: -27.467, lng: 153.027}
-	                             ];*/
-
 
 	var flightPath = new google.maps.Polyline({
 		path: flightPlanCoordinates,
@@ -628,7 +615,7 @@ function initMap(result) {
 
 		setMarkers(map);
 	});
-	
+
 	$("#mySchedule").on("shown", function() {
 		google.maps.event.trigger(map, "resize");
 	});
