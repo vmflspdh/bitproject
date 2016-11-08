@@ -84,6 +84,10 @@
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
 	transition: height 0.3s;
+	
+	<!-- -->
+	   
+	    
 }
 
 .upper {
@@ -94,6 +98,7 @@
 	height: 20px;
 	z-index: 20000;
 	width: 100%;
+	
 }
 
 .upper span a {
