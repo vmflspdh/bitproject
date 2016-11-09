@@ -18,7 +18,7 @@ $("#addBtn").click (function(event){
 
 			scheduleNo : tag.find('#scheduleNo').val(),
 			content : tag.find('#scheduleReview').val(),
-			reviewContentPhoto : tag.find('#file')[index].files[0]
+			//reviewContentPhoto : tag.find('#file')[index].files[0]
 		};
 	})
 	console.log(reviewArray)
@@ -29,12 +29,12 @@ $("#addBtn").click (function(event){
 	formData.append("title",$("#title").val())
 	formData.append("content",$("#contents").val())
 	formData.append("reviewContentList",reviewContent)
-	console.log($("#file")[0].files)
+	/*console.log($("#file")[0].files)
 	$($("#file")[0].files).each(function(index, file) {
 		
 		console.log(file)
 	formData.append("files", file); 
-	});
+	});*/
 
 	console.log(formData)
 	
