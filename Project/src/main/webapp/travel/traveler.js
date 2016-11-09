@@ -1,3 +1,13 @@
+$("#searchaddBtn").click (function(event){
+	alert('검색창 눌림');
+	var registForm = {
+			city: $("#searchCity").val(),
+			st_dt: $("#searchStDt").val(),
+			ed_dt: $("#searchEdDt").val()
+	}
+	console.log(registForm)
+});
+
 function checkToNo(no) {
 	$.getJSON(serverAddr + "/travel/formMyList.json", {no: no}, function(obj) {
 		var result = obj.jsonResult
@@ -189,40 +199,3 @@ function ajaxAgreeInviteList() {
 
 
 
-/*$("#accompany").click (function(event){
-
-	alert('aaa');
-	
-	
-//	ajaxAddBoard(review);	
-});
-*/
-
-//"<td><h3><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + arr[i].selfIntroduce + "</h3></a></br>" +
-/*
-contents += '<tr>' +
-'<td><img src="img/yang/london.jpg" width="350" ></td>'
-'<td><h2>' + arr[i].selfIntroduce + '</h2></br>' +
-arr[i].writer + '</br>' +
-'<img src="img/yang/11101_s.gif">' + arr[i].city + ',' + arr[i].nation + '</br>' +
-'<img src="img/yang/2.jpg" width=14px;><a href="#"> 99</a>' +
-'<img src="img/yang/20.jpg"width=14px;><a href="#"> 0 </a>' +
-'<img src="img/yang/24.jpg"width=14px;><a href="#"> 0 </a></td>' +
-'</tr>'
-<tr>
-<td><img src="img/yang/london.jpg" width="350" ></td>
-<td><h2>안녕하세요 권태임 입니다.</h2></br>
-권태임</br>
-<img src="img/yang/11101_s.gif"> 서울, 대한민국</br>
-<img src="img/yang/2.jpg" width=14px;><a href="#"> 99</a>
-<img src="img/yang/20.jpg"width=14px;><a href="#"> 0 </a>
-<img src="img/yang/24.jpg"width=14px;><a href="#"> 0 </a></td>
-</tr>
-contents += "<tr>" +
-"<td>" + arr[i].no + "</td>" + 
-"<td><a class='titleLink' href='#' data-no='" + arr[i].no + "'>" + arr[i].selfIntroduce + "</a></td>" +
-"<td>" + arr[i].styleName + "</td>" +
-"<td>" + arr[i].city + "</td>" +
-"<td>" + arr[i].writer + "</td>" + 
-"</tr>"
-*/
