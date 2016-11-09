@@ -20,7 +20,7 @@
     where c.rbno=#{value}
   </select>
   
-  <insert id="insert" parameterType="map" useGeneratedKeys="true" keyProperty="reviewBoardContentNo" keyColumn="rbcno">
+  <insert id="insert" parameterType="reviewContent" useGeneratedKeys="true" keyProperty="reviewBoardContentNo" keyColumn="rbcno">
     insert into tvl_review_conts(rbno,schno,cont,rbcpnm)
     values(#{reviewBoardNo},#{scheduleNo},#{content}, #{reviewBoardContentPhotoName})
   </insert>

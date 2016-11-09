@@ -247,7 +247,10 @@ function scheduleList() {
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-		
+		var arr = result.data
+		var contents = "";
+		console.log(arr[0].travelMainNo)
+		$("#tmno").val(arr[0].travelMainNo)
 		/*var arr = result.data
 		for
 		$("#scheduleNo").val(arr[i].scheduleNo)*/
@@ -258,7 +261,11 @@ function scheduleList() {
 			}
 			scheduleNo(scheduleNoList);
 		}*/
-
+		
+		
+		
+		
+		
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
 

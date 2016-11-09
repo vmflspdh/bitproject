@@ -9,19 +9,28 @@ $("#addBtn").click (function(event){
 	//console.log($("#reviewContentInput").val())
 	
 	
-	$(".col-sm-10>#reviewContentInput").each(function(index, file) {
-		
-		console.log($(this).val())
-	});
-	
+	var reviewArray = [];
+	$('.root-schedule').each(function(index, element) {
+
+		var tag = $(element)
+
+		reviewArray[index] = {
+
+			scheduleNo : tag.find('#scheduleNo').val(),
+			content : tag.find('#scheduleReview').val(),
+			reviewContentPhoto : tag.find('#file')[index].files[0]
+		};
+	})
+	console.log(reviewArray)
+	var reviewContent = JSON.stringify(reviewArray)
 	
 	var formData = new FormData();
 	formData.append("travelno",$("#tmno").val())
 	formData.append("title",$("#title").val())
 	formData.append("content",$("#contents").val())
-	
-	console.log($("#multiFile")[0].files)
-	$($("#multiFile")[0].files).each(function(index, file) {
+	formData.append("reviewContentList",reviewContent)
+	console.log($("#file")[0].files)
+	$($("#file")[0].files).each(function(index, file) {
 		
 		console.log(file)
 	formData.append("files", file); 
