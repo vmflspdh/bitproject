@@ -32,6 +32,7 @@
 
 
 <style>
+
 tbody{
 	 font-family:  "Monospace","돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
 }
@@ -223,6 +224,7 @@ tbody{
 						</div>
 					</div>
 					
+					<div class="contentsList">sfa</div>
 					<!--   <div class="form-group">
     <label for="password" class="col-sm-2 control-label">암호</label>
     <div class="col-sm-10">
@@ -436,12 +438,13 @@ tbody{
 	<script type="text/javascript" src="js/bit.js"></script>
 	<script type="text/javascript" src="js/authApp.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="travelreviewForm.js"></script>
 	<script type="text/javascript" src="commentApp.js"></script>
+	<script type="text/javascript" src="travelerdetail.js"></script>
+	<script type="text/javascript" src="travelerform.js"></script>
+	<script type="text/javascript" src="travelreviewForm.js"></script>
 	<script>
 	ajaxLoginUser();
-	
-	
+	scheduleList()
 		if (window.location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
 			ajaxCommentList(no);

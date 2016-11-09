@@ -34,7 +34,7 @@
     from tvl_review_bods r
 	inner join tvl_membs m 
 	on r.mno=m.mno
-    where rbno = #{value}
+    where tmno = #{value}
   </select>
   
   <select id="detailReviewList" resultMap="reviewMap" parameterType="int">

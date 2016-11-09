@@ -285,10 +285,34 @@ function scheduleList() {
 		}
 
 		$("#selectTable .root-select").html(contents)*/
-
-
-
-
+		var arr = result.data
+		var contents = "";
+		console.log(arr[0].travelMainNo)
+		$("#tmno").val(arr[0].travelMainNo)
+		for (var i in arr) {
+			contents+= 
+				'<div class="form-group">'+
+			'<label for="title" class="col-sm-2 control-label">'+arr[i].startDate+"~"+arr[i].endDate+'</label>'+
+			'<div class="col-sm-10">'+
+				'<input id="scheldulNo" value="'+arr[i].scheduleNo+'">'+
+				'<textarea rows="10" cols="50" class="form-control" id="reviewContentInput"'+
+					'placeholder="제목을입력하세요."></textArea>'+
+					'<input class="form-control" name="multi_file[]"'+
+					'id="multiFile" type="file" multiple> '+
+			'</div>'+
+		'</div>'
+			reviewContent={
+					scheduleNo:arr[i].scheduleNo,
+					startDate:arr[i].startDate,
+					endDate:arr[i].endDate
+					
+					
+			}
+			reviewContentList(reviewContent)
+		}
+		$(".contentsList").html(contents)
+		
+		
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
 
