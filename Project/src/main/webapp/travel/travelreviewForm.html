@@ -6,12 +6,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Let's go together!</title>
 <link rel="stylesheet"
-  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <meta name="description" content="Blueprint: On-Scroll Animated Header" />
 <meta name="keywords"
-  content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -20,60 +20,62 @@
 
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 
 <style>
 tbody{
-   font-family:  "Monospace","돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
+	 font-family:  "Monospace","돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
 }
-/* #firstcolum,#bbb{
-  width:0;
-  height:0;
-  display:none;
-} */ 
+#firstcolum,#bbb{
+	width:0;
+	height:0;
+	display:none;
+	/* visibility: hidden; */
+}
 .updateContentInput{
-  text-align:center;
-  width: 350px;
-  height: 50px;
+	text-align:center;
+	width: 350px;
+	height: 50px;
 }
 .form-horizontal {
-  padding-right: 40px;
-  margin-top: -40px;
-  width: 90%;
+	padding-right: 40px;
+	margin-top: -40px;
+	width: 90%;
 }
-
 #content {
-  text-align: center;
-  color: black;
-  background-color: white;
+	width:100%;
+	text-align: center;
+	color: black;
+	background-color: white;
 }
-
 #bar {
-  width: 60%;
-  padding-bottom: 80px;
-  margin: 0 auto;
+	width: 60%;
+	padding-bottom: 80px;
+	margin: 0 auto;
 }
-
 #map {
-  width: 100%;
-  height: 400px;
-  margin: 0 auto;
+	width: 100%;
+	height: 400px;
+	margin: 0 auto;
+}
+.container{
+	width: 100%;
 }
 </style>
 
 
 </head>
 <body>
-  <div class="container">
+	<div class="container">
     <div class="upper">
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
@@ -127,105 +129,101 @@ tbody{
       </nav>
     </div>
   </div>
-    <div id="content">
-    <div style=" padding-bottom: 110px;">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            </ol>
-          
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="../upload/1478240600390_3.jpg" alt="...">
-                <div class="carousel-caption">
-                  ...
-                </div>
-              </div>
-              <div class="item">
-                <img src="../upload/1478240600360_2.jpg" alt="...">
-                <div class="carousel-caption">
-                  ...
-                </div>
-              </div>
-              ...
-            </div>
-          
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-        </div>
-      </div>
-        
-        
-      <div></div>
-      <form class="form-horizontal ">
-        <div id="group">
-          <div class="form-group my-view">
-            <label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="rbno" readonly>
-            </div>
-          </div>
+		<div id="content">
+			<div style="padding-bottom: 50px;"> </div>
+				<div style="margin-bottom: 50px;" id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			  <!-- Indicators -->
+				  <ol class="carousel-indicators">
+				   <!--  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				    <li data-target="#carousel-example-generic" data-slide-to="2"></li> -->
+				  </ol>
+			
+			  <!-- Wrapper for slides -->
+		  <div class="carousel-inner"  style="text-align: center;" role="listbox">
+			   <!-- <div id="photoGallery"></div> -->
+			  	<!-- <div class="item active">
+			      <p><img  src="../upload/1478403003814_9.jpg" alt="..."></p>
+			    </div>
+			    <div class="item">
+			      <p><img src="../upload/1478403003784_5.jpg" alt="..."></p>
+		   		</div>   -->
+			    assdfsdfsd의 여행사진
+		  </div>
+		 
 
-          <div class="form-group ">
-            <label for="tmno" class="col-sm-2 control-label">여행번호</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="tmno"
-                placeholder="필수사항입니다!">
-            </div>
-          </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>	
 
-          <div class="form-group ">
-            <label for="mno" class="col-sm-2 control-label">회원번호</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="userName2"
-                placeholder="필수사항입니다!">
-            </div>
-          </div>
 
-          <div class="form-group">
-            <label for="title" class="col-sm-2 control-label">제목</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" id="title"
-                placeholder="제목을입력하세요.">
-            </div>
-          </div>
+				
+				
+			<form class="form-horizontal ">
+				<div id="group">
+					<div class="form-group my-view">
+						<label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="rbno" readonly>
+						</div>
+					</div>
 
-          <div class="form-group">
-            <label for="contents" class="col-sm-2 control-label">내용</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" rows="10" cols="50" id="contents"
-                placeholder="내용을입력하세요."></textarea>
-            </div>
-          </div>
+					<div class="form-group ">
+						<label for="tmno" class="col-sm-2 control-label">여행번호</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="tmno"
+								placeholder="필수사항입니다!">
+						</div>
+					</div>
 
-          <div class="form-group">
-            <label for="createdDate" class="col-sm-2 control-label">등록일</label>
-            <div class="col-sm-10">
-              <input class="form-control" rows="10" cols="50" id="createdDate"
-                readonly="readonly"></input>
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="multiFile" class="col-sm-2 control-label">사진등록</label>
-            <div class="col-sm-10">
-              <input class="form-control" name="multi_file[]"
-              id="multiFile" type="file" multiple> 
-            </div>
-          </div>
-          
-          <!--   <div class="form-group">
+					<div class="form-group ">
+						<label for="mno" class="col-sm-2 control-label">회원번호</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="userName2"
+								placeholder="필수사항입니다!">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="title" class="col-sm-2 control-label">제목</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="title"
+								placeholder="제목을입력하세요.">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="contents" class="col-sm-2 control-label">내용</label>
+						<div class="col-sm-10">
+							<textarea class="form-control" rows="10" cols="50" id="contents"
+								placeholder="내용을입력하세요."></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="createdDate" class="col-sm-2 control-label">등록일</label>
+						<div class="col-sm-10">
+							<input class="form-control" rows="10" cols="50" id="createdDate"
+								readonly="readonly"></input>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="multiFile" class="col-sm-2 control-label">사진등록</label>
+						<div class="col-sm-10">
+							<input class="form-control" name="multi_file[]"
+							id="multiFile" type="file" multiple> 
+						</div>
+					</div>
+					
+					<!--   <div class="form-group">
     <label for="password" class="col-sm-2 control-label">암호</label>
     <div class="col-sm-10">
       <input type="password"  class="form-control" id="password" placeholder="암호입력">
@@ -234,176 +232,175 @@ tbody{
 
 
 
-          <div class="form-group my-view">
-            <label class="col-sm-2 control-label">조회수</label>
-            <div class="col-sm-10">
-              <p id="viewCount" class="form-control-static"></p>
-            </div>
-          </div>
+					<div class="form-group my-view">
+						<label class="col-sm-2 control-label">조회수</label>
+						<div class="col-sm-10">
+							<p id="viewCount" class="form-control-static"></p>
+						</div>
+					</div>
 
-        </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <!-- group div -->
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
-            <button id="updateBtn" type="button"
-              class="btn btn-default my-view">변경</button>
-            <button id="deleteBtn" type="button"
-              class="btn btn-default my-view">삭제</button>
-            <button id="cancelBtn" type="button" class="btn btn-default"
-              onclick="location.href='travelreviewApp.html'">취소</button>
-          </div>
-        </div>
-        
-        <input id="bbb"></input>
-        <table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
-  <thead id="tablehead">
-  <tr>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    <td> </td>
-    
-    
-  </tr>
-  
-  </thead>
-  <tbody>
-  <!-- <tr>
-  <td>sdffffffffffffffff</td>
-  <td>sdffffffffffffffff</td>
-  </tr> -->
-  
-  </tbody>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<!-- group div -->
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
+						<button id="updateBtn" type="button"
+							class="btn btn-default my-view">변경</button>
+						<button id="deleteBtn" type="button"
+							class="btn btn-default my-view">삭제</button>
+						<button id="cancelBtn" type="button" class="btn btn-default"
+							onclick="location.href='travelreviewApp.html'">취소</button>
+					</div>
+				</div>
+				
+				<input id="bbb"></input>
+				<table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
+	<thead id="tablehead">
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		
+	</tr>
+	
+	</thead>
+	<tbody>
+	<!-- <tr>
+	<td>sdffffffffffffffff</td>
+	<td>sdffffffffffffffff</td>
+	</tr> -->
+	
+	</tbody>
   </table>
   
   <div class="my-view" style="border-top:3px solid gray; padding-top: 10px;">
   <div class="form-group" >
     <div class="col-sm-10">
     <!-- <input class="form-control"  id="crbno" ></input> -->
-      
-       <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
-        <textarea  class="form-control" style="width: 88%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
+    	
+    	 <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
+      	<textarea  class="form-control" style="width: 88%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
       
     </div>
-      
-  <button id="comtaddBtn" type="button" class="btn btn-default " style="float:right; margin-top: 60px;">등록</button>
+    	
+	<button id="comtaddBtn" type="button" class="btn btn-default " style="float:right; margin-top: 60px;">등록</button>
   </div>
  </div>
-        
-        
-        
-        
-        
-        
-        <!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
-      </form>
-    </div>
+				
+				
+				
+				
+				
+				
+				<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
+			</form>
+		</div>
 
-    <div class="main"></div>
-  </div>
-
-
-  <!-- 로그인 폼 -->
-  <div class="modal fade" style="z-index: 200000;" id="myModal1"
-    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="z-index: 300000;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button>
-          <h2 class="modal-title" id="myModalLabel">로그인</h2>
-        </div>
-        <div class="modal-body">
-          <div class="wrapper">
-            <form class="form-signin">
-              <input type="text" class="form-control" id="email"
-                placeholder="이메일" required="" autofocus="" /></br> <input
-                type="password" id="password" class="form-control"
-                placeholder="비밀번호" required="" /> <label class="checkbox">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
-                id="saveEmail"> 이메일저장
-              </label>
-              <button id="loginBtn" class="btn btn-lg btn-primary btn-block"
-                type="button">로그인</button>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 회원가입 폼 -->
-  <div class="modal fade" style="z-index: 200000;" id="myModal"
-    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm"
-      style="width: 500px; z-index: 300000;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button>
-          <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
-        </div>
-        <div class="modal-body">
-          <div class="wrapper">
-            <form class="form-signin">
+		<div class="main"></div>
+	</div>
 
 
-              <label for="name" class="col-sm-2 control-label">이름</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="name"
-                  placeholder="이름"><br />
-              </div>
+	<!-- 로그인 폼 -->
+	<div class="modal fade" style="z-index: 200000;" id="myModal1"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-sm" style="z-index: 300000;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h2 class="modal-title" id="myModalLabel">로그인</h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
+							<input type="text" class="form-control" id="email"
+								placeholder="이메일" required="" autofocus="" /></br> <input
+								type="password" id="password" class="form-control"
+								placeholder="비밀번호" required="" /> <label class="checkbox">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+								id="saveEmail"> 이메일저장
+							</label>
+							<button id="loginBtn" class="btn btn-lg btn-primary btn-block"
+								type="button">로그인</button>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 회원가입 폼 -->
+	<div class="modal fade" style="z-index: 200000;" id="myModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-sm"
+			style="width: 500px; z-index: 300000;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
 
 
-              <label for="email" class="col-sm-2 control-label">이메일</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control" id="email"
-                  placeholder="이메일"><br />
-              </div>
+							<label for="name" class="col-sm-2 control-label">이름</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="name"
+									placeholder="이름"><br />
+							</div>
 
 
-
-              <label for="password" class="col-sm-2 control-label">암호</label>
-              <div class="col-sm-10">
-                <input type="password" id="password" class="form-control"
-                  placeholder="암호입력"><br />
-              </div>
+							<label for="email" class="col-sm-2 control-label">이메일</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="email"
+									placeholder="이메일"><br />
+							</div>
 
 
 
-              <label for="birthday" class="col-sm-2 control-label">생일</label>
-              <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control"
-                  placeholder="생일"><br />
-              </div>
+							<label for="password" class="col-sm-2 control-label">암호</label>
+							<div class="col-sm-10">
+								<input type="password" id="password" class="form-control"
+									placeholder="암호입력"><br />
+							</div>
 
 
-              <label for="gender" class="col-sm-2 control-label">성별</label>
+
+							<label for="birthday" class="col-sm-2 control-label">생일</label>
+							<div class="col-sm-10">
+								<input type="text" id="birthday" class="form-control"
+									placeholder="생일"><br />
+							</div>
+
+
+							<label for="gender" class="col-sm-2 control-label">성별</label>
                 <div class="col-sm-10">
                 <select class="form-control" id="gender">
                 <option value="1">여자</option>
@@ -412,52 +409,49 @@ tbody{
               <br>
               </div>
 
-              <!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                type="checkbox" value="remember-me" id="rememberMe"
-                name="rememberMe"> 약관동의
-              </label> -->
-              <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
-                type="button">회원가입</button>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-  
-  </script>
+							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+								type="checkbox" value="remember-me" id="rememberMe"
+								name="rememberMe"> 약관동의
+							</label> -->
+							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+								type="button">회원가입</button>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-  <!-- classie.js by @desandro: https://github.com/desandro/classie -->
-  <script src="js/map.js"></script>
 
-  <script src="js/menu.js"></script>
-  <script src="js/classie.js"></script>
-  <script src="js/cbpAnimatedHeader.min.js"></script>
-  <!-- 회원정보 관련 -->
-  <script type="text/javascript" src="js/bit.js"></script>
-  <script type="text/javascript" src="js/common.js"></script>
-  <script type="text/javascript" src="js/authApp.js"></script>
-  <script type="text/javascript" src="travelreviewForm.js"></script>
-  <script type="text/javascript" src="commentApp.js"></script>
-  <script>
-  
-    ajaxLoginUser()
-    init();
-    if (window.location.search.startsWith("?")) {
-      var no = location.search.split("=")[1];
+	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+	<script src="js/map.js"></script>
 
-      ajaxLoadBoard(no)
-      ajaxCommentList(no);
-      photoList(no)
-      $(".my-new").css("display", "none");
-
-    } else {
-      $(".my-view").css("display", "none");
-    }
-  </script>
+	<script src="js/menu.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	<!-- 회원정보 관련 -->
+	<script type="text/javascript" src="js/bit.js"></script>
+	<script type="text/javascript" src="js/authApp.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="travelreviewForm.js"></script>
+	<script type="text/javascript" src="commentApp.js"></script>
+	<script>
+	ajaxLoginUser();
+	
+	
+		if (window.location.search.startsWith("?")) {
+			var no = location.search.split("=")[1];
+			ajaxCommentList(no);
+			ajaxLoadBoard(no)
+			photoList(no)
+			$(".my-new").css("display", "none");
+		} else {
+			$(".my-view").css("display", "none");
+		}
+	init();
+	</script>
 </body>
 </html>

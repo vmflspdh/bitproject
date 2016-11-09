@@ -2,7 +2,7 @@ var calendarDetailList = [];
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
 	var clickedRow = $(this).parent();
-
+	
 	clickedRow.remove();
 
 });

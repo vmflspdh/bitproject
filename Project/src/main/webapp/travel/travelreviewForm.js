@@ -73,13 +73,35 @@ function photoList(no){
 		
 		
 		for ( var i in arr) {
-
+			if(i==0){
+				contents += 
+					'<div class="item active">'+
+					'<p><img width=100%  height=700 src="../upload/'+arr[i].reviewPhotoName+'" alt="..."></p>'+
+					'</div>'
+			} else {
 			contents += 
-				"<img src='../upload/"+arr[i].reviewPhotoName+"' style='width:60px;height:60px;'>"
 				
+				'<div class="item">'+
+				'<p><img width=100% height=700 src="../upload/'+arr[i].reviewPhotoName+'" alt="..."></p>'+
+			    '</div>'
+			}
 		}
 		
-		$(".carousel-inner > div> p ").html("<p>xcvxvxcv</p>");
+		
+		
+		/*for ( var j in arr) {
+			if(j==0){
+				contents2 += 
+					'<li data-target="#carousel-example-generic" data-slide-to="'+j+'" class="active"></li>'
+			} else {
+			contents2 += 
+				
+				'<li data-target="#carousel-example-generic" data-slide-to="'+j+'"></li>'
+			}
+		}*/
+		console.log(contents)
+		$(".carousel-inner").html(contents);
+		//$(".carousel-indicators").html(contents2);
 	})
 }
 

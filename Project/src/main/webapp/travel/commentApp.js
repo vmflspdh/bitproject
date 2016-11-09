@@ -48,6 +48,7 @@ function ajaxCommentList(no) {
 		var contents="";
 		var arr = result.data
 		a=0;
+		console.log($(".form-horizontal > #bbb").val())
 		for ( var i in arr) {
 
 			contents += 
@@ -66,7 +67,7 @@ function ajaxCommentList(no) {
 		
 		console.log($("#bbb").val())
 		/*console.log($("#ccc1").val())*/
-		abc()
+		
 		
 		console.log(contents)
 		
