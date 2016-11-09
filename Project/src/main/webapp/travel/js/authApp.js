@@ -97,10 +97,7 @@ function ajaxLoginUser() {
 
 function init() {
 
-	if (cookieMap) {
-
 		var cookieMap = bit.cookieToObject()
-
 		console.log(cookieMap)
 
 		//if (cookieMap["email"]) { // cookieMap 객체에 email 이름으로 저장된 값이 있는가?
@@ -108,7 +105,7 @@ function init() {
 			$("#email").val(cookieMap["email"])
 			$("#saveEmail").attr("checked", true)
 		}
-	}
+
 }
 
 

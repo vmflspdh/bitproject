@@ -2,7 +2,7 @@ var bit = {}
 
 bit.cookieToObject = function() {
 	
-	
+	if (cookies != "") { 
 	var cookies = document.cookie.split(";")
 	var obj = {}
 
@@ -14,6 +14,7 @@ bit.cookieToObject = function() {
 		obj[cookie[0]] = cookie[1].replace(/\"/gi, "")
 	});
 	return obj;
+	}
 } 
 
 
