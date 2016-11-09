@@ -1,3 +1,11 @@
+$(".reviewBtn").click (function(event){
+	alert(no)
+	
+		
+	
+	window.location.href = "travelreviewForm.html";
+});
+
 var calendarDetailList = [];
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
