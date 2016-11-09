@@ -248,8 +248,6 @@ function scheduleList() {
 		}
 		
 		var arr = result.data
-		for
-		$("#scheduleNo").val(arr[i].scheduleNo)
 		/*for (var i in arr) {
 			console.log(arr[i].scheduleNo);
 			scheduleNoList = {
