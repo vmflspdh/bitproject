@@ -10,5 +10,5 @@ import test.vo.ReviewContent;
 
 public interface ReviewContentDao {
   List<ReviewContent> selectList(int no) throws Exception;
-  int insert(Map<String,Object> paramMap) throws Exception;
+  int insert(ReviewContent reviewContent) throws Exception;
 }
