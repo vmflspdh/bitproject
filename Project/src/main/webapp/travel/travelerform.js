@@ -28,6 +28,7 @@ $(".selectApplyBtn").click(function(event){
 		}
 	});
 	$('.selectApplyBtn').attr("data-dismiss", "modal");
+	$('#pac-input').val("")
 
 });
 
@@ -247,7 +248,9 @@ function scheduleList() {
 			return
 		}
 		
-		var arr = result.data
+		/*var arr = result.data
+		for
+		$("#scheduleNo").val(arr[i].scheduleNo)*/
 		/*for (var i in arr) {
 			console.log(arr[i].scheduleNo);
 			scheduleNoList = {
@@ -294,9 +297,6 @@ function scheduleList() {
 		}
 
 		$("#selectTable .root-select").html(contents)*/
-
-
-
 
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
@@ -551,15 +551,15 @@ function initMap(result) {
 
 	autocomplete.bindTo('bounds', map);
 
-	/*var infowindow = new google.maps.InfoWindow();
+	var infowindow = new google.maps.InfoWindow();
 	  var marker = new google.maps.Marker({
 	    map: map,
 	    anchorPoint: new google.maps.Point(0, -29)
 	  });
-	 */
+	
 	autocomplete.addListener('place_changed', function() {
-		/*	infowindow.close();
-			marker.setVisible(false);*/
+			infowindow.close();
+			marker.setVisible(false);
 		var place = autocomplete.getPlace();
 		if (!place.geometry) {
 			window.alert("Autocomplete's returned place contains no geometry");
@@ -570,11 +570,11 @@ function initMap(result) {
 		if (place.geometry.viewport) {
 			map.fitBounds(place.geometry.viewport);
 		} else {
-			/*			map.setCenter(place.geometry.location);
-				map.setZoom(5);  */
+				map.setCenter(place.geometry.location);
+				map.setZoom(5); 
 		}
 
-		/*marker.setIcon(*//** @type {google.maps.Icon} *//*({
+		marker.setIcon(/** @type {google.maps.Icon} */({
 	      url: place.icon,
 	      size: new google.maps.Size(71, 71),
 	      origin: new google.maps.Point(0, 0),
@@ -582,7 +582,7 @@ function initMap(result) {
 	      scaledSize: new google.maps.Size(35, 35)
 	    }));
 	    marker.setPosition(place.geometry.location);
-	    marker.setVisible(true);*/
+	    marker.setVisible(true);
 
 		var address = '';
 		if (place.address_components) {
@@ -618,13 +618,13 @@ function initMap(result) {
 			console.log(lot)
 		}
 
-		/*	    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+/*		   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
 	    infowindow.open(map, marker);*/
 
 		setMarkers(map);
 	});
 
-	$("#mySchedule").on("shown", function() {
+	$("#mySchedule").on("shown.bs.modal", function() {
 		google.maps.event.trigger(map, "resize");
 	});
 

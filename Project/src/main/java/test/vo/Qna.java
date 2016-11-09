@@ -21,7 +21,23 @@ public class Qna implements Serializable {
    protected Date createDate;
    protected Date cmtCreateDate;
    protected int viewCount;
-   public int getNo() {
+   protected String memberName;
+   protected int commentCount;
+   
+   
+   public int getCommentCount() {
+		return commentCount;
+	}
+	public void setCommentCount(int commentCount) {
+		this.commentCount = commentCount;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+	public int getNo() {
      return no;
    }
    public void setNo(int no) {

@@ -52,8 +52,9 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
 
 #checkImg {
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
+	margin-right: 5px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -85,6 +86,12 @@ h2, h3, h4, h5, h6 {
 	float: left;
 }
 
+.checkbox-inline {
+	font-size: 14px;
+	padding-left: 30px;
+	margin-bottom: 5px;
+}
+
 a {
 	color: black;
 	text-decoration: none;
@@ -109,7 +116,7 @@ a:hover {
 						<ul>
 							<li><a href="#" id="myInfo"><img
 									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-									INFO</a> </li>
+									INFO</a></li>
 							<li><a href="#" id="travelerMessage"><img
 									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
 							</li>
@@ -196,9 +203,10 @@ a:hover {
 
 				<div class="w3-container info"
 					style="width: 25%; height: 270px; margin: 2% 0 40px 40px; padding: 10px 0 0 10px; border-radius: 2%; background: rgba(238, 231, 231, 0.8); font-size: medium; float: left;">
-					<p>
-						<i class="fa fa-certificate fa-fw w3 w3-large w3-text-teal"></i>Travel
-						Style <br> <label class="checkbox-inline check-food"
+					<p style="margin-bottom: 0;">
+						<i class="fa fa-certificate fa-fw w3 w3-large w3-text-teal"></i> <a>Traveler
+					Style</a>
+					</p> <label class="checkbox-inline check-food"
 							style="display: none;"> <img src='img/restaurant.png'
 							id="checkImg">식도락
 						</label><label class="checkbox-inline check-culture"
@@ -207,7 +215,6 @@ a:hover {
 						</label><label class="checkbox-inline check-sports" style="display: none;">
 							<img src='img/rowing.png' id="checkImg">액티비티/레포츠
 						</label>
-					</p>
 
 					<p>
 						<i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>
@@ -277,8 +284,9 @@ a:hover {
 		<table id="newReviewTable" style="margin: 0 auto;">
 		</table>
 	</div>
-	<input type="button" class="reviewBtn	" style="float: right;" value="리뷰등록">
-	
+	<input type="button" class="reviewBtn	" style="float: right;"
+		value="리뷰등록">
+
 	<br>
 	<br>
 	<br>
@@ -462,7 +470,6 @@ a:hover {
 		ajaxInviteList()
 		ajaxAgreeInviteList()
 		ajaxBookmarkCount()
-		mapinitialize()
 	</script>
 
 	<script id="trTemplateText" type="text/x-handlebars-template">
