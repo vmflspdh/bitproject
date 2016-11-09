@@ -7,7 +7,7 @@ $(document.body).on('click', '.selectDelBtn', function(event) {
 
 });
 
-/*일정수정*/
+/*일정수정(모달사용)*/
 
 $(".selectApplyBtn").click(function(event){
 
