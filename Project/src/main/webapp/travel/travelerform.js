@@ -217,7 +217,7 @@ function ajaxUpdateTravelMain(formData) {
 				alert("변경 실패입니다.")
 				return
 			}
-/*			window.location.reload(true);*/
+			window.location.reload(true);
 		}
 	});
 
@@ -460,11 +460,6 @@ function ajaxBoardList(no) {
 			$('#nextBtn').removeAttr('disabled');
 		}
 	});
-
-
-
-
-
 
 
 }
