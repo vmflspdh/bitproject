@@ -6,6 +6,14 @@ $("#addBtn").click (function(event){
 			title : $("#title").val(),
 			content : $("#contents").val()
 	}
+	//console.log($("#reviewContentInput").val())
+	
+	
+	$(".col-sm-10>#reviewContentInput").each(function(index, file) {
+		
+		console.log($(this).val())
+	});
+	
 	
 	var formData = new FormData();
 	formData.append("travelno",$("#tmno").val())
@@ -57,6 +65,12 @@ $("#deleteBtn").click(function(event){
 	
 	ajaxDeleteBoard($("#rbno").val());
 });
+
+function reviewContentList(reviewContent){
+	console.log(reviewContent.scheduleNo)
+	
+}
+
 
 function photoList(no){
 	$.getJSON("rvphotoList.json?=no"+no,{no:no},function(result){

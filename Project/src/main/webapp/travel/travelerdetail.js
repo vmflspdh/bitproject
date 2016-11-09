@@ -1,3 +1,14 @@
+$(".reviewBtn").click (function(event){
+	alert(no)
+	
+		
+	
+	window.location.href = "travelreviewForm.html";
+});
+
+
+
+
 function ajaxLoadRegistForm(no) {
 	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
