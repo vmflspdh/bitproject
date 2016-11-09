@@ -585,9 +585,9 @@ function initMap(result) {
 		setMarkers(map);
 	});
 
-	$("#mySchedule").on("shown.bs.modal", function() {
+/*	$("#mySchedule").on("shown.bs.modal", function() {
 		google.maps.event.trigger(map, "resize");
-	});
+	});*/
 
 }
 
@@ -605,13 +605,33 @@ function calendarList() {
 		}
 		console.log(calendarDetailList)
 		showCalendar();
+		
 	})
 }
 
 
+/*
+function date_add(sDate, nDays) {
+    var yy = parseInt(sDate.substr(0, 4), 10);
+    var mm = parseInt(sDate.substr(5, 2), 10);
+    var dd = parseInt(sDate.substr(8), 10);
+ 
+    d = new Date(yy, mm - 1, dd + nDays);
+ 
+    yy = d.getFullYear();
+    mm = d.getMonth() + 1; mm = (mm < 10) ? '0' + mm : mm;
+    dd = d.getDate(); dd = (dd < 10) ? '0' + dd : dd;
+ 
+    return '' + yy + '-' +  mm  + '-' + dd;
+}
+
+*/
 function showCalendar() {
+ 
 
 	$(document).ready(function() {
+		
+		
 		console.log(calendarDetailList)
 		$("#calendar").fullCalendar({
 			navLinks: false,
@@ -625,7 +645,7 @@ function showCalendar() {
 							{
 						title: title,
 						start: start,
-						end: end
+						end: end1 = date_add(end, 1)
 							},
 							true
 					);

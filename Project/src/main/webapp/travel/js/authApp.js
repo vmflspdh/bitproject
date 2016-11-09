@@ -97,6 +97,7 @@ function ajaxLoginUser() {
 
 function init() {
 
+	if (document.cookie != "") { 
 		var cookieMap = bit.cookieToObject()
 		console.log(cookieMap)
 
@@ -105,6 +106,7 @@ function init() {
 			$("#email").val(cookieMap["email"])
 			$("#saveEmail").attr("checked", true)
 		}
+	}
 
 }
 
