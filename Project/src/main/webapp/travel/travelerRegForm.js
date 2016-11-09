@@ -54,6 +54,14 @@ $(".selectAddBtn").click(function(event) {
 			var tag = $(element).find($('[id="sch_cirNum"]'));
 			tag.html(index+1);
 		});
+		
+		$('#pac-input').val("");
+		$(".bit-nation1").val(""),
+		$(".bit-city1").val(""),
+		$(".bit-startDate1").val(""),
+		$(".bit-endDate1").val(""),
+		$(".bit-latitude1").val(""),
+		$(".bit-longitude1").val("")
 
 });
 

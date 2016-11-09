@@ -16,6 +16,16 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
+<!-- 웹폰트 코드 -->
+<link rel='stylesheet'
+  href='https://fonts.googleapis.com/css?family=Titillium+Web'
+  rel='stylesheet'>
+<link rel='stylesheet'
+  href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'
+  rel='stylesheet'>
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -37,21 +47,18 @@
 
 
 <style>
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
+}
+
 #checkImg {
 	width: 45px;
 	height: 45px;
 }
 
-#content {
-	text-align: center;
-	color: black;
-	background-color: white;
-}
-
-#bar {
-	width: 680px;
-	padding-bottom: 80px;
-	margin: 0 auto;
+h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
 #map {
@@ -77,12 +84,13 @@ table {
 td {
 	border-bottom: 1px dotted #A4A4A4;
 	padding-top: 20px;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 }
 
 td div {
 	padding-top: 0px;
 	color: #13919A;
+		font-weight: bold;
 }
 
 #detailBar {
@@ -109,7 +117,7 @@ td div {
 	display: inline-block;
 	letter-spacing: -0.5px;
 	text-transform: uppercase;
-	font-size: 17px;
+	font-size: 20px;
 	background: #A4A4A4;
 	color: white;
 }
@@ -236,7 +244,7 @@ td div {
 				<table id="selectTable">
 					<tr>
 						<td
-							style="width: 100px; color: green; font-weight: bold; padding-bottom: 0; font-size: large;">
+							style="width: 100px; color: green; font-weight: bold; font-size: large;">
 
 							<div id="detailBar"></div>
 							<div>제목</div>
@@ -361,7 +369,7 @@ td div {
 		<br>
 		<p></p>
 		<br />
-	</div>
+
 
 	<!-- 로그인 폼 -->
 	<div class="modal fade" style="z-index: 200000;" id="myModal1"

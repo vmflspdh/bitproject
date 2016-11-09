@@ -2,12 +2,12 @@ var calendarDetailList = [];
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
 	var clickedRow = $(this).parent();
-
+	
 	clickedRow.remove();
 
 });
 
-/*일정수정*/
+/*일정수정(모달사용)*/
 
 $(".selectApplyBtn").click(function(event){
 
@@ -28,6 +28,7 @@ $(".selectApplyBtn").click(function(event){
 		}
 	});
 	$('.selectApplyBtn').attr("data-dismiss", "modal");
+	$('#pac-input').val("")
 
 });
 
@@ -41,6 +42,8 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 	$('.bit-city1').val($(this).siblings('.bit-city').val())
 	$('.bit-startDate1').val($(this).siblings('.bit-startDate').val())
 	$('.bit-endDate1').val($(this).siblings('.bit-endDate').val())
+	$('.bit-latitude1').val($(this).siblings('.bit-latitude').val())
+	$('.bit-longitude1').val($(this).siblings('.bit-longitude').val())
 	$('.bit-index1').val($(this).siblings('#sch_cirNum').text())
 
 });
@@ -215,7 +218,7 @@ function ajaxUpdateTravelMain(formData) {
 				alert("변경 실패입니다.")
 				return
 			}
-			window.location.href = "traveler.html";
+			window.location.reload(true);
 		}
 	});
 
@@ -244,49 +247,25 @@ function scheduleList() {
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
-		/*		var contents = "";
 		var arr = result.data
-		for (var i in arr) {
-
-			contents += '<td style="color: green; font-weight: bold; font-size: large;">' +
-	     '<div>가고싶은</div>' + 
-	     '<div>여행지</div>' +
-	    '</td>' +
-				 '<td id="root-select">' +
-				'<form class="form-inline root-schedule" onsubmit="return false">' +
-				'<input type="text" class="form-control bit-locationNo" style="display: none;" value="' + arr[i].locationNo + '">' +
-				'<select style="width:100px;" class="form-control bit-continent">' +
-				'<option selected value="'+ arr[i].continent + '">'+ arr[i].continent + '</option>' +
-				'<option value="아시아">아시아</option>' +
-				'<option value="유럽">유럽</option>' +
-				'<option value="북아메리카">북아메리카</option>' +
-				'</select>' +
-				'<select style="width:100px;" class="form-control bit-nation">' +
-				'<option selected value="'+ arr[i].nation + '">'+ arr[i].nation + '</option>' +
-				'<option value="대한민국">대한민국</option>' +
-				'<option value="일본">일본</option>' +
-				' <option value="영국">영국</option>' +
-				'</select>' +
-				'<select style="width:100px;" class="form-control bit-city">' +
-				'<option selected value="'+ arr[i].city + '">'+ arr[i].city + '</option>' +
-				'<option value="서울">서울</option>' +
-				'<option value="부산">부산</option>' +
-				'<option value="도쿄">도쿄</option>' +
-				'</select>' +
-				'<input type="text" class="form-control bit-scheduleNo" style="display: none;" value="' + arr[i].scheduleNo + '">' +
-				'<input type="text" placeholder="시작일" style="width:100px;" value="'+ arr[i].startDate +'" class="form-control bit-startDate">' +
-				'<input type="text" placeholder="종료일" style="width:100px;" value="'+ arr[i].endDate +'" class="form-control bit-endDate">' +
-				'<button class="btn btn-default selectAddBtn">+</button>' +
-				'<button class="btn btn-default selectDelBtn">-</button>' +
-				'</form>' +
-   '</td>'
-		}
-
-		$("#selectTable .root-select").html(contents)*/
-
-
-
-
+		var contents = "";
+		console.log(arr[0].travelMainNo)
+		$("#tmno").val(arr[0].travelMainNo)
+		/*var arr = result.data
+		for
+		$("#scheduleNo").val(arr[i].scheduleNo)*/
+		/*for (var i in arr) {
+			console.log(arr[i].scheduleNo);
+			scheduleNoList = {
+					scheduleNo:arr[i].scheduleNo
+			}
+			scheduleNo(scheduleNoList);
+		}*/
+		
+		
+		
+		
+		
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
 
@@ -460,11 +439,6 @@ function ajaxBoardList(no) {
 	});
 
 
-
-
-
-
-
 }
 
 function initMap(result) {
@@ -478,6 +452,8 @@ function initMap(result) {
 			lng: parseFloat(tag.find('.bit-longitude').val())
 		}
 	});
+	
+	console.log(flightPlanCoordinates)
 
 
 	var map = new google.maps.Map(document.getElementById('map'), {
@@ -543,15 +519,15 @@ function initMap(result) {
 
 	autocomplete.bindTo('bounds', map);
 
-	/*var infowindow = new google.maps.InfoWindow();
+	var infowindow = new google.maps.InfoWindow();
 	  var marker = new google.maps.Marker({
 	    map: map,
 	    anchorPoint: new google.maps.Point(0, -29)
 	  });
-	 */
+	
 	autocomplete.addListener('place_changed', function() {
-		/*	infowindow.close();
-			marker.setVisible(false);*/
+			infowindow.close();
+			marker.setVisible(false);
 		var place = autocomplete.getPlace();
 		if (!place.geometry) {
 			window.alert("Autocomplete's returned place contains no geometry");
@@ -562,11 +538,11 @@ function initMap(result) {
 		if (place.geometry.viewport) {
 			map.fitBounds(place.geometry.viewport);
 		} else {
-			/*			map.setCenter(place.geometry.location);
-				map.setZoom(5);  */
+				map.setCenter(place.geometry.location);
+				map.setZoom(5); 
 		}
 
-		/*marker.setIcon(*//** @type {google.maps.Icon} *//*({
+		marker.setIcon(/** @type {google.maps.Icon} */({
 	      url: place.icon,
 	      size: new google.maps.Size(71, 71),
 	      origin: new google.maps.Point(0, 0),
@@ -574,7 +550,7 @@ function initMap(result) {
 	      scaledSize: new google.maps.Size(35, 35)
 	    }));
 	    marker.setPosition(place.geometry.location);
-	    marker.setVisible(true);*/
+	    marker.setVisible(true);
 
 		var address = '';
 		if (place.address_components) {
@@ -610,15 +586,15 @@ function initMap(result) {
 			console.log(lot)
 		}
 
-		/*	    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+/*		   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
 	    infowindow.open(map, marker);*/
 
 		setMarkers(map);
 	});
 
-	$("#mySchedule").on("shown", function() {
+/*	$("#mySchedule").on("shown.bs.modal", function() {
 		google.maps.event.trigger(map, "resize");
-	});
+	});*/
 
 }
 
@@ -636,13 +612,33 @@ function calendarList() {
 		}
 		console.log(calendarDetailList)
 		showCalendar();
+		
 	})
 }
 
 
+/*
+function date_add(sDate, nDays) {
+    var yy = parseInt(sDate.substr(0, 4), 10);
+    var mm = parseInt(sDate.substr(5, 2), 10);
+    var dd = parseInt(sDate.substr(8), 10);
+ 
+    d = new Date(yy, mm - 1, dd + nDays);
+ 
+    yy = d.getFullYear();
+    mm = d.getMonth() + 1; mm = (mm < 10) ? '0' + mm : mm;
+    dd = d.getDate(); dd = (dd < 10) ? '0' + dd : dd;
+ 
+    return '' + yy + '-' +  mm  + '-' + dd;
+}
+
+*/
 function showCalendar() {
+ 
 
 	$(document).ready(function() {
+		
+		
 		console.log(calendarDetailList)
 		$("#calendar").fullCalendar({
 			navLinks: false,
@@ -656,7 +652,7 @@ function showCalendar() {
 							{
 						title: title,
 						start: start,
-						end: end
+						end: end1 = date_add(end, 1)
 							},
 							true
 					);

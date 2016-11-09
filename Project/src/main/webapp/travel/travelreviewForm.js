@@ -6,14 +6,31 @@ $("#addBtn").click (function(event){
 			title : $("#title").val(),
 			content : $("#contents").val()
 	}
+	//console.log($("#reviewContentInput").val())
+	
+	
+	var reviewArray = [];
+	$('.root-schedule').each(function(index, element) {
+
+		var tag = $(element)
+
+		reviewArray[index] = {
+
+			scheduleNo : tag.find('#scheduleNo').val(),
+			content : tag.find('#scheduleReview').val(),
+			reviewContentPhoto : tag.find('#file')[index].files[0]
+		};
+	})
+	console.log(reviewArray)
+	var reviewContent = JSON.stringify(reviewArray)
 	
 	var formData = new FormData();
 	formData.append("travelno",$("#tmno").val())
 	formData.append("title",$("#title").val())
 	formData.append("content",$("#contents").val())
-	
-	console.log($("#multiFile")[0].files)
-	$($("#multiFile")[0].files).each(function(index, file) {
+	formData.append("reviewContentList",reviewContent)
+	console.log($("#file")[0].files)
+	$($("#file")[0].files).each(function(index, file) {
 		
 		console.log(file)
 	formData.append("files", file); 
@@ -58,6 +75,12 @@ $("#deleteBtn").click(function(event){
 	ajaxDeleteBoard($("#rbno").val());
 });
 
+function reviewContentList(reviewContent){
+	console.log(reviewContent.scheduleNo)
+	
+}
+
+
 function photoList(no){
 	$.getJSON("rvphotoList.json?=no"+no,{no:no},function(result){
 		console.log(no)
@@ -73,13 +96,35 @@ function photoList(no){
 		
 		
 		for ( var i in arr) {
-
+			if(i==0){
+				contents += 
+					'<div class="item active">'+
+					'<p><img width=100%  height=700 src="../upload/'+arr[i].reviewPhotoName+'" alt="..."></p>'+
+					'</div>'
+			} else {
 			contents += 
-				"<img src='../upload/"+arr[i].reviewPhotoName+"' style='width:60px;height:60px;'>"
 				
+				'<div class="item">'+
+				'<p><img width=100% height=700 src="../upload/'+arr[i].reviewPhotoName+'" alt="..."></p>'+
+			    '</div>'
+			}
 		}
 		
-		$(".carousel-inner > div> p ").html("<p>xcvxvxcv</p>");
+		
+		
+		/*for ( var j in arr) {
+			if(j==0){
+				contents2 += 
+					'<li data-target="#carousel-example-generic" data-slide-to="'+j+'" class="active"></li>'
+			} else {
+			contents2 += 
+				
+				'<li data-target="#carousel-example-generic" data-slide-to="'+j+'"></li>'
+			}
+		}*/
+		console.log(contents)
+		$(".carousel-inner").html(contents);
+		//$(".carousel-indicators").html(contents2);
 	})
 }
 

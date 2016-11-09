@@ -51,7 +51,7 @@ function ajaxCmtList() {
 	        for (var i in arr) {
 	          contents += "<tr>" +
 	             "<td>" + arr[i].qcno + "</td>" + 
-	             "<td>" + arr[i].comMemberNo + "</td>" + 
+	             "<td>" + arr[i].memberName + "</td>" + 
 	            "<td>" + arr[i].commentContents + "</td>" +
 	            "<td>" + arr[i].cmtCreateDate + "</td>" + 
 
@@ -59,12 +59,7 @@ function ajaxCmtList() {
 				"<td><a class='deleteLink' href='#'  data-no3='"+arr[i].content+"' data-no2='"+i+"' data-no='"+arr[i].qcno+"'>"+(($("#bbb").val()==arr[i].comMemberNo)?"삭제":"")+"</a></td>"+ 
 	            "</tr>"
 	    }
-	        console.log($("#bbb").val())
-			/*console.log($("#ccc1").val())*/
 			abc()
-			
-			console.log(contents)
-			
 	    
 	       $("#cmtTable tbody").html(contents)
 	   	$(document).on("click",".updateLink",function(event) {
@@ -149,51 +144,16 @@ function ajaxCmtList() {
 			
 	}
 
-/*	$(document).on("click","#commentUpdateBtn",function(event){
-		console.log($(this).attr("data-no"));
-		
-		comment={
-				qcno : $("#aaa").val(),
-				content: $(".updateContentInput").val()
-		}
-		console.log(comment)
-		ajaxCmtUpdate(comment)
-	});
 
-	function ajaxCmtUpdate(comment){
-		console.log(comment)
-		console.log($(this).attr("data-no"));
-		
-		$.post("cmtupdate.json",comment,function(obj){
-			var result = obj.jsonResult
-			console.log(comment)
-			if(result.state !="success"){
-				alert("로그인하고 댓글써.")
-				return;
-			}
-			location.reload();
-			console.log(comment)
-			//window.location.href="reviewApp.html"
-		},"json")
-		
-		
-	}
-*/
-
-
-
-//---------------------------------------------------------
-
-$("#addBtn").click(function(event) {
+$("#qnaaddBtn").click(function(event) {
    var qna = {
-   no: $("#no").val(),
    title: $("#title").val(),
      contents: $("#contents").val()
    }
    ajaxAddQna(qna)
 });
 
-$("#updateBtn").click(function(event) {
+$("#qnaupdateBtn").click(function(event) {
   var qna = {
    title: $("#title").val(),
     contents: $("#contents").val(),
@@ -204,7 +164,7 @@ $("#updateBtn").click(function(event) {
 
 
 
-$("#deleteBtn").click(function(event) {
+$("#qnadeleteBtn").click(function(event) {
   ajaxDeleteQna(
        $("#qno").val())
 });
@@ -232,9 +192,12 @@ function ajaxLoadQna(qno) {
    $("#qno").val(result.data.qno);
       $("#no").val(result.data.no);
       $("#title").val(result.data.title);
+      $("#title2").text(result.data.title);
       $("#contents").val(result.data.contents);
-      $("#createDate").val(result.data.createDate);
-      $("#viewCount").val( result.data.viewCount);
+      $("#contents2").text(result.data.contents);
+      $("#createDate").text(result.data.createDate);
+      $("#viewCount").text( result.data.viewCount);
+      $("#writer").text(result.data.memberName);
       ajaxCmtList()
     })
 }
@@ -260,6 +223,8 @@ function ajaxDeleteQna(qno) {
       location.href = "qnaApp.html"
    })
 }
+
+
 
 //_______________________________________________[댓글]기능_____________________________________________________//
 

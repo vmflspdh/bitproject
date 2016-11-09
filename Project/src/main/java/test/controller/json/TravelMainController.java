@@ -49,13 +49,21 @@ public class TravelMainController {
   
   @RequestMapping(path="scheduleList")
   public Object list(HttpSession session) throws Exception {
-
+    
     try {
       HashMap<String,Object> map = new HashMap<>();
+      
       travelMain.setTravelMainNo((Integer)session.getAttribute("travelPostNo"));
       map.put("travelPostNo", travelMain.getTravelMainNo());
       System.out.println(travelMain.getTravelMainNo());
       
+      List<TravelMain> list = travelScheduleDao.selectMySchedule(map);
+      
+      for(int i=0;i<list.size();i++){
+        list.get(i).getScheduleNo();
+        
+      }
+      session.setAttribute("schNo", list);
       return JsonResult.success(travelScheduleDao.selectMySchedule(map));
     
     } catch (Exception e) {
@@ -66,6 +74,7 @@ public class TravelMainController {
   @RequestMapping(path="tvlReviewList")
   public Object tvlreviewlist(int no,HttpSession session) throws Exception {
     System.out.println(no);
+ 
     try {
       List<Review> list = reviewDao.detailReviewList(no);
       return JsonResult.success(list);
@@ -201,16 +210,17 @@ public class TravelMainController {
       travelMain.setContinent(list.get(i).getContinent());
       travelMain.setNation(list.get(i).getNation());
       travelMain.setCity(list.get(i).getCity());
+      travelMain.setLat(list.get(i).getLat());
+      travelMain.setLng(list.get(i).getLng());
       System.out.println(travelMain);
       travelLocationDao.update(travelMain);
       
       travelMain.setScheduleNo(list.get(i).getScheduleNo());
-      travelMain.setTravelMainNo(list.get(i).getTravelMainNo());
-      travelMain.setLocationNo(list.get(i).getLocationNo());
       travelMain.setStartDate(list.get(i).getStartDate1());
       travelMain.setEndDate(list.get(i).getEndDate1());
       System.out.println(travelMain);
       travelScheduleDao.update(travelMain);
+
       }
       
       

@@ -78,7 +78,8 @@ function ajaxLoginUser() {
 		$("#userName3").val(result.data.name)
 		$("#inviteCount").text(result.data.memberRequest)
 		console.log(result.data.memberRequest)
-
+		
+		
 
 		$(".mainImg").attr("src","../upload/" + result.data.memberPhoto);
 
@@ -96,10 +97,8 @@ function ajaxLoginUser() {
 
 function init() {
 
-	if (cookieMap) {
-
+	if (document.cookie != "") { 
 		var cookieMap = bit.cookieToObject()
-
 		console.log(cookieMap)
 
 		//if (cookieMap["email"]) { // cookieMap 객체에 email 이름으로 저장된 값이 있는가?
@@ -108,6 +107,7 @@ function init() {
 			$("#saveEmail").attr("checked", true)
 		}
 	}
+
 }
 
 

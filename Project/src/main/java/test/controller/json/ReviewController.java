@@ -10,22 +10,23 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import test.dao.CommentDao;
+import test.dao.ReviewContentDao;
 import test.dao.ReviewDao;
 import test.dao.ReviewPhotoDao;
 import test.util.FileUploadUtil;
 import test.vo.Member;
 import test.vo.Review;
+import test.vo.ReviewContent;
 import test.vo.ReviewPhoto;
-import test.vo.TravelMainFile;
 
 
 //@Component
@@ -40,8 +41,12 @@ public class ReviewController {
   ServletContext sc;
   @Autowired 
   ReviewPhotoDao reviewPhotoDao;
+  @Autowired 
+  ReviewContentDao reviewContentDao;
   
   ReviewPhoto reviewPhoto = new ReviewPhoto();
+  ReviewContent reviewContent = new ReviewContent();
+  
   
 
   @RequestMapping(path="rvlist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -126,12 +131,21 @@ public class ReviewController {
   }
   */
   
-
+  
   @RequestMapping(path="rvadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
-  public String add(Review review, HttpSession session,MultipartFile[] files) throws Exception {
+  public String add(Review review,String reviewContentList, HttpSession session,MultipartFile[] files) throws Exception {
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
+    System.out.println(reviewContentList);
+    System.out.println(files.length);
+    List<ReviewContent> list = new Gson().fromJson(reviewContentList, new TypeToken<List<ReviewContent>>(){}.getType());
+    System.out.println(list.size());
+    
+    
+    
+    
+    
     Member member = (Member)session.getAttribute("member");
     review.setMemberno(member.getNo());
     
@@ -142,10 +156,22 @@ public class ReviewController {
     
     HashMap<String, Object> result = new HashMap<>();
     try{
+      
+      
       reviewDao.insert(review);
       System.out.println(review);
       
-      System.out.println(files);
+      
+      for(int i = 0 ; i < list.size() ; i++){
+        reviewContent.setReviewBoardNo(review.getReviewboardno());
+        reviewContent.setScheduleNo(list.get(i).getScheduleNo());
+        reviewContent.setContent(list.get(i).getContent());
+        reviewContent.setReviewBoardContentPhotoName(list.get(i).getReviewBoardContentPhotoName());
+        System.out.println(reviewContent);
+        reviewContentDao.insert(reviewContent);
+      }
+      
+      
       String newFilename = null;
       for (int i = 0; i < files.length; i++) {
         if (!files[i].isEmpty()) {

@@ -42,7 +42,9 @@
 }
 
 #content {
-   text-align: center;
+   /* text-align: center; */
+   width: 700px;
+   margin: 0 auto;
    color: black;
    background-color: white;
 }
@@ -63,11 +65,11 @@
 
 </head>
 <body>
-   <div class="container">
+   <div class="container" style="margin-top: 150px;">
       <div class="upper">
          <div class='zeta-menu-bar my-login'>
             <ul class="zeta-menu">
-               <li><a href="#2"><img src='img/iconmonstr-user-20-240.png' id="mainImg"></a>
+               <li><a href="#2"><img src='img/iconmonstr-user-20-240.png' id="mainImg" style="width: 50px; height: 50px;"></a>
                   <ul>
                      <li>
                      <a href="#"><img src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY INFO</a>
@@ -115,70 +117,70 @@
             </nav>
          </div>
       </div>
-      <div id="content">
-         <p style="font-size:30px; float: left; margin-top: -70px; padding-left: 20px;" >Q&A게시판</p>
-<form class="form-horizontal">
-<div class="form-group my-view">
+<div id="content">
+<div class="form-group my-view" style="display: none;">
   <label for="qno" class="col-sm-2 control-label">게시판번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="qno" readonly>
   </div>
 </div>
-<div class="form-group">
+<div class="form-group" style="display: none;">
   <label for="no" class="col-sm-2 control-label">회원번호</label>
   <div class="col-sm-10">
     <input type="text" class="form-control" id="no" >
   </div>
 </div>
-<div class="form-group">
-  <label for="title" class="col-sm-2 control-label">제목</label>
-  <div class="col-sm-10">
-    <input type="text" class="form-control" id="title" placeholder="제목입니다.">
-  </div>
+<div style="width: 700px;; margin: 0 auto;">
+<div style="border: 1px solid red; width:100%; background-color: red; padding:5px 5px 5px 10px; font-weight:bold; border-radius: 5px 5px 5px 5px; color:white; font-size: x-large;">
+  QnA 게시판
 </div>
-<div class="form-group">
-  <label for="contents" class="col-sm-2 control-label">내용</label>
-  <div class="col-sm-10">
-    <textarea id="contents" class="form-control" 
-              cols="50" rows="10" placeholder="내용입니다."></textarea>
-  </div>
+<br>
+<table style="width: 100%; border:0px solid black;border-top: 5px solid gray;">
+  <tr>
+    <td style="background-color: #F2F1ED;border-bottom:1px solid #DDDDDD; width:20%; font-weight: bold; font-size: medium; padding: 10px; text-align: right">작성자</td>
+    <td id="writer" style="border-bottom:1px solid #DDDDDD; padding:10px;"></td>
+  </tr>
+  <tr>
+    <td style="background-color: #F2F1ED;border-bottom:1px solid #DDDDDD; width:20%; font-weight: bold; font-size: medium; padding: 10px; text-align: right">제목</td>
+    <td style="border-bottom:1px solid #DDDDDD; width:80%; padding:10px;"><input type="text" class="form-control" id="title" placeholder="제목입니다."></td>
+  </tr>
+  <tr>
+    <td style="background-color: #F2F1ED; border-bottom:1px solid #DDDDDD; width:20%; font-weight: bold; font-size: medium; padding: 10px; text-align: right">내용</td>
+    <td style="border-bottom:1px solid #DDDDDD; padding:10px;"><textarea id="contents" class="form-control" 
+              cols="50" rows="10" placeholder="내용입니다."></textarea></td>
+  </tr>
+  <tr>
+    <td style="background-color: #F2F1ED; border-bottom:1px solid #DDDDDD; width:20%; font-weight: bold; font-size: medium; padding: 10px; text-align: right">등록일</td>
+    <td style="border-bottom:1px solid #DDDDDD; padding:10px;"><center id="createDate"></center></td>
+  </tr>
+  <tr>
+    <td style="background-color: #F2F1ED; border-bottom:1px solid #DDDDDD; width:20%; font-weight: bold; font-size: medium; padding: 10px; text-align: right">조회수</td>
+    <td style="border-bottom:1px solid #DDDDDD; padding:10px;"><center id="viewCount"></center></td>
+  </tr>
+</table>
 </div>
-<div class="form-group my-view">
-  <label class="col-sm-2 control-label">등록일</label>
-  <div class="col-sm-10">
-    <p id="createDate" class="form-control-static"></p>
-  </div>
-</div>
-<div class="form-group my-view">
-  <label class="col-sm-2 control-label">조회수</label>
-  <div class="col-sm-10">
-    <p id="viewCount" class="form-control-static"></p>
-  </div>
-</div>
-<div class="form-group">
+<br>
+<div class="form-group" style="text-align: center;">
   <div class="col-sm-offset-2 col-sm-10">
-    <button id="addBtn" type="button" class="btn btn-default my-new">등록</button>
-    <button id="updateBtn" type="button" class="btn btn-default my-view">변경</button>
-    <button id="deleteBtn" type="button" class="btn btn-default my-view">삭제</button>
-    <button id="cancelBtn" type="button" class="btn btn-default"
+    <button id="qnaaddBtn" type="button" class="btn btn-default my-new">등록</button>
+    <button id="qnaupdateBtn" type="button" class="btn btn-default my-view">변경</button>
+    <button id="qnadeleteBtn" type="button" class="btn btn-default my-view">삭제</button>
+    <button id="qnacancelBtn" type="button" class="btn btn-default"
             onclick="location.href='qnaApp.html'">취소</button>
   </div>
 </div>
 
 <!--------------------- 댓글 ----------------------------------->
 
-<button id="previewBtn" type="button" class="btn btn-default" 
-          onclick="location.href='qnaApp.html'">목록</button>
-
   <input id="bbb"></input>
-   <table id="cmtTable" class="table table-hover" style="border-top : 4px solid black; margin-top: 100px;">
-<thead id="tablehead">
+   <table id="cmtTable" class="table table-hover" style="border-top : 3px solid gray; margin-top: 100px;">
+<thead class="my-view">
 <tr>
-  <th>댓글번호</th>
-  <th>회원번호</th>
-  <th>내용</th>
-  <th>등록일</th>
-  <th>버튼</th>
+  <td>댓글번호</td>
+  <td>작성자</td>
+  <td>내용</td>
+  <td>등록일</td>
+  <td colspan="2">버튼</td>
 </tr>
 </thead>
 <tbody></tbody>
@@ -195,13 +197,13 @@
   <div class="form-group" >
     <div class="col-sm-10">
     <!-- <input class="form-control"  id="crbno" ></input> -->
-    	 <input type="text"  style="width: 90px; float: left; display: none;"  class="form-control "  id="userNo" ></input>
-    	 <input type="text"  style="width: 90px; float: left"  class="form-control "  id="userName3" ></input>
-      	<textarea  class="form-control" style="width: 88%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
+       <input type="text"  style="width: 90px; float: left; display: none;"  class="form-control "  id="userNo" ></input>
+       <p style="width: 90px; float: left"  class="form-control "  id="userName3" ></p>
+        <textarea  class="form-control" style="width: 80%; margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
       
     </div>
-    	
-	<button id="comtaddBtn" type="button" class="btn btn-default " style="margin-top: 60px;">등록</button>
+      
+  <button id="comtaddBtn" type="button" class="btn btn-default">등록</button>
   </div>
  </div>
 
@@ -213,6 +215,22 @@
 
     <div class="main"></div>
   </div>
+  
+<br><br><br><br><br>  
+<div style="background-color: #F2F2F2;">
+<hr>
+<div style="width: 65%; margin: 0 auto; text-align: center;">
+<h2><img src="logo.png" alt="로고파일자리" width="96"/></h2>
+<address>
+<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
+<span>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
+<span>COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
+</address>
+<div class="btn_sns">
+<a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기" target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기" width="36"/></a>
+<!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+<a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
+</div></div><br><br><br></div>
 <!-- ------------------------------------------------------------------------------------- -->
 
    <!-- 로그인 폼 -->
@@ -327,6 +345,7 @@
    <script src="js/cbpAnimatedHeader.min.js"></script>
    <!-- 회원정보 관련 -->
    <script type="text/javascript" src="js/bit.js"></script>
+   <script type="text/javascript" src="js/common.js"></script>
    <script type="text/javascript" src="js/authApp.js"></script>
    <script type="text/javascript" src="js/memberForm.js"></script>
    <script type="text/javascript" src="qnaForm.js"></script>
