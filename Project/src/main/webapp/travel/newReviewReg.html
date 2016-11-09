@@ -2,13 +2,6 @@
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
-<script src="//use.typekit.net/omt5qnk.js"></script>
-<script>
-	try {
-		Typekit.load();
-	} catch (e) {
-	}
-</script>
 <title>서내와 귀요미들</title>
 <meta name="description" content="MyTravel" />
 <meta name="viewport"
@@ -102,6 +95,11 @@ a:hover {
 	text-decoration: none;
 	font-weight: bold;
 }
+
+col-sm-offset-2. col-sm-10 {
+ width : 0%;
+ margin-left: 60%;
+}
 </style>
 </head>
 <body>
@@ -176,7 +174,7 @@ a:hover {
 	</div>
 
 	<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-		style="width: 90%; height: 100%; margin: 0 auto;">
+		style="width: 60%; height: 100%; margin: 0 auto;">
 		<h2 class="w3-text-grey w3-padding-16">
 			<i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
 			Schedule
@@ -186,17 +184,15 @@ a:hover {
 			<div class="root-select" >
 				<!-- 핸들바스 들어가는 부분 -->
 			</div>
-
 		</div>
+		<br>
+		<br>
 	</div>
-      <div class="form-group"
-          style="width: 740px; margin: 0 auto; border: 0px solid black; padding-top: 20px; padding-bottom: 20px;">
-          <div class="col-sm-offset-2 col-sm-10" style="padding-left: 400px;">
+          <div class="col-sm-offset-2 col-sm-10">
             <button id="addReviewBtn" type="button" class="btn btn-default my-new">등록</button>
             <button id="cancelBtn" type="button" class="btn btn-default"
               onclick="location.href='boardApp.html'">취소</button>
           </div>
-        </div>
 	<br>
 	<br>
 	<br>
@@ -380,23 +376,23 @@ a:hover {
 
 	<script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
-<div class="root-schedule" style="margin-bottom: 50px;">
- <div id="sch_cirNum"></div>
-        <div  style="float:left;">
-          <h5 class="w3-opacity">
-            <b>{{city}}&nbsp; |&nbsp; {{nation}}</b>
-          </h5>
-               <h5 class="w3-text-teal">
-            <i class="fa fa-calendar fa-fw w3"></i>{{startDate}}&nbsp; ~&nbsp;
-            {{endDate}}
-          </h5></div>
-          <div style="float:left; padding-left: 10px;">
-          <textarea id="scheduleReview" placeholder="일정리뷰내용"
-            style="width: 300px; height: 85px; float:left;" class="form-control scheduleReview"></textarea> 
-            <div style="float:left; padding: 30px 0px 0px 10px;">여행사진을 업로드 하세요!
-             <input name="file" id="file" type="file"></div></div>
+<div class="root-schedule" style="float: left; margin-bottom: 20px;">
+ <div id="sch_cirNum" style="margin-top: 18px;"></div>
+<div style="float:left;">
+<h5 class="w3-opacity">
+<b>{{city}}&nbsp; |&nbsp; {{nation}}</b>
+ </h5>
+  <h5 class="w3-text-teal">
+   <i class="fa fa-calendar fa-fw w3"></i>{{startDate}}&nbsp; ~&nbsp;
+  {{endDate}}
+ </h5></div>
+  <div style="float:left; padding-left:15px;">
+ <textarea id="scheduleReview" placeholder="일정리뷰내용"
+ style="width: 300px; height: 85px; float:left;" class="form-control scheduleReview"></textarea> 
+ <div style="float:left; padding: 30px 0px 0px 10px;">여행사진을 업로드 하세요!
+  <input name="file" id="file" type="file"></div></div>
 
-<hr>
+<hr style="position: relative;">
 </div>
 {{/each}}
 </script>
