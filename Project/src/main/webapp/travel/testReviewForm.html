@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's go together!</title>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<meta name="description"
+	content="Responsive CSS Timeline with 3D Effect" />
+<meta name="keywords"
+	content="timeline, 3d, css, css3, css-only, transitions, responsive, fluid" />
+<meta name="description" content="Blueprint: On-Scroll Animated Header" />
+<meta name="keywords"
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+<meta name="author" content="Codrops" />
+<!-- 웹폰트 코드 -->
+<link rel='stylesheet'
+	href='https://fonts.googleapis.com/css?family=Titillium+Web'
+	rel='stylesheet'>
+<link rel='stylesheet'
+	href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'
+	rel='stylesheet'>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+
+
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/newReviewDetail.css" />
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<style>
+.w3-text-grey, .w3-hover-text-grey:hover, .w3-text-gray,
+	.w3-hover-text-gray:hover {
+	color: #757575 !important;
+	font-weight: bold;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
+}
+
+.w3-card-2, .w3-example {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0
+		rgba(0, 0, 0, 0.12) !important;
+}
+
+.w3-container {
+	padding: 0.01em 16px;
+}
+
+.w3-margin-bottom {
+	margin-bottom: 16px !important;
+}
+
+.w3-text-teal, .w3-hover-text-teal:hover {
+	color: #009688 !important;
+}
+
+.w3-xxxlarge {
+	font-size: 48px !important;
+}
+</style>
+
+
+</head>
+<body>
+	<!-- 상단메뉴시작 -->
+	<!-- Start of container2 -->
+	<div class="container">
+		<div class="upper">
+			<div class='zeta-menu-bar my-login'>
+				<ul class="zeta-menu">
+					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+							class="mainImg my-login"></a>
+						<ul>
+							<li><a href="#" id="myInfo"><img
+									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+									INFO</a></li>
+							<li><a href="#" id="travelerMessage"><img
+									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+							</li>
+							<li><a class=" fadeandscale_open" id="accompany" href="#"><img
+									src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+							<li><a id="logoutBtn" href='#'><img
+									src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+
+			<div class="my-login">
+				<span> <a id="userName"
+					style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+					<a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+				</span>
+			</div>
+
+			<div
+				style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+				<a href='#' class="btn btn-default btn-sm my-logout"
+					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+					class="btn btn-default btn-sm my-logout" data-toggle="modal"
+					data-target="#myModal">SIGN IN</a>
+			</div>
+		</div>
+
+		<div class="cbp-af-header">
+			<div class="cbp-af-inner">
+				<div>
+					<img src='img/passport.png'
+						style="float: left; width: 55px; height: 55px;">
+					<h1>WE TRIP</h1>
+				</div>
+				<nav>
+					<a href="#" id="travelerPage">Traveler</a> <a href="#"
+						id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
+						href="#">.</a>
+				</nav>
+			</div>
+		</div>
+		<!-- center  -->
+		<!-- 컨텐츠 들어갈 부분 -->
+		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+			style="width: 90%; height: 100%; margin: 0 auto;">
+			<h2 class="w3-text-grey w3-padding-16">
+				<i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Traveler
+				Review
+			</h2>
+			<hr>
+			<section class="main">
+				<ul class="timeline">
+					<li class="event"><input type="radio" name="tl-group" /> <label></label>
+						<div class="thumb user-2">
+							<!-- 						<span>18 Nov</span> -->
+						</div>
+						<div class="content-perspective">
+							<div class="content">
+								<div class="content-inner">
+									<h5>
+										서울 &nbsp;/ &nbsp;대한민국 <br> <i
+											class="fa fa-calendar fa-fw w3"></i>2017-07-07 ~ 2018-08-08
+									</h5>
+									<p>
+										여기 사는데 뭐???<br> ???????????????????<br>
+										???????????????????<br> ???????????????????<br>
+									</p>
+								</div>
+							</div>
+						</div>
+						<hr></li>
+
+
+					<li class="event"><input type="radio" name="tl-group" /> <label></label>
+						<div class="thumb user-6">
+							<!-- 							<span>18 Nov</span> -->
+						</div>
+						<div class="content-perspective">
+							<div class="content">
+								<div class="content-inner">
+									<h5>I ain't shooting this thing, I hate guns.</h5>
+									<p>Ha, didn't even stay for the wedding. Just took his
+										million spacebucks and ran. And you will not call me 'you'.
+										You will never address me as 'you'. You will call me 'your
+										royal highness'. I really must go back. I shouldn't have run
+										away. I realize now that love is one luxury a princess cannot
+										afford.</p>
+								</div>
+							</div>
+						</div></li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+
+	<!-- 로그인 폼 -->
+	<div class="modal fade" style="z-index: 200000;" id="myModal1"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-sm" style="z-index: 300000;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h2 class="modal-title" id="myModalLabel">로그인</h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
+							<input type="text" class="form-control" id="email"
+								placeholder="이메일" required="" autofocus="" /></br> <input
+								type="password" id="password" class="form-control"
+								placeholder="비밀번호" required="" /> <label class="checkbox">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+								id="saveEmail"> 이메일저장
+							</label>
+							<button id="loginBtn" class="btn btn-lg btn-primary btn-block"
+								type="button">로그인</button>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 회원가입 폼 -->
+	<div class="modal fade" style="z-index: 200000;" id="myModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-sm"
+			style="width: 500px; z-index: 300000;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
+
+
+							<label for="name" class="col-sm-2 control-label">이름</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="name"
+									placeholder="이름"><br />
+							</div>
+
+
+							<label for="email" class="col-sm-2 control-label">이메일</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="email"
+									placeholder="이메일"><br />
+							</div>
+
+
+
+							<label for="password" class="col-sm-2 control-label">암호</label>
+							<div class="col-sm-10">
+								<input type="password" id="password" class="form-control"
+									placeholder="암호입력"><br />
+							</div>
+
+
+
+							<label for="birthday" class="col-sm-2 control-label">생일</label>
+							<div class="col-sm-10">
+								<input type="text" id="birthday" class="form-control"
+									placeholder="생일"><br />
+							</div>
+
+
+							<label for="gender" class="col-sm-2 control-label">성별</label>
+							<div class="col-sm-10">
+								<select class="form-control" id="gender">
+									<option value="1">여자</option>
+									<option value="0">남자</option>
+								</select> <br>
+							</div>
+
+							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+								type="button">회원가입</button>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+	<script src="js/map.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
+		async defer></script>
+	<script src="js/menu.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	<script src="js/newReviewDetail.js"></script>
+	<!-- 회원정보 관련 -->
+	<script type="text/javascript" src="js/bit.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/authApp.js"></script>
+	<script type="text/javascript" src="js/memberForm.js"></script>
+	<script type="text/javascript" src="travelerRegForm.js"></script>
+	<script>
+		init() // 화면을 준비시킨다
+		ajaxLoginUser() // 로그인 유저 정보 가져오기
+	</script>
+
+
+	<script id="trTemplateText" type="text/x-handlebars-template">
+<div class="form-inline root-schedule">
+<div id="sch_cirNum"></div>
+<input type="text" placeholder="대륙" value="대륙" style="width: 100px; display:none;"
+class="form-control bit-continent"> 
+<input type="text" placeholder="국가명" value="{{nation}}"style="width: 100px;"
+class="form-control bit-nation">
+<input type="text" placeholder="도시명" value="{{city}}"style="width: 100px;"
+class="form-control bit-city">
+<input
+type="text" class="form-control bit-startDate"
+placeholder="시작일" value="{{startDate}}" style="width: 150px;"> <input
+type="text" class="form-control bit-endDate"
+placeholder="종료일" value="{{endDate}}" style="width: 150px;"> <input
+type="text" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
+class="form-control bit-latitude"> <input type="text"
+placeholder="경도"value="{{lng}}" style="width: 100px; display:none;"
+class="form-control bit-longitude">
+<button type="button" class="btn btn-default selectDelBtn">-</button>
+</div>
+</script>
+	<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+</body>
+</html>
