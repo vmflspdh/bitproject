@@ -258,50 +258,7 @@ function scheduleList() {
 			}
 			scheduleNo(scheduleNoList);
 		}*/
-<<<<<<< HEAD
 
-=======
-		/*		var contents = "";
-		var arr = result.data
-		for (var i in arr) {
-
-			contents += '<td style="color: green; font-weight: bold; font-size: large;">' +
-	     '<div>가고싶은</div>' + 
-	     '<div>여행지</div>' +
-	    '</td>' +
-				 '<td id="root-select">' +
-				'<form class="form-inline root-schedule" onsubmit="return false">' +
-				'<input type="text" class="form-control bit-locationNo" style="display: none;" value="' + arr[i].locationNo + '">' +
-				'<select style="width:100px;" class="form-control bit-continent">' +
-				'<option selected value="'+ arr[i].continent + '">'+ arr[i].continent + '</option>' +
-				'<option value="아시아">아시아</option>' +
-				'<option value="유럽">유럽</option>' +
-				'<option value="북아메리카">북아메리카</option>' +
-				'</select>' +
-				'<select style="width:100px;" class="form-control bit-nation">' +
-				'<option selected value="'+ arr[i].nation + '">'+ arr[i].nation + '</option>' +
-				'<option value="대한민국">대한민국</option>' +
-				'<option value="일본">일본</option>' +
-				' <option value="영국">영국</option>' +
-				'</select>' +
-				'<select style="width:100px;" class="form-control bit-city">' +
-				'<option selected value="'+ arr[i].city + '">'+ arr[i].city + '</option>' +
-				'<option value="서울">서울</option>' +
-				'<option value="부산">부산</option>' +
-				'<option value="도쿄">도쿄</option>' +
-				'</select>' +
-				'<input type="text" class="form-control bit-scheduleNo" style="display: none;" value="' + arr[i].scheduleNo + '">' +
-				'<input type="text" placeholder="시작일" style="width:100px;" value="'+ arr[i].startDate +'" class="form-control bit-startDate">' +
-				'<input type="text" placeholder="종료일" style="width:100px;" value="'+ arr[i].endDate +'" class="form-control bit-endDate">' +
-				'<button class="btn btn-default selectAddBtn">+</button>' +
-				'<button class="btn btn-default selectDelBtn">-</button>' +
-				'</form>' +
-   '</td>'
-		}
-
-		$("#selectTable .root-select").html(contents)*/
-
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
 
