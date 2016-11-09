@@ -15,51 +15,63 @@
     <result column="CRE_DT" property="createDate"/>
     <result column="CRE_DT" property="cmtCreateDate"/>
     <result column="VW_CNT" property="viewCount"/>
+    <result column="MNM" property="memberName"/>
+    <result column="count(qcno)" property="commentCount"/>
   </resultMap>
   
 
   
   
-    <select id="selectList" resultMap="qnaMap" parameterType="map">
-  select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, TVL_QNA_BODS.TITlE, TVL_QNA_BODS.CONT, 
-  TVL_QNA_BODS.CRE_DT, TVL_QNA_BODS.VW_CNT
-    from tvl_QnA_BODS
-     <!-- <where>
-      <if test="title != null">title like concat('%', #{title}, '%')</if>
-      <if test="writer != null">and writer like concat('%', #{writer}, '%')</if>
-    </where> -->
-    
-    
-    limit #{startIndex}, #{length}
-  </select>
-  
-   <select id="selectOne" resultMap="qnaMap" parameterType="int">
-   select QBNO, MNO, TITlE, CONT, CRE_DT, VW_CNT
-    from tvl_QnA_BODS
-    where QBNO = #{value}
-  </select>
+<select id="selectList" resultMap="qnaMap" parameterType="map">
+select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITlE, count(qcno),
+TVL_QNA_BODS.CRE_DT, TVL_QNA_BODS.VW_CNT
+from tvl_QnA_BODS
+inner join tvl_membs
+on tvl_membs.mno = tvl_qna_bods.mno
+left join tvl_qna_comt
+on tvl_qna_comt.qbno = tvl_qna_bods.qbno
+group by tvl_qna_bods.qbno
+order by QBNO desc
+limit #{startIndex}, #{length}
+</select>
+
+<select id="selectOne" resultMap="qnaMap" parameterType="int">
+select QBNO, mnm, tvl_qna_bods.MNO, TITlE, CONT, CRE_DT, VW_CNT
+from tvl_QnA_BODS
+inner join tvl_membs on tvl_membs.mno = tvl_qna_bods.mno
+where QBNO = #{value}
+</select>
+
+
+
+<insert id="insert" parameterType="qna"  useGeneratedKeys="true" keyProperty="qno">
+  insert into tvl_QnA_bods(MNO, TITlE, CONT, cre_dt, vw_cnt)
+  values(#{no}, #{title}, #{contents}, now(), 0)
   
 
-  
-  <insert id="insert" parameterType="qna"  useGeneratedKeys="true" keyProperty="qno">
-    insert into tvl_QnA_bods(MNO, TITlE, CONT, cre_dt)
-    values(#{no}, #{title}, #{contents}, now())
-    
- 
-  </insert>
-  
-  <update id="update" parameterType="qna">
-    update tvl_QnA_bods set 
-      TITlE=#{title}, 
-      CONT=#{contents} 
-    where QBNO=#{qno}
-  </update>
-  
-  <delete id="delete" parameterType="int">
-    delete from tvl_QnA_bods
-    where QBNO=#{value}
-  </delete>
- 
-  
+</insert>
+
+<update id="update" parameterType="qna">
+  update tvl_QnA_bods set 
+    TITlE=#{title}, 
+    CONT=#{contents} 
+  where QBNO=#{qno}
+</update>
+
+<update id="viewCountUpdate" parameterType="int">
+  update tvl_qna_bods set 
+    vw_cnt=vw_cnt+1
+  where qbno=#{qno}
+</update>
+
+<delete id="delete" parameterType="int">
+  delete from tvl_QnA_bods
+  where QBNO=#{value}
+</delete>
+
+<select id="countAll" resultType="int">
+  select  count(*)
+  from tvl_qna_bods 
+</select>  
 
 </mapper>
