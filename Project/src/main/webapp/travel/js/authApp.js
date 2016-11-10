@@ -15,9 +15,11 @@ $("#loginBtn").click(function(event) {
 
 });
 
+
+
 $("#logoutBtn").click(function(event) {
 	ajaxLogout()
-	window.location.reload(true)
+
 });
 
 
@@ -36,7 +38,7 @@ function ajaxLogin(user) {
 			if (result.state != "success") {
 				console.log(result.data)
 				alert("로그인 실패입니다.\n이메일 또는 암호를 확인하세요")
-				return
+				return;
 			}
 			window.location.reload(true) /*href = "travel.html"*/
 		},
@@ -53,7 +55,10 @@ function ajaxLogout() {
 		var result = obj.jsonResult
 		if (result.state != "success")
 			console.log("로그아웃 실패입니다.")
+			return;
 	})
+	
+		window.location.reload(true);
 }
 
 function ajaxLoginUser() {
