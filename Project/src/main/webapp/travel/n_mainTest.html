@@ -240,7 +240,7 @@ div.changallery ul li img:hover {
   height: 64px;
   border-top: solid #4eb1e4 2px;
   position: relative;
-  height: 90px;
+    height: 80px;
 }
 
 body {
@@ -268,9 +268,9 @@ body {
 
 /*footer*/
 #footer {
-  width: 100%;
-  height: 242px; /* background:#363c48 */;
-  position: relative;
+    width: 100%;
+    height: 212px;
+    position: absolute;
 }
 </style>
 
@@ -278,7 +278,7 @@ body {
 <style>
 @charset "utf-8";
 
-html, body, div {
+html, body, /* div */ {
   margin: 0;
   padding: 0;
   border: 0;
@@ -286,13 +286,13 @@ html, body, div {
   font: inherit;
 }
 /* HTML5 display-role reset for older browsers */
-footer, header {
+/* footer, header {
   display: block;
-}
-
+} */
+/* 
 body {
   line-height: 1;
-}
+} */
 
 body, html {
   margin: 0;
@@ -307,9 +307,6 @@ html {
   overflow-y: scroll;
 }
 
-div {
-  box-sizing: border-box;
-}
 
 .zeta-menu .mainImg {
       margin-top: 20px;
@@ -320,7 +317,7 @@ div {
 <style>
 .plan_header {
   width: 100%;
-    height: 495px;
+ height: 475px;
   background: url('testmain1.jpg') repeat-x;
   background-position: 0px 0px;
   background-size: 
@@ -391,10 +388,10 @@ h4 {
 
     margin-right: 30px;
     margin-bottom: 80px;
-        width: 250px;
+           width: 20%;
     padding-bottom: 50px;
     margin-top: 20px;
-
+  
 }
 
 [id*="cont_"]>span {
@@ -445,11 +442,11 @@ color : white;
 
 #t_box {
 float: left;
-    height: 307px;
-    width: 24.4081%;
+      height: 100%;
+    width: 24.45%;
     background-color: #1e4147;
     border-radius: 10px;
-    margin: 5px 4px 1px 4px;
+       margin: 3px 1.5px 1px 3px;
  
  
 /*   fill : #000;
@@ -467,9 +464,9 @@ transition : all 1s;
 
 #t_box>#t_img {
     border-radius: 50%;
-   height: 180px;
-    width: 180px;
-   margin-left: 23%;
+        height: 160px;
+    width: 165px;
+    margin-left: 17%;
     margin-top: 35px;
     background-size: 180px 180px;
     background-repeat: no-repeat;
@@ -479,10 +476,10 @@ transition : all 1s;
    
     margin-left: 100px;
     transition: all 1s;
-    width: 250px;
-    height: 250px;
-    background-size : 250px 250px;
-    margin-left: 42px;
+       width: 90%;
+    height: 80%;
+    background-size: 250px 250px;
+    margin-left: 5.3%;
     margin-top: 25px;
  }
  
@@ -505,7 +502,6 @@ position : relative;
         margin-top: 25px;
     text-align: center;
         width: 260px;
-    margin-left: 37px;
     color : white;
     font-weight: bold;
 }
@@ -522,6 +518,10 @@ position : relative;
 
 } 
 
+.cbp-af-header nav a {
+    margin-right: 10px;
+ }
+
 
 
 
@@ -531,7 +531,7 @@ position : relative;
 
 $(document).ready(function(){
 	$("#t_box").hover(function(){
-		$("#click_link").text("aaa");
+		$("#click_link").text("Click");
 		}, function() {
 		 	$("#click_link").css("visibility", "hidden");
 	})
@@ -739,7 +739,7 @@ $(document).ready(function(){
       </div>
 
     </div> -->
-    <p1 style="border : 1px solie white;  color : white;   font-size: 70px;
+    <p1 style="border : 1px solie white;  color : white;       font-size: 60px;
     display: block;text-align: center; padding-top: 6.8%;
     line-height: 110px; font-family: 'Arvo', serif;">A journey of a thousand miles</br>
      must begin with a single step.</p1>
@@ -765,7 +765,7 @@ $(document).ready(function(){
 
       <div id="t_box" >
     
-      <div id="t_img" style="background-image:url('mini_main3.jpg');" >
+      <div id="t_img" style="background-image:url('mini_main10.jpg');" >
       <p id="click_link" style=" color : white;     font-size: 70px;
     text-align: center;     padding-top: 85px; "></p>  
    
@@ -779,7 +779,7 @@ $(document).ready(function(){
       
       <div id="t_box" >
         
-      <div id="t_img" style="background-image:url('mini_main2.jpg');" >
+      <div id="t_img" style="background-image:url('mini_main12.jpg');" >
       
       </div>
       
@@ -791,7 +791,7 @@ $(document).ready(function(){
       
       <div id="t_box" >
         
-      <div id="t_img" style="background-image:url('mini_main3.jpg')" >
+      <div id="t_img" style="background-image:url('mini_main15.jpg')" >
  
       </div>
     <!--   <img src="mini_main3.jpg"  /> -->
@@ -802,7 +802,7 @@ $(document).ready(function(){
       
       <div id="t_box" >
         
-      <div id="t_img" style="background-image:url('mini_main1.jpg');" >
+      <div id="t_img" style="background-image:url('mini_main17.jpg');" >
   
       </div>
 <!--       <img src="mini_main1.jpg"  /> -->
@@ -848,7 +848,7 @@ $(document).ready(function(){
 
   <div id="footer" class="" style="">
     <div id="footer_contents_box"
-      style="background-color: #008148; height: 161px;         padding-left: 11%;
+      style="background-color: #008148; height: 161px; padding-left: 8.5%;
 } ">
 
       <div class="contents_inner"
@@ -889,12 +889,17 @@ $(document).ready(function(){
    -->
     </div>
 
-    <div id="footer_inner" style=" height: 100px; background-color: #004e2c; width: 100%;">
+    <div id="footer_inner" style=" 
+      height: 90px; background-color: #004e2c; width: 100%;">
  <!--  <div id="footer_name"> -->
       <!--  <h6 style=" color : white; border : 1px solid white;">We Trip</h6> -->
       <!--  </div>  -->
     
-       <span style=" margin-left: 40%; color : white;">COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
+    <p id="end" style="    height: 30px;
+    position: absolute;
+    margin-top: 55px;
+    color: white;
+    margin-left: 35%;">COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</p>
     </div>
 
   </div>
