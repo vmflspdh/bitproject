@@ -144,11 +144,12 @@ html, body, h1, h2, h3, h4, h5, h6 {
 				Review
 			</h2>
 			<hr>
-			<section class="main">
-				<ul class="timeline">
-					<li class="event"><input type="radio" name="tl-group" /> <label></label>
+			 <section class="main">
+				<ul class="timeline"> 
+				
+					<!-- <li class="event"><input type="radio" name="tl-group" /> <label></label>
 						<div class="thumb user-2">
-							<!-- 						<span>18 Nov</span> -->
+													<span>18 Nov</span>
 						</div>
 						<div class="content-perspective">
 							<div class="content">
@@ -164,12 +165,13 @@ html, body, h1, h2, h3, h4, h5, h6 {
 								</div>
 							</div>
 						</div>
-						<hr></li>
+						<hr>
+						</li>
 
 
 					<li class="event"><input type="radio" name="tl-group" /> <label></label>
 						<div class="thumb user-6">
-							<!-- 							<span>18 Nov</span> -->
+														<span>18 Nov</span>
 						</div>
 						<div class="content-perspective">
 							<div class="content">
@@ -183,9 +185,12 @@ html, body, h1, h2, h3, h4, h5, h6 {
 										afford.</p>
 								</div>
 							</div>
-						</div></li>
-				</ul>
-			</section>
+						</div>
+						</li> -->
+			 	</ul>
+			</section> 
+			
+			
 		</div>
 	</div>
 
@@ -306,13 +311,18 @@ html, body, h1, h2, h3, h4, h5, h6 {
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/authApp.js"></script>
 	<script type="text/javascript" src="js/memberForm.js"></script>
-	<script type="text/javascript" src="travelerRegForm.js"></script>
+	<script type="text/javascript" src="testReviewForm.js"></script>
 	<script>
 		init() // 화면을 준비시킨다
 		ajaxLoginUser() // 로그인 유저 정보 가져오기
+		if (location.search.startsWith("?")) {
+			var no = location.search.split("=")[1];
+			ajaxReviewContentList(no);
+		}
 	</script>
 
-
+	
+	
 	<script id="trTemplateText" type="text/x-handlebars-template">
 <div class="form-inline root-schedule">
 <div id="sch_cirNum"></div>

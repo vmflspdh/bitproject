@@ -89,6 +89,8 @@ public class ReviewController {
   }
   
   
+  
+  
   @RequestMapping(path="rvphotoList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String photolist(int no) throws Exception {
@@ -109,6 +111,26 @@ public class ReviewController {
     
   }
   
+  
+ /* @RequestMapping(path="upload", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String upload(int no) throws Exception {
+    
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      
+      List<ReviewPhoto> list = reviewPhotoDao.photoList(no);
+      
+      result.put("state", "success");
+      result.put("data", list);
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+    
+    
+  }*/
   
   /*@RequestMapping("list2")
   public ResponseEntity<String> list2(
