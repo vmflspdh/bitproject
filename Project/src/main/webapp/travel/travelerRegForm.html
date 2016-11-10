@@ -150,6 +150,82 @@ td div {
 
 </style>
 
+<style>
+#footer {
+    width: 100%;
+    height: 212px;
+    position: absolute;
+}
+
+html, body, /* div */ {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+/* footer, header {
+  display: block;
+} */
+/* 
+body {
+  line-height: 1;
+} */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-family: 'open sans';
+}
+
+html {
+  overflow-y: scroll;
+}
+
+
+#footer_name>h6 {
+margin-bottom: 0px;
+margin-top: 0px;
+}
+
+[id*="cont_"]>h4 {
+padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+[id*="cont_"] {
+    float: left;
+    display: block;
+   margin-left: 0px;
+
+    margin-right: 30px;
+    margin-bottom: 80px;
+           width: 20%;
+    padding-bottom: 50px;
+    margin-top: 20px;
+  
+}
+
+[id*="cont_"]>span {
+margin-top: 20px;
+}
+
+[id*="contents_"]>* {
+text-align: center;
+color : white;
+font-weight: bold;
+}
+
+h4 {
+  border-bottom: 2px solid #004e2c;
+}
+</style>
+
+
 
 </head>
 <body>
@@ -249,7 +325,7 @@ td div {
 							<div id="detailBar"></div>
 							<div>제목</div>
 						</td>
-						<td><input type="text" class="form-control" id="title"
+						<td><input type="text" class="form-control input-lg" id="title"
 							style="width: 500px;" placeholder="제목을 입력하세요"></td>
 					</tr>
 
@@ -369,6 +445,63 @@ td div {
 		<br>
 		<p></p>
 		<br />
+		<div id="footer" class="" style="">
+    <div id="footer_contents_box"
+      style="background-color: #008148; height: 161px; padding-left: 8.5%;
+} ">
+
+      <div class="contents_inner"
+        style=" margin: 0 auto;">
+
+        <div id="cont_1">
+          <h4>Call</h4>
+          <span>010-1234-5678</span>
+        </div>
+        <div id="cont_2">
+          <h4>Email</h4>
+          <span>bitcamp@gmail.com</span>
+        </div>
+        <div id="cont_3">
+          <h4>Follow</h4>
+          <span><a href="www.instagram.com/travel_bit" style="color: white;">www.instagram.com/travel_bit</a></span>
+        </div>
+        <div id="cont_4">
+          <h4>Address</h4>
+          <span>이곳은 회사 주소가 </br> 
+              들어가야 되지만 백수이므로 </br> 
+           주소를적을수 없다</span>
+        </div>
+      </div>
+
+      <!--   <img src="logo.png" alt="로고파일자리" width="50px;" style="margin-left:45%"/>
+     <address>
+      <span style=" margin-left: 35%;>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
+      <span style=" margin-left: 38%;>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
+      <span style=" margin-left: 40%;">COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
+     </address>
+     
+   <div class="btn_sns">
+    <a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기" target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기" width="36" style="margin-left:47%"/></a>
+      <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+     <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a>
+   </div>
+   -->
+    </div>
+
+    <div id="footer_inner" style=" 
+      height: 90px; background-color: #004e2c; width: 100%;">
+ <!--  <div id="footer_name"> -->
+      <!--  <h6 style=" color : white; border : 1px solid white;">We Trip</h6> -->
+      <!--  </div>  -->
+    
+    <p id="end" style="    height: 30px;
+    position: absolute;
+    margin-top: 55px;
+    color: white;
+    margin-left: 35%;">COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</p>
+    </div>
+
+  </div>
 
 
 	<!-- 로그인 폼 -->

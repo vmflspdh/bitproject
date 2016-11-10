@@ -30,12 +30,12 @@ $("#signInBtn").click(function(event) {
 $("#updateBtn").click(function(event) {
 
 	var formData = new FormData();
-	formData.append("no", $("#no").val());
-	formData.append("name", $("#name").val());
-	formData.append("email", $("#email").val());
-	formData.append("password", $("#password").val());
-	formData.append("birthday", $("#birthday").val());
-	formData.append("gender", $("#gender").val());
+	formData.append("no", $("#bit-no").val());
+	formData.append("name", $("#bit-name").val());
+	formData.append("email", $("#bit-email").val());
+	formData.append("password", $("#bit-password").val());
+	formData.append("birthday", $("#bit-birthday").val());
+	formData.append("gender", $("#bit-gender").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
 	
 	
@@ -81,11 +81,11 @@ function ajaxLoadMember(no) {
 		}
 
 		$("#no").val(result.data.no);
-		$("#name").val(result.data.name);
-		$("#email").val(result.data.email);
-		$("#birthday").val(result.data.birthday);
-		$("#gender").val(result.data.gender);
-		$("#registedDate").val(result.data.registedDate);
+		$("#bit-name").val(result.data.name);
+		$("#bit-email").val(result.data.email);
+		$("#bit-birthday").val(result.data.birthday);
+		$("#bit-gender").val(result.data.gender);
+		$("#bit-registedDate").val(result.data.registedDate);
 		$("#memberPhoto").text(result.data.memberPhoto);
 	})
 }

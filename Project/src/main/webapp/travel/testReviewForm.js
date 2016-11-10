@@ -18,8 +18,8 @@ function ajaxReviewContentList(no) {
 					'<div class="content">'+
 						'<div class="content-inner">'+
 							'<h5>'+
-								'서울 &nbsp;/ &nbsp;대한민국 <br> <i'+
-									'class="fa fa-calendar fa-fw w3"></i>'+arr[i].startDate+' ~ '+arr[i].endDate+''+
+								''+arr[i].city+' &nbsp;/ &nbsp;'+arr[i].nation+ '<br>'+
+									'<i class="fa fa-calendar fa-fw w3"></i>'+arr[i].startDate+' ~ '+arr[i].endDate+''+
 							'</h5>'+
 							'<p>'+arr[i].content+''+
 								
@@ -33,5 +33,19 @@ function ajaxReviewContentList(no) {
 		}
 		//html 원래 위치
 		$(".timeline").html(contents);
+	})
+}
+
+function ajaxReviewTitleList(no) {
+	console.log(no)
+	$.getJSON(serverAddr + "/travel/rvdetail.json?no=" + no, function(result) {
+		if (result.state != "success") {
+	    	console.log(result.data)
+	    	alert("조회 실패 입니다.")
+	    	return
+	    }
+		//html 원래 위치
+		$("#reviewtitle").html(result.data.title);
+		$("#detailMemberName").html(result.data.membername)
 	})
 }

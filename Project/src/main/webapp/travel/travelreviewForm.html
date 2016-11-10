@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,11 +14,10 @@
 <meta name="keywords"
 	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
-<link rel="shortcut icon" href="../favicon.ico">
-<link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<script src="js/modernizr.custom.js"></script>
-
+<link rel="stylesheet"
+  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel='stylesheet'
 	href='https://fonts.googleapis.com/css?family=Titillium+Web'
 	rel='stylesheet'>
@@ -42,40 +41,23 @@
 
 
 <style>
-tbody{
-	 font-family:  "Monospace","돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
+body {
+background: #F0F0F0
 }
+
 #firstcolum,#bbb{
 	width:0;
 	height:0;
 	display:none;
 }  
-.updateContentInput{
-	text-align:center;
-	width: 350px;
-	height: 50px;
-}
-.form-horizontal {
-	padding-right: 40px;
-	margin-top: -40px;
-	width: 90%;
-}
+
+
 #content {
+
 	text-align: center;
 	color: black;
 	background-color: white;
 }
-#bar {
-	width: 60%;
-	padding-bottom: 80px;
-	margin: 0 auto;
-}
-#map {
-	width: 100%;
-	height: 400px;
-	margin: 0 auto;
-}
-
 
 
 html, body, h1, h2, h3, h4, h5, h6 {
@@ -92,11 +74,13 @@ h2, h3, h4, h5, h6 {
 	font-size: 21px;
 	color: #13919A;
 }
+
 #yang ul li {
 	display: inline;
 	font: bold 13px Dotum;
 	padding: 0 10px;
 }
+
 #sch_cirNum {
 	width: 27px;
 	height: 27px;
@@ -133,14 +117,11 @@ col-sm-offset-2. col-sm-10 {
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
           <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-              id="mainImg"></a>
+              class="mainImg my-login"></a>
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-                  INFO</a> <!-- <ul>
-                  <li><a href="#2B1">2-B-1 메뉴</a></li>
-                  <li><a href="#2B2">2-B-2 메뉴</a></li>
-                </ul> --></li>
+                  INFO</a></li>
               <li><a href="#"><img
                   src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
               </li>
@@ -168,6 +149,8 @@ col-sm-offset-2. col-sm-10 {
           data-target="#myModal">SIGN IN</a>
       </div>
     </div>
+    </div>
+    
   <div class="cbp-af-header">
     <div class="cbp-af-inner">
       <div>
@@ -182,17 +165,16 @@ col-sm-offset-2. col-sm-10 {
       </nav>
     </div>
   </div>
-		<div id="content">
-		<div class="my-view" style=" padding-bottom: 110px;">
+<!-- 		<div class="my-view" style=" padding-bottom: 110px;">
 		<div id="carousel-example-generic" class="carousel slide " data-ride="carousel">
-					  <!-- Indicators -->
+					  Indicators
 					  <ol class="carousel-indicators">
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 					  </ol>
 					
-					  <!-- Wrapper for slides -->
+					  Wrapper for slides
 					  <div class="carousel-inner" role="listbox">
 					    <div class="item active">
 					      <img src="../upload/1478240600390_3.jpg" alt="...">
@@ -209,7 +191,7 @@ col-sm-offset-2. col-sm-10 {
 					    ...
 					  </div>
 					
-					  <!-- Controls -->
+					  Controls
 					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
 					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 					    <span class="sr-only">Previous</span>
@@ -220,11 +202,23 @@ col-sm-offset-2. col-sm-10 {
 					  </a>
 				</div>
 			</div>
-				
-				
-			<div></div>
-			<form class="form-horizontal ">
-				<div id="group">
+				 -->
+				 <div style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;">
+				 <div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
+<div style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50% 50% 50% 50%; overflow: hidden; float: left;">
+        <img src="" id="detailUserImage" style="width: 80px;">
+      </div>
+    <h3 style="float: right;">
+      <span id="detailMemberName"></span>님의 여행리뷰
+    </h3>
+    <br> <br>
+    <hr>
+  </div>
+			<div class="w3-container w3-card-2 w3-white w3-margin-bottom" style="width: 80%; height: 100%; margin: 0 auto;">
+			           <h2 class="w3-text-grey w3-padding-16">
+              <i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>Travel Review
+            </h2>
+            <form class="form-horizontal" style="width: 85%;">
 					<div class="form-group my-view">
 						<label for="rbno" class="col-sm-2 control-label ">게시판번호</label>
 						<div class="col-sm-10">
@@ -232,7 +226,7 @@ col-sm-offset-2. col-sm-10 {
 						</div>
 					</div>
 
-					<div class="form-group ">
+					<div class="form-group my-view">
 						<label for="tmno" class="col-sm-2 control-label">여행번호</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="tmno"
@@ -240,7 +234,7 @@ col-sm-offset-2. col-sm-10 {
 						</div>
 					</div>
 
-					<div class="form-group ">
+					<div class="form-group  my-view">
 						<label for="mno" class="col-sm-2 control-label">회원번호</label>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="userName2"
@@ -251,7 +245,7 @@ col-sm-offset-2. col-sm-10 {
 					<div class="form-group">
 						<label for="title" class="col-sm-2 control-label">제목</label>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="title"
+							<input type="text" class="form-control input-lg" id="title"
 								placeholder="제목을입력하세요.">
 						</div>
 					</div>
@@ -264,15 +258,15 @@ col-sm-offset-2. col-sm-10 {
 						</div>
 					</div>
 
-					<div class="form-group">
+					<div class="form-group my-view">
 						<label for="createdDate" class="col-sm-2 control-label">등록일</label>
 						<div class="col-sm-10">
-							<input class="form-control" rows="10" cols="50" id="createdDate"
+							<input class="form-control" id="createdDate"
 								readonly="readonly"></input>
 						</div>
 					</div>
 					
-					<div class="form-group">
+					<div class="form-group" style="display:none;">
 						<label for="multiFile" class="col-sm-2 control-label">사진등록</label>
 						<div class="col-sm-10">
 							<input class="form-control" name="multi_file[]"
@@ -280,22 +274,7 @@ col-sm-offset-2. col-sm-10 {
 						</div>
 					</div>
 					
-					
-					<div class="form-group my-view">
-						<label class="col-sm-2 control-label">조회수</label>
-						<div class="col-sm-10">
-							<p id="viewCount" class="form-control-static"></p>
-						</div>
-					</div>
-					
-					<!-- <div class="contentsList">sfa</div> -->
-					
-					<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-						style="width: 60%; height: 100%; margin: 0 auto;">
-						<h2 class="w3-text-grey w3-padding-16">
-							<i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-							Schedule
-						</h2>
+</form>
 						<div id="selectTable"
 							style="float: left; width: 90%; height: 100%; margin: 0 auto; padding-left: 5%; padding-top: 40px;">
 							<div class="root-select" >
@@ -305,31 +284,9 @@ col-sm-offset-2. col-sm-10 {
 						<br>
 						<br>
 					</div>
-					<!--   <div class="form-group">
-    <label for="password" class="col-sm-2 control-label">암호</label>
-    <div class="col-sm-10">
-      <input type="password"  class="form-control" id="password" placeholder="암호입력">
-    </div>
-  </div> -->
-
-
 
 					
 
-				</div>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				
 				
 				<!-- group div -->
@@ -382,18 +339,11 @@ col-sm-offset-2. col-sm-10 {
 	<button id="comtaddBtn" type="button" class="btn btn-default " style="float:right; margin-top: 60px;">등록</button>
   </div>
  </div>
-				
-				
-				
-				
-				
+
 				
 				<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
-			</form>
 		</div>
-
-		<div class="main"></div>
-	</div>
+	
 
 
 	<!-- 로그인 폼 -->
@@ -412,9 +362,9 @@ col-sm-offset-2. col-sm-10 {
 					<div class="wrapper">
 						<form class="form-signin">
 							<input type="text" class="form-control" id="email"
-								placeholder="이메일" required="" autofocus="" /></br> <input
+								placeholder="이메일"/><br> <input
 								type="password" id="password" class="form-control"
-								placeholder="비밀번호" required="" /> <label class="checkbox">
+								placeholder="비밀번호" /> <label class="checkbox">
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
 								id="saveEmail"> 이메일저장
 							</label>
@@ -487,10 +437,6 @@ col-sm-offset-2. col-sm-10 {
               <br>
               </div>
 
-							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-								type="checkbox" value="remember-me" id="rememberMe"
-								name="rememberMe"> 약관동의
-							</label> -->
 							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
 								type="button">회원가입</button>
 						</form>
@@ -502,28 +448,29 @@ col-sm-offset-2. col-sm-10 {
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-	
-	</script>
 
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
-	<script src="js/map.js"></script>
-
 	<script src="js/menu.js"></script>
 	<script src="js/classie.js"></script>
 	<script src="js/cbpAnimatedHeader.min.js"></script>
 	<!-- 회원정보 관련 -->
-	<script type="text/javascript" src="js/bit.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/authApp.js"></script>
-	<script type="text/javascript" src="travelreviewForm.js"></script>
-	<script type="text/javascript" src="commentApp.js"></script>
-	<script type="text/javascript" src="travelerform2.js"></script>
+  <script type="text/javascript" src="js/bit.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/authApp.js"></script>
+  <script type="text/javascript" src="js/memberForm.js"></script>
+  <script type="text/javascript" src="traveler.js"></script>
+  <script type="text/javascript" src="travelerdetail.js"></script>
+  <script type="text/javascript" src="travelerform.js"></script>
+  <script type="text/javascript" src="message.js"></script>
+  <script type="text/javascript" src="bookmark.js"></script>
 	<script>
-	
+		init();
 		ajaxLoginUser()
 		scheduleList()
-		init();
+		ajaxRegistFormList()
+    ajaxInviteList()
+    ajaxAgreeInviteList()
+    ajaxBookmarkCount()
 		if (window.location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
 			ajaxLoadBoard(no)
@@ -547,8 +494,8 @@ col-sm-offset-2. col-sm-10 {
    <i cl ass="fa fa-calendar fa-fw w3"></i>{{startDate}}&nbsp; ~&nbsp;
   {{endDate}}
  </h5></div>
-  <div style="float:left; padding-left:15px;">
- <input id="scheduleNo" value="{{scheduleNo}}">
+  <div style="float:left; padding-left:40px;">
+ <input id="scheduleNo" value="{{scheduleNo}}" style="display:none;">
  <textarea id="scheduleReview" placeholder="일정리뷰내용"
  style="width: 300px; height: 85px; float:left;" class="form-control scheduleReview"></textarea> 
  <div style="float:left; padding: 30px 0px 0px 10px;">여행사진을 업로드 하세요!
