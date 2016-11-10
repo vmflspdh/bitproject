@@ -11,14 +11,14 @@ $("#addBtn").click (function(event){
 	
 	var reviewArray = [];
 	$('.root-schedule').each(function(index, element) {
-
+		
 		var tag = $(element)
-
+		
+		
 		reviewArray[index] = {
-
 			scheduleNo : tag.find('#scheduleNo').val(),
 			content : tag.find('#scheduleReview').val(),
-			//reviewContentPhoto : tag.find('#file')[index].files[0]
+			reviewContentPhoto : tag.find('#file').val()
 		};
 	})
 	console.log(reviewArray)

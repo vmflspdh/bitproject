@@ -1,5 +1,4 @@
 $(".reviewBtn").click (function(event){
-	alert(no)
 	
 		
 	
