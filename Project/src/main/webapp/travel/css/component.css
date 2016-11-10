@@ -39,11 +39,14 @@
 	z-index: 500000;
 	background: white;
 	border: 1px solid silver;
+	-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
 	display: none;
-	padding: 0;
+	padding: 0px;
 	position: absolute;
 	right: 0;
-	top: 55px;
+	top: 75px;
 	width: 130px;
 }
 

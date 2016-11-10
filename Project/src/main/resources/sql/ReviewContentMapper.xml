@@ -11,12 +11,16 @@
     <result column="rbcpnm" property="reviewBoardContentPhotoName"/>
     <result column="st_dt" property="startDate"/>
     <result column="ed_dt" property="endDate"/>
+    <result column="continent" property="continent"/>
+    <result column="natn" property="nation"/>
+    <result column="city" property="city"/>
   </resultMap>
   
   
   <select id="selectList" resultMap="reviewContentMap" parameterType="int">
-    select c.rbcno,c.rbno,c.schno,c.cont,c.rbcpnm,s.st_dt,s.ed_dt from tvl_review_conts c 
+    select c.rbcno,c.rbno,c.schno,c.cont,c.rbcpnm,s.st_dt,s.ed_dt,l.cont continent,l.natn,l.city from tvl_review_conts c 
     inner join tvl_sch s on s.schno=c.schno
+	inner join tvl_loc l on s.locno = l.locno
     where c.rbno=#{value}
   </select>
   

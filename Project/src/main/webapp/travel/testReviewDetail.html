@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Let's go together!</title>
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -15,6 +14,9 @@
 <meta name="keywords"
 	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
+<link rel="stylesheet"
+  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- 웹폰트 코드 -->
 <link rel='stylesheet'
 	href='https://fonts.googleapis.com/css?family=Titillium+Web'
@@ -30,7 +32,6 @@
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="css/newReviewDetail.css" />
-<link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
@@ -46,36 +47,22 @@
 
 
 <style>
-.w3-text-grey, .w3-hover-text-grey:hover, .w3-text-gray,
-	.w3-hover-text-gray:hover {
-	color: #757575 !important;
-	font-weight: bold;
+
+body {
+background: #F0F0F0
 }
 
 html, body, h1, h2, h3, h4, h5, h6 {
 	font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
 }
 
-.w3-card-2, .w3-example {
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0
-		rgba(0, 0, 0, 0.12) !important;
+
+h2, h3, h4, h5, h6 {
+  font-weight: bold;
 }
 
-.w3-container {
-	padding: 0.01em 16px;
-}
 
-.w3-margin-bottom {
-	margin-bottom: 16px !important;
-}
 
-.w3-text-teal, .w3-hover-text-teal:hover {
-	color: #009688 !important;
-}
-
-.w3-xxxlarge {
-	font-size: 48px !important;
-}
 </style>
 
 
@@ -120,6 +107,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 					data-target="#myModal">SIGN IN</a>
 			</div>
 		</div>
+		</div>
 
 		<div class="cbp-af-header">
 			<div class="cbp-af-inner">
@@ -137,16 +125,41 @@ html, body, h1, h2, h3, h4, h5, h6 {
 		</div>
 		<!-- center  -->
 		<!-- 컨텐츠 들어갈 부분 -->
+		  <div
+    style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;">
+		    <div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
+      <!--      <div style="width: 50px; height: 50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
+        <img src="" id="detailUserImage">
+      </div> -->
+      <div
+        style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50% 50% 50% 50%; overflow: hidden; float: left;">
+        <img src="" id="detailUserImage" style="width: 80px;">
+      </div>
+      <h3 style="float: right;">
+        <span id="detailMemberName"></span>님의 여행 리뷰
+      </h3>
+      
+      
+      <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="message"
+        data-toggle="modal" data-target="#myMessage"><img
+          src="img/messageicon2.jpg" style="width: 20px; height: 20px;"></a></span> -->
+      <!-- <h3 id="title" style="float: right;"></h3> -->
+      <br> <br>
+      <hr>
+    </div>
 		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
 			style="width: 90%; height: 100%; margin: 0 auto;">
-			<h2 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Traveler
-				Review
-			</h2>
+                 <h2 class="w3-text-grey w3-padding-16">
+              <i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>Travel Review
+            </h2>
 			<hr>
-			 <section class="main">
-				<ul class="timeline"> 
-				
+			         <div style="margin: 30px 0 0 40px; color: black;">
+            <span style="font-size: 150px; line-height: 0.6em; opacity: 0.2;">❞</span>
+            <h3 id="reviewtitle" style="float: left;"></h3>
+          </div>
+            <hr>
+			<section class="main">
+				<ul class="timeline">
 					<!-- <li class="event"><input type="radio" name="tl-group" /> <label></label>
 						<div class="thumb user-2">
 													<span>18 Nov</span>
@@ -165,8 +178,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 								</div>
 							</div>
 						</div>
-						<hr>
-						</li>
+						<hr></li>
 
 
 					<li class="event"><input type="radio" name="tl-group" /> <label></label>
@@ -187,10 +199,8 @@ html, body, h1, h2, h3, h4, h5, h6 {
 							</div>
 						</div>
 						</li> -->
-			 	</ul>
-			</section> 
-			
-			
+				</ul>
+			</section>
 		</div>
 	</div>
 
@@ -307,22 +317,27 @@ html, body, h1, h2, h3, h4, h5, h6 {
 	<script src="js/cbpAnimatedHeader.min.js"></script>
 	<script src="js/newReviewDetail.js"></script>
 	<!-- 회원정보 관련 -->
-	<script type="text/javascript" src="js/bit.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/authApp.js"></script>
-	<script type="text/javascript" src="js/memberForm.js"></script>
-	<script type="text/javascript" src="testReviewForm.js"></script>
+<script type="text/javascript" src="js/bit.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/authApp.js"></script>
+  <script type="text/javascript" src="js/memberForm.js"></script>
+  <script type="text/javascript" src="traveler.js"></script>
+  <script type="text/javascript" src="travelerdetail.js"></script>
+  <script type="text/javascript" src="travelerform.js"></script>
+  <script type="text/javascript" src="message.js"></script>
+  <script type="text/javascript" src="bookmark.js"></script>
+  <script type="text/javascript" src="testReviewForm.js"></script>
 	<script>
-		init() // 화면을 준비시킨다
-		ajaxLoginUser() // 로그인 유저 정보 가져오기
-		if (location.search.startsWith("?")) {
-			var no = location.search.split("=")[1];
-			ajaxReviewContentList(no);
-		}
+	init() // 화면을 준비시킨다
+	ajaxLoginUser() // 로그인 유저 정보 가져오기
+	if (location.search.startsWith("?")) {
+		var no = location.search.split("=")[1];
+		ajaxReviewContentList(no);
+		ajaxReviewTitleList(no);
+	}
 	</script>
 
-	
-	
+
 	<script id="trTemplateText" type="text/x-handlebars-template">
 <div class="form-inline root-schedule">
 <div id="sch_cirNum"></div>
