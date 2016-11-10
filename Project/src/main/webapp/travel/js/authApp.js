@@ -125,7 +125,7 @@ $("#travelerPage").click(function(event) {
 
 $("#reviewPage").click(function(event) {
 
-	window.location.href = "newReview.html";
+	window.location.href = "reviewApp.html";
 });
 
 $("#qnaPage").click(function(event) {
