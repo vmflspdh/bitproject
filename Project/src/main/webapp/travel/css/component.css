@@ -10,7 +10,7 @@
 }
 
 .zeta-menu .mainImg {
-	margin-right: 50px;
+	margin-right: 30px;
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -43,9 +43,10 @@
 -webkit-border-radius:10px;
 border-radius:10px;
 	display: none;
+	padding: 0px;
 	position: absolute;
+	right: 0;
 	top: 75px;
-	right: 20px;
 	width: 130px;
 }
 
