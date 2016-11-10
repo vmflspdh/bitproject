@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -43,17 +43,16 @@
 
 
 <style>
+body {
+background: #F0F0F0
+}
 
 #firstcolum,#bbb{
 	width:0;
 	height:0;
 	display:none;
 }  
-.updateContentInput{
-	text-align:center;
-	width: 350px;
-	height: 50px;
-}
+
 
 #content {
 
@@ -61,7 +60,6 @@
 	color: black;
 	background-color: white;
 }
-
 
 
 html, body, h1, h2, h3, h4, h5, h6 {
@@ -78,11 +76,13 @@ h2, h3, h4, h5, h6 {
 	font-size: 21px;
 	color: #13919A;
 }
+
 #yang ul li {
 	display: inline;
 	font: bold 13px Dotum;
 	padding: 0 10px;
 }
+
 #sch_cirNum {
 	width: 27px;
 	height: 27px;
@@ -123,10 +123,7 @@ col-sm-offset-2. col-sm-10 {
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-                  INFO</a> <!-- <ul>
-                  <li><a href="#2B1">2-B-1 메뉴</a></li>
-                  <li><a href="#2B2">2-B-2 메뉴</a></li>
-                </ul> --></li>
+                  INFO</a></li>
               <li><a href="#"><img
                   src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
               </li>
@@ -154,6 +151,8 @@ col-sm-offset-2. col-sm-10 {
           data-target="#myModal">SIGN IN</a>
       </div>
     </div>
+    </div>
+    
   <div class="cbp-af-header">
     <div class="cbp-af-inner">
       <div>
@@ -206,12 +205,11 @@ col-sm-offset-2. col-sm-10 {
 				</div>
 			</div>
 				 -->
-				 
+				 <div style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;">
 				 <div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
-    <div
-      style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50% 50% 50% 50%; overflow: hidden; float: left;">
-      <img src="" id="detailUserImage" style="width: 80px;">
-    </div>
+<div style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50% 50% 50% 50%; overflow: hidden; float: left;">
+        <img src="" id="detailUserImage" style="width: 80px;">
+      </div>
     <h3 style="float: right;">
       <span id="detailMemberName"></span>님의 여행리뷰
     </h3>
@@ -220,8 +218,7 @@ col-sm-offset-2. col-sm-10 {
   </div>
 			<div class="w3-container w3-card-2 w3-white w3-margin-bottom" style="width: 80%; height: 100%; margin: 0 auto;">
 			           <h2 class="w3-text-grey w3-padding-16">
-              <i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-              Schedule
+              <i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>Travel Review
             </h2>
             <form class="form-horizontal" style="width: 85%;">
 					<div class="form-group my-view">
@@ -279,28 +276,7 @@ col-sm-offset-2. col-sm-10 {
 						</div>
 					</div>
 					
-<<<<<<< HEAD
-					<div class="contentsList">sfa</div>
 </form>
-
-=======
-					
-					<div class="form-group my-view">
-						<label class="col-sm-2 control-label">조회수</label>
-						<div class="col-sm-10">
-							<p id="viewCount" class="form-control-static"></p>
-						</div>
-					</div>
-					
-					<!-- <div class="contentsList">sfa</div> -->
-					
-					<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-						style="width: 60%; height: 100%; margin: 0 auto;">
-						<h2 class="w3-text-grey w3-padding-16">
-							<i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-							Schedule
-						</h2>
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 						<div id="selectTable"
 							style="float: left; width: 90%; height: 100%; margin: 0 auto; padding-left: 5%; padding-top: 40px;">
 							<div class="root-select" >
@@ -369,7 +345,7 @@ col-sm-offset-2. col-sm-10 {
 				
 				<!-- 입력폼 항목에 이름이 없으면 서버에 데이터를 보내지 않는다. -->
 		</div>
-	</div>
+	
 
 
 	<!-- 로그인 폼 -->
@@ -480,17 +456,23 @@ col-sm-offset-2. col-sm-10 {
 	<script src="js/classie.js"></script>
 	<script src="js/cbpAnimatedHeader.min.js"></script>
 	<!-- 회원정보 관련 -->
-	<script type="text/javascript" src="js/bit.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/authApp.js"></script>
-	<script type="text/javascript" src="travelreviewForm.js"></script>
-	<script type="text/javascript" src="commentApp.js"></script>
-	<script type="text/javascript" src="travelerform2.js"></script>
+  <script type="text/javascript" src="js/bit.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/authApp.js"></script>
+  <script type="text/javascript" src="js/memberForm.js"></script>
+  <script type="text/javascript" src="traveler.js"></script>
+  <script type="text/javascript" src="travelerdetail.js"></script>
+  <script type="text/javascript" src="travelerform.js"></script>
+  <script type="text/javascript" src="message.js"></script>
+  <script type="text/javascript" src="bookmark.js"></script>
 	<script>
-	
+		init();
 		ajaxLoginUser()
 		scheduleList()
-		init();
+		ajaxRegistFormList()
+    ajaxInviteList()
+    ajaxAgreeInviteList()
+    ajaxBookmarkCount()
 		if (window.location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
 			ajaxLoadBoard(no)
@@ -514,7 +496,7 @@ col-sm-offset-2. col-sm-10 {
    <i cl ass="fa fa-calendar fa-fw w3"></i>{{startDate}}&nbsp; ~&nbsp;
   {{endDate}}
  </h5></div>
-  <div style="float:left; padding-left:15px;">
+  <div style="float:left; padding-left:40px;">
  <input id="scheduleNo" value="{{scheduleNo}}" style="display:none;">
  <textarea id="scheduleReview" placeholder="일정리뷰내용"
  style="width: 300px; height: 85px; float:left;" class="form-control scheduleReview"></textarea> 
