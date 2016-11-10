@@ -383,7 +383,7 @@ function ajaxReviewBoardList(no) {
 		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
 		$(".titleLink33").click(function(event) {
 			//ajaxUpdateViewCount($(this).attr("data-no"))
-			window.location.href = "testReviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
+			window.location.href = "testReviewDetail.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
 		});
 		$(".titleLink2").click(function(event) {
 			window.location.href = "travelreviewmemberForm.html?no="+$(this).attr("data-no2");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다. 
