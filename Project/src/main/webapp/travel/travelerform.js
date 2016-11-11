@@ -301,9 +301,16 @@ function travelMainFilelist() {
 		var arr = result.data
 		for (var i in arr) {
 			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
+			console.log(arr[i].fileName)
+			$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
 		}
 
 		$("#selectTable .fileList .innerFileList").html(contents)
+		
+		
+	
+
+
 
 	});
 }
