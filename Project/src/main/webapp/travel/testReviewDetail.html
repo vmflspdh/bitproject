@@ -47,6 +47,11 @@
 
 
 <style>
+#firstcolum,#bbb{
+	width:0;
+	height:0;
+	display:none;
+}  
 
 body {
 background: #F0F0F0
@@ -201,6 +206,47 @@ h2, h3, h4, h5, h6 {
 						</li> -->
 				</ul>
 			</section>
+			
+			<input id="bbb"></input>
+				<table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
+	<thead id="tablehead">
+	<tr>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		<td> </td>
+		
+		
+	</tr>
+	
+	</thead>
+	<tbody>
+	<!-- <tr>
+	<td>sdffffffffffffffff</td>
+	<td>sdffffffffffffffff</td>
+	</tr> -->
+	
+	</tbody>
+  </table>
+			
+			<div class="my-view" style="border-top:3px solid gray; padding-top: 10px;">
+  <div class="form-group" >
+    <div class="col-sm-10">
+    <!-- <input class="form-control"  id="crbno" ></input> -->
+    	
+    	 <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
+      	<textarea  class="form-control" style="width: 88%; margin-bottom:50px;  margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
+      
+    </div>
+    	
+	<button id="comtaddBtn" type="button" class="btn btn-default " style="float:right; margin-top: 60px;">등록</button>
+  </div>
+ </div>
+			
+			
+			
 		</div>
 	</div>
 
@@ -327,6 +373,7 @@ h2, h3, h4, h5, h6 {
   <script type="text/javascript" src="message.js"></script>
   <script type="text/javascript" src="bookmark.js"></script>
   <script type="text/javascript" src="testReviewForm.js"></script>
+  <script type="text/javascript" src="commentApp.js"></script>
 	<script>
 	init() // 화면을 준비시킨다
 	ajaxLoginUser() // 로그인 유저 정보 가져오기
@@ -334,6 +381,7 @@ h2, h3, h4, h5, h6 {
 		var no = location.search.split("=")[1];
 		ajaxReviewContentList(no);
 		ajaxReviewTitleList(no);
+		ajaxCommentList(no);
 	}
 	</script>
 
