@@ -12,7 +12,7 @@ function ajaxReviewContentList(no) {
 			contents += 
 				'<li class="event"><input type="radio" name="tl-group" /> <label></label>'+
 				'<div class="thumb user-2">'+
-											'<span>18 Nov</span>'+
+											'<img width=100% height=100% src="../upload/'+arr[i].reviewBoardContentPhotoName+'" alt="..."><span>18 Nov</span>'+
 				'</div>'+
 				'<div class="content-perspective">'+
 					'<div class="content">'+
