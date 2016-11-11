@@ -66,6 +66,11 @@ h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
+#commentTable {
+ width: 90%; 
+ margin: 0 auto;
+}
+
 
 
 </style>
@@ -208,41 +213,36 @@ h2, h3, h4, h5, h6 {
 			</section>
 			
 			<input id="bbb"></input>
-				<table  id="commentTable" class="table table-hover" style = "border-top: 4px solid black;">
+			<h4 class="w3-text-grey w3-padding">
+              <i class="fa fa-angle-double-right fa-fw w3 w3-xxlarge w3-text-teal"></i>Comment
+            </h4>
+				<table  id="commentTable" class="table table-hover">
 	<thead id="tablehead">
 	<tr>
 		<td> </td>
-		<td> </td>
-		<td> </td>
-		<td> </td>
-		<td> </td>
-		<td> </td>
+
 		
 		
 	</tr>
 	
 	</thead>
 	<tbody>
-	<!-- <tr>
-	<td>sdffffffffffffffff</td>
-	<td>sdffffffffffffffff</td>
-	</tr> -->
-	
 	</tbody>
   </table>
 			
-			<div class="my-view" style="border-top:3px solid gray; padding-top: 10px;">
-  <div class="form-group" >
-    <div class="col-sm-10">
-    <!-- <input class="form-control"  id="crbno" ></input> -->
-    	
-    	 <input type="text"  style="width: 90px; float: left"  class="form-control my-login"  id="userName3" ></input>
-      	<textarea  class="form-control" style="width: 88%; margin-bottom:50px;  margin-left: 125px;" rows="4" cols="30" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
+			<hr>
+			
+			<div  style=" width: 100%; float: left; margin-bottom: 20px;"> 
+			<div class="my-view" style=" width: 100%; float: left; padding-top: 10px;  margin: 0 auto; ">
+  	
+    	 <input type="text"  style="width: 20%;  margin-left: 20px; float: left"  class="form-control my-login"  id="userName3" readOnly></input>
+
+    <textarea  class="form-control" style="width: 60%; float:left; margin-left: 10px;" id="cmcontent" placeholder="댓글을입력하세요."></textarea>
       
-    </div>
     	
-	<button id="comtaddBtn" type="button" class="btn btn-default " style="float:right; margin-top: 60px;">등록</button>
-  </div>
+	<button id="comtaddBtn" type="button" class="btn btn-default " style="float:left; margin: 1% 0 0 10px;">등록</button>
+
+ </div>
  </div>
 			
 			
@@ -267,9 +267,9 @@ h2, h3, h4, h5, h6 {
 					<div class="wrapper">
 						<form class="form-signin">
 							<input type="text" class="form-control" id="email"
-								placeholder="이메일" required="" autofocus="" /></br> <input
+								placeholder="이메일" /><br/> <input
 								type="password" id="password" class="form-control"
-								placeholder="비밀번호" required="" /> <label class="checkbox">
+								placeholder="비밀번호" /> <label class="checkbox">
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
 								id="saveEmail"> 이메일저장
 							</label>
@@ -387,25 +387,7 @@ h2, h3, h4, h5, h6 {
 
 
 	<script id="trTemplateText" type="text/x-handlebars-template">
-<div class="form-inline root-schedule">
-<div id="sch_cirNum"></div>
-<input type="text" placeholder="대륙" value="대륙" style="width: 100px; display:none;"
-class="form-control bit-continent"> 
-<input type="text" placeholder="국가명" value="{{nation}}"style="width: 100px;"
-class="form-control bit-nation">
-<input type="text" placeholder="도시명" value="{{city}}"style="width: 100px;"
-class="form-control bit-city">
-<input
-type="text" class="form-control bit-startDate"
-placeholder="시작일" value="{{startDate}}" style="width: 150px;"> <input
-type="text" class="form-control bit-endDate"
-placeholder="종료일" value="{{endDate}}" style="width: 150px;"> <input
-type="text" placeholder="위도" value="{{lat}}" style="width: 100px; display:none;"
-class="form-control bit-latitude"> <input type="text"
-placeholder="경도"value="{{lng}}" style="width: 100px; display:none;"
-class="form-control bit-longitude">
-<button type="button" class="btn btn-default selectDelBtn">-</button>
-</div>
+
 </script>
 	<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
 </body>
