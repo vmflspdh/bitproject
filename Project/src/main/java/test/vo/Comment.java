@@ -8,11 +8,15 @@ package test.vo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 
 public class Comment implements Serializable {
   private static final long serialVersionUID = 1L;
   static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+  static ParsePosition pos = new ParsePosition(0);
+
+
   protected int reviewcommentNo;
   protected int reviewboardNo;
   protected int memberNo;
@@ -20,14 +24,8 @@ public class Comment implements Serializable {
   protected String content;
   protected Date createdDate;
   protected String createdDate2;
+  protected java.util.Date createdDate3;
   
-  
-  public String getMemberName() {
-    return memberName;
-  }
-  public void setMemberName(String memberName) {
-    this.memberName = memberName;
-  }
   public int getReviewcommentNo() {
     return reviewcommentNo;
   }
@@ -46,38 +44,35 @@ public class Comment implements Serializable {
   public void setMemberNo(int memberNo) {
     this.memberNo = memberNo;
   }
+  public String getMemberName() {
+    return memberName;
+  }
+  public void setMemberName(String memberName) {
+    this.memberName = memberName;
+  }
   public String getContent() {
     return content;
   }
   public void setContent(String content) {
     this.content = content;
   }
-
-  
   public Date getCreatedDate() {
     return createdDate;
   }
   public void setCreatedDate(Date createdDate) {
     this.createdDate = createdDate;
-    this.createdDate2 = format.format(createdDate);
   }
-  
-  
   public String getCreatedDate2() {
     return createdDate2;
   }
-  public void setCreatedDate(String str) {
-    this.createdDate = Date.valueOf(str);
-    this.createdDate2 = str;
+  public void setCreatedDate2(String createdDate2) {
+    this.createdDate2 = createdDate2;
+    this.createdDate3 = format.parse(createdDate2, pos);
+  }
+  public Date getCreatedDate3() {
+    return (Date)createdDate3;
   }
   
-  
-  @Override
-  public String toString() {
-    return "Comment [reviewcommentNo=" + reviewcommentNo + ", reviewboardNo=" + reviewboardNo + ", memberNo=" + memberNo
-        + ", memberName=" + memberName + ", content=" + content + ", createdDate=" + createdDate + ", createdDate2="
-        + createdDate2 + "]";
-  }
   
   
   
