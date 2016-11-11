@@ -9,13 +9,17 @@ import java.text.SimpleDateFormat;
 public class ReviewContent implements Serializable {
    private static final long serialVersionUID = 1L;
    
+   
+   static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
    protected int reviewBoardContentNo;
    protected int reviewBoardNo;
    protected int scheduleNo;
    protected String content;
    protected String reviewBoardContentPhotoName;
    protected Date startDate;
+   protected String startDate2;
    protected Date endDate;
+   protected String endDate2;
    protected String continent;
    protected String nation;
    protected String city;
@@ -54,12 +58,24 @@ public class ReviewContent implements Serializable {
   }
   public void setStartDate(Date startDate) {
     this.startDate = startDate;
+    this.startDate2 = format.format(startDate);
+  }
+  public String getStartDate2() {
+    return startDate2;
+  }
+  public void setStartDate(String str) {
+    this.startDate = Date.valueOf(str);
+    this.startDate2 = str;
   }
   public Date getEndDate() {
     return endDate;
   }
   public void setEndDate(Date endDate) {
     this.endDate = endDate;
+    this.endDate2 = format.format(endDate);
+  }
+  public String getsetEndDate2() {
+    return endDate2;
   }
   public String getContinent() {
     return continent;
