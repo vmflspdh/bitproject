@@ -19,7 +19,7 @@ function ajaxReviewContentList(no) {
 						'<div class="content-inner">'+
 							'<h5>'+
 								''+arr[i].city+' &nbsp;/ &nbsp;'+arr[i].nation+ '<br>'+
-									'<i class="fa fa-calendar fa-fw w3"></i>'+arr[i].startDate+' ~ '+arr[i].endDate+''+
+									'<i class="fa fa-calendar fa-fw w3"></i>'+arr[i].startDate2+' ~ '+arr[i].endDate2+''+
 							'</h5>'+
 							'<p>'+arr[i].content+''+
 								
