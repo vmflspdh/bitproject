@@ -183,19 +183,24 @@ public class ReviewController {
       reviewDao.insert(review);
       System.out.println(review);
       
-      
+      String newFilename = null;
       for(int i = 0 ; i < list.size() ; i++){
         reviewContent.setReviewBoardNo(review.getReviewboardno());
         reviewContent.setScheduleNo(list.get(i).getScheduleNo());
         reviewContent.setContent(list.get(i).getContent());
         reviewContent.setReviewBoardContentPhotoName(list.get(i).getReviewBoardContentPhotoName());
+        if (!files[i].isEmpty()) {
+          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+          reviewContent.setReviewBoardContentPhotoName(newFilename);
+        }
         System.out.println(reviewContent);
         reviewContentDao.insert(reviewContent);
       }
       
       
-      String newFilename = null;
-      for (int i = 0; i < files.length; i++) {
+      
+      /*for (int i = 0; i < files.length; i++) {
         if (!files[i].isEmpty()) {
           newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
           files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
@@ -206,7 +211,7 @@ public class ReviewController {
           
           
         }
-      }
+      }*/
     result.put("state", "success");
     } catch(Exception e) {
       e.printStackTrace();

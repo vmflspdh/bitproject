@@ -10,21 +10,25 @@ $("#addBtn").click (function(event){
 	
 	
 	var reviewArray = [];
+	var formData = new FormData();
 	$('.root-schedule').each(function(index, element) {
 		
 		var tag = $(element)
+		$(tag.find("#file")[0].files).each(function(index, file) {
 		
+		console.log(file)
+	formData.append("files", file); 
+	});
 		
 		reviewArray[index] = {
 			scheduleNo : tag.find('#scheduleNo').val(),
 			content : tag.find('#scheduleReview').val(),
-			reviewContentPhoto : tag.find('#file').val()
 		};
 	})
 	console.log(reviewArray)
 	var reviewContent = JSON.stringify(reviewArray)
 	
-	var formData = new FormData();
+	
 	formData.append("travelno",$("#tmno").val())
 	formData.append("title",$("#title").val())
 	formData.append("content",$("#contents").val())

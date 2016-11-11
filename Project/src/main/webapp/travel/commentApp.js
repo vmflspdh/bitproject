@@ -53,9 +53,8 @@ function ajaxCommentList(no) {
 
 			contents += 
 				"<tr>"+
-				"<td id='firstcolum'>"+arr[i].reviewcommentNo+"<input id='aaa'  ></input></td>"+
-				/*"<td><input id='ccc' value='"+arr[i].memberNo+"'></input></td>"+*/
-				"<td>"+arr[i].memberName+"</td>"+
+				"<td id='firstcolum'>"+arr[i].reviewcommentNo+"<input id='aaa'></input></td>"+
+				"<td style='font-weight: bold;'>"+arr[i].memberName+"</td>"+
 				"<td>"+arr[i].content+"</td>"+
 				"<td>"+arr[i].createdDate2+"</td>"+
 				
@@ -161,7 +160,7 @@ function ajaxCommentDelete(no){
 $(document).on("click","#commentUpdateBtn",function(event){
 	console.log($(this).attr("data-no"));
 	
-	comment={
+	comment= {
 			reviewcommentNo : $("#aaa").val(),
 			content: $(".updateContentInput").val()
 	}
