@@ -1,11 +1,11 @@
 $("#comtaddBtn").click(function(event){
 	
 	var comment = { 
-			//reviewboardNo :$("#crbno").val(),
+			// reviewboardNo :$("#crbno").val(),
 			reviewboardNo : no,
-			/*memberNo :$("#cmno").val(),*/
+			/* memberNo :$("#cmno").val(), */
 			content : $("#cmcontent").val()
-//			cc.val(result.data.name)
+// cc.val(result.data.name)
 			
 	}
 
@@ -27,7 +27,7 @@ function ajaxAddBoard2(comment){
 		}
 		location.reload();
 		console.log(comment)
-		//window.location.href="reviewApp.html"
+		// window.location.href="reviewApp.html"
 	},"json")
 	
 	
@@ -35,8 +35,9 @@ function ajaxAddBoard2(comment){
 
 
 function ajaxCommentList(no) {
-	/*console.log(no)
-	console.log(parseInt(no))*/
+	/*
+	 * console.log(no) console.log(parseInt(no))
+	 */
 	$.getJSON(serverAddr+"/travel/cmlist.json?no="+no,parseInt(no), function(obj) {
 		var result=obj.jsonResult;
 		if(result.state!="success"){
@@ -58,44 +59,40 @@ function ajaxCommentList(no) {
 				"<td>"+arr[i].content+"</td>"+
 				"<td>"+arr[i].createdDate2+"</td>"+
 				
-				"<td><a class='updateLink' href='#'  data-no3='"+arr[i].content+"' data-no2='"+i+"' data-no='"+arr[i].reviewcommentNo+"'>"+(($("#bbb").val()==arr[i].memberNo)?"수정":"")+"</a></td>"+
+				"<td><a class='updateLink' href='#' oneclick='true' data-no3='"+arr[i].content+"' data-no2='"+i+"' data-no='"+arr[i].reviewcommentNo+"'>"+(($("#bbb").val()==arr[i].memberNo)?"수정":"")+"</a></td>"+
 				"<td><a class='deleteLink' href='#'  data-no3='"+arr[i].content+"' data-no2='"+i+"' data-no='"+arr[i].reviewcommentNo+"'>"+(($("#bbb").val()==arr[i].memberNo)?"삭제":"")+"</a></td>"+
 				"</tr>";
 				
 		}
 		
 		console.log($("#bbb").val())
-		/*console.log($("#ccc1").val())*/
+		/* console.log($("#ccc1").val()) */
 		
 		
 		console.log(contents)
 		
 		$("#commentTable tbody").html(contents);
 		
-		//console.log(contents)
+		// console.log(contents)
 		
-		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
+		// tr 태그를 추가한 후에 제목에 대해 click 리스너를 추가한다.
 		$(document).on("click",".updateLink",function(event) {
 			
-			console.log($(this).attr("data-no"))
+			console.log($(this).attr("oneclick"))
+			if($(this).attr("oneclick") =="true"){
+				
 			var a=$(this).attr("data-no2")
 			console.log(a)
-			/*comment = {
-				reviewcommentNo : console.log($(this).attr("data-no")),
-				content : $('#commentTable tbody tr td:eq(1)').val()
-			}*/
-			
-			
-			
-			//console.log(arr.content)
-			/*$("#commentTable tbody tr:eq("+$(this).attr("data-no2")+") td:eq(1)").html("<input value="+$(this).attr("data-no3")+"></input>");*/
-			
 			$("#commentTable tbody tr:eq("+a+")").after("<td></td><td><input class='updateContentInput' value="+$(this).attr("data-no3")+"></input></td>" +
 					"<td><button type='button' id='commentUpdateBtn'>변경 </button></td>");
 			
-				//window.location.href = "reviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
+				// window.location.href =
+				// "reviewForm.html?no="+$(this).attr("data-no");//this는 a태그이다
+				// this자리에 selector 말고도 태그를 넣을수 있다.
 			console.log($(this).attr("data-no"))
 			$("#aaa").val($(this).attr("data-no"))
+			$(this).attr("oneclick","false")
+			}
 			});
 		
 		
@@ -105,11 +102,15 @@ function ajaxCommentList(no) {
 			$(document).on("click",".deleteLink",function(event) {
 			
 			console.log($(this).attr("data-no"))
-/*			var a=$(this).attr                                                                                                                                       +("data-no2")
-			console.log(a)*/
+/*
+ * var a=$(this).attr +("data-no2") console.log(a)
+ */
 			
-		/*	$("#commentTable tbody tr:eq("+a+")").after("<td></td><td><input class='updateContentInput' value="+$(this).attr("data-no3")+"></input></td>" +
-					"<td><button type='button' id='commentUpdateBtn'>변경 </button></td>");*/
+		/*
+		 * $("#commentTable tbody tr:eq("+a+")").after("<td></td><td><input
+		 * class='updateContentInput' value="+$(this).attr("data-no3")+"></input></td>" + "<td><button
+		 * type='button' id='commentUpdateBtn'>변경 </button></td>");
+		 */
 			
 			console.log($(this).attr("data-no"))
 			$("#aaa").val($(this).attr("data-no"))
@@ -118,10 +119,11 @@ function ajaxCommentList(no) {
 			
 			
 			});
-		/*$(".zz").click(function(event) {
-			alert('aaaa');
-			
-		});*/
+		/*
+		 * $(".zz").click(function(event) { alert('aaaa');
+		 * 
+		 * });
+		 */
 		
 		
 		});
@@ -182,7 +184,7 @@ function ajaxCommentUpdate(comment){
 		}
 		location.reload();
 		console.log(comment)
-		//window.location.href="reviewApp.html"
+		// window.location.href="reviewApp.html"
 	},"json")
 	
 	

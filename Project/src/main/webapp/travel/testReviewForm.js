@@ -12,7 +12,7 @@ function ajaxReviewContentList(no) {
 			contents += 
 				'<li class="event"><input type="radio" name="tl-group" /> <label></label>'+
 				'<div class="thumb user-2">'+
-											'<img width=100% height=100% src="../upload/'+arr[i].reviewBoardContentPhotoName+'" alt="..."><span>18 Nov</span>'+
+											'<img width=100% height=100% src="../upload/'+arr[i].reviewBoardContentPhotoName+'" alt="...">'+
 				'</div>'+
 				'<div class="content-perspective">'+
 					'<div class="content">'+
@@ -31,7 +31,7 @@ function ajaxReviewContentList(no) {
 				'</li>'
 
 		}
-		//html 원래 위치
+		// html 원래 위치
 		$(".timeline").html(contents);
 	})
 }
@@ -44,7 +44,7 @@ function ajaxReviewTitleList(no) {
 	    	alert("조회 실패 입니다.")
 	    	return
 	    }
-		//html 원래 위치
+		// html 원래 위치
 		$("#reviewtitle").html(result.data.title);
 		$("#detailMemberName").html(result.data.membername)
 	})

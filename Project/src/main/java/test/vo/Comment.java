@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 
 public class Comment implements Serializable {
   private static final long serialVersionUID = 1L;
-  static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+  static SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd hh:mm");
   static ParsePosition pos = new ParsePosition(0);
 
 
@@ -24,7 +24,7 @@ public class Comment implements Serializable {
   protected String content;
   protected Date createdDate;
   protected String createdDate2;
-  protected java.util.Date createdDate3;
+ 
   
   public int getReviewcommentNo() {
     return reviewcommentNo;
@@ -63,16 +63,12 @@ public class Comment implements Serializable {
     this.createdDate = createdDate;
   }
   public String getCreatedDate2() {
-    return createdDate2;
+    return this.createdDate2;
   }
   public void setCreatedDate2(String createdDate2) {
     this.createdDate2 = createdDate2;
-    this.createdDate3 = format.parse(createdDate2, pos);
   }
-  public Date getCreatedDate3() {
-    return (Date)createdDate3;
-  }
-  
+
   
   
   
