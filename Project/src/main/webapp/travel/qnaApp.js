@@ -1,12 +1,4 @@
 
-/*
-$("#logoutBtn").click(function(event) {
-	window.location.reload(true);
-});
-
-$("#loginBtn").click(function(event) {
-	window.location.reload(true);
-});*/
 var pageNo = 1, /* window.pageNo */
 pageLength = 8; /* window.pageLength */
 
