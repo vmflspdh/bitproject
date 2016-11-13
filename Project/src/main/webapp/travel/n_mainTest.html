@@ -444,7 +444,118 @@ video {
     }
 </style>
 
+<style>
+.modal-content {
+    position: relative;
+    background-color: 1e4147;
+    opacity: 0.9;
+    
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.6);
+    box-shadow: 0 6px 12px rgba(0,0,0,.6);
+}
 
+.modal-header {
+    min-height: 101.43px;
+    padding: 15px;
+    border-bottom: 0px solid #e5e5e5;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 15px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 11px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 0px solid #e5e5e5;
+    min-height: 80px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: red;
+    border-color: #2e6da4;
+    
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 11px;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+</style>
 
 <script>
 $(document).ready(function(){
@@ -543,7 +654,7 @@ function switchScreen() {
   <!-- center  ---->
 
   <div class="main"></div>
-  <!-- Start of Login form -->
+ <!-- Start of Login form -->
   <div class="modal fade"
     style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
     id="myModal1" tabindex="-1" role="dialog"
@@ -551,11 +662,17 @@ function switchScreen() {
     <div class="modal-dialog modal-sm" style="z-index: 300000;">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
+      
+      <div style="height: 0px; font-size: 34px;">
+        <img src='img/passport.png'>
+           &nbsp;WE TRIP 
+      </div>
+      
+        <!--   <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button>
+          </button> -->
           <h2 class="modal-title" id="myModalLabel">
-            <em>로그인</em>
+            <em></em>
           </h2>
         </div>
         <div class="modal-body">
@@ -574,12 +691,16 @@ function switchScreen() {
             <br>
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
              </fb:login-button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <div id="status">
               </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <p style="font-size: 2px;"><br><br><br>Copyright ⓒ <strong>We Trip</strong>. All Rights Reserved.</p>
         </div>
       </div>
     </div>
@@ -591,13 +712,17 @@ function switchScreen() {
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 500px; z-index: 300000;">
+      style="width: 360px; z-index: 300000;">
       <div class="modal-content ">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
+      <div style="height: 0px; font-size: 34px;
+       font-weight: bold;">
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='img/passport.png'> WE TRIP 
+      </div>
+         <!--  <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button>
-          <h2 class="modal-title" id="myModalLabel">회원 가입</h2>
+          </button> -->
+          <h2 class="modal-title" id="myModalLabel"></h2>
         </div>
         <div class="modal-body">
           <div class="wrapper">
@@ -607,14 +732,14 @@ function switchScreen() {
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="name"
-                  placeholder="이름"><br />
+                  placeholder="정유라"><br />
               </div>
 
 
-              <label for="email" class="col-sm-2 control-label">이메일</label>
+              <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="email"
-                  placeholder="이메일"><br />
+                  placeholder="yura@gmail.com"><br />
               </div>
 
 
@@ -622,7 +747,7 @@ function switchScreen() {
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
                 <input type="password" id="password" class="form-control"
-                  placeholder="암호입력"><br />
+                  placeholder="*******"><br />
               </div>
 
 
@@ -630,7 +755,7 @@ function switchScreen() {
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
                 <input type="text" id="birthday" class="form-control"
-                  placeholder="생일"><br />
+                  placeholder="1997-05-11"><br />
               </div>
 
 
