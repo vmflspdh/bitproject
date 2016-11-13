@@ -328,15 +328,15 @@ function favorChecked(result) {
 	$('.checkbox-inline').each(function() {
 
 		if(result.data.styleNo == "1"){ //값 비교
-			$(".check-food").css("display", "")
+			$(".check-food").css("filter", "grayscale(0%)")
 		} 
 
 		if (result.data.styleNo == "2"){ //값 비교
-			$(".check-culture").css("display", "")
+			$(".check-culture").css("filter", "grayscale(0%)")
 		} 
 
 		if (result.data.styleNo == "3"){ //값 비교
-			$(".check-sports").css("display", "")
+			$(".check-sports").css("filter", "grayscale(0%)")
 		}
 
 	});
