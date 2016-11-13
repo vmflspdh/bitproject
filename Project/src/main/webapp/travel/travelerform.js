@@ -170,18 +170,6 @@ $("#deleteTMBtn").click(function(event) {
 	ajaxDeleteTravelMain(travelMain)
 });
 
-/*function ajaxAddTravelMain(travelMain) {
-	$.post(serverAddr + "/travel/travelMainAdd.json", travelMain, function(obj){
-		var result = obj.jsonResult
-		if (result.state != "success") {
-			console.log(result.data)
-			alert("등록 실패입니다.")
-			return
-		}
-
-		window.location.href = "traveler.html"
-	}, "json")
-}*/
 
 function ajaxLoadTravelMain(no) {
 	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
@@ -303,6 +291,7 @@ function travelMainFilelist() {
 			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
 			console.log(arr[i].fileName)
 			$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
+			$('#boardImg').css("font-weight", "bold");
 		}
 
 		$("#selectTable .fileList .innerFileList").html(contents)
