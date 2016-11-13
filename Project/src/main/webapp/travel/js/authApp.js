@@ -87,6 +87,7 @@ function ajaxLoginUser() {
 		
 
 		$(".mainImg").attr("src","../upload/" + result.data.memberPhoto);
+		$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);
 
 		$("#myInfo").click(function(event) {
 			ajaxLoginUser()
