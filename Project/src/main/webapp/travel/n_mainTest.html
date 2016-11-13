@@ -369,10 +369,11 @@ a:hover {
 #t_box {
 	float: left;
 	height: 100%;
-	width: 24.45%;
+width: 24.66%;
 	background-color: #1e4147;
 	border-radius: 10px;
-	margin: 3px 1.5px 1px 3px;
+/* 	margin: 3px 1.5px 1px 3px; */
+	    margin-left: 0.3%;
  
  
 /*   fill : #000;
@@ -390,23 +391,21 @@ a:hover {
 
 #t_box>#t_img {
 	border-radius: 50%;
-	height: 160px;
-	width: 165px;
-	margin-left: 17%;
-	margin-top: 35px;
-	background-size: 180px 180px;
-	background-repeat: no-repeat;
-	background-position: center;
+    height: 48%;
+    width: 48%;
+    margin-left: 24%;
+    margin-top: 10%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 #t_box:hover>#t_img {
-	
 	margin-left: 100px;
-	transition: all 1s;
-	width: 90%;
-	height: 80%;
-	background-size: 250px 250px;
-	margin-left: 5.3%;
-	margin-top: 25px;
+	    transition: all 1s;
+    width: 80%;
+    height: 80%;
+        margin-left: 10%;
+    margin-top: 10%;
  }
  
 
@@ -427,9 +426,9 @@ a:hover {
 
 
 #t_box>#m_text {
-	margin-top: 25px;
-	text-align: center;
-	width: 260px;
+	    margin-top: 10%;
+    text-align: center;
+    width: 100%;
 	color : white;
 	font-weight: bold;
 }
@@ -507,13 +506,13 @@ video {
 }
     
 #travelerRegForm {
-	margin-left: 15%;
-	margin-top: 22px;
-	font-size: 23px;
-	color: white;
-	position: relative;
-	margin-bottom: 20px;
-}
+	    margin-left: 15%;
+    margin-top: 22px;
+    font-size: 24px;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+    }
 </style>
 
 
@@ -731,15 +730,16 @@ $(document).ready(function(){
       </div>
 
     </div> -->
-     <video style="width: 100%; /* position: absolute !important; */" width="1081" height="475" class="video-js vjs-default-skin" data-setup="{}"
+     <video style="width: 100%; height: 102%;
+    border: 1px solid red; /* position: absolute !important; */" width="1081" height="475" class="video-js vjs-default-skin" data-setup="{}"
  autoplay loop  >
     <source src="mainfull.mp4" type="video/mp4" />
     
 </video> 
 
 <div class="my-login" id="log-txt">
-         <a id="userName"style=" position: absolute;right: 215px; font-weight: bold;
-    font-size: 40px; margin-right: 33%;margin-top: 1.4%; color: white; "></a>
+         <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
+    font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
           <a href="#" class="my-login" id="travelerRegForm" >님 동행을 찾아보세요!</a>
        
       </div>
@@ -818,7 +818,7 @@ $(document).ready(function(){
 
   </div>
 
-  <div id="content" style="height: 1000px;">
+  <div id="content" style="height: 1000px;     border: 3px solid red;">
     <p>리스트 뿌릴 영역</p>
   </div>
 
@@ -854,14 +854,10 @@ $(document).ready(function(){
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/authApp.js"></script>
   <script type="text/javascript" src="js/memberForm.js"></script>
-  <script type="text/javascript" src="qnaApp.js"></script>
   <script type="text/javascript" src="traveler.js"></script>
   <script type="text/javascript" src="js/backgroundmap.js"></script>
   <script type="text/javascript" src="js/leaflet.js"></script>
   <script type="text/javascript" src="js/stamen.js"></script>
-  <script type="text/javascript" src="travelerdetail.js"></script>
-  <script type="text/javascript" src="travelerform.js"></script>
-  <script type="text/javascript" src="newReview.js"></script>
   <script src="js/jquery.popupoverlay.js"></script>
   <script>
     $(document).ready(function() {
