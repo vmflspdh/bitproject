@@ -36,7 +36,8 @@ function ajaxQnaBoardList() {
 		
 	 	   $(".qnalisttable tbody").html(contents)
 	 	   $(".titleLink").click(function(event) {
-	 		    ajaxUpdateViewCount($(this).attr("data-qno"))
+	 		   console.log($(this).attr("data-qno"))
+	 		   ajaxUpdateViewCount2($(this).attr("data-qno"))
 	 		   checkToNo($(this).attr("data-qno"))
 	 	    })
 	 	    pageNo = result.pageNo;
@@ -88,7 +89,7 @@ function ajaxQnaBoardList() {
 }
 	 
 	 
-function ajaxUpdateViewCount(no){
+function ajaxUpdateViewCount2(no){
 	$.post("qnaviewupdate.json?no="+no,function(result){
 		if(result.state !="success"){
 			alert("변경실패입니다.")
