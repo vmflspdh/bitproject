@@ -60,6 +60,22 @@ function ajaxLogout() {
 	FB.logout();
 }
 
+window.fbAsyncInit = function() {
+	  FB.init({
+	    appId      : '1845325399037691',
+	    cookie     : true,  // enable cookies to allow the server to access 
+	    state      : true,             // the session
+	    xfbml      : true,  // parse social plugins on this page
+	    version    : 'v2.5' // use graph api version 2.5
+	  });
+
+	  
+	  FB.getLoginStatus(function(response) {
+	    //statusChangeCallbackafter(response);
+	  });
+
+	};
+
 function ajaxLoginUser() {
 
 	$.getJSON("loginUser.json", function(obj) {

@@ -638,7 +638,7 @@ function showCalendar() {
 							{
 						title: title,
 						start: start,
-						end: end1 = date_add(end, 1)
+						end: end
 							},
 							true
 					);
