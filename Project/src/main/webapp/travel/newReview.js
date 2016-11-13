@@ -38,15 +38,10 @@ function ajaxBoardList() {
 			'<td style="width:800px;">' +
 			'<div style="height:100px; padding: 10px;">' +
 			'<div style="height: 10px;"></div>' +
-<<<<<<< HEAD
 			'<div style="font-size:large; color:#13919A"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
 			'<div style="font-size:medium; font-weight: bold;">' +
-			'<a class="titleLink" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
-=======
-			'<div style="font-size:large; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
-			'<div style="font-size:x-large; font-weight: bold; font-family: sans-serif;">' +
 			'<a class="reviewTitle" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
+
 			'</div></a>' +
 			'</div>' +
 			'</td>' +
