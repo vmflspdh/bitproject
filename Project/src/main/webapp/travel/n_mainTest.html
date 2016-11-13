@@ -67,7 +67,10 @@
 
 
 <style type="text/css">
-#inviteCount {
+
+
+
+#requestCountAll {
   z-index: -1;
   position: absolute;
   right: 12px;
@@ -78,12 +81,10 @@
   border-radius: 50%;
   color: white;
   background: #F361A6;
-  margin: 0 10px;
   font-size: 15px;
   font-weight: bold;
   line-height: 32px;
   text-align: center;
-  float: left;
 }
 #fadeandscale {
   -webkit-transform: scale(0.8);
@@ -476,7 +477,7 @@ function switchScreen() {
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
           <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-              class="mainImg my-login"></a>
+              class="mainImg my-login"></a> <a id="requestCountAll"></a>
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
@@ -499,6 +500,7 @@ function switchScreen() {
       <div id="fadeandscale" class="well">
         <h4>동행요청</h4>
         <h5></h5>
+        <h6></h6>
         <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
                   <button value="vcxc">수락</button><button value="sdfds">거절</button>
                   </pre>
@@ -833,6 +835,7 @@ function switchScreen() {
   <script type="text/javascript" src="travelerdetail.js"></script>
   <script type="text/javascript" src="travelerform.js"></script>
   <script type="text/javascript" src="newReview.js"></script>
+  <script type="text/javascript" src="bookmark.js"></script>
   <script src="js/jquery.popupoverlay.js"></script>
   <script>
     $(document).ready(function() {
@@ -855,7 +858,7 @@ $(function() {
     ajaxRegistFormList()
     ajaxInviteList()
     ajaxAgreeInviteList()
-  /*   ajaxBookmarkList() */
+    ajaxBookmarkList() 
   </script>
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>

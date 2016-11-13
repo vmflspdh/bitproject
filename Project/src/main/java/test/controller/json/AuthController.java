@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import test.dao.BookmarkDao;
 import test.dao.InviteDao;
 import test.dao.MemberDao;
 import test.vo.JsonResult;
@@ -25,6 +26,7 @@ public class AuthController {
 
   @Autowired MemberDao memberDao;
   @Autowired InviteDao inviteDao;
+  @Autowired BookmarkDao bookmarkDao;
 
   @RequestMapping(path="login")
   public Object login(
@@ -93,8 +95,9 @@ public class AuthController {
       }
       //System.out.println(member.setInviteCount(inviteDao.inviteCount(member.getNo())));
 //      System.out.println();
-      
-      member.setMemberRequest(inviteDao.inviteCount(member.getNo()));
+      int RequestCountAll = (inviteDao.inviteCount(member.getNo()))+(bookmarkDao.bookmarkCount2(member.getNo()));
+      System.out.println(RequestCountAll);
+      member.setMemberRequest(RequestCountAll);
       //inviteDao.inviteCount(member.getNo());
       System.out.println(member);
       return JsonResult.success(member);
