@@ -33,14 +33,15 @@ function ajaxBoardList() {
 			contents += 
 			'<tr>' +
 			'<td style="width:100px; height:100px;">' +
-			'<img src="img/yang/travelphoto2.jpg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
+			'<img src="reviewThumbImg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
 			'</td>' +
 			'<td style="width:800px;">' +
 			'<div style="height:100px; padding: 10px;">' +
 			'<div style="height: 10px;"></div>' +
-			'<div style="font-size:large; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
-			'<div style="font-size:x-large; font-weight: bold; font-family: sans-serif;">' +
+			'<div style="font-size:large; color:#13919A"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
+			'<div style="font-size:medium; font-weight: bold;">' +
 			'<a class="reviewTitle" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
+
 			'</div></a>' +
 			'</div>' +
 			'</td>' +

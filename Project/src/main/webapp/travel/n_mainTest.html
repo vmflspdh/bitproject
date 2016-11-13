@@ -369,13 +369,22 @@ a:hover {
 #t_box {
 	float: left;
 	height: 100%;
+<<<<<<< HEAD
 	width: 25%;
+=======
+width: 24.66%;
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 	background-color: #1e4147;
 	border-radius: 10px;
+<<<<<<< HEAD
 	border-left-width: 3px;
 	border-left-color: white;
 	border-left-style: solid;
 	
+=======
+/* 	margin: 3px 1.5px 1px 3px; */
+	    margin-left: 0.3%;
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
  
  
 /*   fill : #000;
@@ -393,6 +402,7 @@ a:hover {
 
 #t_box>#t_img {
 	border-radius: 50%;
+<<<<<<< HEAD
 	height: 160px;
 	width: 165px;
 	margin: 0 auto;
@@ -401,8 +411,18 @@ a:hover {
 	background-size: 180px 180px;
 	background-repeat: no-repeat;
 	background-position: center;
+=======
+    height: 48%;
+    width: 48%;
+    margin-left: 24%;
+    margin-top: 10%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 }
 #t_box:hover>#t_img {
+<<<<<<< HEAD
 	
 	/* margin-left: 100px; */
 	transition: all 1s;
@@ -411,6 +431,14 @@ a:hover {
 	background-size: 250px 250px;
 	/* margin-left: 5.3%;
 	margin-top: 25px; */
+=======
+	margin-left: 100px;
+	    transition: all 1s;
+    width: 80%;
+    height: 80%;
+        margin-left: 10%;
+    margin-top: 10%;
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
  }
  
 
@@ -431,9 +459,15 @@ a:hover {
 
 
 #t_box>#m_text {
+<<<<<<< HEAD
 	margin: 0 auto;
 	text-align: center;
 	width: 260px;
+=======
+	    margin-top: 10%;
+    text-align: center;
+    width: 100%;
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 	color : white;
 	font-weight: bold;
 }
@@ -511,13 +545,13 @@ video {
 }
     
 #travelerRegForm {
-	margin-left: 15%;
-	margin-top: 22px;
-	font-size: 23px;
-	color: white;
-	position: relative;
-	margin-bottom: 20px;
-}
+	    margin-left: 15%;
+    margin-top: 22px;
+    font-size: 24px;
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+    }
 </style>
 
 
@@ -534,7 +568,22 @@ $(document).ready(function(){
 })
 </script>
 
-<body>
+<!-- 페이지로딩 -->
+<script type="text/javascript">
+
+function switchScreen() {
+    document.getElementById("divLoading").style.display = "none";
+    document.getElementById("divBody").style.display = "";
+}
+
+</script>
+<!-- 페이지로딩 -->
+
+<body onload="switchScreen();">
+<div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
+    <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
+</div>
+<div id="divBody" style="display:none;">
   <!-- 상단메뉴시작 -->
   <!-- Start of container2 -->
   <div class="container">
@@ -635,6 +684,11 @@ $(document).ready(function(){
               <button id="loginBtn" class="btn btn-lg btn-primary btn-block "
                 type="button">로그인</button>
             </form>
+            <br>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+             </fb:login-button>
+              <div id="status">
+              </div>
           </div>
         </div>
         <div class="modal-footer">
@@ -735,18 +789,34 @@ $(document).ready(function(){
       </div>
 
     </div> -->
+<<<<<<< HEAD
      <video style="width: 100%; /* position: absolute !important; */" width="1081" height="475" class="video-js vjs-default-skin" data-setup="{}"
  autoplay loop  > 
+=======
+     <video style="width: 100%; height: 102%;
+    border: 1px solid red; /* position: absolute !important; */" width="1081" height="475" class="video-js vjs-default-skin" data-setup="{}"
+ autoplay loop  >
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
     <source src="mainfull.mp4" type="video/mp4" />
     
 </video> 
 
 <div class="my-login" id="log-txt">
-         <a id="userName"style=" position: absolute;right: 215px; font-weight: bold;
-    font-size: 40px; margin-right: 33%;margin-top: 1.4%; color: white; "></a>
+         <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
+    font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
           <a href="#" class="my-login" id="travelerRegForm" >님 동행을 찾아보세요!</a>
        
       </div>
+      
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%; left:25%;">
+      <form class="form-inline" role="search"
+        id="searchform">
+         <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
+         <input id="searchStDt" name="startDt" type="text" class="form-control bit-startDate" placeholder="From"> 
+         <input id="searchEdDt" name="endDt" type="text" class="form-control bit-endDate"  placeholder="To"> 
+         <input id="searchaddBtn" type="button" class="button filled red extra-narrow" value="Search">
+      </form>
+    </div>
    <!--  <p1 style="border : 1px solie white;  color : white;       font-size: 60px;
     display: block;text-align: center; padding-top: 6.8%;
     line-height: 110px; font-family: 'Arvo', serif;">A journey of a thousand miles</br>
@@ -822,14 +892,17 @@ $(document).ready(function(){
 
   </div>
 
-  <div id="content" style="height: 1000px;">
-    <p>리스트 뿌릴 영역</p>
+  <div id="content" style="background-color: #F0F0F0;">
+  <br>
+  <table class="changallery" style="margin: 0 auto;">
+  </table>
+  <br>
   </div>
 
-<div id="footer" style="background-color: #F2F2F2; ">
+<div id="footer" style="background-color: white; ">
 <hr>
 <div style="width: 65%; margin: 0 auto; text-align: center;">
-<h2><img src="logo.png" alt="로고파일자리" width="96"/></h2>
+<h2 style="margin-top: 0 !important;"><img src="logo.png" alt="로고파일자리" width="96"/></h2>
 <address>
 <span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
 <span>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
@@ -844,6 +917,26 @@ $(document).ready(function(){
 
   <!-- footer 끝 div -->
 
+  <!-- 페이스북 -->
+<script>
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1845325399037691',
+    cookie     : true,  // enable cookies to allow the server to access 
+    state      : true,             // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.5' // use graph api version 2.5
+  });
+
+  
+  FB.getLoginStatus(function(response) {
+    //statusChangeCallbackafter(response);
+  });
+
+};
+
+</script>
+<!-- 페이스북 -->
 
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
   <script src="js/map.js"></script>
@@ -858,7 +951,6 @@ $(document).ready(function(){
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/authApp.js"></script>
   <script type="text/javascript" src="js/memberForm.js"></script>
-  <script type="text/javascript" src="qnaApp.js"></script>
   <script type="text/javascript" src="traveler.js"></script>
   <script type="text/javascript" src="js/backgroundmap.js"></script>
   <script type="text/javascript" src="js/leaflet.js"></script>
@@ -875,13 +967,21 @@ $(document).ready(function(){
       });
     });
   </script>
+<script type="text/javascript">
+$(function() {
+	  $(".bit-startDate, .bit-endDate").datepicker({
+	    dateFormat : 'yy-mm-dd'
+	  });
+});
+</script>  
   <script>
     init() // 화면을 준비시킨다
     ajaxLoginUser() // 로그인 유저 정보 가져오기
     ajaxRegistFormList()
     ajaxInviteList()
     ajaxAgreeInviteList()
-    mapinitialize()
+  /*   ajaxBookmarkList() */
+
   </script>
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
@@ -890,13 +990,29 @@ $(document).ready(function(){
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
   <script type='text/javascript'>
-    /* <![CDATA[ null 에 [ ]로 값입력해서 넘길려면 나중에 추가,국가 선택,*/
+  var city = [];
+    $( function() {
+       $.post(serverAddr + "/travel/autoComplecation.json", function(obj) {
+        var result = obj.jsonResult
+        if (result.state != "success") {
+         alert("검색 결과가 없습니다.")
+         return
+        }
+       var arr = result.data
+       for (var i in arr) {
+         city.push(arr[i].city)
+       }
+   });
+})
+    $("#searchCity").autocomplete({
+      source: city,
+      minlength:1
+    })
+    
     var nycSearch = {
       "apartmentTypes" : null,
-      "neighborhoods" : [ "Aisa", "South America", "North America",
-          "Europe", "Africa", "Oceania" ]
+      "neighborhoods" : null
     };
-    /* ]]> */
   </script>
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>

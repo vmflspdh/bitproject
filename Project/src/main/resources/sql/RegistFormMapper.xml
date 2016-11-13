@@ -73,6 +73,26 @@ group by tvl_tvlmain.tmno
 order by tvl_tvlmain.tmno desc
 </select>
 
+<select id="afterSearchList" resultMap="registFormMap" parameterType="map">
+select tvl_tvlmain.tmno, schno, tvl_tvlmain.mno, city, st_dt, ed_dt, ipnm, mpho, title, mnm from tvl_tvlmain
+inner join tvl_membs
+on tvl_membs.mno = tvl_tvlmain.mno
+inner join tvl_sch
+on tvl_sch.tmno = tvl_tvlmain.tmno
+inner join tvl_mysty
+on tvl_mysty.tmno = tvl_tvlmain.tmno
+inner join tvl_loc
+on tvl_loc.locno = tvl_sch.locno
+inner join tvl_sty
+on tvl_sty.styno = tvl_mysty.styno
+inner join tvl_intro_pho
+on tvl_tvlmain.tmno = tvl_intro_pho.tmno
+where city like concat('%', #{searchCity}, '%')
+and st_dt >= #{searchSartDate}
+and ed_dt <![CDATA[<=]]> #{searchEndDate}
+order by tvl_tvlmain.tmno desc
+</select>
+
 <select id="selectOne" resultMap="registFormMap" parameterType="int">
 select max(ipno), tvl_membs.mno, tvl_tvlmain.tmno, title, schno, mnm, tvl_sty.styno, stynm, tvl_loc.locno, cont, natn, city, sf_inf, st_dt, ed_dt, mpho, ipnm from tvl_tvlmain
 inner join tvl_membs
@@ -88,5 +108,9 @@ on tvl_sty.styno = tvl_mysty.styno
 inner join tvl_intro_pho
 on tvl_tvlmain.tmno = tvl_intro_pho.tmno
 where tvl_tvlmain.tmno = #{value}
+</select>
+
+<select id="autoComplecation" resultMap="registFormMap" parameterType="map">
+select distinct city from tvl_loc
 </select>
 </mapper>

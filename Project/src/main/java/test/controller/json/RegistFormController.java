@@ -38,6 +38,35 @@ public class RegistFormController {
 		}
 	}
 	
+	@RequestMapping(path="autoComplecation")
+	public Object list2() throws Exception {
+
+		try {
+			return JsonResult.success(registFormDao.autoComplecation());
+			
+		} catch (Exception e) {
+			return JsonResult.fail(e.getMessage());
+		}
+	}
+	
+	@RequestMapping(path="searchList")
+	public Object searchList(RegistForm registForm) throws Exception {
+		System.out.println(registForm);
+		try {
+		  HashMap<String,Object> map = new HashMap<>();
+		  if (registForm.getCity() != null)
+		  map.put("searchCity", registForm.getCity());
+		  if (registForm.getStartDate1() != null)
+		  map.put("searchSartDate", registForm.getStartDate1());
+		  if (registForm.getEndDate1() != null)
+		  map.put("searchEndDate", registForm.getEndDate1());
+		  return JsonResult.success(registFormDao.afterSearchList(map));
+			
+		} catch (Exception e) {
+			return JsonResult.fail(e.getMessage());
+		}
+	}
+	
 	@RequestMapping(path="formDetail")
 	public Object detail(int no, HttpSession session) throws Exception {
 		

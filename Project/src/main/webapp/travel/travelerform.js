@@ -189,7 +189,6 @@ function ajaxLoadTravelMain(no) {
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
-		$("#detailUserImage").attr("src","../upload/" + result.data.myPhoto);
 		$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
 
 		favorChecked(result)
@@ -247,20 +246,7 @@ function scheduleList() {
 		var contents = "";
 		console.log(arr[0].travelMainNo)
 		$("#tmno").val(arr[0].travelMainNo)
-		/*var arr = result.data
-		for
-		$("#scheduleNo").val(arr[i].scheduleNo)*/
-		/*for (var i in arr) {
-			console.log(arr[i].scheduleNo);
-			scheduleNoList = {
-					scheduleNo:arr[i].scheduleNo
-			}
-			scheduleNo(scheduleNoList);
-		}*/
-		
-		
-		
-		
+
 		
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
@@ -291,14 +277,11 @@ function travelMainFilelist() {
 			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
 			console.log(arr[i].fileName)
 			$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
-			$('#boardImg').css("font-weight", "bold");
+			$('#reviewThumbImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
+			
 		}
 
 		$("#selectTable .fileList .innerFileList").html(contents)
-		
-		
-	
-
 
 
 	});
@@ -318,14 +301,17 @@ function favorChecked(result) {
 
 		if(result.data.styleNo == "1"){ //값 비교
 			$(".check-food").css("filter", "grayscale(0%)")
+			$('.check-food').css("font-weight", "bold");
 		} 
 
 		if (result.data.styleNo == "2"){ //값 비교
 			$(".check-culture").css("filter", "grayscale(0%)")
+			$('.check-culture').css("font-weight", "bold");
 		} 
 
 		if (result.data.styleNo == "3"){ //값 비교
 			$(".check-sports").css("filter", "grayscale(0%)")
+			$('.check-sports').css("font-weight", "bold");
 		}
 
 	});
@@ -351,19 +337,19 @@ function ajaxReviewBoardList(no) {
 			contents += 
 				'<tr>' +
 				'<td style="width:100px;">' +
-				'<img src="img/yang/travelphoto2.jpg" style="width:150px; height: 15%; border-radius: 5px 5px 5px 5px;">' +
+				'<img src="" id="reviewThumbImg"style="width:120px; height: auto; border-radius: 5px 5px 5px 5px;">' +
 				'</td>' +
 				'<td style="width:65%;">' +
 				'<div style="height:50px;">' +
-				'<div style="font-size:large; font-weight: bold; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Travel Review</div>' +
-				'<div style="font-size:medium; font-weight: bold; font-family: sans-serif;">' +
-				'<a class="titleLink33" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
+				'<div style="font-size:large; font-weight: bold; color:#13919A;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Travel Review</div>' +
+				'<div style="font-size:medium; font-weight: bold;">' +
+				'<a class="titleLink33" href="#" style="color: #BBBABC; line-height: 3px;" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
 				'</div></a>' +
 				'</div>' +
 				'</td>' +
 				'<td style="width:110px; color: #BBBABC;">' +
-				'<div style="font-size: medium; font-weight: normal;">' + arr[i].createdDate + '</div>' +
-				'<div style="font-size: medium; font-weight: normal;">' +
+				'<div style="font-size: 15px; font-weight: normal;">' + arr[i].createdDate + '</div>' +
+				'<div style="font-size: 15px; font-weight: normal;">' +
 				'<span style="float: right;">&nbsp; &nbsp;</span>' +
 				'<span style="float: right;">' + arr[i].viewcount + '</span>' +
 				'<span style="float: right;">조회수 :&nbsp;</span>' +
@@ -633,23 +619,6 @@ function calendarList() {
 	})
 }
 
-
-/*
-function date_add(sDate, nDays) {
-    var yy = parseInt(sDate.substr(0, 4), 10);
-    var mm = parseInt(sDate.substr(5, 2), 10);
-    var dd = parseInt(sDate.substr(8), 10);
- 
-    d = new Date(yy, mm - 1, dd + nDays);
- 
-    yy = d.getFullYear();
-    mm = d.getMonth() + 1; mm = (mm < 10) ? '0' + mm : mm;
-    dd = d.getDate(); dd = (dd < 10) ? '0' + dd : dd;
- 
-    return '' + yy + '-' +  mm  + '-' + dd;
-}
-
-*/
 function showCalendar() {
  
 
