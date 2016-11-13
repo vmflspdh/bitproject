@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+$("#loginBtn").click(function(event) {
+	window.location.reload(true);
+=======
 /*$("#loginBtn").click(function(event) {
 	location.href = "../auth/authApp.html"
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 });
 
 $("#logoutBtn").click(function(event) {
-	location.href = "../auth/authApp.html"
+	window.location.reload(true);
 });
 */
 
