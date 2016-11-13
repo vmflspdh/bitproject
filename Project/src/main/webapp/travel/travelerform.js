@@ -378,7 +378,7 @@ function ajaxReviewBoardList(no) {
 
 		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
 		$(".titleLink33").click(function(event) {
-			//ajaxUpdateViewCount($(this).attr("data-no"))
+			ajaxUpdateViewCount($(this).attr("data-no"))
 			window.location.href = "testReviewDetail.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
 		});
 		$(".titleLink2").click(function(event) {
@@ -445,6 +445,19 @@ function ajaxReviewBoardList(no) {
 
 }
 
+
+function ajaxUpdateViewCount(no){
+	console.log(no)
+	$.post("rvviewupdate.json?no="+no,function(result){
+		if(result.state !="success"){
+			alert("변경실패입니다.")
+			return;
+		}
+		//console.log(review)
+		
+	},"json")
+	
+}
 function initMap(result) {
 
 	var flightPlanCoordinates = [];
