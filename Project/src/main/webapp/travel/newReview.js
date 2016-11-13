@@ -40,7 +40,7 @@ function ajaxBoardList() {
 			'<div style="height: 10px;"></div>' +
 			'<div style="font-size:large; color:#BBBABC;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
 			'<div style="font-size:x-large; font-weight: bold; font-family: sans-serif;">' +
-			'<a class="titleLink" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
+			'<a class="reviewTitle" href="#" style="color: #BBBABC; text-decoration:none" data-no="' + arr[i].reviewboardno + '"><span class="reviewTitle">' + arr[i].title +" "+(arr[i].commentCount==0?"":"("+arr[i].commentCount+")") + '</span>' +
 			'</div></a>' +
 			'</div>' +
 			'</td>' +
@@ -60,7 +60,7 @@ function ajaxBoardList() {
 		//console.log(contents)
 		
 		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
-		$(".titleLink").click(function(event) {
+		$(".reviewTitle").click(function(event) {
 			ajaxUpdateViewCount($(this).attr("data-no"))
 				 window.location.href = "testReviewDetail.html?no="+$(this).attr("data-no");//this는 a태그이다  this자리에 selector 말고도 태그를 넣을수 있다.
 			});
