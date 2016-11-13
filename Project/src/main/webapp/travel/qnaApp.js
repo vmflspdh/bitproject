@@ -1,17 +1,4 @@
 
-<<<<<<< HEAD
-
-
-=======
-/*
-$("#logoutBtn").click(function(event) {
-	window.location.reload(true);
-});
-
-$("#loginBtn").click(function(event) {
-	window.location.reload(true);
-});*/
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 var pageNo = 1, /* window.pageNo */
 pageLength = 8; /* window.pageLength */
 
