@@ -21,6 +21,8 @@ public interface MemberDao {
   
   int delete(int no) throws Exception;
   
+  Member checkEmail(String email) throws Exception;
+  
 }
 
 

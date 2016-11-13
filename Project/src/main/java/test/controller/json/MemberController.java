@@ -45,10 +45,17 @@ public class MemberController {
 
   @RequestMapping(path="add")
   public Object add(Member member) throws Exception{
-
+  	System.out.println(member);
     try {
-      memberDao.insert(member);
+    	String email = member.getEmail();
+    	if (memberDao.checkEmail(email) != null) {
+    		System.out.println("이메일 있음");
+    		return JsonResult.fail();
+    	} else {
+    		System.out.println("이메일 없음");
+    	memberDao.insert(member);
       return JsonResult.success();
+    	}
 
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());

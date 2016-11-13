@@ -1,11 +1,11 @@
 $("#searchaddBtn").click (function(event){
-	alert('검색창 눌림');
 	var registForm = {
 			city: $("#searchCity").val(),
-			st_dt: $("#searchStDt").val(),
-			ed_dt: $("#searchEdDt").val()
+			startDate: $("#searchStDt").val(),
+			endDate: $("#searchEdDt").val()
 	}
 	console.log(registForm)
+	ajaxSearchList(registForm)
 });
 
 function checkToNo(no) {
@@ -30,13 +30,13 @@ function ajaxRegistFormList() {
 		var contents = "";
 	    var arr = result.data
 	    for (var i in arr) {
-	    	if (i % 4 == 0) {
+	    	if (i % 3 == 0) {
 	    		contents += '<tr style="padding: 10px;">'
 	    	}
 	    	contents += 
-	    		'<td style="border: 1px solid #DDDDDD; padding: 5px; background-color: #F0F0F0">' +
-	    		'<div style="padding: 0px; border: 1px solid #C0C0C0;">' +
-	    		'<img src="../upload/' + arr[i].travelPhoto + '" style="width:250px; height: 180px;">' +
+	    		'<td style="border: 1px solid #DDDDDD; padding: 20px; background-color: white">' +
+	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
+	    		'<img src="../upload/' + arr[i].travelPhoto + '" style="width:280px; height: 280px;">' +
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
@@ -46,17 +46,63 @@ function ajaxRegistFormList() {
 	    		'<div style="padding:0px 5px 0px 5px; font-size: small;">' +
 	    		'<span><img src="img/worldwide.png" style="width: 15px; height: 15px;"></span>' +
 	    		'<span>' + arr[i].city + '</span>, <span>' + arr[i].startDate + '</span> ~ <span>' + arr[i].endDate + '</span></div>' +
-	    		'<br>' +
 	    		'</div>' +
 	    		'</div>' +
 	    		'</td>'
-	    		if (i % 4 != 3) {
+	    		if (i % 3 != 2) {
 	    			contents += '<td style="width: 15px;"></td>'
 	    		}
 	    		
-	    		if (i % 4 == 3) {
+	    		if (i % 3 == 2) {
 		    		contents += '</tr>' +
-		    					'<tr><td style="height: 15px; border="1px solid black;"></td><td></td><td></td><td></td></tr>'
+		    					'<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'
+		    	}
+	      }
+	    $(".changallery").html(contents)
+	    $(".titleLink").click(function(event) {
+	    	var no = $(this).attr("data-no")
+	    	console.log(no)
+	    	checkToNo(no)
+	    })
+    })
+}
+
+function ajaxSearchList(registForm) {
+	$.post(serverAddr + "/travel/searchList.json", registForm, function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+		       return
+		}
+		var contents = "";
+	    var arr = result.data
+	    for (var i in arr) {
+	    	if (i % 3 == 0) {
+	    		contents += '<tr style="padding: 10px;">'
+	    	}
+	    	contents += 
+	    		'<td style="border: 1px solid #DDDDDD; padding: 20px; background-color: white">' +
+	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
+	    		'<img src="../upload/' + arr[i].travelPhoto + '" style="width:280px; height: 280px;">' +
+	    		'<div style="background-color: white; color: black;">' +
+	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
+	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
+	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">' +
+	    		'<img src="../upload/' + arr[i].myPhoto + '"></div>' +
+	    		'<div style="padding:5px; font-weight: bold; color:black;">' + arr[i].writer + '</div>' +
+	    		'<div style="padding:0px 5px 0px 5px; font-size: small;">' +
+	    		'<span><img src="img/worldwide.png" style="width: 15px; height: 15px;"></span>' +
+	    		'<span>' + arr[i].city + '</span>, <span>' + arr[i].startDate + '</span> ~ <span>' + arr[i].endDate + '</span></div>' +
+	    		'</div>' +
+	    		'</div>' +
+	    		'</td>'
+	    		if (i % 3 != 2) {
+	    			contents += '<td style="width: 15px;"></td>'
+	    		}
+	    		
+	    		if (i % 3 == 2) {
+		    		contents += '</tr>' +
+		    					'<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'
 		    	}
 	      }
 	    $(".changallery").html(contents)
