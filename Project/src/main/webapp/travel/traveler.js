@@ -36,7 +36,7 @@ function ajaxRegistFormList() {
 	    	contents += 
 	    		'<td style="border: 1px solid #DDDDDD; padding: 20px; background-color: white">' +
 	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
-	    		'<img src="../upload/' + arr[i].travelPhoto + '" style="width:280px; height: 280px;">' +
+	    		'<img class="img-thumbnail" src="../upload/' + arr[i].travelPhoto + '" style="width:280px; height: 280px;">' +
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
