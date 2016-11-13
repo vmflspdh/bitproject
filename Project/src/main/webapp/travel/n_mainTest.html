@@ -498,7 +498,7 @@ button.close {
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
-    border-radius: 11px;
+ 
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -548,8 +548,11 @@ button.close {
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 11px;
 }
+.yangborrad {
+     border-radius: 11px;
+}
+
 button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
@@ -678,9 +681,9 @@ function switchScreen() {
         <div class="modal-body">
           <div class="wrapper">
             <form class="form-signin">
-              <input type="text" class="form-control" id="email"
+              <input type="text" class="yangborrad form-control" id="email"
                 placeholder="이메일" required="" autofocus="" /></br> <input
-                type="password" id="password" class="form-control"
+                type="password" id="password" class="yangborrad form-control"
                 placeholder="비밀번호" required="" /> <label class="checkbox">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
                 id="saveEmail"> 이메일저장
@@ -731,14 +734,14 @@ function switchScreen() {
 
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="name"
+                <input type="text" class="yangborrad form-control" id="name"
                   placeholder="정유라"><br />
               </div>
 
 
               <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="email"
+                <input type="text" class="yangborrad form-control" id="email"
                   placeholder="yura@gmail.com"><br />
               </div>
 
@@ -746,7 +749,7 @@ function switchScreen() {
 
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
-                <input type="password" id="password" class="form-control"
+                <input type="password" id="password" class="yangborrad form-control"
                   placeholder="*******"><br />
               </div>
 
@@ -754,14 +757,14 @@ function switchScreen() {
 
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control"
+                <input type="text" id="birthday" class="yangborrad form-control"
                   placeholder="1997-05-11"><br />
               </div>
 
 
               <label for="gender" class="col-sm-2 control-label">성별</label>
               <div class="col-sm-10">
-                <select class="form-control" id="gender">
+                <select class="yangborrad form-control" id="gender">
                   <option value="1">여자</option>
                   <option value="0">남자</option>
                 </select> <br>
@@ -771,7 +774,7 @@ function switchScreen() {
                       type="checkbox" value="remember-me" id="rememberMe"
                       name="rememberMe"> 약관동의
                     </label> -->
-              <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+              <button id="signInBtn" class="yangborrad btn btn-lg btn-primary btn-block"
                 type="button">회원가입</button>
             </form>
           </div>
