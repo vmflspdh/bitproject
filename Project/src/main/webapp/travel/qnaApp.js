@@ -1,9 +1,9 @@
 $("#loginBtn").click(function(event) {
-	location.href = "../auth/authApp.html"
+	window.location.reload(true);
 });
 
 $("#logoutBtn").click(function(event) {
-	location.href = "../auth/authApp.html"
+	window.location.reload(true);
 });
 
 
