@@ -2,10 +2,12 @@ package test.vo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class RegistForm implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	protected int no;
 	protected int memberNo;
 	protected int travelMainNo;
@@ -23,7 +25,8 @@ public class RegistForm implements Serializable {
   protected String myPhoto;
   protected String travelPhoto;
   protected int bookmarkCount;
-  
+  protected String startDate1;
+  protected String endDate1;
   
 	public int getBookmarkCount() {
 		return bookmarkCount;
@@ -109,31 +112,59 @@ public class RegistForm implements Serializable {
 	public void setSelfIntroduce(String selfIntroduce) {
 		this.selfIntroduce = selfIntroduce;
 	}
-	public Date getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-	public Date getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
+	
+  public String getStartDate1() {
+    return startDate1;
+  }
+
+
+  public Date getStartDate() {
+    return startDate;
+  }
+
+
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
+    this.startDate1 = format.format(startDate);
+  }
+
+  public void setStartDate(String str) {
+    this.startDate = Date.valueOf(str);
+    this.startDate1 = str;
+  }
+  public Date getEndDate() {
+    return endDate;
+  }
+
+
+  public String getEndDate1() {
+    return endDate1;
+  }
+
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
+    this.endDate1 = format.format(endDate);
+  }
+
+  public void setEndDate(String str) {
+    this.endDate = Date.valueOf(str);
+    this.endDate1 = str;
+  }
 	public String getMyPhoto() {
 		return myPhoto;
 	}
 	public void setMyPhoto(String myPhoto) {
 		this.myPhoto = myPhoto;
 	}
-  @Override
-  public String toString() {
-    return "RegistForm [no=" + no + ", memberNo=" + memberNo + ", travelMainNo=" + travelMainNo + ", locationNo="
-        + locationNo + ", styleNo=" + styleNo + ", writer=" + writer + ", title=" + title + ", styleName=" + styleName
-        + ", continent=" + continent + ", nation=" + nation + ", city=" + city + ", selfIntroduce=" + selfIntroduce
-        + ", startDate=" + startDate + ", endDate=" + endDate + ", myPhoto=" + myPhoto + "]";
-  }
+	@Override
+	public String toString() {
+		return "RegistForm [no=" + no + ", memberNo=" + memberNo + ", travelMainNo=" + travelMainNo + ", locationNo="
+				+ locationNo + ", styleNo=" + styleNo + ", writer=" + writer + ", title=" + title + ", styleName=" + styleName
+				+ ", continent=" + continent + ", nation=" + nation + ", city=" + city + ", selfIntroduce=" + selfIntroduce
+				+ ", startDate=" + startDate + ", endDate=" + endDate + ", myPhoto=" + myPhoto + ", travelPhoto=" + travelPhoto
+				+ ", bookmarkCount=" + bookmarkCount + ", startDate1=" + startDate1 + ", endDate1=" + endDate1 + "]";
+	}
+
  
 	
 	

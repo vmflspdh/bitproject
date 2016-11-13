@@ -21,11 +21,11 @@
 	</resultMap>
 
 	<insert id="insert" parameterType="member" useGeneratedKeys="true" keyProperty="no" keyColumn="mno">
-		insert into tvl_membs(mnm,
-		email, pwd, bir_dt, gend, reg_dt,mreq)
-		values (#{name}, #{email},
-		password(#{password}),
-		#{birthday}, #{gender}, now(),0)
+    insert into tvl_membs(mnm,
+    email, pwd, bir_dt, gend, reg_dt,mpho,mreq)
+    values (#{name}, #{email},
+    password(#{password}),
+    #{birthday}, #{gender}, now(), #{memberPhoto},0)
 	</insert>
 	
 	<insert id="memberRequestAdd">
@@ -45,6 +45,11 @@
 
 		limit #{startIndex}, #{length}
 	</select>
+	
+ <select id="checkEmail" resultMap="memberMap" parameterType="String">
+    select email from tvl_membs
+    where email = #{value}
+  </select>
 
 
 	<select id="selectOne" resultMap="memberMap" parameterType="int">

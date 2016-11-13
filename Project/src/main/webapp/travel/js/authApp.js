@@ -19,7 +19,7 @@ $("#loginBtn").click(function(event) {
 
 $("#logoutBtn").click(function(event) {
 	ajaxLogout()
-
+window.location.reload(true)
 });
 
 
@@ -57,8 +57,7 @@ function ajaxLogout() {
 			console.log("로그아웃 실패입니다.")
 			return;
 	})
-	
-		window.location.reload(true);
+	FB.logout();
 }
 
 function ajaxLoginUser() {
