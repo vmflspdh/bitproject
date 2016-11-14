@@ -30,24 +30,26 @@ $("#signInBtn").click(function(event) {
 $("#updateBtn").click(function(event) {
 
 	var formData = new FormData();
-	formData.append("no", $("#bit-no").val());
+	formData.append("no", $("#no").val());
 	formData.append("name", $("#bit-name").val());
 	formData.append("email", $("#bit-email").val());
 	formData.append("password", $("#bit-password").val());
 	formData.append("birthday", $("#bit-birthday").val());
 	formData.append("gender", $("#bit-gender").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
-	console.log($("#bit-name").val())
-	console.log('a')
-/*	var member = {
-			name: $("#name").val(),
-			email: $("#email").val(),
-			password: $("#password").val(),
-			birthday: $("#birthday").val(),
-			gender: $("#gender").val(),
+	
+	
+	var member = {
+			name: $("#bit-name").val(),
+			email: $("#bit-email").val(),
+			password: $("#bit-password").val(),
+			birthday: $("#bit-birthday").val(),
+			gender: $("#bit-gender").val(),
 			registedDate: $("#registedDate").val(),
-			no: $("#no").val()
-	}*/
+			no: $("#bit-no").val()
+	}
+	
+	console.log(member)
 	ajaxUpdateMember(formData)
 });
 
@@ -91,7 +93,6 @@ function ajaxLoadMember(no) {
 }
 
 function ajaxUpdateMember(formData) {
-	console.log('b')
 	console.log(formData)
 	
 	$.ajax({
