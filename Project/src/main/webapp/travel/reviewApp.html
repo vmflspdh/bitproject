@@ -45,6 +45,22 @@ body {
 /* background: #F0F0F0 */
 }
 
+#requestCountAll {
+  z-index: 1500000;
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  text-decoration: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background: #F361A6;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+}
 
 .btn-default {
 background-image: none;
@@ -273,7 +289,7 @@ function switchScreen() {
 			<div class='zeta-menu-bar my-login'>
 				<ul class="zeta-menu">
 					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-							class="mainImg my-login"></a>
+							class="mainImg my-login"></a><a id="requestCountAll"></a>
 						<ul>
 							<li><a href="#" id="myInfo"><img
 									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY

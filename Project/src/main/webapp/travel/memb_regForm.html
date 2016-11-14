@@ -35,24 +35,23 @@
 <!-- footer style -->
 <style>
 
-#inviteCount {
-  z-index: -1;
+#requestCountAll {
+  z-index: 1500000;
   position: absolute;
-  right: 12px;
-  top: -1px;
+  right: 40px;
+  top: 10px;
   text-decoration: none;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   color: white;
   background: #F361A6;
-  margin: 0 10px;
   font-size: 15px;
   font-weight: bold;
   line-height: 32px;
   text-align: center;
-  float: left;
 }
+
 
 
 #fadeandscale {
@@ -181,7 +180,7 @@ h4 {
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
           <li><a href="#"><img src='img/iconmonstr-user-20-240.png'
-              class="mainImg my-login"></a>
+              class="mainImg my-login"></a><a id="requestCountAll"></a>
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
