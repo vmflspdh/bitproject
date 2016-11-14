@@ -337,7 +337,7 @@ function ajaxReviewBoardList(no) {
 			contents += 
 				'<tr>' +
 				'<td style="width:100px;">' +
-				'<img src="" id="reviewThumbImg"style="width:120px; height: auto; border-radius: 5px 5px 5px 5px;">' +
+				'<img src="img/yang/travelphoto2.jpg" id="reviewThumbImg" style="width:120px; height: 15%; border-radius: 5px 5px 5px 5px;">' +
 				'</td>' +
 				'<td style="width:65%;">' +
 				'<div style="height:50px;">' +
