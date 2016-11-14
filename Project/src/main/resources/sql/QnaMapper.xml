@@ -24,7 +24,7 @@
   
 <select id="selectList" resultMap="qnaMap" parameterType="map">
 select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITlE, count(qcno),
-TVL_QNA_BODS.CRE_DT, TVL_QNA_BODS.VW_CNT
+date_format(TVL_QNA_BODS.CRE_DT,'%Y-%m-%d')as cre_dt, TVL_QNA_BODS.VW_CNT
 from tvl_QnA_BODS
 inner join tvl_membs
 on tvl_membs.mno = tvl_qna_bods.mno

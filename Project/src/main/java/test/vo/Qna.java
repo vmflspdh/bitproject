@@ -18,7 +18,7 @@ public class Qna implements Serializable {
    protected String writer;
    protected String contents;
    protected String commentContents;
-   protected Date createDate;
+   protected String createDate;
    protected Date cmtCreateDate;
    protected int viewCount;
    protected String memberName;
@@ -85,13 +85,14 @@ public class Qna implements Serializable {
    public void setCommentContents(String commentContents) {
      this.commentContents = commentContents;
    }
-   public Date getCreateDate() {
-     return createDate;
-   }
-   public void setCreateDate(Date createDate) {
-     this.createDate = createDate;
-   }
-   public Date getCmtCreateDate() {
+   
+   public String getCreateDate() {
+    return createDate;
+  }
+  public void setCreateDate(String createDate) {
+    this.createDate = createDate;
+  }
+  public Date getCmtCreateDate() {
      return cmtCreateDate;
    }
    public void setCmtCreateDate(Date cmtCreateDate) {

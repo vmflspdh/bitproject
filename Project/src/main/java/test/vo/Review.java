@@ -8,28 +8,20 @@ package test.vo;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class Review implements Serializable {
   private static final long serialVersionUID = 1L;
-  
+  static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
   protected int reviewboardno;
   protected int travelno;
   protected int memberno;
   protected String membername;
   protected String title ;
   protected String content;
-  protected Date createdDate;
+  protected String createdDate;
   protected int viewcount;
   protected int commentCount;
-  
-  
-  
-  public int getCommentCount() {
-    return commentCount;
-  }
-  public void setCommentCount(int commentCount) {
-    this.commentCount = commentCount;
-  }
   public int getReviewboardno() {
     return reviewboardno;
   }
@@ -48,7 +40,6 @@ public class Review implements Serializable {
   public void setMemberno(int memberno) {
     this.memberno = memberno;
   }
-  
   public String getMembername() {
     return membername;
   }
@@ -67,10 +58,10 @@ public class Review implements Serializable {
   public void setContent(String content) {
     this.content = content;
   }
-  public Date getCreatedDate() {
+  public String getCreatedDate() {
     return createdDate;
   }
-  public void setCreatedDate(Date createdDate) {
+  public void setCreatedDate(String createdDate) {
     this.createdDate = createdDate;
   }
   public int getViewcount() {
@@ -79,13 +70,12 @@ public class Review implements Serializable {
   public void setViewcount(int viewcount) {
     this.viewcount = viewcount;
   }
-  @Override
-  public String toString() {
-    return "Review [reviewboardno=" + reviewboardno + ", travelno=" + travelno + ", memberno=" + memberno
-        + ", membername=" + membername + ", title=" + title + ", content=" + content + ", createdDate=" + createdDate
-        + ", viewcount=" + viewcount + ", commentCount=" + commentCount + "]";
+  public int getCommentCount() {
+    return commentCount;
   }
- 
+  public void setCommentCount(int commentCount) {
+    this.commentCount = commentCount;
+  }
   
   
   

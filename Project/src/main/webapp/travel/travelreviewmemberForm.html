@@ -42,6 +42,25 @@
 
 
 <style>
+
+#requestCountAll {
+  z-index: 1500000;
+  position: absolute;
+  right: 46px;
+  top: 18px;
+  text-decoration: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  background: #F361A6;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 0;
+  
+} 
 body {
 background: #F0F0F0
 }
@@ -121,7 +140,7 @@ color : #ff545c;
       <div class='zeta-menu-bar my-login'>
         <ul class="zeta-menu">
           <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-              class="mainImg my-login"></a>
+              class="mainImg my-login"></a><a id="requestCountAll"></a>
             <ul>
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
