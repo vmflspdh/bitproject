@@ -66,7 +66,48 @@
 <script src="http://vjs.zencdn.net/c/video.js"></script>
 
 
+<<<<<<< HEAD
 <style type="text/css">
+=======
+<style>
+
+.thumbnail-wrappper {
+    width: 25%; 
+}
+
+.thumbnail {
+width: 280px;
+    position: relative;
+    padding-top: 100%;  /* 1:1 ratio */
+    overflow: hidden;
+}
+
+.btn-default {
+background-image: none;
+}
+
+.thumbnail .centered  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: translate(50%,50%);
+    -ms-transform: translate(50%,50%);
+    transform: translate(50%,50%);
+}
+
+.thumbnail .centered img {
+    position: absolute;
+    top: 0;
+    left: 0;   
+    max-width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 
 
 
@@ -445,6 +486,116 @@ video {
 </style>
 
 
+<<<<<<< HEAD
+=======
+.modal-header {
+    min-height: 101.43px;
+    padding: 15px;
+    border-bottom: 0px solid #e5e5e5;
+}
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 15px solid black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+ 
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 0px solid #e5e5e5;
+    min-height: 80px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-group-lg>.btn, .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: red;
+    border-color: #2e6da4;
+    
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 0.1em;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+
+.btn-default:focus, .btn-default:hover {
+    background-color: #ff545c;
+    background-position: 0 -15px;
+    color: white;
+    border: 1px solid #ff545c;
+}
+
+.yangborrad {
+     border-radius: 11px;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+</style>
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 
 <script>
 $(document).ready(function(){
@@ -689,7 +840,7 @@ function switchScreen() {
        
       </div>
       
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%; left:25%;">
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%; left:17%;">
       <form class="form-inline" role="search"
         id="searchform">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
@@ -720,7 +871,7 @@ function switchScreen() {
     <!--  <div id="slide_bar" style="border : 1px solid red; height: 53px;  width : 100%;  position :absolute; margin-top: 155px; background-color: rgba(26,21,21,0.95);">
     
     </div> -->
-    <div id="content_1">
+    <div id="content_1" style=" background-color: #f0f0f0">
 
       <div id="t_box" >
     
