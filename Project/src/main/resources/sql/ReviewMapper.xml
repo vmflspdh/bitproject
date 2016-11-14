@@ -38,7 +38,7 @@
   </select>
   
   <select id="detailReviewList" resultMap="reviewMap" parameterType="int">
-    select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,r.cre_dt,r.vw_cnt , count(c.rbno)
+    select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,date_format(r.cre_dt,'%Y-%m-%d') as cre_dt,r.vw_cnt , count(c.rbno)
     from tvl_review_bods r
 	inner join tvl_membs m 
 	on r.mno=m.mno
