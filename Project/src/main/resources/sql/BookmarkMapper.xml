@@ -28,6 +28,11 @@ where tvl_bmk.mno = #{bookmarkMemberNo}
 select count(tmno) from tvl_bmk
 where tmno = #{bookmarkCount}
 </select>
+
+<select id="bookmarkCount2" resultType="int" parameterType="int">
+select count(*) from tvl_bmk
+where mno = #{value}
+</select>
   
 <insert id="insert" parameterType="bookmark" >
   insert into tvl_bmk(tmno, mno)

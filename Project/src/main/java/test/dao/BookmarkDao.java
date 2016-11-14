@@ -10,4 +10,5 @@ public interface BookmarkDao {
 	int delete(Bookmark bookmark) throws Exception;
 	List<Bookmark> viewMyBookmarkList(Map<String,Object> paramMap) throws Exception;
 	List<Bookmark> bookmarkCount(Map<String,Object> paramMap) throws Exception;
+	int bookmarkCount2(int no) throws Exception;
 }
