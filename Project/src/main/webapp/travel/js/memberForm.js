@@ -37,6 +37,7 @@ $("#updateBtn").click(function(event) {
 	formData.append("birthday", $("#bit-birthday").val());
 	formData.append("gender", $("#bit-gender").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
+	console.log($("#bit-name").val())
 	console.log('a')
 /*	var member = {
 			name: $("#name").val(),
