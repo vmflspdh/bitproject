@@ -37,8 +37,7 @@ $("#updateBtn").click(function(event) {
 	formData.append("birthday", $("#bit-birthday").val());
 	formData.append("gender", $("#bit-gender").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
-	
-	
+	console.log('a')
 /*	var member = {
 			name: $("#name").val(),
 			email: $("#email").val(),
@@ -91,6 +90,7 @@ function ajaxLoadMember(no) {
 }
 
 function ajaxUpdateMember(formData) {
+	console.log('b')
 	console.log(formData)
 	
 	$.ajax({

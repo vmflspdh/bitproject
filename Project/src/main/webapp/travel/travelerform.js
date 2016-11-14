@@ -190,13 +190,31 @@ function ajaxLoadTravelMain(no) {
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
 		$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
-
+		regPhoto(result.data.memberNo)
 		favorChecked(result)
 		scheduleList();
 		calendarList();
 		travelMainFilelist();
 	})
 }
+function regPhoto(no){
+	console.log(no)
+	$.getJSON(serverAddr + "/travel/regUserPhoto.json", {no:no}, function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			console.log(result.state)
+			alert("삭제 실패 입니다.")
+			return
+		}
+		
+		$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);
+
+//		location.href = "mainhtml.html"
+	})
+	
+}
+
+
 
 function ajaxUpdateTravelMain(formData) {
 
