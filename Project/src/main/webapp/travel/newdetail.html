@@ -188,12 +188,14 @@ function switchScreen() {
     document.getElementById("divLoading").style.display = "none";
     document.getElementById("divBody").style.display = "";
 }
+
 </script>
 <body onload="switchScreen();">
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
 <div id="divBody" style="display:none;">
+
   <!-- 상단메뉴시작 -->
   <!-- Start of container2 -->
   <div class="container">
@@ -334,7 +336,8 @@ function switchScreen() {
 
     </div>
     <hr>
-
+   
+	
     <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
       style="width: 90%; height: 100%; margin: 0 auto;">
       <h2 class="w3-text-grey w3-padding-16">
@@ -530,7 +533,6 @@ function switchScreen() {
         </div>
       </div>
     </div>
-  </div>
   <!-- End of Registration Form-->
   </div>
   <script
@@ -584,6 +586,6 @@ class="form-control bit-longitude">
 {{/each}}
 </script>
   <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-
+	 </div>
 </body>
 </html>
