@@ -66,6 +66,7 @@
 <script src="http://vjs.zencdn.net/c/video.js"></script>
 
 
+
 <style>
 
 .thumbnail-wrappper {
@@ -77,6 +78,10 @@ width: 280px;
     position: relative;
     padding-top: 100%;  /* 1:1 ratio */
     overflow: hidden;
+}
+
+.btn-default {
+background-image: none;
 }
 
 .thumbnail .centered  {
@@ -100,6 +105,7 @@ width: 280px;
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
+
 
 
 
@@ -219,7 +225,7 @@ div.changallery ul li img:hover {
     margin: 0;
     padding: 0;
   }
-}
+
 .cycle-overlay {
   background: black;
   color: white;
@@ -238,6 +244,9 @@ div.changallery ul li img:hover {
 #contents.container{background:#fff}
 #container2{position:relative;max-width:1920px;margin:0 auto;z-index:5}
 #container2.visual_content{padding-top:400px}
+#content{
+  text-align: center;
+}
 .dsyColor>dl {
   color: green;
 }
@@ -257,7 +266,9 @@ div.changallery ul li img:hover {
   position: relative;
   height: 80px;
 }
-
+body {
+  font-family: nanum;
+}
 .wrap {
   width: 1092px;
   margin: 0 auto;
@@ -275,6 +286,7 @@ div.changallery ul li img:hover {
   cursor: pointer;
   padding-right: 30px;
 }
+
 .zeta-menu .mainImg {
       margin-top: 20px;
     border: 3px solid white;
@@ -469,19 +481,10 @@ video {
     position: relative;
     margin-bottom: 20px;
     }
-#title_txt>a {
-color : white;
-}
-#title_txt>a:hover {
-text-decoration: none;
-color : black;
-
-}   
-#title_txt>a:visit{
-
-}
-
 </style>
+
+
+
 
 <style>
 .modal-content {
@@ -537,7 +540,7 @@ button.close {
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
- 
+
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -587,16 +590,17 @@ button.close {
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
+    
 }
-.yangborrad {
-     border-radius: 11px;
+.yang{
+border-radius: 11px;
 }
-
 button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
 }
+logincss.css
 </style>
 
 <script>
@@ -682,7 +686,7 @@ function switchScreen() {
       <div style="height: 0px;">
         <img src='img/passport.png'>
          <!--  style="float: left; width: 55px; height: 55px;     margin-right: 30px; -->">
-        <h1 id="title_txt"><a  href="n_mainTest.html">WE TRIP</a></h1>
+        <h1>WE TRIP</h1>
       </div>
       <nav id="menu_nav">
         <a href="#" id="travelerPage">Traveler</a> <a href="#"
@@ -696,7 +700,78 @@ function switchScreen() {
   <!-- center  ---->
 
   <div class="main"></div>
- <!-- Start of Login form -->
+  <!-- Start of container2 -->
+  <div class="container">
+    <div class="upper">
+      <div class='zeta-menu-bar my-login'>
+        <ul class="zeta-menu">
+          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+              class="mainImg my-login"></a>
+            <ul>
+              <li><a href="#" id="myInfo"><img
+                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+                  INFO</a> <!-- <ul>
+                  <li><a href="#2B1">2-B-1 메뉴</a></li>
+                  <li><a href="#2B2">2-B-2 메뉴</a></li>
+                </ul> --></li>
+              <li><a href="#" id="travelerMessage"><img
+                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+              </li>
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
+                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+              <li><a id="logoutBtn" href='#' ><img
+                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+              </li>
+            </ul></li>
+        </ul>
+      </div>
+
+      <div id="fadeandscale" class="well">
+        <h4>동행요청</h4>
+        <h5></h5>
+        <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+                  <button value="vcxc">수락</button><button value="sdfds">거절</button>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre> -->
+        <button style="float: right;"
+          class="fadeandscale_close btn btn-default">Close</button>
+      </div>
+
+     
+      <div
+        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+        <a href='#' class="btn btn-default btn-sm my-logout"
+          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+          class="btn btn-default btn-sm my-logout" data-toggle="modal"
+          data-target="#myModal">SIGN IN</a>
+      </div>
+    </div>
+  </div>
+  <div class="cbp-af-header">
+    <div class="cbp-af-inner">
+      <div style="height: 0px;">
+        <img src='img/passport.png'>
+         <!--  style="float: left; width: 55px; height: 55px;     margin-right: 30px; -->">
+        <h1>WE TRIP</h1>
+      </div>
+      <nav id="menu_nav">
+        <a href="#" id="travelerPage">Traveler</a> <a href="#"
+          id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
+          href="#">.</a>
+      </nav>
+    </div>
+  </div>
+
+  <!--  test test -->
+  <!-- center  ---->
+
+  <div class="main"></div>
+  <!-- Start of Login form -->
   <div class="modal fade"
     style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
     id="myModal1" tabindex="-1" role="dialog"
@@ -720,14 +795,14 @@ function switchScreen() {
         <div class="modal-body">
           <div class="wrapper">
             <form class="form-signin">
-              <input type="text" class="yangborrad form-control" id="email"
+              <input type="text" class="form-control yang" id="email"
                 placeholder="이메일" required="" autofocus="" /></br> <input
-                type="password" id="password" class="yangborrad form-control"
+                type="password" id="password" class="form-control yang"
                 placeholder="비밀번호" required="" /> <label class="checkbox">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
                 id="saveEmail"> 이메일저장
               </label>
-              <button id="loginBtn" class="btn btn-lg btn-primary btn-block "
+              <button id="loginBtn" class=" btn btn-lg btn-primary btn-block "
                 type="button">로그인</button>
             </form>
             <br>
@@ -773,14 +848,14 @@ function switchScreen() {
 
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
-                <input type="text" class="yangborrad form-control" id="name"
+                <input type="text" class="form-control" id="name"
                   placeholder="정유라"><br />
               </div>
 
 
               <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
-                <input type="text" class="yangborrad form-control" id="email"
+                <input type="text" class="form-control" id="email"
                   placeholder="yura@gmail.com"><br />
               </div>
 
@@ -788,7 +863,7 @@ function switchScreen() {
 
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
-                <input type="password" id="password" class="yangborrad form-control"
+                <input type="password" id="password" class="form-control"
                   placeholder="*******"><br />
               </div>
 
@@ -796,14 +871,14 @@ function switchScreen() {
 
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
-                <input type="text" id="birthday" class="yangborrad form-control"
+                <input type="text" id="birthday" class="form-control"
                   placeholder="1997-05-11"><br />
               </div>
 
 
               <label for="gender" class="col-sm-2 control-label">성별</label>
               <div class="col-sm-10">
-                <select class="yangborrad form-control" id="gender">
+                <select class="form-control" id="gender">
                   <option value="1">여자</option>
                   <option value="0">남자</option>
                 </select> <br>
@@ -813,7 +888,7 @@ function switchScreen() {
                       type="checkbox" value="remember-me" id="rememberMe"
                       name="rememberMe"> 약관동의
                     </label> -->
-              <button id="signInBtn" class="yangborrad btn btn-lg btn-primary btn-block"
+              <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
                 type="button">회원가입</button>
             </form>
           </div>
@@ -856,7 +931,7 @@ function switchScreen() {
        
       </div>
       
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%; left:25%;">
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%; left:17%;">
       <form class="form-inline" role="search"
         id="searchform">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
@@ -887,7 +962,7 @@ function switchScreen() {
     <!--  <div id="slide_bar" style="border : 1px solid red; height: 53px;  width : 100%;  position :absolute; margin-top: 155px; background-color: rgba(26,21,21,0.95);">
     
     </div> -->
-    <div id="content_1">
+    <div id="content_1" style=" background-color: #f0f0f0">
 
       <div id="t_box" >
     
@@ -1068,5 +1143,6 @@ $(function() {
     src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+    </div>
 </body>
 </html>

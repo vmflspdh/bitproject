@@ -42,11 +42,25 @@
 <style>
 
 body {
-background: #F0F0F0
+/* background: #F0F0F0 */
 }
+
+
+.btn-default {
+background-image: none;
+}
+
+
 
 html, body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
+}
+
+.btn-default:focus, .btn-default:hover {
+    background-color: #ff545c;
+    background-position: 0 -15px;
+    color: white;
+    border: 1px solid #ff545c;
 }
 
 #inviteCount {
@@ -230,9 +244,28 @@ text-align: center;
 width : 80%;
 margin: 0 auto;
 }
+#title_txt>a {
+color : white;
+}
+#title_txt>a:hover {
+text-decoration: none;
+color : #ff545c;
+
+}   
+
 </style>
 </head>
-<body>
+<script type="text/javascript">
+function switchScreen() {
+    document.getElementById("divLoading").style.display = "none";
+    document.getElementById("divBody").style.display = "";
+}
+</script>
+<body onload="switchScreen();">
+<div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
+    <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
+</div>
+<div id="divBody" style="display:none;">
 	<!-- 상단메뉴시작 -->
 	<!-- Start of container2 -->
 	<div class="container">
@@ -295,7 +328,7 @@ margin: 0 auto;
 			<div>
 				<img src='img/passport.png'
 					style="float: left; width: 55px; height: 55px;">
-				<h1>WE TRIP</h1>
+				<h1 id="title_txt"><a  href="n_mainTest.html">WE TRIP</a></h1>
 			</div>
 			<nav id="menu_nav">
 				<a href="#" id="travelerPage">Traveler</a> <a href="#"
@@ -553,5 +586,6 @@ margin: 0 auto;
 		src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
 	<script type='text/javascript'
 		src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+		</div>
 </body>
 </html>
