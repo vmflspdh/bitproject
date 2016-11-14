@@ -46,6 +46,13 @@
 		limit #{startIndex}, #{length}
 	</select>
 	
+	<select id="regUserPhoto" resultMap="memberMap" parameterType="int">
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from tvl_membs
+		where mno=#{value}
+	</select>
+	
  <select id="checkEmail" resultMap="memberMap" parameterType="String">
     select email from tvl_membs
     where email = #{value}

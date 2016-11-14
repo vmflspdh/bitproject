@@ -105,6 +105,21 @@ public class AuthController {
       return JsonResult.error(e.getMessage());
     }  
   }
+  
+  @RequestMapping(path="regUserPhoto")
+  public Object regUserPhoto(int no,HttpSession session) throws Exception {
+    
+    
+    
+    try {
+      
+      System.out.println(no);
+      Member member=memberDao.regUserPhoto(no);
+      return JsonResult.success(member);
+    } catch (Exception e) {
+      return JsonResult.error(e.getMessage());
+    }  
+  }
 
 }
 

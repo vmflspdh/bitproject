@@ -23,6 +23,8 @@ public interface MemberDao {
   
   Member checkEmail(String email) throws Exception;
   
+  Member regUserPhoto(int no) throws Exception;
+  
 }
 
 
