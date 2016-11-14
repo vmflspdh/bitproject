@@ -118,6 +118,11 @@ function ajaxLoginUser() {
 
 
 
+
+
+
+
+
 function init() {
 
 	if (document.cookie != "") { 
