@@ -87,6 +87,12 @@ width: 280px;
 background-image: none;
 }
 
+.cbp-af-header {
+
+    height: 80px;
+    
+    }
+
 .thumbnail .centered  {
     position: absolute;
     top: 0;
@@ -600,13 +606,20 @@ button, input, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
-logincss.css
+
+.btn-default:focus, .btn-default:hover {
+    background-color: red;
+    background-position: 0 -15px;
+    color: white;
+    border: 1px solid red;
+}
+
+
 </style>
-<<<<<<< HEAD
+
 
 </head>
-=======
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
+
 
 <script>
 $(document).ready(function(){
@@ -870,7 +883,7 @@ function switchScreen() {
        
       </div>
       
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%; left:17%;">
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;     left: 20%;">
       <form class="form-inline" role="search"
         id="searchform">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
