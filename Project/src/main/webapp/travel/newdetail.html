@@ -42,7 +42,7 @@
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
 <script src='lib/jquery.min.js'></script>
 <script src='lib/moment.min.js'></script>
-<script src='fullcalendar/fullcalendar.js'></script>
+
 <!-- 달력 관련 -->
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -183,17 +183,17 @@ color : #ff545c;
 
 </style>
 </head>
+
+<body>
+
 <script>
 function switchScreen() {
     document.getElementById("divLoading").style.display = "none";
     document.getElementById("divBody").style.display = "";
 }
 </script>
-<body onload="switchScreen();">
-<div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
-    <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
-</div>
-<div id="divBody" style="display:none;">
+
+<body>
   <!-- 상단메뉴시작 -->
   <!-- Start of container2 -->
   <div class="container">
@@ -271,6 +271,8 @@ function switchScreen() {
       <br> <br>
       <hr>
     </div>
+    
+    
     <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
       style="width: 90%; height: 100%; margin: 0 auto;">
 
@@ -362,6 +364,8 @@ function switchScreen() {
     </div>
     <hr>
   </div>
+  
+
 
   <div
     style="text-align: center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px; margin: 0 auto; color: #736378;">
@@ -375,6 +379,9 @@ function switchScreen() {
     <table id="newReviewTable" style="margin: 0 auto;">
     </table>
   </div>
+  
+  
+
   
     <div id="footer" style="background-color: #F2F2F2; ">
 <hr>
@@ -426,6 +433,7 @@ function switchScreen() {
     </div>
   </div>
   <!-- End of message form -->
+  
 
   <!-- Start of Login form -->
   <div class="modal fade"
@@ -532,7 +540,7 @@ function switchScreen() {
     </div>
   </div>
   <!-- End of Registration Form-->
-  </div>
+
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
     async defer></script>
@@ -555,6 +563,7 @@ function switchScreen() {
   <script type="text/javascript" src="travelerdetail.js"></script>
   <script type="text/javascript" src="message.js"></script>
   <script type="text/javascript" src="bookmark.js"></script>
+  <script src='fullcalendar/fullcalendar.js'></script>
   <script>
     init() // 화면을 준비시킨다
     ajaxLoginUser() // 로그인 유저 정보 가져오기
@@ -584,6 +593,5 @@ class="form-control bit-longitude">
 {{/each}}
 </script>
   <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-
 </body>
 </html>

@@ -13,6 +13,8 @@ function ajaxCommentCount(){
 
 var pageNo = 1, /* window.pageNo */
 pageLength = 10; /* window.pageLength */
+
+
 function ajaxBoardList() {
 	console.log(pageNo)
 	$.getJSON("rvlist.json", {
