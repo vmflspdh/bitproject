@@ -45,9 +45,9 @@ function ajaxBoardList() {
 			'</div></a>' +
 			'</div>' +
 			'</td>' +
-			'<td style="width:110px;color: #BBBABC;">' +
-			'<div style="font-size: medium; font-weight: normal;">' + arr[i].createdDate + '</div>' +
-			'<div style="font-size: medium; font-weight: normal;">' +
+			'<td style="width:110px;color: #585858;">' +
+			'<div style="font-size: small; font-weight: normal;">' + arr[i].createdDate + '</div>' +
+			'<div style="font-size: small; font-weight: normal;">' +
 			'<span style="float: right;">&nbsp; &nbsp;</span>' +
 			'<span style="float: right;">' + arr[i].viewcount + '</span>' +
 			'<span style="float: right;">조회수 :&nbsp;</span>' +

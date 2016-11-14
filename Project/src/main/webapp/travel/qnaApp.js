@@ -16,9 +16,9 @@ function ajaxQnaBoardList() {
 	    var arr = result.data
 	    for (var i in arr) {
 	             contents += 
-	            	 '<tr style="border:0px solid black; border-bottom:1px solid #DDDDDD; font-size: small;">' +
+	            	 '<tr style="border:0px solid black; border-bottom:1px solid #DDDDDD; font-size: 15px;">' +
 	            	 '<td style="width:10%; padding:10px;"><center>' + arr[i].qno + '</center></td>' +
-	            	 '<td style="width:55%; padding:10px;"><a href="#" class="titleLink" data-qno="' + arr[i].qno + '" style="color:black;">' + arr[i].title + '</a><span>  </span><span style="color:#FF7C4E">'+ (arr[i].commentCount==0?"":"["+arr[i].commentCount+"]") +'</span></td>' +
+	            	 '<td style="width:55%; padding:10px;  padding:20px; text-align: left;"><a href="#" class="titleLink" data-qno="' + arr[i].qno + '" style="color:black;">' + arr[i].title + '</a><span>  </span><span style="color:#FF7C4E">'+ (arr[i].commentCount==0?"":"["+arr[i].commentCount+"]") +'</span></td>' +
 	            	 '<td style="width:10%; padding:10px;"><center>' + arr[i].memberName + '</center></td>' +
 	            	 '<td style="width:15%; padding:10px;"><center>' + arr[i].createDate + '</center></td>' +
 	            	 '<td style="width:10%; padding:10px;"><center>' + arr[i].viewCount + '</center></td>' +

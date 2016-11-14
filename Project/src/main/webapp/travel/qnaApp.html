@@ -103,7 +103,7 @@ background-image: none;
 
 #yang ul li {
   display: inline;
-  font: bold 13px Dotum;
+  font: bold 13px;
   padding: 0 10px;
 }
 ol, ul, li {
@@ -128,35 +128,41 @@ ol, ul, li {
 
 .obj {}
 
-.page_title{position:absolute;top:385px;left:0;width:100%;text-align:center}
-.page_sub_title{font-size:18px;color:#847469;font-weight:400}
+#footer{position:relative;max-width:1920px;margin:0 auto;padding:100px 0;background:#fff;z-index:0}
+#footer h2{}
+#footer address{line-height:22px;color:#888;word-break:keep-all;padding:0 10px;padding-top:18px}
+#footer address span{display:inline-block;zoom:1;*display:inline}
+#footer .btn_sns{margin-top:18px}
+#footer .btn_sns a{margin:0 3px}
+#footer #content table tbody tr td{
 
-
-
-/* ------------------------------------------------------------------------------------ */
-
-/* disable CSS transitions for containers with infinite scrolling*/
-.isotope.infinite-scrolling {
-  -webkit-transition: none;
-     -moz-transition: none;
-      -ms-transition: none;
-       -o-transition: none;
-          transition: none;
 }
 
+footer{
+text-align: center;
+}
+
+#footer.main{background:#000}
+
+#contents.container{background:#fff}
 /* conteinar */
 #container2{position:relative;max-width:1920px;margin:0 auto;z-index:5}
 #container2.visual_content{padding-top:400px}
 
 #contents{margin:0 auto;padding:50px 0;background:#fff}
 
+#content {
+width : 50%;
+margin: 0 auto;
+}
+#title_txt>a {
+color : white;
+}
+#title_txt>a:hover {
+text-decoration: none;
+color : #ff545c;
 
-
-/* footer */
-
-</style>
-
-<style>
+}   
 #question {
 border : 3px solid red;
 }
@@ -165,7 +171,6 @@ border : 3px solid red;
 <style>
 
 #footer {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 12px;
     line-height: 1;
   
@@ -409,31 +414,27 @@ function switchScreen() {
     <p><img style="width: 300px; height: auto;" src="img/qnaTitle.png" alt="궁금"/></p>
   </div>
 
+    <footer id="footer" class="">
+      <div id="content">
+        <p
+          style="font-size: 30px; float: left; margin-top: -70px; padding-left: 20px;">Q&A게시판</p>
 
-<div style="background-color: white;">
-<hr>
-
-<!-- 게시판 시작 -->
-<div style="width: 800px;; margin: 0 auto;">
-<div style="border: 1px solid red; width:100%; background-color: red; padding:5px 5px 5px 10px; font-weight:bold; border-radius: 5px 5px 5px 5px; color:white; font-size: x-large;">
-  QnA 게시판
-</div>
-<br>
+        <p>
 <table style="width: 100%; border:0px solid black;">
   <tr>
     <td style="width:10%; border:0px solid black;">
-    <button type="button" onclick="window.location.href='qnaForm.html'" class="btn btn-default btn-xs">새 글</button></td>
+    <button type="button" onclick="window.location.href='qnaForm.html'" class="btn btn-default">새 글</button></td>
     <td style="width: 60%"></td>
-    <td style="width: 30%; border:0px solid black;"><span><input type="text" name="search" value="" placeholder="검색" style=" border:3 solid #a10200; width:200; height:28;  font-size:15px;padding-right:0px; font-weight:bold; vertical-align:middle;"></span>
+    <td style="width: 30%; border:0px solid black;"><span><input type="text" name="search" value="" placeholder="검색" style=" border:3 solid #a10200; width:200; height:28;  font-size:px; padding-right:0px; font-weight:bold; vertical-align:middle;"></span>
     <span style="float: right;"><input type="image" src="img/Search-icon2.png"></span></td>
     <!-- <td style="width: 2%;"></td> -->
     <!-- <td style="width: 5%; border:0px solid black;"><input type="image" src="img/Search-icon2.png"></td> -->
     <!-- <button type="button" class="btn btn-default btn-xs" style="height:28;">검색</button> -->
   </tr>
 </table>
-<table class="qnalisttable" style="width: 100%; border:0px solid black; border-top: 5px solid gray; border-bottom:2px solid gray; ">
+<table class="qnalisttable" style="width: 100%; border:0px solid black; border-top: 5px solid gray; border-bottom:2px solid gray; font-size: 15px;">
   <thead>
-  <tr style="border:0px solid black; border-bottom:1px solid #DDDDDD; font-size: small; font-weight: bold; color:black; background-color: F5F5F5;">
+  <tr style="border:0px solid black; border-bottom:1px solid #DDDDDD; font-size: medium; font-weight: bold; color:black; background-color: F5F5F5;">
     <td style="width:10%; padding:10px;border-right: 1px solid #DDDDDD; "><center>번호</center></td>
     <td style="width:55%; padding:10px; border-right: 1px solid #DDDDDD;"><center>제목</center></td>
     <td style="width:10%; padding:10px; border-right: 1px solid #DDDDDD;"><center>이름</center></td>
@@ -444,31 +445,42 @@ function switchScreen() {
   <tbody>
   </tbody>
 </table>
-<div style="width:100%; border:0px solid black; display: inline-block;">
-<center><ul class="pagination pagination-sm" id="asd" style="padding:0;">
-</ul></center>
-</div>
-</div>
-</div>
-<!-- 게시판 끝 -->
-
-<div id="footer" style="background-color: #F2F2F2; ">
-<hr>
-<div style="width: 65%; margin: 0 auto; text-align: center;">
-<h2><img src="logo.png" alt="로고파일자리" width="96"/></h2>
-<address>
-<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
-<span>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
-<span>COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
-</address>
-<div class="btn_sns">
-<a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기" target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기" width="36"/></a>
-<!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
-<a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
-</div></div><br><br><br></div>
 
 
-</section>
+<ul class="pagination pagination-sm" id="asd" style="padding:0;">
+        </ul>
+      </div>
+        <p><img style="margin:0 auto"  src="logo.png" alt="로고파일자리" width="96" /></p>
+      <address>
+        <span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은
+          회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br> <span>사업자등록번호 :
+          (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL
+          : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의
+          : java85@bit.com</span> <br> <span>COPYRIGHT© 2016 GD2723. ALL
+          RIGHTS RESERVED.</span>
+      </address>
+      <div class="btn_sns">
+        <a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기"
+          target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기"
+          width="36" /></a>
+        <!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+    <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
+      </div>
+    </footer>
+    <!-- //container2 -->
+
+    <!-- BODY -->
+    <!-- BOTTOM -->
+
+
+    <div></div>
+
+    <!-- footer -->
+
+    <!-- //footer -->
+    <!-- BOTTOM -->
+  </section>
+
 
 
 
