@@ -866,16 +866,18 @@ function switchScreen() {
   <div class="plan_header" >
     <!-- <div class="wrap" style="border : 1px solid green;">
       <div class="p_header_title" style="border : 1px solid green;">
-      <h1 style="color: black;">홈페이지 헤더라인 </h1>
+      <h1 style="color: black;">홈페이지 헤더라인2 </h1>
       </div>
     </div> -->
-     <video style="width: 100%; height: 102%;
-    border: 1px solid red; /* position: absolute !important; */" width="1081" height="475" class="video-js vjs-default-skin" data-setup="{}"
+    <div style="position: relative; border: 2px solid blue; width: 100%; height: 475px; z-index: 0; overflow: hidden;">
+      <video style="position: absolute; width: 100%;
+    max-width: 100%; height: 102%;
+    border: 1px solid red; /* position: absolute !important; */" data-setup="{}"
  autoplay loop  >
-    <source src="mainfull.mp4" type="video/mp4" />
+        <source src="mainfull.mp4" type="video/mp4" />
     
-</video> 
-
+      </video> 
+    </div>
 <div class="my-login" id="log-txt">
          <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
     font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
