@@ -435,6 +435,7 @@ video {
   font-size: 50px;
   width: 100%;
   text-align: center;
+      z-index: 2000;
 }
 .form-inline .form-control {
  display: inline; 
@@ -472,12 +473,12 @@ video {
 }
     
 #travelerRegForm {
-      margin-left: 15%;
-    margin-top: 22px;
+   margin-left: 9%;
+    
     font-size: 24px;
     color: white;
     position: relative;
-    margin-bottom: 20px;
+
     }
 </style>
 <style>
@@ -822,6 +823,16 @@ function switchScreen() {
     <div class="wrap"></div>
   </div>
   <div class="plan_header" >
+  
+<div class="my-login" id="log-txt">
+         <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
+    font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
+          <a href="#" class="my-login" id="travelerRegForm" >님 동행을 찾아보세요!</a>
+       
+      </div>
+    <!--   <div style="background-color: red; height : 100% "> 
+      </div> -->
+      
     <!-- <div class="wrap" style="border : 1px solid green;">
       <div class="p_header_title" style="border : 1px solid green;">
       <h1 style="color: black;">홈페이지 헤더라인2 </h1>
@@ -838,12 +849,6 @@ function switchScreen() {
 
 
 
-<div class="my-login" id="log-txt">
-         <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
-    font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
-          <a href="#" class="my-login" id="travelerRegForm" >님 동행을 찾아보세요!</a>
-       
-      </div>
       
           <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;left: 27%;">
       <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
