@@ -645,6 +645,7 @@ function showCalendar() {
 
 		console.log(calendarDetailList)
 		$("#calendar").fullCalendar({
+			height: 'auto',
 			navLinks: false,
 			selectable: false,
 			selectHelper: false,
@@ -666,6 +667,8 @@ function showCalendar() {
 			editable: false,
 			events: calendarDetailList
 		})
+		
+		$('#calendar').fullCalendar('gotoDate', calendarDetailList[0].start);
 	})
 }
 
