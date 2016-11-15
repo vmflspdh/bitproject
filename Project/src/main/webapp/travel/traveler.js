@@ -43,8 +43,13 @@ function ajaxRegistFormList() {
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
-	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">' +
-	    		'<img src="../upload/' + arr[i].myPhoto + '"></div>' +
+	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">'
+	    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
+	    		} else {
+	    			contents += '<img src="../upload/' + arr[i].myPhoto + '"></div>'
+	    		}
+	    	contents +=
 	    		'<div style="padding:5px; font-weight: bold; color:black;">' + arr[i].writer + '</div>' +
 	    		'<div style="padding:0px 5px 0px 5px; font-size: small;">' +
 	    		'<span><img src="img/worldwide.png" style="width: 15px; height: 15px;"></span>' +
@@ -93,8 +98,13 @@ function ajaxSearchList(registForm) {
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
-	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">' +
-	    		'<img src="../upload/' + arr[i].myPhoto + '"></div>' +
+	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">'
+	    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
+	    		} else {
+	    			contents += '<img src="../upload/' + arr[i].myPhoto + '"></div>'
+	    		}
+	    	contents +=
 	    		'<div style="padding:5px; font-weight: bold; color:black;">' + arr[i].writer + '</div>' +
 	    		'<div style="padding:0px 5px 0px 5px; font-size: small;">' +
 	    		'<span><img src="img/worldwide.png" style="width: 15px; height: 15px;"></span>' +
