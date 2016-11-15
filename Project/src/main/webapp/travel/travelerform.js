@@ -1,8 +1,8 @@
 $(".reviewBtn").click (function(event){
 	alert(no)
-	
-		
-	
+
+
+
 	window.location.href = "travelreviewForm.html";
 });
 
@@ -10,7 +10,7 @@ var calendarDetailList = [];
 
 $(document.body).on('click', '.selectDelBtn', function(event) {
 	var clickedRow = $(this).parent();
-	
+
 	clickedRow.remove();
 
 });
@@ -206,12 +206,12 @@ function regPhoto(no){
 			alert("삭제 실패 입니다.")
 			return
 		}
-		
+
 		$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);
 
 //		location.href = "mainhtml.html"
 	})
-	
+
 }
 
 
@@ -265,7 +265,7 @@ function scheduleList() {
 		console.log(arr[0].travelMainNo)
 		$("#tmno").val(arr[0].travelMainNo)
 
-		
+
 		var template = Handlebars.compile($('#trTemplateText').html())
 		$("#selectTable .root-select").html(template(result))
 
@@ -296,7 +296,7 @@ function travelMainFilelist() {
 			console.log(arr[i].fileName)
 			$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
 			$('#reviewThumbImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
-			
+
 		}
 
 		$("#selectTable .fileList .innerFileList").html(contents)
@@ -458,9 +458,9 @@ function ajaxUpdateViewCount(no){
 			return;
 		}
 		//console.log(review)
-		
+
 	},"json")
-	
+
 }
 function initMap(result) {
 
@@ -473,7 +473,7 @@ function initMap(result) {
 			lng: parseFloat(tag.find('.bit-longitude').val())
 		}
 	});
-	
+
 	console.log(flightPlanCoordinates)
 
 
@@ -483,13 +483,13 @@ function initMap(result) {
 		mapTypeControl: false
 	});
 
-	
+
 	bounds = new google.maps.LatLngBounds();
 	for (var i=0; i < flightPlanCoordinates.length; i++) {
 		bounds.extend(flightPlanCoordinates[i]);
 	}
 	map.fitBounds(bounds);
-	
+
 
 
 	/*	$.each(flightPlanCoordinates, function(key, value){
@@ -541,14 +541,14 @@ function initMap(result) {
 	autocomplete.bindTo('bounds', map);
 
 	var infowindow = new google.maps.InfoWindow();
-	  var marker = new google.maps.Marker({
-	    map: map,
-	    anchorPoint: new google.maps.Point(0, -29)
-	  });
-	
+	var marker = new google.maps.Marker({
+		map: map,
+		anchorPoint: new google.maps.Point(0, -29)
+	});
+
 	autocomplete.addListener('place_changed', function() {
-			infowindow.close();
-			marker.setVisible(false);
+		infowindow.close();
+		marker.setVisible(false);
 		var place = autocomplete.getPlace();
 		if (!place.geometry) {
 			window.alert("Autocomplete's returned place contains no geometry");
@@ -559,19 +559,19 @@ function initMap(result) {
 		if (place.geometry.viewport) {
 			map.fitBounds(place.geometry.viewport);
 		} else {
-				map.setCenter(place.geometry.location);
-				map.setZoom(5); 
+			map.setCenter(place.geometry.location);
+			map.setZoom(5); 
 		}
 
 		marker.setIcon(/** @type {google.maps.Icon} */({
-	      url: place.icon,
-	      size: new google.maps.Size(71, 71),
-	      origin: new google.maps.Point(0, 0),
-	      anchor: new google.maps.Point(17, 34),
-	      scaledSize: new google.maps.Size(35, 35)
-	    }));
-	    marker.setPosition(place.geometry.location);
-	    marker.setVisible(true);
+			url: place.icon,
+			size: new google.maps.Size(71, 71),
+			origin: new google.maps.Point(0, 0),
+			anchor: new google.maps.Point(17, 34),
+			scaledSize: new google.maps.Size(35, 35)
+		}));
+		marker.setPosition(place.geometry.location);
+		marker.setVisible(true);
 
 		var address = '';
 		if (place.address_components) {
@@ -607,13 +607,13 @@ function initMap(result) {
 			console.log(lot)
 		}
 
-/*		   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+		/*		   infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
 	    infowindow.open(map, marker);*/
 
 		setMarkers(map);
 	});
 
-/*	$("#mySchedule").on("shown.bs.modal", function() {
+	/*	$("#mySchedule").on("shown.bs.modal", function() {
 		google.maps.event.trigger(map, "resize");
 	});*/
 
@@ -633,16 +633,16 @@ function calendarList() {
 		}
 		console.log(calendarDetailList)
 		showCalendar();
-		
+
 	})
 }
 
 function showCalendar() {
- 
+
 
 	$(document).ready(function() {
-		
-		
+
+
 		console.log(calendarDetailList)
 		$("#calendar").fullCalendar({
 			navLinks: false,
