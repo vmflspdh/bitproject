@@ -645,6 +645,7 @@ function showCalendar() {
 
 		console.log(calendarDetailList)
 		$("#calendar").fullCalendar({
+			height: 'auto',
 			navLinks: false,
 			selectable: false,
 			selectHelper: false,
