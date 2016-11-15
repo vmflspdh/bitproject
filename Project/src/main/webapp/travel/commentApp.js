@@ -22,7 +22,11 @@ function ajaxAddBoard2(comment){
 		var result = obj.jsonResult
 		console.log(comment)
 		if(result.state !="success"){
-			alert("로그인하고 댓글써.")
+			swal(
+					  '로그인 후 작성해주세요!',
+					  'Something went wrong!',
+					  'error'
+					)
 			return;
 		}
 		location.reload();
@@ -179,7 +183,11 @@ function ajaxCommentUpdate(comment){
 		var result = obj.jsonResult
 		console.log(comment)
 		if(result.state !="success"){
-			alert("로그인하고 댓글써.")
+			swal(
+					  '로그인 후 작성해주세요!',
+					  'Something went wrong!',
+					  'error'
+					)
 			return;
 		}
 		location.reload();
