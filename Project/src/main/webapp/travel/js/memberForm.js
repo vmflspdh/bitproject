@@ -99,7 +99,18 @@ function ajaxLoadMember(no) {
 
 function ajaxUpdateMember(formData) {
 	console.log(formData)
+<<<<<<< HEAD
 
+=======
+	console.log(formData.get("password")=="")
+	if(formData.get("password")==""){
+		swal(
+				  'Please enter your password.',
+				  'Something went wrong!',
+				  'error'
+				)
+	}
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 	$.ajax({
 		url : "update.json",
 		processData : false,
@@ -108,9 +119,21 @@ function ajaxUpdateMember(formData) {
 		type : "POST",
 		success : function(obj) {
 			var result = obj.jsonResult
-			if (result.state != "success") {
+			if(formData.get("password")==""){
+				swal(
+						  'Please enter your Password.',
+						  'Something went wrong!',
+						  'error'
+						)
+						return
+			}
+			else if (result.state != "success") {
 				console.log(result.data)
-				alert("변경 실패입니다.")
+				swal(
+				  '변경 실패.',
+				  'Something went wrong!',
+				  'error'
+				)
 				return
 			}
 			window.location.reload(true)
