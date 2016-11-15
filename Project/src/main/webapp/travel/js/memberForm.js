@@ -21,7 +21,7 @@ $("#signInBtn").click(function(event) {
 		ajaxAddMember(member)
 		alert("등록 성공입니다.")
 	} else {
-	alert("등록 실패입니다.")
+		alert("등록 실패입니다.")
 	}
 });
 
@@ -37,8 +37,8 @@ $("#updateBtn").click(function(event) {
 	formData.append("birthday", $("#bit-birthday").val());
 	formData.append("gender", $("#bit-gender").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
-	
-	
+
+
 	var member = {
 			name: $("#bit-name").val(),
 			email: $("#bit-email").val(),
@@ -48,7 +48,7 @@ $("#updateBtn").click(function(event) {
 			registedDate: $("#registedDate").val(),
 			no: $("#bit-no").val()
 	}
-	
+
 	console.log(member)
 	ajaxUpdateMember(formData)
 });
@@ -86,7 +86,12 @@ function ajaxLoadMember(no) {
 		$("#bit-name").val(result.data.name);
 		$("#bit-email").val(result.data.email);
 		$("#bit-birthday").val(result.data.birthday);
-		$("#bit-gender").val(result.data.gender);
+
+		if (result.data.gender == "1") {
+			$("#bit-gender").val("여");
+		} else {
+			$("#bit-gender").val("남");
+		}
 		$("#bit-registedDate").val(result.data.registedDate);
 		$("#memberPhoto").text(result.data.memberPhoto);
 	})
@@ -94,7 +99,7 @@ function ajaxLoadMember(no) {
 
 function ajaxUpdateMember(formData) {
 	console.log(formData)
-	
+
 	$.ajax({
 		url : "update.json",
 		processData : false,
@@ -112,7 +117,7 @@ function ajaxUpdateMember(formData) {
 		}
 	});
 
-/*	$.post("update.json", member, function(obj) {
+	/*	$.post("update.json", member, function(obj) {
 		var result = obj.jsonResult
 		console.log(member)
 		if (result.state != "success") {
@@ -144,54 +149,54 @@ function ajaxDeleteMember(no, password) {
 
 /*페이스북*/
 function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);
-    if (response.status === 'connected') {
-    	getFacebookInfo();
-    } else if (response.status === 'not_authorized') {
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
-    } else {
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
-    }
-  }
+	console.log('statusChangeCallback');
+	console.log(response);
+	if (response.status === 'connected') {
+		getFacebookInfo();
+	} else if (response.status === 'not_authorized') {
+		document.getElementById('status').innerHTML = 'Please log ' +
+		'into this app.';
+	} else {
+		document.getElementById('status').innerHTML = 'Please log ' +
+		'into Facebook.';
+	}
+}
 
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-  
+function checkLoginState() {
+	FB.getLoginStatus(function(response) {
+		statusChangeCallback(response);
+	});
+}
 
-// Load the SDK asynchronously
+
+//Load the SDK asynchronously
 (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/sdk.js";
+	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-// Here we run a very simple test of the Graph API after login is
-// successful.  See statusChangeCallback() for when this call is made.
+//Here we run a very simple test of the Graph API after login is
+//successful.  See statusChangeCallback() for when this call is made.
 
 
 
 
 function getFacebookInfo() {
-	  FB.api('/me?fields=email,id,name,gender,birthday,picture.width(50).height(50).as(picture_small)', function(response) {
-		  console.log(JSON.stringify(response));
-		  var member = {
-				  name:response.name,
-				  email:response.email,
-				  password:response.id,
-				  gender: (response.gender == 'male' ? 0 : 1),
-				  memberPhoto: response.picture_small.data.url
-		  }
-      console.log(member)
-      ajaxAddFacebookMember(member)
-	 });
+	FB.api('/me?fields=email,id,name,gender,birthday,picture.width(50).height(50).as(picture_small)', function(response) {
+		console.log(JSON.stringify(response));
+		var member = {
+				name:response.name,
+				email:response.email,
+				password:response.id,
+				gender: (response.gender == 'male' ? 0 : 1),
+				memberPhoto: response.picture_small.data.url
+		}
+		console.log(member)
+		ajaxAddFacebookMember(member)
+	});
 }
 
 function ajaxAddFacebookMember(member) {
@@ -222,10 +227,10 @@ function ajaxFacebookLogin(member) {
 			}
 			if (self.name != 'reload') {
 				console.log("로그인 실행됨!!!!!")
-		         self.name = 'reload';
-		         self.location.reload(true);
-		     }
-		     else self.name = ''; 
+				self.name = 'reload';
+				self.location.reload(true);
+			}
+			else self.name = ''; 
 		},
 		error: function(msg) {
 			alert(msg)
@@ -255,8 +260,8 @@ function ajaxFacebookLoginUser() {
 		$("#userName3").val(result.data.name)
 		$("#inviteCount").text(result.data.memberRequest)
 		console.log(result.data.memberRequest)
-		
-		
+
+
 
 		$(".mainImg").attr("src",result.data.memberPhoto);
 
