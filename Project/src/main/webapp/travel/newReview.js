@@ -12,7 +12,7 @@ function ajaxCommentCount(){
 }
 
 var pageNo = 1, /* window.pageNo */
-pageLength = 10; /* window.pageLength */
+pageLength = 5; /* window.pageLength */
 function ajaxBoardList() {
 	console.log(pageNo)
 	$.getJSON("rvlist.json", {
@@ -33,7 +33,7 @@ function ajaxBoardList() {
 			contents += 
 			'<tr>' +
 			'<td style="width:100px; height:100px;">' +
-			'<img src="img/yang/travelphoto2.jpg" id="reviewThumbImg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
+			'<img src="" id="reviewThumbImg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
 			'</td>' +
 			'<td style="width:800px;">' +
 			'<div style="height:100px; padding: 10px;">' +

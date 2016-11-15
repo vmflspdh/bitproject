@@ -33,16 +33,11 @@ import test.vo.ReviewPhoto;
 @Controller // 페이지 컨트롤러에 붙이는 애노테이션
 @RequestMapping("/travel/") // 이 페이지 컨트롤러의 기본 URL을 지정한다.
 public class ReviewController {
-  @Autowired
-  ReviewDao reviewDao;
-  @Autowired
-  CommentDao commentDao;
-  @Autowired 
-  ServletContext sc;
-  @Autowired 
-  ReviewPhotoDao reviewPhotoDao;
-  @Autowired 
-  ReviewContentDao reviewContentDao;
+  @Autowired ReviewDao reviewDao;
+  @Autowired CommentDao commentDao;
+  @Autowired ServletContext sc;
+  @Autowired ReviewPhotoDao reviewPhotoDao;
+  @Autowired ReviewContentDao reviewContentDao;
   
   ReviewPhoto reviewPhoto = new ReviewPhoto();
   ReviewContent reviewContent = new ReviewContent();
@@ -53,7 +48,8 @@ public class ReviewController {
   @ResponseBody
   public String list(
       @RequestParam(name = "pageNo", defaultValue = "1") int pageNo,
-      @RequestParam(name = "length", defaultValue = "10") int length) throws Exception {
+      @RequestParam(name = "length", defaultValue = "5") int length,
+      HttpSession session) throws Exception {
     
     HashMap<String, Object> result = new HashMap<>();
     try{
@@ -62,6 +58,7 @@ public class ReviewController {
       map.put("length", length);
       
       List<Review> list = reviewDao.selectList(map);
+/*      session.setAttribute("reviewPostNo", list.get(0).getReviewBoardNo());*/
 //      result.put("totalPage", totalPage);
       
       int countAll = reviewDao.countAll();
@@ -86,6 +83,30 @@ public class ReviewController {
     return new Gson().toJson(result);
     
     
+  }
+  
+  @RequestMapping(path="reviewPhotoList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String reviewPhotoList(HttpSession session) throws Exception {
+    
+       
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      
+      System.out.println(session.getAttribute("reviewPostNo"));
+      reviewContent.setReviewBoardNo((Integer)session.getAttribute("reviewPostNo"));
+      
+      List<ReviewContent> list = reviewContentDao.reviewPhotoList(reviewContent.getReviewBoardNo());
+      
+          
+      result.put("state", "success");
+      result.put("data", list);
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+        
   }
   
   
