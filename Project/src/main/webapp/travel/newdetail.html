@@ -526,7 +526,39 @@ function switchScreen() {
 <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
 </div></div><br><br><br></div>
 
-
+ <!-- Start of message form -->
+  <div class="modal fade"
+    style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
+    id="myMessage" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="z-index: 300000;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+          </button>
+          <h2 class="modal-title" id="myModalLabel">
+            <em>메세지</em>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <div class="wrapper">
+            <form class="form-signin">
+              <textarea class="form-control" id="messageContents" cols="50"
+                rows="3" placeholder="내용을 입력하세요"></textarea>
+              <br>
+              <button id="messageBtn" class="btn btn-lg btn-primary btn-block "
+                type="button">확인</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of message form -->
 
     <!-- Start of Login form -->
   <div class="modal fade"
