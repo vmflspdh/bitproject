@@ -116,6 +116,10 @@ function loadDetailMessageList(no) {
 					'</div><br>'
 				}
 			}
+			if (i > 7) {
+				contents += '<center><div>&hellip;&hellip;</div></center>'
+				break;
+			}
 		}
 		$(".chanchattingList").html(contents)
 		
