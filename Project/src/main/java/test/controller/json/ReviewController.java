@@ -33,16 +33,11 @@ import test.vo.ReviewPhoto;
 @Controller // 페이지 컨트롤러에 붙이는 애노테이션
 @RequestMapping("/travel/") // 이 페이지 컨트롤러의 기본 URL을 지정한다.
 public class ReviewController {
-  @Autowired
-  ReviewDao reviewDao;
-  @Autowired
-  CommentDao commentDao;
-  @Autowired 
-  ServletContext sc;
-  @Autowired 
-  ReviewPhotoDao reviewPhotoDao;
-  @Autowired 
-  ReviewContentDao reviewContentDao;
+  @Autowired ReviewDao reviewDao;
+  @Autowired CommentDao commentDao;
+  @Autowired ServletContext sc;
+  @Autowired ReviewPhotoDao reviewPhotoDao;
+  @Autowired ReviewContentDao reviewContentDao;
   
   ReviewPhoto reviewPhoto = new ReviewPhoto();
   ReviewContent reviewContent = new ReviewContent();
@@ -53,7 +48,7 @@ public class ReviewController {
   @ResponseBody
   public String list(
       @RequestParam(name = "pageNo", defaultValue = "1") int pageNo,
-      @RequestParam(name = "length", defaultValue = "10") int length) throws Exception {
+      @RequestParam(name = "length", defaultValue = "5") int length) throws Exception {
     
     HashMap<String, Object> result = new HashMap<>();
     try{
@@ -88,17 +83,18 @@ public class ReviewController {
     
   }
   
+
   
   
   
   @RequestMapping(path="rvphotoList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String photolist(int no) throws Exception {
-    
+    System.out.println(no);
     HashMap<String, Object> result = new HashMap<>();
     try{
       
-      List<ReviewPhoto> list = reviewPhotoDao.photoList(no);
+      List<ReviewContent> list = reviewContentDao.reviewPhotoList(no);
       
       result.put("state", "success");
       result.put("data", list);

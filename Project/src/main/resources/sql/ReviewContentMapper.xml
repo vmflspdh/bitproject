@@ -17,11 +17,16 @@
   </resultMap>
   
   
-  <select id="selectList" resultMap="reviewContentMap" parameterType="int">
+  <select id="selectOne" resultMap="reviewContentMap" parameterType="int">
     select c.rbcno,c.rbno,c.schno,c.cont,c.rbcpnm,s.st_dt,s.ed_dt,l.cont continent,l.natn,l.city from tvl_review_conts c 
     inner join tvl_sch s on s.schno=c.schno
 	inner join tvl_loc l on s.locno = l.locno
     where c.rbno=#{value}
+  </select>
+  
+   <select id="reviewPhotoList" resultMap="reviewContentMap" parameterType="int">
+    select rbcno, rbcpnm from tvl_review_conts
+    where rbno=#{value}
   </select>
   
   <insert id="insert" parameterType="reviewContent" useGeneratedKeys="true" keyProperty="reviewBoardContentNo" keyColumn="rbcno">

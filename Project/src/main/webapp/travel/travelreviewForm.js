@@ -149,7 +149,7 @@ function ajaxAddBoard(formData) {
 				alert("등록 실패입니다.")
 				return
 			}
-			window.location.href = "travelreviewApp.html";
+			window.location.href = "reviewApp.html";
 		}
 	});
 
