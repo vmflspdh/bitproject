@@ -666,6 +666,8 @@ function showCalendar() {
 			editable: false,
 			events: calendarDetailList
 		})
+		
+		$('#calendar').fullCalendar('gotoDate', calendarDetailList[0].start);
 	})
 }
 
