@@ -12,13 +12,9 @@ function ajaxCommentCount(){
 }
 
 var pageNo = 1, /* window.pageNo */
-<<<<<<< HEAD
 pageLength = 5; /* window.pageLength */
-=======
-pageLength = 10; /* window.pageLength */
 
 
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 function ajaxBoardList() {
 	console.log(pageNo)
 	$.getJSON("rvlist.json", {
