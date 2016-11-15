@@ -48,8 +48,7 @@ public class ReviewController {
   @ResponseBody
   public String list(
       @RequestParam(name = "pageNo", defaultValue = "1") int pageNo,
-      @RequestParam(name = "length", defaultValue = "5") int length,
-      HttpSession session) throws Exception {
+      @RequestParam(name = "length", defaultValue = "5") int length) throws Exception {
     
     HashMap<String, Object> result = new HashMap<>();
     try{
@@ -58,7 +57,6 @@ public class ReviewController {
       map.put("length", length);
       
       List<Review> list = reviewDao.selectList(map);
-/*      session.setAttribute("reviewPostNo", list.get(0).getReviewBoardNo());*/
 //      result.put("totalPage", totalPage);
       
       int countAll = reviewDao.countAll();
@@ -85,41 +83,18 @@ public class ReviewController {
     
   }
   
-  @RequestMapping(path="reviewPhotoList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
-  @ResponseBody
-  public String reviewPhotoList(HttpSession session) throws Exception {
-    
-       
-    HashMap<String, Object> result = new HashMap<>();
-    try{
-      
-      System.out.println(session.getAttribute("reviewPostNo"));
-      reviewContent.setReviewBoardNo((Integer)session.getAttribute("reviewPostNo"));
-      
-      List<ReviewContent> list = reviewContentDao.reviewPhotoList(reviewContent.getReviewBoardNo());
-      
-          
-      result.put("state", "success");
-      result.put("data", list);
-    } catch(Exception e) {
-      result.put("state", "fail");
-      result.put("data", e.getMessage());
-    }
-    return new Gson().toJson(result);
-        
-  }
-  
+
   
   
   
   @RequestMapping(path="rvphotoList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String photolist(int no) throws Exception {
-    
+    System.out.println(no);
     HashMap<String, Object> result = new HashMap<>();
     try{
       
-      List<ReviewPhoto> list = reviewPhotoDao.photoList(no);
+      List<ReviewContent> list = reviewContentDao.reviewPhotoList(no);
       
       result.put("state", "success");
       result.put("data", list);

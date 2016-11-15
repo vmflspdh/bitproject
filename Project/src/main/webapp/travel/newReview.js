@@ -29,11 +29,13 @@ function ajaxBoardList() {
 		var arr = result.data
 		for ( var i in arr) {
 			var b = arr[i].reviewboardno
-			console.log(b)
 			contents += 
-			'<tr>' +
+			'<tr id="reviewList">' +
 			'<td style="width:100px; height:100px;">' +
-			'<img src="" id="reviewThumbImg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">' +
+			'<div class="thumbnail-wrapper">' +
+    	    '<div class="thumbnail">' +
+    	    '<div class="centered">' +
+			'<img id="reviewPhoto'+i+'"src="img/5.jpg"style="  border-radius: 5px 5px 5px 5px;"></div></div></div>' +
 			'</td>' +
 			'<td style="width:800px;">' +
 			'<div style="height:100px; padding: 10px;">' +
@@ -55,9 +57,11 @@ function ajaxBoardList() {
 			'</td>' +
 			'</tr>' +
 			'<tr><td style="height: 30px;"></tr>'
+			aaa(arr[i].reviewboardno,i)
 	}
 	$("#newReviewTable").html(contents);
 		
+	
 		//console.log(contents)
 		
 		// tr 태그를 추가한 후에   제목에 대해 click 리스너를 추가한다.
@@ -132,6 +136,26 @@ function ajaxBoardList() {
 	
 	
 	
+}
+function aaa(no,i){
+	console.log(i)
+	$.getJSON("rvphotoList.json?no="+no,{no:no}, function(result) {
+		if(result.state!="success"){
+			
+			alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			return
+		}
+		var arr = result.data
+		console.log(arr[0].reviewBoardContentPhotoName)
+		contents=""
+				contents+=
+				'<img src="../upload/' +arr[0].reviewBoardContentPhotoName+'" id="reviewThumbImg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">';
+//		console.log($("#reviewPhoto:eq("+i+")"))
+		//$("#reviewPhoto"+i+"").html(contents);
+		$("#reviewPhoto"+i+"").attr("src","../upload/" +arr[0].reviewBoardContentPhotoName);
+		
+		
+		});
 }
 
 function ajaxUpdateViewCount(no){
