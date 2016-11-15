@@ -16,7 +16,14 @@ function ajaxBookmarkList() {
 		var arr = result.data
 		for (var i in arr) {
 			contents +=
-				'<pre class="prettyprint">'+'<img  class="img-circle" src="../upload/'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'+"&nbsp&nbsp;"+
+				'<pre class="prettyprint">'
+	    		if (arr[i].memberPhoto.substring(0,1) == 'h') {
+	    			contents += '<img  class="img-circle" src="'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
+	    		} else {
+	    			contents += '<img  class="img-circle" src="../upload/'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
+	    		}
+			contents +=
+				"&nbsp&nbsp;"+
 				arr[i].memberName+"님의 페이지가 추가되었습니다. &nbsp;"+
 				'<button type="button" data-no="'+arr[i].travelMainNo+'" data-no2="'+arr[i].memberNo+'" class="btn btn-default btn-sm" id="bookmarkdelete" style="float:right;">삭제</button>' +
 				'<button type="button" data-no="'+arr[i].travelMainNo+'"class="btn btn-default btn-sm" id="bookmarkdetail" style="float:right;">상세페이지</button>'
