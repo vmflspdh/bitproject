@@ -67,32 +67,25 @@
 
 
 <style>
-
 html, body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
 }
-
 .thumbnail-wrappper {
     width: 25%; 
 }
-
 .thumbnail {
 width: 280px;
     position: relative;
     padding-top: 100%;  /* 1:1 ratio */
     overflow: hidden;
 }
-
 .btn-default {
 background-image: none;
 }
-
 .cbp-af-header {
-
-    height: 80px;
+       height: 10%;
     
     }
-
 .thumbnail .centered  {
     position: absolute;
     top: 0;
@@ -103,7 +96,6 @@ background-image: none;
     -ms-transform: translate(50%,50%);
     transform: translate(50%,50%);
 }
-
 .thumbnail .centered img {
     position: absolute;
     top: 0;
@@ -114,10 +106,6 @@ background-image: none;
     -ms-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
 }
-
-
-
-
  #requestCountAll {
   z-index: 1500000;
   position: absolute;
@@ -219,6 +207,10 @@ div.changallery ul li img:hover {
   top: 65%;
   left: 65%;
 }
+
+#menu_nav>a {
+color : #1e4147;
+}
 /* Responsive hack */
 @media only screen and (min-width: 499px) and (max-width: 1212px) {
   .chanwrapper {
@@ -235,7 +227,6 @@ div.changallery ul li img:hover {
     margin: 0;
     padding: 0;
   }
-
 .cycle-overlay {
   background: black;
   color: white;
@@ -292,24 +283,22 @@ div.changallery ul li img:hover {
   cursor: pointer;
   padding-right: 30px;
 }
-
 .zeta-menu .mainImg {
       margin-top: 20px;
-    border: 3px solid white;
+    border: 3px solid #ff545c;
 }
 .cbp-af-inner>div>img {
 float: left;
   
 }
 </style>
-
 <style>
 .plan_header {
   width: 100%;
-  height: 475px;
+  height:550px;
   background: url('testmain1.jpg') repeat-x;
   background-position: 0px 0px;
-  background-size: 
+ 
 }
 .p_header_title {
   width: 100%;
@@ -323,17 +312,12 @@ float: left;
   position: relative;
 }
 </style>
-
-
-
-
-
 <style>
 .upper {
- background: #1e4147;
+ background: rgba(238, 231, 231, 0.5);
 }
 .cbp-af-header {
- background: #1e4147;
+ background: rgba(238, 231, 231, 0.5);
 }
 #icon_area>img {
   /* position : absolute; */
@@ -365,7 +349,7 @@ a:hover {
   color : white;
 }
 .cbp-af-header nav {
-   margin-left: 250px;
+       margin-left: 29%;
    position: absolute;
 }
 #t_box {
@@ -407,7 +391,7 @@ width: 24.66%;
  
 #content_1 {
   height: 307px;
-  margin-top: 13.5%;
+  margin-top: 1%;
     
 }
 #t_box:hover>#m_text {
@@ -428,7 +412,11 @@ width: 24.66%;
  
 } 
 .cbp-af-header nav a {
-  margin-right: 10px;
+ margin-right: 4%;
+ }
+ 
+#menu_nav>a:hover {
+ color : #e83338;
  }
 video {
   width: 100%    !important;
@@ -447,7 +435,12 @@ video {
   font-size: 50px;
   width: 100%;
   text-align: center;
+      z-index: 2000;
 }
+.form-inline .form-control {
+ display: inline; 
+}
+
 </style>
 <style>
 #footer {
@@ -480,18 +473,14 @@ video {
 }
     
 #travelerRegForm {
-      margin-left: 15%;
-    margin-top: 22px;
+   margin-left: 9%;
+    
     font-size: 24px;
     color: white;
     position: relative;
-    margin-bottom: 20px;
+
     }
 </style>
-
-
-
-
 <style>
 .modal-content {
     position: relative;
@@ -507,13 +496,11 @@ video {
     -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.6);
     box-shadow: 0 6px 12px rgba(0,0,0,.6);
 }
-
 .modal-header {
     min-height: 101.43px;
     padding: 15px;
     border-bottom: 0px solid #e5e5e5;
 }
-
 button.close {
     -webkit-appearance: none;
     padding: 0;
@@ -524,17 +511,14 @@ button.close {
     width: 30px;
     height: 30px;
 }
-
 .modal-title {
     margin: 0;
     line-height: 1.42857143;
 }
-
 .modal-body {
     position: relative;
     padding: 15px;
 }
-
 .form-control {
     display: block;
     width: 100%;
@@ -546,21 +530,18 @@ button.close {
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
-
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-
 .modal-footer {
     padding: 15px;
     text-align: right;
     border-top: 0px solid #e5e5e5;
     min-height: 80px;
 }
-
 .btn-block {
     display: block;
     width: 100%;
@@ -578,8 +559,10 @@ button.close {
     
 }
 .btn {
-    display: inline-block;
-       padding: 3px 9px;
+   display: inline-block;
+    border: 1px solid #1e4147;
+    color: white;
+    background-color: #1e4147;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: 400;
@@ -594,9 +577,8 @@ button.close {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    
+    background-image: none; 
+
 }
 .yang{
 border-radius: 11px;
@@ -607,20 +589,25 @@ button, input, select, textarea {
     line-height: inherit;
 }
 
-.btn-default:focus, .btn-default:hover {
-    background-color: red;
-    background-position: 0 -15px;
-    color: white;
-    border: 1px solid red;
+
+#logForm>a:hover {
+background-color : #e83338;
+color : white;
+border : 1px solid #e83338;
+
 }
 
+#title_txt>a {
+color : #1e4147;
+}
+#title_txt>a:hover {
+text-decoration: none;
+color : #ff545c;
+
+}   
 
 </style>
-
-
 </head>
-
-
 <script>
 $(document).ready(function(){
   $("#t_box").hover(function(){
@@ -630,7 +617,6 @@ $(document).ready(function(){
   })
 })
 </script>
-
 <!-- 페이지로딩 -->
 <script type="text/javascript">
 function switchScreen() {
@@ -639,7 +625,6 @@ function switchScreen() {
 }
 </script>
 <!-- 페이지로딩 -->
-
 <body onload="switchScreen();">
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
@@ -671,7 +656,6 @@ function switchScreen() {
             </ul></li>
         </ul>
       </div>
-
       <div id="fadeandscale" class="well">
         <h4>동행요청</h4>
         <h5></h5>
@@ -688,10 +672,9 @@ function switchScreen() {
         <button style="float: right;"
           class="fadeandscale_close btn btn-default">Close</button>
       </div>
-
      
-      <div
-        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+      <div id="logForm"
+        style='position: absolute; right: 2%;top: 172%;font-size: 0.15em;'>
         <a href='#' class="btn btn-default btn-sm my-logout"
           data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
           class="btn btn-default btn-sm my-logout" data-toggle="modal"
@@ -699,12 +682,11 @@ function switchScreen() {
       </div>
     </div>
   </div>
-  <div class="cbp-af-header">
+  <div class="cbp-af-header" style="top: 3.2%;">
     <div class="cbp-af-inner">
       <div style="height: 0px;">
-        <img src='img/passport.png'>
-         <!--  style="float: left; width: 55px; height: 55px;     margin-right: 30px; -->
-        <h1>WE TRIP</h1>
+         <img src='img/passport.png' style="float: left; width: 55px; height: 55px;">
+        <h1 id="title_txt"><a  href="n_mainTest.html">WE TRIP</a></h1>
       </div>
       <nav id="menu_nav">
         <a href="#" id="travelerPage">Traveler</a> <a href="#"
@@ -713,15 +695,11 @@ function switchScreen() {
       </nav>
     </div>
   </div>
-
   <!--  test test -->
   <!-- center  ---->
-
   
-
   <!--  test test -->
   <!-- center  ---->
-
   <div class="main"></div>
   <!-- Start of Login form -->
   <div class="modal fade"
@@ -775,13 +753,12 @@ function switchScreen() {
     </div>
   </div>
   <!-- End of Login form -->
-
   <!-- Start of Registration Form-->
   <div class="modal fade" style="z-index: 200000;" id="myModal"
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 360px; z-index: 300000;">
+      style="width: 370px; z-index: 300000;">
       <div class="modal-content ">
         <div class="modal-header">
       <div style="height: 0px; font-size: 34px;
@@ -796,38 +773,26 @@ function switchScreen() {
         <div class="modal-body">
           <div class="wrapper">
             <form class="form-signin">
-
-
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="name"
+                <input type="text" class="form-control yang" id="name"
                   placeholder="정유라"><br />
               </div>
-
-
               <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="email"
+                <input type="text" class="form-control yang" id="email"
                   placeholder="yura@gmail.com"><br />
               </div>
-
-
-
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
-                <input type="password" id="password" class="form-control"
+                <input type="password" id="password" class="form-control yang"
                   placeholder="*******"><br />
               </div>
-
-
-
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control"
+                <input type="text" id="birthday" class="form-control yang"
                   placeholder="1997-05-11"><br />
               </div>
-
-
               <label for="gender" class="col-sm-2 control-label">성별</label>
               <div class="col-sm-10">
                 <select class="form-control" id="gender">
@@ -835,13 +800,12 @@ function switchScreen() {
                   <option value="0">남자</option>
                 </select> <br>
               </div>
-
               <!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
                       type="checkbox" value="remember-me" id="rememberMe"
                       name="rememberMe"> 약관동의
                     </label> -->
               <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
-                type="button">회원가입</button>
+                type="button" onclick="window.location.reload(true)">회원가입</button>
             </form>
           </div>
         </div>
@@ -852,44 +816,48 @@ function switchScreen() {
     </div>
   </div>
   <!-- End of Registration Form-->
-
   <script type="text/javascript" src="/common/js/common.js"></script>
     <script type="text/javascript" src="/common/js/TweenMax.min.js"></script>
     <!-- BODY -->
-
-
 <div id="header">
     <div class="wrap"></div>
-
-
   </div>
   <div class="plan_header" >
-    <!-- <div class="wrap" style="border : 1px solid green;">
-      <div class="p_header_title" style="border : 1px solid green;">
-      <h1 style="color: black;">홈페이지 헤더라인 </h1>
-      </div>
-    </div> -->
-     <video style="width: 100%; height: 102%;
-    border: 1px solid red; /* position: absolute !important; */" width="1081" height="475" class="video-js vjs-default-skin" data-setup="{}"
- autoplay loop  >
-    <source src="mainfull.mp4" type="video/mp4" />
-    
-</video> 
-
+  
 <div class="my-login" id="log-txt">
          <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
     font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
           <a href="#" class="my-login" id="travelerRegForm" >님 동행을 찾아보세요!</a>
        
       </div>
+    <!--   <div style="background-color: red; height : 100% "> 
+      </div> -->
       
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;     left: 20%;">
-      <form class="form-inline" role="search"
-        id="searchform">
+    <!-- <div class="wrap" style="border : 1px solid green;">
+      <div class="p_header_title" style="border : 1px solid green;">
+      <h1 style="color: black;">홈페이지 헤더라인2 </h1>
+      </div>
+    </div> -->
+    <div style="position: relative; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
+      <video style="position: absolute; /* width: 100%; */ max-width: 100%; /* height: 102%; */
+     /* position: absolute !important; */" data-setup="{}"autoplay loop  >
+        <source src="mainfull.mp4" type="video/mp4" />
+    
+
+      </video> 
+    </div>
+
+
+
+      
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;left: 27%;">
+      <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
+      <div class="form-group form-group-lg">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
          <input id="searchStDt" name="startDt" type="text" class="form-control bit-startDate" placeholder="From"> 
          <input id="searchEdDt" name="endDt" type="text" class="form-control bit-endDate"  placeholder="To"> 
          <input id="searchaddBtn" type="button" class="button filled red extra-narrow" value="Search">
+       </div>
       </form>
     </div>
    <!--  <p1 style="border : 1px solie white;  color : white;       font-size: 60px;
@@ -915,16 +883,13 @@ function switchScreen() {
     
     </div> -->
     <div id="content_1" style=" background-color: #f0f0f0">
-
       <div id="t_box" >
     
       <div id="t_img" style="background-image:url('mini_main10.jpg');" >
       <p id="click_link" style=" color : white;     font-size: 70px;
     text-align: center;     padding-top: 85px; transition-timing-function:ease-in-out "></p>  
    
-
       </div>
-
       <div id="m_text">특별한 여행에 함께할</br>
         </br>
          소중한 인연을 찾아드립니다</div> 
@@ -963,16 +928,13 @@ function switchScreen() {
         </br>
          소중한 인연을 찾아드립니다</div>
       </div>
-
   </div>
-
   <div id="content" style="background-color: #F0F0F0;">
   <br>
   <table class="changallery" style="margin: 0 auto;">
   </table>
   <br>
   </div>
-
 <div id="footer" style="background-color: white; ">
 <hr>
 <div style="width: 65%; margin: 0 auto; text-align: center;">
@@ -987,10 +949,7 @@ function switchScreen() {
 <!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
 <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
 </div></div><br><br><br></div>
-
-
   <!-- footer 끝 div -->
-
   <!-- 페이스북 -->
 <script>
   window.fbAsyncInit = function() {
@@ -1008,7 +967,6 @@ function switchScreen() {
 };
 </script>
 <!-- 페이스북 -->
-
   <!-- classie.js by @desandro: https://github.com/desandro/classie -->
   <script src="js/map.js"></script>
   <!-- <script

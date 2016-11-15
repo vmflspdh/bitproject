@@ -534,7 +534,7 @@ function switchScreen() {
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 360px; z-index: 300000;">
+      style="width: 370px; z-index: 300000;">
       <div class="modal-content ">
         <div class="modal-header">
       <div style="height: 0px; font-size: 34px;
@@ -553,14 +553,14 @@ function switchScreen() {
 
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="name"
+                <input type="text" class="form-control yang"" id="name"
                   placeholder="정유라"><br />
               </div>
 
 
               <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="email"
+                <input type="text" class="form-control yang"" id="email"
                   placeholder="yura@gmail.com"><br />
               </div>
 
@@ -568,7 +568,7 @@ function switchScreen() {
 
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
-                <input type="password" id="password" class="form-control"
+                <input type="password" id="password" class="form-control yang""
                   placeholder="*******"><br />
               </div>
 
@@ -576,14 +576,14 @@ function switchScreen() {
 
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control"
+                <input type="text" id="birthday" class="form-control yang""
                   placeholder="1997-05-11"><br />
               </div>
 
 
               <label for="gender" class="col-sm-2 control-label">성별</label>
               <div class="col-sm-10">
-                <select class="form-control" id="gender">
+                <select class="form-control yang"" id="gender">
                   <option value="1">여자</option>
                   <option value="0">남자</option>
                 </select> <br>
@@ -594,7 +594,7 @@ function switchScreen() {
                       name="rememberMe"> 약관동의
                     </label> -->
               <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
-                type="button">회원가입</button>
+                type="button" onclick="window.location.reload(true)">회원가입</button>
             </form>
           </div>
         </div>
