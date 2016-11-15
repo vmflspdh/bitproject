@@ -99,9 +99,6 @@ function ajaxLoadMember(no) {
 
 function ajaxUpdateMember(formData) {
 	console.log(formData)
-<<<<<<< HEAD
-
-=======
 	console.log(formData.get("password")=="")
 	if(formData.get("password")==""){
 		swal(
@@ -110,7 +107,7 @@ function ajaxUpdateMember(formData) {
 				  'error'
 				)
 	}
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
+
 	$.ajax({
 		url : "update.json",
 		processData : false,
