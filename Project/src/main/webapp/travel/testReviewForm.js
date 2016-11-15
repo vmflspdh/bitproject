@@ -1,3 +1,5 @@
+
+
 function ajaxReviewContentList(no) {
 	console.log(no)
 	$.getJSON(serverAddr + "/travel/rvclist.json?no=" + no, function(result) {
@@ -12,7 +14,11 @@ function ajaxReviewContentList(no) {
 			contents += 
 				'<li class="event"><input type="radio" name="tl-group" /> <label></label>'+
 				'<div class="thumb user-2">'+
+<<<<<<< HEAD
+				'<img width=100% height=100% src="../upload/'+arr[i].reviewBoardContentPhotoName+'" alt="...">'+
+=======
 		'<img width=100% height=100% src="../upload/'+arr[i].reviewBoardContentPhotoName+'" alt="...">'+
+>>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 				'</div>'+
 				'<div class="content-perspective">'+
 					'<div class="content">'+
@@ -33,7 +39,21 @@ function ajaxReviewContentList(no) {
 		// html 원래 위치
 		$(".timeline").html(contents);
 	})
+	
+	reviewPhotoList()
 }
+
+function reviewPhotoList() {
+	$.getJSON(serverAddr + "/travel/reviewPhotoList.json", function(obj) {
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			return
+		}
+	});
+}
+
+
 
 function ajaxReviewTitleList(no) {
 	console.log(no)

@@ -27,6 +27,7 @@ public class ReviewContentController {
   @Autowired TravelScheduleDao travelScheduleDao;
 
   TravelMain travelMain = new TravelMain();
+  ReviewContent reviewContent = new ReviewContent();
   
   @RequestMapping(path="rvclist", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
@@ -34,10 +35,8 @@ public class ReviewContentController {
     
     HashMap<String, Object> result = new HashMap<>();
     try{
-      
-      List<ReviewContent> list = reviewContentDao.selectList(no);
-      
-      
+      List<ReviewContent> list = reviewContentDao.selectOne(no);
+
       
       //int reviewCount= commentDao.countAll(no);
       
@@ -48,9 +47,10 @@ public class ReviewContentController {
       result.put("data", e.getMessage());
     }
     return new Gson().toJson(result);
-    
-    
+        
   }
+  
+
   
   
   

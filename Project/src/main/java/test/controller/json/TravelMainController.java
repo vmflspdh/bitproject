@@ -71,6 +71,7 @@ public class TravelMainController {
     }
   }
   
+  
   @RequestMapping(path="tvlReviewList")
   public Object tvlreviewlist(int no,HttpSession session) throws Exception {
     System.out.println(no);
