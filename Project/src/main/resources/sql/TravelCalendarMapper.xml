@@ -11,7 +11,7 @@
     </resultMap>
 
   <select id="selectMyCalendar" resultMap="calendarMap" parameterType="map">
-    select st_dt, ed_dt, city from tvl_sch
+    select st_dt, ED_DT, city from tvl_sch
     inner join tvl_loc
     on tvl_sch.locno = tvl_loc.locno
     where tmno = #{travelPostNo}

@@ -462,7 +462,7 @@ video {
 #footer>div {
   display: block;
 }
-#userName{
+/* #userName{
   position: absolute;
   right: 215px;
   font-weight: bold;
@@ -470,8 +470,8 @@ video {
   margin-right: 33%;
   margin-top: 1.4%; 
   color: white; 
-}
-    
+} */
+/*     
 #travelerRegForm {
    margin-left: 9%;
     
@@ -479,7 +479,7 @@ video {
     color: white;
     position: relative;
 
-    }
+    } */
 </style>
 <style>
 .modal-content {
@@ -758,7 +758,7 @@ function switchScreen() {
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 370px; z-index: 300000;">
+      style="width: 360px; z-index: 300000;">
       <div class="modal-content ">
         <div class="modal-header">
       <div style="height: 0px; font-size: 34px;
@@ -775,22 +775,22 @@ function switchScreen() {
             <form class="form-signin">
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control yang" id="name"
+                <input type="text" class="form-control" id="name"
                   placeholder="정유라"><br />
               </div>
               <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control yang" id="email"
+                <input type="text" class="form-control" id="email"
                   placeholder="yura@gmail.com"><br />
               </div>
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
-                <input type="password" id="password" class="form-control yang"
+                <input type="password" id="password" class="form-control"
                   placeholder="*******"><br />
               </div>
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control yang"
+                <input type="text" id="birthday" class="form-control"
                   placeholder="1997-05-11"><br />
               </div>
               <label for="gender" class="col-sm-2 control-label">성별</label>
@@ -824,14 +824,11 @@ function switchScreen() {
   </div>
   <div class="plan_header" >
   
-<div class="my-login" id="log-txt">
-         <a id="userName"style=" position: absolute;    right: 19%; font-weight: bold;
-    font-size: 40px; margin-right: 36%;margin-top: 1.4%; color: white; "></a>
-          <a href="#" class="my-login" id="travelerRegForm" >님 동행을 찾아보세요!</a>
-       
+<div id="log-txt" style="position: absolute; left:52%; transform:translateX(-50%);">
+       <h2>나의 추억에 동행할 인연을 위한 공간</h2>
+      <div style="font-size: large;">여행에 동행할 소중한 인연을 시간을 들이지 않고 당신에게 맞춰 드립니다.</div>
+      <div class="my-login" style="font-size: x-large; color: #FF545C; "><span id="userName" style="font-weight: bold;">양찬</span>&nbsp;&nbsp;<a href="#" style="color: #FF545C;"><span id="travelerRegForm">님 동행을 찾아보세요!</span><span style="color:white;">&laquo; click!</span></a></div>
       </div>
-    <!--   <div style="background-color: red; height : 100% "> 
-      </div> -->
       
     <!-- <div class="wrap" style="border : 1px solid green;">
       <div class="p_header_title" style="border : 1px solid green;">
@@ -841,25 +838,32 @@ function switchScreen() {
     <div style="position: relative; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
       <video style="position: absolute; /* width: 100%; */ max-width: 100%; /* height: 102%; */
      /* position: absolute !important; */" data-setup="{}"autoplay loop  >
-        <source src="mainfull.mp4" type="video/mp4" />
-    
-
+        <source src="mainfull1.mp4" type="video/mp4" />
       </video> 
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001; position: absolute; top:55%; left:52%; transform:translateX(-50%);">
+      <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
+      <div class="form-group form-group-lg">
+         <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place" style="width: 30%">&nbsp;&nbsp;
+         <input id="searchStDt" name="startDt" type="text" class="form-control bit-startDate" placeholder="From" style="width: 25%">&nbsp;&nbsp;
+         <input id="searchEdDt" name="endDt" type="text" class="form-control bit-endDate"  placeholder="To" style="width: 25%">&nbsp;
+         <input style="height: 47px;" id="searchaddBtn" type="button" class="button filled red extra-narrow" value="Search" >
+       </div>
+      </form>
+    </div>
+      
     </div>
 
 
 
       
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;left: 27%;">
+<!--           <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;left: 27%;">
       <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
-      <div class="form-group form-group-lg">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
          <input id="searchStDt" name="startDt" type="text" class="form-control bit-startDate" placeholder="From"> 
          <input id="searchEdDt" name="endDt" type="text" class="form-control bit-endDate"  placeholder="To"> 
          <input id="searchaddBtn" type="button" class="button filled red extra-narrow" value="Search">
-       </div>
       </form>
-    </div>
+    </div> -->
    <!--  <p1 style="border : 1px solie white;  color : white;       font-size: 60px;
     display: block;text-align: center; padding-top: 6.8%;
     line-height: 110px; font-family: 'Arvo', serif;">A journey of a thousand miles</br>
