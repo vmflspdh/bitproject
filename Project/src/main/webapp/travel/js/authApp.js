@@ -99,7 +99,7 @@ function ajaxLoginUser() {
 		$("#requestCountAll").text(result.data.memberRequest)
 		console.log(result.data.memberRequest)
 		
-		if (result.data.memberPhoto == null) {
+		if (result.data.memberPhoto.substring(0,1) == 'h') {
 			$(".mainImg").attr("src",result.data.memberPhoto);
 		} else {
 		$(".mainImg").attr("src","../upload/" + result.data.memberPhoto);
