@@ -10,4 +10,5 @@ public interface MessageDao {
   List<Message> selectMyMessageList(Map<String,Object> paramMap) throws Exception;
   List<Message> selectMyMemberList(Map<String,Object> paramMap) throws Exception;
   List<Message> selectUserProfile(Map<String,Object> paramMap) throws Exception;
+  List<Message> selectNoPageUserProfile(Map<String,Object> paramMap) throws Exception;
 }

@@ -205,7 +205,7 @@ function checkLoginState() {
 
 
 function getFacebookInfo() {
-	FB.api('/me?fields=email,id,name,gender,birthday,picture.width(50).height(50).as(picture_small)', function(response) {
+	FB.api('/me?fields=email,id,name,gender,birthday,picture.width(200).height(200).as(picture_small)', function(response) {
 		console.log(JSON.stringify(response));
 		var member = {
 				name:response.name,
