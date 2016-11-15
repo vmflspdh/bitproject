@@ -630,6 +630,7 @@ function calendarList() {
 		var arr = result.data
 		for (var i in arr) {
 			calendarDetailList.push(arr[i])
+			calendarDetailList[i].end = moment(arr[i].end, "YYYY-MM-DD").add(1, 'days');
 		}
 		console.log(calendarDetailList)
 		showCalendar();

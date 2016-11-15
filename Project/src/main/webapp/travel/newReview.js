@@ -33,13 +33,13 @@ function ajaxBoardList() {
 			var b = arr[i].reviewboardno
 			contents += 
 			'<tr id="reviewList">' +
-			'<td style="width:100px; height:100px;">' +
+			'<td style="width:100px; height:100px; border-bottom: 1px solid #eee;">' +
 			'<div class="thumbnail-wrapper">' +
     	    '<div class="thumbnail">' +
     	    '<div class="centered">' +
 			'<img id="reviewPhoto'+i+'"src="img/5.jpg"style="  border-radius: 5px 5px 5px 5px;"></div></div></div>' +
 			'</td>' +
-			'<td style="width:800px;">' +
+			'<td style="width:800px; border-bottom: 1px solid #eee">' +
 			'<div style="height:100px; padding: 10px;">' +
 			'<div style="height: 10px;"></div>' +
 			'<div style="font-size:large; color:#13919A; font-weight: bold;"><a class="titleLink2" href="#" data-no2="'+arr[i].memberno+'"><span>' + arr[i].membername + '</span></a>님의 Review Story</div>' +
@@ -49,7 +49,7 @@ function ajaxBoardList() {
 			'</div></a>' +
 			'</div>' +
 			'</td>' +
-			'<td style="width:110px;color: #585858;">' +
+			'<td style="width:110px;color: #585858; border-bottom: 1px solid #eee">' +
 			'<div style="font-size: small; font-weight: normal;">' + arr[i].createdDate + '</div>' +
 			'<div style="font-size: small; font-weight: normal;">' +
 			'<span style="float: right;">&nbsp; &nbsp;</span>' +
@@ -58,8 +58,7 @@ function ajaxBoardList() {
 			'</div>' +
 			'</td>' +
 			'</tr>' +
-			'<tr><td style="height: 30px;"></tr>'
-			aaa(arr[i].reviewboardno,i)
+			reviewThumbPhoto(arr[i].reviewboardno,i)
 	}
 	$("#newReviewTable").html(contents);
 		
@@ -139,7 +138,7 @@ function ajaxBoardList() {
 	
 	
 }
-function aaa(no,i){
+function reviewThumbPhoto(no,i){
 	console.log(i)
 	$.getJSON("rvphotoList.json?no="+no,{no:no}, function(result) {
 		if(result.state!="success"){

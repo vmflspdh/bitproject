@@ -100,6 +100,10 @@ h2, h3, h4, h5, h6 {
 	color: #13919A;
 }
 
+.fc-time{
+   display : none;
+}
+
 #fadeandscale {
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
@@ -343,6 +347,23 @@ function switchScreen() {
               </li>
             </ul></li>
         </ul>
+      </div>
+      
+            <div id="fadeandscale" class="well">
+        <h4>동행요청</h4>
+        <h5></h5>
+        <h6></h6>
+        <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+                  <button value="vcxc">수락</button><button value="sdfds">거절</button>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre>
+                  <pre class="prettyprint">
+                  <code>zxcxzcxzxz</code>
+                  </pre> -->
+        <button style="float: right;"
+          class="fadeandscale_close btn btn-default">Close</button>
       </div>
 
       <div class="my-login">
@@ -667,6 +688,15 @@ function switchScreen() {
   <script type="text/javascript" src="message.js"></script>
   <script type="text/javascript" src="bookmark.js"></script>
   <script src='fullcalendar/fullcalendar.js'></script>
+    <script src="js/jquery.popupoverlay.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#fadeandscale').popup({
+        pagecontainer : '.container',
+        transition : 'all 0.3s'
+      });
+    });
+  </script>
   <script>
     init() // 화면을 준비시킨다
     ajaxLoginUser() // 로그인 유저 정보 가져오기
@@ -696,5 +726,9 @@ class="form-control bit-longitude">
 {{/each}}
 </script>
   <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../node_modules/moment/moment.js"></script>
+<script>
+    moment().format();
+</script>
 </body>
 </html>
