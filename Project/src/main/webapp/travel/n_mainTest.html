@@ -608,24 +608,9 @@ color : #ff545c;
 
 </style>
 </head>
-<script>
-$(document).ready(function(){
-  $("#t_box").hover(function(){
-    $("#click_link").text("Click");
-    }, function() {
-      $("#click_link").css("visibility", "hidden");
-  })
-})
-</script>
+
 <!-- 페이지로딩 -->
-<script type="text/javascript">
-function switchScreen() {
-    document.getElementById("divLoading").style.display = "none";
-    document.getElementById("divBody").style.display = "";
-}
-</script>
-<!-- 페이지로딩 -->
-<body onload="switchScreen();">
+<body>
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
@@ -954,6 +939,22 @@ function switchScreen() {
 <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
 </div></div><br><br><br></div>
   <!-- footer 끝 div -->
+  
+<script>
+$("#t_box").hover(function(){
+  $("#click_link").text("Click");
+  }, function() {
+    $("#click_link").css("visibility", "hidden");
+})
+</script>
+<!-- 페이지로딩 -->
+<script>
+
+document.getElementById("divLoading").style.display = "none";
+document.getElementById("divBody").style.display = "";
+
+</script>
+
   <!-- 페이스북 -->
 <script>
   window.fbAsyncInit = function() {

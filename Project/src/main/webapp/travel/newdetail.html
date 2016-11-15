@@ -5,38 +5,39 @@
 <title>서내와 귀요미들</title>
 <meta name="description" content="MyTravel" />
 <meta name="viewport"
-  content="width=device-width, initial-scale=1, maximum-scale=1">
+	content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="shortcut icon" href="">
 <!--  travel 에서 가저온 시-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta name="description" content="Blueprint: On-Scroll Animated Header" />
 <meta name="keywords"
-  content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
 <link rel="stylesheet"
-  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- 웹폰트 코드 -->
 <link rel='stylesheet'
-  href='https://fonts.googleapis.com/css?family=Titillium+Web'
-  rel='stylesheet'>
+	href='https://fonts.googleapis.com/css?family=Titillium+Web'
+	rel='stylesheet'>
 <link rel='stylesheet'
-  href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'
-  rel='stylesheet'>
+	href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'
+	rel='stylesheet'>
 <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet"
+	href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <!-- 달력 관련 -->
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
@@ -45,32 +46,33 @@
 
 <!-- 달력 관련 -->
 <script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <style>
 html, body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
+	font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
 }
+
 #requestCountAll {
-  z-index: 1500000;
-  position: absolute;
-  right: 46px;
-  top: 18px;
-  text-decoration: none;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  color: white;
-  background: #F361A6;
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 24px;
-  text-align: center;
-  margin-bottom: 0;
-  
-} 
+	z-index: 1500000;
+	position: absolute;
+	right: 46px;
+	top: 18px;
+	text-decoration: none;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	color: white;
+	background: #F361A6;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 24px;
+	text-align: center;
+	margin-bottom: 0;
+}
+
 body {
-background: #F0F0F0
+	background: #F0F0F0
 }
 
 #checkImg {
@@ -80,15 +82,14 @@ background: #F0F0F0
 }
 
 .btn-default {
-background-image: none;
+	background-image: none;
 }
 
-
 .btn-default:focus, .btn-default:hover {
-    background-color: #ff545c;
-    background-position: 0 -15px;
-    color: white;
-    border: 1px solid #ff545c;
+	background-color: #ff545c;
+	background-position: 0 -15px;
+	color: white;
+	border: 1px solid #ff545c;
 }
 
 h2, h3, h4, h5, h6 {
@@ -100,24 +101,23 @@ h2, h3, h4, h5, h6 {
 	color: #13919A;
 }
 
-.fc-time{
-   display : none;
+.fc-time {
+	display: none;
 }
 
 #fadeandscale {
-  -webkit-transform: scale(0.8);
-  -moz-transform: scale(0.8);
-  -ms-transform: scale(0.8);
-  transform: scale(0.8);
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	transform: scale(0.8);
 }
 
 .popup_visible #fadeandscale {
-  -webkit-transform: scale(1);
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
 }
-
 
 #yang ul li {
 	display: inline;
@@ -138,222 +138,225 @@ h2, h3, h4, h5, h6 {
 	text-align: center;
 	float: left;
 }
+
 .checkbox-inline {
-  font-size: 11px;
-  margin-left: 10px;
-  margin-bottom: 5px;
+	font-size: 11px;
+	margin-left: 10px;
+	margin-bottom: 5px;
 }
+
 a {
-  color: black;
-  text-decoration: none;
+	color: black;
+	text-decoration: none;
 }
+
 a:hover {
-  color: green;
-  text-decoration: none;
-  font-weight: bold;
+	color: green;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 #footer {
-    font-size: 12px;
-    line-height: 1;
-        position: absolute;
-    width: 100%;
-  
+	font-size: 12px;
+	line-height: 1;
+	position: absolute;
+	width: 100%;
 }
 
 #footer>h2 {
-    font-size: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-        font-family: inherit;
-    font-weight: 500;
-    line-height: 1.1;
-    color: inherit;
-        display: block;
+	font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+	display: block;
 }
 
 #footer>div {
-    display: block;
+	display: block;
 }
 
 #title_txt>a {
-color : white;
+	color: white;
 }
+
 #title_txt>a:hover {
-text-decoration: none;
-color : #ff545c;
-
-} 
-
+	text-decoration: none;
+	color: #ff545c;
+}
 </style>
 <style>
 .modal-content {
-    position: relative;
-    background-color: 1e4147;
-    opacity: 0.9;
-    
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #999;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: 6px;
-    outline: 0;
-    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.6);
-    box-shadow: 0 6px 12px rgba(0,0,0,.6);
+	position: relative;
+	background-color: 1e4147;
+	opacity: 0.9;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 6px;
+	outline: 0;
+	-webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .6);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, .6);
 }
+
 .modal-header {
-    min-height: 101.43px;
-    padding: 15px;
-    border-bottom: 0px solid #e5e5e5;
+	min-height: 101.43px;
+	padding: 15px;
+	border-bottom: 0px solid #e5e5e5;
 }
+
 button.close {
-    -webkit-appearance: none;
-    padding: 0;
-    cursor: pointer;
-    background: 0 0;
-    border: 15px solid black;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
+	-webkit-appearance: none;
+	padding: 0;
+	cursor: pointer;
+	background: 0 0;
+	border: 15px solid black;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
 }
+
 .modal-title {
-    margin: 0;
-    line-height: 1.42857143;
+	margin: 0;
+	line-height: 1.42857143;
 }
+
 .modal-body {
-    position: relative;
-    padding: 15px;
+	position: relative;
+	padding: 15px;
 }
+
 .form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
 .modal-footer {
-    padding: 15px;
-    text-align: right;
-    border-top: 0px solid #e5e5e5;
-    min-height: 80px;
+	padding: 15px;
+	text-align: right;
+	border-top: 0px solid #e5e5e5;
+	min-height: 80px;
 }
+
 .btn-block {
-    display: block;
-    width: 100%;
+	display: block;
+	width: 100%;
 }
+
 .btn-group-lg>.btn, .btn-lg {
-    padding: 10px 16px;
-    font-size: 18px;
-    line-height: 1.3333333;
-    border-radius: 6px;
+	padding: 10px 16px;
+	font-size: 18px;
+	line-height: 1.3333333;
+	border-radius: 6px;
 }
+
 .btn-primary {
-    color: #fff;
-    background-color: red;
-    border-color: #2e6da4;
-    
+	color: #fff;
+	background-color: red;
+	border-color: #2e6da4;
 }
+
 .btn {
-   display: inline-block;
-    border: 1px solid #1e4147;
-    color: white;
-    background-color: #1e4147;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none; 
+	display: inline-block;
+	border: 1px solid #1e4147;
+	color: white;
+	background-color: #1e4147;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+}
 
+.yang {
+	border-radius: 11px;
 }
-.yang{
-border-radius: 11px;
-}
+
 button, input, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
 }
-
 
 #logForm>a:hover {
-background-color : #e83338;
-color : white;
-border : 1px solid #e83338;
-
+	background-color: #e83338;
+	color: white;
+	border: 1px solid #e83338;
 }
 
 #title_txt>a {
-color : #1e4147;
+	color: #1e4147;
 }
+
 #title_txt>a:hover {
-text-decoration: none;
-color : #ff545c;
-
-}   
-
+	text-decoration: none;
+	color: #ff545c;
+}
 </style>
 </head>
 
 <body>
+<div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
+    <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
+</div>
+<div id="divBody" style="display:none;">
+	<!-- 상단메뉴시작 -->
+	<!-- Start of container2 -->
+	<div class="container">
+		<div class="upper">
+			<div class='zeta-menu-bar my-login'>
+				<ul class="zeta-menu">
+					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+							class="mainImg my-login"></a><a id="requestCountAll"></a>
+						<ul>
+							<li><a href="#" id="myInfo"><img
+									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+									INFO</a></li>
+							<li><a href="#" id="travelerMessage"><img
+									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+							</li>
+							<li><a class=" fadeandscale_open" id="accompany" href="#"><img
+									src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+							<li><a id="logoutBtn" href='#'><img
+									src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
 
-<script>
-function switchScreen() {
-    document.getElementById("divLoading").style.display = "none";
-    document.getElementById("divBody").style.display = "";
-}
-
-</script>
-
-<body>
-  <!-- 상단메뉴시작 -->
-  <!-- Start of container2 -->
-  <div class="container">
-    <div class="upper">
-      <div class='zeta-menu-bar my-login'>
-        <ul class="zeta-menu">
-          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-              class="mainImg my-login"></a><a id="requestCountAll"></a>
-            <ul>
-              <li><a href="#" id="myInfo"><img
-                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-                  INFO</a></li>
-              <li><a href="#" id="travelerMessage"><img
-                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
-              </li>
-              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
-                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-              <li><a id="logoutBtn" href='#'><img
-                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
-              </li>
-            </ul></li>
-        </ul>
-      </div>
-      
-            <div id="fadeandscale" class="well">
-        <h4>동행요청</h4>
-        <h5></h5>
-        <h6></h6>
-        <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+			<div id="fadeandscale" class="well">
+				<h4>동행요청</h4>
+				<h5></h5>
+				<h6></h6>
+				<!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
                   <button value="vcxc">수락</button><button value="sdfds">거절</button>
                   </pre>
                   <pre class="prettyprint">
@@ -362,388 +365,409 @@ function switchScreen() {
                   <pre class="prettyprint">
                   <code>zxcxzcxzxz</code>
                   </pre> -->
-        <button style="float: right;"
-          class="fadeandscale_close btn btn-default">Close</button>
-      </div>
+				<button style="float: right;"
+					class="fadeandscale_close btn btn-default">Close</button>
+			</div>
 
-      <div class="my-login">
-        <span> <a id="userName"
-          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
-        </span>
-      </div>
+			<div class="my-login">
+				<span> <a id="userName"
+					style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
+					<a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
+				</span>
+			</div>
 
-      <div
-        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
-        <a href='#' class="btn btn-default btn-sm my-logout"
-          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
-          class="btn btn-default btn-sm my-logout" data-toggle="modal"
-          data-target="#myModal">SIGN IN</a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="cbp-af-header">
-    <div class="cbp-af-inner">
-      <div>
-        <img src='img/passport.png'
-          style="float: left; width: 55px; height: 55px;">
-        <h1>WE TRIP</h1>
-      </div>
-      <nav>
-        <a href="#" id="travelerPage">Traveler</a> <a href="#"
-          id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
-          href="#">.</a>
-      </nav>
-    </div>
-  </div>
-  <!-- center  -->
+			<div
+				style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+				<a href='#' class="btn btn-default btn-sm my-logout"
+					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+					class="btn btn-default btn-sm my-logout" data-toggle="modal"
+					data-target="#myModal">SIGN IN</a>
+			</div>
+		</div>
+	</div>
 
-  <div
-    style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;">
-    <div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
-      <!--      <div style="width: 50px; height: 50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
+	<div class="cbp-af-header">
+		<div class="cbp-af-inner">
+			<div>
+				<img src='img/passport.png'
+					style="float: left; width: 55px; height: 55px;">
+				<h1>WE TRIP</h1>
+			</div>
+			<nav>
+				<a href="#" id="travelerPage">Traveler</a> <a href="#"
+					id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
+					href="#">.</a>
+			</nav>
+		</div>
+	</div>
+	<!-- center  -->
+
+	<div
+		style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;">
+		<div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
+			<!--      <div style="width: 50px; height: 50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
         <img src="" id="detailUserImage">
       </div> -->
-      <div
-        style="margin: 0 auto; width: 80px; height: 80px;  border-radius: 50%; overflow: hidden; float: left;">
-        <img src=""  id="detailUserImage" style="width: 100%; height: 100%">
-      </div>
-      <h3 style="float: right;">
-        <span id="detailMemberName"></span>님의 여행계획
-      </h3>
-      <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="message"
+			<div
+				style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; float: left;">
+				<img src="" id="detailUserImage" style="width: 100%; height: 100%">
+			</div>
+			<h3 style="float: right;">
+				<span id="detailMemberName"></span>님의 여행계획
+			</h3>
+			<!-- <span>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="message"
         data-toggle="modal" data-target="#myMessage"><img
           src="img/messageicon2.jpg" style="width: 20px; height: 20px;"></a></span> -->
-      <!-- <h3 id="title" style="float: right;"></h3> -->
-      <br> <br>
-      <hr>
-    </div>
-    
-    
-    <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-      style="width: 90%; height: 100%; margin: 0 auto;">
-
-      <h2 class="w3-text-grey w3-padding-16">
-        <i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Traveler
-      </h2>
-
-      <div id="boardImg"
-        style="background-size: cover; width: 100%; height: 450px; margin-bottom: 15px; background-image: url('img/yang/travelphoto3.jpg'); overflow: hidden; background-repeat: no-repeat; background-position: center center;">
-        <div>
-          <div style="margin: 30px 0 0 40px; color: white;">
-            <span style="font-size: 150px; line-height: 0.6em; opacity: 0.2;">❞</span>
-            <h3 id="title" style="float: left;"></h3>
-          </div>
-        </div>
-        <div id="selfIntroduce"
-          style="width: 60%; height: 270px; margin: 2% 0 10px 40px; padding: 15px 0 0 10px; border-radius: 2%; background: rgba(238, 231, 231, 0.8); float: left;">
-        </div>
-
-        <div class="w3-container info"
-          style="width: 25%; height: 270px; margin: 2% 0 40px 40px; padding: 10px 0 0 10px; border-radius: 2%; background: rgba(238, 231, 231, 0.8); font-size: medium; float: left;">
-          <p>
-            <i class="fa fa-certificate fa-fw w3-margin-right w3-xlarge w3-text-teal"></i> <a href="#">Traveler
-          Style</a>
-          </p> 
-          <label class="checkbox-inline check-food"
-              style=" filter: grayscale(100%);"> <img src='img/restaurant.png'
-              id="checkImg">식도락
-            </label><label class="checkbox-inline check-culture"
-              style=" filter: grayscale(100%);"> <img src='img/painting.png'
-              id="checkImg">전시/공연
-            </label><label class="checkbox-inline check-sports" style=" filter: grayscale(100%);">
-              <img src='img/rowing.png' id="checkImg">액티비티/레포츠
-            </label>
-
-          <p>
-            <i class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-            <a href="#">동행자 정보</a>
-          </p>
-
-          <p>
-            <i
-              class="fa fa-thumbs-o-up fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-            <a href="#" id="bookmarkSummit">좋아요</a>&nbsp;&nbsp;<span
-              id="bookmarkcount"></span>
-          </p>
-          <p>
-            <i
-              class="fa fa-envelope fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-            <a href="#" class="message" data-toggle="modal"
-              data-target="#myMessage">메세지 보내기</a>
-          </p>
-          <p>
-            <i class="fa fa-group fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-            <a href="#" id="togetherRequest">동행요청하기</a>
-          </p>
-        </div>
-      </div>
+			<!-- <h3 id="title" style="float: right;"></h3> -->
+			<br> <br>
+			<hr>
+		</div>
 
 
+		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+			style="width: 90%; height: 100%; margin: 0 auto;">
 
-    </div>
-    <hr>
-   
-	
-    <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-      style="width: 90%; height: 100%; margin: 0 auto;">
-      <h2 class="w3-text-grey w3-padding-16">
-        <i class="fa fa-globe fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-        Route
-      </h2>
-      <div id="map" style="width: 90%; height: 400px; margin: 0 auto;"></div>
-      <br>
-    </div>
-    <hr>
-    <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-      style="width: 90%; height: auto; margin: 0 auto;">
-      <h2 class="w3-text-grey w3-padding-16">
-        <i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-        Schedule
-      </h2>
-      <div id="selectTable"
-        style="float: left; width: 45%; height: 100%; margin: 0 auto; padding-left: 5%; padding-top: 40px;">
-        <div class="root-select"></div>
-      </div>
-      <div id='calendar'
-        style="background-color: white; width: 50%;  padding-left: 20px; margin-right: 20px; height: 100%; float: left; margin: 0 auto;">
-        <br />
-      </div>
-    </div>
-    <hr>
-  </div>
-  
+			<h2 class="w3-text-grey w3-padding-16">
+				<i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Traveler
+			</h2>
+
+			<div id="boardImg"
+				style="background-size: cover; width: 100%; height: 450px; margin-bottom: 15px; background-image: url('img/yang/travelphoto3.jpg'); overflow: hidden; background-repeat: no-repeat; background-position: center center;">
+				<div>
+					<div style="margin: 30px 0 0 40px; color: white;">
+						<span style="font-size: 150px; line-height: 0.6em; opacity: 0.2;">❞</span>
+						<h3 id="title" style="float: left;"></h3>
+					</div>
+				</div>
+				<div id="selfIntroduce"
+					style="width: 60%; height: 270px; margin: 2% 0 10px 40px; padding: 15px 0 0 10px; border-radius: 2%; background: rgba(255, 255, 255, 0.8); float: left;">
+				</div>
+
+				<div class="w3-container info"
+					style="width: 25%; height: 270px; margin: 2% 0 40px 40px; padding: 10px 0 0 10px; border-radius: 2%; background: rgba(255, 255, 255, 0.8); font-size: medium; float: left;">
+					<p>
+						<i
+							class="fa fa-certificate fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+						<a href="#">Traveler Style</a>
+					</p>
+					<label class="checkbox-inline check-food"
+						style="filter: grayscale(100%);"> <img
+						src='img/restaurant.png' id="checkImg">식도락
+					</label><label class="checkbox-inline check-culture"
+						style="filter: grayscale(100%);"> <img
+						src='img/painting.png' id="checkImg">전시/공연
+					</label><label class="checkbox-inline check-sports"
+						style="filter: grayscale(100%);"> <img
+						src='img/rowing.png' id="checkImg">액티비티/레포츠
+					</label>
+
+					<p>
+						<i class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+						<a href="#">동행자 정보</a>
+					</p>
+
+					<p>
+						<i
+							class="fa fa-thumbs-o-up fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+						<a href="#" id="bookmarkSummit">좋아요</a>&nbsp;&nbsp;<span
+							id="bookmarkcount"></span>
+					</p>
+					<p>
+						<i
+							class="fa fa-envelope fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+						<a href="#" class="message" data-toggle="modal"
+							data-target="#myMessage">메세지 보내기</a>
+					</p>
+					<p>
+						<i
+							class="fa fa-group fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+						<a href="#" id="togetherRequest">동행요청하기</a>
+					</p>
+				</div>
+			</div>
 
 
-  <div
-    style="text-align: center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px; margin: 0 auto; color: #736378;">
-    <table id="boardTable" class="table table-hover">
-      <thead id="tablehead">
-      </thead>
-      <tbody id="yang2">
-      </tbody>
-    </table>
-    <hr>
-    <table id="newReviewTable" style="margin: 0 auto;">
-    </table>
-  </div>
-  
-  
 
-  
-    <div id="footer" style="background-color: #F2F2F2; ">
-<hr>
-<div style="width: 65%; margin: 0 auto; text-align: center;">
-<h2><img src="logo.png" alt="로고파일자리" width="96"/></h2>
-<address>
-<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은 회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br>
-<span>사업자등록번호 : (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의 : java85@bit.com</span> <br>
-<span>COPYRIGHT© 2016 GD2723. ALL RIGHTS RESERVED.</span>
-</address>
-<div class="btn_sns">
-<a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기" target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기" width="36"/></a>
-<!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+		</div>
+		<hr>
+
+
+		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+			style="width: 90%; height: 100%; margin: 0 auto;">
+			<h2 class="w3-text-grey w3-padding-16">
+				<i class="fa fa-globe fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
+				Route
+			</h2>
+			<div id="map" style="width: 90%; height: 400px; margin: 0 auto;"></div>
+			<br>
+		</div>
+		<hr>
+		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+			style="width: 90%; height: auto; margin: 0 auto;">
+			<h2 class="w3-text-grey w3-padding-16">
+				<i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
+				Schedule
+			</h2>
+			<div id="selectTable"
+				style="float: left; width: 45%; height: 100%; margin: 0 auto; padding-left: 5%; padding-top: 40px;">
+				<div class="root-select"></div>
+			</div>
+			<div id='calendar'
+				style="background-color: white; width: 50%; padding-left: 20px; margin-right: 20px; height: 100%; float: left; margin: 0 auto;">
+				<br />
+			</div>
+		</div>
+		<hr>
+	</div>
+
+
+
+	<div
+		style="text-align: center; border-radius: 10px 15px 15px 15px; background-color: #F5F2F5; width: 900px; margin: 0 auto; color: #736378;">
+		<table id="boardTable" class="table table-hover">
+			<thead id="tablehead">
+			</thead>
+			<tbody id="yang2">
+			</tbody>
+		</table>
+		<hr>
+		<table id="newReviewTable" style="margin: 0 auto;">
+		</table>
+	</div>
+
+
+
+
+	<div id="footer" style="background-color: #F2F2F2;">
+		<hr>
+		<div style="width: 65%; margin: 0 auto; text-align: center;">
+			<h2>
+				<img src="logo.png" alt="로고파일자리" width="96" />
+			</h2>
+			<address>
+				<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은
+					회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br> <span>사업자등록번호 :
+					(이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL
+					: 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의
+					: java85@bit.com</span> <br> <span>COPYRIGHT© 2016 GD2723. ALL
+					RIGHTS RESERVED.</span>
+			</address>
+			<div class="btn_sns">
+				<a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기"
+					target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기"
+					width="36" /></a>
+				<!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
 <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
-</div></div><br><br><br></div>
+			</div>
+		</div>
+		<br> <br> <br>
+	</div>
 
-<!-- Start of message form -->
-  <div class="modal fade"
-    style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
-    id="myMessage" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="z-index: 300000;">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button>
-          <h2 class="modal-title" id="myModalLabel">
-            <em>메세지</em>
-          </h2>
-        </div>
-        <div class="modal-body">
-          <div class="wrapper">
-            <form class="form-signin">
-              <textarea class="form-control" id="messageContents" cols="50"
-                rows="3" placeholder="내용을 입력하세요"></textarea>
-              <br>
-              <button id="messageBtn" class="btn btn-lg btn-primary btn-block "
-                type="button">확인</button>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End of message form -->
+	<!-- Start of message form -->
+	<div class="modal fade"
+		style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
+		id="myMessage" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" style="z-index: 300000;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h2 class="modal-title" id="myModalLabel">
+						<em>메세지</em>
+					</h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
+							<textarea class="form-control" id="messageContents" cols="50"
+								rows="3" placeholder="내용을 입력하세요"></textarea>
+							<br>
+							<button id="messageBtn" class="btn btn-lg btn-primary btn-block "
+								type="button">확인</button>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of message form -->
 
-    <!-- Start of Login form -->
-  <div class="modal fade"
-    style="z-index: 200000; background: rgba(192, 192, 192, 0.3);"
-    id="myModal1" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="z-index: 300000;">
-      <div class="modal-content">
-        <div class="modal-header">
-      
-      <div style="height: 0px; font-size: 34px;">
-        <img src='img/passport.png'>
-           &nbsp;WE TRIP 
-      </div>
-      
-        <!--   <button type="button" class="close" data-dismiss="modal">
+	<!-- Start of Login form -->
+	<div class="modal fade"
+		style="z-index: 200000; background: rgba(192, 192, 192, 0.3);"
+		id="myModal1" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm" style="z-index: 300000;">
+			<div class="modal-content">
+				<div class="modal-header">
+
+					<div style="height: 0px; font-size: 34px;">
+						<img src='img/passport.png'> &nbsp;WE TRIP
+					</div>
+
+					<!--   <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">×</span><span class="sr-only">Close</span>
           </button> -->
-          <h2 class="modal-title" id="myModalLabel">
-            <em></em>
-          </h2>
-        </div>
-        <div class="modal-body">
-          <div class="wrapper">
-            <form class="form-signin">
-              <input type="text" class="form-control yang" id="email"
-                placeholder="이메일" required="" autofocus="" /></br> <input
-                type="password" id="password" class="form-control yang"
-                placeholder="비밀번호" required="" /> <label class="checkbox">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
-                id="saveEmail"> 이메일저장
-              </label>
-              <button id="loginBtn" class=" btn btn-lg btn-primary btn-block "
-                type="button">로그인</button>
-            </form>
-            <br>
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-             </fb:login-button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <div id="status">
-              </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-        <p style="font-size: 2px;"><br><br><br>Copyright ⓒ <strong>We Trip</strong>. All Rights Reserved.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End of Login form -->
-  <!-- Start of Registration Form-->
-  <div class="modal fade" style="z-index: 200000;" id="myModal"
-    tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-sm"
-      style="width: 370px; z-index: 300000;">
-      <div class="modal-content ">
-        <div class="modal-header">
-      <div style="height: 0px; font-size: 34px;
-       font-weight: bold;">
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='img/passport.png'> WE TRIP 
-      </div>
-         <!--  <button type="button" class="close" data-dismiss="modal">
+					<h2 class="modal-title" id="myModalLabel">
+						<em></em>
+					</h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
+							<input type="text" class="form-control yang" id="email"
+								placeholder="이메일" required="" autofocus="" /></br> <input
+								type="password" id="password" class="form-control yang"
+								placeholder="비밀번호" required="" /> <label class="checkbox">
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"
+								id="saveEmail"> 이메일저장
+							</label>
+							<button id="loginBtn" class=" btn btn-lg btn-primary btn-block "
+								type="button">로그인</button>
+						</form>
+						<br>
+						<fb:login-button scope="public_profile,email"
+							onlogin="checkLoginState();">
+						</fb:login-button>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<div id="status"></div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<p style="font-size: 2px;">
+						<br> <br> <br>Copyright ⓒ <strong>We Trip</strong>.
+						All Rights Reserved.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Login form -->
+	<!-- Start of Registration Form-->
+	<div class="modal fade" style="z-index: 200000;" id="myModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-sm"
+			style="width: 370px; z-index: 300000;">
+			<div class="modal-content ">
+				<div class="modal-header">
+					<div style="height: 0px; font-size: 34px; font-weight: bold;">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img
+							src='img/passport.png'> WE TRIP
+					</div>
+					<!--  <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">×</span><span class="sr-only">Close</span>
           </button> -->
-          <h2 class="modal-title" id="myModalLabel"></h2>
-        </div>
-        <div class="modal-body">
-          <div class="wrapper">
-            <form class="form-signin">
-              <label for="name" class="col-sm-2 control-label">이름</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control yang" id="name"
-                  placeholder="정유라"><br />
-              </div>
-              <label for="email" class="col-sm-2 control-label">메일</label>
-              <div class="col-sm-10">
-                <input type="text" class="form-control yang" id="email"
-                  placeholder="yura@gmail.com"><br />
-              </div>
-              <label for="password" class="col-sm-2 control-label">암호</label>
-              <div class="col-sm-10">
-                <input type="password" id="password" class="form-control yang"
-                  placeholder="*******"><br />
-              </div>
-              <label for="birthday" class="col-sm-2 control-label">생일</label>
-              <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control yang"
-                  placeholder="1997-05-11"><br />
-              </div>
-              <label for="gender" class="col-sm-2 control-label">성별</label>
-              <div class="col-sm-10">
-                <select class="form-control" id="gender">
-                  <option value="1">여자</option>
-                  <option value="0">남자</option>
-                </select> <br>
-              </div>
-              <!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+					<h2 class="modal-title" id="myModalLabel"></h2>
+				</div>
+				<div class="modal-body">
+					<div class="wrapper">
+						<form class="form-signin">
+							<label for="name" class="col-sm-2 control-label">이름</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control yang" id="name"
+									placeholder="정유라"><br />
+							</div>
+							<label for="email" class="col-sm-2 control-label">메일</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control yang" id="email"
+									placeholder="yura@gmail.com"><br />
+							</div>
+							<label for="password" class="col-sm-2 control-label">암호</label>
+							<div class="col-sm-10">
+								<input type="password" id="password" class="form-control yang"
+									placeholder="*******"><br />
+							</div>
+							<label for="birthday" class="col-sm-2 control-label">생일</label>
+							<div class="col-sm-10">
+								<input type="text" id="birthday" class="form-control yang"
+									placeholder="1997-05-11"><br />
+							</div>
+							<label for="gender" class="col-sm-2 control-label">성별</label>
+							<div class="col-sm-10">
+								<select class="form-control" id="gender">
+									<option value="1">여자</option>
+									<option value="0">남자</option>
+								</select> <br>
+							</div>
+							<!-- <label class="checkbox"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
                       type="checkbox" value="remember-me" id="rememberMe"
                       name="rememberMe"> 약관동의
                     </label> -->
-              <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
-                type="button" onclick="window.location.reload(true)">회원가입</button>
-            </form>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End of Registration Form-->
+							<button id="signInBtn" class="btn btn-lg btn-primary btn-block"
+								type="button" onclick="window.location.reload(true)">회원가입</button>
+						</form>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End of Registration Form-->
+<script type="text/javascript">
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
-    async defer></script>
-  
-  <script src="js/menu.js"></script>
-  <script src="js/classie.js"></script>
-  <script src="js/cbpAnimatedHeader.min.js"></script>
-  <!-- 회원정보 관련 -->
-  <script type="text/javascript"
-    src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
-  <script type="text/javascript"
-    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+document.getElementById("divLoading").style.display = "none";
+document.getElementById("divBody").style.display = "";
 
-  <script type="text/javascript" src="js/bit.js"></script>
-  <script type="text/javascript" src="js/common.js"></script>
-  <script type="text/javascript" src="js/authApp.js"></script>
-  <script type="text/javascript" src="js/memberForm.js"></script>
-  <script type="text/javascript" src="traveler.js"></script>
-  <script type="text/javascript" src="travelerform.js"></script>
-  <script type="text/javascript" src="travelerdetail.js"></script>
-  <script type="text/javascript" src="message.js"></script>
-  <script type="text/javascript" src="bookmark.js"></script>
-  <script src='fullcalendar/fullcalendar.js'></script>
-    <script src="js/jquery.popupoverlay.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#fadeandscale').popup({
-        pagecontainer : '.container',
-        transition : 'all 0.3s'
-      });
-    });
-  </script>
-  <script>
-    init() // 화면을 준비시킨다
-    ajaxLoginUser() // 로그인 유저 정보 가져오기
-    if (location.search.startsWith("?")) {
-      var no = location.search.split("=")[1];
-      ajaxLoadTravelMain(no)
-      ajaxReviewBoardList(no)
-    }
-    ajaxRegistFormList()
-    ajaxInviteList()
-    ajaxAgreeInviteList()
-    ajaxBookmarkCount()
-  </script>
+</script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
+		async defer></script>
 
-  <script id="trTemplateText" type="text/x-handlebars-template">
+	<script src="js/menu.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/cbpAnimatedHeader.min.js"></script>
+	<!-- 회원정보 관련 -->
+	<script type="text/javascript"
+		src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
+	<script type="text/javascript"
+		src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+
+	<script type="text/javascript" src="js/bit.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/authApp.js"></script>
+	<script type="text/javascript" src="js/memberForm.js"></script>
+	<script type="text/javascript" src="traveler.js"></script>
+	<script type="text/javascript" src="travelerform.js"></script>
+	<script type="text/javascript" src="travelerdetail.js"></script>
+	<script type="text/javascript" src="message.js"></script>
+	<script type="text/javascript" src="bookmark.js"></script>
+	<script src='fullcalendar/fullcalendar.js'></script>
+	<script src="js/jquery.popupoverlay.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fadeandscale').popup({
+				pagecontainer : '.container',
+				transition : 'all 0.3s'
+			});
+		});
+	</script>
+	<script>
+		init() // 화면을 준비시킨다
+		ajaxLoginUser() // 로그인 유저 정보 가져오기
+		if (location.search.startsWith("?")) {
+			var no = location.search.split("=")[1];
+			ajaxLoadTravelMain(no)
+			ajaxReviewBoardList(no)
+		}
+		ajaxRegistFormList()
+		ajaxInviteList()
+		ajaxAgreeInviteList()
+		ajaxBookmarkCount()
+		  ajaxBookmarkList() 
+	</script>
+
+	<script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
 <div class="root-schedule">
 <div id="sch_cirNum"></div><h5 class="w3-opacity"><b>{{city}}&nbsp; |&nbsp; {{nation}}</b></h4>
@@ -757,10 +781,11 @@ class="form-control bit-longitude">
 </div>
 {{/each}}
 </script>
-  <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-  <script src="../node_modules/moment/moment.js"></script>
-<script>
-    moment().format();
-</script>
+	<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+	<script src="../node_modules/moment/moment.js"></script>
+	<script>
+		moment().format();
+	</script>
+	</div>
 </body>
 </html>
