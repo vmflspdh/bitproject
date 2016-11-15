@@ -225,7 +225,7 @@ function ajaxAddFacebookMember(member) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			ajaxFacebookLogin(member)
-			console.log(result.data)
+			window.location.reload(true)
 			return
 		}
 		ajaxFacebookLogin(member)
@@ -245,12 +245,6 @@ function ajaxFacebookLogin(member) {
 				console.log(result.data)
 				return
 			}
-			if (self.name != 'reload') {
-				console.log("로그인 실행됨!!!!!")
-				self.name = 'reload';
-				self.location.reload(true);
-			}
-			else self.name = ''; 
 		},
 		error: function(msg) {
 			alert(msg)
