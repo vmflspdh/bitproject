@@ -280,7 +280,7 @@ function scheduleList() {
 		});
 
 
-		initMap(result);
+		initMap();
 	})
 }
 
@@ -466,7 +466,7 @@ function ajaxUpdateViewCount(no){
 	},"json")
 
 }
-function initMap(result) {
+function initMap() {
 
 	var flightPlanCoordinates = [];
 	$('.root-schedule').each(function(index, element){
@@ -616,10 +616,11 @@ function initMap(result) {
 
 		setMarkers(map);
 	});
-
-	/*	$("#mySchedule").on("shown.bs.modal", function() {
-		google.maps.event.trigger(map, "resize");
-	});*/
+	
+	google.maps.event.addDomListener(window, 'load', initMap);
+	   $('#mySchedule').on('shown.bs.modal', function(e) {
+		   google.maps.event.trigger(map, "resize");
+})
 
 }
 
