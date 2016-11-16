@@ -131,6 +131,15 @@ function ajaxUpdateMember(formData) {
 				)
 				return
 			}
+			else if (result.state == "success") {
+				console.log(result.data)
+				swal(
+					  '변경 성공!',
+					  'You clicked the button!',
+					  'success'
+					)
+				return
+			}
 			window.location.reload(true)
 		}
 	});
