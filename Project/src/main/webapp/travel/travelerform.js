@@ -485,6 +485,14 @@ function ajaxUpdateViewCount(no){
 
 }
 function initMap() {
+	
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 37.49, lng: 127.02},
+		zoom: 2,
+		mapTypeControl: false
+	});
+
 
 	var flightPlanCoordinates = [];
 	$('.root-schedule').each(function(index, element){
@@ -498,12 +506,6 @@ function initMap() {
 
 	console.log(flightPlanCoordinates)
 
-
-	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 37.49, lng: 127.02},
-		zoom: 2,
-		mapTypeControl: false
-	});
 
 
 	bounds = new google.maps.LatLngBounds();
@@ -550,17 +552,7 @@ function initMap() {
 
 
 
-	var input = /** @type {!HTMLInputElement} */(
-			document.getElementById('pac-input'));
 
-	map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-
-	var autocomplete = new google.maps.places.Autocomplete(input, {
-		types: ['(cities)']});
-
-
-	autocomplete.bindTo('bounds', map);
 
 	var infowindow = new google.maps.InfoWindow();
 	var marker = new google.maps.Marker({
@@ -568,6 +560,19 @@ function initMap() {
 		anchorPoint: new google.maps.Point(0, -29)
 	});
 
+
+	var input = /** @type {!HTMLInputElement} */(
+			document.getElementById('pac-input'));
+
+	/*map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);*/
+
+
+	var autocomplete = new google.maps.places.Autocomplete(input, {
+		types: ['(cities)']});
+
+
+	autocomplete.bindTo('bounds', map);
+	
 	autocomplete.addListener('place_changed', function() {
 		infowindow.close();
 		marker.setVisible(false);
