@@ -282,11 +282,6 @@ button, input, select, textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    font-size: 20px;
-}
-
-label {
- font-size: 15px;
 }
 
 
@@ -306,7 +301,20 @@ color : #ff545c;
 
 }   
 
+article {
+padding-top: 0.5%;
+padding-left: 0.25%;
+}
+
+#qwer {
+	position: relative;
+	left: 140px;
+}
+
 </style>
+
+
+
 </head>
 
 <body>
@@ -528,12 +536,12 @@ color : #ff545c;
   </div>
 
 
-  <!-- Start of Login form -->
+   <!-- Start of Login form -->
   <div class="modal fade"
-    style="z-index: 200000; background: rgba(192, 192, 192, 0.3);"
+    style="z-index: 20000; background: rgba(192, 192, 192, 0.3);"
     id="myModal1" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="z-index: 300000;">
+    <div class="modal-dialog modal-sm" style="z-index: 20000;">
       <div class="modal-content">
         <div class="modal-header">
       
@@ -541,10 +549,6 @@ color : #ff545c;
         <img src='img/passport.png'>
            &nbsp;WE TRIP 
       </div>
-      
-        <!--   <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button> -->
           <h2 class="modal-title" id="myModalLabel">
             <em></em>
           </h2>
@@ -565,10 +569,7 @@ color : #ff545c;
             <br>
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
              </fb:login-button>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="qwer" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <div id="status">
               </div>
           </div>
@@ -581,11 +582,11 @@ color : #ff545c;
   </div>
   <!-- End of Login form -->
   <!-- Start of Registration Form-->
-  <div class="modal fade" style="z-index: 200000;" id="myModal"
+  <div class="modal fade" style="z-index: 30000;" id="myModal"
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 370px; z-index: 300000;">
+      style="width: 370px; z-index: 30000;">
       <div class="modal-content ">
         <div class="modal-header">
       <div style="height: 0px; font-size: 34px;
@@ -602,22 +603,27 @@ color : #ff545c;
             <form class="form-signin">
               <label for="name" class="col-sm-2 control-label">이름</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control yang" id="name"
+                <input type="text" class="form-control" id="name"
                   placeholder="정유라"><br />
               </div>
               <label for="email" class="col-sm-2 control-label">메일</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control yang" id="email"
-                  placeholder="yura@gmail.com"><br />
+                <input type="text" class="form-control" id="email"
+                  placeholder="yura@gmail.com">
+                   <div id="emailCheckMsg"></div>
+                   <br />
+                  
               </div>
               <label for="password" class="col-sm-2 control-label">암호</label>
               <div class="col-sm-10">
-                <input type="password" id="password" class="form-control yang"
-                  placeholder="*******"><br />
+                <input type="password" id="password" class="form-control"
+                  placeholder="*******">
+                 
+                  <br />
               </div>
               <label for="birthday" class="col-sm-2 control-label">생일</label>
               <div class="col-sm-10">
-                <input type="text" id="birthday" class="form-control yang"
+                <input type="text" id="birthday" class="form-control"
                   placeholder="1997-05-11"><br />
               </div>
               <label for="gender" class="col-sm-2 control-label">성별</label>
@@ -632,7 +638,7 @@ color : #ff545c;
                       name="rememberMe"> 약관동의
                     </label> -->
               <button id="signInBtn" class="btn btn-lg btn-primary btn-block"
-                type="button" onclick="window.location.reload(true)">회원가입</button>
+                type="button">회원가입</button>
             </form>
           </div>
         </div>
