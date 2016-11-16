@@ -60,4 +60,16 @@ where tvl_msg.mno2 = #{profileNo}
 )
 order by tmno desc
 </select>
+
+<select id="selectNoPageUserProfile" resultMap="messageMap" parameterType="map">
+select tvl_membs.mnm, tvl_msg.cont, tvl_membs.mpho from tvl_membs
+inner join tvl_msg on mno2 = tvl_membs.mno
+where msgno in (
+select max(msgno)
+from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno
+where tvl_msg.mno2 = #{profileNo}
+)
+order by msgno desc
+</select>
 </mapper>

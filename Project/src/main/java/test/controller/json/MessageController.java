@@ -96,7 +96,11 @@ public class MessageController {
 			HashMap<String,Object> map = new HashMap<>();
 			System.out.println(no);
 			map.put("profileNo", no);
-		  return JsonResult.success(messageDao.selectUserProfile(map));
+			if(messageDao.selectUserProfile(map).isEmpty()) {
+				return JsonResult.success(messageDao.selectNoPageUserProfile(map));
+			} else {
+		    return JsonResult.success(messageDao.selectUserProfile(map));
+			}
 		  
 		} catch (Exception e) {
 			return JsonResult.fail(e.getMessage());

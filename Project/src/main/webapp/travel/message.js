@@ -167,7 +167,11 @@ function loadProfileInfo(no) {
 		$(".chanProfile").html(contents)
 		$(".travelMainLink").click(function(event) {
 	    	var no = $(this).attr("data-travelMainBoard")
-	    	checkToNo(no)
+	    	if (no == 0) {
+	    		alert("등록한 페이지가 없습니다.")
+	    	} else {
+	    		checkToNo(no)
+	    	}
 	    })
     })                  
 }
