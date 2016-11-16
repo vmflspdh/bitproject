@@ -18,12 +18,11 @@ $("#signInBtn").click(function(event) {
 $("#updateBtn").click(function(event) {
 
 	var formData = new FormData();
-	formData.append("no", $("#no").val());
+	formData.append("no", $("#bit-no").val());
 	formData.append("name", $("#bit-name").val());
 	formData.append("email", $("#bit-email").val());
 	formData.append("password", $("#bit-password").val());
 	formData.append("birthday", $("#bit-birthday").val());
-	formData.append("gender", $("#bit-gender").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
 
 
@@ -80,7 +79,7 @@ function ajaxLoadMember(no) {
 			return;
 		}
 
-		$("#no").val(result.data.no);
+		$("#bit-no").val(result.data.no);
 		$("#bit-name").val(result.data.name);
 		$("#bit-email").val(result.data.email);
 		$("#bit-birthday").val(result.data.birthday);
@@ -97,14 +96,14 @@ function ajaxLoadMember(no) {
 
 function ajaxUpdateMember(formData) {
 	console.log(formData)
-	console.log(formData.get("password")=="")
+	/*console.log(formData.get("password")=="")
 	if(formData.get("password")==""){
 		swal(
 				  'Please enter your password.',
 				  'Something went wrong!',
 				  'error'
 				)
-	}
+	}*/
 
 	$.ajax({
 		url : "update.json",
