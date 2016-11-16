@@ -1,5 +1,4 @@
 $("#reviewContentUpdateBtn").click (function(event){
-	alert('aaa')
 	$.getJSON(serverAddr + "/travel/rvclist.json?no=" + no, function(result) {
 		if (result.state != "success") {
 	    	console.log(result.data)
@@ -21,14 +20,13 @@ $("#reviewContentUpdateBtn").click (function(event){
 								''+arr[i].city+' &nbsp;/ &nbsp;'+arr[i].nation+ '<br>'+
 									'<i class="fa fa-calendar fa-fw w3"></i>'+arr[i].startDate2+' ~ '+arr[i].endDate2+''+
 							'</h5>'+
-							'<input value="'+arr[i].content+'">'+
-								
-							
+							'<input id="contentInput'+i+'" value="'+arr[i].content+'">'+
 						'</div>'+
 					'</div>'+
 				'</div>'+
 				'<hr>'+
 				'</li>'
+				
 		}
 		// html 원래 위치
 		$(".timeline").html(contents);
@@ -36,6 +34,9 @@ $("#reviewContentUpdateBtn").click (function(event){
 	
 });
 
+$("#reviewContentConfirmBtn").click (function(event){
+	console.log($("#contentInput1").val())
+});
 
 
 function ajaxReviewContentList(no) {
