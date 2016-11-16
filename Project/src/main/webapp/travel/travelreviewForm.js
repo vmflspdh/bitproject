@@ -164,12 +164,6 @@ function ajaxAddBoard(formData) {
 			}
 		}
 	});
-	swal(
-			'입력 실패.',
-			'Something went wrong!',
-			'error'
-	)
-	return;
 }
 	
 /*function ajaxAddBoard(formData){
