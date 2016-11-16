@@ -70,6 +70,8 @@ public class QnaController {
          List<Qna> list = qnaDao.qnaSearch(qna);
         
         result.put("state", "success");
+        result.put("totalPage", 1);
+        
         result.put("data", list);
       
       } catch (Exception e) {

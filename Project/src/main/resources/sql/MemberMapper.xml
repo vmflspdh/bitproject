@@ -90,7 +90,6 @@
 		mnm=#{name},
 		email=#{email},
 		bir_dt=#{birthday},
-		gend=#{gender},
 		mpho=#{memberPhoto}
 
 		where mno=#{no}
