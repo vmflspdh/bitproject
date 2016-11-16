@@ -7,8 +7,7 @@
 <title>Let's go together!</title>
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
 <meta name="description" content="Blueprint: On-Scroll Animated Header" />
 <meta name="keywords"
 	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
@@ -24,15 +23,9 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
 <!-- 데이트 피커 자바스크립트 -->
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 
 
@@ -216,6 +209,7 @@ color : #ff545c;
 
 </head>
 <body>
+
 	<!-- 상단메뉴시작 -->
 	<!-- Start of container2 -->
 	<div class="container">
@@ -481,13 +475,10 @@ color : #ff545c;
 						</form>
 						<br /> <input id="pac-input" type="text"
 							class="controls form-control" placeholder="변경할 국가/도시를 검색하세요."
-							style="width: 250px;">
+							style="width: 250px; z-index: 6000000;">
 
 					</div>
 				</div>
-				<!-- 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div> -->
 			</div>
 		</div>
 	</div>
@@ -600,6 +591,14 @@ color : #ff545c;
 
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
 
+
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
 		async defer></script>
@@ -624,6 +623,8 @@ color : #ff545c;
       });
     });
     
+    
+    	
   </script>
 	<script>
 		init() // 화면을 준비시킨다
@@ -681,5 +682,11 @@ class="form-control bit-longitude" readOnly = true >
     src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
 <script type="text/javascript"
     src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    
+<script>
+$('#mySchedule').on('shown.bs.modal', function (e) {
+	initMap()
+})
+</script>    
 </body>
 </html>
