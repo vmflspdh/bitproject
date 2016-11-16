@@ -1,6 +1,5 @@
 package test.controller.json;
 
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 
@@ -61,31 +60,17 @@ public class QnaController {
       return new Gson().toJson(result);
    }
    
-   @RequestMapping(path="searchList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+   @RequestMapping(path="searchList2", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
-   public String searchlist(
-         @RequestParam(defaultValue="1") int pageNo,
-         @RequestParam(defaultValue="5") int length,
-         String search) throws Exception {
-     URLEncoder.encode(search , "UTF-8");
-     System.out.println(search);
+   public String searchList(Qna qna) throws Exception {
+     System.out.println(qna);
       HashMap<String,Object> result = new HashMap<>();
-      System.out.println(pageNo);
-      System.out.println(length);
       try {
-         HashMap<String,Object> map = new HashMap<>();
-         map.put("startIndex", (pageNo - 1) * length);
-         map.put("length", length);
-         map.put("search", search);
          
-         List<Qna> list = qnaDao.qnaSearch(map);
-        
-        
+         List<Qna> list = qnaDao.qnaSearch(qna);
         
         result.put("state", "success");
         result.put("data", list);
-        result.put("length", length);
-        result.put("pageNo", pageNo);
       
       } catch (Exception e) {
          result.put("state", "fail");
@@ -93,6 +78,8 @@ public class QnaController {
       }
       return new Gson().toJson(result);
    }
+   
+   
    
    
    @RequestMapping(path="qnaadd", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
