@@ -70,9 +70,11 @@ public class ReviewContentController {
         newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
         files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
         reviewContent.setReviewBoardContentPhotoName(newFilename);
+        reviewContentDao.reviewContentUpdate(reviewContent);
+      } else{
+        reviewContentDao.reviewContentUpdate2(reviewContent);
       }
       }
-      reviewContentDao.reviewContentUpdate(reviewContent);
       result.put("state", "success");
     } catch(Exception e) {
       result.put("state", "fail");
