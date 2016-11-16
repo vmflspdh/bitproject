@@ -44,7 +44,9 @@ function ajaxRegistFormList() {
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
 	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">'
-	    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+	    		if (arr[i].myPhoto == null) {
+	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
+	    		} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
 	    		} else {
 	    			contents += '<img src="../upload/' + arr[i].myPhoto + '"></div>'
@@ -99,7 +101,9 @@ function ajaxSearchList(registForm) {
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
 	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">'
-	    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+	    		if (arr[i].myPhoto == null) {
+	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
+	    		} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
 	    		} else {
 	    			contents += '<img src="../upload/' + arr[i].myPhoto + '"></div>'
