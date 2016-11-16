@@ -64,7 +64,9 @@
 <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet" />
 <script src="http://vjs.zencdn.net/c/video.js"></script>
 
-
+<!-- middle menu -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+<link rel="stylesheet" href="assets/css/main.css" />
 
 <style>
 html, body, h1, h2, h3, h4, h5, h6 {
@@ -462,24 +464,11 @@ video {
 #footer>div {
   display: block;
 }
-/* #userName{
-  position: absolute;
-  right: 215px;
-  font-weight: bold;
-  font-size: 40px;
-  margin-right: 33%;
-  margin-top: 1.4%; 
-  color: white; 
-} */
-/*     
-#travelerRegForm {
-   margin-left: 9%;
-    
-    font-size: 24px;
-    color: white;
-    position: relative;
 
-    } */
+.image>img {
+width : 310px;
+height: 310px;
+}
 </style>
 <style>
 .modal-content {
@@ -606,11 +595,16 @@ color : #ff545c;
 
 }   
 
+article {
+padding-top: 0.5%;
+padding-left: 0.25%;
+}
+
 </style>
 </head>
 
 <!-- 페이지로딩 -->
-<body>
+<body class="landing">
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
@@ -667,7 +661,7 @@ color : #ff545c;
       </div>
     </div>
   </div>
-  <div class="cbp-af-header" style="top: 3.0%;">
+  <div class="cbp-af-header" style="top: 3.2%;">
     <div class="cbp-af-inner">
       <div style="height: 0px;">
          <img src='img/passport.png' style="float: left; width: 55px; height: 55px;">
@@ -804,9 +798,10 @@ color : #ff545c;
   <script type="text/javascript" src="/common/js/common.js"></script>
     <script type="text/javascript" src="/common/js/TweenMax.min.js"></script>
     <!-- BODY -->
-<div id="header">
+<div id="header page-wrapper">
     <div class="wrap"></div>
   </div>
+
   <div class="plan_header" >
   
 <div id="log-txt" style="position: absolute; left:52%; transform:translateX(-50%);">
@@ -820,12 +815,12 @@ color : #ff545c;
       <h1 style="color: black;">홈페이지 헤더라인2 </h1>
       </div>
     </div> -->
-    <div style="position: relative; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
+    <div style="position: relative; width: 100%; height: 100%; z-index: 0; overflow: hidden;     height: 115%;">
       <video style="position: absolute; /* width: 100%; */ max-width: 100%; /* height: 102%; */
      /* position: absolute !important; */" data-setup="{}"autoplay loop  >
         <source src="mainfull2.mp4" type="video/mp4" />
       </video> 
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001; position: absolute; top:60%; left:52%; transform:translateX(-50%);">
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001; position: absolute; top:55%; left:52%; transform:translateX(-50%);">
       <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
       <div class="form-group form-group-lg">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place" style="width: 30%">&nbsp;&nbsp;
@@ -837,87 +832,64 @@ color : #ff545c;
     </div>
       
     </div>
-
-
-
-      
-<!--           <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;left: 27%;">
-      <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
-         <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
-         <input id="searchStDt" name="startDt" type="text" class="form-control bit-startDate" placeholder="From"> 
-         <input id="searchEdDt" name="endDt" type="text" class="form-control bit-endDate"  placeholder="To"> 
-         <input id="searchaddBtn" type="button" class="button filled red extra-narrow" value="Search">
-      </form>
-    </div> -->
-   <!--  <p1 style="border : 1px solie white;  color : white;       font-size: 60px;
-    display: block;text-align: center; padding-top: 6.8%;
-    line-height: 110px; font-family: 'Arvo', serif;">A journey of a thousand miles</br>
-     must begin with a single step.</p1> -->
   </div>
-  
-<!--  <div class="click_bar" art="동행click" style="background:#e83338;height: 70px;  color : white;">
  
-</div>  -->
-<!-- <div class="my-login" id="log-txt">
-         <a id="userName"
-          style="position: absolute; right: 215px; font-weight: bold; font-size: 30px;  margin-right: 35%;
-    margin-top: 15px;color :white; "></a>
-          <a href="#" class="my-login" id="travelerRegForm" style="margin-left: 50%;
-    position: absolute; margin-top: 22px; font-size: 18px; color :white;">님 동행을 찾아보세요!</a>
-       
-      </div>
- -->
-  <!-- <div id="test1"> -->
-    <!--  <div id="slide_bar" style="border : 1px solid red; height: 53px;  width : 100%;  position :absolute; margin-top: 155px; background-color: rgba(26,21,21,0.95);">
-    
-    </div> -->
-    <div id="content_1" style=" background-color: #f0f0f0">
-      <div id="t_box" >
-    
-      <div id="t_img" style="background-image:url('mini_main10.jpg');" >
-      <p id="click_link" style=" color : white;     font-size: 70px;
-    text-align: center;     padding-top: 85px; transition-timing-function:ease-in-out "></p>  
-   
-      </div>
-      <div id="m_text">특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div> 
-      </div>
-      
-      <div id="t_box" >
-        
-      <div id="t_img" style="background-image:url('mini_main12.jpg');" >
-      
-      </div>
-      
-      <!-- <img src="mini_main2.jpg"  /> -->
-      <div id="m_text">특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div>
-      </div>
-      
-      <div id="t_box" >
-        
-      <div id="t_img" style="background-image:url('mini_main15.jpg')" >
- 
-      </div>
-    <!--   <img src="mini_main3.jpg"  /> -->
-      <div id="m_text">특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div>
-      </div>
-      
-      <div id="t_box" >
-        
-      <div id="t_img" style="background-image:url('mini_main17.jpg');" >
   
-      </div>
-<!--       <img src="mini_main1.jpg"  /> -->
-      <div id="m_text" >특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div>
-      </div>
-  </div>
+<!-- Main -->
+          <div id="main" style="margin-top: 6%;">
+            <div class="inner">
+            
+              <section class="tiles" style=" margin-top:0px; margin:0 auto;padding-left: 0.25%; padding-top: 0.2%; background-color: #f0f0f0;">
+                <article class="style1" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image" style="width:100%;margin:0; padding:0;">
+                    <img src="mini_main17.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>ACCOMPANY</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="style2" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image">
+                    <img src="mini_main10.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>REVIEW</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="style3" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image">
+                    <img src="mini_main12.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>PLAN</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="style4" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image">
+                    <img src="mini_main15.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>Q&A</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+              
+              </section>
+            </div>
+          </div>
+
+    
   <div id="content" style="background-color: #F0F0F0;">
   <br>
   <table class="changallery" style="margin: 0 auto;">
@@ -940,13 +912,7 @@ color : #ff545c;
 </div></div><br><br><br></div>
   <!-- footer 끝 div -->
   
-<script>
-$("#t_box").hover(function(){
-  $("#click_link").text("Click");
-  }, function() {
-    $("#click_link").css("visibility", "hidden");
-})
-</script>
+
 <!-- 페이지로딩 -->
 <script>
 
@@ -954,6 +920,8 @@ document.getElementById("divLoading").style.display = "none";
 document.getElementById("divBody").style.display = "";
 
 </script>
+
+
 
   <!-- 페이스북 -->
 <script>
@@ -994,6 +962,7 @@ document.getElementById("divBody").style.display = "";
   <script type="text/javascript" src="newReview.js"></script>
   <script type="text/javascript" src="bookmark.js"></script>
   <script src="js/jquery.popupoverlay.js"></script>
+     
   <script>
     $(document).ready(function() {
       $('#fadeandscale').popup({
@@ -1059,5 +1028,8 @@ $(function() {
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
     </div>
+    
+ 
+    
 </body>
 </html>
