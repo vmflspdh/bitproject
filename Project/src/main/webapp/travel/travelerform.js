@@ -616,11 +616,6 @@ function initMap() {
 
 		setMarkers(map);
 	});
-	
-	google.maps.event.addDomListener(window, 'load', initMap);
-	   $('#mySchedule').on('shown.bs.modal', function(e) {
-		   google.maps.event.trigger(map, "resize");
-})
 
 }
 
