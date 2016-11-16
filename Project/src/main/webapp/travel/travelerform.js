@@ -2,7 +2,6 @@ $(".reviewBtn").click (function(event){
 	alert(no)
 
 
-
 	window.location.href = "travelreviewForm.html";
 });
 
@@ -211,7 +210,7 @@ function regPhoto(no){
 		} else {
 			$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);	
 		}
-		
+
 
 //		location.href = "mainhtml.html"
 	})
@@ -230,16 +229,35 @@ function ajaxUpdateTravelMain(formData) {
 		type : "POST",
 		success : function(obj) {
 			var result = obj.jsonResult
+			if (result.state == "success") {
+				swal(
+						'변경 성공!',
+						'modification in success!',
+						'success'
+				)
+				window.location.reload(true);
+			}
+		},
+		error: function(obj) {
+			var result = obj.jsonResult
 			if (result.state != "success") {
 				console.log(result.data)
-				alert("변경 실패입니다.")
-				return
+				swal(
+						'변경 실패.',
+						'Something went wrong!',
+						'error'
+				)
+				return;
 			}
-			window.location.reload(true);
 		}
 	});
 
-
+	swal(
+			'변경 실패.',
+			'Something went wrong!',
+			'error'
+	)
+	return;
 }
 
 
@@ -668,7 +686,7 @@ function showCalendar() {
 			editable: false,
 			events: calendarDetailList
 		})
-		
+
 		$('#calendar').fullCalendar('gotoDate', calendarDetailList[0].start);
 	})
 }
