@@ -60,13 +60,18 @@
   rel='stylesheet'>
 <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet" />
-<script src="http://vjs.zencdn.net/c/video.js"></script>
-
-
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<script type="text/javascript"
+    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
 <style>
+
+/* alert 모달 관련 */
+.swal2-container{z-index:50000 !important;} 
+
+.swal2-modal{z-index:50001 !important;}
+
 html, body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
 }
@@ -688,10 +693,10 @@ color : #ff545c;
   <div class="main"></div>
   <!-- Start of Login form -->
   <div class="modal fade"
-    style="z-index: 200000; background: rgba(192, 192, 192, 0.3);"
+    style="z-index: 20000; background: rgba(192, 192, 192, 0.3);"
     id="myModal1" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="z-index: 300000;">
+    <div class="modal-dialog modal-sm" style="z-index: 20000;">
       <div class="modal-content">
         <div class="modal-header">
       
@@ -699,10 +704,6 @@ color : #ff545c;
         <img src='img/passport.png'>
            &nbsp;WE TRIP 
       </div>
-      
-        <!--   <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button> -->
           <h2 class="modal-title" id="myModalLabel">
             <em></em>
           </h2>
@@ -739,11 +740,11 @@ color : #ff545c;
   </div>
   <!-- End of Login form -->
   <!-- Start of Registration Form-->
-  <div class="modal fade" style="z-index: 200000;" id="myModal"
+  <div class="modal fade" style="z-index: 30000;" id="myModal"
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 360px; z-index: 300000;">
+      style="width: 360px; z-index: 30000;">
       <div class="modal-content ">
         <div class="modal-header">
       <div style="height: 0px; font-size: 34px;
@@ -1059,5 +1060,7 @@ $(function() {
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
     </div>
+      <script type="text/javascript"
+    src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
 </body>
 </html>
