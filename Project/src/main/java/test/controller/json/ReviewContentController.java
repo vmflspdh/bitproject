@@ -1,8 +1,10 @@
 package test.controller.json;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +12,13 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 
 import test.dao.ReviewContentDao;
 import test.dao.TravelScheduleDao;
+import test.util.FileUploadUtil;
 import test.vo.ReviewContent;
 import test.vo.TravelMain;
 
@@ -25,6 +29,7 @@ import test.vo.TravelMain;
 public class ReviewContentController {
   @Autowired ReviewContentDao reviewContentDao;
   @Autowired TravelScheduleDao travelScheduleDao;
+  @Autowired ServletContext sc;
 
   TravelMain travelMain = new TravelMain();
   ReviewContent reviewContent = new ReviewContent();
@@ -48,6 +53,32 @@ public class ReviewContentController {
     }
     return new Gson().toJson(result);
         
+  }
+  
+  @RequestMapping(path="rvcupdate", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String viewContentUpdate(ReviewContent reviewContent,MultipartFile[] files) throws Exception {
+    System.out.println(files.length);
+    System.out.println(reviewContent);
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+      
+      
+      String newFilename = null;
+      for(int i = 0 ; i < files.length ; i++){
+      if (!files[i].isEmpty()) {
+        newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
+        files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+        reviewContent.setReviewBoardContentPhotoName(newFilename);
+      }
+      }
+      reviewContentDao.reviewContentUpdate(reviewContent);
+      result.put("state", "success");
+    } catch(Exception e) {
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
   }
   
 

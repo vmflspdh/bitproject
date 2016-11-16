@@ -1,3 +1,4 @@
+var reviewContent=[];
 $("#reviewContentUpdateBtn").click (function(event){
 	$.getJSON(serverAddr + "/travel/rvclist.json?no=" + no, function(result) {
 		if (result.state != "success") {
@@ -8,6 +9,7 @@ $("#reviewContentUpdateBtn").click (function(event){
 		var contents="";
 		var arr = result.data
 		for ( var i in arr) {
+			reviewContent.push(arr[i])
 			contents += 
 				'<li class="event"><input type="radio" name="tl-group" /> <label></label>'+
 				'<div class="thumb user-2">'+
@@ -21,6 +23,7 @@ $("#reviewContentUpdateBtn").click (function(event){
 									'<i class="fa fa-calendar fa-fw w3"></i>'+arr[i].startDate2+' ~ '+arr[i].endDate2+''+
 							'</h5>'+
 							'<input id="contentInput'+i+'" value="'+arr[i].content+'">'+
+							'<input  name="file" id="file'+i+'" type="file">'+
 						'</div>'+
 					'</div>'+
 				'</div>'+
@@ -35,9 +38,70 @@ $("#reviewContentUpdateBtn").click (function(event){
 });
 
 $("#reviewContentConfirmBtn").click (function(event){
-	console.log($("#contentInput1").val())
+	//console.log(reviewContent);
+	var formData = new FormData();
+	
+	for(var j=0; j<reviewContent.length;j++){
+		console.log(j)
+		no=reviewContent[j].reviewBoardContentNo;
+		content=$("#contentInput"+j+"").val()
+		console.log(no)
+		console.log(content)
+		$($("#file"+j+"")[0].files).each(function(index, file) {
+		console.log(index)
+		console.log(file)
+	formData.append("files", file); 
+	});
+		formData.append("reviewBoardContentNo", no);
+		formData.append("content", content);
+		
+		
+		console.log(formData)
+		reviewUpdate(formData,no)
+		formData.delete("reviewBoardContentNo");
+		formData.delete("content");
+		formData.delete("files");
+	}
+	window.location.reload(true);
 });
 
+function reviewUpdate(formData,no){
+	$.ajax({
+		url : "rvcupdate.json?no="+no,
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(result) {
+			if (result.state != "success") {
+				console.log(result.data)
+				console.log(result.state)
+				alert("변경 실패입니다.")
+				return
+			}
+		//window.location.href = "travelreviewApp.html";
+		}
+	});
+}
+
+function reviewPhotoUpdate(formData,no){
+	$.ajax({
+		url : "rvcupdate.json?no="+no,
+		processData : false,
+		contentType : false,
+		data : formData,
+		type : "POST",
+		success : function(result) {
+			if (result.state != "success") {
+				console.log(result.data)
+				console.log(result.state)
+				alert("변경 실패입니다.")
+				return
+			}
+		//window.location.href = "travelreviewApp.html";
+		}
+	});
+}
 
 function ajaxReviewContentList(no) {
 	console.log(no)
@@ -74,7 +138,7 @@ function ajaxReviewContentList(no) {
 		// html 원래 위치
 		$(".timeline").html(contents);
 	})
-	
+	//console.log(aaabb.length);
 	reviewPhotoList()
 }
 
