@@ -143,16 +143,33 @@ function ajaxAddBoard(formData) {
 		data : formData,
 		type : "POST",
 		success : function(result) {
+			if (result.state == "success") {
+				swal(
+						'입력 성공!',
+						'sign in success!',
+						'success'
+				)
+				window.location.href = "reviewApp.html";
+			}
+		},
+		error: function(result) {
 			if (result.state != "success") {
 				console.log(result.data)
-				console.log(result.state)
-				alert("등록 실패입니다.")
-				return
+				swal(
+						'입력 실패.',
+						'Something went wrong!',
+						'error'
+				)
+				return;
 			}
-			window.location.href = "reviewApp.html";
 		}
 	});
-
+	swal(
+			'입력 실패.',
+			'Something went wrong!',
+			'error'
+	)
+	return;
 }
 	
 /*function ajaxAddBoard(formData){
