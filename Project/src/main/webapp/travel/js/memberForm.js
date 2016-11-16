@@ -9,7 +9,7 @@ $("#signInBtn").click(function(event) {
 
 	}
 	console.log(member)
-		ajaxAddMember(member)
+	ajaxAddMember(member)
 
 });
 
@@ -57,8 +57,8 @@ function ajaxAddMember(member) {
 				  'Something went wrong!',
 				  'error'
 				)
-			return
-		} else {
+			return;
+		} else if (result.state == "success") {
 			swal(
 					  '등록 성공!',
 					  'sign in success!',
