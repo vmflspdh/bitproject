@@ -1,3 +1,32 @@
+$(document).ready(function() {
+      $(".col-sm-10 > #email").keyup(function() {
+                if ($(".col-sm-10 > #email").val().length > 6) {
+                  var email = $(this).val();
+                  // ajax 실행
+                  $.ajax({
+                        type : 'POST',
+                        dataType : "json",
+                        url : "http://t1.java85.com:8000/Project1116/travel/emailCheck.json",
+                        crossDomain : true,
+                        data : {
+                          email : email
+                        },
+                        success : function(
+                            obj) {
+                          if (obj.state == "success") {
+                            $(".col-sm-10 > #emailCheckMsg").html('<p style="color:blue;">사용 가능한 이메일 입니다.</p>');
+                          } else {
+                            $(".col-sm-10 > #emailCheckMsg").html('<p style="color:red;">사용 불가능한 이메일 입니다.</p>');
+                          }
+                        }
+                      }); // end ajax
+                } else {
+                  $(".col-sm-10 > #emailCheckMsg")
+                      .text("");
+                }
+              }); // end keyup
+    });
+
 $("#signInBtn").click(function(event) {
 
 	var member = {
