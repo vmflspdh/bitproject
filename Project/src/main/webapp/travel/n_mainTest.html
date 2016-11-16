@@ -4,7 +4,6 @@
 
 <meta charset="UTF-8" />
 <title>서내와 귀요미들</title>
-<meta name="description" content="MyTravel" />
 <meta name="viewport"
   content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="shortcut icon" href="">
@@ -61,12 +60,20 @@
 <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet" />
-<script src="http://vjs.zencdn.net/c/video.js"></script>
-
-
+<!-- middle menu -->
+<link rel="stylesheet" href="assets/css/main.css" />
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+<script type="text/javascript"
+    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
 <style>
+
+/* alert 모달 관련 */
+.swal2-container{z-index:50000 !important;} 
+
+.swal2-modal{z-index:50001 !important;}
+
 html, body, h1, h2, h3, h4, h5, h6 {
   font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
 }
@@ -82,10 +89,11 @@ width: 280px;
 .btn-default {
 background-image: none;
 }
-.cbp-af-header {
-       height: 10%;
-    
-    }
+
+.upper {
+  height: 25px;
+
+}
 .thumbnail .centered  {
     position: absolute;
     top: 0;
@@ -145,11 +153,7 @@ background-image: none;
   font: bold 13px;
   padding: 0 10px;
 }
-.map {
-  width: 100%;
-  height: 400px;
-  margin: 0 0 1em 0;
-}
+
 ol, ul, li {
   margin: 0;
   padding: 0;
@@ -462,24 +466,11 @@ video {
 #footer>div {
   display: block;
 }
-/* #userName{
-  position: absolute;
-  right: 215px;
-  font-weight: bold;
-  font-size: 40px;
-  margin-right: 33%;
-  margin-top: 1.4%; 
-  color: white; 
-} */
-/*     
-#travelerRegForm {
-   margin-left: 9%;
-    
-    font-size: 24px;
-    color: white;
-    position: relative;
 
-    } */
+.image>img {
+width : 310px;
+height: 310px;
+}
 </style>
 <style>
 .modal-content {
@@ -606,11 +597,16 @@ color : #ff545c;
 
 }   
 
+article {
+padding-top: 0.5%;
+padding-left: 0.25%;
+}
+
 </style>
 </head>
 
 <!-- 페이지로딩 -->
-<body>
+<body class="landing">
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
@@ -667,7 +663,7 @@ color : #ff545c;
       </div>
     </div>
   </div>
-  <div class="cbp-af-header" style="top: 3.0%;">
+  <div class="cbp-af-header" style="top: 3.2%;">
     <div class="cbp-af-inner">
       <div style="height: 0px;">
          <img src='img/passport.png' style="float: left; width: 55px; height: 55px;">
@@ -688,10 +684,10 @@ color : #ff545c;
   <div class="main"></div>
   <!-- Start of Login form -->
   <div class="modal fade"
-    style="z-index: 200000; background: rgba(192, 192, 192, 0.3);"
+    style="z-index: 20000; background: rgba(192, 192, 192, 0.3);"
     id="myModal1" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" style="z-index: 300000;">
+    <div class="modal-dialog modal-sm" style="z-index: 20000;">
       <div class="modal-content">
         <div class="modal-header">
       
@@ -699,10 +695,6 @@ color : #ff545c;
         <img src='img/passport.png'>
            &nbsp;WE TRIP 
       </div>
-      
-        <!--   <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-          </button> -->
           <h2 class="modal-title" id="myModalLabel">
             <em></em>
           </h2>
@@ -739,11 +731,11 @@ color : #ff545c;
   </div>
   <!-- End of Login form -->
   <!-- Start of Registration Form-->
-  <div class="modal fade" style="z-index: 200000;" id="myModal"
+  <div class="modal fade" style="z-index: 30000;" id="myModal"
     tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-sm"
-      style="width: 360px; z-index: 300000;">
+      style="width: 360px; z-index: 30000;">
       <div class="modal-content ">
         <div class="modal-header">
       <div style="height: 0px; font-size: 34px;
@@ -804,12 +796,13 @@ color : #ff545c;
   <script type="text/javascript" src="/common/js/common.js"></script>
     <script type="text/javascript" src="/common/js/TweenMax.min.js"></script>
     <!-- BODY -->
-<div id="header">
+<div id="header page-wrapper">
     <div class="wrap"></div>
   </div>
+
   <div class="plan_header" >
   
-<div id="log-txt" style="position: absolute; left:52%; transform:translateX(-50%);">
+<div id="log-txt" style="position: absolute; left:52%; transform:translateX(-52%);">
        <h2>나의 추억에 동행할 인연을 위한 공간</h2>
       <div style="font-size: large;margin-bottom: 1.5%;">여행에 동행할 소중한 인연을 시간을 들이지 않고 당신에게 맞춰 드립니다.</div>
       <div class="my-login" style="font-size: x-large; color: #FF7C4E; "><span id="userName" style="font-weight: bold;">양찬</span>&nbsp;&nbsp;<a href="#" style="color: #FF7C4E;"><span id="travelerRegForm">님 동행을 찾아보세요!</span><span style="font-size:medium;color:white; margin-left: 2%;">&laquo; 여행 등록 하기!</span></a></div>
@@ -820,12 +813,13 @@ color : #ff545c;
       <h1 style="color: black;">홈페이지 헤더라인2 </h1>
       </div>
     </div> -->
-    <div style="position: relative; width: 100%; height: 100%; z-index: 0; overflow: hidden;">
+    <div style="position: relative; width: 100%; height: 100%; z-index: 0; overflow: hidden;     height: 115%;">
       <video style="position: absolute; /* width: 100%; */ max-width: 100%; /* height: 102%; */
      /* position: absolute !important; */" data-setup="{}"autoplay loop  >
         <source src="mainfull2.mp4" type="video/mp4" />
       </video> 
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001; position: absolute; top:60%; left:52%; transform:translateX(-50%);">
+
+          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001; position: absolute; top:60%; left:52%; transform:translateX(-52%);">
       <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
       <div class="form-group form-group-lg">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place" style="width: 30%">&nbsp;&nbsp;
@@ -837,87 +831,64 @@ color : #ff545c;
     </div>
       
     </div>
-
-
-
-      
-<!--           <div id="bar" class="form-inline" style="border:0px solid black; z-index: 999; position: absolute; top:50%;left: 27%;">
-      <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
-         <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place"> 
-         <input id="searchStDt" name="startDt" type="text" class="form-control bit-startDate" placeholder="From"> 
-         <input id="searchEdDt" name="endDt" type="text" class="form-control bit-endDate"  placeholder="To"> 
-         <input id="searchaddBtn" type="button" class="button filled red extra-narrow" value="Search">
-      </form>
-    </div> -->
-   <!--  <p1 style="border : 1px solie white;  color : white;       font-size: 60px;
-    display: block;text-align: center; padding-top: 6.8%;
-    line-height: 110px; font-family: 'Arvo', serif;">A journey of a thousand miles</br>
-     must begin with a single step.</p1> -->
   </div>
-  
-<!--  <div class="click_bar" art="동행click" style="background:#e83338;height: 70px;  color : white;">
  
-</div>  -->
-<!-- <div class="my-login" id="log-txt">
-         <a id="userName"
-          style="position: absolute; right: 215px; font-weight: bold; font-size: 30px;  margin-right: 35%;
-    margin-top: 15px;color :white; "></a>
-          <a href="#" class="my-login" id="travelerRegForm" style="margin-left: 50%;
-    position: absolute; margin-top: 22px; font-size: 18px; color :white;">님 동행을 찾아보세요!</a>
-       
-      </div>
- -->
-  <!-- <div id="test1"> -->
-    <!--  <div id="slide_bar" style="border : 1px solid red; height: 53px;  width : 100%;  position :absolute; margin-top: 155px; background-color: rgba(26,21,21,0.95);">
-    
-    </div> -->
-    <div id="content_1" style=" background-color: #f0f0f0">
-      <div id="t_box" >
-    
-      <div id="t_img" style="background-image:url('mini_main10.jpg');" >
-      <p id="click_link" style=" color : white;     font-size: 70px;
-    text-align: center;     padding-top: 85px; transition-timing-function:ease-in-out "></p>  
-   
-      </div>
-      <div id="m_text">특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div> 
-      </div>
-      
-      <div id="t_box" >
-        
-      <div id="t_img" style="background-image:url('mini_main12.jpg');" >
-      
-      </div>
-      
-      <!-- <img src="mini_main2.jpg"  /> -->
-      <div id="m_text">특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div>
-      </div>
-      
-      <div id="t_box" >
-        
-      <div id="t_img" style="background-image:url('mini_main15.jpg')" >
- 
-      </div>
-    <!--   <img src="mini_main3.jpg"  /> -->
-      <div id="m_text">특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div>
-      </div>
-      
-      <div id="t_box" >
-        
-      <div id="t_img" style="background-image:url('mini_main17.jpg');" >
   
-      </div>
-<!--       <img src="mini_main1.jpg"  /> -->
-      <div id="m_text" >특별한 여행에 함께할</br>
-        </br>
-         소중한 인연을 찾아드립니다</div>
-      </div>
-  </div>
+<!-- Main -->
+          <div id="main" style="margin-top: 6%;">
+            <div class="inner">
+            
+              <section class="tiles" style=" margin-top:0px; margin:0 auto;padding-left: 0.25%; padding-top: 0.2%; background-color: #f0f0f0;">
+                <article class="style1" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image" style="width:100%;margin:0; padding:0;">
+                    <img src="mini_main17.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>ACCOMPANY</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="style2" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image">
+                    <img src="mini_main10.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>REVIEW</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="style3" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image">
+                    <img src="mini_main12.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>PLAN</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+                <article class="style4" style="height:23%; width:23%;margin: 13px;">
+                  <span class="image">
+                    <img src="mini_main15.jpg" alt="" />
+                  </span>
+                  <a href="generic.html">
+                    <h2>Q&A</h2>
+                    <div class="content">
+                      <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
+                    </div>
+                  </a>
+                </article>
+              
+              </section>
+            </div>
+          </div>
+
+    
   <div id="content" style="background-color: #F0F0F0;">
   <br>
   <table class="changallery" style="margin: 0 auto;">
@@ -940,13 +911,7 @@ color : #ff545c;
 </div></div><br><br><br></div>
   <!-- footer 끝 div -->
   
-<script>
-$("#t_box").hover(function(){
-  $("#click_link").text("Click");
-  }, function() {
-    $("#click_link").css("visibility", "hidden");
-})
-</script>
+
 <!-- 페이지로딩 -->
 <script>
 
@@ -954,6 +919,8 @@ document.getElementById("divLoading").style.display = "none";
 document.getElementById("divBody").style.display = "";
 
 </script>
+
+
 
   <!-- 페이스북 -->
 <script>
@@ -994,6 +961,7 @@ document.getElementById("divBody").style.display = "";
   <script type="text/javascript" src="newReview.js"></script>
   <script type="text/javascript" src="bookmark.js"></script>
   <script src="js/jquery.popupoverlay.js"></script>
+     
   <script>
     $(document).ready(function() {
       $('#fadeandscale').popup({
@@ -1058,6 +1026,8 @@ $(function() {
     src='http://furnishednycapartments.com/wp-content/themes/nyc-apartments/js/footer.min.js?ver=0.1.1'></script>
   <script type='text/javascript'
     src='http://furnishednycapartments.com/wp-includes/js/wp-embed.min.js?ver=4.6.1'></script>
+      <script type="text/javascript"
+    src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
     </div>
 </body>
 </html>

@@ -37,7 +37,11 @@ function ajaxLogin(user) {
 			var result = obj.jsonResult
 			if (result.state != "success") {
 				console.log(result.data)
-				alert("로그인 실패입니다.\n이메일 또는 암호를 확인하세요")
+								swal(
+						  'Please check your email or password.',
+						  'Something went wrong!',
+						  'error'
+						)
 				return;
 			}
 			window.location.reload(true) /*href = "travel.html"*/

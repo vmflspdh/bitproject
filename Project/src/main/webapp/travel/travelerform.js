@@ -206,8 +206,12 @@ function regPhoto(no){
 			alert("삭제 실패 입니다.")
 			return
 		}
-
-		$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);
+		if (result.data.memberPhoto.substring(0,1) == 'h') {
+			$("#detailUserImage").attr("src",result.data.memberPhoto);
+		} else {
+			$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);	
+		}
+		
 
 //		location.href = "mainhtml.html"
 	})
