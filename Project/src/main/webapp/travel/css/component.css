@@ -89,16 +89,13 @@ border-radius:10px;
 	-webkit-transition: height 0.3s;
 	-moz-transition: height 0.3s;
 	transition: height 0.3s;
-	
-	<!-- -->
-	   
-	    
+
 }
 
 .upper {
 	background: #1e4147;
 	position: fixed;
-	top: 0;
+	top: 0px;
 	left: 0;
 	height: 20px;
 	z-index: 20000;
