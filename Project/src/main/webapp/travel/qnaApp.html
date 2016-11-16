@@ -36,7 +36,7 @@
 <link rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<link rel="stylesheet" href="css/leaflet.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!--  travel 에서 가저온-->
@@ -567,17 +567,16 @@ function switchScreen() {
 
     <footer id="footer" class="">
       <div id="content">
-        <p
-          style="font-size: 30px; float: left; margin-top: -70px; padding-left: 20px;">Q&A게시판</p>
-
-        <p>
+             <h2 class="w3-text-grey w3-padding-16">
+        <i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Q&A게시판
+      </h2>
 <table style="width: 100%; border:0px solid black;">
   <tr>
     <td style="width:10%; border:0px solid black;">
     <button type="button" onclick="window.location.href='qnaForm.html'" class="btn btn-default">새 글</button></td>
     <td style="width: 60%"></td>
-    <td style="width: 30%; border:0px solid black;"><span><input type="text" name="search" value="" placeholder="검색" style=" border:3 solid #a10200; width:200; height:28;  font-size:px; padding-right:0px; font-weight:bold; vertical-align:middle;"></span>
-    <span style="float: right;"><input type="image" src="img/Search-icon2.png"></span></td>
+    <td style="width: 30%; border:0px solid black;"><span><input type="text" id="search" value="" placeholder="검색" style=" border:3 solid #a10200; width:200; height:28;  font-size:px; padding-right:0px; font-weight:bold; vertical-align:middle;"></span>
+    <span style="float: right;"><input id="searchBtn" type="image" src="img/Search-icon2.png"></span></td>
     <!-- <td style="width: 2%;"></td> -->
     <!-- <td style="width: 5%; border:0px solid black;"><input type="image" src="img/Search-icon2.png"></td> -->
     <!-- <button type="button" class="btn btn-default btn-xs" style="height:28;">검색</button> -->

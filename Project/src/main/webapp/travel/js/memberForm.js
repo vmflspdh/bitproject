@@ -9,20 +9,8 @@ $("#signInBtn").click(function(event) {
 
 	}
 	console.log(member)
-	var count = 0;
-	for (var key in member) {
-		if (member[key] != "") {
-			console.log(member[key])
-			count++
-		}
-	}
-	console.log(count)
-	if (count == 5) {
 		ajaxAddMember(member)
-		alert("등록 성공입니다.")
-	} else {
-		alert("등록 실패입니다.")
-	}
+
 });
 
 
@@ -65,8 +53,18 @@ function ajaxAddMember(member) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			console.log(result.data)
-			alert("등록 실패입니다.")
+			swal(
+				  '등록 실패.',
+				  'Something went wrong!',
+				  'error'
+				)
 			return
+		} else {
+			swal(
+					  '등록 성공!',
+					  'sign in success!',
+					  'success'
+					)
 		}
 
 	}, "json")
@@ -131,6 +129,15 @@ function ajaxUpdateMember(formData) {
 				  'Something went wrong!',
 				  'error'
 				)
+				return
+			}
+			else if (result.state == "success") {
+				console.log(result.data)
+				swal(
+					  '변경 성공!',
+					  'You clicked the button!',
+					  'success'
+					)
 				return
 			}
 			window.location.reload(true)

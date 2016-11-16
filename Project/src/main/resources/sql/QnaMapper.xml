@@ -35,6 +35,21 @@ order by QBNO desc
 limit #{startIndex}, #{length}
 </select>
 
+<select id="qnaSearch" resultMap="qnaMap" parameterType="map">
+select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITlE, count(qcno),
+date_format(TVL_QNA_BODS.CRE_DT,'%Y-%m-%d')as cre_dt, TVL_QNA_BODS.VW_CNT
+from tvl_QnA_BODS
+inner join tvl_membs
+on tvl_membs.mno = tvl_qna_bods.mno
+left join tvl_qna_comt
+on tvl_qna_comt.qbno = tvl_qna_bods.qbno
+where tvl_qna_bods.title like'%#{search}%'
+group by tvl_qna_bods.qbno
+order by QBNO desc
+limit #{startIndex}, #{length}
+</select>
+
+
 <select id="selectOne" resultMap="qnaMap" parameterType="int">
 select QBNO, mnm, tvl_qna_bods.MNO, TITlE, CONT, CRE_DT, VW_CNT
 from tvl_QnA_BODS
