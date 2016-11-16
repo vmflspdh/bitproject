@@ -63,10 +63,19 @@ function ajaxAddBookmark() {
 	$.post(serverAddr + "/travel/bookmarkAdd.json", function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
-			alert("등록 실패입니다.")
+			swal(
+					  '이미 등록되었습니다!',
+					  'Something went wrong!',
+					  'error'
+					)
+
 			return
 		}
-		alert("추가되었습니다.")
+		swal(
+				  '등록 성공!',
+				  'sign in success!',
+				  'success'
+				)
 		window.location.reload(true)
 
 	}, "json")
