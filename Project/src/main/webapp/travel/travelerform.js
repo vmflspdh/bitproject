@@ -251,13 +251,6 @@ function ajaxUpdateTravelMain(formData) {
 			}
 		}
 	});
-
-	swal(
-			'변경 실패.',
-			'Something went wrong!',
-			'error'
-	)
-	return;
 }
 
 
