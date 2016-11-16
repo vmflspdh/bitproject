@@ -49,7 +49,7 @@ public class RegistFormController {
 		}
 	}
 	
-	@RequestMapping(path="searchList")
+	@RequestMapping(path="mainSearchList")
 	public Object searchList(RegistForm registForm) throws Exception {
 		System.out.println(registForm);
 		try {

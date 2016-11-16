@@ -76,7 +76,7 @@ function ajaxRegistFormList() {
 }
 
 function ajaxSearchList(registForm) {
-	$.post(serverAddr + "/travel/searchList.json", registForm, function(obj) {
+	$.post(serverAddr + "/travel/mainSearchList.json", registForm, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
