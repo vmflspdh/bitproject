@@ -45,6 +45,10 @@
     insert into tvl_review_conts(rbno,schno,cont,rbcpnm)
     values(#{reviewBoardNo},#{scheduleNo},#{content}, #{reviewBoardContentPhotoName})
   </insert>
+  <delete id="delete"  parameterType="int">
+    delete from tvl_review_conts 
+    where RBCNO=#{value}
+  </delete>
 </mapper>
 
 

@@ -16,7 +16,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.google.gson.Gson;
 
+import test.dao.CommentDao;
 import test.dao.ReviewContentDao;
+import test.dao.ReviewDao;
 import test.dao.TravelScheduleDao;
 import test.util.FileUploadUtil;
 import test.vo.ReviewContent;
@@ -29,7 +31,9 @@ import test.vo.TravelMain;
 public class ReviewContentController {
   @Autowired ReviewContentDao reviewContentDao;
   @Autowired TravelScheduleDao travelScheduleDao;
+  @Autowired ReviewDao reviewDao;
   @Autowired ServletContext sc;
+  @Autowired CommentDao commentDao;
 
   TravelMain travelMain = new TravelMain();
   ReviewContent reviewContent = new ReviewContent();
@@ -118,6 +122,28 @@ public class ReviewContentController {
       //reviewContentDao.insert(map);
       
           
+          
+      result.put("state", "success");
+    } catch(Exception e) {
+      e.printStackTrace();
+      result.put("state", "fail");
+      result.put("data", e.getMessage());
+    }
+    return new Gson().toJson(result);
+  }
+  
+  
+  @RequestMapping(path="rvcdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+  @ResponseBody
+  public String delete(int no,HttpSession session) throws Exception {
+    
+    
+    HashMap<String, Object> result = new HashMap<>();
+    try{
+          
+          commentDao.delete(no);//rcno
+          reviewContentDao.delete(no);//rbcno
+          reviewDao.delete(no);//rbno
           
       result.put("state", "success");
     } catch(Exception e) {
