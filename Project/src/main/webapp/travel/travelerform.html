@@ -15,10 +15,6 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-<script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -27,15 +23,10 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
+<!-- 데이트 피커 자바스크립트 -->
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
-
-<!-- fade -->
-<!-- animsition.css -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
-<!-- animsition.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 
 
 <style>
@@ -508,14 +499,13 @@ logincss.css
 	<div class="modal fade" style="z-index: 10;" id="mySchedule"
 		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 		aria-hidden="true">
-		<div class="modal-dialog modal-sm" style="z-index: 300000; position: absolute; top:15%; left: 30%">
-			<div class="modal-content" style="width: 630px; ">
+		<div class="modal-dialog modal-sm" style="z-index: 300000;">
+			<div class="modal-content" style="width: 630px;">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">여행일정 수정</h4>
+				</div>
 				<div class="modal-body">
-					<h4 class="modal-title" id="myModalLabel" style="font-weight: bold;">* 여행일정 수정</h4><br>
 					<div class="wrapper">
-					<input id="pac-input" type="text"
-              class="controls form-control" placeholder="변경할 국가/도시를 검색하세요."
-              style="width: 250px; z-index: 6000000;">
 						<div id="map"></div>
 						<br />
 						<div id="type-selector" class="controls" style="display: none;">
@@ -528,7 +518,7 @@ logincss.css
 								name="type" id="changetype-geocode"> <label
 								for="changetype-geocode">Geocodes</label>
 						</div>
-						<form class="form-inline" style="width: 100%">
+						<form class="form-inline">
 							<input type="text" placeholder="대륙" value="대륙"
 								style="width: 100px; display: none;"
 								class="form-control bit-continent"> <input type="text"
@@ -547,14 +537,9 @@ logincss.css
 								style="display:none;" class="form-control bit-index1">
 							<button type="button" class="btn btn-default selectApplyBtn">적용</button>
 						</form>
-<<<<<<< HEAD
 						<br /> <input id="pac-input" type="text"
 							class="controls form-control" placeholder="변경할 국가/도시를 검색하세요."
 							style="width: 250px; z-index: 6000000;">
-=======
-						<br /> 
-
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 					</div>
 				</div>
 			</div>
@@ -676,19 +661,10 @@ logincss.css
   </div>
   <!-- End of Registration Form-->
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
-<<<<<<< HEAD
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script
   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-=======
-
-
-
-
-
-
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
 		async defer></script>
