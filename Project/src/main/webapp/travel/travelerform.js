@@ -1,5 +1,4 @@
 $(".reviewBtn").click (function(event){
-	alert(no)
 
 
 	window.location.href = "travelreviewForm.html";
@@ -251,13 +250,6 @@ function ajaxUpdateTravelMain(formData) {
 			}
 		}
 	});
-
-	swal(
-			'변경 실패.',
-			'Something went wrong!',
-			'error'
-	)
-	return;
 }
 
 
