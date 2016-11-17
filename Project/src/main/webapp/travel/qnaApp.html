@@ -43,7 +43,10 @@
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 <script type="text/javascript"
     src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-
+<!-- animsition.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
+<!-- animsition.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 <!-- 시작/ -->
 <style>
 
@@ -338,8 +341,6 @@ button, input, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
-<<<<<<< HEAD
-
 
 #logForm>a:hover {
 background-color : #e83338;
@@ -367,9 +368,6 @@ padding-left: 0.25%;
 	left: 140px;
 }
 
-=======
-logincss.css
->>>>>>> branch 'master' of https://github.com/yonghyunkim/bitproject.git
 </style>
 
 
@@ -380,7 +378,11 @@ function switchScreen() {
     document.getElementById("divBody").style.display = "";
 }
 </script>
-<body onload="switchScreen();">
+<body onload="switchScreen();" class="animsition"
+	data-animsition-in-class="fade-in-up-lg"
+		  data-animsition-in-duration="1000"
+		  data-animsition-out-class="fade-out-up-lg"
+		  data-animsition-out-duration="800">
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
@@ -699,21 +701,6 @@ function switchScreen() {
         dateFormat : 'yyyy-mm-dd'
       });
     });
-  </script>
-<script type='text/javascript'
-    src='http://furnishednycapartments.com/wp-includes/js/jquery/jquery.js?ver=0.1.1'></script>
-  <script type='text/javascript'
-    src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/respond.min.js?ver=0.1.1'></script>
-  <script type='text/javascript'
-    src='http://furnishednycapartments.com/wp-content/themes/cntrst-foundation/js/modernizr.min.js?ver=0.1.1'></script>
-  <script type='text/javascript'>
-    /* <![CDATA[ null 에 [ ]로 값입력해서 넘길려면 나중에 추가,국가 선택,*/
-    var nycSearch = {
-      "apartmentTypes" : null,
-      "neighborhoods" : [ "Aisa", "South America", "North America",
-          "Europe", "Africa", "Oceania" ]
-    };
-    /* ]]> */
   </script>
            <script type="text/javascript"
     src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>

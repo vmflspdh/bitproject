@@ -6,7 +6,13 @@ $("#searchaddBtn").click (function(event){
 	}
 	console.log(registForm)
 	ajaxSearchList(registForm)
+	fnMove()
 });
+
+function fnMove(){
+    var position = $(".changallery").offset();
+    $('html,body').animate({scrollTop : position.top}, 400);
+}
 
 function checkToNo(no) {
 	$.getJSON(serverAddr + "/travel/formMyList.json", {no: no}, function(obj) {

@@ -40,8 +40,15 @@
 <!--  travel 에서 가저온-->
 <!-- alert창 관련 -->
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+
 <script type="text/javascript"
     src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    
+    <!-- fade -->
+<!-- animsition.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
+<!-- animsition.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 
 <style>
 .thumbnail-wrappper {
@@ -420,7 +427,6 @@ button, input, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
-logincss.css
 </style>
 </head>
 <script>
@@ -429,7 +435,11 @@ function switchScreen() {
     document.getElementById("divBody").style.display = "";
 }
 </script>
-<body onload="switchScreen();">
+<body onload="switchScreen();" class="animsition"
+data-animsition-in-class="fade-in-up-lg"
+  data-animsition-in-duration="1000"
+  data-animsition-out-class="fade-out-up-lg"
+  data-animsition-out-duration="800">
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
@@ -703,6 +713,7 @@ function switchScreen() {
 
 
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+	<script type="text/javascript" src="js/Fade.js"></script>
 	<script src="js/map.js"></script>
 	<!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&callback=initMap"
