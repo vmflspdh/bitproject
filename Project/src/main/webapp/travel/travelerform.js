@@ -689,5 +689,3 @@ function showCalendar() {
 		$('#calendar').fullCalendar('gotoDate', calendarDetailList[0].start);
 	})
 }
-
-
