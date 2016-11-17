@@ -171,7 +171,7 @@ function init() {
 
 $("#travelerPage").click(function(event) {
 
-	window.location.href = "mainhtml.html";
+	window.location.href = "travelerRegForm.html";
 });
 
 $("#reviewPage").click(function(event) {
