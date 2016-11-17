@@ -147,6 +147,7 @@ function reviewThumbPhoto(no,i){
 			alert("서버에서 데이터를 가져오는데 실패했습니다.")
 			return
 		}
+		
 		var arr = result.data
 		console.log(arr[0].reviewBoardContentPhotoName)
 		contents=""
