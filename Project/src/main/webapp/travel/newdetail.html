@@ -18,18 +18,12 @@
 	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- 웹폰트 코드 -->
-<link rel='stylesheet'
-	href='https://fonts.googleapis.com/css?family=Titillium+Web'
-	rel='stylesheet'>
-<link rel='stylesheet'
-	href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'
-	rel='stylesheet'>
+<link rel='stylesheet'href='https://fonts.googleapis.com/css?family=Titillium+Web'>
+<link rel='stylesheet'href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <link rel="stylesheet"
 	href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 <!-- 합쳐지고 최소화된 최신 CSS -->
@@ -37,10 +31,6 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
-<script type="text/javascript"
-    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-<script type="text/javascript"
-    src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
@@ -48,6 +38,17 @@
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
 <script src='lib/jquery.min.js'></script>
 <script src='lib/moment.min.js'></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script type="text/javascript"
+    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<script type="text/javascript"
+    src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
+<!-- fade -->
+<!-- animsition.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
+<!-- animsition.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 
 <!-- 달력 관련 -->
 <script
@@ -403,8 +404,13 @@ padding-left: 0.25%;
 	</div>
 	<!-- center  -->
 
-	<div
-		style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;">
+	<div style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;"
+	class="animsition"
+data-animsition-in-class="fade-in-down"
+  data-animsition-in-duration="1000"
+  data-animsition-out-class="fade-in-down"
+  data-animsition-out-duration="800"
+	>
 		<div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
 			<!--      <div style="width: 50px; height: 50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
         <img src="" id="detailUserImage">

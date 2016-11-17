@@ -64,13 +64,13 @@
 <!-- alert창 관련 -->
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 
+<script type="text/javascript"
+    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 <!-- fade -->
 <!-- animsition.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
 <!-- animsition.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
-<script type="text/javascript"
-    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
 
 <style>
@@ -505,11 +505,7 @@ padding-left: 0.25%;
 </style>
 </head>
 <!-- 페이지로딩 -->
-<body class="landing animsition"
-data-animsition-in-class="fade-in-up-lg"
-  data-animsition-in-duration="1000"
-  data-animsition-out-class="fade-out-up-lg"
-  data-animsition-out-duration="800"> 
+<body class="landing"> 
 <div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
@@ -573,7 +569,7 @@ data-animsition-in-class="fade-in-up-lg"
         <h1 id="title_txt"><a  href="n_mainTest.html">WE TRIP</a></h1>
       </div>
       <nav id="menu_nav">
-        <a href="#" id="travelerPage">Traveler</a> <a href="#"
+        <a href="#" id="travelerPage">Accompany</a> <a href="#"
           id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
           href="#">.</a>
       </nav>
@@ -708,7 +704,10 @@ data-animsition-in-class="fade-in-up-lg"
 <div id="header page-wrapper">
     <div class="wrap"></div>
   </div>
-  <div class="plan_header" >
+  <div class="plan_header animsition"  data-animsition-in-class="fade-in-up-lg"
+  data-animsition-in-duration="1000"
+  data-animsition-out-class="fade-out-up-lg"
+  data-animsition-out-duration="800">
   
 <div id="log-txt" style="position: absolute; top: 4%; left:52%; transform:translateX(-52%);">
        <h2 class="jejugo" style="font-size: 80%;">나의 추억에 동행할 인연을 위한 공간</h2>
@@ -747,7 +746,10 @@ data-animsition-in-class="fade-in-up-lg"
  
   
 <!-- Main -->
-          <div id="main" style="margin-top: 6%;">
+          <div id="main" style="margin-top: 6%;" class="animsition" data-animsition-in-class="fade-in-up-lg"
+  data-animsition-in-duration="1000"
+  data-animsition-out-class="fade-out-up-lg"
+  data-animsition-out-duration="800">
             <div class="inner">
             
               <section class="tiles" style=" margin-top: 0px;margin: 0 auto;padding-left: 1.5%;padding-top: 10%;background-color: #f0f0f0;padding-bottom: 0.9%;">
@@ -801,7 +803,11 @@ data-animsition-in-class="fade-in-up-lg"
             </div>
          
     
-  <div id="content" style="background-color: #F0F0F0;">
+  <div id="content" style="background-color: #F0F0F0;" class="animsition"
+data-animsition-in-class="fade-in-up-lg"
+  data-animsition-in-duration="1000"
+  data-animsition-out-class="fade-out-up-lg"
+  data-animsition-out-duration="800" >
   <br>
   <table class="changallery" style="margin: 0 auto; width:1000px;">
   </table>
