@@ -167,8 +167,10 @@ public class ReviewController {
     Member member = (Member)session.getAttribute("member");
     review.setMemberno(member.getNo());
     
-    for(int j = 0; j < files.length; j++){
+    if (files.length != 0) {
+        for(int j = 0; j < files.length; j++){
       System.out.println(files[j]);
+    }
     }
     
     
@@ -185,7 +187,7 @@ public class ReviewController {
         reviewContent.setScheduleNo(list.get(i).getScheduleNo());
         reviewContent.setContent(list.get(i).getContent());
         reviewContent.setReviewBoardContentPhotoName(list.get(i).getReviewBoardContentPhotoName());
-        if (!files[i].isEmpty()) {
+        if (files.length != 0 && !files[i].isEmpty()) {
           newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
           files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
           reviewContent.setReviewBoardContentPhotoName(newFilename);
