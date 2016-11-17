@@ -126,7 +126,7 @@ function ajaxSearchList(registForm) {
 	    			contents += '<td style="width: 15px;"></td>'
 	    		}
 	    		
-	    		if (i % 3 == 2) {
+	    		if (i % 3 == 2 || i == 0) {
 		    		contents += '</tr>' +
 		    					'<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'
 		    	}
