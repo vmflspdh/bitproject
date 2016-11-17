@@ -79,9 +79,18 @@ function ajaxQnaBoardList() {
 	  })
 }
 
-$("#searchBtn").click(function(event) {
+/*$("#searchBtn").click(function(event) {
 	console.log($("#search").val())
 	ajaxQnaSearchBoardList($("#search").val())
+});*/
+
+$("#search").keydown(function(key) {
+	console.log(key.keyCode)
+	if(key.keyCode==13){
+		
+		console.log($("#search").val())
+		ajaxQnaSearchBoardList($("#search").val())
+	}
 });
 
 
