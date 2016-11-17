@@ -42,7 +42,7 @@ public class CommentController {
     try{
     comment.setMemberNo(member.getNo());
     
-      System.out.println(comment.toString());      
+      //System.out.println(comment.toString());      
       //System.out.println(no);
       //comment.setReviewboardNo(no);
       //System.out.println(comment.getReviewcommentNo());
