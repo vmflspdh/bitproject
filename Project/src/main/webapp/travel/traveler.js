@@ -45,7 +45,7 @@ function ajaxRegistFormList() {
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
 	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">'
 	    		if (arr[i].myPhoto == null) {
-	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
+	    			contents += '<img src="img/iconmonstr-user-20-240.png"></div>'
 	    		} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
 	    		} else {
@@ -102,7 +102,7 @@ function ajaxSearchList(registForm) {
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
 	    		'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden;">'
 	    		if (arr[i].myPhoto == null) {
-	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
+	    			contents += '<img src="img/iconmonstr-user-20-240.png"></div>'
 	    		} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 	    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
 	    		} else {
@@ -147,7 +147,9 @@ function ajaxInviteList() {
 	    for (var i in arr) {
 	    	contents +=
 	    		'<pre class="prettyprint">'
-	    		if (arr[i].invitePhoto.substring(0,1) == 'h') {
+	    		if (arr[i].invitePhoto == null) {
+	    			contents += '<img  class="img-circle" src="img/iconmonstr-user-20-240.png"style="width:40px; height:40px;">'
+	    		} else if (arr[i].invitePhoto.substring(0,1) == 'h') {
 	    			contents += '<img  class="img-circle" src="'+arr[i].invitePhoto+'"style="width:40px; height:40px;">'
 	    		} else {
 	    			contents += '<img  class="img-circle" src="../upload/'+arr[i].invitePhoto+'"style="width:40px; height:40px;">'
@@ -228,7 +230,9 @@ function ajaxAgreeInviteList() {
 	    for (var i in arr) {
 	    	contents +=
 	    		'<pre class="prettyprint">'
-	    		if (arr[i].invitePhoto.substring(0,1) == 'h') {
+	    		if (arr[i].invitePhoto == null) {
+	    			contents += '<img  class="img-circle" src="img/iconmonstr-user-20-240.png"style="width:40px; height:40px;">'
+	    		} else if (arr[i].invitePhoto.substring(0,1) == 'h') {
 	    			contents += '<img  class="img-circle" src="'+arr[i].invitePhoto+'"style="width:40px; height:40px;">'
 	    		} else {
 	    			contents += '<img  class="img-circle" src="../upload/'+arr[i].invitePhoto+'"style="width:40px; height:40px;">'
