@@ -44,7 +44,11 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+<!-- fade -->
+<!-- animsition.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
+<!-- animsition.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 <!-- footer style -->
 <style>
 
@@ -219,10 +223,10 @@ border : 1px solid #e83338;
 
 }
 
-#title_txt>a {
-color : #1e4147;
+#title_txt > a {
+color : white;
 }
-#title_txt>a:hover {
+#title_txt > a:hover {
 text-decoration: none;
 color : #ff545c;
 
@@ -315,11 +319,9 @@ padding-left: 0.25%;
           class="fadeandscale_close btn btn-default">Close</button>
       </div>
 
-      <div class="my-login">
-        <span> <a id="userName"
-          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
-        </span>
+       <div class="my-login" style="position: absolute; top:5px; right: 130px; color:white;">
+        <span id="userName" style="font-weight: bold; font-size: 18px;"></span>
+        <a href="#" style="color:white;"><span id="travelerRegForm" style="font-size: 13px;">님 동행을 찾아보세요!</span></a>
       </div>
 
       <div
