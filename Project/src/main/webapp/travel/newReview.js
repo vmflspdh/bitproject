@@ -150,6 +150,9 @@ function reviewThumbPhoto(no,i){
 		
 		var arr = result.data
 		console.log(arr[0].reviewBoardContentPhotoName)
+		if (arr[0].reviewBoardContentPhotoName == null) {
+		arr[0].reviewBoardContentPhotoName = "5.jpg"
+			} 
 		contents=""
 				contents+=
 				'<img src="../upload/' +arr[0].reviewBoardContentPhotoName+'" id="reviewThumbImg" style="width:100px; height: 100px; border-radius: 5px 5px 5px 5px;">';
