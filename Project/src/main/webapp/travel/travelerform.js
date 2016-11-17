@@ -204,7 +204,9 @@ function regPhoto(no){
 			alert("삭제 실패 입니다.")
 			return
 		}
-		if (result.data.memberPhoto.substring(0,1) == 'h') {
+		if (result.data.memberPhoto == null) {
+			$("#detailUserImage").attr("src","img/iconmonstr-user-20-240.png");
+		} else if (result.data.memberPhoto.substring(0,1) == 'h') {
 			$("#detailUserImage").attr("src",result.data.memberPhoto);
 		} else {
 			$("#detailUserImage").attr("src","../upload/" + result.data.memberPhoto);	

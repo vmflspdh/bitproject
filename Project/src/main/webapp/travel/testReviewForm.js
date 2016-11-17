@@ -76,7 +76,7 @@ function reviewUpdate(formData,no){
 			if (result.state != "success") {
 				console.log(result.data)
 				console.log(result.state)
-				alert("변경 실패입니다.")
+//				alert("변경 실패입니다.")
 				return
 			}
 		//window.location.href = "travelreviewApp.html";
@@ -114,9 +114,9 @@ function ajaxReviewContentList(no) {
 		var contents="";
 		var arr = result.data
 		for ( var i in arr) {
-			if (arr[i].reviewBoardContentPhotoName == null) {
+			/*if (arr[i].reviewBoardContentPhotoName == null) {
 				arr[i].reviewBoardContentPhotoName = "1.jpg"
-			} 
+			} */
 		
 			contents += 
 				'<li class="event"><input type="radio" name="tl-group" /> <label></label>'+

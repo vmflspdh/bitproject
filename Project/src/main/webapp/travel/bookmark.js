@@ -17,7 +17,9 @@ function ajaxBookmarkList() {
 		for (var i in arr) {
 			contents +=
 				'<pre class="prettyprint">'
-	    		if (arr[i].memberPhoto.substring(0,1) == 'h') {
+				if (arr[i].memberPhoto == null) {
+					contents += '<img  class="img-circle" src="img/iconmonstr-user-20-240.png"style="width:40px; height:40px;">'
+				} else if (arr[i].memberPhoto.substring(0,1) == 'h') {
 	    			contents += '<img  class="img-circle" src="'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
 	    		} else {
 	    			contents += '<img  class="img-circle" src="../upload/'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
