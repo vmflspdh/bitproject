@@ -6,12 +6,12 @@ $("#searchaddBtn").click (function(event){
 	}
 	console.log(registForm)
 	ajaxSearchList(registForm)
-	/*fnMove()*/
+	fnMove()
 });
 
 function fnMove(){
     var offset = $(".changallery").offset();
-    $('html, body').animate({scrollTop : offset.top}, 400);
+    $('body').animate({scrollTop : offset.top}, 400);
 }
 
 function checkToNo(no) {
