@@ -10,8 +10,8 @@ $("#searchaddBtn").click (function(event){
 });
 
 function fnMove(){
-    var offset = $(".changallery").offset();
-    $('html,body').animate({scrollTop : offset.top}, 400);
+    var position = $(".changallery").offset();
+    $('html,body').animate({scrollTop : position.top}, 400);
 }
 
 function checkToNo(no) {
