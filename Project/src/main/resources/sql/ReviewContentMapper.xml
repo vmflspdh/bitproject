@@ -35,7 +35,7 @@
       rbcpnm=#{reviewBoardContentPhotoName}
     where RBCNO=#{reviewBoardContentNo}
   </update> 
-  <update id="reviewContentUpdate2" parameterType="reviewContent">
+  <update id="reviewContentUpdate2"  parameterType="reviewContent">
     update tvl_review_conts set 
       cont=#{content}
     where RBCNO=#{reviewBoardContentNo}
