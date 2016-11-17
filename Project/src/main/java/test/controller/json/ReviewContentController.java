@@ -67,17 +67,15 @@ public class ReviewContentController {
     HashMap<String, Object> result = new HashMap<>();
     try{
       
-      
+      reviewContentDao.reviewContentUpdate2(reviewContent);
       String newFilename = null;
-      for(int i = 0 ; i < files.length ; i++){
-      if (!files[i].isEmpty()) {
-        newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
-        files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+      if (!files[0].isEmpty()) {
+        newFilename = FileUploadUtil.getNewFilename(files[0].getOriginalFilename());
+        files[0].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
         reviewContent.setReviewBoardContentPhotoName(newFilename);
-        reviewContentDao.reviewContentUpdate(reviewContent);
+        System.out.println(reviewContentDao.reviewContentUpdate(reviewContent));
       } else{
-        reviewContentDao.reviewContentUpdate2(reviewContent);
-      }
+        System.out.println(reviewContentDao.reviewContentUpdate2(reviewContent));
       }
       result.put("state", "success");
     } catch(Exception e) {

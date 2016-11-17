@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashMap;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,7 +84,7 @@ public class MemberController {
 
 
   @RequestMapping(path="update")
-  public Object update(Member member, MultipartFile file) throws Exception {
+  public Object update(Member member, MultipartFile file, HttpSession session) throws Exception {
 
     
     System.out.println(member);
@@ -108,6 +109,7 @@ public class MemberController {
         member.setMemberPhoto(newFilename);
         System.out.println(member);
       }
+      session.setAttribute("member", member);
       memberDao.update(member);
       return JsonResult.success();
 

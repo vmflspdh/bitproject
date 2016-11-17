@@ -73,10 +73,37 @@ $("#updateBtn").click(function(event) {
 
 	console.log(member)
 	ajaxUpdateMember(formData)
-	ajaxLogout()
-	ajaxLogin(user)
 	
 });
+
+
+
+function ajaxLogin2(user) {
+
+
+	$.ajax({
+		url: "login.json",
+		method: "POST",
+		dataType: "json",
+		data: user,
+		success: function(obj) {
+			var result = obj.jsonResult
+			if (result.state != "success") {
+				console.log(result.data)
+								swal(
+						  'Please check your email or password.',
+						  'Something went wrong!',
+						  'error'
+						)
+				return;
+			}
+			window.location.reload(true) /*href = "travel.html"*/
+		},
+		error: function(msg) {
+			alert(msg)
+		}
+	})
+}
 
 $("#deleteBtn").click(function(event) {
 
