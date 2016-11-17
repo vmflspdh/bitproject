@@ -11,7 +11,7 @@ $("#searchaddBtn").click (function(event){
 
 function fnMove(){
     var offset = $(".changallery").offset();
-    $('body').animate({scrollTop : offset.top}, 400);
+    $('html,body').animate({scrollTop : offset.top}, 400);
 }
 
 function checkToNo(no) {
