@@ -38,7 +38,9 @@ function chattingMemberList() {
 	    		'<a class="titleLink" href="#" data-sendMemberNo="' + arr[i].sendMemberNo + '">' +
 	    		'<div class="chattingList">' +
 	    		'<div style="width:45px; height:45px; overflow: hidden; display:inline-block; float: left;">'
-	    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+	    		if (arr[i].myPhoto == null) {
+	    			contents += '<img src="img/iconmonstr-user-20-240.png">'
+	    		} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 	    			contents += '<img src="' + arr[i].myPhoto + '">'
 	    		} else {
 	    		    contents += '<img src="../upload/' + arr[i].myPhoto + '">'
@@ -91,7 +93,9 @@ function loadDetailMessageList(no) {
 				contents +=
 					'<div class="chattingDetail">' +
 					'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: right;">'
-		    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+					if (arr[i].myPhoto == null) {
+						contents += '<img src="img/iconmonstr-user-20-240.png"></div>'
+					} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 		    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
 		    		} else {
 		    		    contents += '<img src="../upload/' + arr[i].myPhoto + '"></div>'
@@ -118,7 +122,9 @@ function loadDetailMessageList(no) {
 				contents +=
 					'<div class="chattingDetail">' +
 					'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">'
-		    		if (arr[i].myPhoto.substring(0,1) == 'h') {
+					if (arr[i].myPhoto == null) {
+						contents += '<img src="img/iconmonstr-user-20-240.png"></div>'
+					} else if (arr[i].myPhoto.substring(0,1) == 'h') {
 		    			contents += '<img src="' + arr[i].myPhoto + '"></div>'
 		    		} else {
 		    		    contents += '<img src="../upload/' + arr[i].myPhoto + '"></div>'
@@ -152,7 +158,9 @@ function loadProfileInfo(no) {
 		var contents = 
 			'<div style="width:200px;">' +
 			'<div style="width:200px; height:200px; border-radius: 50% 50% 50% 50%; overflow: hidden;">'
-			if (arr[0].myPhoto.substring(0,1) == 'h') {
+			if (arr[0].myPhoto == null) {
+				contents += '<img src="img/iconmonstr-user-20-240.png" style="width:200px;">'
+			} else if (arr[0].myPhoto.substring(0,1) == 'h') {
 				contents += '<img src="' + arr[0].myPhoto + '" style="width:200px;">'
 			} else {
 				contents += '<img src="../upload/' + arr[0].myPhoto + '" style="width:200px;">'

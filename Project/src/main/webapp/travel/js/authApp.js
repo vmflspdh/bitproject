@@ -102,8 +102,9 @@ function ajaxLoginUser() {
 		$("#userName3").val(result.data.name)
 		$("#requestCountAll").text(result.data.memberRequest)
 		console.log(result.data.memberRequest)
-		
-		if (result.data.memberPhoto.substring(0,1) == 'h') {
+		if (result.data.memberPhoto == null) {
+			$(".mainImg").attr("src","img/iconmonstr-user-20-240.png");
+		} else if (result.data.memberPhoto.substring(0,1) == 'h') {
 			$(".mainImg").attr("src",result.data.memberPhoto);
 		} else {
 		$(".mainImg").attr("src","../upload/" + result.data.memberPhoto);
