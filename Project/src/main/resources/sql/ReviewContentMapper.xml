@@ -29,10 +29,26 @@
     where rbno=#{value}
   </select>
   
+  <update id="reviewContentUpdate" parameterType="reviewContent">
+    update tvl_review_conts set 
+      cont=#{content},
+      rbcpnm=#{reviewBoardContentPhotoName}
+    where RBCNO=#{reviewBoardContentNo}
+  </update> 
+  <update id="reviewContentUpdate2" parameterType="reviewContent">
+    update tvl_review_conts set 
+      cont=#{content}
+    where RBCNO=#{reviewBoardContentNo}
+  </update> 
+  
   <insert id="insert" parameterType="reviewContent" useGeneratedKeys="true" keyProperty="reviewBoardContentNo" keyColumn="rbcno">
     insert into tvl_review_conts(rbno,schno,cont,rbcpnm)
     values(#{reviewBoardNo},#{scheduleNo},#{content}, #{reviewBoardContentPhotoName})
   </insert>
+  <delete id="delete"  parameterType="int">
+    delete from tvl_review_conts 
+    where RBCNO=#{value}
+  </delete>
 </mapper>
 
 

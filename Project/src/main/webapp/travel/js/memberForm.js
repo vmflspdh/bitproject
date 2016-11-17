@@ -53,7 +53,7 @@ $("#updateBtn").click(function(event) {
 	formData.append("password", $("#bit-password").val());
 	formData.append("birthday", $("#bit-birthday").val());
 	formData.append("file", $("input[name=file]")[0].files[0]);
-
+	
 
 	var member = {
 			name: $("#bit-name").val(),
@@ -64,9 +64,18 @@ $("#updateBtn").click(function(event) {
 			registedDate: $("#registedDate").val(),
 			no: $("#bit-no").val()
 	}
+	
+	var user = {
+			email: $("#bit-email").val(),
+			password: $("#bit-password").val()
+
+	}
 
 	console.log(member)
 	ajaxUpdateMember(formData)
+	ajaxLogout()
+	ajaxLogin(user)
+	
 });
 
 $("#deleteBtn").click(function(event) {
