@@ -694,6 +694,7 @@ color : #ff545c;
   <script type="text/javascript" src="bookmark.js"></script>
   <script type="text/javascript" src="travelreviewForm.js"></script>
   <script type="text/javascript" src="commentApp.js"></script>
+  
     <script src="js/jquery.popupoverlay.js"></script>
    <script>
     $(document).ready(function() {
@@ -708,9 +709,9 @@ color : #ff545c;
 		ajaxLoginUser()
 		scheduleList()
 		ajaxRegistFormList()
-    ajaxInviteList()
-    ajaxAgreeInviteList()
-    ajaxBookmarkCount()
+	    ajaxInviteList()
+	    ajaxAgreeInviteList()
+	    ajaxBookmarkList()
 		if (window.location.search.startsWith("?")) {
 			var no = location.search.split("=")[1];
 			ajaxLoadBoard(no)
