@@ -516,6 +516,17 @@ padding-left: 0.25%;
 .regFormAtags:hover {
   color : #FF7C4E;
 }
+
+.formListLoading div {
+  position:fixed;
+  top:50%; 
+  left:47%; 
+  width:100%; 
+  margin:0 auto;
+}
+.display-none {
+  display: none;
+}
 </style>
 </head>
 <!-- 페이지로딩 -->
@@ -823,6 +834,9 @@ data-animsition-in-class="fade-in-up-lg"
   </br></br></br></br>
   <table class="changallery" style="margin: 0 auto;">
   </table>
+  <div class="formListLoading display-none">
+    <div><img src="img/img-loading.gif" style="width:100px;"/></div>
+  </div>
   <br>
   </div>
 <div id="footer" style="background-color: white; ">
@@ -899,6 +913,12 @@ document.getElementById("divBody").style.display = "";
         /* ajaxRegistFormList(length) */
         if (maxHeight <= currentScroll) {
          length += 12;
+         $(document).ajaxStart(function(){
+        	 $(".formListLoading").removeClass("display-none");
+         });
+         $(document).ajaxStop(function(){
+             $(".formListLoading").addClass("display-none");
+           })
          ajaxRegistFormList(length);
         }
     })
