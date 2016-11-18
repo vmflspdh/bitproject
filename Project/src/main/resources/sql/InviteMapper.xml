@@ -17,46 +17,46 @@
   </resultMap>
   
   <insert id="insert" parameterType="invite" >
-    insert into tvl_invit(mno,mno2,invnm,invemail,invgend,stat,invpho,ivbno) 
-    	values(#{memberNo},#{memberNo2},#{inviteName},#{inviteEmail},#{inviteGender},0,#{invitePhoto},#{inviteBoardNo})
+    INSERT INTO TVL_INVIT(MNO,MNO2,INVNM,INVEMAIL,INVGEND,STAT,INVPHO,IVBNO) 
+    	VALUES(#{MEMBERNO},#{MEMBERNO2},#{INVITENAME},#{INVITEEMAIL},#{INVITEGENDER},0,#{INVITEPHOTO},#{INVITEBOARDNO})
   </insert>
   
   <insert id="inviteAgreeInsert" parameterType="invite" >
-    insert into tvl_invit(mno,mno2,invnm,invemail,invgend,stat,invpho,ivbno) 
-    	values(#{memberNo},#{memberNo2},#{inviteName},#{inviteEmail},#{inviteGender},1,#{invitePhoto},#{inviteBoardNo})
+    INSERT INTO TVL_INVIT(MNO,MNO2,INVNM,INVEMAIL,INVGEND,STAT,INVPHO,IVBNO) 
+    	VALUES(#{MEMBERNO},#{MEMBERNO2},#{INVITENAME},#{INVITEEMAIL},#{INVITEGENDER},1,#{INVITEPHOTO},#{INVITEBOARDNO})
   </insert>
   
   <select id="inviteCheck" resultType="int" parameterType="int">
-    select count(*) from tvl_invit 
-    where mno=#{memberNo} and mno2=#{memberNo2}
+    SELECT COUNT(*) FROM TVL_INVIT 
+    WHERE MNO=#{MEMBERNO} AND MNO2=#{MEMBERNO2}
   </select>
   
    <select id="inviteCount" resultType="int" parameterType="int">
-    select  count(*) from tvl_invit 
-    where mno2=#{value} and stat=0
+    SELECT  COUNT(*) FROM TVL_INVIT 
+    WHERE MNO2=#{VALUE} AND STAT=0
   </select>
   
   <select id="inviteList" resultMap="inviteMap" parameterType="int">
-    select  * from tvl_invit 
-    	where mno2=#{value} and stat=0    
+    SELECT  * FROM TVL_INVIT 
+    	WHERE MNO2=#{VALUE} AND STAT=0    
   </select>
   
   
   <update id="inviteAgree" parameterType="int">
-    update tvl_invit set 
-      stat=1
-    where ivno=#{inviteNo}
+    UPDATE TVL_INVIT SET 
+      STAT=1
+    WHERE IVNO=#{INVITENO}
   </update>
   
   <update id="inviteRefuse" parameterType="int">
-    update tvl_invit set 
-      stat=3
-    where ivno=#{inviteNo}
+    UPDATE TVL_INVIT SET 
+      STAT=3
+    WHERE IVNO=#{INVITENO}
   </update>
   
   <select id="inviteAgreeList" resultMap="inviteMap" parameterType="int">
-    select  * from tvl_invit 
-    	where mno2=#{value} and stat=1    
+    SELECT  * FROM TVL_INVIT 
+    	WHERE MNO2=#{VALUE} AND STAT=1    
   </select>
 </mapper>
 

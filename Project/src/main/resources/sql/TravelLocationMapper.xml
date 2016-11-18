@@ -5,23 +5,23 @@
 <mapper namespace="test.dao.TravelLocationDao">
   
 <insert id="insert" parameterType="travelMain" useGeneratedKeys="true" keyColumn="locno" keyProperty="locationNo">
-insert into tvl_loc(cont,natn,city,lat,lng)
-values(#{continent},#{nation}, #{city}, #{lat}, #{lng});
+INSERT INTO TVL_LOC(CONT,NATN,CITY,LAT,LNG)
+VALUES(#{CONTINENT},#{NATION}, #{CITY}, #{LAT}, #{LNG});
 </insert>
 
  <update id="update" parameterType="travelMain" useGeneratedKeys="true" keyProperty="locationNo" keyColumn="locno">
-  update tvl_loc set 
-    cont=#{continent}, 
-    natn=#{nation},
-    city=#{city},
-    lat=#{lat},
-    lng=#{lng}
-  where locno=#{locationNo}
+  UPDATE TVL_LOC SET 
+    CONT=#{CONTINENT}, 
+    NATN=#{NATION},
+    CITY=#{CITY},
+    LAT=#{LAT},
+    LNG=#{LNG}
+  WHERE LOCNO=#{LOCATIONNO}
 </update>
 
  <delete id="delete" parameterType="int">
-  delete from tvl_loc 
-  where locno=#{locationNo}
+  DELETE FROM TVL_LOC 
+  WHERE LOCNO=#{LOCATIONNO}
  </delete>
 </mapper>
 

@@ -23,69 +23,69 @@
   
   
 <select id="selectList" resultMap="qnaMap" parameterType="map">
-select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITlE, count(qcno),
-date_format(TVL_QNA_BODS.CRE_DT,'%Y-%m-%d')as cre_dt, TVL_QNA_BODS.VW_CNT
-from tvl_QnA_BODS
-inner join tvl_membs
-on tvl_membs.mno = tvl_qna_bods.mno
-left join tvl_qna_comt
-on tvl_qna_comt.qbno = tvl_qna_bods.qbno
-group by tvl_qna_bods.qbno
-order by QBNO desc
-limit #{startIndex}, #{length}
+SELECT TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITLE, COUNT(QCNO),
+DATE_FORMAT(TVL_QNA_BODS.CRE_DT,'%Y-%M-%D')AS CRE_DT, TVL_QNA_BODS.VW_CNT
+FROM TVL_QNA_BODS
+INNER JOIN TVL_MEMBS
+ON TVL_MEMBS.MNO = TVL_QNA_BODS.MNO
+LEFT JOIN TVL_QNA_COMT
+ON TVL_QNA_COMT.QBNO = TVL_QNA_BODS.QBNO
+GROUP BY TVL_QNA_BODS.QBNO
+ORDER BY QBNO DESC
+LIMIT #{STARTINDEX}, #{LENGTH}
 </select>
 
 <select id="qnaSearch" resultMap="qnaMap" parameterType="qna">
-select TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITlE, count(qcno),
-date_format(TVL_QNA_BODS.CRE_DT,'%Y-%m-%d')as cre_dt, TVL_QNA_BODS.VW_CNT
-from tvl_QnA_BODS
-inner join tvl_membs
-on tvl_membs.mno = tvl_qna_bods.mno
-left join tvl_qna_comt
-on tvl_qna_comt.qbno = tvl_qna_bods.qbno
-where tvl_qna_bods.title like concat('%', #{title}, '%')
-group by tvl_qna_bods.qbno
-order by QBNO desc
+SELECT TVL_QNA_BODS.QBNO, TVL_QNA_BODS.MNO, MNM, TVL_QNA_BODS.TITLE, COUNT(QCNO),
+DATE_FORMAT(TVL_QNA_BODS.CRE_DT,'%Y-%M-%D')AS CRE_DT, TVL_QNA_BODS.VW_CNT
+FROM TVL_QNA_BODS
+INNER JOIN TVL_MEMBS
+ON TVL_MEMBS.MNO = TVL_QNA_BODS.MNO
+LEFT JOIN TVL_QNA_COMT
+ON TVL_QNA_COMT.QBNO = TVL_QNA_BODS.QBNO
+WHERE TVL_QNA_BODS.TITLE LIKE CONCAT('%', #{TITLE}, '%')
+GROUP BY TVL_QNA_BODS.QBNO
+ORDER BY QBNO DESC
 </select>
 
 
 <select id="selectOne" resultMap="qnaMap" parameterType="int">
-select QBNO, mnm, tvl_qna_bods.MNO, TITlE, CONT, CRE_DT, VW_CNT
-from tvl_QnA_BODS
-inner join tvl_membs on tvl_membs.mno = tvl_qna_bods.mno
-where QBNO = #{value}
+SELECT QBNO, MNM, TVL_QNA_BODS.MNO, TITLE, CONT, CRE_DT, VW_CNT
+FROM TVL_QNA_BODS
+INNER JOIN TVL_MEMBS ON TVL_MEMBS.MNO = TVL_QNA_BODS.MNO
+WHERE QBNO = #{VALUE}
 </select>
 
 
 
 <insert id="insert" parameterType="qna"  useGeneratedKeys="true" keyProperty="qno">
-  insert into tvl_QnA_bods(MNO, TITlE, CONT, cre_dt, vw_cnt)
-  values(#{no}, #{title}, #{contents}, now(), 0)
+  INSERT INTO TVL_QNA_BODS(MNO, TITLE, CONT, CRE_DT, VW_CNT)
+  VALUES(#{NO}, #{TITLE}, #{CONTENTS}, NOW(), 0)
   
 
 </insert>
 
 <update id="update" parameterType="qna">
-  update tvl_QnA_bods set 
-    TITlE=#{title}, 
-    CONT=#{contents} 
-  where QBNO=#{qno}
+  UPDATE TVL_QNA_BODS SET 
+    TITLE=#{TITLE}, 
+    CONT=#{CONTENTS} 
+  WHERE QBNO=#{QNO}
 </update>
 
 <update id="viewCountUpdate" parameterType="int">
-  update tvl_qna_bods set 
-    vw_cnt=vw_cnt+1
-  where qbno=#{qno}
+  UPDATE TVL_QNA_BODS SET 
+    VW_CNT=VW_CNT+1
+  WHERE QBNO=#{QNO}
 </update>
 
 <delete id="delete" parameterType="int">
-  delete from tvl_QnA_bods
-  where QBNO=#{value}
+  DELETE FROM TVL_QNA_BODS
+  WHERE QBNO=#{VALUE}
 </delete>
 
 <select id="countAll" resultType="int">
-  select  count(*)
-  from tvl_qna_bods 
+  SELECT  COUNT(*)
+  FROM TVL_QNA_BODS 
 </select>  
 
 </mapper>
