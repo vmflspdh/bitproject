@@ -10,17 +10,17 @@
   </resultMap>
   
   <insert id="insert" parameterType="reviewPhoto" >
-    insert into tvl_review_pho(rbno, rpnm)
-    values(#{reviewBoardNo}, #{reviewPhotoName})
+    INSERT INTO TVL_REVIEW_PHO(RBNO, RPNM)
+    VALUES(#{reviewBoardNo}, #{reviewPhotoName})
   </insert>
   
   <select id="photoList" resultMap="reviewPhotoMap" parameterType="int">
-    select * from tvl_review_pho
-    where rbno=#{value}
+    SELECT * FROM TVL_REVIEW_PHO
+    WHERE RBNO=#{value}
   </select>
   
   <delete id="delete" parameterType="int">
-    delete from tvl_review_pho
-    where rbno=#{value}
+    DELETE FROM TVL_REVIEW_PHO
+    WHERE RBNO=#{value}
   </delete>
 </mapper>

@@ -18,36 +18,36 @@
   
   
   <select id="selectOne" resultMap="reviewContentMap" parameterType="int">
-    select c.rbcno,c.rbno,c.schno,c.cont,c.rbcpnm,s.st_dt,s.ed_dt,l.cont continent,l.natn,l.city from tvl_review_conts c 
-    inner join tvl_sch s on s.schno=c.schno
-	inner join tvl_loc l on s.locno = l.locno
-    where c.rbno=#{value}
+    SELECT C.RBCNO,C.RBNO,C.SCHNO,C.CONT,C.RBCPNM,S.ST_DT,S.ED_DT,L.CONT CONTINENT,L.NATN,L.CITY FROM TVL_REVIEW_CONTS C 
+    INNER JOIN TVL_SCH S ON S.SCHNO=C.SCHNO
+	INNER JOIN TVL_LOC L ON S.LOCNO = L.LOCNO
+    WHERE C.RBNO=#{value}
   </select>
   
    <select id="reviewPhotoList" resultMap="reviewContentMap" parameterType="int">
-    select rbcno, rbcpnm from tvl_review_conts
-    where rbno=#{value}
+    SELECT RBCNO, RBCPNM FROM TVL_REVIEW_CONTS
+    WHERE RBNO=#{value}
   </select>
   
   <update id="reviewContentUpdate" parameterType="reviewContent">
-    update tvl_review_conts set 
-      cont=#{content},
-      rbcpnm=#{reviewBoardContentPhotoName}
-    where RBCNO=#{reviewBoardContentNo}
+    UPDATE TVL_REVIEW_CONTS SET 
+      CONT=#{content},
+      RBCPNM=#{reviewBoardContentPhotoName}
+    WHERE RBCNO=#{reviewBoardContentNo}
   </update> 
   <update id="reviewContentUpdate2"  parameterType="reviewContent">
-    update tvl_review_conts set 
-      cont=#{content}
-    where RBCNO=#{reviewBoardContentNo}
+    UPDATE TVL_REVIEW_CONTS SET 
+      CONT=#{content}
+    WHERE RBCNO=#{reviewBoardContentNo}
   </update> 
   
   <insert id="insert" parameterType="reviewContent" useGeneratedKeys="true" keyProperty="reviewBoardContentNo" keyColumn="rbcno">
-    insert into tvl_review_conts(rbno,schno,cont,rbcpnm)
-    values(#{reviewBoardNo},#{scheduleNo},#{content}, #{reviewBoardContentPhotoName})
+    INSERT INTO TVL_REVIEW_CONTS(RBNO,SCHNO,CONT,RBCPNM)
+    VALUES(#{reviewBoardNo},#{scheduleNo},#{content}, #{reviewBoardContentPhotoName})
   </insert>
   <delete id="delete"  parameterType="int">
-    delete from tvl_review_conts 
-    where RBCNO=#{value}
+    DELETE FROM TVL_REVIEW_CONTS 
+    WHERE RBCNO=#{value}
   </delete>
 </mapper>
 

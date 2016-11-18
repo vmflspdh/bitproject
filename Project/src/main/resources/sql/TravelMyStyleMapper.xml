@@ -5,20 +5,20 @@
 <mapper namespace="test.dao.TravelMyStyleDao">
   
   <insert id="insert" parameterType="travelMain">
-    insert into tvl_mysty(tmno,styno)
-    values(#{travelMainNo},#{styleNo});
+    INSERT INTO TVL_MYSTY(TMNO,STYNO)
+    VALUES(#{travelMainNo},#{styleNo});
   </insert>
   
 <update id="update" parameterType="travelMain">
-  update tvl_mysty set 
-    tmno=#{travelMainNo},
-    styno=#{styleNo}
-  where tmno=#{travelMainNo}
+  UPDATE TVL_MYSTY SET 
+    TMNO=#{travelMainNo},
+    STYNO=#{styleNo}
+  WHERE TMNO=#{travelMainNo}
 </update>
 
  <delete id="delete" parameterType="int">
-  delete from tvl_mysty 
-  where tmno=#{travelMainNo}
+  dELETE FROM TVL_MYSTY 
+  WHERE TMNO=#{travelMainNo}
  </delete>
 </mapper>
 
