@@ -479,13 +479,7 @@ function ajaxUpdateViewCount(no){
 
 }
 function initMap() {
-	
 
-	var map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 37.49, lng: 127.02},
-		zoom: 2,
-		mapTypeControl: false
-	});
 
 
 	var flightPlanCoordinates = [];
@@ -498,8 +492,15 @@ function initMap() {
 		}
 	});
 
-	console.log(flightPlanCoordinates)
+	var map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 37.49, lng: 127.02},
+		zoom: 7,
+		mapTypeControl: false
+	});
 
+
+
+	console.log(flightPlanCoordinates)
 
 
 	bounds = new google.maps.LatLngBounds();
@@ -507,6 +508,15 @@ function initMap() {
 		bounds.extend(flightPlanCoordinates[i]);
 	}
 	map.fitBounds(bounds);
+
+
+	google.maps.event.addListener(map, 'zoom_changed', function() {
+		zoomChangeBoundsListener = google.maps.event.addListener(map, 'bounds_changed', function(event) {
+			if (map.getZoom() > 12)
+				map.setZoom(7)
+				google.maps.event.removeListener(zoomChangeBoundsListener);
+		});
+	});
 
 
 
@@ -566,7 +576,7 @@ function initMap() {
 
 
 	autocomplete.bindTo('bounds', map);
-	
+
 	autocomplete.addListener('place_changed', function() {
 		infowindow.close();
 		marker.setVisible(false);
