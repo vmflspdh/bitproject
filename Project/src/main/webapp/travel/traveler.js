@@ -1,12 +1,14 @@
+var registForm = {};
+
 $("#searchaddBtn").click (function(event){
-	var registForm = {
+	registForm = {
 			city: $("#searchCity").val(),
 			startDate: $("#searchStDt").val(),
 			endDate: $("#searchEdDt").val()
 	}
-	console.log(registForm)
-	ajaxSearchList(registForm)
-	fnMove()
+	window.location.href = "n_mainTestSearchList.html"
+	/*ajaxSearchList(registForm)
+	fnMove()*/
 });
 
 function fnMove(){
