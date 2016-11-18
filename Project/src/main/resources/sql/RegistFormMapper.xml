@@ -71,6 +71,7 @@ on tvl_tvlmain.tmno = tvl_intro_pho.tmno
 group by tvl_tvlmain.tmno
 )
 order by tvl_tvlmain.tmno desc
+limit #{length}
 </select>
 
 <select id="afterSearchList" resultMap="registFormMap" parameterType="map">
