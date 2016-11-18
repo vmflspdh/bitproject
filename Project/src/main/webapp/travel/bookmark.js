@@ -81,6 +81,11 @@ function ajaxAddBookmark() {
 		window.location.reload(true)
 
 	}, "json")
+	swal(
+				  '등록 성공!',
+				  'sign in success!',
+				  'success'
+				)
 }
 
 

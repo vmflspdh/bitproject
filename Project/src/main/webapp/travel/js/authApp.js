@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
 $("#loginBtn").click(function(event) {
-
+	
 	var user = {
 			email: $("#email").val(),
 			password: $("#password").val(),
