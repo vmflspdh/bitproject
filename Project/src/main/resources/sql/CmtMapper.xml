@@ -19,31 +19,31 @@
   
  
     <select id="selectList" resultMap="cmtMap" parameterType="map">
- SELECT TVL_QNA_COMT.QCNO,MNM,TVL_QNA_COMT.MNO,TVL_QNA_COMT.CONT,TVL_QNA_COMT.CRE_DT,MPHO FROM TVL_QNA_BODS 
- INNER JOIN TVL_QNA_COMT
- ON TVL_QNA_BODS.QBNO = TVL_QNA_COMT.QBNO
- INNER JOIN TVL_MEMBS
- ON TVL_QNA_COMT.MNO = TVL_MEMBS.MNO
- WHERE TVL_QNA_BODS.QBNO = #{QNABODSNO}
+ select tvl_qna_comt.qcno,mnm,tvl_qna_comt.mno,tvl_qna_comt.cont,tvl_qna_comt.cre_dt,mpho from tvl_qna_bods 
+ inner join tvl_qna_comt
+ on tvl_qna_bods.qbno = tvl_qna_comt.qbno
+ inner join tvl_membs
+ on tvl_qna_comt.mno = tvl_membs.mno
+ where tvl_qna_bods.qbno = #{qnabodsno}
 
     <where>
-      <if test="writer != null">AND WRITER LIKE CONCAT('%', #{WRITER}, '%')</if>
+      <if test="writer != null">and writer like concat('%', #{writer}, '%')</if>
     </where>
-    ORDER BY 
+    order by 
     <choose>
-      <when test="writerOrder == 'asc'">WRITER ASC</when>
-      <when test="writerOrder == 'desc'">WRITER DESC</when>
-      <when test="qcnoOrder == 'asc'">QCNO ASC</when>
-      <otherwise>QCNO DESC</otherwise>
+      <when test="writerOrder == 'asc'">writer asc</when>
+      <when test="writerOrder == 'desc'">writer desc</when>
+      <when test="qcnoOrder == 'asc'">QCNO asc</when>
+      <otherwise>QCNO desc</otherwise>
     </choose>
-    LIMIT #{STARTINDEX}, #{LENGTH}
+    limit #{startIndex}, #{length}
   </select>
   
 
   
   <insert id="insert" parameterType="qna">
-    INSERT INTO TVL_QNA_COMT(MNO,QBNO, CONT, CRE_DT)
-    VALUES( #{COMMEMBERNO}, #{QNO}, #{COMMENTCONTENTS}, NOW())
+    insert into tvl_QnA_COMT(mno,qbno, cont, cre_dt)
+    values( #{comMemberNo}, #{qno}, #{commentContents}, now())
   </insert>
   
 <!--   
@@ -57,8 +57,8 @@
   
    -->
   <delete id="delete" parameterType="int">
-    DELETE FROM TVL_QNA_COMT 
-    WHERE QCNO=#{VALUE}
+    delete from tvl_qna_comt 
+    where qcno=#{value}
   </delete>
   
   

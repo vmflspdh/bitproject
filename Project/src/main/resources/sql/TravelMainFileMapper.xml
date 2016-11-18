@@ -10,20 +10,20 @@
   </resultMap>
   
   <insert id="insert" parameterType="travelMainFile">
-    INSERT INTO TVL_INTRO_PHO(TMNO, IPNM)
-    VALUES(#{TRAVELMAINNO}, #{FILENAme})
+    insert into tvl_intro_pho(tmno, ipnm)
+    values(#{travelMainNo}, #{fileName})
   </insert>
   
   <select id="selectList" resultMap="travelMainFileMap" parameterType="map">
-  SELECT IPNO, IPNM
+  select ipno, ipnm
   
-  FROM TVL_INTRO_PHO
-  WHERE TMNO = #{TRAVELPOSTNO}
+  from tvl_intro_pho
+  where tmno = #{travelPostNo}
   </select>
   
   <delete id="delete" parameterType="int">
-    DELETE FROM TVL_INTRO_PHO
-    WHERE TMNO=#{VALUE}
+    delete from tvl_intro_pho
+    where tmno=#{value}
   </delete>
   
 </mapper>

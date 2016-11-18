@@ -17,22 +17,22 @@
   </resultMap>
   
 <insert id="insert" parameterType="Message">
-INSERT INTO TVL_MSG(MNO2, MNO, CONT, SD_DT) 
-VALUES(#{SENDMEMBERNO}, #{RECEIVEMEMBERNO}, #{CONTENTS}, now())
+insert into tvl_msg(mno2, mno, cont, sd_dt) 
+values(#{sendMemberNo}, #{receiveMemberNo}, #{contents}, now())
 </insert>
   
 <select id="selectMyMemberList" resultMap="messageMap" parameterType="map">
-SELECT TVL_MSG.MNO, MNM, MSGNO, MNO2, CONT, SD_DT, MPHO 
-FROM TVL_MSG
-INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO 
-WHERE MSGNO IN (
-SELECT MAX(MSGNO)
-FROM TVL_MSG
-INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO 
-WHERE TVL_MSG.MNO = #{RECEIVENO}
-GROUP BY MNO2
+select tvl_msg.mno, mnm, msgno, mno2, cont, sd_dt, mpho 
+from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno 
+where msgno in (
+select max(msgno)
+from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno 
+where tvl_msg.mno = #{receiveNo}
+group by mno2
 )
-ORDER BY MSGNO DESC;
+order by msgno desc;
 <!-- order by msgno desc;
 select tvl_msg.mno, mnm, msgno, mno2, cont, sd_dt, mpho from tvl_msg
 inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno 
@@ -41,35 +41,35 @@ order by msgno desc -->
 </select>
 
 <select id="selectMyMessageList" resultMap="messageMap" parameterType="map">
-SELECT TVL_MSG.MNO, MNM, MSGNO, MNO2, CONT, SD_DT, MPHO FROM TVL_MSG
-INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO 
-WHERE (MNO2=#{SENDNO} AND TVL_MSG.MNO=#{RECEIVENO}) OR (MNO2=#{RECEIVENO} AND TVL_MSG.MNO=#{SENDNO})
-ORDER BY MSGNO DESC
+select tvl_msg.mno, mnm, msgno, mno2, cont, sd_dt, mpho from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno 
+where (mno2=#{sendNo} and tvl_msg.mno=#{receiveNo}) or (mno2=#{receiveNo} and tvl_msg.mno=#{sendNo})
+order by msgno desc
 </select>
 
 <select id="selectUserProfile" resultMap="messageMap" parameterType="map">
-SELECT TVL_MSG.MSGNO,TVL_SCH.SCHNO, TVL_MEMBS.MNM, TVL_MSG.CONT, TVL_MEMBS.MPHO, TVL_TVLMAIN.TMNO FROM TVL_MEMBS
-INNER JOIN TVL_TVLMAIN ON TVL_TVLMAIN.MNO = TVL_MEMBS.MNO
-INNER JOIN TVL_MSG ON MNO2 = TVL_MEMBS.MNO
-INNER JOIN TVL_SCH ON TVL_TVLMAIN.TMNO = TVL_SCH.TMNO
-WHERE MSGNO IN (
-SELECT MAX(MSGNO)
-FROM TVL_MSG
-INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO
-WHERE TVL_MSG.MNO2 = #{PROFILENO}
+select tvl_msg.msgno,tvl_sch.schno, tvl_membs.mnm, tvl_msg.cont, tvl_membs.mpho, tvl_tvlmain.tmno from tvl_membs
+inner join tvl_tvlmain on tvl_tvlmain.mno = tvl_membs.mno
+inner join tvl_msg on mno2 = tvl_membs.mno
+inner join tvl_sch on tvl_tvlmain.tmno = tvl_sch.tmno
+where msgno in (
+select max(msgno)
+from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno
+where tvl_msg.mno2 = #{profileNo}
 )
-ORDER BY TMNO DESC
+order by tmno desc
 </select>
 
 <select id="selectNoPageUserProfile" resultMap="messageMap" parameterType="map">
-SELECT TVL_MEMBS.MNM, TVL_MSG.CONT, TVL_MEMBS.MPHO FROM TVL_MEMBS
-INNER JOIN TVL_MSG ON MNO2 = TVL_MEMBS.MNO
-WHERE MSGNO IN (
-SELECT MAX(MSGNO)
-FROM TVL_MSG
-INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO
-WHERE TVL_MSG.MNO2 = #{PROFILENO}
+select tvl_membs.mnm, tvl_msg.cont, tvl_membs.mpho from tvl_membs
+inner join tvl_msg on mno2 = tvl_membs.mno
+where msgno in (
+select max(msgno)
+from tvl_msg
+inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno
+where tvl_msg.mno2 = #{profileNo}
 )
-ORDER BY MSGNO DESC
+order by msgno desc
 </select>
 </mapper>

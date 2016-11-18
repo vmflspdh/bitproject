@@ -10,19 +10,19 @@
   </resultMap>
   
   <insert id="insert" parameterType="travelMain" useGeneratedKeys="true" keyProperty="travelMainNo" keyColumn="TMNO">
-    INSERT INTO TVL_TVLMAIN(MNO, TITLE, SF_INF)
-    VALUES(#{MEMBERNO},#{TITLE}, #{SELFINTRODUCE})
+    insert into tvl_tvlmain(mno, title, sf_inf)
+    values(#{memberNo},#{title}, #{selfIntroduce});
   </insert>
   
   <update id="update" parameterType="travelMain">
-   UPDATE TVL_TVLMAIN SET 
-     TITLE=#{TITLE}, 
-     SF_INF=#{SELFINTRODUCE} 
-   WHERE TMNO=#{TRAVELMAINNO}
+   update tvl_tvlmain set 
+     title=#{title}, 
+     sf_inf=#{selfIntroduce} 
+   where tmno=#{travelMainNo}
  </update>
  
  <delete id="delete" parameterType="int">
-  DELETE FROM TVL_TVLMAIN 
-  WHERE TMNO=#{TRAVELMAINNO}
+  delete from tvl_tvlmain 
+  where tmno=#{travelMainNo}
  </delete>
 </mapper>

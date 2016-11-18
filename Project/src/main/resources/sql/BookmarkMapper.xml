@@ -16,32 +16,32 @@
   
   
 <select id="viewMyBookmarkList" resultMap="bookmarkMap" parameterType="map">
-SELECT MNM, MPHO, TVL_BMK.TMNO, TVL_BMK.MNO FROM TVL_BMK
-INNER JOIN TVL_TVLMAIN
-ON TVL_TVLMAIN.TMNO = TVL_BMK.TMNO
-INNER JOIN TVL_MEMBS 
-ON TVL_MEMBS.MNO=TVL_TVLMAIN.MNO
-WHERE TVL_BMK.MNO = #{BOOKMARKMEMBERNO}
+select mnm, mpho, tvl_bmk.tmno, tvl_bmk.mno from tvl_bmk
+inner join tvl_tvlmain
+on tvl_tvlmain.tmno = tvl_bmk.tmno
+inner join tvl_membs 
+on tvl_membs.mno=tvl_tvlmain.mno
+where tvl_bmk.mno = #{bookmarkMemberNo}
 </select>
 
 <select id="bookmarkCount" resultMap="bookmarkMap" parameterType="map">
-SELECT COUNT(TMNO) FROM TVL_BMK
-WHERE TMNO = #{BOOKMARKCOUNT}
+select count(tmno) from tvl_bmk
+where tmno = #{bookmarkCount}
 </select>
 
 <select id="bookmarkCount2" resultType="int" parameterType="int">
-SELECT COUNT(*) FROM TVL_BMK
-WHERE MNO = #{VALUE}
+select count(*) from tvl_bmk
+where mno = #{value}
 </select>
   
 <insert id="insert" parameterType="bookmark" >
-  INSERT INTO TVL_BMK(TMNO, MNO)
-  VALUES( #{TRAVELMAINNO}, #{MEMBERNO})
+  insert into tvl_bmk(tmno, mno)
+  values( #{travelMainNo}, #{memberNo})
 </insert>
 
 <delete id="delete" parameterType="int">
-  DELETE FROM TVL_BMK
-  WHERE TMNO=#{TRAVELMAINNO} AND MNO=#{MEMBERNO}
+  delete from tvl_bmk
+  where tmno=#{travelMainNo} and mno=#{memberNo}
 </delete>
   
 

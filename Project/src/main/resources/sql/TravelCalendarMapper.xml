@@ -11,10 +11,10 @@
     </resultMap>
 
   <select id="selectMyCalendar" resultMap="calendarMap" parameterType="map">
-    SELECT ST_DT, ED_DT, CITY FROM TVL_SCH
-    INNER JOIN TVL_LOC
-    ON TVL_SCH.LOCNO = TVL_LOC.LOCNO
-    WHERE TMNO = #{TRAVELPOSTNO}
+    select st_dt, ED_DT, city from tvl_sch
+    inner join tvl_loc
+    on tvl_sch.locno = tvl_loc.locno
+    where tmno = #{travelPostNo}
   </select>
   
 

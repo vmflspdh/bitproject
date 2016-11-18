@@ -21,84 +21,84 @@
 	</resultMap>
 
 	<insert id="insert" parameterType="member" useGeneratedKeys="true" keyProperty="no" keyColumn="mno">
-    INSERT INTO TVL_MEMBS(MNM,
-    EMAIL, PWD, BIR_DT, GEND, REG_DT,MPHO,MREQ)
-    VALUES (#{NAME}, #{EMAIL},
-    PASSWORD(#{PASSWORD}),
-    #{BIRTHDAY}, #{GENDER}, NOW(), #{MEMBERPHOTO},0)
+    insert into tvl_membs(mnm,
+    email, pwd, bir_dt, gend, reg_dt,mpho,mreq)
+    values (#{name}, #{email},
+    password(#{password}),
+    #{birthday}, #{gender}, now(), #{memberPhoto},0)
 	</insert>
 	
 	<insert id="memberRequestAdd">
-		INSERT INTO TVL_MEMBS(MNM,
-		EMAIL, PWD, BIR_DT, GEND, REG_DT)
-		VALUES (#{NAME}, #{EMAIL},
-		PASSWORD(#{PASSWORD}),
-		#{BIRTHDAY}, #{GENDER}, NOW())
+		insert into tvl_membs(mnm,
+		email, pwd, bir_dt, gend, reg_dt)
+		values (#{name}, #{email},
+		password(#{password}),
+		#{birthday}, #{gender}, now())
 	</insert>
 
 	<select id="selectList" resultMap="memberMap" parameterType="map">
-		SELECT MNO, MNM, EMAIL,
-		BIR_DT, GEND, REG_DT, MPHO
-		FROM TVL_MEMBS
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from tvl_membs
 
-		ORDER BY MNO DESC
+		order by mno desc
 
-		LIMIT #{STARTINDEX}, #{LENGTH}
+		limit #{startIndex}, #{length}
 	</select>
 	
 	<select id="regUserPhoto" resultMap="memberMap" parameterType="int">
-		SELECT MNO, MNM, EMAIL,
-		BIR_DT, GEND, REG_DT, MPHO
-		FROM TVL_MEMBS
-		WHERE MNO=#{VALUE}
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from tvl_membs
+		where mno=#{value}
 	</select>
 	
  <select id="checkEmail" resultMap="memberMap" parameterType="String">
-    SELECT EMAIL FROM TVL_MEMBS
-    WHERE EMAIL = #{VALUE}
+    select email from tvl_membs
+    where email = #{value}
   </select>
 
 
 	<select id="selectOne" resultMap="memberMap" parameterType="int">
-		SELECT MNO, MNM, EMAIL,
-		BIR_DT, GEND, REG_DT, MPHO
-		FROM TVL_MEMBS
-		WHERE
-		MNO = #{VALUE}
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from tvl_membs
+		where
+		mno = #{value}
 	</select>
 
 	<select id="selectOneByPassword" resultMap="memberMap" parameterType="map">
-		SELECT MNO, MNM, EMAIL,
-		BIR_DT, GEND, REG_DT, MPHO
-		FROM
-		TVL_MEMBS
-		WHERE MNO=#{NO} AND PWD=PASSWORD(#{PASSWORD})
+		select mno, mnm, email,
+		bir_dt, gend, reg_dt, mpho
+		from
+		tvl_membs
+		where mno=#{no} and pwd=password(#{password})
 	</select>
 	
 	  <select id="selectOneByEmailAndPassword" resultMap="memberMap" parameterType="map">
-    SELECT MNO, MNM, EMAIL,
-    BIR_DT, GEND, REG_DT, MPHO
-    FROM
-    TVL_MEMBS
-    WHERE EMAIL=#{EMAIL} AND PWD=PASSWORD(#{PASSWORD})
+    select mno, mnm, email,
+    bir_dt, gend, reg_dt, mpho
+    from
+    tvl_membs
+    where EMAIL=#{email} and PWD=password(#{password})
   </select>
 
 
 
 	<update id="update" parameterType="member">
-		UPDATE TVL_MEMBS SET
-		MNM=#{NAME},
-		EMAIL=#{EMAIL},
-		BIR_DT=#{BIRTHDAY},
-		MPHO=#{MEMBERPHOTO}
+		update tvl_membs set
+		mnm=#{name},
+		email=#{email},
+		bir_dt=#{birthday},
+		mpho=#{memberPhoto}
 
-		WHERE MNO=#{NO}
+		where mno=#{no}
 	</update>
 
 	<delete id="delete" parameterType="int">
-		DELETE FROM TVL_MEMBS
-		WHERE
-		MNO=#{VALUE}
+		delete from tvl_membs
+		where
+		mno=#{value}
 	</delete>
 
 </mapper>

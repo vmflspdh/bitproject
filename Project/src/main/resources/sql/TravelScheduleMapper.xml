@@ -17,29 +17,29 @@
     </resultMap>
 
   <select id="selectMySchedule" resultMap="travelMainMap" parameterType="map">
-    SELECT TVL_SCH.SCHNO, TVL_SCH.TMNO, TVL_SCH.LOCNO, ST_DT, ED_DT, CONT, NATN, CITY, LAT, LNG FROM TVL_SCH
-    INNER JOIN TVL_LOC
-    ON TVL_SCH.LOCNO = TVL_LOC.LOCNO
-    WHERE TMNO = #{TRAVELPOSTNO}
+    select tvl_sch.schno, tvl_sch.tmno, tvl_sch.locno, st_dt, ed_dt, cont, natn, city, lat, lng from tvl_sch
+    inner join tvl_loc
+    on tvl_sch.locno = tvl_loc.locno
+    where tmno = #{travelPostNo}
   </select>
   
   <insert id="insert" parameterType="travelMain" >
-    INSERT INTO TVL_SCH(TMNO,LOCNO,ST_DT,ED_DT)
-    VALUES(#{TRAVELMAINNO},#{LOCATIONNO}, #{STARTDATE},#{ENDDATE});
+    insert into tvl_sch(tmno,locno,st_dt,ed_dt)
+    values(#{travelMainNo},#{locationNo}, #{startDate},#{endDate});
   </insert>
   
   <update id="update" parameterType="travelMain">
-  UPDATE TVL_SCH SET 
-    TMNO=#{TRAVELMAINNO},
-    LOCNO=#{LOCATIONNO},
-    ST_DT=#{STARTDATE},
-    ED_DT=#{ENDDATE}
-  WHERE SCHNO=#{SCHEDULENO}
+  update tvl_sch set 
+    tmno=#{travelMainNo},
+    locno=#{locationNo},
+    st_dt=#{startDate},
+    ed_dt=#{endDate}
+  where schno=#{scheduleNo}
 </update>
 
  <delete id="delete" parameterType="int">
-  DELETE FROM TVL_SCH 
-  WHERE SCHNO=#{SCHEDULENO}
+  delete from tvl_sch 
+  where schno=#{scheduleNo}
  </delete>
 
 </mapper>

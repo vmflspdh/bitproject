@@ -15,38 +15,38 @@
   </resultMap>
   
   <select id="selectList2" resultMap="commentMap" parameterType="int">
-  SELECT RCNO,RBNO,C.MNO,MNM,MPHO, CONT,DATE_FORMAT(CRE_DT, '%Y-%M-%D %H:%I') AS CREATEDDATE2 
-  FROM TVL_REVIEW_COMT C
-  INNER JOIN TVL_MEMBS M 
-  ON M.MNO=C.MNO
-  WHERE RBNO =#{VALUE}
-  ORDER BY RCNO DESC
+  select rcno,rbno,c.mno,mnm,mpho, cont,date_format(cre_dt, '%y-%m-%d %H:%i') as createdDate2 
+  from tvl_review_comt c
+  inner join tvl_membs m 
+  on m.mno=c.mno
+  where rbno =#{value}
+  order by rcno desc
   	
   </select> 
   
   
   
   <insert id="insert" parameterType="comment" >
-    INSERT INTO TVL_REVIEW_COMT(RBNO,MNO,CONT,CRE_DT)
-    VALUES(#{REVIEWBOARDNO},#{MEMBERNO}, #{CONTENT},NOW())
+    insert into tvl_review_comt(rbno,mno,cont,cre_dt)
+    values(#{reviewboardNo},#{memberNo}, #{content},now())
   </insert>
   
   
   <update id="update" parameterType="comment">
-    UPDATE TVL_REVIEW_COMT SET 
-      CONT=#{CONTENT} 
-    WHERE RCNO=#{REVIEWCOMMENTNO}
+    update tvl_review_comt set 
+      cont=#{content} 
+    where rcno=#{reviewcommentNo}
   </update>
   
   <delete id="delete" parameterType="int">
-    DELETE FROM TVL_REVIEW_COMT 
-    WHERE RCNO=#{VALUE}
+    delete from tvl_review_comt 
+    where rcno=#{value}
   </delete>
   
   <select id="countAll" parameterType="int" resultType="int">
-    SELECT  COUNT(RBNO)
-    FROM TVL_REVIEW_COMT
-    WHERE RBNO={VALUE} 
+    select  count(rbno)
+    from tvl_review_comt
+    where rbno={value} 
   </select>
 </mapper>
 
