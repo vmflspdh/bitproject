@@ -15,10 +15,6 @@
 <link rel="shortcut icon" href="../favicon.ico">
 <link rel="stylesheet" type="text/css" href="css/default.css" />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-<script
-  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -27,17 +23,16 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
+<!-- 데이트 피커 자바스크립트 -->
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
-
-<!-- fade -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <!-- animsition.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
 <!-- animsition.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
-
-
 <style>
 #requestCountAll {
   z-index: 1500000;
@@ -57,38 +52,30 @@
   margin-bottom: 0;
   
 } 
-
 #checkImg {
 	width: 45px;
 	height: 45px;
 }
-
-
 #content {
 	text-align: center;
 	color: black;
 	background-color: white;
 }
-
 #map {
 	height: 250px;
 }
-
 #fadeandscale {
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
 }
-
 .popup_visible #fadeandscale {
   -webkit-transform: scale(1);
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
-
-
 .registFormDetail {
 	width: 700px;
 	background: rgba(255, 255, 255, 0.05);
@@ -97,24 +84,20 @@
 	padding-bottom: 3px;
 	border-radius: 15px 15px 15px 15px;
 }
-
 table {
 	border: 0px solid #04B4AE;
 	width: 760px;
 	margin: 0 auto;
 }
-
 td {
 	border-bottom: 1px dotted #A4A4A4;
 	padding-top: 20px;
 	padding-bottom: 30px;
 }
-
 td div {
 	padding-top: 0px;
 	color: #13919A;
 }
-
 #detailBar {
 	background: #13919A;
 	width: 10px;
@@ -122,17 +105,14 @@ td div {
 	float: left;
 	margin-right: 12px;
 }
-
 .checkbox-inline, .radio-inline {
 	padding-left: 10px;
 }
-
 .cb-module-header {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
 }
-
 .cb-module-header .cb-module-title {
 	margin: 0;
 	position: relative;
@@ -143,7 +123,6 @@ td div {
 	background: #A4A4A4;
 	color: white;
 }
-
 .cb-module-header .cb-module-title:after {
 	content: "";
 	display: block;
@@ -162,7 +141,6 @@ td div {
     color: white;
     border: 1px solid #ff545c;
 }
-
 #sch_cirNum {
 	width: 25px;
 	height: 25px;
@@ -176,17 +154,14 @@ td div {
 	text-align: center;
 	float: left;
 }
-
 </style>
 <style>
-
 #footer {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 12px;
     line-height: 1;
   
 }
-
 #footer>h2 {
     font-size: 30px;
     margin-top: 20px;
@@ -197,21 +172,16 @@ td div {
     color: inherit;
         display: block;
 }
-
 #footer>div {
     display: block;
 }
-
 #title_txt>a {
 color : white;
 }
 #title_txt>a:hover {
 text-decoration: none;
 color : #ff545c;
-
 } 
-
-
 </style>
 
 <style>
@@ -229,13 +199,11 @@ color : #ff545c;
     -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.6);
     box-shadow: 0 6px 12px rgba(0,0,0,.6);
 }
-
 .modal-header {
     min-height: 101.43px;
     padding: 15px;
     border-bottom: 0px solid #e5e5e5;
 }
-
 button.close {
     -webkit-appearance: none;
     padding: 0;
@@ -246,17 +214,14 @@ button.close {
     width: 30px;
     height: 30px;
 }
-
 .modal-title {
     margin: 0;
     line-height: 1.42857143;
 }
-
 .modal-body {
     position: relative;
     padding: 15px;
 }
-
 .form-control {
     display: block;
     width: 100%;
@@ -268,21 +233,18 @@ button.close {
     background-color: #fff;
     background-image: none;
     border: 1px solid #ccc;
-
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
-
 .modal-footer {
     padding: 15px;
     text-align: right;
     border-top: 0px solid #e5e5e5;
     min-height: 80px;
 }
-
 .btn-block {
     display: block;
     width: 100%;
@@ -332,7 +294,6 @@ logincss.css
 </style>
 </head>
 <body>
-
 	<!-- 상단메뉴시작 -->
 	<!-- Start of container2 -->
 	<div class="container">
@@ -359,7 +320,6 @@ logincss.css
             </ul></li>
         </ul>
       </div>
-
       <div id="fadeandscale" class="well">
         <h4>동행요청</h4>
         <h5></h5>
@@ -376,15 +336,12 @@ logincss.css
         <button style="float: right;"
           class="fadeandscale_close btn btn-default">Close</button>
       </div>
-
-
 	     <div class="my-login">
         <span> <a id="userName"
           style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
           <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
         </span>
       </div>
-
       <div
         style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
         <a href='#' class="btn btn-default btn-sm my-logout"
@@ -411,7 +368,6 @@ logincss.css
 	<!-- center  -->
 	<div class="registbackground">
 		<div class="registFormDetail">
-
 			<div class="form-group" style="display: none;">
 				<label for="no" class="col-sm-2 control-label">회원번호</label>
 				<div class="col-sm-10">
@@ -419,7 +375,6 @@ logincss.css
 						style="width: 50px; background-color: white;">
 				</div>
 			</div>
-
 			<div class="form-group" style="display: none;">
 				<label for="no" class="col-sm-2 control-label">여행번호</label>
 				<div class="col-sm-10">
@@ -442,18 +397,15 @@ logincss.css
 				</div>
 			</div>
 			<table id="selectTable">
-
 				<tr>
 					<td
 						style="width: 100px; color: green; font-weight: bold; padding-bottom: 0; font-size: large;">
-
 						<div id="detailBar"></div>
 						<div>제목</div>
 					</td>
 					<td><input type="text" class="form-control" id="title"
 						style="width: 500px;" placeholder="제목을 입력하세요"></td>
 				</tr>
-
 				<tr>
 					<td style="color: green; font-weight: bold; font-size: large;">
 						<div id="detailBar"></div>
@@ -472,7 +424,6 @@ logincss.css
 							class="check-sports" id="3" value="3" style="margin-left: 5px; margin-top: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;액티비티/레포츠
 					</label></td>
 				</tr>
-
 				<!-- 이거 맵 !!!!!!!!!!!-->
 				<tr>
 					<td style="color: green; font-weight: bold; font-size: large;"
@@ -483,20 +434,17 @@ logincss.css
 					</td>
 					<td class="root-addSelect" style="border: 0;">
 						<!-- 						<div id="map"></div> <br /> -->
-
 						<div class="cb-module-header">
 							<h2 class="cb-module-title">schedule lists</h2>
 						</div>
 					</td>
 				</tr>
 				<!-- 여기까지맵임 -->
-
 				<tr>
 					<td class="root-select" style="padding-top: 0px;">
 						<!-- 핸들바스 적용되는 곳 -->
 					</td>
 				</tr>
-
 				<tr>
 					<td
 						style="padding-top: 20px; padding-bottom: 20px; color: green; font-weight: bold; font-size: large;">
@@ -506,7 +454,6 @@ logincss.css
 					<td><textarea id="selfIntroduce" class="form-control"
 							cols="50" rows="10" style="width: 500px;" placeholder="내용을 입력하세요"></textarea></td>
 				</tr>
-
 				<tr>
 					<td
 						style="width: 140px; color: green; font-weight: bold; font-size: large;">
@@ -552,20 +499,17 @@ logincss.css
 <!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
 <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
 </div></div><br><br><br></div>
-
 	<!-- 일정 수정 폼 -->
-
 	<div class="modal fade" style="z-index: 10;" id="mySchedule"
 		tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 		aria-hidden="true">
-		<div class="modal-dialog modal-sm" style="z-index: 300000; position: absolute; top:15%; left: 30%">
-			<div class="modal-content" style="width: 630px; ">
+		<div class="modal-dialog modal-sm" style="z-index: 300000;">
+			<div class="modal-content" style="width: 630px;">
+				<div class="modal-header">
+					<h4 class="modal-title" id="myModalLabel">여행일정 수정</h4>
+				</div>
 				<div class="modal-body">
-					<h4 class="modal-title" id="myModalLabel" style="font-weight: bold;">* 여행일정 수정</h4><br>
 					<div class="wrapper">
-					<input id="pac-input" type="text"
-              class="controls form-control" placeholder="변경할 국가/도시를 검색하세요."
-              style="width: 250px; z-index: 6000000;">
 						<div id="map"></div>
 						<br />
 						<div id="type-selector" class="controls" style="display: none;">
@@ -578,7 +522,7 @@ logincss.css
 								name="type" id="changetype-geocode"> <label
 								for="changetype-geocode">Geocodes</label>
 						</div>
-						<form class="form-inline" style="width: 100%">
+						<form class="form-inline">
 							<input type="text" placeholder="대륙" value="대륙"
 								style="width: 100px; display: none;"
 								class="form-control bit-continent"> <input type="text"
@@ -597,8 +541,9 @@ logincss.css
 								style="display:none;" class="form-control bit-index1">
 							<button type="button" class="btn btn-default selectApplyBtn">적용</button>
 						</form>
-						<br /> 
-
+						<br /> <input id="pac-input" type="text"
+							class="controls form-control" placeholder="변경할 국가/도시를 검색하세요."
+							style="width: 250px; z-index: 6000000;">
 					</div>
 				</div>
 			</div>
@@ -606,7 +551,6 @@ logincss.css
 	</div>
 	<br />
 	<br />
-
   <!-- Start of Login form -->
   <div class="modal fade"
     style="z-index: 20000; background: rgba(192, 192, 192, 0.3);"
@@ -722,11 +666,8 @@ logincss.css
   <!-- End of Registration Form-->
 	<!-- classie.js by @desandro: https://github.com/desandro/classie -->
 
-
-
-
-
-
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
 		async defer></script>
@@ -770,7 +711,6 @@ logincss.css
 	    ajaxAgreeInviteList()
 	     ajaxBookmarkCount()
 	           ajaxBookmarkList()
-
 		$(document.body).on('click', '.selectModBtn', function(event) {
 			$(".bit-startDate1").removeClass('hasDatepicker').datepicker({
 				dateFormat : 'yy-mm-dd'
@@ -779,8 +719,6 @@ logincss.css
 				dateFormat : 'yy-mm-dd'
 			});
 		});
-
-
 	</script>
 	<script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}

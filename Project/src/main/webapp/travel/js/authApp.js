@@ -193,6 +193,3 @@ $("#travelerMessage").click(function(event) {
 
 	window.location.href = "chatting.html";
 });
-
-
-
