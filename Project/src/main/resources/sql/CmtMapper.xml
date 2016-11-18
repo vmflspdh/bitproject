@@ -11,6 +11,7 @@
      <result column="CONT" property="commentContents"/>
     <result column="CRE_DT" property="cmtCreateDate"/>
     <result column="MNM" property="memberName"/>
+    <result column="MPHO" property="memberPhoto"/>
   </resultMap>
   
 
@@ -18,7 +19,7 @@
   
  
     <select id="selectList" resultMap="cmtMap" parameterType="map">
- select tvl_qna_comt.qcno,mnm,tvl_qna_comt.mno,tvl_qna_comt.cont,tvl_qna_comt.cre_dt from tvl_qna_bods 
+ select tvl_qna_comt.qcno,mnm,tvl_qna_comt.mno,tvl_qna_comt.cont,tvl_qna_comt.cre_dt,mpho from tvl_qna_bods 
  inner join tvl_qna_comt
  on tvl_qna_bods.qbno = tvl_qna_comt.qbno
  inner join tvl_membs

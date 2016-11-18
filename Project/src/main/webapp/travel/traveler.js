@@ -1,12 +1,14 @@
+var registForm = {};
+
 $("#searchaddBtn").click (function(event){
-	var registForm = {
+	registForm = {
 			city: $("#searchCity").val(),
 			startDate: $("#searchStDt").val(),
 			endDate: $("#searchEdDt").val()
 	}
-	console.log(registForm)
-	ajaxSearchList(registForm)
-	fnMove()
+	window.location.href = "n_mainTestSearchList.html"
+	/*ajaxSearchList(registForm)
+	fnMove()*/
 });
 
 function fnMove(){
@@ -27,6 +29,12 @@ function checkToNo(no) {
 }
 
 function ajaxRegistFormList(length) {
+    $(document).ajaxStart(function(){
+   	 $(".formListLoading").removeClass("display-none");
+    });
+    $(document).ajaxStop(function(){
+        $(".formListLoading").addClass("display-none");
+    })
 	$.getJSON(serverAddr + "/travel/formList.json", {length: length}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {

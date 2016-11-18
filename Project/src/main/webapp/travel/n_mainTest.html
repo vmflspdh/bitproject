@@ -342,9 +342,17 @@ video {
   padding: 0;
   vertical-align: middle;
 }
-#log-txt {
+/* #log-txt {
   position: absolute !important;
   margin-top: 10%;
+  color: white;
+  font-size: 50px;
+  width: 100%;
+  text-align: center;
+      z-index: 2000;
+} */
+
+#log-txt {
   color: white;
   font-size: 50px;
   width: 100%;
@@ -502,6 +510,23 @@ article {
 padding-top: 0.5%;
 padding-left: 0.25%;
 }
+.regFormAtags {
+  color: #FF7C4E;
+}
+.regFormAtags:hover {
+  color : #FF7C4E;
+}
+
+.formListLoading div {
+  position:fixed;
+  top:50%; 
+  left:47%; 
+  width:100%; 
+  margin:0 auto;
+}
+.display-none {
+  display: none;
+}
 </style>
 </head>
 <!-- 페이지로딩 -->
@@ -568,7 +593,7 @@ padding-left: 0.25%;
          <img src='img/passport.png' style="float: left; width: 55px; height: 55px;">
         <h1 id="title_txt"><a  href="n_mainTest.html">WE TRIP</a></h1>
       </div>
-      <nav id="menu_nav">
+      <nav id="menu_nav" style="border:0px solid black; margin-right: 10px;">
         <a href="#" id="travelerPage">Accompany</a> <a href="#"
           id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a>
       </nav>
@@ -708,28 +733,27 @@ padding-left: 0.25%;
   data-animsition-out-class="fade-out-up-lg"
   data-animsition-out-duration="800">
   
-<div id="log-txt" style="position: absolute; top: 4%; left:52%; transform:translateX(-52%);">
-       <h2 class="jejugo" style="font-size: 80%;">나의 추억에 동행할 인연을 위한 공간</h2>
-      <div class="jejugo" style="font-size: 45%;margin-bottom: 1.5%;">
-      	여행에 동행할 소중한 인연을 시간을 들이지 않고 당신에게 맞춰 드립니다.
-      </div>
-      <div class="my-login jejugo" style="font-size: x-large; color: #FF7C4E; ">
-	     <span id="userName" style="font-weight: bold; font-size: 130%;"></span>&nbsp;&nbsp;<a href="#" style="color: #FF7C4E;">
-	     <span id="travelerRegForm" style="font-size: 120%;">님 동행을 찾아보세요!</span><span style="font-size:medium;color:white; margin-left: 2%;">&laquo; 여행 등록 하기!</span></a>
-      </div>
-</div>
-      
-    <!-- <div class="wrap" style="border : 1px solid green;">
-      <div class="p_header_title" style="border : 1px solid green;">
-      <h1 style="color: black;">홈페이지 헤더라인2 </h1>
-      </div>
-    </div> -->
     <div style="position: relative; width: 100%; z-index: 0; overflow: hidden; height: 120%;">
       <video style="position: absolute; /* width: 100%; */ max-width: 100%; /* height: 102%; */
      /* position: absolute !important; */" data-setup="{}"autoplay loop  >
         <source src="mainfull2.mp4" type="video/mp4" />
       </video> 
-          <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001; position: absolute; top:60%; left:52%; transform:translateX(-52%);">
+      
+      <!-- <div id="log-txt" style="position: absolute; top: 4%; left:52%; transform:translateX(-52%);"> -->
+       
+      <!-- </div> -->
+      
+      <div id="bar" class="form-inline" style="border:0px solid black; z-index: 2001;width:100%; position: absolute; top:30%; left:52%; transform:translateX(-52%); text-align: center;">
+      <div id="log-txt">
+      <h2 class="jejugo" style="font-size: 80%;">나의 추억에 동행할 인연을 위한 공간</h2>
+      <div class="jejugo" style="font-size: 45%;margin-bottom: 1.5%;">
+        여행에 동행할 소중한 인연을 시간을 들이지 않고 당신에게 맞춰 드립니다.
+      </div>
+      <div class="my-login jejugo" style="font-size: x-large; color: #FF7C4E; ">
+       <a class="regFormAtags" href="#"><span id="userName" style="font-weight: bold; font-size: 130%;"></span>
+       <span id="travelerRegForm" style="font-size: 120%;">님 동행을 찾아보세요!</span></a><span style="font-size:medium;color:white; margin-left: 2%;">&laquo; 여행 등록 하기!</span>
+      </div>
+      </div><br><br>
       <form class="form-inline" role="search" id="searchform" style=" margin: 0; padding: 0;">
       <div class="form-group form-group-lg">
          <input class="form-control" id="searchCity" name="where"  type="text" placeholder="Place" style="width: 30%">&nbsp;&nbsp;
@@ -810,10 +834,13 @@ data-animsition-in-class="fade-in-up-lg"
   </br></br></br></br>
   <table class="changallery" style="margin: 0 auto;">
   </table>
+  <div class="formListLoading display-none">
+    <div><img src="img/img-loading.gif" style="width:100px;"/></div>
+  </div>
   <br>
   </div>
 <div id="footer" style="background-color: white; ">
-<hr>
+<br>
 <div style="width: 65%; margin: 0 auto; text-align: center;">
 <h2 style="margin-top: 0 !important;"><img src="logo.png" alt="로고파일자리" width="96"/></h2>
 <address>
@@ -883,9 +910,14 @@ document.getElementById("divBody").style.display = "";
     $(document).scroll(function() {
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
-        /* ajaxRegistFormList(length) */
         if (maxHeight <= currentScroll) {
          length += 12;
+/*          $(document).ajaxStart(function(){
+        	 $(".formListLoading").removeClass("display-none");
+         });
+         $(document).ajaxStop(function(){
+             $(".formListLoading").addClass("display-none");
+           }) */
          ajaxRegistFormList(length);
         }
     })

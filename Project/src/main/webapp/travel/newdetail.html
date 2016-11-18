@@ -5,34 +5,34 @@
 <title>서내와 귀요미들</title>
 <meta name="description" content="MyTravel" />
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
+  content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="shortcut icon" href="">
 <!--  travel 에서 가저온 시-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta name="description" content="Blueprint: On-Scroll Animated Header" />
 <meta name="keywords"
-	content="fixed header, animatied header, javascript, wed design, template, on scroll" />
+  content="fixed header, animatied header, javascript, wed design, template, on scroll" />
 <meta name="author" content="Codrops" />
 <link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <!-- 웹폰트 코드 -->
 <link rel='stylesheet'href='https://fonts.googleapis.com/css?family=Titillium+Web'>
 <link rel='stylesheet'href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'>
 <link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <!--<link rel="stylesheet" type="text/css" href="css/default.css" />-->
 <link rel="stylesheet" type="text/css" href="css/component.css" />
 <link rel="stylesheet"
-	href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+  href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 <!-- 합쳐지고 최소화된 최신 CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <!-- 부가적인 테마 -->
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <!-- 달력 관련 -->
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
@@ -52,7 +52,7 @@
 
 <!-- 달력 관련 -->
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!-- fade -->
 <!-- animsition.css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
@@ -60,142 +60,121 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 <style>
 html, body, h1, h2, h3, h4, h5, h6 {
-	font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
+  font-family: 'Titillium Web', 'Nanum Gothic', sans-serif
 }
-
 #requestCountAll {
-	z-index: 1500000;
-	position: absolute;
-	right: 46px;
-	top: 18px;
-	text-decoration: none;
-	width: 25px;
-	height: 25px;
-	border-radius: 50%;
-	color: white;
-	background: #F361A6;
-	font-size: 15px;
-	font-weight: bold;
-	line-height: 24px;
-	text-align: center;
-	margin-bottom: 0;
+  z-index: 1500000;
+  position: absolute;
+  right: 46px;
+  top: 18px;
+  text-decoration: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  background: #F361A6;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 0;
 }
-
 body {
-	background: #F0F0F0
+  background: #F0F0F0
 }
-
 #checkImg {
-	width: 25px;
-	height: 25px;
-	margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
 }
-
 .btn-default {
-	background-image: none;
+  background-image: none;
 }
-
 .btn-default:focus, .btn-default:hover {
-	background-color: #ff545c;
-	background-position: 0 -15px;
-	color: white;
-	border: 1px solid #ff545c;
+  background-color: #ff545c;
+  background-position: 0 -15px;
+  color: white;
+  border: 1px solid #ff545c;
 }
-
 h2, h3, h4, h5, h6 {
-	font-weight: bold;
+  font-weight: bold;
 }
-
 .fc-toolbar .fc-left h2 {
-	font-size: 21px;
-	color: #13919A;
+  font-size: 21px;
+  color: #13919A;
 }
-
 .fc-time {
-	display: none;
+  display: none;
 }
-
 #fadeandscale {
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	-ms-transform: scale(0.8);
-	transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
 }
-
 .popup_visible #fadeandscale {
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
-
 #yang ul li {
-	display: inline;
-	font: bold 13px Dotum;
-	padding: 0 10px;
+  display: inline;
+  font: bold 13px Dotum;
+  padding: 0 10px;
 }
-
 #sch_cirNum {
-	width: 27px;
-	height: 27px;
-	border-radius: 50%;
-	color: white;
-	background: #13919A;
-	margin: 0 10px;
-	font-size: 15px;
-	font-weight: bold;
-	line-height: 32px;
-	text-align: center;
-	float: left;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  color: white;
+  background: #13919A;
+  margin: 0 10px;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  float: left;
 }
-
 .checkbox-inline {
-	font-size: 11px;
-	margin-left: 10px;
-	margin-bottom: 5px;
+  font-size: 11px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
-
 .zeta-menu > a {
   color: black;
   text-decoration: none;
 }
-
 .zeta-menu > a:hover {
   color: green;
   text-decoration: none;
   font-weight: bold;
 }
-
-
 #footer {
-	font-size: 12px;
-	line-height: 1;
-	position: absolute;
-	width: 100%;
+  font-size: 12px;
+  line-height: 1;
+  position: absolute;
+  width: 100%;
 }
-
 #footer>h2 {
-	font-size: 30px;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	font-family: inherit;
-	font-weight: 500;
-	line-height: 1.1;
-	color: inherit;
-	display: block;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  display: block;
 }
-
 #footer>div {
-	display: block;
+  display: block;
 }
-
 #title_txt > a {
-	color: white;
+  color: white;
 }
-
 #title_txt > a:hover {
-	text-decoration: none;
-	color: #ff545c;
+  text-decoration: none;
+  color: #ff545c;
 }
 </style>
 <style>
@@ -295,7 +274,6 @@ button.close {
     -ms-user-select: none;
     user-select: none;
     background-image: none; 
-
 }
 .yang{
 border-radius: 11px;
@@ -305,25 +283,19 @@ button, input, select, textarea {
     font-size: inherit;
     line-height: inherit;
 }
-
-
 #logForm>a:hover {
 background-color : #e83338;
 color : white;
 border : 1px solid #e83338;
-
 }
-
 article {
 padding-top: 0.5%;
 padding-left: 0.25%;
 }
-
 #qwer {
-	position: relative;
-	left: 140px;
+  position: relative;
+  left: 140px;
 }
-
 </style>
 </head>
 
@@ -332,35 +304,35 @@ padding-left: 0.25%;
     <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
 </div>
 <div id="divBody" style="display:none;">
-	<!-- 상단메뉴시작 -->
-	<!-- Start of container2 -->
-	<div class="container">
-		<div class="upper">
-			<div class='zeta-menu-bar my-login'>
-				<ul class="zeta-menu">
-					<li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
-							class="mainImg my-login"></a><a id="requestCountAll"></a>
-						<ul>
-							<li><a href="#" id="myInfo"><img
-									src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
-									INFO</a></li>
-							<li><a href="#" id="travelerMessage"><img
-									src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
-							</li>
-							<li><a class=" fadeandscale_open" id="accompany" href="#"><img
-									src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-							<li><a id="logoutBtn" href='#'><img
-									src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
-							</li>
-						</ul></li>
-				</ul>
-			</div>
+  <!-- 상단메뉴시작 -->
+  <!-- Start of container2 -->
+  <div class="container">
+    <div class="upper">
+      <div class='zeta-menu-bar my-login'>
+        <ul class="zeta-menu">
+          <li><a href="#2"><img src='img/iconmonstr-user-20-240.png'
+              class="mainImg my-login"></a><a id="requestCountAll"></a>
+            <ul>
+              <li><a href="#" id="myInfo"><img
+                  src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
+                  INFO</a></li>
+              <li><a href="#" id="travelerMessage"><img
+                  src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
+              </li>
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
+                  src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
+              <li><a id="logoutBtn" href='#'><img
+                  src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
+              </li>
+            </ul></li>
+        </ul>
+      </div>
 
-			<div id="fadeandscale" class="well">
-				<h4>동행요청</h4>
-				<h5></h5>
-				<h6></h6>
-				<!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+      <div id="fadeandscale" class="well">
+        <h4>동행요청</h4>
+        <h5></h5>
+        <h6></h6>
+        <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
                   <button value="vcxc">수락</button><button value="sdfds">거절</button>
                   </pre>
                   <pre class="prettyprint">
@@ -369,240 +341,240 @@ padding-left: 0.25%;
                   <pre class="prettyprint">
                   <code>zxcxzcxzxz</code>
                   </pre> -->
-				<button style="float: right;"
-					class="fadeandscale_close btn btn-default">Close</button>
-			</div>
+        <button style="float: right;"
+          class="fadeandscale_close btn btn-default">Close</button>
+      </div>
 
       <div class="my-login" style="position: absolute; top:5px; right: 130px; color:white;">
         <span id="userName" style="font-weight: bold; font-size: 18px;"></span>
         <a href="#" style="color:white;"><span id="travelerRegForm" style="font-size: 13px;">님 동행을 찾아보세요!</span></a>
       </div>
 
-			<div
-				style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
-				<a href='#' class="btn btn-default btn-sm my-logout"
-					data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
-					class="btn btn-default btn-sm my-logout" data-toggle="modal"
-					data-target="#myModal">SIGN IN</a>
-			</div>
-		</div>
-	</div>
+      <div
+        style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
+        <a href='#' class="btn btn-default btn-sm my-logout"
+          data-toggle="modal" data-target="#myModal1">LOGIN</a> <a href='#'
+          class="btn btn-default btn-sm my-logout" data-toggle="modal"
+          data-target="#myModal">SIGN IN</a>
+      </div>
+    </div>
+  </div>
 
-	<div class="cbp-af-header">
-		<div class="cbp-af-inner">
-			<div>
-				<img src='img/passport.png'
-					style="float: left; width: 55px; height: 55px;">
-				<h1 id="title_txt"><a href="n_mainTest.html">WE TRIP</a></h1>
-			</div>
-			<nav>
-				<a href="#" id="travelerPage">Accompany</a> <a href="#"
-					id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
-					href="#">.</a>
-			</nav>
-		</div>
-	</div>
-	<!-- center  -->
+  <div class="cbp-af-header">
+    <div class="cbp-af-inner">
+      <div>
+        <img src='img/passport.png'
+          style="float: left; width: 55px; height: 55px;">
+        <h1 id="title_txt"><a href="n_mainTest.html">WE TRIP</a></h1>
+      </div>
+      <nav>
+        <a href="#" id="travelerPage">Accompany</a> <a href="#"
+          id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
+          href="#">.</a>
+      </nav>
+    </div>
+  </div>
+  <!-- center  -->
 
-	<div style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;"
-	class="animsition"
+  <div style="width: 60%; margin: 0 auto; margin-top: 89px; color: #736378;"
+  class="animsition"
 data-animsition-in-class="fade-in-down"
   data-animsition-in-duration="1000"
   data-animsition-out-class="fade-in-down"
   data-animsition-out-duration="800"
-	>
-		<div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
-			<!--      <div style="width: 50px; height: 50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
+  >
+    <div style="width: 90%; height: 100%; margin: 0 auto; padding: 20px;">
+      <!--      <div style="width: 50px; height: 50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">
         <img src="" id="detailUserImage">
       </div> -->
-			<div
-				style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; float: left;">
-				<img src="" id="detailUserImage" style="width: 100%;">
-			</div>
-			<h3 style="float: right;">
-				<span id="detailMemberName"></span>님의 여행계획
-			</h3>
-			<!-- <span>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="message"
+      <div
+        style="margin: 0 auto; width: 80px; height: 80px; border-radius: 50%; overflow: hidden; float: left;">
+        <img src="" id="detailUserImage" style="width: 100%;">
+      </div>
+      <h3 style="float: right;">
+        <span id="detailMemberName"></span>님의 여행계획
+      </h3>
+      <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#" class="message"
         data-toggle="modal" data-target="#myMessage"><img
           src="img/messageicon2.jpg" style="width: 20px; height: 20px;"></a></span> -->
-			<!-- <h3 id="title" style="float: right;"></h3> -->
-			<br> <br>
-			<hr>
-		</div>
+      <!-- <h3 id="title" style="float: right;"></h3> -->
+      <br> <br>
+      <hr>
+    </div>
 
 
-		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-			style="width: 90%; height: 100%; margin: 0 auto;">
+    <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+      style="width: 90%; height: 100%; margin: 0 auto;">
 
-			<h2 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Traveler
-			</h2>
+      <h2 class="w3-text-grey w3-padding-16">
+        <i class="fa fa-certificate fa-fw w3 w3-xxxlarge w3-text-teal"></i>Traveler
+      </h2>
 
-			<div id="boardImg"
-				style="background-size: cover; width: 100%; height: 450px; margin-bottom: 15px; background-image: url('img/yang/travelphoto3.jpg'); overflow: hidden; background-repeat: no-repeat; background-position: center center;">
-				<div>
-					<div style="margin: 30px 0 0 40px; color: white;">
-						<span style="font-size: 150px; line-height: 0.6em; opacity: 0.2;">❞</span>
-						<h3 id="title" style="float: left;"></h3>
-					</div>
-				</div>
-				<div id="selfIntroduce"
-					style="width: 60%; height: 270px; margin: 2% 0 10px 40px; padding: 15px 0 0 10px; border-radius: 2%; background: rgba(255, 255, 255, 0.8); float: left;">
-				</div>
+      <div id="boardImg"
+        style="background-size: cover; width: 100%; height: 450px; margin-bottom: 15px; background-image: url('img/yang/travelphoto3.jpg'); overflow: hidden; background-repeat: no-repeat; background-position: center center;">
+        <div>
+          <div style="margin: 30px 0 0 40px; color: white;">
+            <span style="font-size: 150px; line-height: 0.6em; opacity: 0.2;">❞</span>
+            <h3 id="title" style="float: left;"></h3>
+          </div>
+        </div>
+        <div id="selfIntroduce"
+          style="width: 60%; height: 270px; margin: 2% 0 10px 40px; padding: 15px 0 0 10px; border-radius: 2%; background: rgba(255, 255, 255, 0.8); float: left;">
+        </div>
 
-				<div class="w3-container info"
-					style="width: 25%; height: 270px; margin: 2% 0 40px 40px; padding: 10px 0 0 10px; border-radius: 2%; background: rgba(255, 255, 255, 0.8); font-size: medium; float: left;">
-					<p>
-						<i
-							class="fa fa-certificate fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-						<a href="#">Traveler Style</a>
-					</p>
-					<label class="checkbox-inline check-food"
-						style="filter: grayscale(100%);"> <img
-						src='img/restaurant.png' id="checkImg">식도락
-					</label><label class="checkbox-inline check-culture"
-						style="filter: grayscale(100%);"> <img
-						src='img/painting.png' id="checkImg">전시/공연
-					</label><label class="checkbox-inline check-sports"
-						style="filter: grayscale(100%);"> <img
-						src='img/rowing.png' id="checkImg">액티비티/레포츠
-					</label>
+        <div class="w3-container info"
+          style="width: 25%; height: 270px; margin: 2% 0 40px 40px; padding: 10px 0 0 10px; border-radius: 2%; background: rgba(255, 255, 255, 0.8); font-size: medium; float: left;">
+          <p>
+            <i
+              class="fa fa-certificate fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+            <a href="#">Traveler Style</a>
+          </p>
+          <label class="checkbox-inline check-food"
+            style="filter: grayscale(100%);"> <img
+            src='img/restaurant.png' id="checkImg">식도락
+          </label><label class="checkbox-inline check-culture"
+            style="filter: grayscale(100%);"> <img
+            src='img/painting.png' id="checkImg">전시/공연
+          </label><label class="checkbox-inline check-sports"
+            style="filter: grayscale(100%);"> <img
+            src='img/rowing.png' id="checkImg">액티비티/레포츠
+          </label>
 
-					<p>
-						<i class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-						<a href="#">동행자 정보</a>
-					</p>
+          <p>
+            <i class="fa fa-user fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+            <a href="#">동행자 정보</a>
+          </p>
 
-					<p>
-						<i
-							class="fa fa-thumbs-o-up fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-						<a href="#" id="bookmarkSummit">좋아요</a>&nbsp;&nbsp;<span
-							id="bookmarkcount"></span>
-					</p>
-					<p>
-						<i
-							class="fa fa-envelope fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-						<a href="#" class="message" data-toggle="modal"
-							data-target="#myMessage">메세지 보내기</a>
-					</p>
-					<p>
-						<i
-							class="fa fa-group fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
-						<a href="#" id="togetherRequest">동행요청하기</a>
-					</p>
-				</div>
-			</div>
-
-
-
-		</div>
-		<hr>
-
-
-		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-			style="width: 90%; height: 100%; margin: 0 auto;">
-			<h2 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-globe fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-				Route
-			</h2>
-			<div id="map" style="width: 90%; height: 400px; margin: 0 auto;"></div>
-			<br>
-		</div>
-		<hr>
-		<div class="w3-container w3-card-2 w3-white w3-margin-bottom"
-			style="width: 90%; height: auto; margin: 0 auto;">
-			<h2 class="w3-text-grey w3-padding-16">
-				<i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
-				Schedule
-			</h2>
-			<div id="selectTable"
-				style="float: left; width: 45%; height: 100%; margin: 0 auto; padding-left: 5%; padding-top: 40px;">
-				<div class="root-select"></div>
-			</div>
-			<div id='calendar'
-				style="background-color: white; width: 50%; padding-left: 20px; margin-right: 20px; height: 100%; float: left; margin: 0 auto;">
-				<br />
-			</div>
-		</div>
-		<hr>
-	</div>
+          <p>
+            <i
+              class="fa fa-thumbs-o-up fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+            <a href="#" id="bookmarkSummit">좋아요</a>&nbsp;&nbsp;<span
+              id="bookmarkcount"></span>
+          </p>
+          <p>
+            <i
+              class="fa fa-envelope fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+            <a href="#" class="message" data-toggle="modal"
+              data-target="#myMessage">메세지 보내기</a>
+          </p>
+          <p>
+            <i
+              class="fa fa-group fa-fw w3-margin-right w3-xlarge w3-text-teal"></i>
+            <a href="#" id="togetherRequest">동행요청하기</a>
+          </p>
+        </div>
+      </div>
 
 
 
-	<div
-		style="text-align: center; border-radius: 10px 15px 15px 15px; background-color: white;/* #F5F2F5; */ width: 55%; margin: 0 auto; color: #736378;">
-		<table id="boardTable" class="table table-hover">
-			<thead id="tablehead">
-			</thead>
-			<tbody id="yang2">
-			</tbody>
-		</table>
-		<!-- <hr> -->
-		<table id="newReviewTable" style="margin: 0 auto;">
-		</table>
-	</div>
+    </div>
+    <hr>
+
+
+    <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+      style="width: 90%; height: 100%; margin: 0 auto;">
+      <h2 class="w3-text-grey w3-padding-16">
+        <i class="fa fa-globe fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
+        Route
+      </h2>
+      <div id="map" style="width: 90%; height: 400px; margin: 0 auto;"></div>
+      <br>
+    </div>
+    <hr>
+    <div class="w3-container w3-card-2 w3-white w3-margin-bottom"
+      style="width: 90%; height: auto; margin: 0 auto;">
+      <h2 class="w3-text-grey w3-padding-16">
+        <i class="fa fa-suitcase fa-fw w3 w3-xxxlarge w3-text-teal"></i>My
+        Schedule
+      </h2>
+      <div id="selectTable"
+        style="float: left; width: 45%; height: 100%; margin: 0 auto; padding-left: 5%; padding-top: 40px;">
+        <div class="root-select"></div>
+      </div>
+      <div id='calendar'
+        style="background-color: white; width: 50%; padding-left: 20px; margin-right: 20px; height: 100%; float: left; margin: 0 auto;">
+        <br />
+      </div>
+    </div>
+    <hr>
+  </div>
+
+
+
+  <div
+    style="text-align: center; border-radius: 10px 15px 15px 15px; background-color: white;/* #F5F2F5; */ width: 55%; margin: 0 auto; color: #736378;">
+    <table id="boardTable" class="table table-hover">
+      <thead id="tablehead">
+      </thead>
+      <tbody id="yang2">
+      </tbody>
+    </table>
+    <!-- <hr> -->
+    <table id="newReviewTable" style="margin: 0 auto;">
+    </table>
+  </div>
 
 
 
 
-	<div id="footer" style="background-color: #F2F2F2;">
-		<hr>
-		<div style="width: 65%; margin: 0 auto; text-align: center;">
-			<h2>
-				<img src="logo.png" alt="로고파일자리" width="96" />
-			</h2>
-			<address>
-				<span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은
-					회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br> <span>사업자등록번호 :
-					(이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL
-					: 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의
-					: java85@bit.com</span> <br> <span>COPYRIGHT© 2016 GD2723. ALL
-					RIGHTS RESERVED.</span>
-			</address>
-			<div class="btn_sns">
-				<a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기"
-					target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기"
-					width="36" /></a>
-				<!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
+  <div id="footer" style="background-color: #F2F2F2;">
+    <hr>
+    <div style="width: 65%; margin: 0 auto; text-align: center;">
+      <h2>
+        <img src="logo.png" alt="로고파일자리" width="96" />
+      </h2>
+      <address>
+        <span>서내와기요미들</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>이곳은
+          회사 주소가 들어가야되지만 백수이므로 주소를적을수 없다</span><br> <span>사업자등록번호 :
+          (이곳은사업자번호란)</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>TEL
+          : 010-5321-8633</span><span class="line">&nbsp;&nbsp;|&nbsp;&nbsp;</span><span>제휴문의
+          : java85@bit.com</span> <br> <span>COPYRIGHT© 2016 GD2723. ALL
+          RIGHTS RESERVED.</span>
+      </address>
+      <div class="btn_sns">
+        <a href="https://www.instagram.com/travel_bit/" title="인스타그램 바로가기"
+          target="_blank"><img src="sns_icon01.png" alt="인스타그램 바로가기"
+          width="36" /></a>
+        <!--  <a href="http://blog.naver.com/gd2723" title="네이버 블로그 바로가기" target="_blank"><img src="/images/common/sns_icon02.png" alt="네이버 블로그 바로가기" width="36"/></a>
 <a href="https://www.facebook.com/gd2723" title="페이스북 바로가기" target="_blank"><img src="/images/common/sns_icon03.png" alt="페이스북 바로가기" width="36"/></a> -->
-			</div>
-		</div>
-		<br> <br> <br>
-	</div>
+      </div>
+    </div>
+    <br> <br> <br>
+  </div>
 
-	<!-- Start of message form -->
-	<div class="modal fade"
-		style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
-		id="myMessage" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-sm" style="z-index: 300000;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
-					</button>
-					<h2 class="modal-title" id="myModalLabel">
-						<em>메세지</em>
-					</h2>
-				</div>
-				<div class="modal-body">
-					<div class="wrapper">
-						<form class="form-signin">
-							<textarea class="form-control" id="messageContents" cols="50"
-								rows="3" placeholder="내용을 입력하세요"></textarea>
-							<br>
-							<button id="messageBtn" class="btn btn-lg btn-primary btn-block "
-								type="button">확인</button>
-						</form>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End of message form -->
+  <!-- Start of message form -->
+  <div class="modal fade"
+    style="z-index: 200000; background: rgba(19, 192, 192, 0.2);"
+    id="myMessage" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" style="z-index: 300000;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+          </button>
+          <h2 class="modal-title" id="myModalLabel">
+            <em>메세지</em>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <div class="wrapper">
+            <form class="form-signin">
+              <textarea class="form-control" id="messageContents" cols="50"
+                rows="3" placeholder="내용을 입력하세요"></textarea>
+              <br>
+              <button id="messageBtn" class="btn btn-lg btn-primary btn-block "
+                type="button">확인</button>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of message form -->
 
    <!-- Start of Login form -->
   <div class="modal fade"
@@ -718,59 +690,57 @@ data-animsition-in-class="fade-in-down"
   </div>
   <!-- End of Registration Form-->
 <script type="text/javascript">
-
 document.getElementById("divLoading").style.display = "none";
 document.getElementById("divBody").style.display = "";
-
 </script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
-		async defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZVFF_YJXUyGrjjWnFgl9t7orWnYMng-w&signed_in=true&libraries=places&callback=initMap"
+    async defer></script>
 
-	<script src="js/menu.js"></script>
-	<script src="js/classie.js"></script>
-	<script src="js/cbpAnimatedHeader.min.js"></script>
-	<!-- 회원정보 관련 -->
-	<script type="text/javascript"
-		src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
-	<script type="text/javascript"
-		src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/classie.js"></script>
+  <script src="js/cbpAnimatedHeader.min.js"></script>
+  <!-- 회원정보 관련 -->
+  <script type="text/javascript"
+    src="../node_modules/es6-promise/dist/es6-promise.auto.min.js"></script>
+  <script type="text/javascript"
+    src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
 
-	<script type="text/javascript" src="js/bit.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/authApp.js"></script>
-	<script type="text/javascript" src="js/memberForm.js"></script>
-	<script type="text/javascript" src="traveler.js"></script>
-	<script type="text/javascript" src="travelerform.js"></script>
-	<script type="text/javascript" src="travelerdetail.js"></script>
-	<script type="text/javascript" src="message.js"></script>
-	<script type="text/javascript" src="bookmark.js"></script>
-	<script src='fullcalendar/fullcalendar.js'></script>
-	<script src="js/jquery.popupoverlay.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('#fadeandscale').popup({
-				pagecontainer : '.container',
-				transition : 'all 0.3s'
-			});
-		});
-	</script>
-	<script>
-		init() // 화면을 준비시킨다
-		ajaxLoginUser() // 로그인 유저 정보 가져오기
-		if (location.search.startsWith("?")) {
-			var no = location.search.split("=")[1];
-			ajaxLoadTravelMain(no)
-			ajaxReviewBoardList(no)
-		}
-		ajaxRegistFormList()
-		ajaxInviteList()
-		ajaxAgreeInviteList()
-		ajaxBookmarkCount()
-		ajaxBookmarkList() 
-	</script>
+  <script type="text/javascript" src="js/bit.js"></script>
+  <script type="text/javascript" src="js/common.js"></script>
+  <script type="text/javascript" src="js/authApp.js"></script>
+  <script type="text/javascript" src="js/memberForm.js"></script>
+  <script type="text/javascript" src="traveler.js"></script>
+  <script type="text/javascript" src="travelerform.js"></script>
+  <script type="text/javascript" src="travelerdetail.js"></script>
+  <script type="text/javascript" src="message.js"></script>
+  <script type="text/javascript" src="bookmark.js"></script>
+  <script src='fullcalendar/fullcalendar.js'></script>
+  <script src="js/jquery.popupoverlay.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#fadeandscale').popup({
+        pagecontainer : '.container',
+        transition : 'all 0.3s'
+      });
+    });
+  </script>
+  <script>
+    init() // 화면을 준비시킨다
+    ajaxLoginUser() // 로그인 유저 정보 가져오기
+    if (location.search.startsWith("?")) {
+      var no = location.search.split("=")[1];
+      ajaxLoadTravelMain(no)
+      ajaxReviewBoardList(no)
+    }
+    ajaxRegistFormList()
+    ajaxInviteList()
+    ajaxAgreeInviteList()
+    ajaxBookmarkCount()
+    ajaxBookmarkList() 
+  </script>
 
-	<script id="trTemplateText" type="text/x-handlebars-template">
+  <script id="trTemplateText" type="text/x-handlebars-template">
 {{#each data}}
 <div class="root-schedule">
 <div id="sch_cirNum"></div><h5 class="w3-opacity"><b>{{city}}&nbsp; |&nbsp; {{nation}}</b></h4>
@@ -784,11 +754,11 @@ class="form-control bit-longitude">
 </div>
 {{/each}}
 </script>
-	<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
-	<script src="../node_modules/moment/moment.js"></script>
-	<script>
-		moment().format();
-	</script>
-	</div>
+  <script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script src="../node_modules/moment/moment.js"></script>
+  <script>
+    moment().format();
+  </script>
+  </div>
 </body>
 </html>
