@@ -910,15 +910,14 @@ document.getElementById("divBody").style.display = "";
     $(document).scroll(function() {
         var maxHeight = $(document).height();
         var currentScroll = $(window).scrollTop() + $(window).height();
-        /* ajaxRegistFormList(length) */
         if (maxHeight <= currentScroll) {
          length += 12;
-         $(document).ajaxStart(function(){
+/*          $(document).ajaxStart(function(){
         	 $(".formListLoading").removeClass("display-none");
          });
          $(document).ajaxStop(function(){
              $(".formListLoading").addClass("display-none");
-           })
+           }) */
          ajaxRegistFormList(length);
         }
     })

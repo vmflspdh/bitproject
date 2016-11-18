@@ -27,6 +27,12 @@ function checkToNo(no) {
 }
 
 function ajaxRegistFormList(length) {
+    $(document).ajaxStart(function(){
+   	 $(".formListLoading").removeClass("display-none");
+    });
+    $(document).ajaxStop(function(){
+        $(".formListLoading").addClass("display-none");
+    })
 	$.getJSON(serverAddr + "/travel/formList.json", {length: length}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
