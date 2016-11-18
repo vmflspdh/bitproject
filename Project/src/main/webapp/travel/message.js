@@ -48,7 +48,7 @@ function chattingMemberList() {
 	    	contents +=
 	    		'</div>' +
 	    		'<div style="display:inline-block; float: left; font-weight: bold;">&nbsp;&nbsp;<span id="chattingName">' + arr[i].receiveUser + '</span></div>' +
-	    		'<div style="display:inline-block; color: gray">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="chattingMessage">' + arr[i].contents + '</span></div>' +
+	    		'<div style="max-width:200px; display:inline-block; color: gray; text-overflow: ellipsis; white-space:nowrap; overflow:hidden;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="chattingMessage">' + arr[i].contents + '</span></div>' +
 	    		'<div id="sendDate" style="display:inline-block; float: right; font-size: small; color: gray">' + arr[i].sendDate + '</div>' +
 	    		'</div>' +
 	    		'</a>'
@@ -168,7 +168,7 @@ function loadProfileInfo(no) {
 		contents +=
 			'</div><br>' +
 			'<div style="font-size: large; font-weight: bold;"><center>' + arr[0].receiveUser + '</center></div><br>' +
-			'<div style="font-size: medium;"><center>' + arr[0].contents + '</center></div><br>' +
+			'<div style="font-size: medium;"><center style="text-overflow: ellipsis; white-space:nowrap; overflow:hidden;">' + arr[0].contents + '</center></div><br>' +
 			'<div style="font-size: medium;"><a class="travelMainLink" href="#" data-travelMainBoard=' + arr[0].travelMainNo + '><center>상세페이지로 이동</center></a></div>' +
 			'</div>'
 		  
