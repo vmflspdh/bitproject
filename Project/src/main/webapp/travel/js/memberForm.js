@@ -129,6 +129,7 @@ function ajaxAddMember(member) {
 					  'sign in success!',
 					  'success'
 					)
+					window.location.reload(true)
 		}
 
 	}, "json")
@@ -202,9 +203,8 @@ function ajaxUpdateMember(formData) {
 					  'You clicked the button!',
 					  'success'
 					)
-				return
+					window.location.reload(true)
 			}
-			window.location.reload(true)
 		}
 	});
 

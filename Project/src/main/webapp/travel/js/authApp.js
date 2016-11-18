@@ -66,7 +66,7 @@ function ajaxLogin(user) {
 						  'error'
 						)
 				return;
-			}
+			} 
 			window.location.reload(true) /*href = "travel.html"*/
 		},
 		error: function(msg) {

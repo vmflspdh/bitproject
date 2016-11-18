@@ -146,7 +146,7 @@ function ajaxAddBoard(formData) {
 			if (result.state == "success") {
 				swal(
 						'입력 성공!',
-						'sign in success!',
+						'add in success!',
 						'success'
 				)
 				window.location.href = "reviewApp.html";

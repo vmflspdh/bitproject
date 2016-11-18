@@ -46,22 +46,22 @@ $(".selectAddBtn").click(function(event) {
 
 
 
-		var template = Handlebars.compile($('#trTemplateText').html())
-		$("#selectTable .root-select").append($(template(selectSchedule)))
+	var template = Handlebars.compile($('#trTemplateText').html())
+	$("#selectTable .root-select").append($(template(selectSchedule)))
 
-		$('.root-schedule').each(function(index, element) {
+	$('.root-schedule').each(function(index, element) {
 
-			var tag = $(element).find($('[id="sch_cirNum"]'));
-			tag.html(index+1);
-		});
-		
-		$('#pac-input').val("");
-		$(".bit-nation1").val(""),
-		$(".bit-city1").val(""),
-		$(".bit-startDate1").val(""),
-		$(".bit-endDate1").val(""),
-		$(".bit-latitude1").val(""),
-		$(".bit-longitude1").val("")
+		var tag = $(element).find($('[id="sch_cirNum"]'));
+		tag.html(index+1);
+	});
+
+	$('#pac-input').val("");
+	$(".bit-nation1").val(""),
+	$(".bit-city1").val(""),
+	$(".bit-startDate1").val(""),
+	$(".bit-endDate1").val(""),
+	$(".bit-latitude1").val(""),
+	$(".bit-longitude1").val("")
 
 });
 
@@ -135,12 +135,28 @@ function ajaxAddTravelMain(formData) {
 		type : "POST",
 		success : function(obj) {
 			var result = obj.jsonResult
+			if (result.state == "success") {
+				console.log(result.data)
+				swal(
+						'입력 성공!',
+						'add in success!',
+						'success'
+				)
+				window.location.href = "n_mainTest.html";
+			}
+		},
+
+		error: function(obj) {
+			var result = obj.jsonResult
 			if (result.state != "success") {
 				console.log(result.data)
-				alert("등록 실패입니다.")
-				return
+				swal(
+						'입력 실패.',
+						'Something went wrong!',
+						'error'
+				)
+				return;
 			}
-			window.location.href = "n_mainTest.html";
 		}
 	});
 
