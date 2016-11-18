@@ -49,9 +49,16 @@ function ajaxCmtList() {
 	       var arr = result.data
 	       	a = 0;
 	        for (var i in arr) {
-	          contents += "<tr>" +
-	             "<td>" + arr[i].qcno + "</td>" + 
-	             "<td>" + arr[i].memberName + "</td>" + 
+	          contents += "<tr>"
+	             /*"<td>" + arr[i].qcno + "</td>" + */
+				if (arr[i].memberPhoto == null) {
+					contents += "<td style='font-weight: bold;'><img src='img/iconmonstr-user-20-240.png'style='width: 30px; height: 30px; border-radius: 50%;'>&nbsp;"+ arr[i].memberName+"</td>"
+				} else if (arr[i].memberPhoto.substring(0,1) == 'h') {
+					contents += "<td style='font-weight: bold;'><img src='" + arr[i].memberPhoto+"'style='width: 30px; height: 30px; border-radius: 50%;'>&nbsp;"+ arr[i].memberName+"</td>"
+				} else {
+					contents += "<td style='font-weight: bold;'><img src='../upload/" + arr[i].memberPhoto+"'style='width: 30px; height: 30px; border-radius: 50%;'>&nbsp;"+ arr[i].memberName+"</td>"
+				}
+	          contents +=
 	            "<td>" + arr[i].commentContents + "</td>" +
 	            "<td>" + arr[i].cmtCreateDate + "</td>" + 
 

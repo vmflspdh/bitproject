@@ -62,11 +62,11 @@ function ajaxCommentList(no) {
 				"<tr>"+
 				"<td id='firstcolum'>"+arr[i].reviewcommentNo+"<input id='aaa'></input></td>"
 				if (arr[i].cmMemberPhoto == null) {
-					contents += "<td style='font-weight: bold;'><img src='img/iconmonstr-user-20-240.png'style='width: 30px; height: 30px; border-radius: 50%;'>"+ arr[i].memberName+"</td>"
+					contents += "<td style='font-weight: bold;'><img src='img/iconmonstr-user-20-240.png'style='width: 30px; height: 30px; border-radius: 50%;'>&nbsp;"+ arr[i].memberName+"</td>"
 				} else if (arr[i].cmMemberPhoto.substring(0,1) == 'h') {
-					contents += "<td style='font-weight: bold;'><img src='" + arr[i].cmMemberPhoto+"'style='width: 30px; height: 30px; border-radius: 50%;'>"+ arr[i].memberName+"</td>"
+					contents += "<td style='font-weight: bold;'><img src='" + arr[i].cmMemberPhoto+"'style='width: 30px; height: 30px; border-radius: 50%;'>&nbsp;"+ arr[i].memberName+"</td>"
 				} else {
-					contents += "<td style='font-weight: bold;'><img src='../upload/" + arr[i].cmMemberPhoto+"'style='width: 30px; height: 30px; border-radius: 50%;'>"+ arr[i].memberName+"</td>"
+					contents += "<td style='font-weight: bold;'><img src='../upload/" + arr[i].cmMemberPhoto+"'style='width: 30px; height: 30px; border-radius: 50%;'>&nbsp;"+ arr[i].memberName+"</td>"
 				}
 			contents +=
 				"<td>"+arr[i].content+"</td>"+
