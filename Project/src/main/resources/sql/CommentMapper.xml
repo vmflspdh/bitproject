@@ -8,13 +8,14 @@
  		<result column="rbno" property="reviewboardNo"/>
 	    <result column="mno" property="memberNo"/>
 	    <result column="mnm" property="memberName"/> 
+	    <result column="mpho" property="cmMemberPhoto"/> 
 	    <result column="cont" property="content"/>
 	    <result column="cre_dt" property="createdDate"/>  
      
   </resultMap>
   
   <select id="selectList2" resultMap="commentMap" parameterType="int">
-  select rcno,rbno,c.mno,mnm,cont,date_format(cre_dt, '%y-%m-%d %H:%i') as createdDate2 
+  select rcno,rbno,c.mno,mnm,mpho, cont,date_format(cre_dt, '%y-%m-%d %H:%i') as createdDate2 
   from tvl_review_comt c
   inner join tvl_membs m 
   on m.mno=c.mno

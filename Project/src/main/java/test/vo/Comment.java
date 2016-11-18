@@ -12,6 +12,7 @@ import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 
 public class Comment implements Serializable {
+
   private static final long serialVersionUID = 1L;
   static SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd hh:mm");
   static ParsePosition pos = new ParsePosition(0);
@@ -21,11 +22,13 @@ public class Comment implements Serializable {
   protected int reviewboardNo;
   protected int memberNo;
   protected String memberName;
-  protected String content;
+  protected String cmMemberPhoto;
+    protected String content;
   protected Date createdDate;
   protected String createdDate2;
  
   
+
   public int getReviewcommentNo() {
     return reviewcommentNo;
   }
@@ -50,6 +53,7 @@ public class Comment implements Serializable {
   public void setMemberName(String memberName) {
     this.memberName = memberName;
   }
+
   public String getContent() {
     return content;
   }
@@ -63,14 +67,19 @@ public class Comment implements Serializable {
     this.createdDate = createdDate;
   }
   public String getCreatedDate2() {
-    return this.createdDate2;
+    return createdDate2;
   }
   public void setCreatedDate2(String createdDate2) {
     this.createdDate2 = createdDate2;
   }
+  
 
-  
-  
+  public String getCmMemberPhoto() {
+    return cmMemberPhoto;
+  }
+  public void setCmMemberPhoto(String cmMemberPhoto) {
+    this.cmMemberPhoto = cmMemberPhoto;
+  }
   
   
 }
