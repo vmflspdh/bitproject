@@ -9,8 +9,8 @@ function ajaxBookmarkList() {
 	$.getJSON(serverAddr + "/travel/bookmarkList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-			       //alert("서버에서 북마크데이터를 가져오는데 실패했습니다.")
-	       return
+			//alert("서버에서 북마크데이터를 가져오는데 실패했습니다.")
+			return
 		}
 		var contents = "<h4>북마크</h4>";
 		var arr = result.data
@@ -20,31 +20,31 @@ function ajaxBookmarkList() {
 				if (arr[i].memberPhoto == null) {
 					contents += '<img  class="img-circle" src="img/iconmonstr-user-20-240.png"style="width:40px; height:40px;">'
 				} else if (arr[i].memberPhoto.substring(0,1) == 'h') {
-	    			contents += '<img  class="img-circle" src="'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
-	    		} else {
-	    			contents += '<img  class="img-circle" src="../upload/'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
-	    		}
+					contents += '<img  class="img-circle" src="'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
+				} else {
+					contents += '<img  class="img-circle" src="../upload/'+arr[i].memberPhoto+'"style="width:40px; height:40px;">'
+				}
 			contents +=
 				"&nbsp&nbsp;"+
 				arr[i].memberName+"님의 페이지가 추가되었습니다. &nbsp;"+
 				'<button type="button" data-no="'+arr[i].travelMainNo+'" data-no2="'+arr[i].memberNo+'" class="btn btn-default btn-sm" id="bookmarkdelete" style="float:right;">삭제</button>' +
 				'<button type="button" data-no="'+arr[i].travelMainNo+'"class="btn btn-default btn-sm" id="bookmarkdetail" style="float:right;">상세페이지</button>'
 				+'</pre>'		
-      }
-    
-    $("#fadeandscale>h6").html(contents)
-    $(document).on("click","#bookmarkdetail",function(event) {
-		var no=$(this).attr('data-no')
-		window.location.href = "newdetail.html?no="+$(this).attr('data-no');
-	    
+		}
+
+		$("#fadeandscale>h6").html(contents)
+		$(document).on("click","#bookmarkdetail",function(event) {
+			var no=$(this).attr('data-no')
+			window.location.href = "newdetail.html?no="+$(this).attr('data-no');
+
 		});
-    
-    $(document).on("click","#bookmarkdelete",function(event) {
-		var no=$(this).attr('data-no')
-		ajaxDeleteBookmark(no)
-	    
+
+		$(document).on("click","#bookmarkdelete",function(event) {
+			var no=$(this).attr('data-no')
+			ajaxDeleteBookmark(no)
+
 		});
-    })                  
+	})                  
 }
 
 function ajaxBookmarkCount() {
@@ -66,23 +66,34 @@ function ajaxAddBookmark() {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			swal(
-					  '이미 등록되었습니다!',
-					  'Something went wrong!',
-					  'error'
-					)
-
-			return
-		}
+					'이미 등록되었습니다!',
+					'Something went wrong!',
+					'error'
+			)
+			return;
+		} else {
 		swal(
-				  '등록 성공!',
-				  'sign in success!',
-				  'success'
-				)
+				'등록 성공!',
+				'sign in success!',
+				'success'
+		)
 		window.location.reload(true)
+		}
 
 	}, "json")
+	
+	swal({
+		title: '회원이신가요?',
+		text: "만약 회원이 아니라면 회원가입을 해주세요",
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, I will!'
+	}).then(function () {
+		$("#myModal").modal('show');
+	})
 }
-
 
 function ajaxDeleteBookmark(no) {
 	$.post(serverAddr + "/travel/bookmarkDelete.json", {no: no},  function(obj){
