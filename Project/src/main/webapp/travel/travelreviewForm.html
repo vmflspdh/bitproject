@@ -40,7 +40,9 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <!-- alert창 관련 -->
 <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css">
+<!-- animsition.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 <style>
 body {
 background: #F0F0F0
@@ -291,17 +293,33 @@ color : #ff545c;
               <li><a href="#" id="myInfo"><img
                   src='img/iconmonstr-note-19-240.png' id="subImg"><br>MY
                   INFO</a></li>
-              <li><a href="#"><img
+              <li><a href="#" id="travelerMessage"><img
                   src='img/iconmonstr-email-2-240.png' id="subImg"><br>MESSAGE</a>
               </li>
-              <li><a href="#"><img
+              <li><a class=" fadeandscale_open" id="accompany" href="#"><img
                   src='img/iconmonstr-user-21-240.png' id="subImg"><br>ACCOMPANY</a></li>
-              <li><a id="logoutBtn" href='#' class="my-login"><img
+              <li><a id="logoutBtn" href='#'><img
                   src='img/iconmonstr-log-out-9-240.png' id="subImg"><br>LOGOUT</a>
               </li>
             </ul></li>
         </ul>
       </div>
+      
+           <div id="fadeandscale" class="well">
+                <h4>동행요청</h4>
+                <h5></h5>
+                <h6></h6>
+            <!-- <pre class="prettyprint">dsadasdsadczxcxzcxzcxzcxzzxc
+            <button value="vcxc">수락</button><button value="sdfds">거절</button>
+            </pre>
+            <pre class="prettyprint">
+            <code>zxcxzcxzxz</code>
+            </pre>
+            <pre class="prettyprint">
+            <code>zxcxzcxzxz</code>
+            </prze> -->
+                <button style="float: right;"class="fadeandscale_close btn btn-default">Close</button>
+            </div>
 
       <div class="my-login" style="position: absolute; top:5px; right: 130px; color:white;">
         <span id="userName" style="font-weight: bold; font-size: 18px;"></span>
@@ -676,8 +694,16 @@ color : #ff545c;
   <script type="text/javascript" src="bookmark.js"></script>
   <script type="text/javascript" src="travelreviewForm.js"></script>
   <script type="text/javascript" src="commentApp.js"></script>
-  
-	<script>
+    <script src="js/jquery.popupoverlay.js"></script>
+   <script>
+    $(document).ready(function() {
+      $('#fadeandscale').popup({
+        pagecontainer : '.container',
+        transition : 'all 0.3s'
+      });
+    });
+  </script>
+  	<script>
 		init();
 		ajaxLoginUser()
 		scheduleList()
