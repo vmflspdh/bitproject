@@ -1,4 +1,3 @@
-var registForm = {};
 
 $("#searchaddBtn").click (function(event){
 	registForm = {
