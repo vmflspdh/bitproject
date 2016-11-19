@@ -1,4 +1,4 @@
-
+var listlength = 12
 $("#searchaddBtn").click (function(event){
 	registForm = {
 			city: $("#searchCity").val(),
@@ -16,15 +16,15 @@ function fnMove(){
 }
 
 
-
-function ajaxRegistFormList(length) {
-    $(document).ajaxStart(function(){
+function ajaxRegistFormList() {
+   $(document).ajaxStart(function(){
    	 $(".formListLoading").removeClass("display-none");
     });
     $(document).ajaxStop(function(){
         $(".formListLoading").addClass("display-none");
     })
-	$.getJSON(serverAddr + "/travel/formList.json", {length: length}, function(obj) {
+	$.getJSON(serverAddr + "/travel/formList.json", {listlength: listlength}, function(obj) {
+		console.log(listlength)
 		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
@@ -75,13 +75,30 @@ function ajaxRegistFormList(length) {
 		    		contents += '</tr>' +
 		    					'<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'
 		    	}
+	    		if (i == arr.length-1 && i > 10) {
+					contents += '<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'+
+						'<tr><td colspan="5" style="border:0px solid black;"><a class="debogimainlist" href="#"><center><img src="img/debogi.png" style="width:70px;"></center></a></td></tr>'
+				}
 	      }
 	    $(".changallery").html(contents)
 	    $(".titleLink").click(function(event) {
 	    	var no = $(this).attr("data-no")
 	    	checkToNo2(no)
 	    })
+	    $(".debogimainlist").click(function(event) {
+	    	console.log(listlength)
+	    	listlength += 12
+	    	console.log(listlength)
+	    	ajaxRegistFormList()
+	    	fnMove2()
+		})
+	    
     })
+}
+
+function fnMove2(){
+    var position = $(".debogimainlist").offset();
+    $('html,body').animate({scrollTop : position.top}, 400);
 }
 
 function ajaxSearchList(registForm) {
