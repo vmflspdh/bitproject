@@ -78,6 +78,12 @@ public class Message implements Serializable {
 	public void setState(int state) {
 		this.state = state;
 	}
+  @Override
+  public String toString() {
+    return "Message [messageNo=" + messageNo + ", sendMemberNo=" + sendMemberNo + ", receiveMemberNo=" + receiveMemberNo
+        + ", receiveUser=" + receiveUser + ", contents=" + contents + ", sendDate=" + sendDate + ", state=" + state
+        + ", myPhoto=" + myPhoto + ", travelMainNo=" + travelMainNo + ", schduleNo=" + schduleNo + "]";
+  }
 	
 	
 }
