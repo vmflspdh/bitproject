@@ -170,6 +170,11 @@ function init() {
 
 /* 페이지링크 영역*/
 
+$(".travelerList").click(function(event) {
+
+	window.location.href = "n_mainTest.html";
+});
+
 $("#travelerPage").click(function(event) {
 
 	window.location.href = "travelerRegForm.html";
@@ -193,4 +198,14 @@ $("#travelerRegForm").click(function(event) {
 $("#travelerMessage").click(function(event) {
 
 	window.location.href = "chatting.html";
+});
+
+$(".reviewPage").click(function(event) {
+
+	window.location.href = "reviewApp.html";
+});
+
+$(".qnaPage").click(function(event) {
+
+	window.location.href = "qnaApp.html";
 });

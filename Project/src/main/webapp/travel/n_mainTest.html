@@ -531,10 +531,7 @@ padding-left: 0.25%;
 </head>
 <!-- 페이지로딩 -->
 <body class="landing"> 
-<div id="divLoading" style="position:absolute; top:35%; left:0; width:100%; text-align:center; margin:0 auto;">
-    <img src="img/loading.gif" alt="잠시만 기다려 주세요. 로딩중입니다." />
-</div>
-<div id="divBody" style="display:none;">
+
   <!-- 상단메뉴시작 -->
   <!-- Start of container2 -->
   <div class="container">
@@ -810,33 +807,33 @@ padding-left: 0.25%;
             <div class="inner">
             
               <section class="tiles" style=" margin-top: 0px;margin: 0 auto;padding-left: 1.5%;padding-top: 3%;;background-color: #f0f0f0;padding-bottom: 0.9%;">
-                <article class="style1" style="height:23%; width:23%;margin: 13px;">
+                <article  class="style1" style="height:23%; width:23%;margin: 13px;">
                   <span class="image" style="width:100%;margin:0; padding:0;">
                     <img src="mini_main17.jpg" alt="" />
                   </span>
-                  <a href="generic.html">
+                  <a href="" class="travelerList">
                     <h2>ACCOMPANY</h2>
                     <div class="content">
                       <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                     </div>
                   </a>
                 </article>
-                <article class="style2" style="height:23%; width:23%;margin: 13px;">
+                <article  class="style2" style="height:23%; width:23%;margin: 13px;">
                   <span class="image">
                     <img src="mini_main10.jpg" alt="" />
                   </span>
-                  <a href="generic.html">
+                  <a href="#" class="reviewPage">
                     <h2>REVIEW</h2>
                     <div class="content">
                       <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
                     </div>
                   </a>
                 </article>
-                <article class="style3" style="height:23%; width:23%;margin: 13px;">
+                <article  class="style3" style="height:23%; width:23%;margin: 13px;">
                   <span class="image">
                     <img src="mini_main12.jpg" alt="" />
                   </span>
-                  <a href="generic.html">
+                  <a href="#" class="travelerList">
                     <h2>PLAN</h2>
                     <div class="content">
                       <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
@@ -847,7 +844,7 @@ padding-left: 0.25%;
                   <span class="image">
                     <img src="mini_main15.jpg" alt="" />
                   </span>
-                  <a href="generic.html">
+                  <a href="#"  class="qnaPage">
                     <h2>Q&A</h2>
                     <div class="content">
                       <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
@@ -889,11 +886,6 @@ data-animsition-in-class="fade-in-up-lg"
 </div></div><br><br><br></div>
   <!-- footer 끝 div -->
   
-<!-- 페이지로딩 -->
-<script>
-document.getElementById("divLoading").style.display = "none";
-document.getElementById("divBody").style.display = "";
-</script>
   <!-- 페이스북 -->
 <script>
   window.fbAsyncInit = function() {
