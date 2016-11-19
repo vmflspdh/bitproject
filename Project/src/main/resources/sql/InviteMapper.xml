@@ -4,15 +4,15 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="test.dao.InviteDao">
   <resultMap type="invite" id="inviteMap">
-    <id column="ivno" property="inviteNo"/>
- 		<result column="mno" property="memberNo"/>
- 		<result column="mno2" property="memberNo2"/>
-	    <result column="invnm" property="inviteName"/>
-	    <result column="invemail" property="inviteEmail"/>
-	    <result column="invgend" property="inviteGender"/>
-	    <result column="stat" property="state"/>
-	    <result column="invpho" property="invitePhoto"/>
-	    <result column="ivbno" property="inviteBoardNo"/>  
+    <id column="IVNO" property="inviteNo"/>
+ 		<result column="MNO" property="memberNo"/>
+ 		<result column="MNO2" property="memberNo2"/>
+	    <result column="INVNM" property="inviteName"/>
+	    <result column="INVEMAIL" property="inviteEmail"/>
+	    <result column="INVGEND" property="inviteGender"/>
+	    <result column="STAT" property="state"/>
+	    <result column="INVPHO" property="invitePhoto"/>
+	    <result column="IVBNO" property="inviteBoardNo"/>  
      	
   </resultMap>
   
