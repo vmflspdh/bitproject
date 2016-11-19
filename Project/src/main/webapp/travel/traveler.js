@@ -42,8 +42,13 @@ function ajaxRegistFormList(length) {
 	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
 	    		'<div class="thumbnail-wrapper">' +
 	    	    '<div class="thumbnail">' +
-	    	    '<div class="centered">' +
-	    		'<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>' +
+	    	    '<div class="centered">'
+	    	    if (arr[i].travelPhoto == null) {
+	    	    	contents += '<img src="img/traveldefault.jpg"></div></div></div>'
+	    	    } else {
+	    	    	contents += '<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>'
+	    	    }
+	    	contents +=
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
@@ -98,8 +103,13 @@ function ajaxSearchList(registForm) {
 	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
 	    		'<div class="thumbnail-wrapper">' +
 	    		'<div class="thumbnail">' +
-	    		'<div class="centered">' +
-	    		'<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>' +
+	    		'<div class="centered">'
+	    		if (arr[i].travelPhoto == null) {
+	    	    	contents += '<img src="img/traveldefault.jpg"></div></div></div>'
+	    	    } else {
+	    	    	contents += '<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>'
+	    	    }
+	    	contents +=
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +

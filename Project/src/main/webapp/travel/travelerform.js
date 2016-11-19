@@ -183,7 +183,12 @@ function ajaxLoadTravelMain(no) {
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
-		$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
+		if (result.data.travelPhoto == null) {
+			$("#detailTravelImage").attr("src","img/traveldefault.jpg");
+		} else {
+			$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
+		}
+		
 		regPhoto(result.data.memberNo)
 		favorChecked(result)
 		scheduleList();
