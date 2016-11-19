@@ -92,8 +92,6 @@ public class RegistFormController {
 			RegistForm registForm = registFormDao.selectOne(no);
 			int bodno = registForm.getMemberNo();
 			session.setAttribute("travelMemberNo", registForm.getMemberNo());
-			System.out.println(memno);
-			System.out.println(bodno);
 			if (memno == bodno) {
 				return JsonResult.success();
 			} else {

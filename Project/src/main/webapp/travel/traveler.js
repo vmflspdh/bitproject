@@ -16,17 +16,7 @@ function fnMove(){
     $('html,body').animate({scrollTop : position.top}, 400);
 }
 
-function checkToNo(no) {
-	$.getJSON(serverAddr + "/travel/formMyList.json", {no: no}, function(obj) {
-		var result = obj.jsonResult
-		
-		if (result.state == "success") {
-			window.location.href = "travelerform.html?no=" + no
-		} else {
-			window.location.href = "newdetail.html?no=" + no
-		}
-    })                  
-}
+
 
 function ajaxRegistFormList(length) {
     $(document).ajaxStart(function(){
@@ -85,8 +75,7 @@ function ajaxRegistFormList(length) {
 	    $(".changallery").html(contents)
 	    $(".titleLink").click(function(event) {
 	    	var no = $(this).attr("data-no")
-	    	console.log(no)
-	    	checkToNo(no)
+	    	checkToNo2(no)
 	    })
     })
 }
@@ -146,12 +135,22 @@ function ajaxSearchList(registForm) {
 	    $(".changallery").html(contents)
 	    $(".titleLink").click(function(event) {
 	    	var no = $(this).attr("data-no")
-	    	console.log(no)
-	    	checkToNo(no)
+	    	checkToNo2(no)
 	    })
     })
 }
 
+function checkToNo2(no) {
+	$.getJSON(serverAddr + "/travel/formMyList.json", {no: no}, function(obj) {
+		var result = obj.jsonResult
+		console.log(result)
+		if (result.state == "success") {
+			window.location.href = "travelerform.html?no=" + no
+		} else {
+			window.location.href = "newdetail.html?no=" + no
+		}
+    })                  
+}
 
 function ajaxInviteList() {
 	$.getJSON(serverAddr + "/travel/invlist.json", function(result) {
