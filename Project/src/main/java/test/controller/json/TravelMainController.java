@@ -157,6 +157,10 @@ public class TravelMainController {
         travelMainfile.setFileName(newFilename);
         System.out.println(travelMainfile);
         travelMainFileDao.insert(travelMainfile);
+      } else {
+        travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
+        travelMainfile.setFileName("default");
+        travelMainFileDao.insert(travelMainfile);
       }
       
       }
