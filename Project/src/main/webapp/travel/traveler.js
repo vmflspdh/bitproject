@@ -6,9 +6,9 @@ $("#searchaddBtn").click (function(event){
 			startDate: $("#searchStDt").val(),
 			endDate: $("#searchEdDt").val()
 	}
-	window.location.href = "n_mainTestSearchList.html"
-	/*ajaxSearchList(registForm)
-	fnMove()*/
+	/*window.location.href = "n_mainTestSearchList.html"*/
+	ajaxSearchList(registForm)
+	fnMove()
 });
 
 function fnMove(){

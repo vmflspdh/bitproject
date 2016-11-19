@@ -17,80 +17,80 @@
   
   
   <select id="selectList" resultMap="reviewMap" parameterType="map">
-    select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,date_format(r.cre_dt,'%Y-%m-%d') as cre_dt ,r.vw_cnt , count(c.rbno)
-    from tvl_review_bods r
-	inner join tvl_membs m 
-	on r.mno=m.mno
-	left join tvl_review_comt c
-	on r.rbno=c.rbno
-	group by r.rbno
- 	order by rbno desc  
+    SELECT R.RBNO,R.TMNO,R.MNO,M.MNM,R.TITLE,R.CONT,DATE_FORMAT(R.CRE_DT,'%Y-%m-%d') AS CRE_DT ,R.VW_CNT , COUNT(C.RBNO)
+    FROM TVL_REVIEW_BODS R
+	INNER JOIN TVL_MEMBS M 
+	ON R.MNO=M.MNO
+	LEFT JOIN TVL_REVIEW_COMT C
+	ON R.RBNO=C.RBNO
+	GROUP BY R.RBNO
+ 	ORDER BY RBNO DESC  
  	
- 	limit #{startIndex}, #{length}
+ 	LIMIT #{startIndex}, #{length}
   </select>
   
   <select id="selectOne" resultMap="reviewMap" parameterType="int">
-    select  rbno,tmno,r.mno,mnm,title,cont,cre_dt,vw_cnt
-    from tvl_review_bods r
-	inner join tvl_membs m 
-	on r.mno=m.mno
-    where rbno = #{value}
+    SELECT  RBNO,TMNO,R.MNO,MNM,TITLE,CONT,CRE_DT,VW_CNT
+    FROM TVL_REVIEW_BODS R
+	INNER JOIN TVL_MEMBS M 
+	ON R.MNO=M.MNO
+    WHERE RBNO = #{value}
   </select>
   
   <select id="detailReviewList" resultMap="reviewMap" parameterType="int">
-    select r.rbno,r.tmno,r.mno,m.mnm,r.title,r.cont,date_format(r.cre_dt,'%Y-%m-%d') as cre_dt,r.vw_cnt , count(c.rbno)
-    from tvl_review_bods r
-	inner join tvl_membs m 
-	on r.mno=m.mno
-	left join tvl_review_comt c
-	on r.rbno=c.rbno
-	where tmno=#{value}
-	group by r.rbno
- 	order by rbno desc  
+    SELECT R.RBNO,R.TMNO,R.MNO,M.MNM,R.TITLE,R.CONT,DATE_FORMAT(R.CRE_DT,'%Y-%m-%d') AS CRE_DT,R.VW_CNT , COUNT(C.RBNO)
+    FROM TVL_REVIEW_BODS R
+	INNER JOIN TVL_MEMBS M 
+	ON R.MNO=M.MNO
+	LEFT JOIN TVL_REVIEW_COMT C
+	ON R.RBNO=C.RBNO
+	WHERE TMNO=#{value}
+	GROUP BY R.RBNO
+ 	ORDER BY RBNO DESC  
  	
   </select>
   
   <select id="selectOneByMember" resultMap="reviewMap" parameterType="int">
-    select  rbno,tmno,r.mno,mnm,title,cont,cre_dt
-    from tvl_review_bods r 
-    inner join tvl_membs m
-    on r.mno=m.mno
-    where r.mno = #{value}
-    order by rbno desc
+    SELECT  RBNO,TMNO,R.MNO,MNM,TITLE,CONT,CRE_DT
+    FROM TVL_REVIEW_BODS R 
+    INNER JOIN TVL_MEMBS M
+    ON R.MNO=M.MNO
+    WHERE R.MNO = #{value}
+    ORDER BY RBNO DESC
   </select>
   
   <select id="selectOneByPassword" resultMap="reviewMap" parameterType="map">
-    select no,title,conts,cre_dt,vw_cnt 
-    from boards 
-    where no=#{no} and password=password(#{password})
+    SELECT NO,TITLE,CONTS,CRE_DT,VW_CNT 
+    FROM BOARDS 
+    WHERE NO=#{no} AND PASSWORD=PASSWORD(#{password})
   </select>
   
   <insert id="insert"  parameterType="review" useGeneratedKeys="true" keyProperty="reviewboardno" keyColumn="rbno">
-    insert into tvl_review_bods(tmno,mno,title, cont, cre_dt,vw_cnt)
-    values(#{travelno},#{memberno},#{title}, #{content},  now(),0)
+    INSERT INTO TVL_REVIEW_BODS(TMNO,MNO,TITLE, CONT, CRE_DT,VW_CNT)
+    VALUES(#{travelno},#{memberno},#{title}, #{content},  NOW(),0)
   </insert>
   
   <update id="update" parameterType="review">
-    update tvl_review_bods set 
-      title=#{title}, 
-      cont=#{content} 
-    where rbno=#{reviewboardno}
+    UPDATE TVL_REVIEW_BODS SET 
+      TITLE=#{title}, 
+      CONT=#{content} 
+    WHERE RBNO=#{reviewboardno}
   </update>
   
   <update id="viewCountUpdate" parameterType="int">
-    update tvl_review_bods set 
-      vw_cnt=vw_cnt+1
-    	where rbno=#{reviewboardno}
+    UPDATE TVL_REVIEW_BODS SET 
+      VW_CNT=VW_CNT+1
+    	WHERE RBNO=#{reviewboardno}
   </update>
   
   <delete id="delete" parameterType="int">
-    delete from tvl_review_bods 
-    where rbno=#{value}
+    DELETE FROM TVL_REVIEW_BODS 
+    WHERE RBNO=#{value}
   </delete>
   
   <select id="countAll" resultType="int">
-    select  count(*)
-    from tvl_review_bods 
+    SELECT  COUNT(*)
+    FROM TVL_REVIEW_BODS 
   </select>
 </mapper>
 
