@@ -89,23 +89,6 @@ public class MessageController {
     }
   }
 	
-	@RequestMapping(path="messageAdd3")
-  public Object add3(Message message, HttpSession session) throws Exception {
-    
-    Member member = (Member)session.getAttribute("member");
-    message.setSendMemberNo(member.getNo());
-    int receiveMemberNo = (int)session.getAttribute("travelMemberNo");
-    message.setReceiveMemberNo(receiveMemberNo);
-    
-    try {
-      messageDao.insert(message);
-     return JsonResult.success();
-      
-    } catch (Exception e) {
-      return JsonResult.fail(e.getMessage());
-    }
-  }
-	
 	@RequestMapping(path="profiledetail")
 	public Object list2(int no, HttpSession session) throws Exception {
 		

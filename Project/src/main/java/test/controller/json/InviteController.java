@@ -112,6 +112,7 @@ public class InviteController {
       invite.setInviteBoardNo(no);
       
       System.out.println(member);
+      session.setAttribute("inviteMemberNo", invite.getMemberNo2());
       inviteDao.inviteAgreeInsert(invite);
       inviteDao.inviteAgree(no);
       

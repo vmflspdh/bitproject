@@ -193,7 +193,6 @@ function checkToNo(no) {
 }
 
 function ajaxAddMessage(message) {
-	console.log(message)
 	$.post(serverAddr + "/travel/messageAdd2.json", message, function(obj){
 		var result = obj.jsonResult
 		if (result.state != "success") {
