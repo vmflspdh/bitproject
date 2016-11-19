@@ -42,7 +42,7 @@ function ajaxRegistFormList(length) {
 	    		'<div class="thumbnail-wrapper">' +
 	    	    '<div class="thumbnail">' +
 	    	    '<div class="centered">'
-	    	    if (arr[i].travelPhoto == null) {
+	    	    if (arr[i].travelPhoto == 'default') {
 	    	    	contents += '<img src="img/traveldefault.jpg"></div></div></div>'
 	    	    } else {
 	    	    	contents += '<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>'
@@ -103,7 +103,7 @@ function ajaxSearchList(registForm) {
 	    		'<div class="thumbnail-wrapper">' +
 	    		'<div class="thumbnail">' +
 	    		'<div class="centered">'
-	    		if (arr[i].travelPhoto == null) {
+	    		if (arr[i].travelPhoto == 'default') {
 	    	    	contents += '<img src="img/traveldefault.jpg"></div></div></div>'
 	    	    } else {
 	    	    	contents += '<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>'
