@@ -258,7 +258,8 @@ function ajaxAgreeInviteList() {
 	    	contents +=
 	    		"&nbsp&nbsp;"+
 	    		arr[i].inviteName+" 님과 동행입니다. &nbsp;"+
-				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'
+				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'+
+				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteMessage" value="sdfds">메세지</button>'
 				+'</pre>'	    		
 	    		
 	    		/*'<ul>' +
@@ -284,6 +285,10 @@ function ajaxAgreeInviteList() {
 		    })  
 		    
 			});
+	    $(document).on("click","#inviteMessage",function(event) {
+		$("#myMessage").modal('show');
+			});
+	    
 	    
 	    $(document).on("click","#inviterefuse",function(event) {
 			var no=$(this).attr('data-no')
