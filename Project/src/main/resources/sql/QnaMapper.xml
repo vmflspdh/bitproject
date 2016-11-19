@@ -80,7 +80,7 @@ WHERE QBNO = #{value}
 
 <delete id="delete" parameterType="int">
   DELETE FROM TVL_QNA_BODS
-  WHERE QBNO=#{value}s
+  WHERE QBNO=#{value}
 </delete>
 
 <select id="countAll" resultType="int">

@@ -185,13 +185,11 @@ public class QnaController {
    
    @RequestMapping(path="qnadelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
    @ResponseBody
-   public String delete(int qno) throws Exception {
+   public String delete(int no) throws Exception {
+     System.out.println(no);
      HashMap<String,Object> result = new HashMap<>();
      try {
-       HashMap<String,Object> paramMap = new HashMap<>();
-       paramMap.put("qno", qno);
-       
-       qnaDao.delete(qno);
+       qnaDao.delete(no);
        result.put("state", "success");
      } catch (Exception e) {
        result.put("state", "fail");
