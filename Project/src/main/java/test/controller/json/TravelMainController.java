@@ -148,8 +148,9 @@ public class TravelMainController {
       System.out.println(travelMain);
       
       String newFilename = null;
+     
+      if (files.length != 0) {
       for (int i = 0; i < files.length; i++) {
-      if (!files[i].isEmpty()) {
         newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
         files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
         System.out.println(newFilename);
@@ -157,13 +158,14 @@ public class TravelMainController {
         travelMainfile.setFileName(newFilename);
         System.out.println(travelMainfile);
         travelMainFileDao.insert(travelMainfile);
+      }
       } else {
         travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
         travelMainfile.setFileName("default");
         travelMainFileDao.insert(travelMainfile);
       }
       
-      }
+
       
       for (int i = 0; i < list.size(); i++) {
         
