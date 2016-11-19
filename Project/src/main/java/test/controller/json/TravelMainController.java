@@ -259,13 +259,10 @@ public class TravelMainController {
   }
 
   @RequestMapping(path="travelMainDelete")
-  public Object delete(TravelMain travelMain) throws Exception {
-
+  public Object delete(int no) throws Exception {
+    System.out.println(no);
     try {
-      travelMystyleDao.delete(travelMain);
-      travelScheduleDao.delete(travelMain);
-      travelLocationDao.delete(travelMain);
-      travelMainDao.delete(travelMain);
+      travelMainDao.delete(no);
       return JsonResult.success();
     } catch (Exception e) {
       return JsonResult.fail(e.getMessage());

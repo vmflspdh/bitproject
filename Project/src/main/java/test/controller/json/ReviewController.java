@@ -335,7 +335,7 @@ public class ReviewController {
   @RequestMapping(path="rvdelete", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
   @ResponseBody
   public String delete(int no) throws Exception {
-    
+    System.out.println(no);
     HashMap<String, Object> result = new HashMap<>();
     try{
 

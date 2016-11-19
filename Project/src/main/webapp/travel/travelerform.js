@@ -159,13 +159,9 @@ $("#updateTMBtn").click(function(event) {
 });
 
 $("#deleteTMBtn").click(function(event) {
-	var travelMain = {
-			memberNo: $("#userNo").val(),
-			scheduleNo: $("#no").val(),
-			travelMainNo: $("#travelNo").val(),
-			locationNo: $("#locationNo").val()
-	}
-	ajaxDeleteTravelMain(travelMain)
+	no=$("#travelNo").val();
+	console.log(no)
+	ajaxDeleteTravelMain(no)
 });
 
 
@@ -255,8 +251,8 @@ function ajaxUpdateTravelMain(formData) {
 }
 
 
-function ajaxDeleteTravelMain(travelMain) {
-	$.getJSON(serverAddr + "/travel/travelMainDelete.json", travelMain, function(obj) {
+function ajaxDeleteTravelMain(no) {
+	$.post(serverAddr + "/travel/travelMainDelete.json?no"+no, {no:no}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			console.log(result.state)
@@ -264,7 +260,7 @@ function ajaxDeleteTravelMain(travelMain) {
 			return
 		}
 
-		location.href = "mainhtml.html"
+		location.href = "n_mainTest.html"
 	})
 }
 

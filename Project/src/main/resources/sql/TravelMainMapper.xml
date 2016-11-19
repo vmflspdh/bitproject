@@ -23,6 +23,6 @@
  
  <delete id="delete" parameterType="int">
   DELETE FROM TVL_TVLMAIN 
-  WHERE TMNO=#{travelMainNo}
+  WHERE TMNO=#{value}
  </delete>
 </mapper>
