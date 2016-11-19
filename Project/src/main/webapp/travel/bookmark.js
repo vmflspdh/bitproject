@@ -70,7 +70,7 @@ function ajaxAddBookmark() {
 					'error'
 			)
 			return;
-		} else {
+		} else if (result.state == "success") {
 		swal(
 				'등록 성공!',
 				'sign in success!',
@@ -78,20 +78,27 @@ function ajaxAddBookmark() {
 		)
 		window.location.reload(true)
 		}
-
+	
 	}, "json")
 	
-	swal({
-		title: '회원이신가요?',
-		text: "만약 회원이 아니라면 회원가입을 해주세요",
-		type: 'warning',
-		showCancelButton: true,
-		confirmButtonColor: '#3085d6',
-		cancelButtonColor: '#d33',
-		confirmButtonText: 'Yes, I will!'
-	}).then(function () {
-		$("#myModal").modal('show');
-	})
+	   $(document).ajaxError(function(info,xhr){
+    if(xhr.status==500)
+		
+		swal({
+			title: '회원이신가요?',
+			text: "만약 회원이 아니라면 회원가입을 해주세요",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, I will!'
+		}).then(function () {
+			$("#myModal").modal('show');
+		})
+    }
+   );
+
+	
 }
 
 function ajaxDeleteBookmark(no) {
