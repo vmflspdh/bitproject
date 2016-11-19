@@ -939,12 +939,6 @@ data-animsition-in-class="fade-in-up-lg"
         var currentScroll = $(window).scrollTop() + $(window).height();
         if (maxHeight <= currentScroll) {
          length += 12;
-/*          $(document).ajaxStart(function(){
-        	 $(".formListLoading").removeClass("display-none");
-         });
-         $(document).ajaxStop(function(){
-             $(".formListLoading").addClass("display-none");
-           }) */
          ajaxRegistFormList(length);
         }
     })
