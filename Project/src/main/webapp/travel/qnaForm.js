@@ -172,8 +172,9 @@ $("#qnaupdateBtn").click(function(event) {
 
 
 $("#qnadeleteBtn").click(function(event) {
-  ajaxDeleteQna(
-       $("#qno").val())
+	no=$("#qno").val();
+	console.log(no)
+  ajaxDeleteQna(no)
 });
 
 
@@ -219,10 +220,9 @@ function ajaxUpdateQna(qna) {
    }, "json")
 }
 
-function ajaxDeleteQna(qno) {
-   $.getJSON("qnadelete.json", {
-      qno: qno
-   }, function(result) {
+function ajaxDeleteQna(no) {
+	console.log(no)
+   $.post("qnadelete.json?no="+no, {no:no}, function(result) {
       if (result.state != "success") {
          alert("삭제 실패입니다.")
          return

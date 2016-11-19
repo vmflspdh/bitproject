@@ -52,7 +52,6 @@ function ajaxBookmarkCount() {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 			console.log(result.data)
-			alert("조회 실패 입니다.")
 			return
 		}
 		var arr = result.data

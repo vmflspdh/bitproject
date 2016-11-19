@@ -12,7 +12,7 @@ public interface QnaDao {
   Qna selectOneByPassword(Map<String,Object> paramMap) throws Exception;
   int insert(Qna qna) throws Exception;
   int update(Qna qna) throws Exception;
-  int delete(int qno) throws Exception;
+  int delete(int no) throws Exception;
   int viewCountUpdate(int no) throws Exception;
   int countAll() throws Exception;
   List<Qna> detailReviewList(int no)throws Exception;
