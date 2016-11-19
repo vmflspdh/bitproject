@@ -30,7 +30,11 @@ function chattingMemberList() {
 	$.getJSON(serverAddr + "/travel/messageMemberList.json", function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					'로그인 후 이용해 주세요!',
+					'Please, use to after login!',
+					'error'
+			)
 		       return
 		}
 		var contents = "";
@@ -81,7 +85,11 @@ function loadDetailMessageList(no) {
 	$.getJSON(serverAddr + "/travel/myMessageList.json", {no: no}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					'로그인 후 이용해 주세요!',
+					'Please, use to after login!',
+					'error'
+			)
 		       return
 		}
 		var contents = "";
@@ -160,7 +168,11 @@ function loadProfileInfo(no) {
 	$.getJSON(serverAddr + "/travel/profiledetail.json", {no: no}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					'로그인 후 이용해 주세요!',
+					'Please, use to after login!',
+					'error'
+			)
 		       return
 		}
 		var arr = result.data
@@ -185,7 +197,11 @@ function loadProfileInfo(no) {
 		$(".travelMainLink").click(function(event) {
 	    	var no = $(this).attr("data-travelMainBoard")
 	    	if (no == 0) {
-	    		alert("등록한 페이지가 없습니다.")
+	    		swal(
+						'등록한 글이 없습니다!',
+						'',
+						'error'
+				)
 	    	} else {
 	    		checkToNo(no)
 	    	}

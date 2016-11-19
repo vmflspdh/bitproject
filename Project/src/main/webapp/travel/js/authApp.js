@@ -102,7 +102,7 @@ window.fbAsyncInit = function() {
 	  });
 
 	};
-
+var checktheNo;
 function ajaxLoginUser() {
 
 	$.getJSON("loginUser.json", function(obj) {
@@ -114,7 +114,7 @@ function ajaxLoginUser() {
 		} else {
 			$('.my-logout').css("display", "none")
 		}
-
+		checktheNo=result.data.no
 		$("#userName5").text(result.data.name)
 		$('.aaa').css("display", "none")
 		$("#userName").text(result.data.name)
@@ -171,8 +171,18 @@ function init() {
 /* 페이지링크 영역*/
 
 $("#travelerPage").click(function(event) {
-
-	window.location.href = "travelerRegForm.html";
+	console.log(checktheNo)
+	if (checktheNo == null) {
+		swal(
+				'로그인 후 이용해 주세요!',
+				'Please, use to after login!',
+				'error'
+		)
+		return
+	} else {
+		
+		window.location.href = "travelerRegForm.html";
+	}
 });
 
 $("#reviewPage").click(function(event) {
@@ -186,7 +196,7 @@ $("#qnaPage").click(function(event) {
 });
 
 $("#travelerRegForm").click(function(event) {
-
+	
 	window.location.href = "travelerRegForm.html";
 });
 
