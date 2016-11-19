@@ -258,7 +258,7 @@ function ajaxAgreeInviteList() {
 	    		"&nbsp&nbsp;"+
 	    		arr[i].inviteName+" 님과 동행입니다. &nbsp;"+
 				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'+
-				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteMessage" value="sdfds">메세지</button>'
+				'<button style="float:right" data-no="'+arr[i].inviteNo+'" data-mno='+arr[i].memberNo+' class="btn btn-default btn-sm" id="inviteMessage" value="sdfds">메세지</button>'
 				+'</pre>'	    		
 	    		
 	    		/*'<ul>' +
@@ -284,8 +284,18 @@ function ajaxAgreeInviteList() {
 		    })  
 		    
 			});
+	    
 	    $(document).on("click","#inviteMessage",function(event) {
+	    	var messageMemberNo=$(this).attr('data-mno')
+	    	console.log(messageMemberNo)
 	    		$("#myMessage").modal('show');
+	    		$("#messageinviteBtn").click(function(event) {
+	    			var message = {
+	    					receiveMemberNo: messageMemberNo,
+	    					contents: $("#messageContents").val()
+	    			}
+	    			ajaxAddinviteMessage(message)
+	    		})
 	    		/*$.post(serverAddr + "/travel/messageAdd2.json", message, function(obj){
 	    			var result = obj.jsonResult
 	    			if (result.state != "success") {
@@ -313,5 +323,16 @@ function ajaxAgreeInviteList() {
     })
 }
 
+function ajaxAddinviteMessage(message) {
+$.post(serverAddr + "/travel/messageAdd3.json", message, function(obj){
+	var result = obj.jsonResult
+	if (result.state != "success") {
+		alert("메세지등록 실패입니다.")
+		return
+	}
+	window.location.reload(true)
+
+}, "json")
+}
 
 

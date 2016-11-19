@@ -1,3 +1,12 @@
+/*
+$("#messageinviteBtn").click(function(event) {
+
+	var message = {
+			contents: $("#messageContents").val()
+	}
+	console.log(message)
+	ajaxAddinviteMessage(message)
+})*/
 
 $("#messageBtn").click(function(event) {
 
@@ -216,3 +225,16 @@ function ajaxAddChattingMessage(message) {
 
 	}, "json")
 }
+
+/*function ajaxAddinviteMessage(message) {
+	$.post(serverAddr + "/travel/messageAdd3.json", message, function(obj){
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("등록 실패입니다.")
+			return
+		}
+		window.location.reload(true)
+
+	}, "json")
+}
+*/
