@@ -14,6 +14,12 @@
     VALUES(#{travelMainNo}, #{fileName})
   </insert>
   
+  
+  <update id="update" parameterType="travelMainFile">
+  UPDATE TVL_INTRO_PHO SET IPNM=#{fileName}
+  WHERE TMNO = #{travelMainNo}
+</update>
+  
   <select id="selectList" resultMap="travelMainFileMap" parameterType="map">
   SELECT IPNO, IPNM
   
