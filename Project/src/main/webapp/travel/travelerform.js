@@ -140,6 +140,8 @@ $("#updateTMBtn").click(function(event) {
 	formData.append("title",$("#title").val())
 	formData.append("selfIntroduce",$("#selfIntroduce").val())
 	formData.append("styleNo",$("input[name='chk_info']:checked").val())
+	formData.append("travelMainPNo", $("#travelMainPNo").val())
+	console.log($("#travelMainPNo").val())
 	formData.append("schedule",schedule)
 	formData.append("file", $("#travelFile")[0].files[0])
 	console.log($("#travelFile")[0].files[0])
@@ -302,7 +304,8 @@ function travelMainFilelist() {
 		var contents = '<a>기존 업로드 파일</a><br/>';
 		var arr = result.data
 		for (var i in arr) {
-			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
+			contents +=  '<a>' + arr[i].fileName + "</a><br/>" +
+		'<input type="text" id="travelMainPNo" style="display:none" value="'+ arr[i].travelMainPNo+'">' 
 			console.log(arr[i].fileName)
 			if (arr[i].fileName == 'default') {
 				$('#boardImg').css("background-image", "url(img/traveldefault.jpg)");

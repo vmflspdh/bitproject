@@ -189,7 +189,7 @@ public class TravelMainController {
 
 
   @RequestMapping(path="travelMainUpdate")
-  public Object update(TravelMain travelMain, String schedule, MultipartFile[] files) throws Exception {
+  public Object update(TravelMain travelMain, String schedule, MultipartFile file) throws Exception {
     
     List<TravelMain> list = new Gson().fromJson(schedule, new TypeToken<List<TravelMain>>(){}.getType());
     int index = list.size();
@@ -222,32 +222,21 @@ public class TravelMainController {
       travelScheduleDao.update(travelMain);
 
       }
-      
-      
-      for(int j = 0; j < files.length; j++){
-        System.out.println(files[j]);
-      }
-      for(int j = 0; j < files.length; j++){
-        travelMainFileDao.delete(travelMain.getTravelMainNo());
-      }
-      
+            
+
+              
       String newFilename = null;
-      for (int i = 0; i < files.length; i++) {
-        if (!files[i].isEmpty()) {
-          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
-          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+        if (!file.isEmpty()) {
+          newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
+          file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
           travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
+          travelMainfile.setTravelMainPNo(travelMain.getTravelMainPNo());
           travelMainfile.setFileName(newFilename);
-          travelMainFileDao.insert(travelMainfile);
-        } else {
-          newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
-          files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
-          travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
-          travelMainfile.setFileName(newFilename);
-          travelMainFileDao.insert(travelMainfile);
-        }
-        
-      }
+          System.out.println(newFilename);
+          System.out.println(travelMainfile);
+          travelMainFileDao.update(travelMainfile);
+        }        
+     
       
       
       return JsonResult.success();

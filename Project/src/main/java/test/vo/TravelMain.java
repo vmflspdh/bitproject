@@ -8,9 +8,6 @@ public class TravelMain implements Serializable {
 
 
 
-
-
-
   private static final long serialVersionUID = 1L;
 
   static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -29,6 +26,7 @@ public class TravelMain implements Serializable {
   protected double lng;
   protected int styleNo;
   protected String styleName;
+  protected int travelMainPNo;
 
 
   protected String startDate1;
@@ -208,17 +206,29 @@ public class TravelMain implements Serializable {
 
 
 
+  public int getTravelMainPNo() {
+    return travelMainPNo;
+  }
+
+  public void setTravelMainPNo(int travelMainPNo) {
+    this.travelMainPNo = travelMainPNo;
+  }
+
+
+
+
+
+
+
+
   @Override
   public String toString() {
     return "TravelMain [travelMainNo=" + travelMainNo + ", memberNo=" + memberNo + ", title=" + title
         + ", selfIntroduce=" + selfIntroduce + ", scheduleNo=" + scheduleNo + ", locationNo=" + locationNo
         + ", startDate=" + startDate + ", endDate=" + endDate + ", continent=" + continent + ", nation=" + nation
         + ", city=" + city + ", lat=" + lat + ", lng=" + lng + ", styleNo=" + styleNo + ", styleName=" + styleName
-        + ", startDate1=" + startDate1 + ", endDate1=" + endDate1 + "]";
+        + ", travelMainPNo=" + travelMainPNo + ", startDate1=" + startDate1 + ", endDate1=" + endDate1 + "]";
   }
-
-
-
 
 
 
