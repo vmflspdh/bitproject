@@ -5,7 +5,8 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 public class RegistForm implements Serializable {
-	private static final long serialVersionUID = 1L;
+
+  private static final long serialVersionUID = 1L;
 	
 	static SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 	protected int no;
@@ -23,10 +24,20 @@ public class RegistForm implements Serializable {
   protected Date startDate;
   protected Date endDate;
   protected String myPhoto;
+  protected int travelMainPNo;
   protected String travelPhoto;
   protected int bookmarkCount;
   protected String startDate1;
   protected String endDate1;
+  
+  
+  
+  public int getTravelMainPNo() {
+    return travelMainPNo;
+  }
+  public void setTravelMainPNo(int travelMainPNo) {
+    this.travelMainPNo = travelMainPNo;
+  }
   
 	public int getBookmarkCount() {
 		return bookmarkCount;
