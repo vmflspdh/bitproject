@@ -257,6 +257,7 @@ function ajaxUpdateTravelMain(formData) {
 
 
 function ajaxDeleteTravelMain(no) {
+	console.log(no)
 	$.post(serverAddr + "/travel/travelMainDelete.json?no"+no, {no:no}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
@@ -311,7 +312,12 @@ function travelMainFilelist() {
 		for (var i in arr) {
 			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
 			console.log(arr[i].fileName)
-			$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
+			if (arr[i].fileName == 'default') {
+				$('#boardImg').css("background-image", "url(img/traveldefault.jpg)");
+			} else {
+				
+				$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
+			}
 			$('#reviewThumbImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
 
 		}

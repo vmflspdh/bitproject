@@ -928,20 +928,11 @@ data-animsition-in-class="fade-in-up-lg"
   <script src="js/jquery.popupoverlay.js"></script>
      
   <script>
-  var length = 12;
   $(document).ready(function() {
     $('#fadeandscale').popup({
       pagecontainer : '.container',
       transition : 'all 0.3s'
     });
-    $(document).scroll(function() {
-        var maxHeight = $(document).height();
-        var currentScroll = $(window).scrollTop() + $(window).height();
-        if (maxHeight <= currentScroll) {
-         length += 12;
-         ajaxRegistFormList(length);
-        }
-    })
   });
   </script>
 <script type="text/javascript">

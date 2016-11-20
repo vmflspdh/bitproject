@@ -32,7 +32,8 @@ INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO
 WHERE TVL_MSG.MNO = #{receiveNo}
 GROUP BY MNO2
 )
-ORDER BY MSGNO DESC;
+ORDER BY MSGNO DESC
+LIMIT #{length}
 <!-- order by msgno desc;
 select tvl_msg.mno, mnm, msgno, mno2, cont, sd_dt, mpho from tvl_msg
 inner join tvl_membs on tvl_msg.mno2 = tvl_membs.mno 
@@ -45,6 +46,7 @@ SELECT TVL_MSG.MNO, MNM, MSGNO, MNO2, CONT, SD_DT, MPHO FROM TVL_MSG
 INNER JOIN TVL_MEMBS ON TVL_MSG.MNO2 = TVL_MEMBS.MNO 
 WHERE (MNO2=#{sendNo} AND TVL_MSG.MNO=#{receiveNo}) OR (MNO2=#{receiveNo} AND TVL_MSG.MNO=#{sendNo})
 ORDER BY MSGNO DESC
+LIMIT #{length}
 </select>
 
 <select id="selectUserProfile" resultMap="messageMap" parameterType="map">
