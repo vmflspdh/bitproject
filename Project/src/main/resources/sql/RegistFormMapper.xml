@@ -19,7 +19,6 @@
     <result column="ST_DT" property="startDate"/>
     <result column="ED_DT" property="endDate"/>
     <result column="MPHO" property="myPhoto"/>
-    <result column="IPNO" property="travelMainPNo"/>
     <result column="IPNM" property="travelPhoto"/>
     <result column="COUNT(TVL_BMK.TMNO)" property="bookmarkCount"/>
   </resultMap>
@@ -97,15 +96,12 @@ ORDER BY TVL_TVLMAIN.TMNO DESC
 
 <select id="selectOne" resultMap="registFormMap" parameterType="int">
 
-SELECT MAX(IPNO), TVL_MEMBS.MNO, TVL_TVLMAIN.TMNO, TITLE, SCHNO, MNM, TVL_STY.STYNO, STYNM, TVL_LOC.LOCNO, CONT, NATN, CITY, SF_INF, ST_DT, ED_DT, MPHO, IPNM FROM TVL_TVLMAIN
+SELECT  TVL_INTRO_PHO.IPNO, IPNM, TVL_MEMBS.MNO, TVL_TVLMAIN.TMNO, TITLE, MNM, TVL_STY.STYNO, STYNM, SF_INF,  MPHO
+FROM TVL_TVLMAIN
 INNER JOIN TVL_MEMBS
 ON TVL_MEMBS.MNO = TVL_TVLMAIN.MNO
-INNER JOIN TVL_SCH
-ON TVL_SCH.TMNO = TVL_TVLMAIN.TMNO
 INNER JOIN TVL_MYSTY
 ON TVL_MYSTY.TMNO = TVL_TVLMAIN.TMNO
-INNER JOIN TVL_LOC
-ON TVL_LOC.LOCNO = TVL_SCH.LOCNO
 INNER JOIN TVL_STY
 ON TVL_STY.STYNO = TVL_MYSTY.STYNO
 INNER JOIN TVL_INTRO_PHO
