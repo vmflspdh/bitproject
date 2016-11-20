@@ -122,7 +122,7 @@ public class TravelMainController {
   
   
   @RequestMapping(path="travelMainAdd")
-  public Object add(TravelMain travelMain, String schedule, HttpSession session, MultipartFile[] files) throws Exception {
+  public Object add(TravelMain travelMain, String schedule, HttpSession session, MultipartFile file) throws Exception {
     
     Member member = (Member)session.getAttribute("member");
     travelMain.setMemberNo(member.getNo());
@@ -133,11 +133,6 @@ public class TravelMainController {
     
     int index = list.size();
     System.out.println(index);
-    
-    for (int i = 0; i < files.length; i++) {
-      System.out.println(files[i]);
-      
-    }
 
     
     try {
@@ -149,16 +144,14 @@ public class TravelMainController {
       
       String newFilename = null;
      
-      if (files.length != 0) {
-      for (int i = 0; i < files.length; i++) {
-        newFilename = FileUploadUtil.getNewFilename(files[i].getOriginalFilename());
-        files[i].transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
+        if (!file.isEmpty()) {
+        newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
+        file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
         System.out.println(newFilename);
         travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
         travelMainfile.setFileName(newFilename);
         System.out.println(travelMainfile);
         travelMainFileDao.insert(travelMainfile);
-      }
       } else {
         travelMainfile.setTravelMainNo(travelMain.getTravelMainNo());
         travelMainfile.setFileName("default");
