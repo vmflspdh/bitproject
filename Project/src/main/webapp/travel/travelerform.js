@@ -252,6 +252,7 @@ function ajaxUpdateTravelMain(formData) {
 
 
 function ajaxDeleteTravelMain(no) {
+	console.log(no)
 	$.post(serverAddr + "/travel/travelMainDelete.json?no"+no, {no:no}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
