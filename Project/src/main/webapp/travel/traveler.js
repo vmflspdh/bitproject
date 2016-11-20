@@ -1,5 +1,4 @@
-var registForm = {};
-
+var listlength = 12
 $("#searchaddBtn").click (function(event){
 	registForm = {
 			city: $("#searchCity").val(),
@@ -17,15 +16,15 @@ function fnMove(){
 }
 
 
-
-function ajaxRegistFormList(length) {
-    $(document).ajaxStart(function(){
+function ajaxRegistFormList() {
+   $(document).ajaxStart(function(){
    	 $(".formListLoading").removeClass("display-none");
     });
     $(document).ajaxStop(function(){
         $(".formListLoading").addClass("display-none");
     })
-	$.getJSON(serverAddr + "/travel/formList.json", {length: length}, function(obj) {
+	$.getJSON(serverAddr + "/travel/formList.json", {listlength: listlength}, function(obj) {
+		console.log(listlength)
 		var result = obj.jsonResult
 		if (result.state != "success") {
 		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
@@ -42,8 +41,13 @@ function ajaxRegistFormList(length) {
 	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
 	    		'<div class="thumbnail-wrapper">' +
 	    	    '<div class="thumbnail">' +
-	    	    '<div class="centered">' +
-	    		'<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>' +
+	    	    '<div class="centered">'
+	    	    if (arr[i].travelPhoto == 'default') {
+	    	    	contents += '<img src="img/traveldefault.jpg"></div></div></div>'
+	    	    } else {
+	    	    	contents += '<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>'
+	    	    }
+	    	contents +=
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
@@ -71,13 +75,30 @@ function ajaxRegistFormList(length) {
 		    		contents += '</tr>' +
 		    					'<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'
 		    	}
+	    		if (i == arr.length-1 && i > 10) {
+					contents += '<tr><td style="height: 15px; border="1px solid black;"><td></td><td></td><td></td></tr>'+
+						'<tr><td colspan="5" style="border:0px solid black;"><a class="debogimainlist" href="#"><center><img src="img/debogi.png" style="width:70px;"></center></a></td></tr>'
+				}
 	      }
 	    $(".changallery").html(contents)
 	    $(".titleLink").click(function(event) {
 	    	var no = $(this).attr("data-no")
 	    	checkToNo2(no)
 	    })
+	    $(".debogimainlist").click(function(event) {
+	    	console.log(listlength)
+	    	listlength += 12
+	    	console.log(listlength)
+	    	ajaxRegistFormList()
+	    	fnMove2()
+		})
+	    
     })
+}
+
+function fnMove2(){
+    var position = $(".debogimainlist").offset();
+    $('html,body').animate({scrollTop : position.top}, 400);
 }
 
 function ajaxSearchList(registForm) {
@@ -98,8 +119,13 @@ function ajaxSearchList(registForm) {
 	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
 	    		'<div class="thumbnail-wrapper">' +
 	    		'<div class="thumbnail">' +
-	    		'<div class="centered">' +
-	    		'<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>' +
+	    		'<div class="centered">'
+	    		if (arr[i].travelPhoto == 'default') {
+	    	    	contents += '<img src="img/traveldefault.jpg"></div></div></div>'
+	    	    } else {
+	    	    	contents += '<img src="../upload/' + arr[i].travelPhoto + '"></div></div></div>'
+	    	    }
+	    	contents +=
 	    		'<div style="background-color: white; color: black;">' +
 	    		'<div style="padding:5px; font-size: large; font-weight: bold; color:#337AB7; padding-top: 5px;">' + 
 	    		'<a class="titleLink" href="#" data-memno="' + arr[i].memberNo + '" data-no="' + arr[i].travelMainNo + '">' + arr[i].title + '</a></div>' +
@@ -258,7 +284,7 @@ function ajaxAgreeInviteList() {
 	    		"&nbsp&nbsp;"+
 	    		arr[i].inviteName+" 님과 동행입니다. &nbsp;"+
 				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviterefuse" value="sdfds">거절</button>'+
-				'<button style="float:right" data-no="'+arr[i].inviteNo+'" class="btn btn-default btn-sm" id="inviteMessage" value="sdfds">메세지</button>'
+				'<button style="float:right" data-no="'+arr[i].inviteNo+'" data-mno='+arr[i].memberNo+' class="btn btn-default btn-sm" id="inviteMessage" value="sdfds">메세지</button>'
 				+'</pre>'	    		
 	    		
 	    		/*'<ul>' +
@@ -284,8 +310,18 @@ function ajaxAgreeInviteList() {
 		    })  
 		    
 			});
+	    
 	    $(document).on("click","#inviteMessage",function(event) {
+	    	var messageMemberNo=$(this).attr('data-mno')
+	    	console.log(messageMemberNo)
 	    		$("#myMessage").modal('show');
+	    		$("#messageinviteBtn").click(function(event) {
+	    			var message = {
+	    					receiveMemberNo: messageMemberNo,
+	    					contents: $("#messageContents").val()
+	    			}
+	    			ajaxAddinviteMessage(message)
+	    		})
 	    		/*$.post(serverAddr + "/travel/messageAdd2.json", message, function(obj){
 	    			var result = obj.jsonResult
 	    			if (result.state != "success") {
@@ -313,5 +349,16 @@ function ajaxAgreeInviteList() {
     })
 }
 
+function ajaxAddinviteMessage(message) {
+$.post(serverAddr + "/travel/messageAdd3.json", message, function(obj){
+	var result = obj.jsonResult
+	if (result.state != "success") {
+		alert("메세지등록 실패입니다.")
+		return
+	}
+	window.location.reload(true)
+
+}, "json")
+}
 
 

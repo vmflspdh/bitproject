@@ -23,13 +23,11 @@ public class RegistFormController {
 	
 	@RequestMapping(path="formList")
 	public Object list(
-			@RequestParam(defaultValue="1") int pageNo,
-			@RequestParam(defaultValue="12") int length) throws Exception {
+			@RequestParam(defaultValue="12") int listlength) throws Exception {
 
 		try {
 			HashMap<String,Object> map = new HashMap<>();
-			map.put("startIndex", (pageNo - 1) * length);
-			map.put("length", length);
+			map.put("length", listlength);
 			
 			return JsonResult.success(registFormDao.selectList(map));
 			

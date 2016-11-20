@@ -1,3 +1,12 @@
+/*
+$("#messageinviteBtn").click(function(event) {
+
+	var message = {
+			contents: $("#messageContents").val()
+	}
+	console.log(message)
+	ajaxAddinviteMessage(message)
+})*/
 
 $("#messageBtn").click(function(event) {
 
@@ -16,12 +25,16 @@ $("#mainMessageBtn").click(function(event) {
 	console.log(message)
 	ajaxAddChattingMessage(message)
 })
-
+var memberLength = 4;
 function chattingMemberList() {
-	$.getJSON(serverAddr + "/travel/messageMemberList.json", function(obj) {
+	$.getJSON(serverAddr + "/travel/messageMemberList.json",{memberLength: memberLength}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					'로그인 후 이용해 주세요!',
+					'Please, use to after login!',
+					'error'
+			)
 		       return
 		}
 		var contents = "";
@@ -32,7 +45,7 @@ function chattingMemberList() {
 	    for (var i in arr) {
 	    	if (i == 0) {
 	    		contents +=
-	    			'<div class="chattingList">최근 메세지 요청</div>'
+	    			'<div class="chattingList" style="border:1px solid #A196A4;">최근 메세지 요청</div>'
 	    	}
 	    	contents += 
 	    		'<a class="titleLink" href="#" data-sendMemberNo="' + arr[i].sendMemberNo + '">' +
@@ -52,34 +65,48 @@ function chattingMemberList() {
 	    		'<div id="sendDate" style="display:inline-block; float: right; font-size: small; color: gray">' + arr[i].sendDate + '</div>' +
 	    		'</div>' +
 	    		'</a>'
+	    		if (i == arr.length-1 && i > 2) {
+					contents += '<a class="debogimember" href="#" style="color:black"><div style="border: 1px solid #A196A4;margin:0 auto;width:400px;text-align:center;color:#736378;">더보기</div></a>'
+				}
 	      }
 	    }
 	    $(".chanchatting").html(contents)
-	    loadDetailMessageList(arr[0].sendMemberNo)
+	    var detailMessageNo = arr[0].sendMemberNo
+	    loadDetailMessageList(detailMessageNo)
 	    loadProfileInfo(arr[0].sendMemberNo)
 	    $('#detailpageContents').css("display", "inherit")
 	    $('#mainMessageBtn').css("display", "inherit")
 	    $(".titleLink").click(function(event) {
-	    	var no = $(this).attr("data-sendMemberNo")
-	    	loadDetailMessageList(no)
-	    	loadProfileInfo(no)
+	    	var detailMessageNo = $(this).attr("data-sendMemberNo")
+	    	console.log(detailMessageNo)
+	    	loadDetailMessageList(detailMessageNo)
+	    	loadProfileInfo(detailMessageNo)
 	        $('#detailpageContents').css("display", "inherit")
 	        $('#mainMessageBtn').css("display", "inherit")
 	    })
+	    $(".debogimember").click(function(event) {
+	    	memberLength += 4
+			chattingMemberList()
+		})
     })
 }
-function loadDetailMessageList(no) {
-	$.getJSON(serverAddr + "/travel/myMessageList.json", {no: no}, function(obj) {
+var length = 7;
+function loadDetailMessageList(detailMessageNo) {
+	$.getJSON(serverAddr + "/travel/myMessageList.json", {no: detailMessageNo, length: length}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					'로그인 후 이용해 주세요!',
+					'Please, use to after login!',
+					'error'
+			)
 		       return
 		}
 		var contents = "";
 		var arr = result.data
 		for (var i in arr) {
-			if (arr[i].sendMemberNo != no) {
-				if (i > 0 && arr[i - 1].sendMemberNo != no) {
+			if (arr[i].sendMemberNo != detailMessageNo) {
+				if (i > 0 && arr[i - 1].sendMemberNo != detailMessageNo) {
 					contents +=
 						'<div class="chattingDetail">' +
 						'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: right;">' +
@@ -108,7 +135,7 @@ function loadDetailMessageList(no) {
 					'</div>'
 				}
 			} else {
-				if (i > 0 && arr[i - 1].sendMemberNo == no) {
+				if (i > 0 && arr[i - 1].sendMemberNo == detailMessageNo) {
 					contents +=
 						'<div class="chattingDetail">' +
 						'<div style="width:50px; height:50px; border-radius: 25px 25px 25px 25px; overflow: hidden; float: left;">' +
@@ -137,21 +164,27 @@ function loadDetailMessageList(no) {
 					'</div><br>'
 				}
 			}
-			if (i > 7) {
-				contents += '<center><div>&hellip;&hellip;</div></center>'
-				break;
+			if (i == arr.length-1 && i > 5) {
+				contents += '<br><br><a class="debogilist" href="#" style="color:black"><div style="margin:0 auto;font-size:medium;width:380px;text-align:center;border-radius: 6px;background-color: #DDDDDD;color:black">더보기</div></a>'
 			}
 		}
 		$(".chanchattingList").html(contents)
-		
+		$(".debogilist").click(function(event) {
+			length += 7
+			loadDetailMessageList(detailMessageNo)
+		})
     })                  
 }
 
-function loadProfileInfo(no) {
-	$.getJSON(serverAddr + "/travel/profiledetail.json", {no: no}, function(obj) {
+function loadProfileInfo(detailMessageNo) {
+	$.getJSON(serverAddr + "/travel/profiledetail.json", {no: detailMessageNo}, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
-		       alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					'로그인 후 이용해 주세요!',
+					'Please, use to after login!',
+					'error'
+			)
 		       return
 		}
 		var arr = result.data
@@ -176,7 +209,11 @@ function loadProfileInfo(no) {
 		$(".travelMainLink").click(function(event) {
 	    	var no = $(this).attr("data-travelMainBoard")
 	    	if (no == 0) {
-	    		alert("등록한 페이지가 없습니다.")
+	    		swal(
+						'등록한 글이 없습니다!',
+						'',
+						'error'
+				)
 	    	} else {
 	    		checkToNo(no)
 	    	}
@@ -216,3 +253,16 @@ function ajaxAddChattingMessage(message) {
 
 	}, "json")
 }
+
+/*function ajaxAddinviteMessage(message) {
+	$.post(serverAddr + "/travel/messageAdd3.json", message, function(obj){
+		var result = obj.jsonResult
+		if (result.state != "success") {
+			alert("등록 실패입니다.")
+			return
+		}
+		window.location.reload(true)
+
+	}, "json")
+}
+*/

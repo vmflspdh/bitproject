@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import test.dao.MessageDao;
 import test.vo.JsonResult;
@@ -21,10 +22,12 @@ public class MessageController {
 
   
   @RequestMapping(path="messageMemberList")
-  public Object list(HttpSession session) throws Exception {
+  public Object list(HttpSession session,
+  		@RequestParam(defaultValue="4") int memberLength) throws Exception {
 
     try {
       HashMap<String,Object> map = new HashMap<>();
+      map.put("length", memberLength);
       Member member = (Member)session.getAttribute("member");
       System.out.println(member.getNo());
       map.put("receiveNo", member.getNo());
@@ -37,24 +40,27 @@ public class MessageController {
   }
   
 	@RequestMapping(path="myMessageList")
-	public Object list(int no, HttpSession session) throws Exception {
+	public Object list(int no, HttpSession session,
+			@RequestParam(defaultValue="7") int length) throws Exception {
 		
 		try {
 			HashMap<String,Object> map = new HashMap<>();
+			map.put("length", length);
 			Member member = (Member)session.getAttribute("member");
 			int sendMemberNo = member.getNo();
 			int receiveMemberNo = no;
 			session.setAttribute("receiveMemberNo", receiveMemberNo);
 			System.out.println(sendMemberNo);
 			System.out.println(receiveMemberNo);
-			map.put("receiveNo", no);
-			map.put("sendNo", sendMemberNo);
+			map.put("receiveNo", no);//상대
+			map.put("sendNo", sendMemberNo);//나
 		  return JsonResult.success(messageDao.selectMyMessageList(map));
 		  
 		} catch (Exception e) {
 			return JsonResult.fail(e.getMessage());
 		}
 	}
+	
 	
 	@RequestMapping(path="messageAdd")
   public Object add(Message message, HttpSession session) throws Exception {
@@ -79,6 +85,20 @@ public class MessageController {
     message.setSendMemberNo(member.getNo());
     int receiveMemberNo = (int)session.getAttribute("travelMemberNo");
     message.setReceiveMemberNo(receiveMemberNo);
+    
+    try {
+    	messageDao.insert(message);
+     return JsonResult.success();
+      
+    } catch (Exception e) {
+      return JsonResult.fail(e.getMessage());
+    }
+  }
+	@RequestMapping(path="messageAdd3")
+  public Object add3(Message message, HttpSession session) throws Exception {
+    
+    Member member = (Member)session.getAttribute("member");
+    message.setSendMemberNo(member.getNo());
     
     try {
     	messageDao.insert(message);

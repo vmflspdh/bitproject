@@ -183,7 +183,12 @@ function ajaxLoadTravelMain(no) {
 		$("#selfIntroduce").val(result.data.selfIntroduce);
 		$("#selfIntroduce").text(result.data.selfIntroduce);
 		$("#styleName").val(result.data.styleNo);
-		$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
+		if (result.data.travelPhoto == 'default') {
+			$("#detailTravelImage").attr("src","img/traveldefault.jpg");
+		} else {
+			$("#detailTravelImage").attr("src","../upload/" + result.data.travelPhoto);
+		}
+		
 		regPhoto(result.data.memberNo)
 		favorChecked(result)
 		scheduleList();
@@ -307,7 +312,12 @@ function travelMainFilelist() {
 		for (var i in arr) {
 			contents +=  '<a>' + arr[i].fileName + "</a><br/>"
 			console.log(arr[i].fileName)
-			$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
+			if (arr[i].fileName == 'default') {
+				$('#boardImg').css("background-image", "url(img/traveldefault.jpg)");
+			} else {
+				
+				$('#boardImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
+			}
 			$('#reviewThumbImg').css("background-image", "url(../upload/" + arr[i].fileName +")");
 
 		}
