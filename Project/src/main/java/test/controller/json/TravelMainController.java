@@ -223,9 +223,10 @@ public class TravelMainController {
 
       }
             
-
+      System.out.println(file);
               
       String newFilename = null;
+      if (file != null) {
         if (!file.isEmpty()) {
           newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
           file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
@@ -235,8 +236,10 @@ public class TravelMainController {
           System.out.println(newFilename);
           System.out.println(travelMainfile);
           travelMainFileDao.update(travelMainfile);
-        }        
-     
+        }
+        } else {
+          System.out.println("수정할 파일이 없습니다.");
+        }
       
       
       return JsonResult.success();
