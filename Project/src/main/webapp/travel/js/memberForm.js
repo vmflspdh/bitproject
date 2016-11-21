@@ -6,7 +6,7 @@ $(document).ready(function() {
                   $.ajax({
                         type : 'POST',
                         dataType : "json",
-                        url : "http://52.78.227.107:8000/Project/travel/emailCheck.json",
+                        url : serverAddr + "/travel/emailCheck.json",
                         crossDomain : true,
                         data : {
                           email : email
