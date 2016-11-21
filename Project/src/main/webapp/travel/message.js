@@ -40,7 +40,7 @@ function chattingMemberList() {
 		var contents = "";
 	    var arr = result.data
 	    if (arr == "") {
-	    	contents = '<div class="chattingList">받은 메세지가 없습니다.</div>'
+	    	contents = '<div class="chattingList"style="border:1px solid #A196A4;">받은 메세지가 없습니다.</div>'
 	    } else {
 	    for (var i in arr) {
 	    	if (i == 0) {
@@ -188,6 +188,7 @@ function loadProfileInfo(detailMessageNo) {
 		       return
 		}
 		var arr = result.data
+			
 		var contents = 
 			'<div style="width:200px;">' +
 			'<div style="width:200px; height:200px; border-radius: 50% 50% 50% 50%; overflow: hidden;">'
