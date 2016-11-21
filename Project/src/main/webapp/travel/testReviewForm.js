@@ -40,10 +40,20 @@ $("#reviewContentUpdateBtn").click (function(event){
 $("#reviewContentDeleteBtn").click (function(event){
 	$.post(serverAddr + "/travel/rvdelete.json?no="+no,{no:no}, function(result) {
 		if (result.state != "success") {
-			alert("서버에서 데이터를 가져오는데 실패했습니다.")
+			swal(
+					  '삭제 실패.',
+					  'Something went wrong!',
+					  'error'
+					)
 			return
-		}
+		} else{
 		console.log(no)
+		swal(
+					  '삭제 성공!',
+					  'You clicked the button!',
+					  'success'
+					)
+		}
 		location.href = "reviewApp.html"
 	});
 });
