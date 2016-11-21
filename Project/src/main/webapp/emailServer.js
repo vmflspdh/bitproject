@@ -16,7 +16,7 @@ var pool = mysql.createPool({
 app.use(bodyParser.json());	// JSON 형식으로 넘어온 데이터 처리 
 app.use(bodyParser.urlencoded({extended:true}))
 
-app.post('/Project1116/travel/emailCheck.json', function(request, response) {
+app.post('/Project/travel/emailCheck.json', function(request, response) {
 	console.log(request.body.email)
 
 	pool.query(
