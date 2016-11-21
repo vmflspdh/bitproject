@@ -61,6 +61,7 @@ public class InviteController {
     
     // 성공하던 실패하던 클라이언트에게 데이터를 보내야 한다. 
     //
+    System.out.println(registform);
      Invite invite = new Invite(); 
     //System.out.println(registform);
     HashMap<String, Object> result = new HashMap<>();
