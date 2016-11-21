@@ -102,6 +102,7 @@ public class MemberController {
       }
 
       String newFilename = null;
+      if (file != null) {
       if (!file.isEmpty()) {
         newFilename = FileUploadUtil.getNewFilename(file.getOriginalFilename());
         file.transferTo(new File(sc.getRealPath("/upload/" + newFilename)));
@@ -111,6 +112,9 @@ public class MemberController {
       }
       session.setAttribute("member", member);
       memberDao.update(member);
+      } else {
+        System.out.println("수정할 파일이 없습니다.");
+      }
       return JsonResult.success();
 
     } catch (Exception e) {
