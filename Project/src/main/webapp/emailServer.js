@@ -20,7 +20,7 @@ app.post('/Project/travel/emailCheck.json', function(request, response) {
 	console.log(request.body.email)
 
 	pool.query(
-			"SELECT COUNT(EMAIL) AS CNT FROM TVL_MEMBS WHERE EMAIL=?",
+			"SELECT COUNT(EMAIL) AS cnt FROM TVL_MEMBS WHERE EMAIL=?",
 			[request.body.email],
 			function(err, rows, fields) {
 				response.writeHead(200, {
