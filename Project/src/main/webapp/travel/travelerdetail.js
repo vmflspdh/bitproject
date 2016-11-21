@@ -23,6 +23,7 @@ function ajaxLoadRegistForm(no) {
 }
 
 $("#togetherRequest").click(function(event) {
+	console.log(no)
 	$.getJSON(serverAddr + "/travel/formDetail.json?no=" + no, function(obj) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
@@ -33,6 +34,7 @@ $("#togetherRequest").click(function(event) {
 	  var requestMember=result.data
 	  inviteAdd(requestMember)
 	})
+	
 });
 function inviteAdd(requestMember){
 	$.post(serverAddr + "/travel/invadd.json" , requestMember,function(result) {
