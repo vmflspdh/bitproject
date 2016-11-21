@@ -28,7 +28,6 @@ $("#togetherRequest").click(function(event) {
 		var result = obj.jsonResult
 		if (result.state != "success") {
 	    	console.log(result.data)
-	    	alert("조회 실패 입니다.")
 	    	return
 	    }
 	  var requestMember=result.data
@@ -37,7 +36,11 @@ $("#togetherRequest").click(function(event) {
 	
 });
 function inviteAdd(requestMember){
-	$.post(serverAddr + "/travel/invadd.json" , requestMember,function(result) {
+	console.log(requestMember.memberNo)
+	console.log(requestMember.travelMainNo)
+	no=requestMember.memberNo
+	no2=requestMember.travelMainNo
+	$.post(serverAddr + "/travel/invadd.json" , {no:no,no2:no2},function(result) {
 		//var result = obj.jsonResult
 		console.log(requestMember)
 		if (result.state == "exist") {
