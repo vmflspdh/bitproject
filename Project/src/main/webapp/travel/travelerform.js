@@ -57,7 +57,6 @@ $(document.body).on('click', '.selectModBtn', function(event) {
 
 
 $("#addTMBtn").click(function(event) {
-
 	var travelMain = {
 			title: $("#title").val(),
 			selfIntroduce: $("#selfIntroduce").val(),

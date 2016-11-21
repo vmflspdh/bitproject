@@ -153,10 +153,12 @@ function ajaxCmtList() {
 
 
 $("#qnaaddBtn").click(function(event) {
+	
    var qna = {
    title: $("#title").val(),
      contents: $("#contents").val()
    }
+   console.log(qna.contents)
    ajaxAddQna(qna)
 });
 
