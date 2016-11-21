@@ -224,8 +224,18 @@ function ajaxDeleteQna(no) {
 	console.log(no)
    $.post("qnadelete.json?no="+no, {no:no}, function(result) {
       if (result.state != "success") {
-         alert("삭제 실패입니다.")
+    	  swal(
+				  '삭제 실패!',
+				  'Something went wrong!',
+				  'error'
+				)
          return
+      }else {
+    	  swal(
+				  '삭제 성공!',
+				  'You clicked the button!',
+				  'success'
+				)
       }
       location.href = "qnaApp.html"
    })

@@ -258,6 +258,12 @@ function ajaxDeleteTravelMain(no) {
 			console.log(result.state)
 			alert("삭제 실패 입니다.")
 			return
+		} else{
+			swal(
+					'삭제 성공!',
+					'add in success!',
+					'success'
+			)
 		}
 
 		location.href = "n_mainTest.html"
