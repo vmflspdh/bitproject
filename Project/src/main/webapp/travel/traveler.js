@@ -37,7 +37,7 @@ function ajaxRegistFormList() {
 	    		contents += '<tr style="padding: 10px;">'
 	    	}
 	    	contents += 
-	    		'<td style="border: 1px solid #DDDDDD; padding: 20px; background-color: white">' +
+	    		'<td style="border: 1px solid #DDDDDD; padding: 20px 20px 10px 20px; background-color: white">' +
 	    		'<div style="padding: 0px; border: 0px solid #C0C0C0;">' +
 	    		'<div class="thumbnail-wrapper">' +
 	    	    '<div class="thumbnail">' +
@@ -62,7 +62,7 @@ function ajaxRegistFormList() {
 	    	contents +=
 	    		'<div style="padding:5px; font-weight: bold; color:black;">' + arr[i].writer + '</div>' +
 	    		'<div style="padding:0px 5px 0px 5px; font-size: small;">' +
-	    		'<span><img src="img/worldwide.png" style="width: 15px; height: 15px;"></span>' +
+	    		'<span><img src="img/plane.png" style="width: 25px; height: 25px; margin-bottom: 10px;"></span>' +
 	    		'<span>' + arr[i].city + '</span>, <span>' + arr[i].startDate + '</span> ~ <span>' + arr[i].endDate + '</span></div>' +
 	    		'</div>' +
 	    		'</div>' +
