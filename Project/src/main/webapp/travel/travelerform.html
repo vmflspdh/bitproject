@@ -33,6 +33,12 @@
 <!-- animsition.js -->
 
 <style>
+
+ol, ul, li {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
 #requestCountAll {
   z-index: 1500000;
   position: absolute;
@@ -335,11 +341,9 @@ button, input, select, textarea {
         <button style="float: right;"
           class="fadeandscale_close btn btn-default">Close</button>
       </div>
-	     <div class="my-login">
-        <span> <a id="userName"
-          style="position: absolute; right: 215px; font-weight: bold; font-size: 18px;"></a>
-          <a href="#" class="my-login" id="travelerRegForm">님 동행을 찾아보세요!</a>
-        </span>
+	     <div class="my-login" style="position: absolute; top:5px; right: 130px; color:white;">
+        <span id="userName" style="font-weight: bold; font-size: 18px;"></span>
+        <a href="#" style="color:white;"><span id="travelerRegForm" style="font-size: 13px;">님 동행을 찾아보세요!</span></a>
       </div>
       <div
         style='position: absolute; right: 10px; top: 10px; font-size: 15px;'>
@@ -358,9 +362,8 @@ button, input, select, textarea {
 				<h1 id="title_txt"><a  href="n_mainTest.html">WE TRIP</a></h1>
 			</div>
 			<nav>
-				<a href="#" id="travelerPage">Traveler</a> <a href="#"
-					id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a> <a
-					href="#">.</a>
+				<a href="#" id="travelerPage">Accompany</a> <a href="#"
+					id="reviewPage">Review</a> <a href="#" id="qnaPage">Q&A</a>
 			</nav>
 		</div>
 	</div>
