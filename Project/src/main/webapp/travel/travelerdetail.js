@@ -38,9 +38,11 @@ $("#togetherRequest").click(function(event) {
 function inviteAdd(requestMember){
 	console.log(requestMember.memberNo)
 	console.log(requestMember.travelMainNo)
-	no=requestMember.memberNo
-	no2=requestMember.travelMainNo
-	$.post(serverAddr + "/travel/invadd.json" , {no:no,no2:no2},function(result) {
+	requestMemberNo=requestMember.memberNo
+	requesetMemberTravelMainNo=requestMember.travelMainNo
+	$.post(serverAddr + "/travel/invadd.json" , 
+			{no:requestMemberNo,no2:requesetMemberTravelMainNo},
+		function(result) {
 		//var result = obj.jsonResult
 		console.log(requestMember)
 		if (result.state == "exist") {
